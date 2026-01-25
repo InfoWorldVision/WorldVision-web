@@ -15,6 +15,48 @@
     transform: translateX(0);
   }
 }
+.nav-vertical {
+  left: 1rem;
+  top: 1rem;
+  transform: none;
+  width: 16rem;
+  height: auto;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem;
+}
+.nav-vertical .logo-container {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+  margin-bottom: 1.5rem;
+}
+.nav-vertical .nav-links {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  width: 100%;
+  text-decoration: none;
+  /* Dropdown INSIDE navbar */
+}
+.nav-vertical .nav-links li {
+  width: 100%;
+  text-decoration: none;
+}
+.nav-vertical .nav-links ul {
+  position: relative;
+  width: 100%;
+  margin-top: 0.5rem;
+  padding-left: 0.75rem;
+  background: rgba(255, 255, 255, 0.6);
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+  border-radius: 0.75rem;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
 body {
   /* fallback medical blue */
   background-color: #cee5f0;

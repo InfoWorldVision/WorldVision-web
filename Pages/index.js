@@ -35,3 +35,15 @@ for (let i = 0; i < rowsNeeded; i++) {
 
   lensBg.appendChild(row);
 }
+
+// Navbar movement on scroll
+
+const navbar = document.getElementById("navbar");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 140) {
+      navbar.classList.add("nav-vertical");
+    } else {
+      navbar.classList.remove("nav-vertical");
+    }
+  });
