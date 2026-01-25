@@ -1,11 +1,11 @@
 const lensBg = document.getElementById("lensBg");
 
 const lenses = [
-  "../Multimedia/lense1.png","../Multimedia/lense2.png","../Multimedia/lense3.png","../Multimedia/lense4.png","../Multimedia/lense5.png",
-  "../Multimedia/lense6.png","../Multimedia/lense7.png","../Multimedia/lense8.png","../Multimedia/lense9.png","../Multimedia/lense10.png",
-  "../Multimedia/lense11.png","../Multimedia/lense12.png","../Multimedia/lense13.png","../Multimedia/lense14.png","../Multimedia/lense15.png",
-  "../Multimedia/lense16.png","../Multimedia/lense17.png","../Multimedia/lense18.png","../Multimedia/lense19.png","../Multimedia/lense20.png",
-  "../Multimedia/lense21.png","../Multimedia/lense22.png"
+  "lense1.png","lense2.png","lense3.png","lense4.png","lense5.png",
+  "lense6.png","lense7.png","lense8.png","lense9.png","lense10.png",
+  "lense11.png","lense12.png","lense13.png","lense14.png","lense15.png",
+  "lense16.png","lense17.png","lense18.png","lense19.png","lense20.png",
+  "lense21.png","lense22.png"
 ];
 
 const imgPath = "../Multimedia/";
