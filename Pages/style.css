@@ -1,1 +1,58 @@
-/*# sourceMappingURL=style.css.map */
+/* Background Animations */
+@keyframes slideRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes slideLeft {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+body {
+  background: #3a9ada;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ================= WEBPAGE BACKGROUND ================= */
+.lens-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  /* premium edge fade */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+          mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+}
+.lens-bg .lens-row {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  white-space: nowrap;
+  opacity: 0.5;
+  will-change: transform;
+}
+.lens-bg .lens-row img {
+  height: 32px;
+  width: auto;
+  display: block;
+  -o-object-fit: contain;
+     object-fit: contain;
+  filter: grayscale(100%) brightness(0.75);
+}
+.lens-bg .lens-row:nth-child(odd) {
+  animation: slideRight 260s linear infinite;
+}
+.lens-bg .lens-row:nth-child(even) {
+  animation: slideLeft 320s linear infinite;
+}/*# sourceMappingURL=style.css.map */

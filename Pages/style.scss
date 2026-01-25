@@ -1,0 +1,75 @@
+@import "../SASS-Components/keyframesAni";
+// @import "../SASS-Components/_mediaQuery";
+
+body {
+  background: #3a9ada;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ================= WEBPAGE BACKGROUND ================= */
+
+.lens-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  /* premium edge fade */
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 15%,
+    black 85%,
+    transparent 100%
+  );
+
+  .lens-row {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    white-space: nowrap;
+    opacity: 0.5;
+    will-change: transform;
+
+    img {
+      height: 32px;      // 🔑 uniform visual size
+      width: auto;       // keep aspect ratio
+      display: block;    // remove inline spacing quirks
+      object-fit: contain;
+      filter: grayscale(100%) brightness(0.75);
+    }
+
+    &:nth-child(odd) {
+      animation: slideRight 260s linear infinite;
+    }
+
+    &:nth-child(even) {
+      animation: slideLeft 320s linear infinite;
+    }
+  }
+}
+
+// /* ---------- HERO ---------- */
+
+// .hero {
+//   position: relative;
+//   z-index: 2;
+//   min-height: 100vh;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+// .hero-card {
+//   background: white;
+//   padding: 48px 56px;
+//   border-radius: 12px;
+//   box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+//   text-align: center;
+// }
+
