@@ -1,0 +1,61 @@
+/* ================= BACKGROUND RESPONSIVE ================= */
+
+/* Tablets & below */
+@media (max-width: 1024px) {
+  body {
+    background-attachment: scroll;
+  }
+
+  .lens-bg {
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 10%,
+      black 90%,
+      transparent 100%
+    );
+  }
+
+  .lens-row {
+    gap: 72px;
+
+    img {
+      height: 26px;
+      opacity: 0.65;
+    }
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .lens-bg {
+    justify-content: space-evenly;
+  }
+
+  .lens-row {
+    gap: 36px; // 🔑 more density
+    animation-duration: 180s !important; // 🔑 faster so it feels continuous
+    transform: translateZ(0);
+
+    img {
+      height: 20px; // 🔑 smaller icons
+      opacity: 0.55;
+    }
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .lens-bg {
+    mask-image: none;
+  }
+
+  .lens-row {
+    gap: 42px;
+
+    img {
+      height: 18px;
+      opacity: 0.45;
+    }
+  }
+}

@@ -1,6 +1,6 @@
 @import "../SASS-Components/keyframesAni";
 @import "../SASS-Components/header";
-// @import "../SASS-Components/_mediaQuery";
+@import "../SASS-Components/_mediaQuery";
 
 body {
     /* fallback medical blue */
@@ -45,13 +45,15 @@ body::after {
 
 .lens-bg {
   position: fixed;
+  top: -10vh;
+  height: 120vh;
   inset: 0;
   z-index: 0;
   pointer-events: none;
 
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: flex-start;
 
   /* premium edge fade */
   mask-image: linear-gradient(
@@ -69,6 +71,7 @@ body::after {
     white-space: nowrap;
     opacity: 0.5;
     will-change: transform;
+    min-height: 120px;
 
     img {
       height: 32px;      
@@ -93,22 +96,3 @@ body::after {
   position: relative;
   z-index: 2;
 }
-// /* ---------- HERO ---------- */
-
-// .hero {
-//   position: relative;
-//   z-index: 2;
-//   min-height: 100vh;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// }
-
-// .hero-card {
-//   background: white;
-//   padding: 48px 56px;
-//   border-radius: 12px;
-//   box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-//   text-align: center;
-// }
-

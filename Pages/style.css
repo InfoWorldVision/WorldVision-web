@@ -15,48 +15,65 @@
     transform: translateX(0);
   }
 }
-.nav-vertical {
-  left: 1rem;
-  top: 1rem;
-  transform: none;
-  width: 16rem;
-  height: auto;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 1rem;
-}
-.nav-vertical .logo-container {
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.25rem;
-  margin-bottom: 1.5rem;
-}
-.nav-vertical .nav-links {
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.75rem;
-  width: 100%;
-  text-decoration: none;
-  /* Dropdown INSIDE navbar */
-}
-.nav-vertical .nav-links li {
-  width: 100%;
-  text-decoration: none;
-}
-.nav-vertical .nav-links ul {
-  position: relative;
-  width: 100%;
-  margin-top: 0.5rem;
-  padding-left: 0.75rem;
-  background: rgba(255, 255, 255, 0.6);
-  -webkit-backdrop-filter: blur(6px);
-          backdrop-filter: blur(6px);
-  border-radius: 0.75rem;
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
+.subtitle {
+  color: #cd79b2 !important;
 }
 
+.nav-glass {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+/* ================= BACKGROUND RESPONSIVE ================= */
+/* Tablets & below */
+@media (max-width: 1024px) {
+  body {
+    background-attachment: scroll;
+  }
+  .lens-bg {
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+            mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  }
+  .lens-row {
+    gap: 72px;
+  }
+  .lens-row img {
+    height: 26px;
+    opacity: 0.65;
+  }
+}
+/* Mobile */
+@media (max-width: 768px) {
+  .lens-bg {
+    justify-content: space-evenly;
+  }
+  .lens-row {
+    gap: 36px;
+    animation-duration: 180s !important;
+    transform: translateZ(0);
+  }
+  .lens-row img {
+    height: 20px;
+    opacity: 0.55;
+  }
+}
+/* Small mobile */
+@media (max-width: 480px) {
+  .lens-bg {
+    -webkit-mask-image: none;
+            mask-image: none;
+  }
+  .lens-row {
+    gap: 42px;
+  }
+  .lens-row img {
+    height: 18px;
+    opacity: 0.45;
+  }
+}
 body {
   /* fallback medical blue */
   background-color: #cee5f0;
@@ -83,12 +100,14 @@ body::after {
 /* ================= WEBPAGE BACKGROUND ================= */
 .lens-bg {
   position: fixed;
+  top: -10vh;
+  height: 120vh;
   inset: 0;
   z-index: 0;
   pointer-events: none;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   /* premium edge fade */
   -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 90%, transparent 100%);
           mask-image: linear-gradient(to right, transparent 0%, black 5%, black 90%, transparent 100%);
@@ -100,6 +119,7 @@ body::after {
   white-space: nowrap;
   opacity: 0.5;
   will-change: transform;
+  min-height: 120px;
 }
 .lens-bg .lens-row img {
   height: 32px;
