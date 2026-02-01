@@ -144,3 +144,28 @@ window.addEventListener("resize", () => {
     closeMenu();
   }
 });
+
+/*************************************************
+ * HERO PRODUCT SLIDER
+ *************************************************/
+
+const heroSwiper = new Swiper(".heroSwiper", {
+  loop: true,
+  speed: 900,
+  effect: "slide",
+
+  autoplay: {
+    delay: 8000,
+    disableOnInteraction: false,
+  },
+
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+
+  // 🔥 THIS IS THE FIX
+  preventClicks: false,
+  preventClicksPropagation: false,
+  touchStartPreventDefault: false,
+});
