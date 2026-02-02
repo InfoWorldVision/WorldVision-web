@@ -7,7 +7,8 @@ body {
     /* fallback medical blue */
   background-color: #cee5f0;
   width: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 
   /* soft medical gradient */
   background-image: linear-gradient(
@@ -31,7 +32,7 @@ body::after {
   content: "";
   position: fixed;
   inset: 0;
-  z-index: 1;
+  z-index: 5;
   pointer-events: none;
 
   /* vertical soft fade */
@@ -51,7 +52,7 @@ body::after {
   top: -10vh;
   height: 120vh;
   inset: 0;
-  z-index: 0;
+  z-index: 1;
   pointer-events: none;
 
   display: flex;
@@ -98,7 +99,15 @@ body::after {
   }
 }
 
-.z-2 {
-  position: relative;
-  z-index: 2;
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10000; /* 🔑 ABOVE EVERYTHING */
+}
+
+
+body.menu-open {
+  overflow: hidden;
 }

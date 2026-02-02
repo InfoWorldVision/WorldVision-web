@@ -6,6 +6,7 @@
   overflow: hidden;
   position: relative;
   isolation: isolate; /* 🔒 prevents layout bleed */
+  z-index: 2;
 }
 
 /* Lock wrapper */

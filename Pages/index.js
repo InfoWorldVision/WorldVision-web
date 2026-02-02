@@ -1,5 +1,5 @@
 /*************************************************
- * LENS BACKGROUND ANIMATION (UNCHANGED & CLEAN)
+ * LENS BACKGROUND ANIMATION
  *************************************************/
 
 const lensBg = document.getElementById("lensBg");
@@ -52,7 +52,7 @@ window.addEventListener("resize", renderLensBg);
 
 
 /*************************************************
- * MOBILE DRAWER + OVERLAY (FIXED)
+ * MOBILE DRAWER + OVERLAY (SCROLL-SAFE)
  *************************************************/
 
 const menuToggle = document.getElementById("menuToggle");
@@ -60,7 +60,9 @@ const closeMenuBtn = document.getElementById("closeMenu");
 const mobileMenu = document.getElementById("mobileMenu");
 const menuOverlay = document.getElementById("menuOverlay");
 
-let menuOpen = false;
+const mobileProductsBtn = document.getElementById("mobileProductsBtn");
+const mobileProductsMenu = document.getElementById("mobileProductsMenu");
+const mobileProductsIcon = document.getElementById("mobileProductsIcon");
 
 function resetProductsDropdown() {
   if (mobileProductsMenu && mobileProductsIcon) {
@@ -72,31 +74,28 @@ function resetProductsDropdown() {
 function openMenu() {
   if (!mobileMenu || !menuOverlay) return;
 
-  menuOpen = true;
   mobileMenu.classList.remove("-translate-x-full");
   menuOverlay.classList.remove("opacity-0", "pointer-events-none");
-  document.body.style.overflow = "hidden";
+  document.body.classList.add("menu-open");
 
-  // ✅ ALWAYS reset dropdown on open
   resetProductsDropdown();
 }
 
 function closeMenu() {
   if (!mobileMenu || !menuOverlay) return;
 
-  menuOpen = false;
   mobileMenu.classList.add("-translate-x-full");
   menuOverlay.classList.add("opacity-0", "pointer-events-none");
-  document.body.style.overflow = "";
+  document.body.classList.remove("menu-open");
 
-  // ✅ ALWAYS reset dropdown on close
   resetProductsDropdown();
 }
 
-/* ☰ TOGGLE MENU (THIS IS THE KEY FIX) */
+/* ☰ Toggle menu */
 if (menuToggle) {
   menuToggle.addEventListener("click", () => {
-    menuOpen ? closeMenu() : openMenu();
+    const isOpen = document.body.classList.contains("menu-open");
+    isOpen ? closeMenu() : openMenu();
   });
 }
 
@@ -116,10 +115,6 @@ if (menuOverlay) {
  * MOBILE "OUR PRODUCTS" DROPDOWN
  *************************************************/
 
-const mobileProductsBtn = document.getElementById("mobileProductsBtn");
-const mobileProductsMenu = document.getElementById("mobileProductsMenu");
-const mobileProductsIcon = document.getElementById("mobileProductsIcon");
-
 if (mobileProductsBtn && mobileProductsMenu && mobileProductsIcon) {
   mobileProductsBtn.addEventListener("click", () => {
     mobileProductsMenu.classList.toggle("hidden");
@@ -130,20 +125,27 @@ if (mobileProductsBtn && mobileProductsMenu && mobileProductsIcon) {
 
 
 /*************************************************
- * UX POLISH
+ * UX POLISH + FAIL-SAFES
  *************************************************/
 
-// Close menu when clicking a link
+// Close menu when clicking any link
 document.querySelectorAll("#mobileMenu a").forEach(link => {
   link.addEventListener("click", closeMenu);
 });
 
-// Close menu when switching to desktop
+// Auto-unlock scroll on desktop resize / orientation change
 window.addEventListener("resize", () => {
-  if (window.innerWidth >= 1024 && menuOpen) {
+  if (window.innerWidth >= 1024) {
     closeMenu();
   }
 });
+
+// Hard safety unlock (Swiper / mobile edge cases)
+window.addEventListener("pageshow", () => {
+  document.body.classList.remove("menu-open");
+});
+
+
 
 /*************************************************
  * HERO PRODUCT SLIDER
@@ -152,7 +154,6 @@ window.addEventListener("resize", () => {
 const heroSwiper = new Swiper(".heroSwiper", {
   loop: true,
   speed: 900,
-  effect: "slide",
 
   autoplay: {
     delay: 8000,
@@ -164,8 +165,7 @@ const heroSwiper = new Swiper(".heroSwiper", {
     clickable: true,
   },
 
-  // 🔥 THIS IS THE FIX
-  preventClicks: false,
-  preventClicksPropagation: false,
-  touchStartPreventDefault: false,
+  allowTouchMove: true,
+  nested: true,
+  resistanceRatio: 0,
 });
