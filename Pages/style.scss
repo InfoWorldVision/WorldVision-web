@@ -1,7 +1,15 @@
+@import "../SASS-Components/mixins";
+@import "../SASS-Components/colors";
 @import "../SASS-Components/keyframesAni";
 @import "../SASS-Components/header";
 @import "../SASS-Components/slider";
-@import "../SASS-Components/_mediaQuery";
+@import "../SASS-Components/heroSection";
+@import "../SASS-Components/statsBar";
+@import "../SASS-Components/products";
+@import "../SASS-Components/sections";
+@import "../SASS-Components/banner";
+@import "../SASS-Components/footer";
+@import "../SASS-Components/mediaQuery";
 
 body {
     /* fallback medical blue */
@@ -9,6 +17,7 @@ body {
   width: 100%;
   overflow-x: hidden;
   overflow-y: auto;
+  font-family: 'Poppins', sans-serif;
 
   /* soft medical gradient */
   background-image: linear-gradient(
@@ -110,4 +119,58 @@ body::after {
 
 body.menu-open {
   overflow: hidden;
+}
+
+// Page Loader Styles
+
+#pageLoader{
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #eaf4fa 0%, #d6ebf6 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+
+  &.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+  .loader-inner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+
+    .loader-logo{
+      height: 60px;
+      width: auto;
+      animation: loaderPulse 1.2s ease-in-out infinite;
+    }
+    .loader-bar{
+        width: 180px;
+        height: 3px;
+        border-radius: 3px;
+        background: rgba(37, 99, 235, 0.15);
+        overflow: hidden;
+      }
+    .loader-fill{
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #2563eb, #60a5fa);
+      border-radius: 3px;
+      animation: loaderFill 1.2s ease-out forwards;
+    }
+  }
+}
+
+.reveal-section {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal-section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }

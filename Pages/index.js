@@ -169,3 +169,99 @@ const heroSwiper = new Swiper(".heroSwiper", {
   nested: true,
   resistanceRatio: 0,
 });
+
+const links = [
+  "Home",
+  "Lens A",
+  "Lens B",
+  "Lens C",
+  "Lens D",
+  "Lens E",
+  "Lens F",
+  "Lens G",
+  "About",
+  "Contact"
+];
+
+const left = document.getElementById("quickLinksLeft");
+const right = document.getElementById("quickLinksRight");
+
+function renderQuickLinks() {
+  if (!left || !right) return;
+
+  left.innerHTML = "";
+  right.innerHTML = "";
+
+  links.forEach((item, index) => {
+    const li = document.createElement("li");
+    li.innerHTML = `<a href="#" class="hover:text-blue-600 transition">${item}</a>`;
+
+    if (index < 5) {
+      left.appendChild(li);   // first 5 items
+    } else {
+      right.appendChild(li);  // rest
+    }
+  });
+}
+
+renderQuickLinks();
+
+/*************************************************
+ * PAGE LOADER — hide after assets load
+ *************************************************/
+window.addEventListener('load', function () {
+  setTimeout(function () {
+    const loader = document.getElementById('pageLoader');
+    if (loader) loader.classList.add('hidden');
+    // trigger lens bg fade after loader
+    const lensBg = document.getElementById('lensBg');
+    if (lensBg) lensBg.style.animation = 'bgFadeIn 2.2s ease-out forwards';
+  }, 1300);
+});
+
+
+/*************************************************
+ * SCROLL REVEAL — IntersectionObserver
+ *************************************************/
+(function () {
+  const observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal-section').forEach(function (el) {
+    observer.observe(el);
+  });
+})();
+
+
+/*************************************************
+ * HERO SWIPER — fixed init
+ *************************************************/
+if (typeof Swiper !== 'undefined') {
+  new Swiper('.heroSwiper', {
+    loop: true,
+    speed: 900,
+    autoplay: { delay: 6000, disableOnInteraction: false },
+    pagination: { el: '.swiper-pagination', clickable: true },
+    allowTouchMove: true,
+  });
+}
+
+
+/*************************************************
+ * SMOOTH SCROLL — for anchor links
+ *************************************************/
+document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+  anchor.addEventListener('click', function (e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});

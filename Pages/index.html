@@ -3,9 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="World Vision - Lenses - Medical grade IOLs with USA and European raw materials">
 
     <!-- FontAwsome -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <!-- google fonts -->
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <!-- Animation CDN links -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
@@ -25,52 +29,63 @@
     <title>World Vision</title>
   </head>
   <body>
+    <!-- Page Loader -->
+
+    <div id="pageLoader">
+      <div class="loader-inner">
+        <img src="../Multimedia/WVO_Logo1.png" alt="world vision" class="loader-logo">
+        <div class="loader-bar"><div class="loader-fill"></div></div>
+      </div>
+    </div>
+
     <!-- Lense Images -->
     <div class="lens-bg animate__animated animate__fadeIn animate__slow" id="lensBg"></div>
+
     <header class="site-header">
 
       <!-- Navbar -->
       <nav id="navbar" class="fixed top-4 w-full lg:left-1/2 lg:-translate-x-1/2 lg:w-[92%] h-24 lg:px-4 bg-transparent overflow-visible transition-all duration-300 ease-in-out z-50">
         <div class="nav-glass relative h-full px-10 lg:flex lg:items-center lg:justify-between lg:rounded-2xl flex items-center">
 
-          <!-- LEFT: Hamburger + Logo -->
           <div class="flex items-center justify-between w-full lg:w-auto">
-
-            <!-- Hamburger (mobile only) -->
             <button id="menuToggle" class="lg:hidden w-11 h-11 flex items-center justify-center rounded-xl bg-white/20 backdrop-blur-md border border-white/30 text-xl">
               <i class="fa-solid fa-bars"></i>
             </button>
-
-            <!-- Logo -->
             <div class="logo-container flex items-center gap-3 mx-auto lg:mx-0">
-              <img src="../Multimedia/WVO_Logo1.png" class="h-14 w-auto animate__animated animate__fadeIn animate__slow" />
+              <img src="../Multimedia/WVO_Logo1.png" class="h-14 w-auto" />
               <div class="flex flex-col leading-tight">
-                <span class="font-semibold text-2xl tracking-wide"> World Vision </span>
-                <span class="subtitle text-xs tracking-widest uppercase"> Ophthalmic Pvt. Ltd. </span>
+                <span class="font-semibold text-2xl tracking-wide">World Vision</span>
+                <span class="subtitle text-xs tracking-widest uppercase">Ophthalmic Pvt. Ltd.</span>
               </div>
             </div>
           </div>
-          <!-- Desktop nav -->
-          <ul class="hidden lg:flex items-center gap-8 text-lg font-medium whitespace-nowrap" >
-            <li><a href="#" class="hover:text-blue-600">Home</a></li>
 
-            <!-- Desktop dropdown -->
+          <ul class="hidden lg:flex items-center gap-8 text-base font-medium whitespace-nowrap">
+            <li><a href="#" class="nav-item active-nav">Home</a></li>
             <li class="relative group">
-              <!-- Hover anchor -->
-              <div class="flex items-center gap-2 cursor-pointer hover:text-blue-600" >
-                Our Products
-                <i class="fa-solid fa-chevron-down text-sm transition-transform duration-200 group-hover:rotate-180" ></i>
+              <div class="nav-item flex items-center gap-2 cursor-pointer">
+                Our Products <i class="fa-solid fa-chevron-down text-sm transition-transform duration-200 group-hover:rotate-180"></i>
               </div>
-
-              <!-- Dropdown -->
-              <div class="absolute left-0 top-full mt-3 w-52 rounded-xl bg-white/80 backdrop-blur-lg border border-white/30 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-[999]" >
-                <a href="#" class="block px-4 py-3 hover:bg-white/60">Lens A</a>
-                <a href="#" class="block px-4 py-3 hover:bg-white/60">Lens B</a>
+              <div class="absolute left-0 top-full mt-3 w-56 rounded-2xl bg-white/90 backdrop-blur-lg border border-white/30 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-[999] overflow-hidden">
+                <a href="../Pages/iol-page.html" class="flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition text-sm font-medium text-gray-700">
+                  <i class="fa-solid fa-eye text-blue-500 w-4"></i> Intraocular Lenses
+                </a>
+                <a href="#" class="flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition text-sm font-medium text-gray-700">
+                  <i class="fa-solid fa-syringe text-blue-500 w-4"></i> Surgical Instruments
+                </a>
+                <a href="#" class="flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition text-sm font-medium text-gray-700">
+                  <i class="fa-solid fa-paw text-blue-500 w-4"></i> Veterinary IOL
+                </a>
               </div>
             </li>
-            <li><a href="#" class="hover:text-blue-600">About</a></li>
-            <li><a href="#" class="hover:text-blue-600">Contact</a></li>
+            <li><a href="#about" class="nav-item">Gallery</a></li>
+            <li><a href="#about" class="nav-item">About</a></li>
+            <li><a href="#contact" class="nav-item">Contact</a></li>
           </ul>
+
+          <a href="#contact" class="hidden lg:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700 transition shadow-lg shadow-blue-500/25">
+            Toric Calculator <i class="fa-solid fa-calculator"></i>
+          </a>
 
         </div>
       </nav>
@@ -78,123 +93,287 @@
       <!-- Mobile Overlay -->
       <div id="menuOverlay" class="fixed inset-y-0 left-72 right-0 bg-black/40 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 z-[9998] lg:hidden"></div>
 
- 
-      <!-- Mobile Drawer -->
-      <div id="mobileMenu" class="fixed inset-y-0 left-0 h-full w-72 -translate-x-full transition-transform duration-300 ease-in-out z-[9999] lg:hidden" >
-        <div class="h-full w-72 px-5 pt-7 bg-white/15 backdrop-blur-xl border-r border-white/30" >
-          <!-- Drawer Header -->
+      <div id="mobileMenu" class="fixed inset-y-0 left-0 h-full w-72 -translate-x-full transition-transform duration-300 ease-in-out z-[9999] lg:hidden">
+        <div class="h-full w-72 px-5 pt-7 bg-white/15 backdrop-blur-xl border-r border-white/30">
           <div class="relative mb-8 px-2 pt-8">
             <div class="flex items-center gap-3">
               <img src="../Multimedia/WVO_Logo1.png" class="h-10 w-auto" />
               <div class="flex flex-col leading-tight">
                 <span class="font-semibold text-lg">World Vision</span>
-                <span class="subtitle text-xs tracking-widest uppercase">
-                  Ophthalmic Pvt. Ltd.
-                </span>
+                <span class="subtitle text-xs tracking-widest uppercase">Ophthalmic Pvt. Ltd.</span>
               </div>
             </div>
-
-            <!-- Close Button -->
             <button id="closeMenu" class="absolute top-0 right-2 w-7 h-7 flex items-center justify-center rounded-xl bg-white/20 backdrop-blur border border-white/30 text-xl">
               <i class="fa-solid fa-xmark"></i>
             </button>
           </div>
-          <ul class="flex flex-col gap-6 text-lg font-medium mt-10">
-            <li><a href="#">Home</a></li>
-
-            <!-- Mobile dropdown -->
+          <ul class="flex flex-col gap-4 text-base font-medium mt-6">
+            <li><a href="#" class="mobile-drawer-link">Home</a></li>
             <li>
-              <button id="mobileProductsBtn" class="w-full flex items-center justify-between" >
+              <button id="mobileProductsBtn" class="w-full flex items-center justify-between mobile-drawer-link">
                 <span>Our Products</span>
-                <i id="mobileProductsIcon" class="fa-solid fa-chevron-down text-sm transition-transform duration-200" ></i>
+                <i id="mobileProductsIcon" class="fa-solid fa-chevron-down text-sm transition-transform duration-200"></i>
               </button>
-
-              <div id="mobileProductsMenu" class="hidden ml-4 mt-3 flex flex-col gap-2 bg-white/15 backdrop-blur shadow-lg rounded-xl overflow-visible" >
-                <a href="#" class="px-4 py-3">Lens A</a>
-                <a href="#" class="px-4 py-3">Lens B</a>
+              <div id="mobileProductsMenu" class="hidden ml-4 mt-2 flex flex-col gap-1">
+                <a href="../Pages/iol-page.html" class="mobile-sub-link">Intraocular Lenses</a>
+                <a href="#" class="mobile-sub-link">Surgical Instruments</a>
+                <a href="#" class="mobile-sub-link">Veterinary IOL</a>
               </div>
             </li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#about" class="mobile-drawer-link">About</a></li>
+            <li><a href="#contact" class="mobile-drawer-link">Contact</a></li>
           </ul>
         </div>
       </div>
     </header>
-    <main class="relative z-2">
+    <main class="relative z-10">
 
-      <!-- HERO PRODUCT SLIDER -->
-      <section class="relative w-full min-h-[85vh] flex items-center pt-[calc(6rem+1rem)]">
+      <!-- HERO SLIDER -->
+      <section class="relative w-full min-h-[90vh] flex items-center pt-28">
         <div class="swiper heroSwiper w-full">
           <div class="swiper-wrapper">
 
-            <!-- SLIDE 1 -->
             <div class="swiper-slide">
-              <div class="max-w-7xl mx-auto px-4 lg:px-10 grid grid-cols-1 lg:grid-cols-2 items-center gap-14">
-
-                <!-- Product Image -->
+              <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 items-center gap-10 pb-16">
                 <div class="flex justify-center">
-                  <img
-                    src="../Multimedia/lense11.png"
-                    alt="World Vision Lens Pro"
-                    class="max-h-[420px] object-contain"
-                  />
+                  <div class="hero-img-wrap">
+                    <img src="../Multimedia/lense11.png" alt="World Vision Lens Pro" class="hero-product-img" />
+                  </div>
                 </div>
-
-                <!-- Content -->
-                <div>
-                  <h1 class="text-4xl lg:text-5xl font-semibold mb-4">
-                    World Vision Lens Pro
-                  </h1>
-                  <p class="text-lg text-gray-700 mb-8">
-                    Advanced clarity with reduced glare for everyday comfort.
-                  </p>
-                  <a
-                    href="/products/lens-pro.html"
-                    class="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition"
-                  >
-                    View Product
-                    <i class="fa-solid fa-arrow-right"></i>
-                  </a>
+                <div class="hero-content">
+                  <span class="hero-tag">Featured Product</span>
+                  <h1 class="hero-heading">World Vision<br><em>Lens Pro</em></h1>
+                  <p class="hero-sub">Advanced clarity with reduced glare. Medical-grade acrylic engineered for everyday surgical precision.</p>
+                  <div class="flex flex-wrap gap-3 mt-8">
+                    <a href="#" class="hero-btn-primary">View Product <i class="fa-solid fa-arrow-right text-xs"></i></a>
+                    <a href="#products" class="hero-btn-ghost">All Products</a>
+                  </div>
                 </div>
-
               </div>
             </div>
 
-            <!-- SLIDE 2 -->
             <div class="swiper-slide">
-              <div class="max-w-7xl mx-auto px-4 lg:px-10 grid grid-cols-1 lg:grid-cols-2 items-center gap-14">
+              <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 items-center gap-10 pb-16">
                 <div class="flex justify-center">
-                  <img
-                    src="../Multimedia/lense21.png"
-                    class="max-h-[420px] object-contain"
-                  />
+                  <div class="hero-img-wrap">
+                    <img src="../Multimedia/lense21.png" alt="World Vision Lens Plus" class="hero-product-img" />
+                  </div>
                 </div>
-                <div>
-                  <h1 class="text-4xl lg:text-5xl font-semibold mb-4">
-                    World Vision Lens Plus
-                  </h1>
-                  <p class="text-lg text-gray-700 mb-8">
-                    Precision-engineered lenses for superior visual accuracy.
-                  </p>
-                  <a
-                    href="/products/lens-plus.html"
-                    class="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition"
-                  >
-                    View Product
-                    <i class="fa-solid fa-arrow-right"></i>
-                  </a>
+                <div class="hero-content">
+                  <span class="hero-tag">New Arrival</span>
+                  <h1 class="hero-heading">World Vision<br><em>Lens Plus</em></h1>
+                  <p class="hero-sub">Precision-engineered optics for superior visual accuracy. UV absorber and blue-light filtering built in.</p>
+                  <div class="flex flex-wrap gap-3 mt-8">
+                    <a href="#" class="hero-btn-primary">View Product <i class="fa-solid fa-arrow-right text-xs"></i></a>
+                    <a href="#products" class="hero-btn-ghost">All Products</a>
+                  </div>
                 </div>
               </div>
             </div>
 
           </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </section>
 
-          <!-- Pagination dots -->
-          <div class="swiper-pagination mt-10"></div>
+      <!-- STATS BAR -->
+      <section class="stats-section reveal-section">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+          <div class="stats-grid">
+            <div class="stat-glass">
+              <div class="stat-icon-wrap"><i class="fa-solid fa-flask-vial"></i></div>
+              <div class="stat-num">22+</div>
+              <div class="stat-label">Lens Variants</div>
+            </div>
+            <div class="stat-glass">
+              <div class="stat-icon-wrap"><i class="fa-solid fa-certificate"></i></div>
+              <div class="stat-num">ISO</div>
+              <div class="stat-label">Certified Quality</div>
+            </div>
+            <div class="stat-glass">
+              <div class="stat-icon-wrap"><i class="fa-solid fa-globe"></i></div>
+              <div class="stat-num">40+</div>
+              <div class="stat-label">Countries Served</div>
+            </div>
+            <div class="stat-glass">
+              <div class="stat-icon-wrap"><i class="fa-solid fa-calendar-check"></i></div>
+              <div class="stat-num">15+</div>
+              <div class="stat-label">Years Experience</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRODUCTS GRID -->
+      <section id="products" class="content-section reveal-section">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+          <div class="section-eyebrow">Our Range</div>
+          <h2 class="section-heading">Precision lenses for <em>every need</em></h2>
+          <p class="section-sub">Medical-grade materials sourced from the USA and Europe — engineered for every surgical requirement.</p>
+          <div class="products-grid">
+            <a href="../Pages/secondpag.html" class="product-card">
+              <div class="product-card-img"><img src="../Multimedia/lense4.png" alt="IOL" /></div>
+              <div class="product-card-body">
+                <span class="product-tag">IOL</span>
+                <h3>Intraocular Lenses</h3>
+                <p>Hydrophobic, Hydrophilic & PMMA. UV absorber, blue-light filter, zero glistening.</p>
+                <span class="product-link">Explore <i class="fa-solid fa-arrow-right text-xs"></i></span>
+              </div>
+            </a>
+            <a href="#" class="product-card">
+              <div class="product-card-img"><img src="../Multimedia/lense8.png" alt="Surgical" /></div>
+              <div class="product-card-body">
+                <span class="product-tag">Instruments</span>
+                <h3>Surgical Instruments</h3>
+                <p>Precision micro-surgical tools crafted for ophthalmic procedures.</p>
+                <span class="product-link">Explore <i class="fa-solid fa-arrow-right text-xs"></i></span>
+              </div>
+            </a>
+            <a href="#" class="product-card">
+              <div class="product-card-img"><img src="../Multimedia/lense15.png" alt="Veterinary" /></div>
+              <div class="product-card-body">
+                <span class="product-tag">Veterinary</span>
+                <h3>Veterinary IOL</h3>
+                <p>Same medical-grade technology, engineered specifically for animal eye surgery.</p>
+                <span class="product-link">Explore <i class="fa-solid fa-arrow-right text-xs"></i></span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHY CHOOSE US -->
+      <section class="content-section reveal-section">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+          <div class="section-eyebrow">Why Us</div>
+          <h2 class="section-heading">Built on <em>trust & precision</em></h2>
+          <div class="features-grid">
+            <div class="feature-card">
+              <div class="feature-icon-wrap blue"><i class="fa-solid fa-shield-halved"></i></div>
+              <h3>Medical Grade Materials</h3>
+              <p>Raw materials imported from certified suppliers in the USA and UK — no compromise on biocompatibility.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon-wrap teal"><i class="fa-solid fa-microscope"></i></div>
+              <h3>Precision Engineering</h3>
+              <p>High MTF ratings and low refractive index deliver exceptional light transmission — minimising glare post-surgery.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon-wrap violet"><i class="fa-solid fa-earth-asia"></i></div>
+              <h3>Global Distribution</h3>
+              <p>Trusted by surgeons across 40+ countries. Our export network ensures every lens reaches you fresh and documented.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon-wrap amber"><i class="fa-solid fa-award"></i></div>
+              <h3>ISO Certified</h3>
+              <p>Every lens undergoes rigorous biocompatibility testing to international ISO medical device standards.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MANUFACTURING -->
+      <section id="about" class="content-section reveal-section">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+          <div class="mfg-layout">
+            <div class="mfg-text">
+              <div class="section-eyebrow">Our Facility</div>
+              <h2 class="section-heading">Made with <em>care</em>,<br>backed by science</h2>
+              <p class="mfg-desc">Our state-of-the-art facility uses precision CNC lathe technology to produce every lens to micron-level accuracy — from raw polymer to sterile packaging.</p>
+              <ul class="mfg-checklist">
+                <li><i class="fa-solid fa-check"></i> Clean-room ISO Class 8 environment</li>
+                <li><i class="fa-solid fa-check"></i> 100% individual lens inspection</li>
+                <li><i class="fa-solid fa-check"></i> Gamma radiation sterilisation</li>
+                <li><i class="fa-solid fa-check"></i> Full CE & ISO documentation</li>
+              </ul>
+            </div>
+            <div class="mfg-photos">
+              <img src="../Multimedia/lensemanu1.jpg" alt="Facility 1" class="mfg-img mfg-large" />
+              <img src="../Multimedia/lensemanu2.jpg" alt="Facility 2" class="mfg-img" />
+              <img src="../Multimedia/lensemanu3.jpg" alt="Facility 3" class="mfg-img" />
+              <img src="../Multimedia/lensemanu4.jpg" alt="Facility 4" class="mfg-img" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA BANNER -->
+      <section id="contact" class="content-section reveal-section">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+          <div class="cta-banner">
+            <div class="cta-text">
+              <h2>Ready to work with us?</h2>
+              <p>Talk to our team about IOL requirements, pricing, and international shipping.</p>
+            </div>
+            <div class="cta-actions">
+              <a href="mailto:support@worldvision.com" class="cta-btn-primary"><i class="fa-solid fa-envelope"></i> Email Us</a>
+              <a href="https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv" target="_blank" class="cta-btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            </div>
+          </div>
         </div>
       </section>
     </main>
-    <footer></footer>
+      
+    <!-- WhatsApp Floating Button -->
+    <a href="https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv" target="_blank" class="fixed bottom-20 right-6 z-[9999] group">
+      <div class="flex items-center gap-3">
+
+        <!-- Tooltip -->
+        <span class="hidden md:block bg-black text-white text-xs px-3 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition">
+          Chat with us
+        </span>
+
+        <!-- Button -->
+        <div class="w-14 h-14 flex items-center justify-center rounded-full bg-green-500 hover:bg-green-600 shadow-lg transition transform hover:scale-110">
+          <i class="fa-brands fa-whatsapp text-white text-2xl"></i>
+        </div>
+      </div>
+    </a>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-glass">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 py-12 grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div>
+            <div class="flex items-center gap-3 mb-4 footlog">
+              <img src="../Multimedia/WVO_Logo1.png" class="h-12 w-auto" />
+              <div class="flex flex-col leading-tight">
+                <span class="font-semibold text-lg text-gray-900">World Vision</span>
+                <span class="text-xs tracking-widest uppercase text-gray-500 mt-1">Ophthalmic Pvt. Ltd.</span>
+              </div>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed">Precision-engineered ophthalmic lenses delivering clarity, comfort, and superior visual performance worldwide.</p>
+            <div class="flex gap-3 mt-5 footsoci">
+              <a href="#" class="footer-social"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="#" class="footer-social"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv" class="footer-social"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-base font-semibold mb-4 text-gray-900">Quick Links</h3>
+            <div class="grid grid-cols-2 gap-x-8 gap-y-2 text-sm text-gray-700">
+              <a href="#" class="footer-link">Home</a>
+              <a href="#products" class="footer-link">Products</a>
+              <a href="../Pages/iol-page.html" class="footer-link">IOL Lenses</a>
+              <a href="#about" class="footer-link">Gallery Us</a>
+              <a href="#about" class="footer-link">About Us</a>
+              <a href="#contact" class="footer-link">Contact</a>
+              <a href="#" class="footer-link">Toric Calc</a>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-base font-semibold mb-4 text-gray-900">Contact Us</h3>
+            <div class="space-y-3 text-sm text-gray-700">
+              <p class="flex items-start gap-2"><i class="fa-solid fa-location-dot text-blue-500 mt-0.5 w-4"></i> Chennai, Tamil Nadu, India</p>
+              <p class="flex items-center gap-2"><i class="fa-solid fa-phone text-blue-500 w-4"></i> <a href="tel:+91 98765 43210" class="no-underline hover:underline">+91 98765 43210</a></p>
+              <p class="flex items-center gap-2"><i class="fa-solid fa-envelope text-blue-500 w-4"></i> <a href="mailto:info@worldvisionophthalmic.com" class="no-underline hover:underline">info@worldvisionophthalmic.com</a></p>
+              <p class="flex items-center gap-2"><i class="fa-solid fa-clock text-blue-500 w-4"></i> Mon–Sat, 9AM – 6PM IST</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2026 World Vision Ophthalmic Pvt. Ltd. · All rights reserved.</div>
+    </footer>
 
     <!-- BOOTSTRAP JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -204,6 +383,5 @@
 
     <!-- js Links -->
      <script src="../Pages/index.js"></script>
-
   </body>
 </html>
