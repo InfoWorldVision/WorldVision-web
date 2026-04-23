@@ -183,6 +183,14 @@
   .footsoci{
     justify-content: space-around;
   }
+  .breadcrumb{
+    position: static;
+    left: auto;
+    transform: none;
+  }
+  .hero{
+    padding-top: 1.5rem;
+  }
 }
 
 @media print {
