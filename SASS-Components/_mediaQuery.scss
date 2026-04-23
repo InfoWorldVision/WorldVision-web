@@ -46,6 +46,10 @@
   .stats-bar  { grid-template-columns: 1fr 1fr; }
   .trust-bar  { grid-template-columns: 1fr; }
   .hero       { grid-template-columns: 1fr; }
+  .calc-wrap { grid-template-columns: 1fr; }
+  .toric-hero { grid-template-columns: 1fr; }
+  .info-grid { grid-template-columns: 1fr 1fr; }
+  .result-highlight { grid-template-columns: 1fr 1fr; }
 }
 
 /* Mobile */
@@ -127,6 +131,9 @@
   .stats-bar  { grid-template-columns: 1fr 1fr; }
   .nav-links  { display: none; }
   .card-scene { height: 460px; }
+  .info-grid { grid-template-columns: 1fr; }
+  .field-row, .field-row-3 { grid-template-columns: 1fr; }
+  .result-highlight { grid-template-columns: 1fr; }
 }
 
 /* Small mobile */
@@ -176,4 +183,12 @@
   .footsoci{
     justify-content: space-around;
   }
+}
+
+@media print {
+  .topnav, .toric-hero, .calc-card:first-child, .info-section, .ifu-section, .footer-bottom,
+  .btn-row, .print-row, .sp-tabs { display: none !important; }
+  .calc-wrap { grid-template-columns: 1fr; }
+  .results-panel { display: block !important; }
+  body { background: white; color: black; }
 }

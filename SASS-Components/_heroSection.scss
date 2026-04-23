@@ -132,3 +132,59 @@
     color: var(--neu-muted);
     max-width: 540px;
 }
+
+// Toric-Calculator
+.toric-hero {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding:  2.5rem 2rem 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 2rem;
+
+  &-eyebrow{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 14px;
+    border-radius: 50px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    color: var(--neu-accent);
+    background: linear-gradient(145deg, #eef1f5, #d8dce4);
+    box-shadow: 3px 3px 8px var(--neu-dark), -3px -3px 8px var(--neu-light);
+    margin-bottom: 1rem;
+    
+    & .pulse{
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--neu-accent2);
+      animation: pulse 2s infinite;
+    }
+  }
+  & h1{
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.4rem, 5vw, 3.5rem);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: var(--neu-text);
+    margin-bottom: 1.1rem;
+
+    & em {
+      font-style: italic;
+      color: var(--neu-accent);
+    }
+  }
+  &-desc{
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--neu-muted);
+    max-width: 540px;
+  }
+}

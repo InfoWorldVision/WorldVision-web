@@ -181,3 +181,52 @@ html.dark .nav-logo img {
 html.dark .nav-logo-text {
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.28);
 }
+
+html.dark .calc-card {
+  background: linear-gradient(145deg, #252b3b, #191e2c);
+  box-shadow: 8px 8px 18px var(--neu-dark), -8px -8px 18px var(--neu-light);
+}
+
+html.dark .card-section-title { border-bottom-color: rgba(255,255,255,0.06); }
+
+html.dark .neu-input {
+  background: linear-gradient(145deg, #191e2c, #252b3b);
+  color: var(--neu-text);
+}
+
+html.dark .neu-select {
+  background-color: #191e2c;
+  color: var(--neu-text);
+}
+
+html.dark .eye-btn {
+  background: linear-gradient(145deg, #191e2c, #252b3b);
+}
+
+html.dark .cyl-table th { background: linear-gradient(145deg, #252b3b, #191e2c); }
+
+html.dark .cyl-table td { border-bottom-color: rgba(255,255,255,0.04); }
+
+
+html.dark .btn-clear {
+  background: linear-gradient(145deg, #252b3b, #191e2c);
+}
+
+html.dark .result-section-title { border-bottom-color: rgba(255,255,255,0.06); }
+
+html.dark .result-row { border-bottom-color: rgba(255,255,255,0.05); }
+
+html.dark .btn-print { background: linear-gradient(145deg, #252b3b, #191e2c); }
+
+html.dark .results-empty-icon { background: linear-gradient(145deg, #252b3b, #191e2c); }
+
+html.dark .sp-tab {
+  background: linear-gradient(145deg, #191e2c, #252b3b);
+}
+
+html.dark .info-card {
+  background: linear-gradient(145deg, #252b3b, #191e2c);
+  box-shadow: 6px 6px 14px var(--neu-dark), -6px -6px 14px var(--neu-light);
+}
+
+html.dark .footer-bottom { border-top-color: rgba(255,255,255,0.07); }

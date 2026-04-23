@@ -6,6 +6,7 @@
 @import "../SASS-Components/heroSection";
 @import "../SASS-Components/statsBar";
 @import "../SASS-Components/sections";
+@import "../SASS-Components/toric-calculator";
 @import "../SASS-Components/mediaQuery";
 @import "../SASS-Components/footer";
 @import "../SASS-Components/keyframesAni";
@@ -17,6 +18,7 @@ body {
     background: var(--neu-bg);
     color: var(--neu-text);
     min-height: 100vh;
+    transition: background 0.35s ease, color 0.35s ease;
 }
 
 body.menu-open {

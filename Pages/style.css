@@ -240,6 +240,16 @@ html.dark {
   animation-delay: 0.4s;
 }
 
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .subtitle {
   color: #cd79b2 !important;
 }
@@ -338,6 +348,7 @@ html.dark {
 
 .topnav {
   position: sticky;
+  height: 64px;
   top: 0;
   z-index: 100;
   background: rgba(232, 236, 240, 0.92);
@@ -347,6 +358,7 @@ html.dark {
 
 .nav-inner {
   max-width: 1200px;
+  height: 100%;
   margin: 0 auto;
   padding: 0 2rem;
   display: flex;
@@ -690,6 +702,58 @@ html.dark {
 
 .hero-desc {
   font-size: 15px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--neu-muted);
+  max-width: 540px;
+}
+
+.toric-hero {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 2rem;
+}
+.toric-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 14px;
+  border-radius: 50px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  color: var(--neu-accent);
+  background: linear-gradient(145deg, #eef1f5, #d8dce4);
+  box-shadow: 3px 3px 8px var(--neu-dark), -3px -3px 8px var(--neu-light);
+  margin-bottom: 1rem;
+}
+.toric-hero-eyebrow .pulse {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--neu-accent2);
+  animation: pulse 2s infinite;
+}
+.toric-hero h1 {
+  font-family: "DM Serif Display", serif;
+  font-size: clamp(2.4rem, 5vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--neu-text);
+  margin-bottom: 1.1rem;
+}
+.toric-hero h1 em {
+  font-style: italic;
+  color: var(--neu-accent);
+}
+.toric-hero-desc {
+  font-size: 14px;
   font-weight: 300;
   line-height: 1.75;
   color: var(--neu-muted);
@@ -1643,6 +1707,18 @@ html.dark {
   .hero {
     grid-template-columns: 1fr;
   }
+  .calc-wrap {
+    grid-template-columns: 1fr;
+  }
+  .toric-hero {
+    grid-template-columns: 1fr;
+  }
+  .info-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .result-highlight {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 /* Mobile */
 @media (max-width: 768px) {
@@ -1713,6 +1789,15 @@ html.dark {
   .card-scene {
     height: 460px;
   }
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+  .field-row, .field-row-3 {
+    grid-template-columns: 1fr;
+  }
+  .result-highlight {
+    grid-template-columns: 1fr;
+  }
 }
 /* Small mobile */
 @media (max-width: 480px) {
@@ -1746,13 +1831,29 @@ html.dark {
     justify-content: space-around;
   }
 }
+@media print {
+  .topnav, .toric-hero, .calc-card:first-child, .info-section, .ifu-section, .footer-bottom,
+  .btn-row, .print-row, .sp-tabs {
+    display: none !important;
+  }
+  .calc-wrap {
+    grid-template-columns: 1fr;
+  }
+  .results-panel {
+    display: block !important;
+  }
+  body {
+    background: white;
+    color: black;
+  }
+}
 body {
   /* fallback medical blue */
   background-color: #cee5f0;
   width: 100%;
   overflow-x: hidden;
   overflow-y: auto;
-  font-family: "Poppins", sans-serif;
+  font-family: "DM Sans", system-ui, sans-serif;
   /* soft medical gradient */
   background-image: linear-gradient(to bottom, #eaf4fa 0%, #d6ebf6 40%, #c7e1f0 70%, #bddbea 100%);
   background-attachment: fixed;
