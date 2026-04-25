@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="World Vision Hydrophobic IOL — USA medical-grade acrylic, &lt;0.5% water, zero glistening. Available in Monofocal, Multifocal, Toric and 3-Piece designs."/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="icon" href="../Multimedia/favicon.ico" type="image/x-icon"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <link rel="stylesheet" href="../Pages/nextStyle.css"/>
+    <title>Hydrophobic IOL — World Vision Ophthalmic</title>
+</head>
+<body>
+    <header>
+        <!-- NavBar -->
+      <nav class="topnav" role="navigation" aria-label="Main navigation">
+        <div class="nav-inner">
+          <div class="relative flex items-center justify-center w-full lg:w-auto">
+            <button
+              id="menuToggle"
+              class="lg:hidden absolute left-0 top-1/2 -translate-y-1/2 w-11 h-11 flex items-center justify-center rounded-xl bg-white/70 backdrop-blur-md border border-white/60 text-[18px] text-[#0055a5] shadow-[4px_4px_10px_rgba(184,190,200,0.8),-4px_-4px_10px_rgba(255,255,255,0.9)]"
+              aria-label="Open menu"
+              type="button" >
+              <i class="fa-solid fa-bars"></i>
+            </button>
+            <a
+              href="../Pages/index.html"
+              class="nav-logo mx-auto"
+              aria-label="world vision Home" >
+              <div class="nav-logo-mark flex gap-3 items-center">
+                <img
+                  src="../Multimedia/WVO_Logo1.png"
+                  style="width: 48px; height: 48px"
+                  class="animate__animated animate__fadeIn animate__slow" />
+                <div class="flex flex-col leading-tight nav-logo-text">
+                  <span class="font-semibold text-2xl tracking-wide">World Vision</span>
+                  <span class="subtitle text-xs tracking-widest uppercase">
+                    Ophthalmic Pvt. Ltd.
+                  </span>
+                </div>
+              </div>
+            </a>
+            <!-- Theme toggle visible on mobile too -->
+            <button
+              class="theme-toggle mobile-theme-toggle absolute right-0 top-1/2 -translate-y-1/2 lg:hidden"
+              id="theme-toggle-mobile"
+              aria-label="Toggle dark mode"
+              aria-pressed="false"
+              title="Toggle dark mode"
+              type="button" >
+              <svg
+                class="icon-sun"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke-width="2"
+                stroke-linecap="round"
+                aria-hidden="true" >
+                <circle cx="12" cy="12" r="5" />
+                <line x1="12" y1="1" x2="12" y2="3" />
+                <line x1="12" y1="21" x2="12" y2="23" />
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                <line x1="1" y1="12" x2="3" y2="12" />
+                <line x1="21" y1="12" x2="23" y2="12" />
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+              </svg>
+              <svg
+                class="icon-moon"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke-width="2"
+                stroke-linecap="round"
+                aria-hidden="true" >
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Navigation Links -->
+          <ul class="nav-links hidden lg:flex">
+            <li><a href="../Pages/index.html">Home</a></li>
+            <li class="flex flex-row items-center justify-center mr-3">
+              <a href="../Pages/otherProducts.html">Our Products</a>
+              <i class="fa-solid fa-angle-right" style="color: #1d4ed8;"></i>
+            </li>
+            <li><a href="../Pages/iol-page.html" class="active">IOL | Hydrophobic</a></li>
+            <li>
+              <a href="../Pages/blog.html">Blog</a>
+            </li>
+            <li><a href="../Pages/gallery.html">Gallery</a></li>
+            <li><a href="../Pages/contactUs.html">Contact Us</a></li>
+          </ul>
+
+          <div class="desktop-actions hidden lg:flex items-center gap-[25px]">
+            <button
+              class="theme-toggle"
+              id="theme-toggle"
+              aria-label="Toggle dark mode"
+              aria-pressed="false"
+              title="Toggle dark mode">
+              <svg
+                class="icon-sun"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke-width="2"
+                stroke-linecap="round"
+                aria-hidden="true" >
+                <circle cx="12" cy="12" r="5" />
+                <line x1="12" y1="1" x2="12" y2="3" />
+                <line x1="12" y1="21" x2="12" y2="23" />
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                <line x1="1" y1="12" x2="3" y2="12" />
+                <line x1="21" y1="12" x2="23" y2="12" />
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+              </svg>
+              <svg
+                class="icon-moon"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke-width="2"
+                stroke-linecap="round"
+                aria-hidden="true"
+              >
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+              </svg>
+            </button>
+            <a href="../Pages/toricCalculator.html" class="nav-cta">Toric Calculator</a>
+          </div>
+        </div>
+      </nav>
+      <!-- Mobile Overlay -->
+      <div id="menuOverlay" class="fixed inset-0 bg-black/30 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 z-[1200] lg:hidden"></div>
+
+      <!-- Mobile Drawer -->
+      <div id="mobileMenu" class="fixed inset-y-0 left-0 w-72 max-w-[85vw] -translate-x-full transition-transform duration-300 ease-in-out z-[1300] lg:hidden" >
+        <div class="h-full px-5 pt-6 pb-8 bg-[rgba(232,236,240,0.96)] backdrop-blur-xl border-r border-white/60 shadow-[12px_0_30px_rgba(0,0,0,0.12)]">
+          <div class="flex items-center justify-between gap-3 mb-8">
+            <div class="flex gap-3 items-center">
+              <img src="../Multimedia/WVO_Logo1.png" class="w-11 h-11 object-contain" />
+              <div class="flex flex-col leading-tight nav-logo-text">
+                <span class="font-semibold text-lg tracking-wide">
+                  World Vision
+                </span>
+                <span class="subtitle text-[10px] tracking-widest uppercase">
+                  Ophthalmic Pvt. Ltd.
+                </span>
+              </div>
+            </div>
+
+            <button
+              id="closeMenu"
+              class="w-10 h-10 flex items-center justify-center rounded-xl bg-white/70 border border-white/60 text-[#0055a5] shadow-[4px_4px_10px_rgba(184,190,200,0.8),-4px_-4px_10px_rgba(255,255,255,0.9)]"
+              aria-label="Close menu"
+              type="button"
+            >
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+
+          <ul class="flex flex-col gap-3 text-[15px] font-medium">
+            <li><a href="../Pages/index.html" class="mobile-link">Home</a></li>
+            <li><a href="../Pages/otherProducts.html" class="mobile-link">Our Products</a></li>
+            <li><a href="../Pages/iol-page.html" class="mobile-link active">IOL | Hydrophobic</a></li>
+            <li>
+              <a href="../Pages/toricCalculator.html" class="mobile-link">
+                Toric Calculator
+              </a>
+            </li>
+            <li><a href="../Pages/gallery.html" class="mobile-link">Gallery</a></li>
+            <li><a href="../Pages/blog.html" class="mobile-link">Blog</a></li>
+            <li><a href="#" class="mobile-link">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- BreadCrumb -->
+      <div class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../Pages/index.html">Home</a>
+        <span class="sep">/</span>
+        <a href="#">Our Products</a>
+        <span class="sep">/</span>
+        <a href="../Pages/iol-page.html">Intraocular Lenses</a>
+        <span class="sep">/</span>
+        <span class="current">Hydrophobic IOL</span>
+      </div>
+    </header>
+    <main>
+      <!-- Hero Section -->
+      <section class="hydro-hero reveal" aria-labelledby="hydro-h1">
+        <!-- Left: text -->
+        <div>
+          <div class="hydro-eyebrow"><span class="pulse"></span>USA Medical Grade · Acrylic</div>
+          <h1 id="hydro-h1">Hydrophobic<br><em>IOL Range</em></h1>
+          <p class="hydro-hero-desc">
+            Engineered from USA-sourced medical-grade acrylic with less than 0.5% water content —
+            the only true hydrophobic material. Superior surface hardness, zero glistening,
+            and outstanding optical clarity for every surgical need.
+          </p>
+          <div class="hero-btn-row">
+            <a href="#models" class="hero-btn-iol-primary">
+              <i class="fa-solid fa-grid-2"></i> Explore Models
+            </a>
+            <a href="../Pages/iol-page.html" class="hero-btn-iol-ghost">
+              <i class="fa-solid fa-arrow-left" style="font-size:11px;"></i> All IOLs
+            </a>
+          </div>
+        </div>
+        
+        <!-- Right: large lens illustration -->
+        <div class="hydro-hero-visual" aria-hidden="true">
+          <div class="hydro-hero-lens">
+            <svg width="320" height="320" viewBox="0 0 320 320">
+              <!-- Outer glow rings -->
+              <circle cx="160" cy="160" r="148" fill="none" stroke="rgba(10,94,168,0.07)" stroke-width="1.5" stroke-dasharray="5 8"/>
+              <circle cx="160" cy="160" r="120" fill="none" stroke="rgba(10,94,168,0.1)"  stroke-width="1"/>
+              <!-- Haptics -->
+              <path d="M50 160 Q20 110 30 55"  fill="none" stroke="#0a5ea8" stroke-width="3.5" stroke-linecap="round" opacity="0.55"/>
+              <path d="M50 160 Q20 210 30 265" fill="none" stroke="#0a5ea8" stroke-width="3.5" stroke-linecap="round" opacity="0.55"/>
+              <path d="M270 160 Q300 110 290 55"  fill="none" stroke="#0a5ea8" stroke-width="3.5" stroke-linecap="round" opacity="0.55"/>
+              <path d="M270 160 Q300 210 290 265" fill="none" stroke="#0a5ea8" stroke-width="3.5" stroke-linecap="round" opacity="0.55"/>
+              <!-- Main optic body -->
+              <ellipse cx="160" cy="160" rx="112" ry="80" fill="rgba(10,94,168,0.07)" stroke="#0a5ea8" stroke-width="2.8"/>
+              <!-- Zone rings -->
+              <ellipse cx="160" cy="160" rx="82" ry="58"  fill="rgba(10,94,168,0.06)" stroke="#0a5ea8" stroke-width="1.6" stroke-dasharray="4 5"/>
+              <ellipse cx="160" cy="160" rx="52" ry="37"  fill="rgba(10,94,168,0.09)" stroke="#0a5ea8" stroke-width="1.3"/>
+              <ellipse cx="160" cy="160" rx="24" ry="17"  fill="rgba(10,94,168,0.18)" stroke="#0a5ea8" stroke-width="1"/>
+              <!-- Refraction lines -->
+              <line x1="120" y1="138" x2="100" y2="118" stroke="rgba(10,94,168,0.3)" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="160" y1="130" x2="160" y2="108" stroke="rgba(10,94,168,0.3)" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="200" y1="138" x2="220" y2="118" stroke="rgba(10,94,168,0.3)" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="120" y1="182" x2="100" y2="202" stroke="rgba(10,94,168,0.2)" stroke-width="1" stroke-linecap="round"/>
+              <line x1="200" y1="182" x2="220" y2="202" stroke="rgba(10,94,168,0.2)" stroke-width="1" stroke-linecap="round"/>
+              <!-- Centre dot -->
+              <circle cx="160" cy="160" r="7" fill="#0a5ea8" opacity="0.5"/>
+              <circle cx="160" cy="160" r="3" fill="#0a5ea8" opacity="0.8"/>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stats Bar -->
+      <div class="specs-strip">
+        <div class="specs-grid">
+          <div class="spec-pill reveal delay-1">
+            <div class="spec-pill-icon"><i class="fa-solid fa-flask-vial"></i></div>
+            <div class="spec-pill-num">&lt;0.5%</div>
+            <div class="spec-pill-label">Water Content</div>
+          </div>
+          <div class="spec-pill reveal delay-2">
+            <div class="spec-pill-icon"><i class="fa-solid fa-flag-usa"></i></div>
+            <div class="spec-pill-num">USA</div>
+            <div class="spec-pill-label">Raw Material Origin</div>
+          </div>
+          <div class="spec-pill reveal delay-3">
+            <div class="spec-pill-icon"><i class="fa-solid fa-ruler-horizontal"></i></div>
+            <div class="spec-pill-num">2.2mm</div>
+            <div class="spec-pill-label">Min Incision Size</div>
+          </div>
+          <div class="spec-pill reveal delay-4">
+            <div class="spec-pill-icon"><i class="fa-solid fa-layer-group"></i></div>
+            <div class="spec-pill-num">17+</div>
+            <div class="spec-pill-label">Lens Models</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sec-divider"><div class="sec-divider-line"></div></div>
+
+      <!-- Model Cards -->
+      <section class="page-section reveal" id="models">
+        <div class="section-eyebrow"><i class="fa-solid fa-grid-2" style="font-size:10px;"></i> Product Lines</div>
+        <h2 class="page-heading"><em>Four</em> design families</h2>
+        <p class="page-sub">Every model uses the same USA medical-grade hydrophobic acrylic base — available across monofocal, multifocal, toric, and 3-piece designs.</p>
+
+        <div class="models-grid">
+
+          <!-- MonoFocal -->
+          <a href="#" class="model-card reveal delay-1">
+            <div class="model-card-header">
+              <div class="model-card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><ellipse cx="12" cy="12" rx="10" ry="5"/></svg>
+              </div>
+              <div>
+                <span class="model-tag">Monofocal</span>
+                <h3>Monofocal IOL</h3>
+              </div>
+            </div>
+            <div class="model-card-body">
+              <p class="model-desc">Single focal point for crystal-clear distance vision. The most widely used IOL design globally — simple, reliable, and proven. Available in standard and aspheric optics.</p>
+              <div class="model-lens-list">
+                <span class="model-lens-chip">WVO ARC</span>
+                <span class="model-lens-chip">WVO ACE</span>
+                <span class="model-lens-chip">WVO ZEN</span>
+              </div>
+              <span class="model-card-cta">
+                View models <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </span>
+            </div>
+          </a>
+
+          <!-- MULTIFOCAL -->
+          <a href="#multifocal" class="model-card reveal delay-2">
+            <div class="model-card-header">
+              <div class="model-card-icon multifocal">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+              </div>
+              <div>
+                <span class="model-tag multifocal">Multifocal</span>
+                <h3>Multifocal IOL</h3>
+              </div>
+            </div>
+            <div class="model-card-body">
+              <p class="model-desc">Multiple focal points for full-range vision — near, intermediate and distance. Reduces spectacle dependence. Available in bifocal, EDOF and trifocal designs.</p>
+              <div class="model-lens-list">
+                <span class="model-lens-chip">WVO MULTIFOCAL</span>
+                <span class="model-lens-chip">WVO EDOF</span>
+                <span class="model-lens-chip">WVO YEDOF</span>
+                <span class="model-lens-chip">WVO TRIFLEX</span>
+                <span class="model-lens-chip">WVO TRYFLEX</span>
+              </div>
+              <span class="model-card-cta multifocal">
+                View models <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </span>
+            </div>
+          </a>
+
+          <!-- TORIC -->
+          <a href="#toric" class="model-card reveal delay-3">
+            <div class="model-card-header">
+              <div class="model-card-icon toric">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><ellipse cx="12" cy="12" rx="10" ry="5"/><line x1="12" y1="7" x2="12" y2="17"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
+              </div>
+              <div>
+                <span class="model-tag toric">Toric</span>
+                <h3>Toric IOL</h3>
+              </div>
+            </div>
+            <div class="model-card-body">
+              <p class="model-desc">Designed to correct pre-existing corneal astigmatism simultaneously with cataract removal. Available in monofocal toric, multifocal toric, EDOF toric, and trifocal toric options.</p>
+              <div class="model-lens-list">
+                <span class="model-lens-chip">WVO TORIC</span>
+                <span class="model-lens-chip">WVO TORYC</span>
+                <span class="model-lens-chip">WVO TORIC MF</span>
+                <span class="model-lens-chip">WVO TORIC EDOF</span>
+                <span class="model-lens-chip">WVO TRITORIC</span>
+              </div>
+              <span class="model-card-cta toric">
+                View models <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </span>
+            </div>
+          </a>
+
+          <!-- 3-PIECE -->
+          <a href="#piece3" class="model-card reveal delay-4">
+            <div class="model-card-header">
+              <div class="model-card-icon piece3">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/></svg>
+              </div>
+              <div>
+                <span class="model-tag piece3">3-Piece</span>
+                <h3>3-Piece IOL</h3>
+              </div>
+            </div>
+            <div class="model-card-body">
+              <p class="model-desc">Separate optic and haptic pieces for superior sulcus fixation. Ideal for complex cases, secondary IOL placement, or when in-the-bag fixation is not possible.</p>
+              <div class="model-lens-list">
+                <span class="model-lens-chip">WVO SULCO</span>
+                <span class="model-lens-chip">WVO SULCO-Y</span>
+              </div>
+              <span class="model-card-cta piece3">
+                View models <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- Material Science -->
+      <section class="page-section reveal">
+        <div class="section-eyebrow"><i class="fa-solid fa-atom" style="font-size:10px;"></i> Material Science</div>
+        <h2 class="page-heading">Why <em>Hydrophobic</em> matters</h2>
+        <p class="page-sub">Most competitors use materials with over 4% water content and merely call them hydrophobic. World Vision uses only genuine USA medical-grade acrylic with less than 0.5% water — the real standard.</p>
+
+        <div class="material-layout">
+          <div class="material-features">
+            <div class="material-feature">
+              <div class="mf-icon"><i class="fa-solid fa-droplet-slash"></i></div>
+              <div>
+                <div class="mf-title">Zero Glistening &amp; No Whitening</div>
+                <div class="mf-desc">The ultra-low water content eliminates microvacuoles that cause glistening — a known long-term visual degradation issue with inferior materials.</div>
+              </div>
+            </div>
+            <div class="material-feature">
+              <div class="mf-icon"><i class="fa-solid fa-shield-halved"></i></div>
+              <div>
+                <div class="mf-title">Superior Surface Hardness</div>
+                <div class="mf-desc">Harder surface compared to high-water acrylic means better stability in the capsular bag, less abrasion during insertion, and longer-lasting optical clarity.</div>
+              </div>
+            </div>
+            <div class="material-feature">
+              <div class="mf-icon"><i class="fa-solid fa-eye"></i></div>
+              <div>
+                <div class="mf-title">Low Refractive Index</div>
+                <div class="mf-desc">Specifically engineered low refractive index reduces the risk of dysphotopsia — glares and halos that compromise patient satisfaction post-surgery.</div>
+              </div>
+            </div>
+            <div class="material-feature">
+              <div class="mf-icon"><i class="fa-solid fa-sun"></i></div>
+              <div>
+                <div class="mf-title">UV &amp; Blue Light Filter</div>
+                <div class="mf-desc">Integrated UV absorber and blue light filtering chromophore protects the retina from high-energy wavelengths throughout the patient's lifetime.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Comparison card -->
+          <div class="material-visual">
+            <div class="material-neu-card">
+              <div class="material-neu-card-label"><i class="fa-solid fa-scale-balanced" style="margin-right:5px;"></i> Water Content Comparison</div>
+              <div class="material-compare">
+                <div class="compare-row">
+                  <span class="compare-label">World Vision WVO</span>
+                  <span class="compare-wv">&lt; 0.5%</span>
+                </div>
+                <div class="compare-row">
+                  <span class="compare-label">Generic "Hydrophobic"</span>
+                  <span class="compare-other">&gt; 4.0%</span>
+                </div>
+              </div>
+              <div style="width:100%;height:1px;background:rgba(0,0,0,0.07);margin:4px 0;"></div>
+              <div class="material-neu-card-label" style="margin-top:4px;"><i class="fa-solid fa-certificate" style="margin-right:5px;"></i> Certifications</div>
+              <div class="material-compare">
+                <div class="compare-row">
+                  <span class="compare-label">Biocompatibility</span>
+                  <span class="compare-wv"><i class="fa-solid fa-check" style="font-size:11px;"></i> ISO Tested</span>
+                </div>
+                <div class="compare-row">
+                  <span class="compare-label">UV Protection</span>
+                  <span class="compare-wv"><i class="fa-solid fa-check" style="font-size:11px;"></i> Built-in</span>
+                </div>
+                <div class="compare-row">
+                  <span class="compare-label">Blue Light Filter</span>
+                  <span class="compare-wv"><i class="fa-solid fa-check" style="font-size:11px;"></i> Built-in</span>
+                </div>
+                <div class="compare-row">
+                  <span class="compare-label">Raw Material Source</span>
+                  <span class="compare-wv">🇺🇸 USA</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Trust cards -->
+      <div class="divider"><div class="divider-line"></div></div>
+      <section class="trust-bar" aria-label="Quality assurances">
+        <div class="trust-card">
+          <div class="trust-icon" style="background:rgba(0,85,165,0.1);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0055a5" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <h3>ISO Certified Quality</h3>
+            <p>All Freedom IOLs undergo rigorous biocompatibility testing to international ISO medical device standards.</p>
+          </div>
+        </div>
+        <div class="trust-card">
+          <div class="trust-icon" style="background:rgba(10,122,80,0.1);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0a7a50" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          </div>
+          <div>
+            <h3>Premium Raw Materials</h3>
+            <p>Only the highest-grade acrylic and PMMA sourced from certified suppliers in the USA and United Kingdom.</p>
+          </div>
+        </div>
+        <div class="trust-card">
+          <div class="trust-icon" style="background:rgba(138,90,16,0.1);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8a5a10" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <div>
+            <h3>Superior Visual Outcomes</h3>
+            <p>High MTF ratings and low refractive index deliver exceptional light transmission, minimizing halos and glare.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- IFU section -->
+      <section class="ifu-section" aria-labelledby="ifu-title">
+        <div class="ifu-wrap">
+          <div class="ifu-header">
+            <div class="ifu-icon-wrap">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            </div>
+            <div>
+              <div class="ifu-title" id="ifu-title">Instructions for Use</div>
+              <div class="ifu-sub">Download the official IFU documentation for each product line</div>
+            </div>
+          </div>
+          <div class="ifu-grid">
+            <a href="#" class="ifu-link" aria-label="Download IFU for Hydrophobic IOLs">
+              <div class="ifu-link-icon hydro-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0a5ea8" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg>
+              </div>
+              <div class="ifu-link-text">
+                <strong>IFU — Hydrophobic IOLs</strong>
+                <span>PDF Document</span>
+              </div>
+            </a>
+            <a href="#" class="ifu-link" aria-label="Download IFU for Hydrophilic IOLs">
+              <div class="ifu-link-icon phil-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0a7a50" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg>
+              </div>
+              <div class="ifu-link-text">
+                <strong>IFU — Hydrophilic IOLs</strong>
+                <span>PDF Document</span>
+              </div>
+            </a>
+            <a href="#" class="ifu-link" aria-label="Download IFU for PMMA IOLs">
+              <div class="ifu-link-icon pmma-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8a5a10" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg>
+              </div>
+              <div class="ifu-link-text">
+                <strong>IFU — PMMA IOLs</strong>
+                <span>PDF Document</span>
+              </div>
+            </a>
+            <a href="#" class="ifu-link" aria-label="Download IFU for PMMA Rings">
+              <div class="ifu-link-icon pmma-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8a5a10" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg>
+              </div>
+              <div class="ifu-link-text">
+                <strong>IFU — PMMA Rings</strong>
+                <span>PDF Document</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- WhatsApp Floating Button -->
+      <a href="https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv" target="_blank" class="fixed bottom-10 right-6 z-[9999] group">
+        <div class="flex items-center gap-3">
+
+          <!-- Tooltip -->
+          <span class="hidden md:block bg-black text-white text-xs px-3 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition">
+            Chat with us
+          </span>
+
+          <!-- Button -->
+          <div class="w-14 h-14 flex items-center justify-center rounded-full bg-green-500 hover:bg-green-600 shadow-lg transition transform hover:scale-110">
+            <i class="fa-brands fa-whatsapp text-white text-2xl"></i>
+          </div>
+        </div>
+      </a>
+    </main>
+    <footer>
+      <div class="footer-bottom">© 2026 World Vision Ophthalmic Pvt. Ltd. · All rights reserved.</div>
+    </footer>
+    <script src="../Pages/nextPage.js"></script>
+</body>
+</html>

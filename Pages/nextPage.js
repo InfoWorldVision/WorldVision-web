@@ -149,18 +149,18 @@ document.querySelectorAll('.back-btn-flip').forEach(function(btn) {
   });
 });
 
-document.querySelectorAll('.back-btn-learn').forEach(function(btn) {
-  btn.addEventListener('click', function(e) {
-    e.stopPropagation();
-    const card = btn.dataset.card;
-    const urls = {
-      hydro: '',
-      phil:  '',
-      pmma:  ''
-    };
-    if (urls[card]) window.open(urls[card], '_blank', 'noopener');
-  });
-});
+// document.querySelectorAll('.back-btn-learn').forEach(function(btn) {
+//   btn.addEventListener('click', function(e) {
+//     e.stopPropagation();
+//     const card = btn.dataset.card;
+//     const urls = {
+//       hydro: '../Pages/hydrophobicIol.html',
+//       phil:  '',
+//       pmma:  ''
+//     };
+//     if (urls[card]) window.open(urls[card], '_blank', 'noopener');
+//   });
+// });
 
 // ── IFU links — prevent default since href="#" ──
 document.querySelectorAll('.ifu-link').forEach(function(link) {
