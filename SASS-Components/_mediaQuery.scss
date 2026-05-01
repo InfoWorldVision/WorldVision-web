@@ -25,12 +25,40 @@
     }
   }
 
-  .nav-links {
-    display: flex;
+  .nav-glass {
+    padding-inline: 1rem;
   }
 
-  .desktop-actions {
-    display: flex;
+  .logo-container {
+    gap: 0.5rem;
+  }
+
+  .logo-container img {
+    height: 44px;
+  }
+
+  .logo-container span:first-child {
+    font-size: 1.25rem;
+  }
+
+  .logo-container .subtitle {
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+  }
+
+  #navbar ul {
+    gap: 0.65rem;
+  }
+
+  .nav-item {
+    font-size: 12px;
+    padding: 7px 8px;
+  }
+
+  #navbar > .nav-glass > a {
+    padding: 0.6rem 0.8rem;
+    font-size: 12px;
+    gap: 0.35rem;
   }
 }
 
@@ -143,6 +171,40 @@
   .mfg-layout .mfg-photos .mfg-img {
     height: 180px;
   }
+  .calc-wrap {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    width: 100%;
+    padding: 0 1rem 3rem;
+    overflow-x: hidden;
+  }
+
+  .calc-card {
+    width: 100%;
+    max-width: 560px;
+    min-width: 0;
+    padding: 1.25rem;
+  }
+
+  .sp-tabs {
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .sp-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .sp-tab {
+    min-width: max-content;
+    flex: 0 0 auto;
+    padding-inline: 12px;
+  }
+
+  .field-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  
   .cards-grid { grid-template-columns: 1fr; }
   .stats-bar  { grid-template-columns: 1fr 1fr; }
   .nav-links  { display: none; }
