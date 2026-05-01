@@ -1,0 +1,1129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="World Vision Toric IOL Calculator — Calculate the ideal toric lens axis and cylinder power for your patient.">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="icon" href="../Multimedia/favicon.ico" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../Pages/nextStyle.css" />
+
+    <title>Toric IOL Calculator — World Vision</title>
+
+    <style>
+      /* ═══ TORIC PAGE SPECIFIC STYLES ═══ */
+
+      /* Page background — same as IOL page */
+      body {
+        font-family: 'DM Sans', system-ui, sans-serif;
+        background: var(--neu-bg);
+        color: var(--neu-text);
+        min-height: 100vh;
+        transition: background 0.35s ease, color 0.35s ease;
+      }
+
+      /* ── NAV already in nextStyle.css ── */
+      .topnav { height: 64px; display: flex; align-items: center; }
+      .nav-inner { height: 100%; }
+
+      /* ── HERO ── */
+      .toric-hero {
+        max-width: 1200px; margin: 0 auto;
+        padding: 2.5rem 2rem 1.5rem;
+        display: grid; grid-template-columns: 1fr auto;
+        align-items: center; gap: 2rem;
+      }
+      .toric-hero-eyebrow {
+        display: inline-flex; align-items: center; gap: 8px;
+        padding: 5px 14px; border-radius: 50px;
+        font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
+        text-transform: uppercase; color: var(--neu-accent);
+        background: linear-gradient(145deg, #eef1f5, #d8dce4);
+        box-shadow: 3px 3px 8px var(--neu-dark), -3px -3px 8px var(--neu-light);
+        margin-bottom: 0.8rem;
+      }
+      .toric-hero-eyebrow .pulse {
+        width: 7px; height: 7px; border-radius: 50%;
+        background: var(--neu-accent2);
+        animation: pulse 2s infinite;
+      }
+      .toric-hero h1 {
+        font-family: 'DM Serif Display', serif;
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 400; line-height: 1.1;
+        color: var(--neu-text); margin-bottom: 0.6rem;
+        letter-spacing: -0.02em;
+      }
+      .toric-hero h1 em { font-style: italic; color: var(--neu-accent); }
+      .toric-hero-desc {
+        font-size: 14px; font-weight: 300; line-height: 1.7;
+        color: var(--neu-muted); max-width: 520px;
+      }
+
+      /* ── CALCULATOR LAYOUT ── */
+      .calc-wrap {
+        max-width: 1200px; margin: 0 auto;
+        padding: 0 2rem 4rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+        align-items: start;
+      }
+
+      /* ── GLASS CARD — base style (reuse iol-page pattern) ── */
+      .calc-card {
+        background: linear-gradient(145deg, #eef1f5, #d8dce4);
+        box-shadow: 8px 8px 18px var(--neu-dark), -8px -8px 18px var(--neu-light);
+        border-radius: 28px;
+        padding: 2rem;
+        transition: background 0.35s ease, box-shadow 0.35s ease;
+      }
+      html.dark .calc-card {
+        background: linear-gradient(145deg, #252b3b, #191e2c);
+        box-shadow: 8px 8px 18px var(--neu-dark), -8px -8px 18px var(--neu-light);
+      }
+
+      .card-section-title {
+        font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
+        text-transform: uppercase; color: var(--neu-muted);
+        display: flex; align-items: center; gap: 10px;
+        margin-bottom: 1.5rem; padding-bottom: 0.75rem;
+        border-bottom: 0.5px solid rgba(0,0,0,0.08);
+      }
+      html.dark .card-section-title { border-bottom-color: rgba(255,255,255,0.06); }
+      .card-section-title .title-icon {
+        width: 30px; height: 30px; border-radius: 9px;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 14px;
+        background: rgba(0,85,165,0.1); color: var(--neu-accent);
+      }
+
+      /* ── FORM FIELDS ── */
+      .field-group { margin-bottom: 1.1rem; }
+      .field-label {
+        display: block; font-size: 12px; font-weight: 500;
+        color: var(--neu-muted); margin-bottom: 6px;
+        letter-spacing: 0.02em;
+      }
+      .field-hint {
+        font-size: 10px; color: var(--neu-muted); opacity: 0.7;
+        display: block; margin-top: 3px;
+      }
+      .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+      .field-row-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+
+      /* Neumorphic inset input */
+      .neu-input {
+        width: 100%;
+        padding: 10px 14px;
+        border-radius: 12px; border: none;
+        font-family: 'DM Sans', sans-serif;
+        font-size: 13.5px; font-weight: 400;
+        color: var(--neu-text);
+        background: linear-gradient(145deg, #d8dce4, #eef1f5);
+        box-shadow: inset 4px 4px 8px var(--neu-dark), inset -4px -4px 8px var(--neu-light);
+        outline: none;
+        transition: all 0.25s;
+        -webkit-appearance: none;
+      }
+      html.dark .neu-input {
+        background: linear-gradient(145deg, #191e2c, #252b3b);
+        color: var(--neu-text);
+      }
+      .neu-input:focus {
+        box-shadow: inset 4px 4px 8px var(--neu-dark), inset -4px -4px 8px var(--neu-light),
+                    0 0 0 2px var(--neu-accent);
+      }
+      .neu-input::placeholder { color: var(--neu-muted); opacity: 0.6; }
+      .neu-input.error { box-shadow: inset 4px 4px 8px var(--neu-dark), inset -4px -4px 8px var(--neu-light), 0 0 0 2px #e24b4a; }
+
+      /* Select */
+      .neu-select {
+        width: 100%; padding: 10px 14px;
+        border-radius: 12px; border: none;
+        font-family: 'DM Sans', sans-serif;
+        font-size: 13.5px; font-weight: 400;
+        color: var(--neu-text);
+        background: linear-gradient(145deg, #d8dce4, #eef1f5);
+        box-shadow: inset 4px 4px 8px var(--neu-dark), inset -4px -4px 8px var(--neu-light);
+        outline: none; cursor: pointer;
+        transition: all 0.25s;
+        -webkit-appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7585' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 14px center;
+        padding-right: 36px;
+      }
+      html.dark .neu-select {
+        background-color: #191e2c;
+        color: var(--neu-text);
+      }
+      .neu-select:focus { box-shadow: inset 4px 4px 8px var(--neu-dark), inset -4px -4px 8px var(--neu-light), 0 0 0 2px var(--neu-accent); }
+
+      /* Eye toggle */
+      .eye-toggle { display: flex; gap: 10px; }
+      .eye-btn {
+        flex: 1; padding: 10px; border-radius: 12px; border: none;
+        font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500;
+        cursor: pointer; transition: all 0.25s;
+        background: linear-gradient(145deg, #d8dce4, #eef1f5);
+        box-shadow: inset 4px 4px 8px var(--neu-dark), inset -4px -4px 8px var(--neu-light);
+        color: var(--neu-muted);
+        display: flex; align-items: center; justify-content: center; gap: 6px;
+      }
+      html.dark .eye-btn {
+        background: linear-gradient(145deg, #191e2c, #252b3b);
+      }
+      .eye-btn.active {
+        background: linear-gradient(135deg, var(--neu-accent), var(--neu-accent2));
+        box-shadow: 3px 3px 10px rgba(0,85,165,0.35), -1px -1px 4px rgba(255,255,255,0.6);
+        color: white;
+      }
+
+      /* ── CYLINDER TABLE ── */
+      .cyl-table-wrap { margin: 1.2rem 0; overflow-x: auto; }
+      .cyl-table {
+        width: 100%; border-collapse: collapse;
+        font-size: 12px;
+      }
+      .cyl-table th {
+        padding: 9px 12px; text-align: center;
+        font-weight: 600; font-size: 10px;
+        text-transform: uppercase; letter-spacing: 0.08em;
+        color: var(--neu-muted);
+        background: linear-gradient(145deg, #eef1f5, #d8dce4);
+        box-shadow: inset 2px 2px 5px var(--neu-dark), inset -2px -2px 5px var(--neu-light);
+      }
+      html.dark .cyl-table th { background: linear-gradient(145deg, #252b3b, #191e2c); }
+      .cyl-table th:first-child { border-radius: 10px 0 0 10px; text-align: left; }
+      .cyl-table th:last-child  { border-radius: 0 10px 10px 0; }
+      .cyl-table td {
+        padding: 9px 12px; text-align: center;
+        border-bottom: 0.5px solid rgba(0,0,0,0.05);
+        font-size: 12.5px; color: var(--neu-text);
+      }
+      html.dark .cyl-table td { border-bottom-color: rgba(255,255,255,0.04); }
+      .cyl-table td:first-child { text-align: left; font-weight: 500; font-size: 11px; color: var(--neu-muted); }
+      .cyl-table tr:last-child td { border-bottom: none; }
+
+      /* ── BUTTONS ── */
+      .btn-row { display: flex; gap: 10px; margin-top: 1.5rem; }
+      .btn-calc {
+        flex: 1; padding: 13px 20px; border-radius: 14px; border: none;
+        font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600;
+        cursor: pointer; transition: all 0.25s;
+        background: linear-gradient(135deg, var(--neu-accent), var(--neu-accent2));
+        color: white;
+        box-shadow: 4px 4px 14px rgba(0,85,165,0.35), -1px -1px 6px rgba(255,255,255,0.5);
+        display: flex; align-items: center; justify-content: center; gap: 8px;
+      }
+      .btn-calc:hover { transform: translateY(-2px); box-shadow: 6px 6px 18px rgba(0,85,165,0.4); }
+      .btn-calc:active { transform: translateY(0); }
+      .btn-clear {
+        padding: 13px 20px; border-radius: 14px; border: none;
+        font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500;
+        cursor: pointer; transition: all 0.25s;
+        background: linear-gradient(145deg, #eef1f5, #d8dce4);
+        box-shadow: 4px 4px 10px var(--neu-dark), -4px -4px 10px var(--neu-light);
+        color: var(--neu-muted);
+      }
+      html.dark .btn-clear {
+        background: linear-gradient(145deg, #252b3b, #191e2c);
+      }
+      .btn-clear:hover { box-shadow: 6px 6px 14px var(--neu-dark), -6px -6px 14px var(--neu-light); }
+
+      /* ── RESULTS PANEL ── */
+      .results-panel {
+        display: none;
+        animation: fadeSlideUp 0.45s ease forwards;
+      }
+      .results-panel.visible { display: block; }
+      @keyframes fadeSlideUp {
+        from { opacity: 0; transform: translateY(16px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+
+      .result-section-title {
+        font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
+        text-transform: uppercase; color: var(--neu-muted);
+        margin-bottom: 1rem; padding-bottom: 0.6rem;
+        border-bottom: 0.5px solid rgba(0,0,0,0.08);
+        display: flex; align-items: center; gap: 8px;
+      }
+      html.dark .result-section-title { border-bottom-color: rgba(255,255,255,0.06); }
+
+      .result-highlight {
+        background: linear-gradient(135deg, var(--neu-accent), var(--neu-accent2));
+        border-radius: 20px; padding: 1.6rem;
+        margin-bottom: 1.2rem;
+        display: grid; grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+      }
+      .result-highlight-item { text-align: center; }
+      .result-highlight-label {
+        font-size: 10px; font-weight: 600; letter-spacing: 0.1em;
+        text-transform: uppercase; color: rgba(255,255,255,0.7);
+        margin-bottom: 4px;
+      }
+      .result-highlight-val {
+        font-family: 'DM Serif Display', serif;
+        font-size: 26px; font-weight: 400;
+        color: white; line-height: 1;
+      }
+      .result-highlight-unit { font-size: 13px; color: rgba(255,255,255,0.8); margin-top: 2px; }
+
+      .result-row {
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 9px 0;
+        border-bottom: 0.5px solid rgba(0,0,0,0.06);
+        font-size: 13px;
+      }
+      html.dark .result-row { border-bottom-color: rgba(255,255,255,0.05); }
+      .result-row:last-child { border-bottom: none; }
+      .result-row-label { color: var(--neu-muted); font-weight: 400; }
+      .result-row-val   { color: var(--neu-text); font-weight: 600; }
+
+      /* axis diagram */
+      .axis-diagram-wrap {
+        display: flex; flex-direction: column; align-items: center;
+        padding: 1rem 0 0.5rem;
+        gap: 6px;
+      }
+      .axis-diagram-label {
+        font-size: 11px; color: var(--neu-muted);
+        text-align: center; line-height: 1.4;
+      }
+
+      /* ── PRINT ACTIONS ── */
+      .print-row {
+        display: flex; gap: 10px; margin-top: 1.2rem;
+        flex-wrap: wrap;
+      }
+      .btn-print, .btn-email {
+        flex: 1; padding: 10px 16px; border-radius: 12px; border: none;
+        font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500;
+        cursor: pointer; transition: all 0.25s;
+        display: flex; align-items: center; justify-content: center; gap: 7px;
+      }
+      .btn-print {
+        background: linear-gradient(145deg, #eef1f5, #d8dce4);
+        box-shadow: 4px 4px 10px var(--neu-dark), -4px -4px 10px var(--neu-light);
+        color: var(--neu-text);
+      }
+      html.dark .btn-print { background: linear-gradient(145deg, #252b3b, #191e2c); }
+      .btn-print:hover { transform: translateY(-1px); }
+      .btn-email {
+        background: linear-gradient(135deg, #0a7a50, #0fa866);
+        color: white;
+        box-shadow: 3px 3px 10px rgba(10,122,80,0.3);
+      }
+      .btn-email:hover { transform: translateY(-1px); }
+
+      /* ── EMPTY STATE (no results yet) ── */
+      .results-empty {
+        display: flex; flex-direction: column;
+        align-items: center; justify-content: center;
+        padding: 2.5rem 1rem;
+        text-align: center;
+        gap: 12px;
+      }
+      .results-empty-icon {
+        width: 64px; height: 64px; border-radius: 20px;
+        background: linear-gradient(145deg, #eef1f5, #d8dce4);
+        box-shadow: 6px 6px 14px var(--neu-dark), -6px -6px 14px var(--neu-light);
+        display: flex; align-items: center; justify-content: center;
+        font-size: 26px; color: var(--neu-muted);
+      }
+      html.dark .results-empty-icon { background: linear-gradient(145deg, #252b3b, #191e2c); }
+      .results-empty p {
+        font-size: 13px; color: var(--neu-muted); line-height: 1.6; max-width: 240px;
+      }
+
+      /* ── SURGEON/PATIENT TABS ── */
+      .sp-tabs { display: flex; gap: 8px; margin-bottom: 1.5rem; }
+      .sp-tab {
+        flex: 1; padding: 9px; border-radius: 12px; border: none;
+        font-family: 'DM Sans', sans-serif; font-size: 12.5px; font-weight: 500;
+        cursor: pointer; transition: all 0.22s;
+        background: linear-gradient(145deg, #d8dce4, #eef1f5);
+        box-shadow: inset 3px 3px 7px var(--neu-dark), inset -3px -3px 7px var(--neu-light);
+        color: var(--neu-muted);
+      }
+      html.dark .sp-tab {
+        background: linear-gradient(145deg, #191e2c, #252b3b);
+      }
+      .sp-tab.active {
+        background: linear-gradient(135deg, var(--neu-accent), var(--neu-accent2));
+        box-shadow: 3px 3px 10px rgba(0,85,165,0.3), -1px -1px 5px rgba(255,255,255,0.5);
+        color: white;
+      }
+      .sp-panel { display: none; }
+      .sp-panel.active { display: block; }
+
+      /* ── HOW IT WORKS INFO ── */
+      .info-section {
+        max-width: 1200px; margin: 0 auto;
+        padding: 0 2rem 4rem;
+      }
+      .info-grid {
+        display: grid; grid-template-columns: repeat(3, 1fr);
+        gap: 18px; margin-top: 2rem;
+      }
+      .info-card {
+        background: linear-gradient(145deg, #eef1f5, #d8dce4);
+        box-shadow: 6px 6px 14px var(--neu-dark), -6px -6px 14px var(--neu-light);
+        border-radius: 20px; padding: 1.4rem;
+        transition: background 0.35s, box-shadow 0.35s;
+      }
+      html.dark .info-card {
+        background: linear-gradient(145deg, #252b3b, #191e2c);
+        box-shadow: 6px 6px 14px var(--neu-dark), -6px -6px 14px var(--neu-light);
+      }
+      .info-step {
+        width: 32px; height: 32px; border-radius: 10px;
+        background: linear-gradient(135deg, var(--neu-accent), var(--neu-accent2));
+        color: white; font-size: 14px; font-weight: 600;
+        display: flex; align-items: center; justify-content: center;
+        margin-bottom: 0.8rem;
+        box-shadow: 3px 3px 8px rgba(0,85,165,0.3);
+      }
+      .info-card h3 { font-size: 14px; font-weight: 600; color: var(--neu-text); margin-bottom: 0.4rem; }
+      .info-card p  { font-size: 12.5px; line-height: 1.65; color: var(--neu-muted); }
+
+      /* ── IFU STRIP (reused from iol-page) ── */
+      .ifu-section { max-width: 1200px; margin: 0 auto; padding: 0 2rem 4rem; }
+
+      /* ── FOOTER ── */
+      .footer-bottom {
+        text-align: center; padding: 1.5rem 2rem;
+        font-size: 12px; color: var(--neu-muted);
+        border-top: 0.5px solid rgba(0,0,0,0.07);
+      }
+      html.dark .footer-bottom { border-top-color: rgba(255,255,255,0.07); }
+
+      /* ── VALIDATION ── */
+      .error-msg {
+        font-size: 11px; color: #e24b4a;
+        margin-top: 4px; display: none;
+      }
+      .error-msg.visible { display: block; }
+
+      /* ── RESPONSIVE ── */
+      @media (max-width: 900px) {
+        .calc-wrap { grid-template-columns: 1fr; }
+        .toric-hero { grid-template-columns: 1fr; }
+        .info-grid { grid-template-columns: 1fr 1fr; }
+        .result-highlight { grid-template-columns: 1fr 1fr; }
+      }
+      @media (max-width: 560px) {
+        .info-grid { grid-template-columns: 1fr; }
+        .field-row, .field-row-3 { grid-template-columns: 1fr; }
+        .result-highlight { grid-template-columns: 1fr; }
+      }
+
+      /* ── SECTION DIVIDER ── */
+      .sec-divider { max-width: 1200px; margin: 0 auto 2rem; padding: 0 2rem; }
+      .sec-divider-line { height: 1px; background: linear-gradient(90deg, transparent, var(--neu-dark) 30%, var(--neu-dark) 70%, transparent); opacity: 0.3; }
+
+      /* ── PRINT STYLES ── */
+      @media print {
+        .topnav, .toric-hero, .calc-card:first-child, .info-section, .ifu-section, .footer-bottom,
+        .btn-row, .print-row, .sp-tabs { display: none !important; }
+        .calc-wrap { grid-template-columns: 1fr; }
+        .results-panel { display: block !important; }
+        body { background: white; color: black; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- ═══ NAV ═══ -->
+    <header>
+      <nav class="topnav" role="navigation" aria-label="Main navigation">
+        <div class="nav-inner">
+          <div class="relative flex items-center justify-center w-full lg:w-auto">
+            <button id="menuToggle" class="lg:hidden absolute left-0 top-1/2 -translate-y-1/2 w-11 h-11 flex items-center justify-center rounded-xl bg-white/70 backdrop-blur-md border border-white/60 text-[18px] text-[#0055a5] shadow-[4px_4px_10px_rgba(184,190,200,0.8),-4px_-4px_10px_rgba(255,255,255,0.9)]" aria-label="Open menu" type="button">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+            <a href="../Pages/index.html" class="nav-logo mx-auto" aria-label="World Vision Home">
+              <div class="nav-logo-mark flex gap-3 items-center">
+                <img src="../Multimedia/WVO_Logo1.png" style="width:48px;height:48px" class="animate__animated animate__fadeIn animate__slow" />
+                <div class="flex flex-col leading-tight nav-logo-text">
+                  <span class="font-semibold text-2xl tracking-wide">World Vision</span>
+                  <span class="subtitle text-xs tracking-widest uppercase">Ophthalmic Pvt. Ltd.</span>
+                </div>
+              </div>
+            </a>
+            <button class="theme-toggle mobile-theme-toggle absolute right-0 top-1/2 -translate-y-1/2 lg:hidden" id="theme-toggle-mobile" aria-label="Toggle dark mode" aria-pressed="false" type="button">
+              <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+              <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </button>
+          </div>
+
+          <ul class="nav-links hidden lg:flex">
+            <li><a href="../Pages/index.html">Home</a></li>
+            <li><a href="../Pages/iol-page.html">Intraocular Lenses</a></li>
+            <li><a href="../Pages/toric-calculator.html" class="active">Toric Calculator</a></li>
+            <li><a href="../Pages/blog.html">Blog</a></li>
+            <li><a href="../Pages/gallery.html">Gallery</a></li>
+            <li><a href="../Pages/contactUs.html">Contact Us</a></li>
+          </ul>
+
+          <div class="desktop-actions hidden lg:flex items-center gap-[25px]">
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">
+              <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+              <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </button>
+            <a href="../Pages/iol-page.html" class="nav-cta">Our IOL Range</a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Mobile Overlay -->
+      <div id="menuOverlay" class="fixed inset-0 bg-black/30 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 z-[1200] lg:hidden"></div>
+      <!-- Mobile Drawer -->
+      <div id="mobileMenu" class="fixed inset-y-0 left-0 w-72 max-w-[85vw] -translate-x-full transition-transform duration-300 ease-in-out z-[1300] lg:hidden">
+        <div class="h-full px-5 pt-6 pb-8 bg-[rgba(232,236,240,0.96)] backdrop-blur-xl border-r border-white/60 shadow-[12px_0_30px_rgba(0,0,0,0.12)]">
+          <div class="flex items-center justify-between gap-3 mb-8">
+            <div class="flex gap-3 items-center">
+              <img src="../Multimedia/WVO_Logo1.png" class="w-11 h-11 object-contain" />
+              <div class="flex flex-col leading-tight nav-logo-text">
+                <span class="font-semibold text-lg tracking-wide">World Vision</span>
+                <span class="subtitle text-[10px] tracking-widest uppercase">Ophthalmic Pvt. Ltd.</span>
+              </div>
+            </div>
+            <button id="closeMenu" class="w-10 h-10 flex items-center justify-center rounded-xl bg-white/70 border border-white/60 text-[#0055a5] shadow-[4px_4px_10px_rgba(184,190,200,0.8),-4px_-4px_10px_rgba(255,255,255,0.9)]" aria-label="Close menu" type="button">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+          <ul class="flex flex-col gap-3 text-[15px] font-medium">
+            <li><a href="../Pages/index.html" class="mobile-link">Home</a></li>
+            <li><a href="../Pages/iol-page.html" class="mobile-link">Intraocular Lenses</a></li>
+            <li><a href="../Pages/toric-calculator.html" class="mobile-link active">Toric Calculator</a></li>
+            <li><a href="../Pages/gallery.html" class="mobile-link">Gallery</a></li>
+            <li><a href="../Pages/blog.html" class="mobile-link">Blog</a></li>
+            <li><a href="../Pages/contactUs.html" class="mobile-link">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Breadcrumb -->
+      <div class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../Pages/index.html">Home</a>
+        <span class="sep">/</span>
+        <span class="current">Toric Calculator</span>
+      </div>
+    </header>
+
+    <main>
+
+      <!-- ═══ HERO ═══ -->
+      <div class="toric-hero reveal">
+        <div>
+          <div class="toric-hero-eyebrow"><span class="pulse"></span>Clinical Tool · IOL Planning</div>
+          <h1>Toric IOL <em>Calculator</em></h1>
+          <p class="toric-hero-desc">Calculate the optimal axis of placement and cylinder power for your patient's toric intraocular lens — powered by the Crossed-Cylinder Method.</p>
+        </div>
+        <div style="opacity:0.18;padding-right:1rem;" aria-hidden="true">
+          <svg width="130" height="130" viewBox="0 0 130 130">
+            <circle cx="65" cy="65" r="58" fill="none" stroke="var(--neu-accent)" stroke-width="1.5" stroke-dasharray="4 6"/>
+            <circle cx="65" cy="65" r="42" fill="none" stroke="var(--neu-accent)" stroke-width="1"/>
+            <circle cx="65" cy="65" r="26" fill="none" stroke="var(--neu-accent)" stroke-width="2.5"/>
+            <circle cx="65" cy="65" r="9"  fill="var(--neu-accent)" opacity="0.3"/>
+            <circle cx="65" cy="65" r="3.5" fill="var(--neu-accent)"/>
+            <line x1="65" y1="7" x2="65" y2="25" stroke="var(--neu-accent)" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="65" y1="105" x2="65" y2="123" stroke="var(--neu-accent)" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="7" y1="65" x2="25" y2="65" stroke="var(--neu-accent)" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="105" y1="65" x2="123" y2="65" stroke="var(--neu-accent)" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- ═══ CALCULATOR ═══ -->
+      <div class="calc-wrap">
+
+        <!-- LEFT: INPUT CARD -->
+        <div class="calc-card">
+
+          <!-- Surgeon / Patient Tabs -->
+          <div class="sp-tabs">
+            <button class="sp-tab active" data-tab="surgeon">
+              <i class="fa-solid fa-user-doctor" style="font-size:12px;margin-right:5px;"></i> Surgeon
+            </button>
+            <button class="sp-tab" data-tab="patient">
+              <i class="fa-solid fa-user" style="font-size:12px;margin-right:5px;"></i> Patient
+            </button>
+            <button class="sp-tab" data-tab="preop">
+              <i class="fa-solid fa-eye" style="font-size:12px;margin-right:5px;"></i> Pre-Op Data
+            </button>
+          </div>
+
+          <!-- SURGEON PANEL -->
+          <div class="sp-panel active" id="tab-surgeon">
+            <div class="card-section-title">
+              <div class="title-icon"><i class="fa-solid fa-user-doctor"></i></div>
+              Surgeon Details
+            </div>
+            <div class="field-group">
+              <label class="field-label" for="doctorName">Doctor Name</label>
+              <input class="neu-input" type="text" id="doctorName" placeholder="Dr. ..." autocomplete="off" />
+            </div>
+            <div class="field-group">
+              <label class="field-label" for="doctorEmail">Email Address</label>
+              <input class="neu-input" type="email" id="doctorEmail" placeholder="doctor@clinic.com" autocomplete="off" />
+            </div>
+            <div class="field-row">
+              <div class="field-group">
+                <label class="field-label" for="doctorPhone">Phone Number</label>
+                <input class="neu-input" type="tel" id="doctorPhone" placeholder="+91 ..." autocomplete="off" />
+              </div>
+              <div class="field-group">
+                <label class="field-label" for="clinicName">Clinic / Hospital</label>
+                <input class="neu-input" type="text" id="clinicName" placeholder="Clinic name" autocomplete="off" />
+              </div>
+            </div>
+          </div>
+
+          <!-- PATIENT PANEL -->
+          <div class="sp-panel" id="tab-patient">
+            <div class="card-section-title">
+              <div class="title-icon"><i class="fa-solid fa-user"></i></div>
+              Patient Details
+            </div>
+            <div class="field-row">
+              <div class="field-group">
+                <label class="field-label" for="patientName">Patient Name</label>
+                <input class="neu-input" type="text" id="patientName" placeholder="Full name" autocomplete="off" />
+              </div>
+              <div class="field-group">
+                <label class="field-label">Eye</label>
+                <div class="eye-toggle">
+                  <button class="eye-btn active" id="eyeLeft" type="button">
+                    <i class="fa-solid fa-eye" style="font-size:11px;"></i> Left OE
+                  </button>
+                  <button class="eye-btn" id="eyeRight" type="button">
+                    <i class="fa-solid fa-eye" style="font-size:11px;"></i> Right OD
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="field-row">
+              <div class="field-group">
+                <label class="field-label" for="iolPower">IOL Spherical Power (P-IOL)</label>
+                <select class="neu-select" id="iolPower">
+                  <option value="">Select power</option>
+                </select>
+                <span class="field-hint">Range: 6.0D – 30.0D in 0.5D steps</span>
+              </div>
+              <div class="field-group">
+                <label class="field-label" for="iolModel">IOL Model</label>
+                <select class="neu-select" id="iolModel">
+                  <option value="">Select model</option>
+                  <option value="FREEDOM_TORIC">Freedom Toric</option>
+                  <option value="FREEDOM_MF_TORIC">Freedom Multifocal Toric</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRE-OP DATA PANEL -->
+          <div class="sp-panel" id="tab-preop">
+            <div class="card-section-title">
+              <div class="title-icon"><i class="fa-solid fa-chart-line"></i></div>
+              Pre-Operative Keratometry
+            </div>
+
+            <div class="field-row">
+              <div class="field-group">
+                <label class="field-label" for="flatK">Flat K <small style="opacity:0.6;">(30–60 D)</small></label>
+                <input class="neu-input" type="number" id="flatK" placeholder="e.g. 44.50" min="30" max="60" step="0.01" autocomplete="off" />
+                <span class="error-msg" id="flatK-err">Must be between 30–60 D</span>
+              </div>
+              <div class="field-group">
+                <label class="field-label" for="flatAxis">Flat Axis <small style="opacity:0.6;">(0–180°)</small></label>
+                <input class="neu-input" type="number" id="flatAxis" placeholder="e.g. 0" min="0" max="180" step="1" autocomplete="off" />
+                <span class="error-msg" id="flatAxis-err">Must be 0–180°</span>
+              </div>
+            </div>
+            <div class="field-row">
+              <div class="field-group">
+                <label class="field-label" for="steepK">Steep K <small style="opacity:0.6;">(30–60 D)</small></label>
+                <input class="neu-input" type="number" id="steepK" placeholder="e.g. 47.50" min="30" max="60" step="0.01" autocomplete="off" />
+                <span class="error-msg" id="steepK-err">Must be between 30–60 D</span>
+              </div>
+              <div class="field-group">
+                <label class="field-label" for="steepAxis">Steep Axis <small style="opacity:0.6;">(0–180°)</small></label>
+                <input class="neu-input" type="number" id="steepAxis" placeholder="e.g. 90" min="0" max="180" step="1" autocomplete="off" />
+                <span class="error-msg" id="steepAxis-err">Must be 0–180°</span>
+              </div>
+            </div>
+            <div class="field-row">
+              <div class="field-group">
+                <label class="field-label" for="sia">SIA <small style="opacity:0.6;">(0–2 D)</small></label>
+                <input class="neu-input" type="number" id="sia" placeholder="e.g. 0.50" min="0" max="2" step="0.01" value="0.50" autocomplete="off" />
+                <span class="field-hint">Surgically Induced Astigmatism</span>
+                <span class="error-msg" id="sia-err">Must be 0–2 D</span>
+              </div>
+              <div class="field-group">
+                <label class="field-label" for="incision">Incision Location (IL) <small style="opacity:0.6;">(0–360°)</small></label>
+                <input class="neu-input" type="number" id="incision" placeholder="e.g. 120" min="0" max="360" step="1" autocomplete="off" />
+                <span class="error-msg" id="incision-err">Must be 0–360°</span>
+              </div>
+            </div>
+
+            <!-- Cylinder Power Table -->
+            <div class="card-section-title" style="margin-top:1.4rem;">
+              <div class="title-icon"><i class="fa-solid fa-table"></i></div>
+              Available Cylinder Powers
+            </div>
+            <div class="cyl-table-wrap">
+              <table class="cyl-table">
+                <thead>
+                  <tr>
+                    <th>Plane</th>
+                    <th>TORICT3</th>
+                    <th>TORICT4</th>
+                    <th>TORICT5</th>
+                    <th>TORICT6</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>IOL Plane</td>
+                    <td>3.75 D</td>
+                    <td>4.50 D</td>
+                    <td>5.25 D</td>
+                    <td>6.00 D</td>
+                  </tr>
+                  <tr>
+                    <td>Corneal Plane</td>
+                    <td>2.57 D</td>
+                    <td>3.08 D</td>
+                    <td>3.60 D</td>
+                    <td>4.11 D</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- CALCULATE / CLEAR BUTTONS -->
+          <div class="btn-row">
+            <button class="btn-calc" id="btnCalculate" type="button">
+              <i class="fa-solid fa-calculator"></i> Calculate
+            </button>
+            <button class="btn-clear" id="btnClear" type="button">
+              <i class="fa-solid fa-rotate-left"></i> Clear
+            </button>
+          </div>
+
+        </div><!-- end left card -->
+
+
+        <!-- RIGHT: RESULTS CARD -->
+        <div class="calc-card" id="resultsCard">
+
+          <!-- Empty State -->
+          <div class="results-empty" id="emptyState">
+            <div class="results-empty-icon">
+              <i class="fa-solid fa-eye"></i>
+            </div>
+            <p>Fill in the Pre-Op Data and click <strong>Calculate</strong> to see the recommended toric lens placement.</p>
+          </div>
+
+          <!-- Results Panel -->
+          <div class="results-panel" id="resultsPanel">
+
+            <div class="card-section-title">
+              <div class="title-icon" style="background:rgba(10,122,80,0.12);color:#0a7a50;">
+                <i class="fa-solid fa-check"></i>
+              </div>
+              Recommended Lens Placement
+            </div>
+
+            <!-- Big result highlight -->
+            <div class="result-highlight">
+              <div class="result-highlight-item">
+                <div class="result-highlight-label">Axis of Placement</div>
+                <div class="result-highlight-val" id="res-axis">—</div>
+                <div class="result-highlight-unit">degrees</div>
+              </div>
+              <div class="result-highlight-item">
+                <div class="result-highlight-label">Cylinder IOL Plane</div>
+                <div class="result-highlight-val" id="res-cyl-iol">—</div>
+                <div class="result-highlight-unit">Diopters</div>
+              </div>
+              <div class="result-highlight-item">
+                <div class="result-highlight-label">Cylinder Corneal Plane</div>
+                <div class="result-highlight-val" id="res-cyl-cor">—</div>
+                <div class="result-highlight-unit">Diopters</div>
+              </div>
+              <div class="result-highlight-item">
+                <div class="result-highlight-label">IOL Model Recommended</div>
+                <div class="result-highlight-val" id="res-model" style="font-size:16px;">—</div>
+                <div class="result-highlight-unit" id="res-model-sub"></div>
+              </div>
+            </div>
+
+            <!-- Axis Diagram -->
+            <div class="axis-diagram-wrap">
+              <svg id="axisDiagram" width="180" height="180" viewBox="0 0 180 180">
+                <circle cx="90" cy="90" r="76" fill="none" stroke="var(--neu-dark)" stroke-width="1.5"/>
+                <circle cx="90" cy="90" r="50" fill="none" stroke="var(--neu-dark)" stroke-width="0.8" stroke-dasharray="3 4" opacity="0.4"/>
+                <!-- axis markers -->
+                <line x1="90" y1="14" x2="90" y2="26" stroke="var(--neu-muted)" stroke-width="1.5"/>
+                <line x1="90" y1="154" x2="90" y2="166" stroke="var(--neu-muted)" stroke-width="1.5"/>
+                <line x1="14" y1="90" x2="26" y2="90" stroke="var(--neu-muted)" stroke-width="1.5"/>
+                <line x1="154" y1="90" x2="166" y2="90" stroke="var(--neu-muted)" stroke-width="1.5"/>
+                <text x="90" y="10" text-anchor="middle" fill="var(--neu-muted)" font-size="9">90°</text>
+                <text x="90" y="175" text-anchor="middle" fill="var(--neu-muted)" font-size="9">270°</text>
+                <text x="172" y="93" text-anchor="middle" fill="var(--neu-muted)" font-size="9">0°</text>
+                <text x="8" y="93" text-anchor="middle" fill="var(--neu-muted)" font-size="9">180°</text>
+                <!-- Axis line — rotated dynamically -->
+                <g id="axisLineGroup" transform="rotate(0, 90, 90)">
+                  <line x1="90" y1="14" x2="90" y2="166" stroke="var(--neu-accent)" stroke-width="2.5" stroke-linecap="round"/>
+                  <circle cx="90" cy="90" r="5" fill="var(--neu-accent)"/>
+                  <polygon points="90,14 86,24 94,24" fill="var(--neu-accent)"/>
+                </g>
+              </svg>
+              <div class="axis-diagram-label" id="axisDiagramLabel">Axis of placement</div>
+            </div>
+
+            <!-- Calculation breakdown -->
+            <div class="result-section-title" style="margin-top:1.2rem;">
+              <i class="fa-solid fa-chart-line" style="font-size:12px;"></i>
+              Calculation Details
+            </div>
+            <div id="calcDetails">
+              <div class="result-row">
+                <span class="result-row-label">Pre-Op Corneal Astigmatism</span>
+                <span class="result-row-val" id="res-preop-ast">—</span>
+              </div>
+              <div class="result-row">
+                <span class="result-row-label">Surgically Induced Astigmatism</span>
+                <span class="result-row-val" id="res-sia-val">—</span>
+              </div>
+              <div class="result-row">
+                <span class="result-row-label">Crossed-Cylinder Result</span>
+                <span class="result-row-val" id="res-crossed">—</span>
+              </div>
+              <div class="result-row">
+                <span class="result-row-label">Anticipated Residual Astigmatism</span>
+                <span class="result-row-val" id="res-residual">—</span>
+              </div>
+              <div class="result-row">
+                <span class="result-row-label">Steep Axis</span>
+                <span class="result-row-val" id="res-steep-ax">—</span>
+              </div>
+              <div class="result-row">
+                <span class="result-row-label">Flat Axis</span>
+                <span class="result-row-val" id="res-flat-ax">—</span>
+              </div>
+              <div class="result-row">
+                <span class="result-row-label">Incision</span>
+                <span class="result-row-val" id="res-incision-val">—</span>
+              </div>
+            </div>
+
+            <!-- Print / Email -->
+            <div class="print-row">
+              <button class="btn-print" id="btnPrint" type="button">
+                <i class="fa-solid fa-print"></i> Print Result
+              </button>
+              <button class="btn-email" id="btnEmail" type="button">
+                <i class="fa-solid fa-envelope"></i> Email to Surgeon
+              </button>
+            </div>
+
+          </div><!-- end results-panel -->
+
+        </div><!-- end right card -->
+      </div><!-- end calc-wrap -->
+
+
+      <!-- ═══ HOW IT WORKS ═══ -->
+      <div class="sec-divider"><div class="sec-divider-line"></div></div>
+      <div class="info-section">
+        <div style="max-width:500px;">
+          <div class="toric-hero-eyebrow" style="margin-bottom:0.8rem;"><span class="pulse"></span>Methodology</div>
+          <h2 style="font-family:'DM Serif Display',serif;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:400;color:var(--neu-text);margin-bottom:0.5rem;letter-spacing:-0.02em;">
+            How the <em style="color:var(--neu-accent);font-style:italic;">calculation works</em>
+          </h2>
+          <p style="font-size:14px;line-height:1.75;color:var(--neu-muted);">
+            The calculator uses the Crossed-Cylinder vector method to determine the optimal toric IOL axis and power, accounting for pre-operative corneal astigmatism and surgically induced astigmatism.
+          </p>
+        </div>
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="info-step">1</div>
+            <h3>Enter Pre-Op Keratometry</h3>
+            <p>Input the flat and steep K readings from your keratometry measurement, along with their respective axes (0–180°).</p>
+          </div>
+          <div class="info-card">
+            <div class="info-step">2</div>
+            <h3>Set SIA & Incision</h3>
+            <p>Enter your Surgically Induced Astigmatism value and the incision location in degrees. Typical SIA is 0.3–0.7 D.</p>
+          </div>
+          <div class="info-card">
+            <div class="info-step">3</div>
+            <h3>Get Axis & Cylinder</h3>
+            <p>The calculator applies the Crossed-Cylinder method and returns the optimal axis of placement and the closest available cylinder model.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ IFU STRIP (same as iol-page) ═══ -->
+      <div class="sec-divider"><div class="sec-divider-line"></div></div>
+      <section class="ifu-section" aria-labelledby="ifu-title2">
+        <div class="ifu-wrap">
+          <div class="ifu-header">
+            <div class="ifu-icon-wrap">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            </div>
+            <div>
+              <div class="ifu-title" id="ifu-title2">Instructions for Use</div>
+              <div class="ifu-sub">Download the official IFU documentation for each toric product</div>
+            </div>
+          </div>
+          <div class="ifu-grid">
+            <a href="#" class="ifu-link"><div class="ifu-link-icon hydro-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0a5ea8" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg></div><div class="ifu-link-text"><strong>IFU — Freedom Toric</strong><span>PDF Document</span></div></a>
+            <a href="#" class="ifu-link"><div class="ifu-link-icon phil-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0a7a50" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg></div><div class="ifu-link-text"><strong>IFU — Multifocal Toric</strong><span>PDF Document</span></div></a>
+            <a href="#" class="ifu-link"><div class="ifu-link-icon pmma-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8a5a10" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg></div><div class="ifu-link-text"><strong>Toric Calculation Guide</strong><span>PDF Document</span></div></a>
+            <a href="../Pages/iol-page.html" class="ifu-link"><div class="ifu-link-icon" style="background:rgba(0,85,165,0.1);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0055a5" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><ellipse cx="12" cy="12" rx="10" ry="5"/></svg></div><div class="ifu-link-text"><strong>View IOL Range</strong><span>All lens types</span></div></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- WhatsApp Float -->
+      <a href="https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv" target="_blank" class="fixed bottom-10 right-6 z-[9999] group">
+        <div class="flex items-center gap-3">
+          <span class="hidden md:block bg-black text-white text-xs px-3 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition">Chat with us</span>
+          <div class="w-14 h-14 flex items-center justify-center rounded-full bg-green-500 hover:bg-green-600 shadow-lg transition transform hover:scale-110">
+            <i class="fa-brands fa-whatsapp text-white text-2xl"></i>
+          </div>
+        </div>
+      </a>
+
+    </main>
+
+    <footer>
+      <div class="footer-bottom">© 2026 World Vision Ophthalmic Pvt. Ltd. · All rights reserved.</div>
+    </footer>
+
+    <script src="../Pages/nextPage.js"></script>
+
+    <script>
+    /* ═══════════════════════════════════════════════
+       TORIC CALCULATOR — Full Logic
+    ═══════════════════════════════════════════════ */
+
+    /* ── Cylinder models ── */
+    const CYL_MODELS = [
+      { name: 'TORICT3', iol: 3.75, corneal: 2.57 },
+      { name: 'TORICT4', iol: 4.50, corneal: 3.08 },
+      { name: 'TORICT5', iol: 5.25, corneal: 3.60 },
+      { name: 'TORICT6', iol: 6.00, corneal: 4.11 },
+    ];
+    
+
+    /* ── Populate IOL Power select ── */
+    (function() {
+      const sel = document.getElementById('iolPower');
+      for (let d = 6.0; d <= 30.0; d += 0.5) {
+        const opt = document.createElement('option');
+        opt.value = d.toFixed(1);
+        opt.textContent = d.toFixed(1) + ' D';
+        sel.appendChild(opt);
+      }
+    })();
+
+    /* ── Tab switching ── */
+    document.querySelectorAll('.sp-tab').forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        document.querySelectorAll('.sp-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.sp-panel').forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+      });
+    });
+
+    /* ── Eye toggle ── */
+    document.getElementById('eyeLeft').addEventListener('click', function() {
+      this.classList.add('active');
+      document.getElementById('eyeRight').classList.remove('active');
+    });
+    document.getElementById('eyeRight').addEventListener('click', function() {
+      this.classList.add('active');
+      document.getElementById('eyeLeft').classList.remove('active');
+    });
+
+    /* ── Degrees to radians ── */
+    function toRad(deg) { return deg * Math.PI / 180; }
+    function toDeg(rad) {
+      let d = rad * 180 / Math.PI;
+      while (d < 0) d += 180;
+      while (d >= 180) d -= 180;
+      return d;
+    }
+
+    /* ── Crossed-Cylinder Method ──
+       Converts cylinder @ axis into power vector components,
+       adds SIA vector, converts back.
+    */
+    function crossedCylinder(mag1, axis1, mag2, axis2) {
+      // Power vectors: J0 = -C/2 * cos(2α),  J45 = -C/2 * sin(2α)
+      const a1 = toRad(axis1), a2 = toRad(axis2);
+      const j0 = (-mag1 / 2) * Math.cos(2 * a1) + (-mag2 / 2) * Math.cos(2 * a2);
+      const j45 = (-mag1 / 2) * Math.sin(2 * a1) + (-mag2 / 2) * Math.sin(2 * a2);
+      const resultMag = 2 * Math.sqrt(j0 * j0 + j45 * j45);
+      const resultAxis = toDeg(0.5 * Math.atan2(j45, j0) + Math.PI / 2);
+      return { mag: resultMag, axis: resultAxis };
+    }
+
+    /* ── Find best matching cylinder model ── */
+    function bestCylModel(neededCorneal) {
+      let best = CYL_MODELS[0];
+      let minDiff = Math.abs(neededCorneal - CYL_MODELS[0].corneal);
+      CYL_MODELS.forEach(function(m) {
+        const diff = Math.abs(neededCorneal - m.corneal);
+        if (diff < minDiff) { minDiff = diff; best = m; }
+      });
+      return best;
+    }
+
+    /* ── Validate input ── */
+    function validate(id, min, max) {
+      const el = document.getElementById(id);
+      const err = document.getElementById(id + '-err');
+      const val = parseFloat(el.value);
+      if (isNaN(val) || val < min || val > max) {
+        el.classList.add('error');
+        if (err) err.classList.add('visible');
+        return null;
+      }
+      el.classList.remove('error');
+      if (err) err.classList.remove('visible');
+      return val;
+    }
+
+    /* ── CALCULATE ── */
+    document.getElementById('btnCalculate').addEventListener('click', function() {
+      // Switch to preop tab so user sees any errors
+      document.querySelectorAll('.sp-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.sp-panel').forEach(p => p.classList.remove('active'));
+      document.querySelector('[data-tab="preop"]').classList.add('active');
+      document.getElementById('tab-preop').classList.add('active');
+
+      const flatK   = validate('flatK', 30, 60);
+      const flatAx  = validate('flatAxis', 0, 180);
+      const steepK  = validate('steepK', 30, 60);
+      const steepAx = validate('steepAxis', 0, 180);
+      const sia     = validate('sia', 0, 2);
+      const il      = validate('incision', 0, 360);
+
+      if ([flatK, flatAx, steepK, steepAx, sia, il].some(v => v === null)) return;
+
+      /* Step 1: Corneal astigmatism */
+      const cornAst = steepK - flatK;
+      const cornAxis = steepAx; // steep axis = axis of corneal astigmatism
+
+      /* Step 2: SIA vector (at incision axis + 90 for against-the-rule) */
+      const siaAxis = il % 180;
+
+      /* Step 3: Crossed cylinder — combine corneal astigmatism with SIA */
+      const crossed = crossedCylinder(cornAst, cornAxis, sia, siaAxis);
+
+      /* Step 4: Best model */
+      const model = bestCylModel(crossed.mag);
+      const placementAxis = Math.round(crossed.axis);
+
+      /* Step 5: Residual (difference between crossed result and chosen model) */
+      const residual = crossedCylinder(crossed.mag, crossed.axis, model.corneal, crossed.axis + 90);
+
+      /* ── Populate results ── */
+      document.getElementById('res-axis').textContent      = placementAxis + '°';
+      document.getElementById('res-cyl-iol').textContent   = model.iol.toFixed(2);
+      document.getElementById('res-cyl-cor').textContent   = model.corneal.toFixed(2);
+
+      const modelDisplay = document.getElementById('iolModel').value || 'FREEDOM TORIC';
+      document.getElementById('res-model').textContent     = model.name;
+      document.getElementById('res-model-sub').textContent = modelDisplay.replace('_', ' ');
+
+      document.getElementById('res-preop-ast').textContent = cornAst.toFixed(2) + ' D × ' + cornAxis + '°';
+      document.getElementById('res-sia-val').textContent   = sia.toFixed(2) + ' D × ' + siaAxis + '°';
+      document.getElementById('res-crossed').textContent   = crossed.mag.toFixed(2) + ' D × ' + Math.round(crossed.axis) + '°';
+      document.getElementById('res-residual').textContent  = residual.mag.toFixed(2) + ' D × ' + Math.round(residual.axis) + '°';
+      document.getElementById('res-steep-ax').textContent  = steepAx + '°';
+      document.getElementById('res-flat-ax').textContent   = flatAx + '°';
+      document.getElementById('res-incision-val').textContent = il + '°';
+
+      /* ── Update axis diagram ── */
+      document.getElementById('axisLineGroup').setAttribute('transform', 'rotate(' + (placementAxis - 90) + ', 90, 90)');
+      document.getElementById('axisDiagramLabel').textContent = 'Axis of placement: ' + placementAxis + '°';
+
+      /* ── Show results ── */
+      document.getElementById('emptyState').style.display = 'none';
+      const panel = document.getElementById('resultsPanel');
+      panel.classList.remove('visible');
+      void panel.offsetWidth; // reflow
+      panel.classList.add('visible');
+    });
+
+    /* ── CLEAR ── */
+    document.getElementById('btnClear').addEventListener('click', function() {
+      ['flatK','flatAxis','steepK','steepAxis','incision'].forEach(function(id) {
+        document.getElementById(id).value = '';
+        document.getElementById(id).classList.remove('error');
+        const err = document.getElementById(id + '-err');
+        if (err) err.classList.remove('visible');
+      });
+      document.getElementById('sia').value = '0.50';
+      document.getElementById('iolPower').value = '';
+      document.getElementById('iolModel').value = '';
+      document.getElementById('patientName').value = '';
+      document.getElementById('resultsPanel').classList.remove('visible');
+      document.getElementById('emptyState').style.display = '';
+    });
+
+    /* ── PRINT ── */
+    document.getElementById('btnPrint').addEventListener('click', function() {
+      window.print();
+    });
+
+    /* ── EMAIL ── */
+    document.getElementById('btnEmail').addEventListener('click', function() {
+      const email = document.getElementById('doctorEmail').value || '';
+      const axis  = document.getElementById('res-axis').textContent;
+      const cyl   = document.getElementById('res-cyl-iol').textContent;
+      const model = document.getElementById('res-model').textContent;
+      const patient = document.getElementById('patientName').value || 'Patient';
+      const subject = encodeURIComponent('Toric IOL Calculation — ' + patient);
+      const body = encodeURIComponent(
+        'Toric IOL Calculation Result\n\n' +
+        'Patient: ' + patient + '\n' +
+        'Axis of Placement: ' + axis + '\n' +
+        'Cylinder Power (IOL): ' + cyl + ' D\n' +
+        'Recommended Model: ' + model + '\n\n' +
+        'Calculated by World Vision Toric Calculator'
+      );
+      window.location.href = 'mailto:' + email + '?subject=' + subject + '&body=' + body;
+    });
+
+    /* ── IFU links ── */
+    document.querySelectorAll('.ifu-link').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        if (this.getAttribute('href') === '#') {
+          e.preventDefault();
+          alert('IFU document coming soon.');
+        }
+      });
+    });
+
+    </script>
+
+  </body>
+</html>
