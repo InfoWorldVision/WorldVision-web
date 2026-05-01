@@ -55,6 +55,12 @@
   .material-layout { grid-template-columns: 1fr; }
   .models-grid { grid-template-columns: 1fr; }
   .specs-grid { grid-template-columns: 1fr 1fr; }
+  .page-hero     { grid-template-columns: 1fr; text-align: center; }
+  .hero-visual   { order: -1; }
+  .hero-btn-row  { justify-content: center; }
+  .model-panel.active { grid-template-columns: 1fr; }
+  .mtf-layout    { grid-template-columns: 1fr; }
+  .compare-strip { grid-template-columns: 1fr; }
 }
 
 /* Mobile */
@@ -105,6 +111,8 @@
   .cta-banner .cta-actions {
     width: 100%;
   }
+  .graphs-grid { grid-template-columns:1fr; }
+  .graph-card-wide { grid-column:1; height: 30rem; }
 }
 
 @media (max-width: 640px) {
@@ -141,6 +149,10 @@
   .result-highlight { grid-template-columns: 1fr; }
   .specs-grid { grid-template-columns: 1fr 1fr; }
   .hero-btn-row { justify-content: center; }
+  .model-tabs    { gap: 6px; }
+  .model-tab-type { display: none; }
+  .card-highlights { grid-template-columns: 1fr; }
+  .a-const-grid  { grid-template-columns: 1fr 1fr; }
 }
 
 /* Small mobile */
