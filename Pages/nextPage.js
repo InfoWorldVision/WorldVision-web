@@ -318,39 +318,32 @@ if (btn2) {
 /*************************************************
  * Model Tab Switcher
  *************************************************/
-document.querySelectorAll(".model-tab").forEach(function (tab) {
-  tab.addEventListener("click", function () {
-    document.querySelectorAll(".model-tab").forEach(function (t) {
-      t.classList.remove("active");
-      t.setAttribute("aria-selected", "false");
+document.querySelectorAll('.model-tab').forEach(function(tab) {
+
+  tab.addEventListener('click', function() {
+
+    document.querySelectorAll('.model-tab').forEach(function(t) {
+      t.classList.remove('active');
+      t.setAttribute('aria-selected', 'false');
     });
 
-    tab.classList.add("active");
-    tab.setAttribute("aria-selected", "true");
+    tab.classList.add('active');
+    tab.setAttribute('aria-selected', 'true');
 
-    document
-      .querySelectorAll(".model-panel")
-      .forEach(function (p) {
-        p.classList.remove("active");
-      });
+    document.querySelectorAll('.model-panel').forEach(function(panel) {
+      panel.classList.remove('active');
+    });
 
-    const panel = document.getElementById(
-      "panel-" + tab.dataset.model
+    const targetPanel = document.getElementById(
+      'panel-' + tab.dataset.model
     );
 
-    if (panel) {
-      panel.classList.add("active");
+    if (targetPanel) {
+      targetPanel.classList.add('active');
     }
 
-    const models = document.getElementById("models");
-
-    if (models) {
-      models.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
   });
+
 });
 
 /*************************************************

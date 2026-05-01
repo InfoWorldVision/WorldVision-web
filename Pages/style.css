@@ -262,6 +262,16 @@ html.dark {
     transform: translateY(0);
   }
 }
+@keyframes smoothPanel {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
 @keyframes lensFloat {
   0%, 100% {
     transform: translateY(0) rotate(0deg);
@@ -1316,12 +1326,13 @@ html.dark {
 }
 .model-panel {
   display: none;
+  transform: translateY(8px) scale(0.995);
 }
 .model-panel.active {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 28px;
-  animation: panelIn 0.4s ease forwards;
+  animation: smoothPanel 0.38s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
 }
 
 .neu-card {

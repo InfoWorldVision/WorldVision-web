@@ -184,12 +184,13 @@
     }
     &-panel{
         display: none;
+        transform: translateY(8px) scale(0.995);
 
         &.active{
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 28px;
-            animation: panelIn 0.4s ease forwards;
+            animation: smoothPanel 0.38s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
         }
     }
 }

@@ -107,6 +107,20 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes smoothPanel {
+
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+}
+
 @keyframes lensFloat {
   0%,100% { transform: translateY(0) rotate(0deg); }
   50%      { transform: translateY(-12px) rotate(1.5deg); }
