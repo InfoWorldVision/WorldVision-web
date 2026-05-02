@@ -4613,8 +4613,12 @@ html.dark .faq-item {
     right: 10px;
   }
   .contact-cards {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 12px;
+  }
+  .contact-card {
+    flex-direction: row;
+    gap: 2rem !important;
   }
   .form-row {
     grid-template-columns: 1fr;
