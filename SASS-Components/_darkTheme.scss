@@ -302,3 +302,28 @@ html.dark .graph-area { background:linear-gradient(145deg,#191e2c,#252b3b); }
 html.dark .graph-card-last { background:linear-gradient(145deg,#252b3b,#191e2c); }
 
 html.dark .graph-area-last { background:linear-gradient(145deg,#191e2c,#252b3b); }
+
+html.dark .hero-chip { background: linear-gradient(145deg, #252b3b, #191e2c); }
+
+html.dark .contact-card { background: linear-gradient(145deg, #252b3b, #191e2c); }
+
+html.dark .form-card { background: linear-gradient(145deg, #252b3b, #191e2c); }
+
+html.dark .form-input,
+html.dark .form-select,
+html.dark .form-textarea {
+  background: linear-gradient(145deg, #191e2c, #252b3b);
+  color: var(--neu-text);
+}
+
+html.dark .subject-chip { background: linear-gradient(145deg, #191e2c, #252b3b); }
+
+html.dark .office-card { background: linear-gradient(145deg, #252b3b, #191e2c); }
+
+html.dark .office-map-placeholder { background: linear-gradient(145deg, #1a2a3e, #131c2e); }
+
+html.dark .social-card { background: linear-gradient(145deg, #252b3b, #191e2c); }
+
+html.dark .social-btn { background: linear-gradient(145deg, #191e2c, #252b3b); }
+
+html.dark .faq-item { background: linear-gradient(145deg, #252b3b, #191e2c); }

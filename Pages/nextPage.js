@@ -401,162 +401,278 @@ document.querySelectorAll(".spec-card").forEach(function (card) {
     obs.observe(el);
   });
 })();
-
-const CYL_MODELS = [
-  { name: 'TORICT3', iol: 3.75, corneal: 2.57 },
-  { name: 'TORICT4', iol: 4.50, corneal: 3.08 },
-  { name: 'TORICT5', iol: 5.25, corneal: 3.60 },
-  { name: 'TORICT6', iol: 6.00, corneal: 4.11 },
-];
-
-/* ── Degrees to radians ── */
-function toRad(deg) { return deg * Math.PI / 180; }
-function toDeg(rad) {
-  let d = rad * 180 / Math.PI;
-  while (d < 0) d += 180;
-  while (d >= 180) d -= 180;
-  return d;
-}
-
-/* ── Crossed-Cylinder Method ──
-    Converts cylinder @ axis into power vector components,
-    adds SIA vector, converts back.
-*/
-function crossedCylinder(mag1, axis1, mag2, axis2) {
-  // Power vectors: J0 = -C/2 * cos(2α),  J45 = -C/2 * sin(2α)
-  const a1 = toRad(axis1), a2 = toRad(axis2);
-  const j0 = (-mag1 / 2) * Math.cos(2 * a1) + (-mag2 / 2) * Math.cos(2 * a2);
-  const j45 = (-mag1 / 2) * Math.sin(2 * a1) + (-mag2 / 2) * Math.sin(2 * a2);
-  const resultMag = 2 * Math.sqrt(j0 * j0 + j45 * j45);
-  const resultAxis = toDeg(0.5 * Math.atan2(j45, j0) + Math.PI / 2);
-  return { mag: resultMag, axis: resultAxis };
-}
-
-/* ── Find best matching cylinder model ── */
-function bestCylModel(neededCorneal) {
-  let best = CYL_MODELS[0];
-  let minDiff = Math.abs(neededCorneal - CYL_MODELS[0].corneal);
-  CYL_MODELS.forEach(function(m) {
-    const diff = Math.abs(neededCorneal - m.corneal);
-    if (diff < minDiff) { minDiff = diff; best = m; }
+/*************************************************
+ * Contact Page — Subject Chips
+ *************************************************/
+document.querySelectorAll('.subject-chip').forEach(function(chip) {
+  chip.addEventListener('click', function() {
+    document.querySelectorAll('.subject-chip').forEach(function(c) {
+      c.classList.remove('active');
+    });
+    chip.classList.add('active');
+    var sf = document.getElementById('subjectField');
+    if (sf) sf.value = chip.dataset.subject;
   });
-  return best;
-}
+});
 
-/* ── Validate input ── */
-function validate(id, min, max) {
-  const el = document.getElementById(id);
-  const err = document.getElementById(id + '-err');
-  const val = parseFloat(el.value);
-  if (isNaN(val) || val < min || val > max) {
-    el.classList.add('error');
-    if (err) err.classList.add('visible');
-    return null;
+/*************************************************
+ * Contact Page — Form Submit
+ *************************************************/
+(function() {
+  var form = document.getElementById('contactForm');
+  if (!form) return;
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var name  = document.getElementById('cf-name');
+    var email = document.getElementById('cf-email');
+    var msg   = document.getElementById('cf-msg');
+
+    if (!name || !email || !msg) return;
+    if (!name.value.trim() || !email.value.trim() || !msg.value.trim()) {
+      alert('Please fill in your name, email, and message.');
+      return;
+    }
+
+    form.style.display = 'none';
+    var success = document.getElementById('formSuccess');
+    if (success) success.classList.add('show');
+  });
+})();
+
+function resetForm() {
+  var form = document.getElementById('contactForm');
+  var success = document.getElementById('formSuccess');
+  if (form) {
+    form.reset();
+    form.style.display = '';
   }
-  el.classList.remove('error');
-  if (err) err.classList.remove('visible');
-  return val;
+  if (success) success.classList.remove('show');
+  /* Reset chips */
+  document.querySelectorAll('.subject-chip').forEach(function(c, i) {
+    c.classList.toggle('active', i === 0);
+  });
+  var sf = document.getElementById('subjectField');
+  if (sf) sf.value = 'Product Enquiry';
 }
 
-/* ── CALCULATE ── */
-document.getElementById('btnCalculate').addEventListener('click', function() {
-  // Switch to preop tab so user sees any errors
-  document.querySelectorAll('.sp-tab').forEach(t => t.classList.remove('active'));
-  document.querySelectorAll('.sp-panel').forEach(p => p.classList.remove('active'));
-  document.querySelector('[data-tab="preop"]').classList.add('active');
-  document.getElementById('tab-preop').classList.add('active');
+/*************************************************
+ * Contact Page — FAQ Accordion
+ *************************************************/
+document.querySelectorAll('.faq-item').forEach(function(item) {
+  var q = item.querySelector('.faq-q');
+  if (!q) return;
 
-  const flatK   = validate('flatK', 30, 60);
-  const flatAx  = validate('flatAxis', 0, 180);
-  const steepK  = validate('steepK', 30, 60);
-  const steepAx = validate('steepAxis', 0, 180);
-  const sia     = validate('sia', 0, 2);
-  const il      = validate('incision', 0, 360);
+  q.addEventListener('click', function() {
+    /* Capture state BEFORE any changes */
+    var wasOpen = item.classList.contains('open');
 
-  if ([flatK, flatAx, steepK, steepAx, sia, il].some(v => v === null)) return;
+    /* Force-close every item including this one */
+    document.querySelectorAll('.faq-item').forEach(function(i) {
+      i.classList.remove('open');
+    });
 
-  /* Step 1: Corneal astigmatism */
-  const cornAst = steepK - flatK;
-  const cornAxis = steepAx; // steep axis = axis of corneal astigmatism
-
-  /* Step 2: SIA vector (at incision axis + 90 for against-the-rule) */
-  const siaAxis = il % 180;
-
-  /* Step 3: Crossed cylinder — combine corneal astigmatism with SIA */
-  const crossed = crossedCylinder(cornAst, cornAxis, sia, siaAxis);
-
-  /* Step 4: Best model */
-  const model = bestCylModel(crossed.mag);
-  const placementAxis = Math.round(crossed.axis);
-
-  /* Step 5: Residual (difference between crossed result and chosen model) */
-  const residual = crossedCylinder(crossed.mag, crossed.axis, model.corneal, crossed.axis + 90);
-
-  /* ── Populate results ── */
-  document.getElementById('res-axis').textContent      = placementAxis + '°';
-  document.getElementById('res-cyl-iol').textContent   = model.iol.toFixed(2);
-  document.getElementById('res-cyl-cor').textContent   = model.corneal.toFixed(2);
-
-  const modelDisplay = document.getElementById('iolModel').value || 'FREEDOM TORIC';
-  document.getElementById('res-model').textContent     = model.name;
-  document.getElementById('res-model-sub').textContent = modelDisplay.replace('_', ' ');
-
-  document.getElementById('res-preop-ast').textContent = cornAst.toFixed(2) + ' D × ' + cornAxis + '°';
-  document.getElementById('res-sia-val').textContent   = sia.toFixed(2) + ' D × ' + siaAxis + '°';
-  document.getElementById('res-crossed').textContent   = crossed.mag.toFixed(2) + ' D × ' + Math.round(crossed.axis) + '°';
-  document.getElementById('res-residual').textContent  = residual.mag.toFixed(2) + ' D × ' + Math.round(residual.axis) + '°';
-  document.getElementById('res-steep-ax').textContent  = steepAx + '°';
-  document.getElementById('res-flat-ax').textContent   = flatAx + '°';
-  document.getElementById('res-incision-val').textContent = il + '°';
-
-  /* ── Update axis diagram ── */
-  document.getElementById('axisLineGroup').setAttribute('transform', 'rotate(' + (placementAxis - 90) + ', 90, 90)');
-  document.getElementById('axisDiagramLabel').textContent = 'Axis of placement: ' + placementAxis + '°';
-
-  /* ── Show results ── */
-  document.getElementById('emptyState').style.display = 'none';
-  const panel = document.getElementById('resultsPanel');
-  panel.classList.remove('visible');
-  void panel.offsetWidth; // reflow
-  panel.classList.add('visible');
-});
-
-/* ── CLEAR ── */
-document.getElementById('btnClear').addEventListener('click', function() {
-  ['flatK','flatAxis','steepK','steepAxis','incision'].forEach(function(id) {
-    document.getElementById(id).value = '';
-    document.getElementById(id).classList.remove('error');
-    const err = document.getElementById(id + '-err');
-    if (err) err.classList.remove('visible');
+    /* Only re-open this item if it was NOT open before click */
+    if (!wasOpen) {
+      item.classList.add('open');
+    }
   });
-  document.getElementById('sia').value = '0.50';
-  document.getElementById('iolPower').value = '';
-  document.getElementById('iolModel').value = '';
-  document.getElementById('patientName').value = '';
-  document.getElementById('resultsPanel').classList.remove('visible');
-  document.getElementById('emptyState').style.display = '';
 });
 
-/* ── PRINT ── */
-document.getElementById('btnPrint').addEventListener('click', function() {
-  window.print();
-});
+/*************************************************
+ * Toric Calculator — only runs on toricCalculator.html
+ *************************************************/
+(function () {
 
-/* ── EMAIL ── */
-document.getElementById('btnEmail').addEventListener('click', function() {
-  const email = document.getElementById('doctorEmail').value || '';
-  const axis  = document.getElementById('res-axis').textContent;
-  const cyl   = document.getElementById('res-cyl-iol').textContent;
-  const model = document.getElementById('res-model').textContent;
-  const patient = document.getElementById('patientName').value || 'Patient';
-  const subject = encodeURIComponent('Toric IOL Calculation — ' + patient);
-  const body = encodeURIComponent(
-    'Toric IOL Calculation Result\n\n' +
-    'Patient: ' + patient + '\n' +
-    'Axis of Placement: ' + axis + '\n' +
-    'Cylinder Power (IOL): ' + cyl + ' D\n' +
-    'Recommended Model: ' + model + '\n\n' +
-    'Calculated by World Vision Toric Calculator'
-  );
-  window.location.href = 'mailto:' + email + '?subject=' + subject + '&body=' + body;
-});
+  /* Only init if the calculate button exists on this page */
+  if (!document.getElementById('btnCalculate')) return;
+
+  const CYL_MODELS = [
+    { name: 'TORICT3', iol: 3.75, corneal: 2.57 },
+    { name: 'TORICT4', iol: 4.50, corneal: 3.08 },
+    { name: 'TORICT5', iol: 5.25, corneal: 3.60 },
+    { name: 'TORICT6', iol: 6.00, corneal: 4.11 },
+  ];
+
+  /* ── Degrees / radians ── */
+  function toRad(deg) { return deg * Math.PI / 180; }
+  function toDeg(rad) {
+    let d = rad * 180 / Math.PI;
+    while (d < 0)   d += 180;
+    while (d >= 180) d -= 180;
+    return d;
+  }
+
+  /* ── Crossed-Cylinder Method ── */
+  function crossedCylinder(mag1, axis1, mag2, axis2) {
+    const a1 = toRad(axis1), a2 = toRad(axis2);
+    const j0  = (-mag1 / 2) * Math.cos(2 * a1) + (-mag2 / 2) * Math.cos(2 * a2);
+    const j45 = (-mag1 / 2) * Math.sin(2 * a1) + (-mag2 / 2) * Math.sin(2 * a2);
+    const resultMag  = 2 * Math.sqrt(j0 * j0 + j45 * j45);
+    const resultAxis = toDeg(0.5 * Math.atan2(j45, j0) + Math.PI / 2);
+    return { mag: resultMag, axis: resultAxis };
+  }
+
+  /* ── Best matching cylinder model ── */
+  function bestCylModel(neededCorneal) {
+    let best    = CYL_MODELS[0];
+    let minDiff = Math.abs(neededCorneal - CYL_MODELS[0].corneal);
+    CYL_MODELS.forEach(function (m) {
+      const diff = Math.abs(neededCorneal - m.corneal);
+      if (diff < minDiff) { minDiff = diff; best = m; }
+    });
+    return best;
+  }
+
+  /* ── Validate input field ── */
+  function validate(id, min, max) {
+    const el  = document.getElementById(id);
+    const err = document.getElementById(id + '-err');
+    if (!el) return null;
+    const val = parseFloat(el.value);
+    if (isNaN(val) || val < min || val > max) {
+      el.classList.add('error');
+      if (err) err.classList.add('visible');
+      return null;
+    }
+    el.classList.remove('error');
+    if (err) err.classList.remove('visible');
+    return val;
+  }
+
+  /* ── CALCULATE ── */
+  document.getElementById('btnCalculate').addEventListener('click', function () {
+
+    /* Switch to preop tab so user sees any errors */
+    document.querySelectorAll('.sp-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.sp-panel').forEach(p => p.classList.remove('active'));
+    const preopTab   = document.querySelector('[data-tab="preop"]');
+    const preopPanel = document.getElementById('tab-preop');
+    if (preopTab)   preopTab.classList.add('active');
+    if (preopPanel) preopPanel.classList.add('active');
+
+    const flatK   = validate('flatK',   30, 60);
+    const flatAx  = validate('flatAxis', 0, 180);
+    const steepK  = validate('steepK',  30, 60);
+    const steepAx = validate('steepAxis', 0, 180);
+    const sia     = validate('sia',   0, 2);
+    const il      = validate('incision', 0, 360);
+
+    if ([flatK, flatAx, steepK, steepAx, sia, il].some(v => v === null)) return;
+
+    /* Step 1: Corneal astigmatism */
+    const cornAst  = steepK - flatK;
+    const cornAxis = steepAx;
+
+    /* Step 2: SIA vector */
+    const siaAxis = il % 180;
+
+    /* Step 3: Crossed cylinder */
+    const crossed = crossedCylinder(cornAst, cornAxis, sia, siaAxis);
+
+    /* Step 4: Best model */
+    const model         = bestCylModel(crossed.mag);
+    const placementAxis = Math.round(crossed.axis);
+
+    /* Step 5: Residual */
+    const residual = crossedCylinder(crossed.mag, crossed.axis, model.corneal, crossed.axis + 90);
+
+    /* ── Populate results ── */
+    function setTxt(id, val) { const el = document.getElementById(id); if (el) el.textContent = val; }
+
+    setTxt('res-axis',      placementAxis + '°');
+    setTxt('res-cyl-iol',   model.iol.toFixed(2));
+    setTxt('res-cyl-cor',   model.corneal.toFixed(2));
+    setTxt('res-model',     model.name);
+
+    const modelSel = document.getElementById('iolModel');
+    setTxt('res-model-sub', modelSel ? modelSel.value.replace('_', ' ') : 'WORLD VISION TORIC');
+
+    setTxt('res-preop-ast',    cornAst.toFixed(2) + ' D × ' + cornAxis + '°');
+    setTxt('res-sia-val',      sia.toFixed(2) + ' D × ' + siaAxis + '°');
+    setTxt('res-crossed',      crossed.mag.toFixed(2) + ' D × ' + Math.round(crossed.axis) + '°');
+    setTxt('res-residual',     residual.mag.toFixed(2) + ' D × ' + Math.round(residual.axis) + '°');
+    setTxt('res-steep-ax',     steepAx + '°');
+    setTxt('res-flat-ax',      flatAx + '°');
+    setTxt('res-incision-val', il + '°');
+
+    /* ── Update axis diagram ── */
+    const axisGroup = document.getElementById('axisLineGroup');
+    const axisLabel = document.getElementById('axisDiagramLabel');
+    if (axisGroup) axisGroup.setAttribute('transform', 'rotate(' + (placementAxis - 90) + ', 90, 90)');
+    if (axisLabel) axisLabel.textContent = 'Axis of placement: ' + placementAxis + '°';
+
+    /* ── Show results panel ── */
+    const emptyState = document.getElementById('emptyState');
+    const panel      = document.getElementById('resultsPanel');
+    if (emptyState) emptyState.style.display = 'none';
+    if (panel) {
+      panel.classList.remove('visible');
+      void panel.offsetWidth; // force reflow
+      panel.classList.add('visible');
+    }
+  });
+
+  /* ── CLEAR ── */
+  const btnClear = document.getElementById('btnClear');
+  if (btnClear) {
+    btnClear.addEventListener('click', function () {
+      ['flatK', 'flatAxis', 'steepK', 'steepAxis', 'incision'].forEach(function (id) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.value = '';
+        el.classList.remove('error');
+        const err = document.getElementById(id + '-err');
+        if (err) err.classList.remove('visible');
+      });
+      const sia      = document.getElementById('sia');
+      const iolPower = document.getElementById('iolPower');
+      const iolModel = document.getElementById('iolModel');
+      const patient  = document.getElementById('patientName');
+      if (sia)      sia.value      = '0.50';
+      if (iolPower) iolPower.value = '';
+      if (iolModel) iolModel.value = '';
+      if (patient)  patient.value  = '';
+      const panel      = document.getElementById('resultsPanel');
+      const emptyState = document.getElementById('emptyState');
+      if (panel)      panel.classList.remove('visible');
+      if (emptyState) emptyState.style.display = '';
+    });
+  }
+
+  /* ── PRINT ── */
+  const btnPrint = document.getElementById('btnPrint');
+  if (btnPrint) {
+    btnPrint.addEventListener('click', function () { window.print(); });
+  }
+
+  /* ── EMAIL ── */
+  const btnEmail = document.getElementById('btnEmail');
+  if (btnEmail) {
+    btnEmail.addEventListener('click', function () {
+      const emailEl   = document.getElementById('doctorEmail');
+      const axisEl    = document.getElementById('res-axis');
+      const cylEl     = document.getElementById('res-cyl-iol');
+      const modelEl   = document.getElementById('res-model');
+      const patientEl = document.getElementById('patientName');
+
+      const email   = emailEl   ? emailEl.value        : '';
+      const axis    = axisEl    ? axisEl.textContent    : '';
+      const cyl     = cylEl     ? cylEl.textContent     : '';
+      const model   = modelEl   ? modelEl.textContent   : '';
+      const patient = patientEl ? patientEl.value       : 'Patient';
+
+      const subject = encodeURIComponent('Toric IOL Calculation — ' + patient);
+      const body    = encodeURIComponent(
+        'Toric IOL Calculation Result\n\n' +
+        'Patient: '               + patient + '\n' +
+        'Axis of Placement: '     + axis    + '\n' +
+        'Cylinder Power (IOL): '  + cyl     + ' D\n' +
+        'Recommended Model: '     + model   + '\n\n' +
+        'Calculated by World Vision Toric Calculator'
+      );
+      window.location.href = 'mailto:' + email + '?subject=' + subject + '&body=' + body;
+    });
+  }
+
+})(); /* end toric IIFE */
