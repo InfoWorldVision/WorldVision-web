@@ -31,12 +31,12 @@
   <body>
     <!-- Page Loader -->
 
-    <div id="pageLoader">
+    <!-- <div id="pageLoader">
       <div class="loader-inner">
         <img src="../Multimedia/WVO_Logo1.png" alt="world vision" class="loader-logo">
         <div class="loader-bar"><div class="loader-fill"></div></div>
       </div>
-    </div>
+    </div> -->
 
     <!-- Lense Images -->
     <div class="lens-bg animate__animated animate__fadeIn animate__slow" id="lensBg"></div>
@@ -44,8 +44,8 @@
     <header class="site-header">
 
       <!-- Navbar -->
-      <nav id="navbar" class="fixed lg:top-4 w-full lg:left-1/2 lg:-translate-x-1/2 lg:w-[92%] h-24 lg:px-4 bg-transparent overflow-visible transition-all duration-300 ease-in-out z-50">
-        <div class="nav-glass relative h-full px-10 lg:flex lg:items-center lg:justify-between lg:rounded-2xl flex items-center">
+      <nav id="navbar" class="fixed lg:top-4 w-full lg:left-1/2 lg:-translate-x-1/2 lg:w-[92%] h-24 lg:px-4 bg-transparent overflow-visible transition-all duration-300 ease-in-out z-[50]">
+        <div class="nav-glass relative h-full px-10 lg:flex lg:items-center lg:justify-between lg:rounded-2xl flex items-center" style="overflow: visible;">
 
           <div class="flex items-center justify-between w-full lg:w-auto">
             <button id="menuToggle" class="lg:hidden w-11 h-11 flex items-center justify-center rounded-xl bg-white/20 backdrop-blur-md border border-white/30 text-xl">
@@ -62,14 +62,32 @@
 
           <ul class="hidden lg:flex items-center gap-8 text-base font-medium whitespace-nowrap">
             <li><a href="#" class="nav-item active-nav">Home</a></li>
-            <li class="relative group">
-              <div class="nav-item flex items-center gap-2 cursor-pointer">
-                Our Products <i class="fa-solid fa-chevron-down text-sm transition-transform duration-200 group-hover:rotate-180"></i>
+            <li class="relative group/prod">
+              <div class="nav-item flex items-center gap-2 cursor-pointer select-none">
+                Our Products <i id="productsNavChevron" class="fa-solid fa-chevron-down text-sm transition-transform duration-200 group-hover/prod:rotate-180"></i>
               </div>
-              <div class="absolute left-0 top-full mt-3 w-56 rounded-2xl bg-white/90 backdrop-blur-lg border border-white/30 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-[999] overflow-hidden">
-                <a href="../Pages/iol-page.html" class="flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition text-sm font-medium text-gray-700">
-                  <i class="fa-solid fa-eye text-blue-500 w-4"></i> Intraocular Lenses
-                </a>
+              <div class="absolute left-0 top-full mt-3 w-56 rounded-2xl bg-white/90 backdrop-blur-lg border border-white/30 shadow-xl opacity-0 invisible group-hover/prod:opacity-100 group-hover/prod:visible transition-all duration-200 z-[999] overflow-visible">
+                <div class="relative group/iol">
+                  <a href="../Pages/iol-page.html" id="iolNavBtn" class="flex items-center justify-between gap-3 px-4 py-3 hover:bg-blue-50 transition text-sm font-medium text-gray-700 cursor-pointer">
+                    <span class="flex items-center gap-3">
+                      <i class="fa-solid fa-eye text-blue-500 w-4"></i> Intraocular Lens
+                    </span>
+                    <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+                  </a>
+
+                  <!-- L2 flyout — appears on hover of IOL row -->
+                  <div id="navL2Panel" class="absolute left-full top-0 ml-2 w-56 rounded-2xl bg-white/95 backdrop-blur-lg border border-white/30 shadow-xl opacity-0 invisible group-hover/iol:opacity-100 group-hover/iol:visible transition-all duration-200 z-[9999] overflow-hidden">
+                    <a href="../Pages/hydrophobicIol.html" class="flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition text-sm font-medium text-gray-700">
+                      <i class="fa-solid fa-shield-halved text-blue-400 w-4"></i> Hydrophobic IOL
+                    </a>
+                    <a href="#" class="flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition text-sm font-medium text-gray-700">
+                      <i class="fa-solid fa-shield-halved text-teal-400 w-4"></i> Hydrophilic IOL
+                    </a>
+                    <a href="#" class="flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition text-sm font-medium text-gray-700">
+                      <i class="fa-solid fa-circle-half-stroke text-amber-400 w-4"></i> PMMA IOL
+                    </a>
+                  </div>
+                </div>
                 <a href="#" class="flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition text-sm font-medium text-gray-700">
                   <i class="fa-solid fa-syringe text-blue-500 w-4"></i> Surgical Instruments
                 </a>
@@ -92,9 +110,9 @@
       </nav>
 
       <!-- Mobile Overlay -->
-      <div id="menuOverlay" class="fixed inset-y-0 left-72 right-0 bg-black/40 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 z-[9998] lg:hidden"></div>
+      <div id="menuOverlay" class="fixed inset-y-0 left-72 right-0 bg-black/40 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 z-[1100] lg:hidden"></div>
 
-      <div id="mobileMenu" class="fixed inset-y-0 left-0 h-full w-72 -translate-x-full transition-transform duration-300 ease-in-out z-[9999] lg:hidden">
+      <div id="mobileMenu" class="fixed inset-y-0 left-0 h-full w-72 -translate-x-full transition-transform duration-300 ease-in-out z-[1200] lg:hidden">
         <div class="h-full w-72 px-5 pt-7 bg-white/15 backdrop-blur-xl border-r border-white/30">
           <div class="relative mb-8 px-2 pt-8">
             <div class="flex items-center gap-3">
@@ -108,23 +126,71 @@
               <i class="fa-solid fa-xmark"></i>
             </button>
           </div>
-          <ul class="flex flex-col gap-4 text-base font-medium mt-6">
+          <ul id="mobileMainView" class="mobile-view flex flex-col gap-4 text-base font-medium mt-6">
             <li><a href="#" class="mobile-drawer-link active-nav">Home</a></li>
             <li>
-              <button id="mobileProductsBtn" class="w-full flex items-center justify-between mobile-drawer-link">
+              <button id="mobileProductsBtn" class="w-full flex items-center justify-between mobile-drawer-link text-left" type="button">
                 <span>Our Products</span>
-                <i id="mobileProductsIcon" class="fa-solid fa-chevron-down text-sm transition-transform duration-200"></i>
+                <i class="fa-solid fa-chevron-right text-sm opacity-60"></i>
               </button>
-              <div id="mobileProductsMenu" class="hidden ml-4 mt-2 flex flex-col gap-1">
-                <a href="../Pages/iol-page.html" class="mobile-sub-link">Intraocular Lenses</a>
-                <a href="#" class="mobile-sub-link">Surgical Instruments</a>
-                <a href="#" class="mobile-sub-link">Veterinary IOL</a>
-              </div>
             </li>
             <li><a href="../Pages/toricCalculator.html" class="mobile-drawer-link">Toric Calculator</a></li>
             <li><a href="../Pages/gallery.html" class="mobile-drawer-link">Gallery</a></li>
             <li><a href="#about" class="mobile-drawer-link">About</a></li>
             <li><a href="../Pages/contactUs.html" class="mobile-drawer-link">Contact</a></li>
+          </ul>
+          <!-- Products menu -->
+          <ul id="mobileProductsView" class="mobile-view hidden flex-col gap-4 text-base font-medium">
+            <li>
+              <button id="backToMainMenu" class="active-nav mobile-drawer-link flex items-center gap-3 text-left" type="button">
+                <i class="fa-solid fa-chevron-left text-sm w-9 h-9 flex items-center justify-center rounded-xl bg-white/70 border border-white/60 text-[#0055a5]"></i>
+                <span class="font-semibold text-[17px] text-[#1e3a5f]">Our Products</span>
+              </button>
+            </li>
+
+            <li>
+              <button id="mobileIolBtn" class="w-full flex items-center justify-between mobile-drawer-link text-left" type="button">
+                <span class="flex items-center gap-2">
+                  <i class="fa-solid fa-eye text-[#0055a5]"></i>
+                  Intraocular Lens
+                </span>
+                <i class="fa-solid fa-chevron-right text-sm opacity-60"></i>
+              </button>
+            </li>
+
+            <li><a href="#" class="mobile-drawer-link flex items-center gap-2">
+              <i class="fa-solid fa-star-of-life text-[#0055a5]"></i> Premium IOL
+            </a></li>
+
+            <li><a href="#" class="mobile-drawer-link flex items-center gap-2">
+              <i class="fa-solid fa-capsules text-[#0055a5]"></i> Pharma Products
+            </a></li>
+
+            <li><a href="#" class="mobile-drawer-link flex items-center gap-2">
+              <i class="fa-solid fa-cut text-[#0055a5]"></i> Micro Surgical Blades
+            </a></li>
+          </ul>
+
+          <!-- IOL menu -->
+          <ul id="mobileIolView" class="mobile-view hidden flex-col gap-4 text-base font-medium">
+            <li>
+              <button id="backToProductsMenu" class="active-nav mobile-drawer-link flex items-center gap-3 text-left" type="button">
+                <i class="fa-solid fa-chevron-left text-sm w-9 h-9 flex items-center justify-center rounded-xl bg-white/70 border border-white/60 text-[#0055a5]"></i>
+                <span class="font-semibold text-[17px] text-[#1e3a5f]">Intraocular Lens</span>
+              </button>
+            </li>
+
+            <li><a href="../Pages/hydrophobicIol.html" class="mobile-drawer-link flex items-center gap-2">
+              <i class="fa-solid fa-shield-halved text-[#0055a5]"></i> Hydrophobic IOL
+            </a></li>
+
+            <li><a href="#" class="mobile-drawer-link flex items-center gap-2">
+              <i class="fa-solid fa-shield-halved text-teal-500"></i> Hydrophilic IOL
+            </a></li>
+
+            <li><a href="#" class="mobile-drawer-link flex items-center gap-2">
+              <i class="fa-solid fa-circle-half-stroke text-amber-500"></i> PMMA IOL
+            </a></li>
           </ul>
         </div>
       </div>

@@ -1,5 +1,25 @@
 /* ================= BACKGROUND RESPONSIVE ================= */
+@media(max-width: 1280px){
+  .logo-container {
+    gap: 0.5rem;
+  }
 
+  .logo-container img {
+    height: 44px;
+  }
+
+  .logo-container span:first-child {
+    font-size: 1.25rem;
+  }
+
+  .logo-container .subtitle {
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+  }
+  #navbar ul {
+    gap: 0.45rem;
+  }
+}
 /* Tablets & below */
 @media (max-width: 1024px) {
   body {
@@ -397,6 +417,22 @@
   .contact-cards { grid-template-columns: 1fr; gap: 12px; }
   .contact-card{flex-direction: row; gap: 2rem !important;}
   .form-row { grid-template-columns: 1fr; }
+  .logo-container {
+    gap: 1rem;
+  }
+
+  .logo-container img {
+    height: 64px;
+  }
+
+  .logo-container span:first-child {
+    font-size: 1.55rem;
+  }
+
+  .logo-container .subtitle {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+  }
 }
 
 @media print {

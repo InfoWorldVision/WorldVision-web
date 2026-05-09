@@ -177,3 +177,92 @@
     transform: scale(1);
   }
 }
+
+/* ── Panel keyframes ── */
+@keyframes mobileViewEnter {
+  0%   { opacity: 0; transform: translateX(40px) scale(0.96); }
+  55%  { opacity: 1; transform: translateX(-5px)  scale(1.01); }
+  75%  { transform: translateX(2px) scale(0.998); }
+  100% { opacity: 1; transform: translateX(0)     scale(1); }
+}
+@keyframes mobileViewEnterBack {
+  0%   { opacity: 0; transform: translateX(-40px) scale(0.96); }
+  55%  { opacity: 1; transform: translateX(5px)   scale(1.01); }
+  75%  { transform: translateX(-2px) scale(0.998); }
+  100% { opacity: 1; transform: translateX(0)     scale(1); }
+}
+@keyframes mobileViewExit {
+  0%   { opacity: 1; transform: scale(1)    translateY(0);   filter: blur(0); }
+  40%  { opacity: 0.4; transform: scale(0.97) translateY(4px); }
+  100% { opacity: 0; transform: scale(0.94) translateY(8px); filter: blur(2px); }
+}
+ 
+/* ── Item keyframes ── */
+@keyframes mobileItemEnter {
+  0%   { opacity: 0; transform: translateX(22px) translateY(6px); }
+  60%  { opacity: 1; transform: translateX(-3px) translateY(0); }
+  100% { opacity: 1; transform: translateX(0)    translateY(0); }
+}
+@keyframes mobileItemEnterBack {
+  0%   { opacity: 0; transform: translateX(-22px) translateY(6px); }
+  60%  { opacity: 1; transform: translateX(3px)   translateY(0); }
+  100% { opacity: 1; transform: translateX(0)     translateY(0); }
+}
+
+/* Main drawer: slides in from left with spring */
+@keyframes drawerOpen {
+  0%   { transform: translateX(-100%); }
+  55%  { transform: translateX(8px);   }
+  75%  { transform: translateX(-3px);  }
+  100% { transform: translateX(0);     }
+}
+ 
+/* Main drawer: slides out to left */
+@keyframes drawerClose {
+  0%   { transform: translateX(0);     opacity: 1;   }
+  100% { transform: translateX(-100%); opacity: 0.5; }
+}
+ 
+/* Layer 2 & 3: slide in from right with spring (same as view-enter) */
+@keyframes layerSlideIn {
+  0%   { transform: translateX(100%) scale(0.97); opacity: 0;   }
+  55%  { transform: translateX(-6px)  scale(1.01); opacity: 1;   }
+  75%  { transform: translateX(2px)  scale(0.999);               }
+  100% { transform: translateX(0)    scale(1);     opacity: 1;   }
+}
+ 
+/* Layer 2 & 3: slide out to right */
+@keyframes layerSlideOut {
+  0%   { transform: translateX(0);     opacity: 1;   }
+  100% { transform: translateX(100%);  opacity: 0.4; }
+}
+ 
+/* Overlay fade */
+@keyframes overlayFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+ 
+/* Item stagger — same for all panels */
+@keyframes drawerItemIn {
+  0%   { opacity: 0; transform: translateX(16px) translateY(4px); }
+  60%  { opacity: 1; transform: translateX(-2px) translateY(0);   }
+  100% { opacity: 1; transform: translateX(0)    translateY(0);   }
+}
+
+@media print {
+  .topnav, .toric-hero, .calc-card:first-child, .info-section, .ifu-section, .footer-bottom,
+  .btn-row, .print-row, .sp-tabs {
+    display: none !important;
+  }
+  .calc-wrap {
+    grid-template-columns: 1fr;
+  }
+  .results-panel {
+    display: block !important;
+  }
+  body {
+    background: white;
+    color: black;
+  }
+}

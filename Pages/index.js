@@ -158,7 +158,7 @@ window.addEventListener("load", function() {
 
 
 /*************************************************
- * MOBILE DRAWER + OVERLAY
+ * MOBILE DRAWER + VIEW SWITCH
  *************************************************/
 
 const menuToggle = document.getElementById("menuToggle");
@@ -166,41 +166,105 @@ const closeMenuBtn = document.getElementById("closeMenu");
 const mobileMenu = document.getElementById("mobileMenu");
 const menuOverlay = document.getElementById("menuOverlay");
 
+const mobileMainView = document.getElementById("mobileMainView");
+const mobileProductsView = document.getElementById("mobileProductsView");
+const mobileIolView = document.getElementById("mobileIolView");
+
 const mobileProductsBtn = document.getElementById("mobileProductsBtn");
-const mobileProductsMenu = document.getElementById("mobileProductsMenu");
-const mobileProductsIcon = document.getElementById("mobileProductsIcon");
+const mobileIolBtn = document.getElementById("mobileIolBtn");
 
-function resetProductsDropdown() {
-  if (!mobileProductsMenu || !mobileProductsIcon) return;
+const backToMainMenu = document.getElementById("backToMainMenu");
+const backToProductsMenu = document.getElementById("backToProductsMenu");
 
-  mobileProductsMenu.classList.add("hidden");
-  mobileProductsIcon.classList.remove("rotate-180");
+let currentMobileView = mobileMainView;
+let mobileViewTimer   = null;
+ 
+/* Depth map — used to decide slide direction */
+const VIEW_DEPTH = {
+  mobileMainView:     0,
+  mobileProductsView: 1,
+  mobileIolView:      2,
+};
+ 
+function showMobileView(nextView) {
+  if (!mobileMainView || !mobileProductsView || !mobileIolView || !nextView) return;
+ 
+  const views = [mobileMainView, mobileProductsView, mobileIolView];
+  const goingForward = !currentMobileView ||
+    (VIEW_DEPTH[nextView.id] > VIEW_DEPTH[currentMobileView.id]);
+ 
+  clearTimeout(mobileViewTimer);
+ 
+  /* Same view — re-animate */
+  if (currentMobileView === nextView) {
+    views.forEach(v => v.classList.add("hidden"));
+    views.forEach(v => v.classList.remove("flex","view-enter","view-enter-back","view-exit"));
+    nextView.classList.remove("hidden");
+    nextView.classList.add("flex","view-enter");
+    return;
+  }
+ 
+  /* Exit current */
+  if (currentMobileView) {
+    currentMobileView.classList.remove("view-enter","view-enter-back");
+    currentMobileView.classList.add("view-exit");
+  }
+ 
+  mobileViewTimer = setTimeout(() => {
+    views.forEach(v => v.classList.add("hidden"));
+    views.forEach(v => v.classList.remove("flex","view-enter","view-enter-back","view-exit"));
+    nextView.classList.remove("hidden");
+    nextView.classList.add("flex", goingForward ? "view-enter" : "view-enter-back");
+    currentMobileView = nextView;
+  }, 155);
 }
+
 
 function openMenu() {
   if (!mobileMenu || !menuOverlay) return;
-
-  mobileMenu.classList.remove("-translate-x-full");
-  menuOverlay.classList.remove("opacity-0", "pointer-events-none");
+ 
+  /* Hide any open sub-layers instantly */
+  if (window._mobileHideAllLayers) window._mobileHideAllLayers();
+ 
+  mobileMenu.classList.remove("-translate-x-full", "drawer-close");
+  menuOverlay.classList.remove("opacity-0", "pointer-events-none", "overlay-in");
+ 
+  void mobileMenu.offsetWidth;
+  void menuOverlay.offsetWidth;
+ 
+  mobileMenu.classList.add("drawer-open");
+  menuOverlay.classList.add("overlay-in");
   document.body.classList.add("menu-open");
-  resetProductsDropdown();
   stopLenis();
 }
 
 function closeMenu() {
   if (!mobileMenu || !menuOverlay) return;
-
-  mobileMenu.classList.add("-translate-x-full");
+ 
+  /* Hide sub-layers instantly */
+  if (window._mobileHideAllLayers) window._mobileHideAllLayers();
+ 
+  mobileMenu.classList.remove("drawer-open");
+  mobileMenu.classList.add("drawer-close");
+  menuOverlay.classList.remove("overlay-in");
   menuOverlay.classList.add("opacity-0", "pointer-events-none");
   document.body.classList.remove("menu-open");
-  resetProductsDropdown();
+ 
+  setTimeout(function () {
+    mobileMenu.classList.add("-translate-x-full");
+    mobileMenu.classList.remove("drawer-close");
+  }, 225);
+ 
   startLenis();
 }
 
 if (menuToggle) {
   menuToggle.addEventListener("click", function() {
-    const isOpen = document.body.classList.contains("menu-open");
-    isOpen ? closeMenu() : openMenu();
+    if (document.body.classList.contains("menu-open")) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
   });
 }
 
@@ -212,37 +276,51 @@ if (menuOverlay) {
   menuOverlay.addEventListener("click", closeMenu);
 }
 
-if (mobileProductsBtn && mobileProductsMenu && mobileProductsIcon) {
+if (mobileProductsBtn) {
   mobileProductsBtn.addEventListener("click", function(e) {
     e.preventDefault();
-    e.stopPropagation();
-
-    mobileProductsMenu.classList.toggle("hidden");
-    mobileProductsIcon.classList.toggle("rotate-180");
+    showMobileView(mobileProductsView);
   });
 }
 
-document.querySelectorAll("#mobileMenu a").forEach(function(link) {
-  link.addEventListener("click", closeMenu);
-});
+if (mobileIolBtn) {
+  mobileIolBtn.addEventListener("click", function(e) {
+    e.preventDefault();
+    showMobileView(mobileIolView);
+  });
+}
+
+if (backToMainMenu) {
+  backToMainMenu.addEventListener("click", function(e) {
+    e.preventDefault();
+    showMobileView(mobileMainView);
+  });
+}
+
+if (backToProductsMenu) {
+  backToProductsMenu.addEventListener("click", function(e) {
+    e.preventDefault();
+    showMobileView(mobileProductsView);
+  });
+}
+
+document.querySelectorAll("#mobileMenu a").forEach(link => link.addEventListener("click", closeMenu));
+
+/*************************************************
+ * RESIZE HANDLING
+ *************************************************/
 
 let resizeTimer;
 
-window.addEventListener("resize", function() {
-  if (window.innerWidth >= 1024) {
-    closeMenu();
-  }
-
+window.addEventListener("resize", () => {
+  if (window.innerWidth >= 1024) closeMenu();
   renderLensBg();
-
-  clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(function() {
-    initReverseTriggers();
-  }, 250);
+  clearTimeout(window._resizeTimer);
+  window._resizeTimer = setTimeout(initReverseTriggers, 250);
 });
-
-window.addEventListener("pageshow", function() {
+window.addEventListener("pageshow", () => {
   document.body.classList.remove("menu-open");
+  showMobileView(mobileMainView);
 });
 
 
