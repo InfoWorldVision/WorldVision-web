@@ -83,6 +83,7 @@
   --neu-bg2: #dde1e7;
   --neu-dark: #b8bec8;
   --neu-light: #ffffff;
+  --neu-btdark: rgba(255, 255, 255, 0.7);
   --neu-accent: #0055a5;
   --neu-accent2: #0077cc;
   --neu-text: #2c3340;
@@ -103,6 +104,7 @@ html.dark {
   --neu-bg2: #171c28;
   --neu-dark: #10141e;
   --neu-light: #2e3650;
+  --neu-btdark: #20283c;
   --neu-accent: #4d9fef;
   --neu-accent2: #69b3f7;
   --neu-text: #dde3ee;
