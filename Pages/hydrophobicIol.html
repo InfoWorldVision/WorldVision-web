@@ -17,7 +17,7 @@
 </head>
 <body>
     <header>
-        <!-- NavBar -->
+      <!-- NavBar -->
       <nav class="topnav" role="navigation" aria-label="Main navigation">
         <div class="nav-inner">
           <div class="relative flex items-center justify-center w-full lg:w-auto">
@@ -28,15 +28,9 @@
               type="button" >
               <i class="fa-solid fa-bars"></i>
             </button>
-            <a
-              href="../Pages/index.html"
-              class="nav-logo mx-auto"
-              aria-label="world vision Home" >
+            <a href="../Pages/index.html" class="nav-logo mx-auto" aria-label="world vision Home" >
               <div class="nav-logo-mark flex gap-3 items-center">
-                <img
-                  src="../Multimedia/WVO_Logo1.png"
-                  style="width: 48px; height: 48px"
-                  class="animate__animated animate__fadeIn animate__slow" />
+                <img src="../Multimedia/WVO_Logo1.png" style="width: 48px; height: 48px" class="animate__animated animate__fadeIn animate__slow" />
                 <div class="flex flex-col leading-tight nav-logo-text">
                   <span class="font-semibold text-2xl tracking-wide">World Vision</span>
                   <span class="subtitle text-xs tracking-widest uppercase">
@@ -46,22 +40,9 @@
               </div>
             </a>
             <!-- Theme toggle visible on mobile too -->
-            <button
-              class="theme-toggle mobile-theme-toggle absolute right-0 top-1/2 -translate-y-1/2 lg:hidden"
-              id="theme-toggle-mobile"
-              aria-label="Toggle dark mode"
-              aria-pressed="false"
-              title="Toggle dark mode"
-              type="button" >
-              <svg
-                class="icon-sun"
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke-width="2"
-                stroke-linecap="round"
-                aria-hidden="true" >
+            <button class="theme-toggle mobile-theme-toggle absolute right-0 top-1/2 -translate-y-1/2 lg:hidden" id="theme-toggle-mobile" aria-label="Toggle dark mode"
+              aria-pressed="false" title="Toggle dark mode" type="button" >
+              <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true" >
                 <circle cx="12" cy="12" r="5" />
                 <line x1="12" y1="1" x2="12" y2="3" />
                 <line x1="12" y1="21" x2="12" y2="23" />
@@ -72,15 +53,7 @@
                 <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
                 <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
               </svg>
-              <svg
-                class="icon-moon"
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke-width="2"
-                stroke-linecap="round"
-                aria-hidden="true" >
+              <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true" >
                 <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
               </svg>
             </button>
@@ -89,11 +62,47 @@
           <!-- Navigation Links -->
           <ul class="nav-links hidden lg:flex">
             <li><a href="../Pages/index.html">Home</a></li>
-            <li class="flex flex-row items-center justify-center mr-3">
-              <a href="../Pages/otherProducts.html">Our Products</a>
-              <i class="fa-solid fa-angle-right" style="color: #1d4ed8;"></i>
+            <li class="flex flex-row relative group/prod items-center justify-center mr-3">
+              <a href="#ourProducts">
+                <button id="productsNavBtn" class="nav-products-btn">
+                  Our Products
+                  <i id="productsNavChevron" class="fa-solid fa-chevron-right transition-transform duration-200 group-hover/prod:rotate-90" style="font-size:10px;transition:transform .25s;margin-left:4px;color: #1d4ed8;"></i>
+                </button>
+              </a>
+              <div id="navL1Panel" class="absolute left-0 top-full mt-3 w-56 opacity-0 invisible group-hover/prod:opacity-100 group-hover/prod:visible transition-all duration-200 overflow-visible neu-dropdown-l1">
+                <!-- IOL row with L2 -->
+                <div class="group/iol-neu">
+                  <a href="../Pages/iol-page.html" id="iolNavBtn" class="active neu-dropdown-item neu-dropdown-item--arrow flex items-center justify-between gap-3 px-4 py-3 transition cursor-pointer" type="button">
+                    <span class="flex items-center gap-3">
+                      <i class="fa-solid fa-eye" style="color:var(--neu-accent);width:16px;"></i> Intraocular Lens
+                    </span>
+                    <i class="fa-solid fa-chevron-right" style="font-size:10px;opacity:0.5;"></i>
+                  </a>
+                  <!-- L2 panel -->
+                  <div id="navL2Panel" class="neu-dropdown-l2 absolute left-full top-0 ml-3 w-56 opacity-0 invisible group-hover/iol-neu:opacity-100 group-hover/iol-neu:visible transition-all duration-200 overflow-hidden">
+                    <a href="../Pages/hydrophobicIol.html" class="neu-dropdown-item">
+                      <i class="fa-solid fa-shield-halved" style="color:#0055a5;width:16px;"></i> Hydrophobic IOL
+                    </a>
+                    <a href="#" class="neu-dropdown-item">
+                      <i class="fa-solid fa-shield-halved" style="color:#0a7a50;width:16px;"></i> Hydrophilic IOL
+                    </a>
+                    <a href="#" class="neu-dropdown-item">
+                      <i class="fa-solid fa-circle-half-stroke" style="color:#8a5a10;width:16px;"></i> PMMA IOL
+                    </a>
+                  </div>
+                </div>
+                <a href="#" class="neu-dropdown-item flex items-center gap-3 px-4 py-3">
+                  <i class="fa-solid fa-star-of-life" style="color:var(--neu-accent);width:16px;"></i> Premium IOL
+                </a>
+                <a href="#" class="neu-dropdown-item">
+                  <i class="fa-solid fa-capsules" style="color:var(--neu-accent);width:16px;"></i> Pharma Products
+                </a>
+                <a href="#" class="neu-dropdown-item">
+                  <i class="fa-solid fa-cut" style="color:var(--neu-accent);width:16px;"></i> Micro Surgical Blades
+                </a>
+              </div>
             </li>
-            <li><a href="../Pages/iol-page.html" class="active">IOL | Hydrophobic</a></li>
+            <li><a href="../Pages/iol-page.html" class="active">IntraocularLenses</a></li>
             <li>
               <a href="../Pages/blog.html">Blog</a>
             </li>
@@ -102,21 +111,8 @@
           </ul>
 
           <div class="desktop-actions hidden lg:flex items-center gap-[25px]">
-            <button
-              class="theme-toggle"
-              id="theme-toggle"
-              aria-label="Toggle dark mode"
-              aria-pressed="false"
-              title="Toggle dark mode">
-              <svg
-                class="icon-sun"
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke-width="2"
-                stroke-linecap="round"
-                aria-hidden="true" >
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">
+              <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true" >
                 <circle cx="12" cy="12" r="5" />
                 <line x1="12" y1="1" x2="12" y2="3" />
                 <line x1="12" y1="21" x2="12" y2="23" />
@@ -127,16 +123,7 @@
                 <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
                 <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
               </svg>
-              <svg
-                class="icon-moon"
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke-width="2"
-                stroke-linecap="round"
-                aria-hidden="true"
-              >
+              <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true" >
                 <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
               </svg>
             </button>
@@ -164,19 +151,22 @@
             </div>
 
             <button
-              id="closeMenu"
-              class="w-10 h-10 flex items-center justify-center rounded-xl bg-white/70 border border-white/60 text-[#0055a5] shadow-[4px_4px_10px_rgba(184,190,200,0.8),-4px_-4px_10px_rgba(255,255,255,0.9)]"
-              aria-label="Close menu"
-              type="button"
-            >
+              id="closeMenu" class="w-10 h-10 flex items-center justify-center rounded-xl bg-white/70 border border-white/60 text-[#0055a5] shadow-[4px_4px_10px_rgba(184,190,200,0.8),-4px_-4px_10px_rgba(255,255,255,0.9)]"
+              aria-label="Close menu" type="button" >
               <i class="fa-solid fa-xmark"></i>
             </button>
           </div>
 
-          <ul class="flex flex-col gap-3 text-[15px] font-medium">
+          <ul id="mobileMainView" class="mobile-view flex flex-col gap-3 text-[15px] font-medium">
             <li><a href="../Pages/index.html" class="mobile-link">Home</a></li>
-            <li><a href="../Pages/otherProducts.html" class="mobile-link">Our Products</a></li>
-            <li><a href="../Pages/iol-page.html" class="mobile-link active">IOL | Hydrophobic</a></li>
+            <li>
+              <button id="mobileProductsBtn" class="mobile-view mobile-link w-full flex items-center justify-between text-left" type="button">
+                <span>Our Products</span>
+                <i class="fa-solid fa-chevron-right text-sm opacity-60 flex items-center justify-center w-10 h-10 rounded-xl bg-white/70 border border-white/60 text-[#0055a5] shadow-[4px_4px_10px_rgba(184,190,200,0.8),-4px_-4px_10px_rgba(255,255,255,0.9)]"></i>
+              </button>
+
+            </li>
+            <li><a href="../Pages/iol-page.html" class="mobile-link active">IntraocularLenses</a></li>
             <li>
               <a href="../Pages/toricCalculator.html" class="mobile-link">
                 Toric Calculator
@@ -186,6 +176,55 @@
             <li><a href="../Pages/blog.html" class="mobile-link">Blog</a></li>
             <li><a href="../Pages/contactUs.html" class="mobile-link">Contact Us</a></li>
           </ul>
+
+          <!-- Our Products Menu -->
+          
+          <ul id="mobileProductsView" class="mobile-view hidden flex-col gap-3 text-[15px] font-medium list-none p-0 m-0">
+            <li>
+              <button id="backToMainMenu" class="mobile-view mobile-link flex items-center gap-3 text-left" type="button">
+                <i class="fa-solid fa-chevron-left text-sm w-10 h-10 flex items-center justify-center rounded-xl bg-white/70 border border-white/60 text-[#0055a5] shadow-[4px_4px_10px_rgba(184,190,200,0.8),-4px_-4px_10px_rgba(255,255,255,0.9)]"></i>
+                <span class="font-semibold text-[17px] text-[#1e3a5f] mobile-link">Our Products</span>
+              </button>
+            </li>
+            <li>
+              <button id="mobileIolBtn" class="w-full flex items-center justify-between mobile-link text-left" type="button">
+                <span class="flex items-center gap-2">
+                  <i class="fa-solid fa-eye" style="color:#0055a5;"></i> Intraocular Lens
+                </span>
+                <i class="fa-solid fa-chevron-right text-sm opacity-50 flex items-center justify-center w-10 h-10 rounded-xl bg-white/70 border border-white/60 text-[#0055a5] shadow-[4px_4px_10px_rgba(184,190,200,0.8),-4px_-4px_10px_rgba(255,255,255,0.9)]"></i>
+              </button>
+            </li>
+            <li><a href="#" class="mobile-link flex items-center gap-2">
+              <i class="fa-solid fa-star-of-life" style="color:#0055a5;"></i> Premium IOL
+            </a></li>
+            <li><a href="#" class="mobile-link flex items-center gap-2">
+              <i class="fa-solid fa-capsules" style="color:#0055a5;"></i> Pharma Products
+            </a></li>
+            <li><a href="#" class="mobile-link flex items-center gap-2">
+              <i class="fa-solid fa-cut" style="color:#0055a5;"></i> Micro Surgical Blades
+            </a></li>
+          </ul>
+
+          <!-- Child Menu -->
+
+          <ul id="mobileIolView" class="mobile-view hidden flex-col gap-3 text-[15px] font-medium list-none p-0 m-0">
+            <li>
+              <button id="backToProductsMenu" class="mobile-link flex items-center gap-5 text-left" type="button">
+                <i class="fa-solid fa-chevron-left text-sm flex items-center justify-center w-10 h-10 rounded-xl bg-white/70 border border-white/60 text-[#0055a5] shadow-[4px_4px_10px_rgba(184,190,200,0.8),-4px_-4px_10px_rgba(255,255,255,0.9)]"></i>
+                <span class="font-semibold text-[17px] text-[#1e3a5f]">Intraocular Lens</span>
+              </button>
+            </li>
+            <li><a href="../Pages/hydrophobicIol.html" class="mobile-link flex items-center gap-2">
+              <i class="fa-solid fa-shield-halved" style="color:#0055a5;"></i> Hydrophobic IOL
+            </a></li>
+            <li><a href="#" class="mobile-link flex items-center gap-2">
+              <i class="fa-solid fa-shield-halved" style="color:#0a7a50;"></i> Hydrophilic IOL
+            </a></li>
+            <li><a href="#" class="mobile-link flex items-center gap-2">
+              <i class="fa-solid fa-circle-half-stroke" style="color:#8a5a10;"></i> PMMA IOL
+            </a></li>
+          </ul>
+
         </div>
       </div>
 
