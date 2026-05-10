@@ -944,7 +944,7 @@ html.dark {
   box-shadow: 8px 8px 20px var(--neu-dark), -8px -8px 20px var(--neu-light);
   z-index: 99999;
   padding: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--neu-btdark);
 }
 .neu-dropdown-item {
   display: flex;
@@ -973,7 +973,7 @@ html.dark {
   box-shadow: 10px 10px 24px var(--neu-dark), -10px -10px 24px var(--neu-light);
   z-index: 99999;
   padding: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--neu-btdark);
 }
 
 /* ================= SWIPER FIX ================= */
