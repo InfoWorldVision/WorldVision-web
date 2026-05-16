@@ -663,6 +663,17 @@ html.dark .faq-item {
   display: none;
 }
 
+.active-subnav {
+  color: #1d4ed8 !important;
+  background: rgba(37, 99, 235, 0.08) !important;
+  font-weight: 600 !important;
+  box-shadow: 2px 2px 5px var(--neu-dark);
+}
+
+.active-subnav::after {
+  display: none;
+}
+
 /* Mobile nav link */
 .mobile-drawer-link {
   display: block;
