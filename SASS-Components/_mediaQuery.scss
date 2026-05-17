@@ -291,9 +291,9 @@
   .event-card { grid-template-columns: 80px 1fr; }
   .event-day  { font-size: 1.7rem; }
   .event-body { padding: 1rem 1.2rem; }
-  .review-slide { flex-direction: column; }
-  .review-slide > .review-card:last-child:not(:first-child) { display: none; }
   .reviews-arrow { display: none; }
+  .review-slide  { gap: 0; padding: 4px 2px; }
+  .review-card   { flex: 0 0 100%; min-width: 100%; }
 }
 
 /* Small mobile */
@@ -320,7 +320,16 @@
   //   grid-template-columns: 1fr;
   // }
   .content-section .products-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .features-grid{
     grid-template-columns: 1fr;
+    text-align: center !important;
+    
+    & .feature-card .feature-icon-wrap{
+      align-items: center !important;
+      margin: 1rem auto !important;
+    }
   }
 
   .content-section .products-grid .product-card-body {
@@ -448,7 +457,6 @@
     font-size: 0.7rem;
     letter-spacing: 0.1em;
   }
-  .review-card { flex: 0 0 calc(100% - 0px); min-width: 0; }
 }
 
 @media print {

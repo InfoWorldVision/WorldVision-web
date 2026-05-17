@@ -1450,18 +1450,25 @@ if (lightbox && lbClose && lbPrev && lbNext) {
 
   var items = rv.items;
   var n     = items.length;
-  var slides = [];
 
-  if (n % 2 !== 0) {
-    /* Odd: pairs of 2 then lone last card */
-    for (var i = 0; i < n - 1; i += 2) slides.push(items.slice(i, i + 2));
-    slides.push([items[n - 1]]);
-  } else {
-    /* Even: equal pairs, max 4 per slide */
-    var per = n <= 8 ? 2 : 4;
-    for (var i = 0; i < n; i += per) slides.push(items.slice(i, i + per));
+  function buildSlides() {
+    var mob = window.innerWidth <= 640;
+    var out = [];
+    if (mob) {
+      items.forEach(function(it) { out.push([it]); });
+    } else {
+      if (n % 2 !== 0) {
+        for (var i = 0; i < n - 1; i += 2) out.push(items.slice(i, i + 2));
+        out.push([items[n - 1]]);
+      } else {
+        var per = n <= 8 ? 2 : 4;
+        for (var i = 0; i < n; i += per) out.push(items.slice(i, i + per));
+      }
+    }
+    return out;
   }
 
+  var slides = buildSlides();
   var total = slides.length;
   var cur   = 0;
   var timer = null;
