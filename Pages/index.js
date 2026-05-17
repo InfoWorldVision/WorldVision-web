@@ -133,8 +133,9 @@ const SITE = {
             { label: "PMMA IOL",         href: "#",                            icon: "fa-circle-half-stroke", color: "text-amber-400" },
           ],
         },
-        { label: "Surgical Instruments", href: "#", icon: "fa-syringe",      color: "var(--neu-accent2)" },
-        { label: "Veterinary IOL",       href: "#", icon: "fa-paw",          color: "var(--neu-accent2)" },
+        { label: "Premium IOL",           href: "#", icon: "fa-star-of-life", color: "var(--neu-accent2)" },
+        { label: "Pharma Products",       href: "#", icon: "fa-capsules",     color: "var(--neu-accent2)" },
+        { label: "Micro Surgical Blades", href: "#", icon: "fa-cut",          color: "var(--neu-accent2)" },
       ],
     },
     mobile: {
