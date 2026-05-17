@@ -1,5 +1,5 @@
 /* ================= BACKGROUND RESPONSIVE ================= */
-@media(max-width: 1280px){
+@media(max-width: 1280px) and (min-width: 1025px) {
   .logo-container {
     gap: 0.5rem;
   }
@@ -105,6 +105,15 @@
   .desktop-actions {
     display: flex;
     gap: 8px;
+  }
+  .review-card { flex: 0 0 calc(33.333% - 16px); }
+}
+
+@media (max-width: 900px) and (min-width: 641px) {
+  .review-card { flex: 0 0 calc(50% - 12px); }
+  /* If odd total, last card is centered at full 50% width */
+  .reviews-grid.last-row-1 .review-card:nth-last-child(1) {
+    flex: 0 0 calc(50% - 12px);
   }
 }
 
@@ -279,6 +288,12 @@
   .col-scroll__box:nth-child(3), .col-scroll__box:nth-child(4) { display: none; }
   .lb-arrow--prev { left: 4px; width: 36px; height: 36px; }
   .lb-arrow--next { right: 4px; width: 36px; height: 36px; }
+  .event-card { grid-template-columns: 80px 1fr; }
+  .event-day  { font-size: 1.7rem; }
+  .event-body { padding: 1rem 1.2rem; }
+  .review-slide { flex-direction: column; }
+  .review-slide > .review-card:last-child:not(:first-child) { display: none; }
+  .reviews-arrow { display: none; }
 }
 
 /* Small mobile */
@@ -433,6 +448,7 @@
     font-size: 0.7rem;
     letter-spacing: 0.1em;
   }
+  .review-card { flex: 0 0 calc(100% - 0px); min-width: 0; }
 }
 
 @media print {

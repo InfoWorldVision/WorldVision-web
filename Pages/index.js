@@ -11,6 +11,7 @@ const SITE = {
     hours:    "Mon–Sat, 9AM – 6PM IST",
     whatsapp: "https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv",
   },
+  
 
   nav: {
     links: [
@@ -20,7 +21,98 @@ const SITE = {
       { label: "About Us",   href: "#aboutus",                page: "about"     },
       { label: "Contact Us", href: "../Pages/contactUs.html", page: "contactUs" },
     ],
-    cta: {
+  
+  events: {
+    eyebrow:   "What's On",
+    heading:   "Upcoming",
+    headingEm: "Events",
+    sub:       "Join us at global ophthalmic conferences, live surgical workshops, and distributor meets — stay ahead in the field.",
+    items: [
+      {
+        date:     { day: "14", month: "Aug", year: "2026" },
+        tag:      "Conference",
+        tagColor: "blue",
+        title:    "AIOS Annual Congress 2026",
+        location: "Mumbai, Maharashtra",
+        desc:     "World Vision presents the latest advances in hydrophobic IOL technology at India's largest ophthalmic conference.",
+        badge:    "Exhibiting",
+      },
+      {
+        date:     { day: "22", month: "Sep", year: "2026" },
+        tag:      "Workshop",
+        tagColor: "teal",
+        title:    "Wet Lab — Foldable IOL Techniques",
+        location: "Chennai, Tamil Nadu",
+        desc:     "Hands-on surgical wet lab for ophthalmologists. Limited seats. Learn phaco and implantation best practices.",
+        badge:    "Free Entry",
+      },
+      {
+        date:     { day: "10", month: "Oct", year: "2026" },
+        tag:      "Expo",
+        tagColor: "violet",
+        title:    "ESCRS Congress — Barcelona",
+        location: "Barcelona, Spain",
+        desc:     "Meet our international team at ESCRS 2026. Explore our full IOL portfolio and discuss global distribution.",
+        badge:    "Booth A-24",
+      },
+    ],
+  },
+
+  reviews: {
+    eyebrow:   "Trusted By Surgeons",
+    heading:   "What our",
+    headingEm: "clients say",
+    sub:       "Feedback from ophthalmologists and distributors who trust World Vision IOLs in their practice.",
+    items: [
+      {
+        name:     "Dr. Rajesh Menon",
+        role:     "Senior Ophthalmologist",
+        location: "AIIMS, New Delhi",
+        rating:   5,
+        text:     "World Vision's hydrophobic IOLs have consistently delivered zero glistening cases across 200+ implants. The optical clarity and UV protection are outstanding — I recommend them to all my colleagues.",
+        avatar:   "RM",
+        color:    "blue",
+      },
+      {
+        name:     "Dr. Anita Krishnan",
+        role:     "Cataract Surgeon",
+        location: "Aravind Eye Hospital, Coimbatore",
+        rating:   5,
+        text:     "Exceptional build quality and packaging. The pre-loaded injector system makes surgeries significantly faster. Support from the World Vision team is always prompt and professional.",
+        avatar:   "AK",
+        color:    "teal",
+      },
+      {
+        name:     "Mr. Ibrahim Al-Farsi",
+        role:     "Medical Equipment Distributor",
+        location: "Dubai, UAE",
+        rating:   5,
+        text:     "We've been distributing World Vision IOLs across the GCC for 3 years. Regulatory documentation is always complete, shipments are on time, and the product quality speaks for itself.",
+        avatar:   "IA",
+        color:    "violet",
+      },
+      {
+        name:     "Dr. Priya Chandrasekhar",
+        role:     "Vitreoretinal Surgeon",
+        location: "Sankara Nethralaya, Chennai",
+        rating:   5,
+        text:     "The PMMA lens range offers great value without compromising on quality. Biocompatibility is excellent and the haptic design ensures stable positioning post-op.",
+        avatar:   "PC",
+        color:    "amber",
+      },
+      {
+        name:     "Dr. Mohammed Rashid",
+        role:     "Ophthalmologist",
+        location: "King Fahad Hospital, Riyadh",
+        rating:   5,
+        text:     "We switched to World Vision IOLs two years ago and haven't looked back. Consistent quality batch after batch, with detailed IFU documentation that makes regulatory compliance easy.",
+        avatar:   "MR",
+        color:    "blue",
+      },
+    ],
+  },
+
+  cta: {
       label: "Toric Calculator",
       href:  "../Pages/toricCalculator.html",
       icon:  "fa-calculator",
@@ -144,6 +236,97 @@ const SITE = {
       { src: "../Multimedia/lensemanu2.jpg", alt: "Facility 2" },
       { src: "../Multimedia/lensemanu3.jpg", alt: "Facility 3" },
       { src: "../Multimedia/lensemanu4.jpg", alt: "Facility 4" },
+    ],
+  },
+
+
+  events: {
+    eyebrow:   "What's On",
+    heading:   "Upcoming",
+    headingEm: "Events",
+    sub:       "Join us at global ophthalmic conferences, live surgical workshops, and distributor meets — stay ahead in the field.",
+    items: [
+      {
+        date:     { day: "14", month: "Aug", year: "2026" },
+        tag:      "Conference",
+        tagColor: "blue",
+        title:    "AIOS Annual Congress 2026",
+        location: "Mumbai, Maharashtra",
+        desc:     "World Vision presents the latest advances in hydrophobic IOL technology at India's largest ophthalmic conference.",
+        badge:    "Exhibiting",
+      },
+      {
+        date:     { day: "22", month: "Sep", year: "2026" },
+        tag:      "Workshop",
+        tagColor: "teal",
+        title:    "Wet Lab — Foldable IOL Techniques",
+        location: "Chennai, Tamil Nadu",
+        desc:     "Hands-on surgical wet lab for ophthalmologists. Limited seats. Learn phaco and implantation best practices.",
+        badge:    "Free Entry",
+      },
+      {
+        date:     { day: "10", month: "Oct", year: "2026" },
+        tag:      "Expo",
+        tagColor: "violet",
+        title:    "ESCRS Congress — Barcelona",
+        location: "Barcelona, Spain",
+        desc:     "Meet our international team at ESCRS 2026. Explore our full IOL portfolio and discuss global distribution.",
+        badge:    "Booth A-24",
+      },
+    ],
+  },
+
+  reviews: {
+    eyebrow:   "Trusted By Surgeons",
+    heading:   "What our",
+    headingEm: "clients say",
+    sub:       "Feedback from ophthalmologists and distributors who trust World Vision IOLs in their practice.",
+    items: [
+      {
+        name:     "Dr. Rajesh Menon",
+        role:     "Senior Ophthalmologist",
+        location: "AIIMS, New Delhi",
+        rating:   5,
+        text:     "World Vision's hydrophobic IOLs have consistently delivered zero glistening cases across 200+ implants. The optical clarity and UV protection are outstanding — I recommend them to all my colleagues.",
+        avatar:   "RM",
+        color:    "blue",
+      },
+      {
+        name:     "Dr. Anita Krishnan",
+        role:     "Cataract Surgeon",
+        location: "Aravind Eye Hospital, Coimbatore",
+        rating:   5,
+        text:     "Exceptional build quality and packaging. The pre-loaded injector system makes surgeries significantly faster. Support from the World Vision team is always prompt and professional.",
+        avatar:   "AK",
+        color:    "teal",
+      },
+      {
+        name:     "Mr. Ibrahim Al-Farsi",
+        role:     "Medical Equipment Distributor",
+        location: "Dubai, UAE",
+        rating:   5,
+        text:     "We've been distributing World Vision IOLs across the GCC for 3 years. Regulatory documentation is always complete, shipments are on time, and the product quality speaks for itself.",
+        avatar:   "IA",
+        color:    "violet",
+      },
+      {
+        name:     "Dr. Priya Chandrasekhar",
+        role:     "Vitreoretinal Surgeon",
+        location: "Sankara Nethralaya, Chennai",
+        rating:   5,
+        text:     "The PMMA lens range offers great value without compromising on quality. Biocompatibility is excellent and the haptic design ensures stable positioning post-op.",
+        avatar:   "PC",
+        color:    "amber",
+      },
+      {
+        name:     "Dr. Mohammed Rashid",
+        role:     "Ophthalmologist",
+        location: "King Fahad Hospital, Riyadh",
+        rating:   5,
+        text:     "We switched to World Vision IOLs two years ago and haven't looked back. Consistent quality batch after batch, with detailed IFU documentation that makes regulatory compliance easy.",
+        avatar:   "MR",
+        color:    "blue",
+      },
     ],
   },
 
@@ -1192,3 +1375,165 @@ if (lightbox && lbClose && lbPrev && lbNext) {
     }
   });
 }
+
+(function () {
+  const ev = SITE.events;
+  if (!ev) return;
+
+  const eyebrow = qs("eventsEyebrow");
+  const heading = qs("eventsHeading");
+  const sub     = qs("eventsSub");
+  const grid    = qs("eventsGrid");
+
+  if (eyebrow) eyebrow.textContent = ev.eyebrow;
+  if (heading) heading.innerHTML   = ev.heading + " <em>" + ev.headingEm + "</em>";
+  if (sub)     sub.textContent     = ev.sub;
+
+  const colorMap = {
+    blue:   { bg: "rgba(37,99,235,0.1)",  text: "#1d4ed8" },
+    teal:   { bg: "rgba(13,148,136,0.1)", text: "#0f766e" },
+    violet: { bg: "rgba(124,58,237,0.1)", text: "#7c3aed" },
+    amber:  { bg: "rgba(217,119,6,0.1)",  text: "#b45309" },
+  };
+
+  if (!grid) return;
+  grid.innerHTML = ev.items.map(function (item) {
+    const c = colorMap[item.tagColor] || colorMap.blue;
+    return [
+      '<div class="event-card">',
+        '<div class="event-date-col">',
+          '<div class="event-date-box">',
+            '<span class="event-day">'   + item.date.day   + '</span>',
+            '<span class="event-month">' + item.date.month + '</span>',
+            '<span class="event-year">'  + item.date.year  + '</span>',
+          '</div>',
+        '</div>',
+        '<div class="event-body">',
+          '<div class="event-meta">',
+            '<span class="event-tag" style="background:' + c.bg + ';color:' + c.text + ';">' + item.tag + '</span>',
+            '<span class="event-badge">' + item.badge + '</span>',
+          '</div>',
+          '<h3 class="event-title">' + item.title + '</h3>',
+          '<p class="event-location"><i class="fa-solid fa-location-dot"></i> ' + item.location + '</p>',
+          '<p class="event-desc">' + item.desc + '</p>',
+          '<div class="event-actions">',
+            '<a href="' + (SITE.company.whatsapp || '#') + '" target="_blank" class="event-btn-wa">',
+              '<i class="fa-brands fa-whatsapp"></i> Enquire on WhatsApp',
+            '</a>',
+            '<a href="#" class="event-btn-more">Know More <i class="fa-solid fa-arrow-right text-xs"></i></a>',
+          '</div>',
+        '</div>',
+      '</div>',
+    ].join('');
+  }).join('');
+})();
+
+// Customer Review
+
+(function () {
+  var rv = SITE.reviews;
+  if (!rv) return;
+
+  var eyebrow = qs("reviewsEyebrow");
+  var heading = qs("reviewsHeading");
+  var sub     = qs("reviewsSub");
+  var track   = qs("reviewsSliderTrack");
+  var dotsEl  = qs("reviewsDots");
+  var prevBtn = qs("reviewsPrev");
+  var nextBtn = qs("reviewsNext");
+  var wrap    = qs("reviewsSliderWrap");
+
+  if (eyebrow) eyebrow.textContent = rv.eyebrow;
+  if (heading) heading.innerHTML   = rv.heading + " <em>" + rv.headingEm + "</em>";
+  if (sub)     sub.textContent     = rv.sub;
+  if (!track)  return;
+
+  var items = rv.items;
+  var n     = items.length;
+  var slides = [];
+
+  if (n % 2 !== 0) {
+    /* Odd: pairs of 2 then lone last card */
+    for (var i = 0; i < n - 1; i += 2) slides.push(items.slice(i, i + 2));
+    slides.push([items[n - 1]]);
+  } else {
+    /* Even: equal pairs, max 4 per slide */
+    var per = n <= 8 ? 2 : 4;
+    for (var i = 0; i < n; i += per) slides.push(items.slice(i, i + per));
+  }
+
+  var total = slides.length;
+  var cur   = 0;
+  var timer = null;
+
+  function cardHTML(item) {
+    var c = item.color || 'blue';
+    return [
+      '<div class="review-card" data-color="' + c + '">',
+        '<div class="review-card-quote">\u201C</div>',
+        '<p class="review-card-text">' + item.text + '</p>',
+        '<div class="review-card-stars">' + '\u2605'.repeat(item.rating) + '</div>',
+        '<div class="review-card-author">',
+          '<div class="review-card-avatar">' + item.avatar + '</div>',
+          '<div>',
+            '<div class="review-card-name">' + item.name + '</div>',
+            '<div class="review-card-role">' + item.role + '</div>',
+            '<div class="review-card-location">',
+              '<i class="fa-solid fa-location-dot" style="font-size:10px;color:#9ca3af;"></i> ' + item.location,
+            '</div>',
+          '</div>',
+        '</div>',
+      '</div>',
+    ].join('');
+  }
+
+  track.innerHTML = slides.map(function (group) {
+    var isSingle = group.length === 1;
+    return '<div class="review-slide' + (isSingle ? ' single-card' : '') + '">' +
+      group.map(cardHTML).join('') +
+    '</div>';
+  }).join('');
+
+  /* Dots */
+  if (dotsEl) {
+    dotsEl.innerHTML = slides.map(function (_, i) {
+      return '<button class="review-dot' + (i === 0 ? ' active' : '') + '" data-i="' + i + '"></button>';
+    }).join('');
+    dotsEl.addEventListener('click', function (e) {
+      var b = e.target.closest('.review-dot');
+      if (b) { goTo(+b.dataset.i); startAuto(); }
+    });
+  }
+
+  function syncUI() {
+    track.style.transform = 'translateX(-' + (cur * 100) + '%)';
+    if (dotsEl) dotsEl.querySelectorAll('.review-dot').forEach(function (d, i) {
+      d.classList.toggle('active', i === cur);
+    });
+    if (prevBtn) prevBtn.disabled = cur === 0;
+    if (nextBtn) nextBtn.disabled = cur === total - 1;
+  }
+
+  function goTo(n) { cur = Math.max(0, Math.min(n, total - 1)); syncUI(); }
+  function goNext() { goTo(cur < total - 1 ? cur + 1 : 0); }
+  function goPrev() { goTo(cur > 0 ? cur - 1 : total - 1); }
+  function startAuto() { clearInterval(timer); timer = setInterval(goNext, 4500); }
+  function stopAuto()  { clearInterval(timer); }
+
+  goTo(0); startAuto();
+
+  if (prevBtn) prevBtn.addEventListener('click', function () { goPrev(); startAuto(); });
+  if (nextBtn) nextBtn.addEventListener('click', function () { goNext(); startAuto(); });
+  if (wrap) {
+    wrap.addEventListener('mouseenter', stopAuto);
+    wrap.addEventListener('mouseleave', startAuto);
+  }
+
+  var tx = 0;
+  track.addEventListener('touchstart', function (e) { tx = e.touches[0].clientX; stopAuto(); }, { passive: true });
+  track.addEventListener('touchend', function (e) {
+    var d = tx - e.changedTouches[0].clientX;
+    if (Math.abs(d) > 50) { d > 0 ? goNext() : goPrev(); }
+    startAuto();
+  });
+}());
