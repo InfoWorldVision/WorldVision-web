@@ -11,7 +11,6 @@ const SITE = {
     hours:    "Mon–Sat, 9AM – 6PM IST",
     whatsapp: "https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv",
   },
-  
 
   nav: {
     links: [
@@ -21,8 +20,7 @@ const SITE = {
       { label: "About Us",   href: "#aboutus",                page: "about"     },
       { label: "Contact Us", href: "../Pages/contactUs.html", page: "contactUs" },
     ],
-  
-  events: {
+    events: {
     eyebrow:   "What's On",
     heading:   "Upcoming",
     headingEm: "Events",
@@ -133,9 +131,30 @@ const SITE = {
             { label: "PMMA IOL",         href: "#",                            icon: "fa-circle-half-stroke", color: "text-amber-400" },
           ],
         },
-        { label: "Premium IOL",           href: "#", icon: "fa-star-of-life", color: "var(--neu-accent2)" },
-        { label: "Pharma Products",       href: "#", icon: "fa-capsules",     color: "var(--neu-accent2)" },
-        { label: "Micro Surgical Blades", href: "#", icon: "fa-cut",          color: "var(--neu-accent2)" },
+        { label: "Premium IOL", href: "#", icon: "fa-star-of-life", color: "var(--neu-accent2)" },
+        {
+          label: "Pharma Products",
+          href:  "#",
+          icon:  "fa-capsules",
+          color: "var(--neu-accent2)",
+          children: [
+            { label: "World Vision Chol",  href: "#", icon: "fa-flask",   color: "text-purple-400" },
+            { label: "World Vision TBlue", href: "#", icon: "fa-flask",   color: "text-blue-400"   },
+            { label: "World Vision Visc",  href: "#", icon: "fa-droplet", color: "text-teal-400"   },
+          ],
+        },
+        {
+          label: "Micro Surgical Blades",
+          href:  "#",
+          icon:  "fa-cut",
+          color: "var(--neu-accent2)",
+          children: [
+            { label: "Keratome",  href: "#", icon: "fa-pen-fancy",          color: "text-slate-500" },
+            { label: "Crescent",  href: "#", icon: "fa-moon",               color: "text-blue-400"  },
+            { label: "Lance Ip",  href: "#", icon: "fa-staff-snake",        color: "text-amber-400" },
+            { label: "MVR Blade", href: "#", icon: "fa-diamond-turn-right", color: "text-red-400"   },
+          ],
+        },
       ],
     },
     mobile: {
@@ -149,12 +168,12 @@ const SITE = {
       ],
       // VIEW 2 — products sub-menu
       products: {
-        back:  { label: "Our Products" },
-        iol:   { label: "Intraocular Lens", icon: "fa-eye", color: "text-[#0055a5]" },
+        back:     { label: "Our Products" },
+        iol:      { label: "Intraocular Lens",      icon: "fa-eye",        color: "text-[#0055a5]" },
+        pharma:   { label: "Pharma Products",       icon: "fa-capsules",   color: "text-[#0055a5]" },
+        blade:    { label: "Micro Surgical Blades", icon: "fa-cut",      color: "text-[#0055a5]" },
         children: [
-          { label: "Premium IOL",           href: "#", icon: "fa-star-of-life", color: "text-[#0055a5]" },
-          { label: "Pharma Products",       href: "#", icon: "fa-capsules",     color: "text-[#0055a5]" },
-          { label: "Micro Surgical Blades", href: "#", icon: "fa-cut",          color: "text-[#0055a5]" },
+          { label: "Premium IOL", href: "#", icon: "fa-star-of-life", color: "text-[#0055a5]" },
         ],
       },
       // VIEW 3 — IOL sub-menu
@@ -164,6 +183,25 @@ const SITE = {
           { label: "Hydrophobic IOL", href: "../Pages/hydrophobicIol.html", icon: "fa-shield-halved",      color: "text-[#0055a5]" },
           { label: "Hydrophilic IOL", href: "#",                            icon: "fa-shield-halved",      color: "text-teal-500"  },
           { label: "PMMA IOL",        href: "#",                            icon: "fa-circle-half-stroke", color: "text-amber-500" },
+        ],
+      },
+      // VIEW 4 — Pharma sub-menu
+      pharma: {
+        back:  { label: "Pharma Products" },
+        children: [
+          { label: "World Vision Chol",  href: "#", icon: "fa-flask",   color: "text-purple-500" },
+          { label: "World Vision TBlue", href: "#", icon: "fa-flask",   color: "text-blue-500"   },
+          { label: "World Vision Visc",  href: "#", icon: "fa-droplet", color: "text-teal-500"   },
+        ],
+      },
+      // VIEW 5 — Blades sub-menu
+      blade: {
+        back:  { label: "Surgical Blades" },
+        children: [
+          { label: "Keratome",  href: "#", icon: "fa-pen-fancy",          color: "text-slate-500" },
+          { label: "Crescent",  href: "#", icon: "fa-moon",               color: "text-blue-500"  },
+          { label: "Lance Ip",  href: "#", icon: "fa-staff-snake",        color: "text-amber-500" },
+          { label: "MVR Blade", href: "#", icon: "fa-diamond-turn-right", color: "text-red-500"   },
         ],
       },
     },
@@ -383,47 +421,57 @@ function pageFromHref(href) {
 const ACTIVE_PAGE = getActivePage();
 
 function buildDesktopProductsDropdown(isActive = false){
+  const p      = SITE.nav.products;
+  const iol    = p.children[0];
+  const premium= p.children[1];
+  const pharma = p.children[2];
+  const blade  = p.children[3];
 
-  const p = SITE.nav.products;
-  const iol = p.children[0];
+  function subItems(items) {
+    return items.map(sub =>
+      `<a href="${sub.href}" class="flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition text-sm font-medium text-gray-700">
+        <i class="fa-solid ${sub.icon} ${sub.color} w-4"></i> ${sub.label}
+      </a>`
+    ).join("");
+  }
 
-  const l2 = iol.children.map(sub =>
-    `<a href="${sub.href}" class="flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition text-sm font-medium text-gray-700">
-      <i class="fa-solid ${sub.icon} ${sub.color} w-4"></i> ${sub.label}
-    </a>`
-  ).join("");
+  function l1WithFlyout(item, flyout, groupClass) {
+    return `
+    <div class="relative group/${groupClass}">
+      <a href="${item.href}" class="flex items-center justify-between gap-3 px-4 py-3 hover:bg-blue-50 transition text-sm font-medium text-gray-700 cursor-pointer">
+        <span class="flex items-center gap-3">
+          <i class="fa-solid ${item.icon} w-4" style="color:${item.color};"></i> ${item.label}
+        </span>
+        <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+      </a>
+      <div class="absolute left-full top-0 ml-2 w-56 rounded-2xl bg-white/95 backdrop-blur-lg border border-white/30 shadow-xl opacity-0 invisible group-hover/${groupClass}:opacity-100 group-hover/${groupClass}:visible transition-all duration-200 z-[9999] overflow-hidden">
+        ${flyout}
+      </div>
+    </div>`;
+  }
 
-  const rest = p.children.slice(1).map(item =>
-    `<a href="${item.href}" class="flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition text-sm font-medium text-gray-700">
-      <i class="fa-solid ${item.icon} w-4" style = "color: ${item.color};"></i> ${item.label}
-    </a>`
-  ).join("");
+  function l1Plain(item) {
+    return `<a href="${item.href}" class="flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition text-sm font-medium text-gray-700">
+      <i class="fa-solid ${item.icon} w-4" style="color:${item.color};"></i> ${item.label}
+    </a>`;
+  }
 
-
-  const iolActive = p.pages.includes(ACTIVE_PAGE);
+  const isProductActive = p.pages.includes(ACTIVE_PAGE);
 
   return `
   <li class="relative group/prod">
-    <div class="nav-item ${isActive ? "active-nav" : ""} flex items-center gap-2 cursor-pointer select-none">
+    <div class="nav-item ${isProductActive ? "active-nav" : ""} flex items-center gap-2 cursor-pointer select-none">
       ${p.label} <i id="productsNavChevron" class="fa-solid fa-chevron-down text-sm transition-transform duration-200 group-hover/prod:rotate-180"></i>
     </div>
     <div class="absolute left-0 top-full mt-3 w-56 rounded-2xl bg-white/90 backdrop-blur-lg border border-white/30 shadow-xl opacity-0 invisible group-hover/prod:opacity-100 group-hover/prod:visible transition-all duration-200 z-[999] overflow-visible">
-      <div class="relative group/iol">
-        <a href="../Pages/iol-page.html" id="iolNavBtn" class="flex items-center justify-between gap-3 px-4 py-3 hover:bg-blue-50 transition text-sm font-medium text-gray-700 cursor-pointer">
-          <span class="flex items-center gap-3">
-            <i class="fa-solid fa-eye text-blue-500 w-4"></i> Intraocular Lens
-          </span>
-          <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
-        </a>
-        
-        <div id="navL2Panel" class="absolute left-full top-0 ml-2 w-56 rounded-2xl bg-white/95 backdrop-blur-lg border border-white/30 shadow-xl opacity-0 invisible group-hover/iol:opacity-100 group-hover/iol:visible transition-all duration-200 z-[9999] overflow-hidden">
-          ${l2}
-        </div>
-      </div>
-      ${rest}
+      ${l1WithFlyout(iol,    subItems(iol.children),    "iol")}
+      ${l1Plain(premium)}
+      ${pharma  ? l1WithFlyout(pharma, subItems(pharma.children), "pharma") : ""}
+      ${blade   ? l1WithFlyout(blade,  subItems(blade.children),  "blade")  : ""}
     </div>
   </li>`;
 }
+
 
 function renderDestopNav(){
   const brand = qs("navBrand");
@@ -482,10 +530,8 @@ function mobileForwardBtn(id, icon, color, label, isActive = false) {
 
 function renderMobileNav(){
   const mob = SITE.nav.mobile;
-
   const mobileProductsActive = SITE.nav.products.pages.includes(ACTIVE_PAGE);
 
-  // Brand
   const mb = qs("mobileBrand");
   if(mb){
     mb.innerHTML = `
@@ -493,61 +539,85 @@ function renderMobileNav(){
     <div class="flex flex-col leading-tight">
       <span class="font-semibold text-lg">${SITE.company.name}</span>
       <span class="subtitle text-xs tracking-widest uppercase">${SITE.company.subtitle}</span>
-    </div>`
+    </div>`;
   }
 
+  // VIEW 1 — Main menu
   const mainView = qs("mobileMainView");
   if(mainView){
     const mainLinks = mob.main.map(link => {
       const isActive = pageFromHref(link.href) === ACTIVE_PAGE;
-      return `<li><a href="${link.href}" class="mobile-drawer-link ${isActive ? "active-nav" : ""}">${link.label}</a></li>`
+      return `<li><a href="${link.href}" class="mobile-drawer-link ${isActive ? "active-nav" : ""}">${link.label}</a></li>`;
     });
-
-    mainLinks.splice (1, 0, 
-      `<li>
-        <button id="mobileProductsBtn" 
-          class="w-full flex items-center justify-between mobile-drawer-link ${mobileProductsActive ? "active-nav" : ""} text-left" type="button">
-          <span>${SITE.nav.products.label}</span>
-          <i class="fa-solid fa-chevron-right text-sm opacity-60"></i>
-        </button>
-      </li>`
+    mainLinks.splice(1, 0,
+      `<li><button id="mobileProductsBtn"
+        class="w-full flex items-center justify-between mobile-drawer-link ${mobileProductsActive ? "active-nav" : ""} text-left" type="button">
+        <span>${SITE.nav.products.label}</span>
+        <i class="fa-solid fa-chevron-right text-sm opacity-60"></i>
+      </button></li>`
     );
     mainView.innerHTML = mainLinks.join("");
   }
-  
+
+  // VIEW 2 — Our Products
   const productsView = qs("mobileProductsView");
   if(productsView){
     const pd = mob.products;
     productsView.innerHTML =
       mobileBackBtn("backToMainMenu", pd.back.label) +
-      mobileForwardBtn("mobileIolBtn", pd.iol.icon, pd.iol.color, pd.iol.label, ["iol-page","hydrophobicIol","hydrophilicIol","pmmaIol"].includes(ACTIVE_PAGE)) +
+      mobileForwardBtn("mobileIolBtn", pd.iol.icon, pd.iol.color, pd.iol.label,
+        ["iol-page","hydrophobicIol","hydrophilicIol","pmmaIol"].includes(ACTIVE_PAGE)) +
       pd.children.map(item => {
         const isActive = pageFromHref(item.href) === ACTIVE_PAGE;
-        return `
-        <li>
-          <a href="${item.href}" class="mobile-drawer-link flex ${isActive ? "active-nav" : ""} items-center gap-2">
-              <i class="fa-solid ${item.icon} ${item.color}"></i> ${item.label}
-          </a>
-        </li>`
+        return `<li><a href="${item.href}" class="mobile-drawer-link flex ${isActive ? "active-nav" : ""} items-center gap-2">
+          <i class="fa-solid ${item.icon} ${item.color}"></i> ${item.label}
+        </a></li>`;
+      }).join("") +
+      mobileForwardBtn("mobilePharmaBtn", pd.pharma.icon, pd.pharma.color, pd.pharma.label, false) +
+      mobileForwardBtn("mobileBladeBtn",  pd.blade.icon,  pd.blade.color,  pd.blade.label,  false);
+  }
+
+  // VIEW 3 — IOL
+  const iolView = qs("mobileIolView");
+  if(iolView){
+    const d = mob.iol;
+    iolView.innerHTML =
+      mobileBackBtn("backToProductsMenu", d.back.label) +
+      d.children.map(item => {
+        const isActive = pageFromHref(item.href) === ACTIVE_PAGE;
+        return `<li><a href="${item.href}" class="mobile-drawer-link ${isActive ? "active-nav" : ""} flex items-center gap-2">
+          <i class="fa-solid ${item.icon} ${item.color}"></i> ${item.label}
+        </a></li>`;
       }).join("");
   }
 
-  const iolView = qs("mobileIolView");
-  if(iolView){
-    const id = mob.iol;
-    iolView.innerHTML =
-      mobileBackBtn("backToProductsMenu", id.back.label) +
-      id.children.map(item => {
-        const isActive = pageFromHref(item.href) === ACTIVE_PAGE;
-        return `
-          <li>
-            <a href="${item.href}" class="mobile-drawer-link ${isActive ? "active-nav" : ""} flex items-center gap-2">
-              <i class="fa-solid ${item.icon} ${item.color}"></i> ${item.label}
-            </a>
-          </li>`;
-      }).join("");  
+  // VIEW 4 — Pharma
+  const pharmaView = qs("mobilePharmaView");
+  if(pharmaView){
+    const d = mob.pharma;
+    pharmaView.innerHTML =
+      mobileBackBtn("backToProductsFromPharma", d.back.label) +
+      d.children.map(item =>
+        `<li><a href="${item.href}" class="mobile-drawer-link flex items-center gap-2">
+          <i class="fa-solid ${item.icon} ${item.color}"></i> ${item.label}
+        </a></li>`
+      ).join("");
+  }
+
+  // VIEW 5 — Blades
+  const bladeView = qs("mobileBladeView");
+  if(bladeView){
+    const d = mob.blade;
+    bladeView.innerHTML =
+      mobileBackBtn("backToProductsFromBlade", d.back.label) +
+      d.children.map(item =>
+        `<li><a href="${item.href}" class="mobile-drawer-link flex items-center gap-2">
+          <i class="fa-solid ${item.icon} ${item.color}"></i> ${item.label}
+        </a></li>`
+      ).join("");
   }
 }
+
 
 // Hero Slider
 
@@ -938,30 +1008,38 @@ const closeMenuBtn = document.getElementById("closeMenu");
 const mobileMenu = document.getElementById("mobileMenu");
 const menuOverlay = document.getElementById("menuOverlay");
 
-const mobileMainView = document.getElementById("mobileMainView");
+const mobileMainView     = document.getElementById("mobileMainView");
 const mobileProductsView = document.getElementById("mobileProductsView");
-const mobileIolView = document.getElementById("mobileIolView");
+const mobileIolView      = document.getElementById("mobileIolView");
+const mobilePharmaView   = document.getElementById("mobilePharmaView");
+const mobileBladeView    = document.getElementById("mobileBladeView");
 
-const mobileProductsBtn = document.getElementById("mobileProductsBtn");
-const mobileIolBtn = document.getElementById("mobileIolBtn");
+const mobileProductsBtn  = document.getElementById("mobileProductsBtn");
+const mobileIolBtn       = document.getElementById("mobileIolBtn");
+const mobilePharmaBtn    = document.getElementById("mobilePharmaBtn");
+const mobileBladeBtn     = document.getElementById("mobileBladeBtn");
 
-const backToMainMenu = document.getElementById("backToMainMenu");
-const backToProductsMenu = document.getElementById("backToProductsMenu");
+const backToMainMenu          = document.getElementById("backToMainMenu");
+const backToProductsMenu      = document.getElementById("backToProductsMenu");
+const backToProductsFromPharma= document.getElementById("backToProductsFromPharma");
+const backToProductsFromBlade = document.getElementById("backToProductsFromBlade");
 
 let currentMobileView = mobileMainView;
 let mobileViewTimer   = null;
- 
-/* Depth map — used to decide slide direction */
+
+/* Depth map */
 const VIEW_DEPTH = {
   mobileMainView:     0,
   mobileProductsView: 1,
   mobileIolView:      2,
+  mobilePharmaView:   2,
+  mobileBladeView:    2,
 };
  
 function showMobileView(nextView) {
-  if (!mobileMainView || !mobileProductsView || !mobileIolView || !nextView) return;
- 
-  const views = [mobileMainView, mobileProductsView, mobileIolView];
+  if (!nextView) return;
+
+  const views = [mobileMainView, mobileProductsView, mobileIolView, mobilePharmaView, mobileBladeView].filter(Boolean);
   const goingForward = !currentMobileView ||
     (VIEW_DEPTH[nextView.id] > VIEW_DEPTH[currentMobileView.id]);
  
@@ -1071,6 +1149,34 @@ if (backToMainMenu) {
 
 if (backToProductsMenu) {
   backToProductsMenu.addEventListener("click", function(e) {
+    e.preventDefault();
+    showMobileView(mobileProductsView);
+  });
+}
+
+if (mobilePharmaBtn) {
+  mobilePharmaBtn.addEventListener("click", function(e) {
+    e.preventDefault();
+    showMobileView(mobilePharmaView);
+  });
+}
+
+if (mobileBladeBtn) {
+  mobileBladeBtn.addEventListener("click", function(e) {
+    e.preventDefault();
+    showMobileView(mobileBladeView);
+  });
+}
+
+if (backToProductsFromPharma) {
+  backToProductsFromPharma.addEventListener("click", function(e) {
+    e.preventDefault();
+    showMobileView(mobileProductsView);
+  });
+}
+
+if (backToProductsFromBlade) {
+  backToProductsFromBlade.addEventListener("click", function(e) {
     e.preventDefault();
     showMobileView(mobileProductsView);
   });
@@ -1377,6 +1483,9 @@ if (lightbox && lbClose && lbPrev && lbNext) {
   });
 }
 
+/* ─────────────────────────────────────────────
+   RENDER: EVENTS
+───────────────────────────────────────────── */
 (function () {
   const ev = SITE.events;
   if (!ev) return;
@@ -1429,8 +1538,11 @@ if (lightbox && lbClose && lbPrev && lbNext) {
   }).join('');
 })();
 
-// Customer Review
-
+/* ─────────────────────────────────────────────
+   RENDER: CUSTOMER REVIEWS
+   Odd  total → ceil/2 + floor/2  (5→[2,2,1] centered)
+   Even total → equal pairs max 4
+───────────────────────────────────────────── */
 (function () {
   var rv = SITE.reviews;
   if (!rv) return;
