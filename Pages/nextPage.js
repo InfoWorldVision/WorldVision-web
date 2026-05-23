@@ -1,3 +1,817 @@
+
+function getActivePage(){
+  const path = window.location.pathname;
+  const filename = path.split("/").pop();
+  const name = filename.replace(/\.html?$/i, "");
+  return name || "index";
+}
+
+function pageFromHref(href) {
+  if (!href || href.startsWith("#")) return href.replace("#", "");
+
+  return href
+    .split("/")
+    .pop()
+    .replace(/\.html?$/i, "");
+}
+
+
+const ACTIVE_PAGE = getActivePage();
+
+
+/*************************************************
+ * META
+ *************************************************/
+
+function renderMeta() {
+  document.title = PAGE.meta.title;
+  const m = qs("pageMeta");
+  if (m) m.setAttribute("content", PAGE.meta.description);
+}
+
+/*************************************************
+ * PAGE DATA
+ *************************************************/
+
+const PAGE = {
+
+  meta: (() => {
+    const metaMap = {
+      hydrophobicIol: {
+        title: "Hydrophobic IOL — World Vision Ophthalmic",
+        description: "World Vision Hydrophobic IOL — USA medical-grade acrylic, <0.5% water, zero glistening."
+      },
+
+      "iol-page": {
+        title: "Intraocular Lens — World Vision Ophthalmic",
+        description: "Explore World Vision intraocular lens solutions including hydrophobic, hydrophilic and PMMA IOLs."
+      },
+
+      toricCalculator: {
+        title: "Toric Calculator — World Vision Ophthalmic",
+        description: "Calculate toric IOL alignment and cylinder correction using the World Vision calculator."
+      },
+
+      blog: {
+        title: "Blog — World Vision Ophthalmic",
+        description: "Latest ophthalmic insights, surgical updates and World Vision news."
+      },
+
+      gallery: {
+        title: "Gallery — World Vision Ophthalmic",
+        description: "Explore product images, surgical visuals and ophthalmic solutions from World Vision."
+      },
+
+      contactUs: {
+        title: "Contact Us — World Vision Ophthalmic",
+        description: "Get in touch with World Vision Ophthalmic for product enquiries and support."
+      },
+
+      index: {
+        title: "World Vision Ophthalmic",
+        description: "World Vision Ophthalmic Pvt. Ltd. — premium ophthalmic solutions and intraocular lenses."
+      }
+
+    };
+
+    return metaMap[ACTIVE_PAGE] || {
+      title: "World Vision Ophthalmic",
+      description: "World Vision Ophthalmic Pvt. Ltd."
+    };
+
+  })(),
+
+  company: {
+    name:      "World Vision",
+    subtitle:  "Ophthalmic Pvt. Ltd.",
+    logo:      "../Multimedia/WVO_Logo1.png",
+    whatsapp:  "https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv",
+    copyright: "© 2026 World Vision Ophthalmic Pvt. Ltd. · All rights reserved.",
+  },
+
+  nav: {
+    links: [
+      { label: "Home",           href: "../Pages/index.html",         page: "index"          },
+      { label: "Hydrophobic IOL",href: "../Pages/hydrophobicIol.html",page: "hydrophobicIol" },
+      { label: "Blog",           href: "../Pages/blog.html",          page: "blog"           },
+      { label: "Gallery",        href: "../Pages/gallery.html",       page: "gallery"        },
+      { label: "Contact Us",     href: "../Pages/contactUs.html",     page: "contactUs"      },
+    ],
+    cta: { label: "Toric Calculator", href: "../Pages/toricCalculator.html", icon:  "fa-calculator", color: "var(--neu-text)" },
+    products: {
+      label: "Our Products",
+      // Pages that belong under the Products dropdown — used for active-nav detection
+      pages: ["iol-page","hydrophobicIol","hydrophilicIol","pmmaIol","premiumIol","pharmaProducts","microSurgicalBlades"],
+      children: [
+        {
+          label: "Intraocular Lens",
+          href:  "../Pages/iol-page.html",
+          icon:  "fa-eye",
+          color: "var(--neu-accent2)",
+          children: [
+            { label: "Hydrophobic IOL",  href: "../Pages/hydrophobicIol.html", icon: "fa-shield-halved",      color: "text-blue-400"  },
+            { label: "Hydrophilic IOL",  href: "#",                            icon: "fa-shield-halved",      color: "text-teal-400"  },
+            { label: "PMMA IOL",         href: "#",                            icon: "fa-circle-half-stroke", color: "text-amber-400" },
+          ],
+        },
+        { label: "Premium IOL", href: "#", icon: "fa-star-of-life", color: "var(--neu-accent2)" },
+        {
+          label: "Pharma Products",
+          href:  "#",
+          icon:  "fa-capsules",
+          color: "var(--neu-accent2)",
+          children: [
+            { label: "World Vision Chol",  href: "#", icon: "fa-flask",   color: "text-purple-400" },
+            { label: "World Vision TBlue", href: "#", icon: "fa-flask",   color: "text-blue-400"   },
+            { label: "World Vision Visc",  href: "#", icon: "fa-droplet", color: "text-teal-400"   },
+          ],
+        },
+        {
+          label: "Micro Surgical Blades",
+          href:  "#",
+          icon:  "fa-cut",
+          color: "var(--neu-accent2)",
+          children: [
+            { label: "Keratome",  href: "#", icon: "fa-pen-fancy",          color: "text-slate-500" },
+            { label: "Crescent",  href: "#", icon: "fa-moon",               color: "text-blue-400"  },
+            { label: "Lance Ip",  href: "#", icon: "fa-staff-snake",        color: "text-amber-400" },
+            { label: "MVR Blade", href: "#", icon: "fa-diamond-turn-right", color: "text-red-400"   },
+          ],
+        },
+      ],
+    },
+    mobile: {
+      main: [
+        { label: "Home",             href: "../Pages/index.html",           page: "index"           },
+        { label: "Toric Calculator", href: "../Pages/toricCalculator.html", page: "toricCalculator" },
+        { label: "Gallery",          href: "../Pages/gallery.html",         page: "gallery"         },
+        { label: "Blog",             href: "../Pages/blog.html",            page: "blog"            },
+        { label: "Contact Us",       href: "../Pages/contactUs.html",       page: "contactUs"       },
+      ],
+      products: {
+        back:     { label: "Our Products" },
+        iol:      { label: "Intraocular Lens",      icon: "fa-eye",        color: "text-[#0055a5]" },
+        pharma:   { label: "Pharma Products",       icon: "fa-capsules",   color: "text-[#0055a5]" },
+        blade:    { label: "Micro Surgical Blades", icon: "fa-cut",      color: "text-[#0055a5]" },
+        children: [
+          { label: "Premium IOL", href: "#", icon: "fa-star-of-life", color: "text-[#0055a5]" },
+        ],
+      },
+      // VIEW 3 — IOL sub-menu
+      iol: {
+        back:  { label: "Intraocular Lens" },
+        children: [
+          { label: "Hydrophobic IOL", href: "../Pages/hydrophobicIol.html", icon: "fa-shield-halved",      color: "text-[#0055a5]" },
+          { label: "Hydrophilic IOL", href: "#",                            icon: "fa-shield-halved",      color: "text-teal-500"  },
+          { label: "PMMA IOL",        href: "#",                            icon: "fa-circle-half-stroke", color: "text-amber-500" },
+        ],
+      },
+      // VIEW 4 — Pharma sub-menu
+      pharma: {
+        back:  { label: "Pharma Products" },
+        children: [
+          { label: "World Vision Chol",  href: "#", icon: "fa-flask",   color: "text-purple-500" },
+          { label: "World Vision TBlue", href: "#", icon: "fa-flask",   color: "text-blue-500"   },
+          { label: "World Vision Visc",  href: "#", icon: "fa-droplet", color: "text-teal-500"   },
+        ],
+      },
+      // VIEW 5 — Blades sub-menu
+      blade: {
+        back:  { label: "Surgical Blades" },
+        children: [
+          { label: "Keratome",  href: "#", icon: "fa-pen-fancy",          color: "text-slate-500" },
+          { label: "Crescent",  href: "#", icon: "fa-moon",               color: "text-blue-500"  },
+          { label: "Lance Ip",  href: "#", icon: "fa-staff-snake",        color: "text-amber-500" },
+          { label: "MVR Blade", href: "#", icon: "fa-diamond-turn-right", color: "text-red-500"   },
+        ],
+      },
+    },
+  },
+
+  breadcrumb: [
+    { label: "Home",               href: "../Pages/index.html"   },
+    { label: "Our Products",       href: "#"                     },
+    { label: "Intraocular Lenses", href: "../Pages/iol-page.html"},
+    { label: "Hydrophobic IOL",    current: true                 },
+  ],
+
+  hero: {
+    eyebrow: { pulse: true, text: "USA Medical Grade · Acrylic" },
+    heading: "Hydrophobic<br><em>IOL Range</em>",
+    desc:    "Engineered from USA-sourced medical-grade acrylic with less than 0.5% water content — the only true hydrophobic material. Superior surface hardness, zero glistening, and outstanding optical clarity for every surgical need.",
+    btns: [
+      { label: "Explore Models", href: "#models",             icon: "fa-grid-2",    style: "primary" },
+      { label: "All IOLs",       href: "../Pages/iol-page.html", icon: "fa-arrow-left", style: "ghost", iconStyle: "font-size:11px;" },
+    ],
+  },
+
+  specs: [
+    { icon: "fa-flask-vial",      num: "<0.5%", label: "Water Content",      delay: "delay-1" },
+    { icon: "fa-flag-usa",        num: "USA",   label: "Raw Material Origin", delay: "delay-2" },
+    { icon: "fa-ruler-horizontal",num: "2.2mm", label: "Min Incision Size",   delay: "delay-3" },
+    { icon: "fa-layer-group",     num: "17+",   label: "Lens Models",         delay: "delay-4" },
+  ],
+
+  models: {
+    eyebrow: { icon: "fa-grid-2", text: "Product Lines" },
+    heading: "<em>Four</em> design families",
+    sub:     "Every model uses the same USA medical-grade hydrophobic acrylic base — available across monofocal, multifocal, toric and separate optical designs.",
+    cards: [
+      {
+        href:    "../Pages/monofocalHydrophobic.html",
+        variant: "mono",
+        iconSvg: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><ellipse cx="12" cy="12" rx="10" ry="5"/></svg>`,
+        tag:     "Semiloaded",
+        name:    "Nano Claro",
+        desc:    "Hydrophobic Acrylic, 360° Square Edge Aspheric Intraocular Lenses with Preloaded Injector. Single focal point for crystal-clear distance vision. The most widely used IOL design globally — simple, reliable, and proven. Available in standard and aspheric optics.",
+        chips:   ["NHPC 600", "NHPC 600SQ"],
+        delay:   "delay-1",
+      },
+      {
+        href:    "#multifocal",
+        variant: "multifocal",
+        iconSvg: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>`,
+        tag:     "Semiloaded",
+        name:    "Nano Grand",
+        desc:    "Yellow Hydrophobic Acrylic, 360° Square Edge Aspheric Intraocular Lenses with Preloaded Injector. Multiple focal points for full-range vision — near, intermediate and distance. Reduces spectacle dependence. Available in bifocal, EDOF and trifocal designs.",
+        chips:   ["NHPC 600Y", "NHPC 600QY"],
+        delay:   "delay-2",
+      },
+      {
+        href:    "#toric",
+        variant: "toric",
+        iconSvg: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><ellipse cx="12" cy="12" rx="10" ry="5"/><line x1="12" y1="7" x2="12" y2="17"/><line x1="2" y1="12" x2="22" y2="12"/></svg>`,
+        tag:     "Preloaded",
+        name:    "Nano Claro Plus",
+        desc:    "Hydrophobic Acrylic, 360° Square Edge Aspheric Intraocular Lenses with Preloaded Injector. Designed to correct pre-existing corneal astigmatism simultaneously with cataract removal. Available in monofocal toric, multifocal toric, EDOF toric, and trifocal toric options.",
+        chips:   ["NHPC 600P", "NHPC 600PSQ"],
+        delay:   "delay-3",
+      },
+      {
+        href:    "#piece3",
+        variant: "piece3",
+        iconSvg: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/></svg>`,
+        tag:     "Preloaded",
+        name:    "Nano Grand Plus",
+        desc:    "Hydrophobic Acrylic, 360° Square Edge Aspheric Intraocular Lenses with Preloaded Injector. Designed to correct pre-existing corneal astigmatism simultaneously with cataract removal. Available in monofocal toric, multifocal toric, EDOF toric, and trifocal toric options.",
+        chips:   ["NHPC 600PY", "NHPC 600PQY"],
+        delay:   "delay-4",
+      },
+    ],
+  },
+
+  material: {
+    eyebrow: { icon: "fa-atom", text: "Material Science" },
+    heading: "Why <em>Hydrophobic</em> matters",
+    sub:     "Most competitors use materials with over 4% water content and merely call them hydrophobic. World Vision uses only genuine USA medical-grade acrylic with less than 0.5% water — the real standard.",
+    features: [
+      {
+        icon:  "fa-droplet-slash",
+        title: "Zero Glistening & No Whitening",
+        desc:  "The ultra-low water content eliminates microvacuoles that cause glistening — a known long-term visual degradation issue with inferior materials.",
+      },
+      {
+        icon:  "fa-shield-halved",
+        title: "Superior Surface Hardness",
+        desc:  "Harder surface compared to high-water acrylic means better stability in the capsular bag, less abrasion during insertion, and longer-lasting optical clarity.",
+      },
+      {
+        icon:  "fa-eye",
+        title: "Low Refractive Index",
+        desc:  "Specifically engineered low refractive index reduces the risk of dysphotopsia — glares and halos that compromise patient satisfaction post-surgery.",
+      },
+      {
+        icon:  "fa-sun",
+        title: "UV & Blue Light Filter",
+        desc:  "Integrated UV absorber and blue light filtering chromophore protects the retina from high-energy wavelengths throughout the patient's lifetime.",
+      },
+    ],
+    comparisonCard: {
+      waterLabel: "Water Content Comparison",
+      waterRows: [
+        { label: "World Vision WVO",      value: "< 0.5%", type: "wv"    },
+        { label: 'Generic "Hydrophobic"', value: "> 4.0%", type: "other" },
+      ],
+      certLabel: "Certifications",
+      certRows: [
+        { label: "Biocompatibility",    value: "ISO Tested", check: true },
+        { label: "UV Protection",       value: "Built-in",   check: true },
+        { label: "Blue Light Filter",   value: "Built-in",   check: true },
+        { label: "Raw Material Source", value: "🇺🇸 USA",    check: false },
+      ],
+    },
+  },
+
+  trust: [
+    {
+      iconColor: "#0055a5",
+      bgColor:   "rgba(0,85,165,0.1)",
+      iconSvg:   `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0055a5" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+      title:     "ISO Certified Quality",
+      desc:      "All Freedom IOLs undergo rigorous biocompatibility testing to international ISO medical device standards.",
+    },
+    {
+      bgColor:   "rgba(10,122,80,0.1)",
+      iconSvg:   `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0a7a50" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>`,
+      title:     "Premium Raw Materials",
+      desc:      "Only the highest-grade acrylic and PMMA sourced from certified suppliers in the USA and United Kingdom.",
+    },
+    {
+      bgColor:   "rgba(138,90,16,0.1)",
+      iconSvg:   `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8a5a10" stroke-width="2" stroke-linecap="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>`,
+      title:     "Superior Visual Outcomes",
+      desc:      "High MTF ratings and low refractive index deliver exceptional light transmission, minimizing halos and glare.",
+    },
+  ],
+
+  ifu: {
+    heading: "Instructions for Use",
+    sub:     "Download the official IFU documentation for each product line",
+    links: [
+      { label: "IFU — Hydrophobic IOLs", color: "#0a5ea8", variant: "hydro-icon" },
+      { label: "IFU — Hydrophilic IOLs", color: "#0a7a50", variant: "phil-icon"  },
+      { label: "IFU — PMMA IOLs",        color: "#8a5a10", variant: "pmma-icon"  },
+      { label: "IFU — PMMA Rings",       color: "#8a5a10", variant: "pmma-icon"  },
+    ],
+  },
+
+};
+
+// Helpers
+
+function qs(id) {return document.getElementById(id);}
+function qsa(sel) {return document.querySelectorAll(sel);}
+
+
+/*************************************************
+ * DESKTOP NAV
+ *************************************************/
+
+function renderDesktopNav() {
+  // Brand
+  const brand = qs("navBrand");
+  if (brand) {
+    brand.innerHTML = `
+      <img src="${PAGE.company.logo}" style="width:48px;height:48px" class="animate__animated animate__fadeIn animate__slow"/>
+      <div class="flex flex-col leading-tight nav-logo-text">
+        <span class="font-semibold text-2xl tracking-wide">${PAGE.company.name}</span>
+        <span class="subtitle text-xs tracking-widest uppercase">${PAGE.company.subtitle}</span>
+      </div>`;
+  }
+
+  // Links
+  const navList = qs("desktopNavLinks");
+  if (navList) {
+    const p          = PAGE.nav.products;
+    const iol    = p.children[0];           // Intraocular Lens
+    const extras = p.children.slice(1);     // everything after IOL
+    const isProductsActive = p.pages.includes(ACTIVE_PAGE);
+
+    const l2 = iol.children.map(c => `
+    <a href="${c.href}" class="neu-dropdown-item${pageFromHref(c.href) === ACTIVE_PAGE ? " active" : ""}">
+      <i class="fa-solid ${c.icon}" style="color:${c.color};width:16px;"></i> ${c.label}
+    </a>`).join("");
+
+    const extrasHtml = extras.map(e => {
+      if (e.children) {
+        // Item has sub-menu — build a fly-out like IOL
+        const l3 = e.children.map(c => `
+          <a href="${c.href}" class="neu-dropdown-item${pageFromHref(c.href) === ACTIVE_PAGE ? " active" : ""}">
+            <i class="fa-solid ${c.icon}" style="color:var(--neu-accent);width:16px;"></i> ${c.label}
+          </a>`).join("");
+          
+          return `
+          <div class="relative group/extra">
+            <a href="${e.href}" class="neu-dropdown-item neu-dropdown-item--arrow flex items-center justify-between gap-3 px-4 py-3 transition cursor-pointer">
+              <span class="flex items-center gap-3">
+                <i class="fa-solid ${e.icon}" style="color:var(--neu-accent);width:16px;"></i> ${e.label}
+              </span>
+              <i class="fa-solid fa-chevron-right" style="font-size:10px;opacity:0.5;"></i>
+            </a>
+            <div class="neu-dropdown-l2 absolute left-full top-0 ml-10 w-56 opacity-0 invisible group-hover/extra:opacity-100 group-hover/extra:visible transition-all duration-200 overflow-hidden">
+              ${l3}
+            </div>
+          </div>`;
+      }
+      
+      // No children — plain link
+      return `
+        <a href="${e.href}" class="neu-dropdown-item flex items-center gap-3 px-4 py-3">
+          <i class="fa-solid ${e.icon}" style="color:var(--neu-accent);width:16px;"></i> ${e.label}
+        </a>`;
+    }).join("");
+
+    const productsLi = `
+      <li class="flex flex-row relative group/prod items-center justify-center">
+        <a href="#">
+          <button id="productsNavBtn" type="button" class="nav-products-btn${isProductsActive ? " active" : ""}">
+            ${p.label}
+            <i class="fa-solid fa-chevron-right transition-transform duration-200 group-hover/prod:rotate-90" style="font-size:10px;margin-left:4px;color:#1d4ed8;"></i>
+          </button>
+        </a>
+        <div id="navL1Panel" class="absolute left-0 top-full mt-6 w-56 opacity-0 invisible group-hover/prod:opacity-100 group-hover/prod:visible transition-all duration-200 overflow-visible neu-dropdown-l1">
+          <div class="group/iol-neu">
+            <a href="${iol.href}" class="neu-dropdown-item${pageFromHref(iol.href) === ACTIVE_PAGE ? " active" : ""}" neu-dropdown-item--arrow flex items-center justify-between gap-3 px-4 py-3 transition cursor-pointer">
+              <span class="flex items-center gap-3">
+                <i class="fa-solid fa-eye" style="color:var(--neu-accent);width:16px;"></i> ${iol.label}
+              </span>
+              <i class="fa-solid fa-chevron-right" style="font-size:10px;opacity:0.5;"></i>
+            </a>
+            <div id="navL2Panel" class="neu-dropdown-l2 absolute left-full top-0 ml-6 w-56 opacity-0 invisible group-hover/iol-neu:opacity-100 group-hover/iol-neu:visible transition-all duration-200 overflow-hidden">
+              ${l2}
+            </div>
+          </div>
+          ${extrasHtml}
+        </div>
+      </li>`;
+
+    let html = "";
+    PAGE.nav.links.forEach(link => {
+      const isActive = link.page === ACTIVE_PAGE;
+      if (link.label === "Home") {
+        html += `<li><a href="${link.href}"${isActive ? ' class="active"' : ""}>${link.label}</a></li>`;
+        html += productsLi;
+      } else {
+        html += `<li><a href="${link.href}"${isActive ? ' class="active"' : ""}>${link.label}</a></li>`;
+      }
+    });
+    navList.innerHTML = html;
+  }
+
+  // CTA
+  const cta = qs("navCta");
+  if (cta) {
+    cta.href = PAGE.nav.cta.href;
+
+    cta.setAttribute("aria-label", PAGE.nav.cta.label);
+
+    cta.innerHTML = `
+      ${PAGE.nav.cta.label}
+      <i class="fa-solid ${PAGE.nav.cta.icon}" style="margin-right:8px;"></i>
+    `;
+  }
+}
+
+
+/*************************************************
+ * MOBILE NAV
+ *************************************************/
+
+function mobileBackBtn(id, label) {
+  return `
+    <li>
+      <button id="${id}" type="button"
+        class="mobile-view mobile-link flex items-center gap-3 text-left">
+        <i class="fa-solid fa-chevron-left text-sm w-10 h-10 flex items-center justify-center rounded-xl bg-white/70 border border-white/60 shadow-[4px_4px_10px_rgba(184,190,200,0.8),-4px_-4px_10px_rgba(255,255,255,0.9)]"
+          style="background:var(--neu-btdark);color:var(--neu-accent2)"></i>
+        <span class="font-semibold text-[17px]" style="color:var(--neu-text)">${label}</span>
+      </button>
+    </li>`;
+}
+
+function mobileForwardBtn(id, icon, color, label, isActive = false) {
+  return `
+    <li>
+      <button id="${id}" type="button"
+        class="w-full flex items-center justify-between mobile-link text-left${isActive ? " active" : ""}">
+        <span class="flex items-center gap-2">
+          <i class="fa-solid ${icon}" style="color:${color}"></i> ${label}
+        </span>
+        <i class="fa-solid fa-chevron-right text-sm opacity-50 flex items-center justify-center w-10 h-10 rounded-xl bg-white/70 border border-white/60 shadow-[4px_4px_10px_rgba(184,190,200,0.8),-4px_-4px_10px_rgba(255,255,255,0.9)]"
+          style="background:var(--neu-btdark);color:var(--neu-accent2)"></i>
+      </button>
+    </li>`;
+}
+
+function renderMobileNav() {
+  const mob = PAGE.nav.mobile;
+  const productsActive = PAGE.nav.products.pages.includes(ACTIVE_PAGE);
+
+  // Brand
+  const brand = qs("mobileBrand");
+  if (brand) {
+    brand.innerHTML = `
+      <img src="${PAGE.company.logo}" class="w-11 h-11 object-contain"/>
+      <div class="flex flex-col leading-tight nav-logo-text">
+        <span class="font-semibold text-lg tracking-wide">${PAGE.company.name}</span>
+        <span class="subtitle text-[10px] tracking-widest uppercase">${PAGE.company.subtitle}</span>
+      </div>`;
+  }
+
+  // VIEW 1
+  const mainView = qs("mobileMainView");
+  if (mainView) {
+    const links = mob.main.map(link => {
+      const isActive = link.page === ACTIVE_PAGE;
+      return `<li><a href="${link.href}" class="mobile-link${isActive ? " active" : ""}">${link.label}</a></li>`;
+    });
+    links.splice(1, 0, `
+      <li>
+        <button id="mobileProductsBtn" type="button"
+          class="mobile-view mobile-link w-full flex items-center justify-between text-left${productsActive ? " active" : ""}">
+          <span>${PAGE.nav.products.label}</span>
+          <i class="fa-solid fa-chevron-right text-sm opacity-60 flex items-center justify-center w-10 h-10 rounded-xl bg-white/70 border border-white/60 shadow-[4px_4px_10px_rgba(184,190,200,0.8),-4px_-4px_10px_rgba(255,255,255,0.9)]"
+            style="background:var(--neu-btdark);color:var(--neu-accent2)"></i>
+        </button>
+      </li>`);
+    mainView.innerHTML = links.join("");
+  }
+
+  // VIEW 2
+  const productsView = qs("mobileProductsView");
+  if (productsView) {
+    const pd = mob.products;
+    const iolActive = mob.iol.children.some(
+      item => pageFromHref(item.href) === ACTIVE_PAGE
+    );
+    productsView.innerHTML =
+      mobileBackBtn("backToMainMenu", pd.back.label) +
+
+      mobileForwardBtn("mobileIolBtn", pd.iol.icon, pd.iol.color, pd.iol.label, iolActive ) +
+
+      pd.children.map(item => `
+        <li>
+          <a href="${item.href}" class="mobile-link flex items-center gap-2">
+            <i class="fa-solid ${item.icon}" style="color:${item.color}"></i>
+            ${item.label}
+          </a>
+        </li>
+      `).join("") +
+
+      mobileForwardBtn( "mobilePharmaBtn",pd.pharma.icon,pd.pharma.color,pd.pharma.label ) + mobileForwardBtn( "mobileBladeBtn",pd.blade.icon,pd.blade.color,pd.blade.label);
+  }
+
+  // VIEW 3
+  const iolView = qs("mobileIolView");
+  if (iolView) {
+    const id = mob.iol;
+    iolView.innerHTML =
+      mobileBackBtn("backToProductsMenu", id.back.label) +
+      id.children.map(item => `
+        <li>
+          <a href="${item.href}" class="mobile-link${pageFromHref(item.href) === ACTIVE_PAGE ? " active" : ""} flex items-center gap-2">
+            <i class="fa-solid ${item.icon}" style="color:${item.color}"></i> ${item.label}
+          </a>
+        </li>`).join("");
+  }
+  // VIEW 4 — Pharma
+const pharmaView = qs("mobilePharmaView");
+
+if (pharmaView) {
+  const d = mob.pharma;
+  pharmaView.innerHTML =
+    mobileBackBtn("backToProductsFromPharma", d.back.label) +
+    d.children.map(item => `
+      <li>
+        <a href="${item.href}" class="mobile-link flex items-center gap-2">
+          <i class="fa-solid ${item.icon}" style="color:${item.color}"></i>
+          ${item.label}
+        </a>
+      </li>
+    `).join("");
+  }
+  // VIEW 5 — Blade
+const bladeView = qs("mobileBladeView");
+
+if (bladeView) {
+  const d = mob.blade;
+
+  bladeView.innerHTML =
+    mobileBackBtn("backToProductsFromBlade", d.back.label) +
+
+    d.children.map(item => `
+      <li>
+        <a href="${item.href}" class="mobile-link flex items-center gap-2">
+          <i class="fa-solid ${item.icon}" style="color:${item.color}"></i>
+          ${item.label}
+        </a>
+      </li>
+    `).join("");
+  }
+}
+
+
+/*************************************************
+ * BREADCRUMB
+ *************************************************/
+
+function renderBreadcrumb() {
+  const nav = qs("breadcrumb");
+  if (!nav) return;
+  nav.innerHTML = PAGE.breadcrumb.map((crumb, i) => {
+    const sep = i < PAGE.breadcrumb.length - 1 ? '<span class="sep">/</span>' : "";
+    if (crumb.current) return `<span class="current">${crumb.label}</span>${sep}`;
+    return `<a href="${crumb.href}">${crumb.label}</a>${sep}`;
+  }).join("");
+}
+
+function renderHero() {
+  const h = PAGE.hero;
+
+  const eyebrow = qs("heroEyebrow");
+  if (eyebrow) eyebrow.innerHTML = `${h.eyebrow.pulse ? '<span class="pulse"></span>' : ""}${h.eyebrow.text}`;
+
+  const heading = qs("hydro-h1");
+  if (heading) heading.innerHTML = h.heading;
+
+  const desc = qs("heroDesc");
+  if (desc) desc.textContent = h.desc;
+
+  const btns = qs("heroBtns");
+  if (btns) {
+    btns.innerHTML = h.btns.map(b => `
+      <a href="${b.href}" class="hero-btn-iol-${b.style}">
+        <i class="fa-solid ${b.icon}"${b.iconStyle ? ` style="${b.iconStyle}"` : ""}></i> ${b.label}
+      </a>`).join("");
+  }
+}
+
+// Status Bar
+function renderStatusBar() {
+  const grid = qs("statusBar");
+  if (!grid) return;
+  grid.innerHTML = PAGE.specs.map(s => `
+    <div class="spec-pill reveal ${s.delay}">
+      <div class="spec-pill-icon"><i class="fa-solid ${s.icon}"></i></div>
+      <div class="spec-pill-num">${s.num}</div>
+      <div class="spec-pill-label">${s.label}</div>
+    </div>`).join("");
+}
+
+// Model Cards
+
+function renderModels() {
+  const d = PAGE.models;
+
+  const eyebrow = qs("modelsEyebrow");
+  if (eyebrow) eyebrow.innerHTML = `<i class="fa-solid ${d.eyebrow.icon}" style="font-size:10px;"></i> ${d.eyebrow.text}`;
+
+  const heading = qs("modelsHeading");
+  if (heading) heading.innerHTML = d.heading;
+
+  const sub = qs("modelsSub");
+  if (sub) sub.textContent = d.sub;
+
+  const grid = qs("modelsGrid");
+  if (grid) {
+    grid.innerHTML = d.cards.map(c => `
+      <a href="${c.href}" class="model-card reveal ${c.delay}">
+        <div class="model-card-header">
+          <div class="model-card-icon ${c.variant}">${c.iconSvg}</div>
+          <div>
+            <span class="model-tag ${c.variant}">${c.tag}</span>
+            <h3>${c.name}</h3>
+          </div>
+        </div>
+        <div class="model-card-body">
+          <p class="model-desc">${c.desc}</p>
+          <div class="model-lens-list">
+            ${c.chips.map(ch => `<span class="model-lens-chip">${ch}</span>`).join("")}
+          </div>
+          <span class="model-card-cta ${c.variant}">
+            View models
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+      </a>`).join("");
+  }
+}
+
+// Material Science
+
+function renderMaterial() {
+  const d = PAGE.material;
+
+  const eyebrow = qs("materialEyebrow");
+  if (eyebrow) eyebrow.innerHTML = `<i class="fa-solid ${d.eyebrow.icon}" style="font-size:10px;"></i> ${d.eyebrow.text}`;
+
+  const heading = qs("materialHeading");
+  if (heading) heading.innerHTML = d.heading;
+
+  const sub = qs("materialSub");
+  if (sub) sub.textContent = d.sub;
+
+  const features = qs("materialFeatures");
+  if (features) {
+    features.innerHTML = d.features.map(f => `
+      <div class="material-feature">
+        <div class="mf-icon"><i class="fa-solid ${f.icon}"></i></div>
+        <div>
+          <div class="mf-title">${f.title}</div>
+          <div class="mf-desc">${f.desc}</div>
+        </div>
+      </div>`).join("");
+  }
+
+  const card = qs("materialCard");
+  if (card) {
+    const cc = d.comparisonCard;
+    const waterRows = cc.waterRows.map(r => `
+      <div class="compare-row">
+        <span class="compare-label">${r.label}</span>
+        <span class="compare-${r.type}">${r.value}</span>
+      </div>`).join("");
+    const certRows = cc.certRows.map(r => `
+      <div class="compare-row">
+        <span class="compare-label">${r.label}</span>
+        <span class="compare-wv">
+          ${r.check ? '<i class="fa-solid fa-check" style="font-size:11px;"></i> ' : ""}${r.value}
+        </span>
+      </div>`).join("");
+
+    card.innerHTML = `
+      <div class="material-neu-card-label">
+        <i class="fa-solid fa-scale-balanced" style="margin-right:5px;"></i> ${cc.waterLabel}
+      </div>
+      <div class="material-compare">${waterRows}</div>
+      <div style="width:100%;height:1px;background:rgba(0,0,0,0.07);margin:4px 0;"></div>
+      <div class="material-neu-card-label" style="margin-top:4px;">
+        <i class="fa-solid fa-certificate" style="margin-right:5px;"></i> ${cc.certLabel}
+      </div>
+      <div class="material-compare">${certRows}</div>`;
+  }
+}
+
+// Trust Bar
+
+function renderTrust() {
+  const bar = qs("trustBar");
+  if (!bar) return;
+  bar.innerHTML = PAGE.trust.map(t => `
+    <div class="trust-card">
+      <div class="trust-icon" style="background:${t.bgColor}">${t.iconSvg}</div>
+      <div>
+        <h3>${t.title}</h3>
+        <p>${t.desc}</p>
+      </div>
+    </div>`).join("");
+}
+
+// IFU Section
+
+function renderIfu() {
+  const d = PAGE.ifu;
+
+  const header = qs("ifuHeader");
+  if (header) {
+    header.innerHTML = `
+      <div class="ifu-icon-wrap">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="16" y1="13" x2="8" y2="13"/>
+          <line x1="16" y1="17" x2="8" y2="17"/>
+        </svg>
+      </div>
+      <div>
+        <div class="ifu-title" id="ifu-title">${d.heading}</div>
+        <div class="ifu-sub">${d.sub}</div>
+      </div>`;
+  }
+
+  const grid = qs("ifuGrid");
+  if (grid) {
+    grid.innerHTML = d.links.map(l => `
+      <a href="#" class="ifu-link" aria-label="Download ${l.label}">
+        <div class="ifu-link-icon ${l.variant}">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="${l.color}" stroke-width="2" stroke-linecap="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="12" y1="18" x2="12" y2="12"/>
+            <polyline points="9 15 12 18 15 15"/>
+          </svg>
+        </div>
+        <div class="ifu-link-text">
+          <strong>${l.label}</strong>
+          <span>PDF Document</span>
+        </div>
+      </a>`).join("");
+  }
+}
+
+function renderFloat() {
+  const btn = qs("waFloat");
+  if (btn) btn.href = PAGE.company.whatsapp;
+}
+
+function renderFooter() {
+  const copy = qs("footerCopyright");
+  if (copy) copy.textContent = PAGE.company.copyright;
+}
+
+renderMeta();
+renderDesktopNav();
+renderMobileNav();
+renderBreadcrumb();
+renderHero();
+renderStatusBar();
+renderModels();
+renderMaterial();
+renderTrust();
+renderIfu();
+renderFloat();
+renderFooter();
+
 /*************************************************
  * DarkMode Toggle
  *************************************************/
@@ -44,11 +858,20 @@ const mobileMainView = document.getElementById("mobileMainView");
 const mobileProductsView = document.getElementById("mobileProductsView");
 const mobileIolView = document.getElementById("mobileIolView");
 
+const mobilePharmaView = document.getElementById("mobilePharmaView");
+const mobileBladeView = document.getElementById("mobileBladeView");
+
 const mobileProductsBtn = document.getElementById("mobileProductsBtn");
 const mobileIolBtn = document.getElementById("mobileIolBtn");
 
+const mobilePharmaBtn = document.getElementById("mobilePharmaBtn");
+const mobileBladeBtn = document.getElementById("mobileBladeBtn");
+
 const backToMainMenu = document.getElementById("backToMainMenu");
 const backToProductsMenu = document.getElementById("backToProductsMenu");
+
+const backToProductsFromPharma = document.getElementById("backToProductsFromPharma");
+const backToProductsFromBlade = document.getElementById("backToProductsFromBlade");
 
 let currentMobileView = mobileMainView;
 let mobileViewTimer = null;
@@ -57,12 +880,14 @@ const VIEW_DEPTH = {
   mobileMainView: 0,
   mobileProductsView: 1,
   mobileIolView: 2,
+  mobilePharmaView: 2,
+  mobileBladeView: 2,
 };
 
 function showMobileView(nextView) {
-  if (!mobileMainView || !mobileProductsView || !mobileIolView || !nextView) return;
+  if (!nextView) return;
 
-  const views = [mobileMainView, mobileProductsView, mobileIolView];
+  const views = [mobileMainView, mobileProductsView, mobileIolView, mobilePharmaView, mobileBladeView].filter(Boolean);
   const goingForward =
     !currentMobileView ||
     VIEW_DEPTH[nextView.id] > VIEW_DEPTH[currentMobileView.id];
@@ -147,6 +972,33 @@ if (mobileIolBtn) {
     e.preventDefault();
     e.stopPropagation();
     showMobileView(mobileIolView);
+  });
+}
+if (mobilePharmaBtn) {
+  mobilePharmaBtn.addEventListener("click", function(e) {
+    e.preventDefault();
+    showMobileView(mobilePharmaView);
+  });
+}
+
+if (mobileBladeBtn) {
+  mobileBladeBtn.addEventListener("click", function(e) {
+    e.preventDefault();
+    showMobileView(mobileBladeView);
+  });
+}
+
+if (backToProductsFromPharma) {
+  backToProductsFromPharma.addEventListener("click", function(e) {
+    e.preventDefault();
+    showMobileView(mobileProductsView);
+  });
+}
+
+if (backToProductsFromBlade) {
+  backToProductsFromBlade.addEventListener("click", function(e) {
+    e.preventDefault();
+    showMobileView(mobileProductsView);
   });
 }
 
