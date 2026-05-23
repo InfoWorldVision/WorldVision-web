@@ -42,6 +42,11 @@ const PAGE = {
         description: "World Vision Hydrophobic IOL — USA medical-grade acrylic, <0.5% water, zero glistening."
       },
 
+      nanoClaro: {
+        title: "Monofocal Hydrophobic IOL — World Vision Ophthalmic",
+        description: "World Vision Monofocal Hydrophobic IOL — NHPC 600, NHPC 600SQ. USA medical-grade aspheric hydrophobic acrylic with full technical specifications."
+      },
+
       "iol-page": {
         title: "Intraocular Lens — World Vision Ophthalmic",
         description: "Explore World Vision intraocular lens solutions including hydrophobic, hydrophilic and PMMA IOLs."
@@ -70,8 +75,15 @@ const PAGE = {
       index: {
         title: "World Vision Ophthalmic",
         description: "World Vision Ophthalmic Pvt. Ltd. — premium ophthalmic solutions and intraocular lenses."
+      },
+      nanoClaro: {
+        title: "Nano Claro — World Vision Ophthalmic",
+        description: "World Vision Nano Claro — advanced hydrophobic acrylic IOL with superior optical performance."
+      },
+      nanoGrand: {
+        title: "Nano Grand — World Vision Ophthalmic",
+        description: "World Vision Nano Grand — high-performance hydrophobic acrylic IOL for complex cases."
       }
-
     };
 
     return metaMap[ACTIVE_PAGE] || {
@@ -101,7 +113,7 @@ const PAGE = {
     products: {
       label: "Our Products",
       // Pages that belong under the Products dropdown — used for active-nav detection
-      pages: ["iol-page","hydrophobicIol","hydrophilicIol","pmmaIol","premiumIol","pharmaProducts","microSurgicalBlades"],
+      pages: ["iol-page","hydrophobicIol","hydrophilicIol","pmmaIol","premiumIol","pharmaProducts","microSurgicalBlades","nanoClaro"],
       children: [
         {
           label: "Intraocular Lens",
@@ -188,12 +200,23 @@ const PAGE = {
     },
   },
 
-  breadcrumb: [
-    { label: "Home",               href: "../Pages/index.html"   },
-    { label: "Our Products",       href: "#"                     },
-    { label: "Intraocular Lenses", href: "../Pages/iol-page.html"},
-    { label: "Hydrophobic IOL",    current: true                 },
-  ],
+  breadcrumb: (() => {
+    const map = {
+      hydrophobicIol: [
+        { label: "Home",               href: "../Pages/index.html"    },
+        { label: "Our Products",       href: "#"                      },
+        { label: "Intraocular Lenses", href: "../Pages/iol-page.html" },
+        { label: "Hydrophobic IOL",    current: true                  },
+      ],
+      nanoClaro: [
+        { label: "Home",               href: "../Pages/index.html"          },
+        { label: "Our Products",       href: "#"                             },
+        { label: "Hydrophobic IOL",    href: "../Pages/hydrophobicIol.html"  },
+        { label: "Monofocal IOL",      current: true                         },
+      ],
+    };
+    return map[ACTIVE_PAGE] || map["hydrophobicIol"];
+  })(),
 
   hero: {
     eyebrow: { pulse: true, text: "USA Medical Grade · Acrylic" },
@@ -218,8 +241,8 @@ const PAGE = {
     sub:     "Every model uses the same USA medical-grade hydrophobic acrylic base — available across monofocal, multifocal, toric and separate optical designs.",
     cards: [
       {
-        href:    "../Pages/monofocalHydrophobic.html",
-        variant: "mono",
+        href:    "../Pages/nanoClaro.html",
+        variant: "nanoClaro",
         iconSvg: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><ellipse cx="12" cy="12" rx="10" ry="5"/></svg>`,
         tag:     "Semiloaded",
         name:    "Nano Claro",
@@ -228,8 +251,8 @@ const PAGE = {
         delay:   "delay-1",
       },
       {
-        href:    "#multifocal",
-        variant: "multifocal",
+        href:    "../Pages/nanoGrand.html",
+        variant: "nanoGrand",
         iconSvg: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>`,
         tag:     "Semiloaded",
         name:    "Nano Grand",
@@ -238,8 +261,8 @@ const PAGE = {
         delay:   "delay-2",
       },
       {
-        href:    "#toric",
-        variant: "toric",
+        href:    "../Pages/nanoClaroPlus.html",
+        variant: "nanoClaroPlus",
         iconSvg: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><ellipse cx="12" cy="12" rx="10" ry="5"/><line x1="12" y1="7" x2="12" y2="17"/><line x1="2" y1="12" x2="22" y2="12"/></svg>`,
         tag:     "Preloaded",
         name:    "Nano Claro Plus",
@@ -248,8 +271,8 @@ const PAGE = {
         delay:   "delay-3",
       },
       {
-        href:    "#piece3",
-        variant: "piece3",
+        href:    "../Pages/nanoGrandPlus.html",
+        variant: "nanoGrandPlus",
         iconSvg: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/></svg>`,
         tag:     "Preloaded",
         name:    "Nano Grand Plus",
@@ -811,6 +834,584 @@ renderTrust();
 renderIfu();
 renderFloat();
 renderFooter();
+
+/*************************************************
+ * MONOFOCAL PAGE — only runs on nanoClaro.html
+ *************************************************/
+
+if (ACTIVE_PAGE === "nanoClaro") {
+
+  const MONO = {
+    tag:      "Semiloaded · Hydrophobic",
+    title:    "Nano Claro",
+    subtitle: "Hydrophobic Acrylic Foldable Spheric 360° Square Edge Intraocular Lens",
+    desc:     "WVO NHPC is a spherical hydrophobic IOL available in a non-preloaded and a preloaded system and you see preloaded option in Nano claro plus.",
+    highlights: [
+      { icon: "fa-circle-dot",       text: "Spherical optic"   },
+      { icon: "fa-border-all",       text: "360° Square edge"  },
+      { icon: "fa-ruler-horizontal", text: "2.2mm incision"    },
+      { icon: "fa-syringe",          text: "Preloaded option"  },
+      { icon: "fa-sun",              text: "UV filter"         },
+      { icon: "fa-droplet-slash",    text: "<0.5% water"      },
+    ],
+    variants: [
+      {
+        id: "NHPC600", label: "NHPC 600",
+        specs: [
+          { label: "Model",                value: "NHPC 600",                                     accent: true },
+          { label: "Optic Design",         value: "Aspheric Equiconvex · 360° Square Edge"                    },
+          { label: "Optic Diameter",       value: "6.00 mm",                                      accent: true },
+          { label: "Overall Length",       value: "12.50 mm",                                     accent: true },
+          { label: "Estimated A-Constant", value: "118.40"                                                     },
+          { label: "Diopter Range",        value: "5.00 D – 30.00 D (0.5 Diopter steps)"                      },
+          { label: "AC Depth",             value: "5.28 mm"                                                    },
+          { label: "Refractive Index",     value: "1.4933"                                                     },
+          { label: "Lens Material",        value: "Hydrophobic Acrylic"                                        },
+          { label: "Delivery System",      value: "Disposable Injector Cartridge - 2.6mm incision"            },
+        ],
+      },
+      {
+        id: "NHPC600SQ", label: "NHPC 600SQ",
+        specs: [
+          { label: "Model",                value: "NHPC 600SQ",                                   accent: true },
+          { label: "Optic Design",         value: "Aspheric Equiconvex · 360° Square Edge"                    },
+          { label: "Optic Diameter",       value: "6.00 mm",                                      accent: true },
+          { label: "Overall Length",       value: "12.50 mm",                                     accent: true },
+          { label: "Estimated A-Constant", value: "118.40"                                                     },
+          { label: "Diopter Range",        value: "5.00 D – 30.00 D (0.5 Diopter steps)"                      },
+          { label: "AC Depth",             value: "5.28 mm"                                                    },
+          { label: "Refractive Index",     value: "1.4933"                                                     },
+          { label: "Lens Material",        value: "Hydrophobic Acrylic"                                        },
+          { label: "Delivery System",      value: "Disposable Injector Cartridge - 2.6mm incision"            },
+        ],
+      },
+    ],
+    aConstants: [
+      { key: "SRK/T",      val: "119.20" },
+      { key: "SRK/II",     val: "119.50" },
+      { key: "Hoffer Q",   val: "5.65"   },
+      { key: "Holladay 1", val: "1.87"   },
+      { key: "Holladay 2", val: "5.199"  },
+      { key: "Haigis a0",  val: "1.441"  },
+      { key: "Haigis a1",  val: "0.400"  },
+      { key: "Haigis a2",  val: "0.100"  },
+    ],
+  };
+
+  function renderMonoModel() {
+    const panel = qs("modelPanel");
+    if (!panel) return;
+
+    const badges   = MONO.variants.map(v => `<span class="variant-badge">${v.label}</span>`).join("");
+    const chips    = MONO.highlights.map(h => `<div class="highlight-chip"><i class="fa-solid ${h.icon}"></i><span class="highlight-chip-text">${h.text}</span></div>`).join("");
+    const modelBtns= MONO.variants.map((v, i) => `<button class="spec-model-btn${i === 0 ? " active" : ""}" data-rows="${v.id}" type="button">${v.label}</button>`).join("");
+    const specTables = MONO.variants.map((v, i) => {
+      const rows = v.specs.map(s =>
+        `<div class="spec-row"><span class="spec-row-label">${s.label}</span><span class="spec-row-val${s.accent ? " accent" : ""}">${s.value}</span></div>`).join("");
+      return `<div class="spec-rows" id="${v.id}"${i > 0 ? ' style="display:none;"' : ""}>${rows}</div>`;
+    }).join("");
+    const aGrid = MONO.aConstants.map(a =>
+      `<div class="a-const-item"><div class="a-const-key">${a.key}</div><div class="a-const-val">${a.val}</div></div>`).join("");
+
+    panel.innerHTML = `
+      <div class="neu-card">
+        <div class="card-top">
+          <span class="card-tag">${MONO.tag}</span>
+          <div class="card-title">${MONO.title}</div>
+          <div class="card-subtitle">${MONO.subtitle}</div>
+        </div>
+        <div class="card-lens-area">
+          <div class="card-lens-bg"></div>
+          <div class="card-lens-svg" aria-hidden="true">
+            <svg width="140" height="140" viewBox="0 0 140 140">
+              <path d="M24 70 Q8 50 12 28"  fill="none" stroke="#0a5ea8" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+              <path d="M24 70 Q8 90 12 112" fill="none" stroke="#0a5ea8" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+              <path d="M116 70 Q132 50 128 28"  fill="none" stroke="#0a5ea8" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+              <path d="M116 70 Q132 90 128 112" fill="none" stroke="#0a5ea8" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+              <ellipse cx="70" cy="70" rx="48" ry="34" fill="rgba(10,94,168,0.1)"  stroke="#0a5ea8" stroke-width="2.2"/>
+              <ellipse cx="70" cy="70" rx="34" ry="24" fill="rgba(10,94,168,0.08)" stroke="#0a5ea8" stroke-width="1.3" stroke-dasharray="3 4"/>
+              <ellipse cx="70" cy="70" rx="18" ry="13" fill="rgba(10,94,168,0.16)" stroke="#0a5ea8" stroke-width="1"/>
+              <circle cx="70" cy="70" r="4.5" fill="#0a5ea8" opacity="0.5"/>
+              <circle cx="70" cy="70" r="2"   fill="#0a5ea8" opacity="0.9"/>
+            </svg>
+          </div>
+        </div>
+        <div class="variant-badges">${badges}</div>
+        <div class="card-desc">${MONO.desc}</div>
+        <div class="card-highlights">${chips}</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-card-head">
+          <div class="spec-head-icon"><i class="fa-solid fa-table-list"></i></div>
+          <div>
+            <div class="spec-head-title">Technical Specifications</div>
+            <div class="spec-head-sub">${MONO.title} — Aspheric Hydrophobic</div>
+          </div>
+        </div>
+        <p class="flip-hint-btn">
+          <i class="fa-regular fa-hand-pointer" style="margin-top:0.1rem;"></i>
+          Tap or select the Model button to reveal full specifications
+        </p>
+        <div class="spec-model-sel">${modelBtns}</div>
+        ${specTables}
+        <div class="a-const-block">
+          <div class="a-const-label"><i class="fa-solid fa-calculator" style="margin-right:5px;"></i>Recommended Optical A-Constants</div>
+          <div class="a-const-grid">${aGrid}</div>
+        </div>
+        <div class="spec-download">
+          <button class="dl-btn dl-btn-primary" onclick="alert('IFU download coming soon.')"><i class="fa-solid fa-download"></i> Download IFU</button>
+          <button class="dl-btn dl-btn-ghost"   onclick="alert('Enquiry form coming soon.')"><i class="fa-solid fa-envelope"></i> Enquire</button>
+        </div>
+      </div>`;
+  }
+
+  renderMonoModel();
+
+  // Override hero heading id for monofocal page
+  const monoH1 = qs("page-h1");
+  if (monoH1) monoH1.innerHTML = "Nano Claro<br><em>Hydrophobic IOL</em>";
+
+  const monoEyebrow = qs("heroEyebrow");
+  if (monoEyebrow) monoEyebrow.innerHTML = '<span class="pulse"></span>Hydrophobic · Monofocal · USA Acrylic';
+
+  const monoDesc = qs("heroDesc");
+  if (monoDesc) monoDesc.innerHTML = "Three precision-engineered monofocal designs — Spheric, Aspheric, and Yellow Aspheric — all manufactured from USA medical-grade hydrophobic acrylic with &lt;0.5% water content.";
+
+  const monoBtns = qs("heroBtns");
+  if (monoBtns) monoBtns.innerHTML = `
+    <a href="#models" class="hero-btn-iol-primary"><i class="fa-solid fa-grid-2" style="font-size:12px;"></i> View Models</a>
+    <a href="../Pages/hydrophobicIol.html" class="hero-btn-iol-ghost"><i class="fa-solid fa-arrow-left" style="font-size:11px;"></i> Hydrophobic IOL</a>`;
+
+}
+
+if (ACTIVE_PAGE === "nanoGrand") {
+
+  const MONO = {
+    tag:      "Semiloaded · Hydrophobic",
+    title:    "Nano Grand",
+    subtitle: "Hydrophobic Acrylic Foldable Spheric 360° Square Edge Intraocular Lens",
+    desc:     "WVO NHPC is a spherical hydrophobic IOL available in a non-preloaded and a preloaded system and you see preloaded option in Nano grand plus.",
+    highlights: [
+      { icon: "fa-circle-dot",       text: "Spherical optic"   },
+      { icon: "fa-border-all",       text: "360° Square edge"  },
+      { icon: "fa-ruler-horizontal", text: "2.2mm incision"    },
+      { icon: "fa-syringe",          text: "Preloaded option"  },
+      { icon: "fa-sun",              text: "UV filter"         },
+      { icon: "fa-droplet-slash",    text: "<0.5% water"      },
+    ],
+    variants: [
+      {
+        id: "NHPC600Y", label: "NHPC 600Y",
+        specs: [
+          { label: "Model",                value: "NHPC 600Y",                                    accent: true },
+          { label: "Optic Design",         value: "Aspheric Equiconvex · 360° Square Edge"                    },
+          { label: "Optic Diameter",       value: "6.00 mm",                                      accent: true },
+          { label: "Overall Length",       value: "12.50 mm",                                     accent: true },
+          { label: "Estimated A-Constant", value: "118.0"                                                     },
+          { label: "Diopter Range",        value: "5.0 D – 30.0 D (0.5 Diopter steps)"                      },
+          { label: "Refractive Index",     value: "1.4933"                                                     },
+          { label: "Lens Material",        value: "Hydrophobic Acrylic"                                        },
+          { label: "Delivery System",      value: "Disposable Injector Cartridge - 2.6mm incision"            },
+        ],
+      },
+      {
+        id: "NHPC600SQY", label: "NHPC 600SQY",
+        specs: [
+          { label: "Model",                value: "NHPC 600SQY",                                  accent: true },
+          { label: "Optic Design",         value: "Aspheric Equiconvex · 360° Square Edge"                    },
+          { label: "Optic Diameter",       value: "6.00 mm",                                      accent: true },
+          { label: "Overall Length",       value: "12.50 mm",                                     accent: true },
+          { label: "Estimated A-Constant", value: "118.0"                                                     },
+          { label: "Diopter Range",        value: "5.0 D – 30.0 D (0.5 Diopter steps)"                      },
+          { label: "Refractive Index",     value: "1.4933"                                                     },
+          { label: "Lens Material",        value: "Hydrophobic Acrylic"                                        },
+          { label: "Delivery System",      value: "Disposable Injector Cartridge - 2.6mm incision"            },
+        ],
+      },
+    ],
+    aConstants: [
+      { key: "SRK/T",      val: "119.20" },
+      { key: "SRK/II",     val: "119.50" },
+      { key: "Hoffer Q",   val: "5.65"   },
+      { key: "Holladay 1", val: "1.87"   },
+      { key: "Holladay 2", val: "5.199"  },
+      { key: "Haigis a0",  val: "1.441"  },
+      { key: "Haigis a1",  val: "0.400"  },
+      { key: "Haigis a2",  val: "0.100"  },
+    ],
+  };
+
+  function renderMonoModel() {
+    const panel = qs("modelPanel");
+    if (!panel) return;
+
+    const badges   = MONO.variants.map(v => `<span class="variant-badge">${v.label}</span>`).join("");
+    const chips    = MONO.highlights.map(h => `<div class="highlight-chip"><i class="fa-solid ${h.icon}"></i><span class="highlight-chip-text">${h.text}</span></div>`).join("");
+    const modelBtns= MONO.variants.map((v, i) => `<button class="spec-model-btn${i === 0 ? " active" : ""}" data-rows="${v.id}" type="button">${v.label}</button>`).join("");
+    const specTables = MONO.variants.map((v, i) => {
+      const rows = v.specs.map(s =>
+        `<div class="spec-row"><span class="spec-row-label">${s.label}</span><span class="spec-row-val${s.accent ? " accent" : ""}">${s.value}</span></div>`).join("");
+      return `<div class="spec-rows" id="${v.id}"${i > 0 ? ' style="display:none;"' : ""}>${rows}</div>`;
+    }).join("");
+    const aGrid = MONO.aConstants.map(a =>
+      `<div class="a-const-item"><div class="a-const-key">${a.key}</div><div class="a-const-val">${a.val}</div></div>`).join("");
+
+    panel.innerHTML = `
+      <div class="neu-card">
+        <div class="card-top">
+          <span class="card-tag">${MONO.tag}</span>
+          <div class="card-title">${MONO.title}</div>
+          <div class="card-subtitle">${MONO.subtitle}</div>
+        </div>
+        <div class="card-lens-area">
+          <div class="card-lens-bg"></div>
+          <div class="card-lens-svg" aria-hidden="true">
+            <svg width="140" height="140" viewBox="0 0 140 140">
+              <path d="M24 70 Q8 50 12 28"  fill="none" stroke="#0a5ea8" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+              <path d="M24 70 Q8 90 12 112" fill="none" stroke="#0a5ea8" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+              <path d="M116 70 Q132 50 128 28"  fill="none" stroke="#0a5ea8" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+              <path d="M116 70 Q132 90 128 112" fill="none" stroke="#0a5ea8" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+              <ellipse cx="70" cy="70" rx="48" ry="34" fill="rgba(10,94,168,0.1)"  stroke="#0a5ea8" stroke-width="2.2"/>
+              <ellipse cx="70" cy="70" rx="34" ry="24" fill="rgba(10,94,168,0.08)" stroke="#0a5ea8" stroke-width="1.3" stroke-dasharray="3 4"/>
+              <ellipse cx="70" cy="70" rx="18" ry="13" fill="rgba(10,94,168,0.16)" stroke="#0a5ea8" stroke-width="1"/>
+              <circle cx="70" cy="70" r="4.5" fill="#0a5ea8" opacity="0.5"/>
+              <circle cx="70" cy="70" r="2"   fill="#0a5ea8" opacity="0.9"/>
+            </svg>
+          </div>
+        </div>
+        <div class="variant-badges">${badges}</div>
+        <div class="card-desc">${MONO.desc}</div>
+        <div class="card-highlights">${chips}</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-card-head">
+          <div class="spec-head-icon"><i class="fa-solid fa-table-list"></i></div>
+          <div>
+            <div class="spec-head-title">Technical Specifications</div>
+            <div class="spec-head-sub">${MONO.title} — Aspheric Hydrophobic</div>
+          </div>
+        </div>
+        <p class="flip-hint-btn">
+          <i class="fa-regular fa-hand-pointer" style="margin-top:0.1rem;"></i>
+          Tap or select the Model button to reveal full specifications
+        </p>
+        <div class="spec-model-sel">${modelBtns}</div>
+        ${specTables}
+        <div class="a-const-block">
+          <div class="a-const-label"><i class="fa-solid fa-calculator" style="margin-right:5px;"></i>Recommended Optical A-Constants</div>
+          <div class="a-const-grid">${aGrid}</div>
+        </div>
+        <div class="spec-download">
+          <button class="dl-btn dl-btn-primary" onclick="alert('IFU download coming soon.')"><i class="fa-solid fa-download"></i> Download IFU</button>
+          <button class="dl-btn dl-btn-ghost"   onclick="alert('Enquiry form coming soon.')"><i class="fa-solid fa-envelope"></i> Enquire</button>
+        </div>
+      </div>`;
+  }
+
+  renderMonoModel();
+
+  // Override hero heading id for monofocal page
+  const monoH1 = qs("page-h1");
+  if (monoH1) monoH1.innerHTML = "Nano Claro<br><em>Hydrophobic IOL</em>";
+
+  const monoEyebrow = qs("heroEyebrow");
+  if (monoEyebrow) monoEyebrow.innerHTML = '<span class="pulse"></span>Hydrophobic · Monofocal · USA Acrylic';
+
+  const monoDesc = qs("heroDesc");
+  if (monoDesc) monoDesc.innerHTML = "Three precision-engineered monofocal designs — Spheric, Aspheric, and Yellow Aspheric — all manufactured from USA medical-grade hydrophobic acrylic with &lt;0.5% water content.";
+
+  const monoBtns = qs("heroBtns");
+  if (monoBtns) monoBtns.innerHTML = `
+    <a href="#models" class="hero-btn-iol-primary"><i class="fa-solid fa-grid-2" style="font-size:12px;"></i> View Models</a>
+    <a href="../Pages/hydrophobicIol.html" class="hero-btn-iol-ghost"><i class="fa-solid fa-arrow-left" style="font-size:11px;"></i> Hydrophobic IOL</a>`;
+
+}
+
+if (ACTIVE_PAGE === "nanoClaroPlus") {
+
+  const MONO = {
+    tag:      "Semiloaded · Hydrophobic",
+    title:    "Nano Claro Plus",
+    subtitle: "Hydrophobic Acrylic Foldable Spheric 360° Square Edge Intraocular Lens",
+    desc:     "WVO NHPC is a spherical hydrophobic IOL available in a non-preloaded and a preloaded system and you see preloaded option in Nano Claro Plus.",
+    highlights: [
+      { icon: "fa-circle-dot",       text: "Spherical optic"   },
+      { icon: "fa-border-all",       text: "360° Square edge"  },
+      { icon: "fa-ruler-horizontal", text: "2.2mm incision"    },
+      { icon: "fa-syringe",          text: "Preloaded option"  },
+      { icon: "fa-sun",              text: "UV filter"         },
+      { icon: "fa-droplet-slash",    text: "<0.5% water"      },
+    ],
+    variants: [
+      {
+        id: "NHPC600P", label: "NHPC 600P",
+        specs: [
+          { label: "Model",                value: "NHPC 600P",                                    accent: true },
+          { label: "Optic Design",         value: "Aspheric Equiconvex · 360° Square Edge"                    },
+          { label: "Optic Diameter",       value: "6.00 mm",                                      accent: true },
+          { label: "Overall Length",       value: "12.50 mm",                                     accent: true },
+          { label: "Estimated A-Constant", value: "118.0"                                                     },
+          { label: "Diopter Range",        value: "5.0 D – 30.0 D (0.5 Diopter steps)"                      },
+          { label: "Refractive Index",     value: "1.4933"                                                     },
+          { label: "Lens Material",        value: "Hydrophobic Acrylic"                                        },
+          { label: "Delivery System",      value: "Preloaded - 2.4mm incision"            },
+        ],
+      },
+      {
+        id: "NHPC600PSQ", label: "NHPC 600PSQ",
+        specs: [
+          { label: "Model",                value: "NHPC 600PSQ",                                  accent: true },
+          { label: "Optic Design",         value: "Aspheric Equiconvex · 360° Square Edge"                    },
+          { label: "Optic Diameter",       value: "6.00 mm",                                      accent: true },
+          { label: "Overall Length",       value: "12.50 mm",                                     accent: true },
+          { label: "Estimated A-Constant", value: "118.0"                                                     },
+          { label: "Diopter Range",        value: "5.0 D – 30.0 D (0.5 Diopter steps)"                      },
+          { label: "Refractive Index",     value: "1.4933"                                                     },
+          { label: "Lens Material",        value: "Hydrophobic Acrylic"                                        },
+          { label: "Delivery System",      value: "Preloaded - 2.4mm incision"            },
+        ],
+      },
+    ],
+    aConstants: [
+      { key: "SRK/T",      val: "119.20" },
+      { key: "SRK/II",     val: "119.50" },
+      { key: "Hoffer Q",   val: "5.65"   },
+      { key: "Holladay 1", val: "1.87"   },
+      { key: "Holladay 2", val: "5.199"  },
+      { key: "Haigis a0",  val: "1.441"  },
+      { key: "Haigis a1",  val: "0.400"  },
+      { key: "Haigis a2",  val: "0.100"  },
+    ],
+  };
+
+  function renderMonoModel() {
+    const panel = qs("modelPanel");
+    if (!panel) return;
+
+    const badges   = MONO.variants.map(v => `<span class="variant-badge">${v.label}</span>`).join("");
+    const chips    = MONO.highlights.map(h => `<div class="highlight-chip"><i class="fa-solid ${h.icon}"></i><span class="highlight-chip-text">${h.text}</span></div>`).join("");
+    const modelBtns= MONO.variants.map((v, i) => `<button class="spec-model-btn${i === 0 ? " active" : ""}" data-rows="${v.id}" type="button">${v.label}</button>`).join("");
+    const specTables = MONO.variants.map((v, i) => {
+      const rows = v.specs.map(s =>
+        `<div class="spec-row"><span class="spec-row-label">${s.label}</span><span class="spec-row-val${s.accent ? " accent" : ""}">${s.value}</span></div>`).join("");
+      return `<div class="spec-rows" id="${v.id}"${i > 0 ? ' style="display:none;"' : ""}>${rows}</div>`;
+    }).join("");
+    const aGrid = MONO.aConstants.map(a =>
+      `<div class="a-const-item"><div class="a-const-key">${a.key}</div><div class="a-const-val">${a.val}</div></div>`).join("");
+
+    panel.innerHTML = `
+      <div class="neu-card">
+        <div class="card-top">
+          <span class="card-tag">${MONO.tag}</span>
+          <div class="card-title">${MONO.title}</div>
+          <div class="card-subtitle">${MONO.subtitle}</div>
+        </div>
+        <div class="card-lens-area">
+          <div class="card-lens-bg"></div>
+          <div class="card-lens-svg" aria-hidden="true">
+            <svg width="140" height="140" viewBox="0 0 140 140">
+              <path d="M24 70 Q8 50 12 28"  fill="none" stroke="#0a5ea8" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+              <path d="M24 70 Q8 90 12 112" fill="none" stroke="#0a5ea8" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+              <path d="M116 70 Q132 50 128 28"  fill="none" stroke="#0a5ea8" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+              <path d="M116 70 Q132 90 128 112" fill="none" stroke="#0a5ea8" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+              <ellipse cx="70" cy="70" rx="48" ry="34" fill="rgba(10,94,168,0.1)"  stroke="#0a5ea8" stroke-width="2.2"/>
+              <ellipse cx="70" cy="70" rx="34" ry="24" fill="rgba(10,94,168,0.08)" stroke="#0a5ea8" stroke-width="1.3" stroke-dasharray="3 4"/>
+              <ellipse cx="70" cy="70" rx="18" ry="13" fill="rgba(10,94,168,0.16)" stroke="#0a5ea8" stroke-width="1"/>
+              <circle cx="70" cy="70" r="4.5" fill="#0a5ea8" opacity="0.5"/>
+              <circle cx="70" cy="70" r="2"   fill="#0a5ea8" opacity="0.9"/>
+            </svg>
+          </div>
+        </div>
+        <div class="variant-badges">${badges}</div>
+        <div class="card-desc">${MONO.desc}</div>
+        <div class="card-highlights">${chips}</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-card-head">
+          <div class="spec-head-icon"><i class="fa-solid fa-table-list"></i></div>
+          <div>
+            <div class="spec-head-title">Technical Specifications</div>
+            <div class="spec-head-sub">${MONO.title} — Aspheric Hydrophobic</div>
+          </div>
+        </div>
+        <p class="flip-hint-btn">
+          <i class="fa-regular fa-hand-pointer" style="margin-top:0.1rem;"></i>
+          Tap or select the Model button to reveal full specifications
+        </p>
+        <div class="spec-model-sel">${modelBtns}</div>
+        ${specTables}
+        <div class="a-const-block">
+          <div class="a-const-label"><i class="fa-solid fa-calculator" style="margin-right:5px;"></i>Recommended Optical A-Constants</div>
+          <div class="a-const-grid">${aGrid}</div>
+        </div>
+        <div class="spec-download">
+          <button class="dl-btn dl-btn-primary" onclick="alert('IFU download coming soon.')"><i class="fa-solid fa-download"></i> Download IFU</button>
+          <button class="dl-btn dl-btn-ghost"   onclick="alert('Enquiry form coming soon.')"><i class="fa-solid fa-envelope"></i> Enquire</button>
+        </div>
+      </div>`;
+  }
+
+  renderMonoModel();
+
+  // Override hero heading id for monofocal page
+  const monoH1 = qs("page-h1");
+  if (monoH1) monoH1.innerHTML = "Nano Claro<br><em>Hydrophobic IOL</em>";
+
+  const monoEyebrow = qs("heroEyebrow");
+  if (monoEyebrow) monoEyebrow.innerHTML = '<span class="pulse"></span>Hydrophobic · Monofocal · USA Acrylic';
+
+  const monoDesc = qs("heroDesc");
+  if (monoDesc) monoDesc.innerHTML = "Three precision-engineered monofocal designs — Spheric, Aspheric, and Yellow Aspheric — all manufactured from USA medical-grade hydrophobic acrylic with &lt;0.5% water content.";
+
+  const monoBtns = qs("heroBtns");
+  if (monoBtns) monoBtns.innerHTML = `
+    <a href="#models" class="hero-btn-iol-primary"><i class="fa-solid fa-grid-2" style="font-size:12px;"></i> View Models</a>
+    <a href="../Pages/hydrophobicIol.html" class="hero-btn-iol-ghost"><i class="fa-solid fa-arrow-left" style="font-size:11px;"></i> Hydrophobic IOL</a>`;
+
+}
+
+if (ACTIVE_PAGE === "nanoGrandPlus") {
+
+  const MONO = {
+    tag:      "Semiloaded · Hydrophobic",
+    title:    "Nano Grand Plus",
+    subtitle: "Hydrophobic Acrylic Foldable Spheric 360° Square Edge Intraocular Lens",
+    desc:     "WVO NHPC is a spherical hydrophobic IOL available in a non-preloaded and a preloaded system and you see preloaded option in Nano Grand Plus.",
+    highlights: [
+      { icon: "fa-circle-dot",       text: "Spherical optic"   },
+      { icon: "fa-border-all",       text: "360° Square edge"  },
+      { icon: "fa-ruler-horizontal", text: "2.2mm incision"    },
+      { icon: "fa-syringe",          text: "Preloaded option"  },
+      { icon: "fa-sun",              text: "UV filter"         },
+      { icon: "fa-droplet-slash",    text: "<0.5% water"      },
+    ],
+    variants: [
+      {
+        id: "NHPC600PY", label: "NHPC 600PY",
+        specs: [
+          { label: "Model",                value: "NHPC 600PY",                                   accent: true },
+          { label: "Optic Design",         value: "Aspheric Equiconvex · 360° Square Edge"                    },
+          { label: "Optic Diameter",       value: "6.00 mm",                                      accent: true },
+          { label: "Overall Length",       value: "12.50 mm",                                     accent: true },
+          { label: "Estimated A-Constant", value: "118.0"                                                     },
+          { label: "Diopter Range",        value: "5.0 D – 30.0 D (0.5 Diopter steps)"                      },
+          { label: "Refractive Index",     value: "1.4933"                                                     },
+          { label: "Lens Material",        value: "Hydrophobic Acrylic"                                        },
+          { label: "Delivery System",      value: "Preloaded - 2.4mm incision"            },
+        ],
+      },
+      {
+        id: "NHPC600PQY", label: "NHPC 600PQY",
+        specs: [
+          { label: "Model",                value: "NHPC 600PQY",                                  accent: true },
+          { label: "Optic Design",         value: "Aspheric Equiconvex · 360° Square Edge"                    },
+          { label: "Optic Diameter",       value: "6.00 mm",                                      accent: true },
+          { label: "Overall Length",       value: "12.50 mm",                                     accent: true },
+          { label: "Estimated A-Constant", value: "118.0"                                                     },
+          { label: "Diopter Range",        value: "5.0 D – 30.0 D (0.5 Diopter steps)"                      },
+          { label: "Refractive Index",     value: "1.4933"                                                     },
+          { label: "Lens Material",        value: "Hydrophobic Acrylic"                                        },
+          { label: "Delivery System",      value: "Preloaded - 2.4mm incision"            },
+        ],
+      },
+    ],
+    aConstants: [
+      { key: "SRK/T",      val: "119.20" },
+      { key: "SRK/II",     val: "119.50" },
+      { key: "Hoffer Q",   val: "5.65"   },
+      { key: "Holladay 1", val: "1.87"   },
+      { key: "Holladay 2", val: "5.199"  },
+      { key: "Haigis a0",  val: "1.441"  },
+      { key: "Haigis a1",  val: "0.400"  },
+      { key: "Haigis a2",  val: "0.100"  },
+    ],
+  };
+
+  function renderMonoModel() {
+    const panel = qs("modelPanel");
+    if (!panel) return;
+
+    const badges   = MONO.variants.map(v => `<span class="variant-badge">${v.label}</span>`).join("");
+    const chips    = MONO.highlights.map(h => `<div class="highlight-chip"><i class="fa-solid ${h.icon}"></i><span class="highlight-chip-text">${h.text}</span></div>`).join("");
+    const modelBtns= MONO.variants.map((v, i) => `<button class="spec-model-btn${i === 0 ? " active" : ""}" data-rows="${v.id}" type="button">${v.label}</button>`).join("");
+    const specTables = MONO.variants.map((v, i) => {
+      const rows = v.specs.map(s =>
+        `<div class="spec-row"><span class="spec-row-label">${s.label}</span><span class="spec-row-val${s.accent ? " accent" : ""}">${s.value}</span></div>`).join("");
+      return `<div class="spec-rows" id="${v.id}"${i > 0 ? ' style="display:none;"' : ""}>${rows}</div>`;
+    }).join("");
+    const aGrid = MONO.aConstants.map(a =>
+      `<div class="a-const-item"><div class="a-const-key">${a.key}</div><div class="a-const-val">${a.val}</div></div>`).join("");
+
+    panel.innerHTML = `
+      <div class="neu-card">
+        <div class="card-top">
+          <span class="card-tag">${MONO.tag}</span>
+          <div class="card-title">${MONO.title}</div>
+          <div class="card-subtitle">${MONO.subtitle}</div>
+        </div>
+        <div class="card-lens-area">
+          <div class="card-lens-bg"></div>
+          <div class="card-lens-svg" aria-hidden="true">
+            <svg width="140" height="140" viewBox="0 0 140 140">
+              <path d="M24 70 Q8 50 12 28"  fill="none" stroke="#0a5ea8" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+              <path d="M24 70 Q8 90 12 112" fill="none" stroke="#0a5ea8" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+              <path d="M116 70 Q132 50 128 28"  fill="none" stroke="#0a5ea8" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+              <path d="M116 70 Q132 90 128 112" fill="none" stroke="#0a5ea8" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+              <ellipse cx="70" cy="70" rx="48" ry="34" fill="rgba(10,94,168,0.1)"  stroke="#0a5ea8" stroke-width="2.2"/>
+              <ellipse cx="70" cy="70" rx="34" ry="24" fill="rgba(10,94,168,0.08)" stroke="#0a5ea8" stroke-width="1.3" stroke-dasharray="3 4"/>
+              <ellipse cx="70" cy="70" rx="18" ry="13" fill="rgba(10,94,168,0.16)" stroke="#0a5ea8" stroke-width="1"/>
+              <circle cx="70" cy="70" r="4.5" fill="#0a5ea8" opacity="0.5"/>
+              <circle cx="70" cy="70" r="2"   fill="#0a5ea8" opacity="0.9"/>
+            </svg>
+          </div>
+        </div>
+        <div class="variant-badges">${badges}</div>
+        <div class="card-desc">${MONO.desc}</div>
+        <div class="card-highlights">${chips}</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-card-head">
+          <div class="spec-head-icon"><i class="fa-solid fa-table-list"></i></div>
+          <div>
+            <div class="spec-head-title">Technical Specifications</div>
+            <div class="spec-head-sub">${MONO.title} — Aspheric Hydrophobic</div>
+          </div>
+        </div>
+        <p class="flip-hint-btn">
+          <i class="fa-regular fa-hand-pointer" style="margin-top:0.1rem;"></i>
+          Tap or select the Model button to reveal full specifications
+        </p>
+        <div class="spec-model-sel">${modelBtns}</div>
+        ${specTables}
+        <div class="a-const-block">
+          <div class="a-const-label"><i class="fa-solid fa-calculator" style="margin-right:5px;"></i>Recommended Optical A-Constants</div>
+          <div class="a-const-grid">${aGrid}</div>
+        </div>
+        <div class="spec-download">
+          <button class="dl-btn dl-btn-primary" onclick="alert('IFU download coming soon.')"><i class="fa-solid fa-download"></i> Download IFU</button>
+          <button class="dl-btn dl-btn-ghost"   onclick="alert('Enquiry form coming soon.')"><i class="fa-solid fa-envelope"></i> Enquire</button>
+        </div>
+      </div>`;
+  }
+
+  renderMonoModel();
+
+  // Override hero heading id for monofocal page
+  const monoH1 = qs("page-h1");
+  if (monoH1) monoH1.innerHTML = "Nano Claro<br><em>Hydrophobic IOL</em>";
+
+  const monoEyebrow = qs("heroEyebrow");
+  if (monoEyebrow) monoEyebrow.innerHTML = '<span class="pulse"></span>Hydrophobic · Monofocal · USA Acrylic';
+
+  const monoDesc = qs("heroDesc");
+  if (monoDesc) monoDesc.innerHTML = "Three precision-engineered monofocal designs — Spheric, Aspheric, and Yellow Aspheric — all manufactured from USA medical-grade hydrophobic acrylic with &lt;0.5% water content.";
+
+  const monoBtns = qs("heroBtns");
+  if (monoBtns) monoBtns.innerHTML = `
+    <a href="#models" class="hero-btn-iol-primary"><i class="fa-solid fa-grid-2" style="font-size:12px;"></i> View Models</a>
+    <a href="../Pages/hydrophobicIol.html" class="hero-btn-iol-ghost"><i class="fa-solid fa-arrow-left" style="font-size:11px;"></i> Hydrophobic IOL</a>`;
+
+}
 
 /*************************************************
  * DarkMode Toggle

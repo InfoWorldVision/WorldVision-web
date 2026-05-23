@@ -4705,15 +4705,15 @@ html.dark .faq-item {
   color: var(--neu-hydro-c);
   margin-bottom: 5px;
 }
-.model-tag.multifocal {
+.model-tag.nanoGrand {
   background: rgba(124, 58, 237, 0.1);
   color: #7c3aed;
 }
-.model-tag.toric {
+.model-tag.nanoClaroPlus {
   background: rgba(10, 122, 80, 0.1);
   color: var(--neu-phil-c);
 }
-.model-tag.piece3 {
+.model-tag.nanoGrandPlus {
   background: rgba(217, 119, 6, 0.1);
   color: var(--neu-pmma-c);
 }
