@@ -127,32 +127,32 @@ const SITE = {
           color: "var(--neu-accent2)",
           children: [
             { label: "Hydrophobic IOL",  href: "../Pages/hydrophobicIol.html", icon: "fa-shield-halved",      color: "text-blue-400"  },
-            { label: "Hydrophilic IOL",  href: "#",                            icon: "fa-shield-halved",      color: "text-teal-400"  },
-            { label: "PMMA IOL",         href: "#",                            icon: "fa-circle-half-stroke", color: "text-amber-400" },
+            { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIol.html", icon: "fa-shield-halved",      color: "text-teal-400"  },
+            { label: "PMMA IOL",         href: "../Pages/pmmaIol.html",       icon: "fa-circle-half-stroke", color: "text-amber-400" },
           ],
         },
-        { label: "Premium IOL", href: "#", icon: "fa-star-of-life", color: "var(--neu-accent2)" },
+        { label: "Premium IOL", href: "../Pages/premiumIol.html", icon: "fa-star-of-life", color: "var(--neu-accent2)" },
         {
           label: "Pharma Products",
-          href:  "#",
+          href:  "../Pages/pharmaProducts.html",
           icon:  "fa-capsules",
           color: "var(--neu-accent2)",
           children: [
-            { label: "World Vision Chol",  href: "#", icon: "fa-flask",   color: "text-purple-400" },
-            { label: "World Vision TBlue", href: "#", icon: "fa-flask",   color: "text-blue-400"   },
-            { label: "World Vision Visc",  href: "#", icon: "fa-droplet", color: "text-teal-400"   },
+            { label: "World Vision Chol",  href: "../Pages/pharmaChol.html", icon: "fa-flask",   color: "text-purple-400" },
+            { label: "World Vision TBlue", href: "../Pages/pharmaTBlue.html", icon: "fa-flask",   color: "text-blue-400"   },
+            { label: "World Vision Visc",  href: "../Pages/pharmaVisc.html", icon: "fa-droplet", color: "text-teal-400"   },
           ],
         },
         {
           label: "Micro Surgical Blades",
-          href:  "#",
+          href:  "../Pages/microSurgicalBlades.html",
           icon:  "fa-cut",
           color: "var(--neu-accent2)",
           children: [
-            { label: "Keratome",  href: "#", icon: "fa-pen-fancy",          color: "text-slate-500" },
-            { label: "Crescent",  href: "#", icon: "fa-moon",               color: "text-blue-400"  },
-            { label: "Lance Ip",  href: "#", icon: "fa-staff-snake",        color: "text-amber-400" },
-            { label: "MVR Blade", href: "#", icon: "fa-diamond-turn-right", color: "text-red-400"   },
+            { label: "Keratome",  href: "../Pages/microSurgicalKeratome.html", icon: "fa-pen-fancy",          color: "text-slate-500" },
+            { label: "Crescent",  href: "../Pages/microSurgicalCrescent.html", icon: "fa-moon",               color: "text-blue-400"  },
+            { label: "Lance Ip",  href: "../Pages/microSurgicalLanceIp.html", icon: "fa-staff-snake",        color: "text-amber-400" },
+            { label: "MVR Blade", href: "../Pages/microSurgicalMVRBlade.html", icon: "fa-diamond-turn-right", color: "text-red-400"   },
           ],
         },
       ],
@@ -173,7 +173,7 @@ const SITE = {
         pharma:   { label: "Pharma Products",       icon: "fa-capsules",   color: "text-[#0055a5]" },
         blade:    { label: "Micro Surgical Blades", icon: "fa-cut",      color: "text-[#0055a5]" },
         children: [
-          { label: "Premium IOL", href: "#", icon: "fa-star-of-life", color: "text-[#0055a5]" },
+          { label: "Premium IOL", href: "../Pages/premiumIol.html", icon: "fa-star-of-life", color: "text-[#0055a5]" },
         ],
       },
       // VIEW 3 — IOL sub-menu
@@ -181,27 +181,27 @@ const SITE = {
         back:  { label: "Intraocular Lens" },
         children: [
           { label: "Hydrophobic IOL", href: "../Pages/hydrophobicIol.html", icon: "fa-shield-halved",      color: "text-[#0055a5]" },
-          { label: "Hydrophilic IOL", href: "#",                            icon: "fa-shield-halved",      color: "text-teal-500"  },
-          { label: "PMMA IOL",        href: "#",                            icon: "fa-circle-half-stroke", color: "text-amber-500" },
+          { label: "Hydrophilic IOL", href: "../Pages/hydrophilicIol.html",                            icon: "fa-shield-halved",      color: "text-teal-500"  },
+          { label: "PMMA IOL",        href: "../Pages/pmmaIol.html",                            icon: "fa-circle-half-stroke", color: "text-amber-500" },
         ],
       },
       // VIEW 4 — Pharma sub-menu
       pharma: {
         back:  { label: "Pharma Products" },
         children: [
-          { label: "World Vision Chol",  href: "#", icon: "fa-flask",   color: "text-purple-500" },
-          { label: "World Vision TBlue", href: "#", icon: "fa-flask",   color: "text-blue-500"   },
-          { label: "World Vision Visc",  href: "#", icon: "fa-droplet", color: "text-teal-500"   },
+          { label: "World Vision Chol",  href: "../Pages/pharmaChol.html", icon: "fa-flask",   color: "text-purple-500" },
+          { label: "World Vision TBlue", href: "../Pages/pharmaTBlue.html", icon: "fa-flask",   color: "text-blue-500"   },
+          { label: "World Vision Visc",  href: "../Pages/pharmaVisc.html", icon: "fa-droplet", color: "text-teal-500"   },
         ],
       },
       // VIEW 5 — Blades sub-menu
       blade: {
         back:  { label: "Surgical Blades" },
         children: [
-          { label: "Keratome",  href: "#", icon: "fa-pen-fancy",          color: "text-slate-500" },
-          { label: "Crescent",  href: "#", icon: "fa-moon",               color: "text-blue-500"  },
-          { label: "Lance Ip",  href: "#", icon: "fa-staff-snake",        color: "text-amber-500" },
-          { label: "MVR Blade", href: "#", icon: "fa-diamond-turn-right", color: "text-red-500"   },
+          { label: "Keratome",  href: "../Pages/microSurgicalBlades.html", icon: "fa-pen-fancy",          color: "text-slate-500" },
+          { label: "Crescent",  href: "../Pages/microSurgicalCrescent.html", icon: "fa-moon",               color: "text-blue-500"  },
+          { label: "Lance Ip",  href: "../Pages/microSurgicalLanceIp.html", icon: "fa-staff-snake",        color: "text-amber-500" },
+          { label: "MVR Blade", href: "../Pages/microSurgicalMVRBlade.html", icon: "fa-diamond-turn-right", color: "text-red-500"   },
         ],
       },
     },
@@ -241,9 +241,9 @@ const SITE = {
     headingEm: "every need",
     sub:       "Medical-grade materials sourced from the USA and Europe — engineered for every surgical requirement.",
     cards: [
-      { href: "../Pages/iol-page.html", img: "../Multimedia/lense4.png",  alt: "IOL",      tag: "IOL",         title: "Intraocular Lenses",    desc: "Hydrophobic, Hydrophilic & PMMA. UV absorber, blue-light filter, zero glistening." },
-      { href: "#",                      img: "../Multimedia/lense8.png",  alt: "Surgical", tag: "Instruments", title: "Surgical Instruments",  desc: "Precision micro-surgical tools crafted for ophthalmic procedures." },
-      { href: "#",                      img: "../Multimedia/lense15.png", alt: "Vet",      tag: "Veterinary",  title: "Veterinary IOL",        desc: "Same medical-grade technology, engineered specifically for animal eye surgery." },
+      { href: "../Pages/iol-page.html", img: "../Multimedia/hydrophilic_fold1.png",  alt: "IOL",      tag: "IOL",         title: "Intraocular Lenses",    desc: "Hydrophobic, Hydrophilic & PMMA. UV absorber, blue-light filter, zero glistening." },
+      { href: "../Pages/PharmaProducts.html", img: "../Multimedia/lense8.png",  alt: "Pharma", tag: "Pharma Product", title: "Pharma Products",  desc: "Same medical-grade technology, engineered specifically for animal eye surgery" },
+      { href: "../Pages/microSurgicalInstruments.html", img: "../Multimedia/lense15.png", alt: "blade",      tag: "Surgical Blade",  title: "Surgical Blade",        desc: "Best in class surgical blades for precise procedures." },
     ],
   },
 
