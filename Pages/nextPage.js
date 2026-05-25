@@ -3301,9 +3301,30 @@ if (ACTIVE_PAGE === "nanoFlex") {
     });
 
     // Update panels
-    document.querySelectorAll(".model-panel").forEach(p => p.classList.remove("active"));
     const targetPanel = qs(`panel-${targetId}`);
-    if (targetPanel) targetPanel.classList.add("active");
+    if (targetPanel) {
+      targetPanel.classList.add("active");
+
+      // Reset model buttons to first model when switching Nano Flex / Nano Flex Y tab
+      const modelBtns = targetPanel.querySelectorAll(".spec-model-btn");
+      const specRows = targetPanel.querySelectorAll(".spec-rows");
+
+      modelBtns.forEach((btn, i) => {
+        btn.classList.toggle("active", i === 0);
+      });
+
+      specRows.forEach((row, i) => {
+        row.style.display = i === 0 ? "block" : "none";
+      });
+
+      const firstBtn = modelBtns[0];
+      const lensImg = targetPanel.querySelector(".card-lens-svg img");
+
+      if (firstBtn?.dataset.lens && lensImg) {
+        lensImg.style.opacity = "1";
+        lensImg.src = firstBtn.dataset.lens;
+      }
+    }
 
     // Swap hero lens image
     updateHeroLens(targetId);
