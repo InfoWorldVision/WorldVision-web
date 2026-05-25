@@ -4647,17 +4647,20 @@ html.dark .faq-item {
   color: var(--neu-hydro-c);
   box-shadow: 3px 3px 8px var(--neu-dark), -3px -3px 8px var(--neu-light);
 }
-.model-card-icon.multifocal {
+.model-card-icon.nanoGrand {
   background: rgba(124, 58, 237, 0.1);
   color: #7c3aed;
 }
-.model-card-icon.toric {
+.model-card-icon.nanoClaroPlus {
   background: rgba(10, 122, 80, 0.1);
   color: var(--neu-phil-c);
 }
-.model-card-icon.piece3 {
+.model-card-icon.nanoGrandPlus {
   background: rgba(217, 119, 6, 0.1);
   color: var(--neu-pmma-c);
+}
+.model-card-icon.phil {
+  background: rgba(10, 122, 80, 0.12);
 }
 .model-card h3 {
   font-size: 17px;
@@ -4681,14 +4684,17 @@ html.dark .faq-item {
   transition: gap 0.2s;
   margin-top: auto;
 }
-.model-card-cta.multifocal {
+.model-card-cta.nanoGrand {
   color: #7c3aed;
 }
-.model-card-cta.toric {
+.model-card-cta.nanoClaroPlus {
   color: var(--neu-phil-c);
 }
-.model-card-cta.piece3 {
+.model-card-cta.nanoGrandPlus {
   color: var(--neu-pmma-c);
+}
+.model-card-cta.phil {
+  color: var(--neu-phil-c);
 }
 .model-card:hover .model-card-cta {
   gap: 10px;
@@ -4717,6 +4723,10 @@ html.dark .faq-item {
   background: rgba(217, 119, 6, 0.1);
   color: var(--neu-pmma-c);
 }
+.model-tag.phil {
+  background: rgba(10, 122, 80, 0.1);
+  color: var(--neu-phil-c);
+}
 .model-desc {
   font-size: 13px;
   line-height: 1.65;
@@ -4737,6 +4747,26 @@ html.dark .faq-item {
   background: linear-gradient(145deg, #d8dce4, #eef1f5);
   box-shadow: 2px 2px 5px var(--neu-dark), -2px -2px 5px var(--neu-light);
   color: var(--neu-text);
+}
+
+.phil-bg {
+  background: var(--neu-phil-bg);
+}
+.phil-c {
+  color: var(--neu-phil-c);
+}
+.phil-badge {
+  background: rgba(10, 122, 80, 0.12);
+  color: var(--neu-phil-c);
+}
+.phil-dot {
+  background: var(--neu-phil-c);
+}
+.phil-btn {
+  background: linear-gradient(135deg, #0a7a50, #0fa866);
+}
+.phil-icon {
+  background: rgba(10, 122, 80, 0.12);
 }
 
 /* ================= BACKGROUND RESPONSIVE ================= */

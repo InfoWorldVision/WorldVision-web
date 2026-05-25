@@ -488,17 +488,20 @@
             color: var(--neu-hydro-c);
             box-shadow: 3px 3px 8px var(--neu-dark), -3px -3px 8px var(--neu-light);
 
-            &.multifocal{
+            &.nanoGrand{
                 background: rgba(124,58,237,0.1);
                 color: #7c3aed;
             }
-            &.toric{
+            &.nanoClaroPlus{
                 background: rgba(10,122,80,0.1);
                 color: var(--neu-phil-c);
             }
-            &.piece3{
+            &.nanoGrandPlus{
                 background: rgba(217,119,6,0.1);
                 color: var(--neu-pmma-c);
+            }
+            &.phil{
+                background: rgba(10,122,80,0.12);
             }
         }
         h3{
@@ -523,9 +526,10 @@
             transition: gap 0.2s;
             margin-top: auto;
 
-            &.multifocal{ color: #7c3aed; }
-            &.toric{ color: var(--neu-phil-c); }
-            &.piece3{ color: var(--neu-pmma-c);}
+            &.nanoGrand{ color: #7c3aed; }
+            &.nanoClaroPlus{ color: var(--neu-phil-c); }
+            &.nanoGrandPlus{ color: var(--neu-pmma-c);}
+            &.phil{ color: var(--neu-phil-c); }
         }
 
         &:hover &-cta{
@@ -557,6 +561,10 @@
             background: rgba(217,119,6,0.1);
             color: var(--neu-pmma-c);
         }
+        &.phil {
+            background: rgba(10,122,80,0.1);
+            color: var(--neu-phil-c);
+        }
     }
     &-desc{
         font-size: 13px;
@@ -581,5 +589,26 @@
             box-shadow: 2px 2px 5px var(--neu-dark), -2px -2px 5px var(--neu-light);
             color: var(--neu-text);
         }
+    }
+}
+.phil{
+    &-bg{
+        background: var(--neu-phil-bg);
+    }
+    &-c{
+        color: var(--neu-phil-c);
+    }
+    &-badge{
+        background: rgba(10,122,80,0.12);
+        color: var(--neu-phil-c);
+    }
+    &-dot{
+        background: var(--neu-phil-c);
+    }
+    &-btn{
+        background: linear-gradient(135deg, #0a7a50, #0fa866);
+    }
+    &-icon{
+        background: rgba(10,122,80,0.12);
     }
 }
