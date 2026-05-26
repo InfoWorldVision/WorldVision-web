@@ -277,8 +277,29 @@
   .result-highlight { grid-template-columns: 1fr; }
   .specs-grid { grid-template-columns: 1fr 1fr; }
   .hero-btn-row { justify-content: center; }
-  .model-tabs    { gap: 6px; }
-  .model-tab-type { display: none; }
+  .model-tabs {
+    gap: 6px;
+    overflow-x: auto;
+    overflow-y: visible;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 4px;
+  }
+  .model-tabs::-webkit-scrollbar {
+    display: none;
+  }
+  .model-tab {
+    flex: 0 0 auto;
+    min-width: 82px;
+    padding: 10px 10px;
+  }
+  .model-tab-name {
+    font-size: 12px;
+  }
+  .model-tab-type {
+    display: none;
+  }
   .card-highlights { grid-template-columns: 1fr; }
   .a-const-grid  { grid-template-columns: 1fr 1fr; }
   .col-scroll { gap: 12px; padding: 7.5rem 12px 7rem; }

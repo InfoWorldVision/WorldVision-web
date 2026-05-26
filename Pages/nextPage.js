@@ -136,8 +136,8 @@ const PAGE = {
           color: "var(--neu-accent2)",
           children: [
             { label: "Hydrophobic IOL",  href: "../Pages/hydrophobicIol.html", icon: "fa-shield-halved",      color: "text-blue-400"  },
-            { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html",  icon: "fa-shield-halved",      color: "text-teal-400"  },
-            { label: "PMMA IOL",         href: "#",                            icon: "fa-circle-half-stroke", color: "text-amber-400" },
+            { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html", icon: "fa-shield-halved",      color: "text-teal-400"  },
+            { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html",        icon: "fa-circle-half-stroke", color: "text-amber-400" },
           ],
         },
         { label: "Premium IOL", href: "#", icon: "fa-star-of-life", color: "var(--neu-accent2)" },
@@ -188,8 +188,8 @@ const PAGE = {
         back:  { label: "Intraocular Lens" },
         children: [
           { label: "Hydrophobic IOL", href: "../Pages/hydrophobicIol.html", icon: "fa-shield-halved",      color: "text-[#0055a5]" },
-          { label: "Hydrophilic IOL", href: "../Pages/hydrophilicIOL.html",  icon: "fa-shield-halved",      color: "text-teal-500"  },
-          { label: "PMMA IOL",        href: "#",                            icon: "fa-circle-half-stroke", color: "text-amber-500" },
+          { label: "Hydrophilic IOL", href: "../Pages/hydrophilicIOL.html", icon: "fa-shield-halved",      color: "text-teal-500"  },
+          { label: "PMMA IOL",        href: "../Pages/pmmaIOL.html",        icon: "fa-circle-half-stroke", color: "text-amber-500" },
         ],
       },
       // VIEW 4 — Pharma sub-menu
@@ -232,6 +232,12 @@ const PAGE = {
         { label: "Our Products",       href: "#"                      },
         { label: "Intraocular Lenses", href: "../Pages/iol-page.html" },
         { label: "Hydrophilic IOL",    current: true                  },
+      ],
+      pmmaIOL: [
+        { label: "Home",               href: "../Pages/index.html"          },
+        { label: "Our Products",       href: "#"                            },
+        { label: "Intraocular Lenses", href: "../Pages/iol-page.html"       },
+        { label: "PMMA IOL",           current: true                        },
       ],
       nanoFold: [
         { label: "Home",               href: "../Pages/index.html"          },
@@ -1915,7 +1921,18 @@ document.addEventListener("click", function(e) {
       lensImg.src = btn.dataset.lens;
     }
   }
-});
+  // Mobile only: scroll to lens card
+  if (window.innerWidth <= 768) {
+    const panel = btn.closest(".model-panel") || btn.closest(".switcher-wrap");
+    const neuCard = panel ? panel.querySelector(".neu-card") : null;
+    if (neuCard) {
+      const offset = 80;
+      const top = neuCard.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top: top, behavior: "smooth" });
+    }
+  }
+
+});  // ← this is the existing closing });
 
 /*************************************************
  * Scroll Reveal
@@ -3328,4 +3345,783 @@ if (ACTIVE_PAGE === "nanoFlex") {
 
   const waF2 = qs("waFloat"); if (waF2) waF2.href = PAGE.company.whatsapp;
   const copy2 = qs("footerCopyright"); if (copy2) copy2.textContent = PAGE.company.copyright;
+}
+
+/*************************************************
+ * PMMA IOL PAGE — pmmaIol.html
+ * Tabs: Nano Plus | Nano Plus Y | Nano IOL | Nano Iris | Nano Ring | Nano SQD
+ *************************************************/
+
+if (ACTIVE_PAGE === "pmmaIOL") {
+
+  const PMMA_C = "var(--neu-pmma-c)";
+
+  // ── SHARED A-CONSTANTS (PC lenses) ────────────────────────────────────
+  const AC_PC = [
+    { key: "A-Constant",   val: "118.4" },
+    { key: "AC Depth",     val: "5.0 mm" },
+    { key: "Refractive Index", val: "1.490" },
+    { key: "Sterilization",val: "Ethylene Oxide" },
+  ];
+  const AC_IRIS = [
+    { key: "A-Constant",   val: "115.0" },
+    { key: "Sterilization",val: "Ethylene Oxide" },
+  ];
+
+  // ── TAB DEFINITIONS ───────────────────────────────────────────────────
+  const PMMA_TABS = [
+
+    // ── TAB 1: Nano Plus (Clear Aspheric) ─────────────────────────────
+    {
+      id:    "nanoPlus",
+      name:  "Nano Plus",
+      type:  "Aspheric · 360° Square Edge",
+      tag:   "Clear Aspheric · PC / AC",
+      title: "Nano Plus",
+      subtitle: "360° Square Edge Aspheric PMMA Single Piece Posterior Chamber Intraocular Lens",
+      desc:  "The Nano Plus is a single-piece PMMA aspheric IOL with 360° square-edge design. Available in two optic sizes — 5.50 mm and 6.00 mm — with C-type step vault haptics for PC and S-type for AC placement.",
+      lensImg: "../Multimedia/nanoPlusPmma.png",
+      highlights: [
+        { icon: "fa-circle-dot",       text: "Aspheric optic"          },
+        { icon: "fa-border-all",       text: "360° Square edge"        },
+        { icon: "fa-link",             text: "C/S Step vault haptics"  },
+        { icon: "fa-ruler",            text: "5.0 – 6.5 mm optic"      },
+        { icon: "fa-sun",              text: "UV filter"               },
+        { icon: "fa-flag",             text: "UK medical grade"        },
+      ],
+      variants: [
+        {
+          id: "NPC600AS", label: "NPC 600 AS",
+          lensImg: "../Multimedia/nanoPlusPmma.png",
+          specs: [
+            { label: "Model",             value: "NPC 600 AS",                               accent: true },
+            { label: "Lens Type",         value: "Single Piece PMMA ASPHERIC · Square Edge PC/AC"         },
+            { label: "Material",          value: "Poly Methyl Methacrylate with UV filter"                },
+            { label: "Haptic Design",     value: "PC: 'C' with Step Vault · AC: 'S' with Step Vault"      },
+            { label: "Optic Body Diameter",value: "6.00 mm",                                 accent: true },
+            { label: "Overall Diameter",  value: "12.00 – 13.50 mm",                         accent: true },
+            { label: "Refractive Index",  value: "1.490"                                                  },
+            { label: "PC Available Powers", value: "+10.0 D to +35.0 D in 0.5 D Steps"                   },
+            { label: "AC Available Powers", value: "-10.0 D to +40.0 D · +10.0 D to +30.0 D (0.5 D) · -10.0 to +9.0 D & +31.0 to +40.0 D (1.0 D)" },
+            { label: "A-Constant",        value: "118.4"                                                  },
+            { label: "Sterilization",     value: "Ethylene Oxide"                                         },
+          ],
+        },
+        {
+          id: "NPC550AS", label: "NPC 550 AS",
+          lensImg: "../Multimedia/nanoPlusPmma.png",
+          specs: [
+            { label: "Model",             value: "NPC 550 AS",                               accent: true },
+            { label: "Lens Type",         value: "Single Piece PMMA ASPHERIC · Square Edge PC/AC"         },
+            { label: "Material",          value: "Poly Methyl Methacrylate with UV filter"                },
+            { label: "Haptic Design",     value: "PC: 'C' with Step Vault · AC: 'S' with Step Vault"      },
+            { label: "Optic Body Diameter",value: "5.50 mm",                                 accent: true },
+            { label: "Overall Diameter",  value: "12.00 – 13.50 mm",                         accent: true },
+            { label: "Refractive Index",  value: "1.490"                                                  },
+            { label: "PC Available Powers", value: "+10.0 D to +35.0 D in 0.5 D Steps"                   },
+            { label: "AC Available Powers", value: "-10.0 D to +40.0 D · +10.0 D to +30.0 D (0.5 D) · -10.0 to +9.0 D & +31.0 to +40.0 D (1.0 D)" },
+            { label: "A-Constant",        value: "118.4"                                                  },
+            { label: "Sterilization",     value: "Ethylene Oxide"                                         },
+          ],
+        },
+      ],
+    },
+
+    // ── TAB 2: Nano Plus Y (Yellow Aspheric) ──────────────────────────
+    {
+      id:    "nanoPlusY",
+      name:  "Nano Plus Y",
+      type:  "Yellow · Blue Light Blocker",
+      yellow: true,
+      tag:   "Yellow Aspheric · Blue Light Blocker",
+      title: "Nano Plus Y",
+      subtitle: "360° Square Edge Yellow PMMA Single Piece Posterior Chamber Intraocular Lens",
+      desc:  "The Nano Plus Y features the same proven Nano Plus aspheric 360° square-edge platform with a yellow chromophore for blue-light filtering — providing additional retinal protection alongside UV filtering.",
+      lensImg: "../Multimedia/nanoPlusYellowPmma.png",
+      highlights: [
+        { icon: "fa-circle-dot",       text: "Aspheric optic"          },
+        { icon: "fa-border-all",       text: "360° Square edge"        },
+        { icon: "fa-sun",              text: "UV + Blue light filter"  },
+        { icon: "fa-link",             text: "C/S Step vault haptics"  },
+        { icon: "fa-ruler",            text: "5.0 – 6.5 mm optic"      },
+        { icon: "fa-flag",             text: "UK medical grade"        },
+      ],
+      variants: [
+        {
+          id: "NPC500ASY", label: "NPC 500 ASY",
+          lensImg: "../Multimedia/nanoPlusYellowPmma.png",
+          specs: [
+            { label: "Model",             value: "NPC 500 ASY",                              accent: true },
+            { label: "Lens Type",         value: "Single Piece Yellow PMMA ASPHERIC · Square Edge PC/AC" },
+            { label: "Material",          value: "Poly Methyl Methacrylate with UV filter"               },
+            { label: "Haptic Design",     value: "PC: 'C' with Step Vault · AC: 'S' with Step Vault"     },
+            { label: "Optic Body Diameter",value: "5.00 mm",                                 accent: true },
+            { label: "Overall Diameter",  value: "12.00 – 13.50 mm",                         accent: true },
+            { label: "Refractive Index",  value: "1.490"                                                  },
+            { label: "PC Available Powers", value: "+10.0 D to +35.0 D in 0.5 D Steps"                  },
+            { label: "AC Available Powers", value: "-10.0 D to +40.0 D · +10.0 D to +30.0 D (0.5 D) · -10.0 to +9.0 D & +31.0 to +40.0 D (1.0 D)" },
+            { label: "A-Constant",        value: "118.4"                                                  },
+            { label: "Sterilization",     value: "Ethylene Oxide"                                         },
+          ],
+        },
+        {
+          id: "NPC600ASY", label: "NPC 600 ASY",
+          lensImg: "../Multimedia/nanoPlusYellowPmma.png",
+          specs: [
+            { label: "Model",             value: "NPC 600 ASY",                              accent: true },
+            { label: "Lens Type",         value: "Single Piece Yellow PMMA ASPHERIC · Square Edge PC/AC" },
+            { label: "Material",          value: "Poly Methyl Methacrylate with UV filter"               },
+            { label: "Haptic Design",     value: "PC: 'C' with Step Vault · AC: 'S' with Step Vault"     },
+            { label: "Optic Body Diameter",value: "6.00 mm",                                 accent: true },
+            { label: "Overall Diameter",  value: "12.00 – 13.50 mm",                         accent: true },
+            { label: "Refractive Index",  value: "1.490"                                                  },
+            { label: "PC Available Powers", value: "+10.0 D to +35.0 D in 0.5 D Steps"                  },
+            { label: "AC Available Powers", value: "-10.0 D to +40.0 D · +10.0 D to +30.0 D (0.5 D) · -10.0 to +9.0 D & +31.0 to +40.0 D (1.0 D)" },
+            { label: "A-Constant",        value: "118.4"                                                  },
+            { label: "Sterilization",     value: "Ethylene Oxide"                                         },
+          ],
+        },
+      ],
+    },
+
+    // ── TAB 3: Nano IOL (Spheric PC/AC) ───────────────────────────────
+    {
+      id:    "nanoIOL",
+      name:  "Nano IOL",
+      type:  "PC / AC · Single Piece",
+      tag:   "Posterior · Anterior Chamber · PMMA",
+      title: "Nano IOL",
+      subtitle: "PMMA Posterior / Anterior Chamber Single Piece Intraocular Lens",
+      desc:  "The Nano IOL is a versatile single-piece PMMA IOL available in four models covering posterior chamber C-loop, anterior chamber S-loop, and special fixation configurations.",
+      lensImg: "../Multimedia/nanoIOL1.png",
+      highlights: [
+        { icon: "fa-circle-dot",       text: "Spheric optic"           },
+        { icon: "fa-eye",              text: "PC & AC variants"        },
+        { icon: "fa-link",             text: "C-loop & S-loop haptics" },
+        { icon: "fa-ruler",            text: "4.25 – 6.5 mm optic"     },
+        { icon: "fa-droplet",          text: "UV + Blue light filter"  },
+        { icon: "fa-flag",             text: "UK medical grade"        },
+      ],
+      variants: [
+        {
+          id: "NPC600", label: "NPC 600",
+          lensImg: "../Multimedia/nanoIOL1.png",
+          specs: [
+            { label: "Model",             value: "NPC 600",                                  accent: true },
+            { label: "Lens Type",         value: "Single Piece PMMA ASPHERIC Posterior Chamber"            },
+            { label: "Material",          value: "Poly Methyl Methacrylate · UV + Blue Light Filter (UVA)" },
+            { label: "Haptic Design",     value: "PC: 'C' with Step Vault"                                 },
+            { label: "Optic Body Diameter",value: "6.00 mm",                                 accent: true },
+            { label: "Overall Diameter",  value: "12.50 mm",                                 accent: true },
+            { label: "Available Powers",  value: "+10.0 D to +40.0 D · +10.0 to +30.0 D (0.5 D) · +10.0 to +9.0 D (1.0 D) · +31.0 to +40.0 D (1.0 D)" },
+            { label: "A-Constant",        value: "118.2 (OAL 12.50 mm) · 118.4 (OAL 13.00 mm)"           },
+            { label: "Sterilization",     value: "Ethylene Oxide"                                          },
+          ],
+        },
+        {
+          id: "NPC550", label: "NPC 550",
+          lensImg: "../Multimedia/nanoIOL2.png",
+          specs: [
+            { label: "Model",             value: "NPC 550",                                  accent: true },
+            { label: "Lens Type",         value: "Single Piece PMMA ASPHERIC Posterior Chamber"            },
+            { label: "Material",          value: "Poly Methyl Methacrylate · UV + Blue Light Filter (UVA)" },
+            { label: "Haptic Design",     value: "PC: 'C' with Step Vault"                                 },
+            { label: "Optic Body Diameter",value: "5.50 mm",                                 accent: true },
+            { label: "Overall Diameter",  value: "12.50 mm",                                 accent: true },
+            { label: "Available Powers",  value: "+10.0 D to +40.0 D · +10.0 to +30.0 D (0.5 D) · +10.0 to +9.0 D (1.0 D) · +31.0 to +40.0 D (1.0 D)" },
+            { label: "A-Constant",        value: "118.2 (OAL 12.50 mm) · 118.4 (OAL 13.00 mm)"           },
+            { label: "Sterilization",     value: "Ethylene Oxide"                                          },
+          ],
+        },
+        {
+          id: "NPA603", label: "NPA 603",
+          lensImg: "../Multimedia/nanoIOL3.png",
+          specs: [
+            { label: "Model",             value: "NPA 603",                                  accent: true },
+            { label: "Lens Type",         value: "Single Piece PMMA Anterior Chamber"                     },
+            { label: "Material",          value: "Poly Methyl Methacrylate · UV + Blue Light Filter (UVA)" },
+            { label: "Haptic Design",     value: "AC: 'S' with Step Vault"                                 },
+            { label: "Optic Body Diameter",value: "6.00 mm",                                 accent: true },
+            { label: "Overall Diameter",  value: "12.50 – 13.50 mm",                         accent: true },
+            { label: "Available Powers",  value: "+10.0 D to +40.0 D (1.0 D steps)"                       },
+            { label: "A-Constant",        value: "115.0"                                                   },
+            { label: "Sterilization",     value: "Ethylene Oxide"                                          },
+          ],
+        },
+        {
+          id: "NSF651", label: "NSF 651",
+          lensImg: "../Multimedia/nanoIOL4.png",
+          specs: [
+            { label: "Model",             value: "NSF 651",                                  accent: true },
+            { label: "Lens Type",         value: "Single Piece PMMA Special Fixation"                     },
+            { label: "Material",          value: "Poly Methyl Methacrylate · UV + Blue Light Filter (UVA)" },
+            { label: "Haptic Design",     value: "Modified for special fixation"                           },
+            { label: "Optic Body Diameter",value: "6.50 mm",                                 accent: true },
+            { label: "Overall Diameter",  value: "7.25 mm",                                  accent: true },
+            { label: "Available Powers",  value: "+10.0 D to +40.0 D (1.0 D steps)"                       },
+            { label: "A-Constant",        value: "118.2"                                                   },
+            { label: "Sterilization",     value: "Ethylene Oxide"                                          },
+          ],
+        },
+      ],
+    },
+
+    // ── TAB 4: Nano Iris (Iris Claw) ──────────────────────────────────
+    {
+      id:    "nanoIris",
+      name:  "Nano Iris",
+      type:  "Iris Claw",
+      tag:   "Iris Claw · Anterior Chamber",
+      title: "Nano Iris",
+      subtitle: "Single Piece PMMA Iris Claw Intraocular Lens",
+      desc:  "The Nano Iris is a single-piece PMMA iris claw IOL for aphakic correction. Enclavated to the mid-peripheral iris stroma, it provides stable fixation without capsular support — ideal for secondary implantation in aphakic eyes.",
+      lensImg: "../Multimedia/nanoIRISPmma.png",
+      highlights: [
+        { icon: "fa-eye",              text: "Iris claw fixation"      },
+        { icon: "fa-circle",           text: "Anterior chamber"        },
+        { icon: "fa-ruler",            text: "4.25 – 5.50 mm optic"    },
+        { icon: "fa-droplet",          text: "UV + Blue light filter"  },
+        { icon: "fa-shield-halved",    text: "Secondary implantation"  },
+        { icon: "fa-flag",             text: "UK medical grade"        },
+      ],
+      variants: [
+        {
+          id: "NIRS4272H", label: "NIRS 4272H",
+          lensImg: "../Multimedia/nanoIRISPmma.png",
+          specs: [
+            { label: "Model",             value: "NIRS 4272H",                               accent: true },
+            { label: "Lens Type",         value: "Single Piece PMMA Posterior Chamber · Iris Claw"         },
+            { label: "Material",          value: "Poly Methyl Methacrylate · UV + Blue Light Filter (UVA)" },
+            { label: "Haptic Design",     value: "Spherical"                                               },
+            { label: "Optic Diameter",    value: "4.25 mm",                                  accent: true },
+            { label: "Overall Diameter",  value: "7.25 mm",                                  accent: true },
+            { label: "Available Powers",  value: "-5.0 D to +25.0 D (0.5 D steps) · +2.0 D to +30.0 D (1.0 D) · +14.5 D to +24.5 D (0.5 D)" },
+            { label: "A-Constant",        value: "115.0"                                                   },
+          ],
+        },
+        {
+          id: "NIRS5585H", label: "NIRS 5585H",
+          lensImg: "../Multimedia/nanoIRIS2Pmma.png",
+          specs: [
+            { label: "Model",             value: "NIRS 5585H",                               accent: true },
+            { label: "Lens Type",         value: "Single Piece PMMA Posterior Chamber · Iris Claw"         },
+            { label: "Material",          value: "Poly Methyl Methacrylate · UV + Blue Light Filter (UVA)" },
+            { label: "Haptic Design",     value: "Spherical"                                               },
+            { label: "Optic Diameter",    value: "5.50 mm",                                  accent: true },
+            { label: "Overall Diameter",  value: "8.00 mm",                                  accent: true },
+            { label: "Available Powers",  value: "-5.0 D to +25.0 D (0.5 D steps) · +2.0 D to +30.0 D (1.0 D) · +14.5 D to +24.5 D (0.5 D)" },
+            { label: "A-Constant",        value: "115.0"                                                   },
+          ],
+        },
+        {
+          id: "NIRS5085H", label: "NIRS 5085H",
+          lensImg: "../Multimedia/nanoIRIS3Pmma.png",
+          specs: [
+            { label: "Model",             value: "NIRS 5085H",                               accent: true },
+            { label: "Lens Type",         value: "Single Piece PMMA Posterior Chamber · Iris Claw"         },
+            { label: "Material",          value: "Poly Methyl Methacrylate · UV + Blue Light Filter (UVA)" },
+            { label: "Haptic Design",     value: "Spherical"                                               },
+            { label: "Optic Diameter",    value: "5.00 mm",                                  accent: true },
+            { label: "Overall Diameter",  value: "8.50 mm",                                  accent: true },
+            { label: "Available Powers",  value: "-5.0 D to +25.0 D (0.5 D steps) · +2.0 D to +30.0 D (1.0 D) · +14.5 D to +24.5 D (0.5 D)" },
+            { label: "A-Constant",        value: "115.0"                                                   },
+          ],
+        },
+      ],
+    },
+
+    // ── TAB 5: Nano Ring (Capsular Tension Ring) ───────────────────────
+    {
+      id:    "nanoRing",
+      name:  "Nano Ring",
+      type:  "Capsular Tension Ring",
+      tag:   "PMMA Capsular Tension Ring",
+      title: "Nano Ring",
+      subtitle: "PMMA Capsular Tension Ring for Zonular Support",
+      desc:  "The Nano Ring is a PMMA open-loop capsular tension ring used to stabilise the capsular bag during cataract surgery when zonular weakness is present. Available in simple (NCR) and complex step-vault (NCC) designs for left, right, or bilateral step vault. TYPE-10 is a modified ring with fixation loops.",
+      lensImg: "../Multimedia/nanoRing.png",
+      highlights: [
+        { icon: "fa-ring",             text: "Open-loop CTR"           },
+        { icon: "fa-circle-notch",     text: "Capsular support"        },
+        { icon: "fa-ruler",            text: "9 – 14 mm diameter"      },
+        { icon: "fa-shield-halved",    text: "Zonular protection"      },
+        { icon: "fa-arrows-left-right",text: "Left / Right / Both SV" },
+        { icon: "fa-flag",             text: "UK medical grade"        },
+      ],
+      variants: [
+        {
+          id: "NCR1109", label: "NCR 1109 / 1210",
+          lensImg: "../Multimedia/nanoRing.png",
+          specs: [
+            { label: "Models",            value: "NCR 1109 · NCR 1210",                      accent: true },
+            { label: "Type",              value: "Simple open-loop CTR"                                    },
+            { label: "Outer Diameter",    value: "11.00 mm / 12.00 mm",                      accent: true },
+            { label: "Inner Diameter",    value: "9.00 mm / 10.00 mm",                       accent: true },
+            { label: "Material",          value: "Poly Methyl Methacrylate"                               },
+            { label: "Step Vault",        value: "None"                                                    },
+          ],
+        },
+        {
+          id: "NCR1311", label: "NCR 1311 / 1412",
+          lensImg: "../Multimedia/nanoRing2.png",
+          specs: [
+            { label: "Models",            value: "NCR 1311 · NCR 1412",                      accent: true },
+            { label: "Type",              value: "Simple open-loop CTR"                                    },
+            { label: "Outer Diameter",    value: "13.00 mm / 14.00 mm",                      accent: true },
+            { label: "Inner Diameter",    value: "11.00 mm / 12.00 mm",                      accent: true },
+            { label: "Material",          value: "Poly Methyl Methacrylate"                               },
+            { label: "Step Vault",        value: "None"                                                    },
+          ],
+        },
+        {
+          id: "NCC1210L", label: "NCC Left SV",
+          lensImg: "../Multimedia/nanoRing3.png",
+          specs: [
+            { label: "Models",            value: "NCC 1210L · NCC 1311L",                    accent: true },
+            { label: "Type",              value: "Complex CTR · Left side step vault"                      },
+            { label: "Outer Diameter",    value: "12.00 mm / 13.00 mm",                      accent: true },
+            { label: "Inner Diameter",    value: "10.00 mm / 11.00 mm",                      accent: true },
+            { label: "Material",          value: "Poly Methyl Methacrylate"                               },
+            { label: "Step Vault",        value: "Left side"                                               },
+          ],
+        },
+        {
+          id: "NCC1210R", label: "NCC Right SV",
+          lensImg: "../Multimedia/nanoRing4.png",
+          specs: [
+            { label: "Models",            value: "NCC 1210R · NCC 1311R",                    accent: true },
+            { label: "Type",              value: "Complex CTR · Right side step vault"                     },
+            { label: "Outer Diameter",    value: "12.00 mm / 13.00 mm",                      accent: true },
+            { label: "Inner Diameter",    value: "10.00 mm / 11.00 mm",                      accent: true },
+            { label: "Material",          value: "Poly Methyl Methacrylate"                               },
+            { label: "Step Vault",        value: "Right side"                                              },
+          ],
+        },
+        {
+          id: "NCC1210LR", label: "NCC Both SV",
+          lensImg: "../Multimedia/nanoRing5.png",
+          specs: [
+            { label: "Models",            value: "NCC 1210LR · NCC 1311LR",                  accent: true },
+            { label: "Type",              value: "Complex CTR · Both sides step vault"                     },
+            { label: "Outer Diameter",    value: "12.00 mm / 13.00 mm",                      accent: true },
+            { label: "Inner Diameter",    value: "10.00 mm / 11.00 mm",                      accent: true },
+            { label: "Material",          value: "Poly Methyl Methacrylate"                               },
+            { label: "Step Vault",        value: "Both sides"                                              },
+          ],
+        },
+        {
+          id: "TYPE10", label: "TYPE-10",
+          lensImg: "../Multimedia/nanoRing6.png",
+          specs: [
+            { label: "Model",             value: "TYPE-10",                                  accent: true },
+            { label: "Type",              value: "Modified CTR with fixation loops"                        },
+            { label: "Material",          value: "Poly Methyl Methacrylate"                               },
+            { label: "Indication",        value: "Advanced zonular dialysis / Subluxation"                 },
+            { label: "Fixation",          value: "Scleral suture eyelets"                                  },
+          ],
+        },
+      ],
+    },
+
+    // ── TAB 6: Nano SQD ────────────────────────────────────────────────
+    {
+      id:    "nanoSQD",
+      name:  "Nano SQD",
+      type:  "360° Square Edge",
+      tag:   "360° Square Edge · PC PMMA",
+      title: "Nano SQD",
+      subtitle: "360° Square Edge PMMA Single Piece Posterior Chamber Intraocular Lens",
+      desc:  "The Nano SQD is a 360° square-edge PMMA single-piece IOL with modified C step-vault haptics. Available in three optic sizes with equiconvex design — the NPC 600 SQ includes 2 dialing holes for surgical convenience.",
+      lensImg: "../Multimedia/nanoSQDPmma.png",
+      highlights: [
+        { icon: "fa-border-all",       text: "360° Square edge"        },
+        { icon: "fa-circle-dot",       text: "Equiconvex optic"        },
+        { icon: "fa-link",             text: "Mod. C step vault"       },
+        { icon: "fa-ruler",            text: "5.25 – 6.00 mm optic"    },
+        { icon: "fa-circle-info",      text: "Dialing holes (600 SQ)"  },
+        { icon: "fa-flag",             text: "UK medical grade"        },
+      ],
+      variants: [
+        {
+          id: "NPC525SQ", label: "NPC 525 SQ",
+          lensImg: "../Multimedia/nanoSQDPmma.png",
+          specs: [
+            { label: "Model",             value: "NPC 525 SQ",                               accent: true },
+            { label: "Optic Design",      value: "Equiconvex · 360° Square Edge"                          },
+            { label: "Optic Size",        value: "5.25 mm",                                  accent: true },
+            { label: "Overall Length",    value: "12.50 mm",                                 accent: true },
+            { label: "Haptic Design",     value: "Mod. C step vault"                                      },
+            { label: "Dialing Holes",     value: "None"                                                   },
+            { label: "A-Constant",        value: "118.4"                                                  },
+            { label: "AC Depth",          value: "5.0 mm"                                                 },
+            { label: "Material",          value: "Poly Methyl Methacrylate"                               },
+          ],
+        },
+        {
+          id: "NPC550SQ", label: "NPC 550 SQ",
+          lensImg: "../Multimedia/nanoSQDPmma.png",
+          specs: [
+            { label: "Model",             value: "NPC 550 SQ",                               accent: true },
+            { label: "Optic Design",      value: "Equiconvex · 360° Square Edge"                          },
+            { label: "Optic Size",        value: "5.50 mm",                                  accent: true },
+            { label: "Overall Length",    value: "12.50 mm",                                 accent: true },
+            { label: "Haptic Design",     value: "Mod. C step vault"                                      },
+            { label: "Dialing Holes",     value: "None"                                                   },
+            { label: "A-Constant",        value: "118.4"                                                  },
+            { label: "AC Depth",          value: "5.0 mm"                                                 },
+            { label: "Material",          value: "Poly Methyl Methacrylate"                               },
+          ],
+        },
+        {
+          id: "NPC600SQ", label: "NPC 600 SQ",
+          lensImg: "../Multimedia/nanoSQDPmma2.png",
+          specs: [
+            { label: "Model",             value: "NPC 600 SQ",                               accent: true },
+            { label: "Optic Design",      value: "Equiconvex · 360° Square Edge"                          },
+            { label: "Optic Size",        value: "6.00 mm",                                  accent: true },
+            { label: "Overall Length",    value: "12.50 mm",                                 accent: true },
+            { label: "Haptic Design",     value: "Mod. C step vault"                                      },
+            { label: "Dialing Holes",     value: "2",                                        accent: true },
+            { label: "A-Constant",        value: "118.4"                                                  },
+            { label: "AC Depth",          value: "5.0 mm"                                                 },
+            { label: "Material",          value: "Poly Methyl Methacrylate"                               },
+          ],
+        },
+      ],
+    },
+
+  ]; // end PMMA_TABS
+
+  // ── HERO ──────────────────────────────────────────────────────────────
+  qs("heroEyebrow") && (qs("heroEyebrow").innerHTML = '<span class="pulse" style="background:var(--neu-pmma-c);"></span>UK Medical Grade · Rigid PMMA');
+  qs("page-h1")     && (qs("page-h1").innerHTML     = "PMMA<br><em>IOL Range</em>");
+  qs("heroDesc")    && (qs("heroDesc").textContent   = "World Vision PMMA IOLs are machined from UK medical-grade Polymethyl Methacrylate. Six product lines covering posterior chamber, anterior chamber, iris claw, capsular tension rings, and 360° square-edge designs.");
+  qs("heroBtns")    && (qs("heroBtns").innerHTML     = `
+    <a href="#models" class="hero-btn-iol-primary" style="background:linear-gradient(135deg,#8a5a10,#b87820);">
+      <i class="fa-solid fa-grid-2" style="font-size:12px;"></i> View Models
+    </a>
+    <a href="../Pages/iol-page.html" class="hero-btn-iol-ghost">
+      <i class="fa-solid fa-arrow-left" style="font-size:11px;"></i> All IOLs
+    </a>`);
+
+  
+    function updatePmmaHero(tabId) {
+      const data = PMMA_TABS.find(t => t.id === tabId);
+      if (!data) return;
+
+      const eyebrow = qs("heroEyebrow");
+      if (eyebrow) {
+        eyebrow.innerHTML = `<span class="pulse" style="background:var(--neu-pmma-c);"></span>${data.tag}`;
+      }
+
+      const h1 = qs("page-h1");
+      if (h1) {
+        h1.innerHTML = `${data.title}<br><em>PMMA IOL</em>`;
+      }
+
+      const desc = qs("heroDesc");
+      if (desc) {
+        desc.textContent = data.desc;
+      }
+
+      const lensWrap = qs("heroLensWrap");
+      if (lensWrap) {
+        lensWrap.innerHTML = `
+          <img src="${data.lensImg}" alt="${data.title}"
+            style="width:240px;height:240px;object-fit:contain;"
+            onerror="this.style.opacity='0'"/>
+        `;
+      }
+    }
+
+  // ── TAB BAR ───────────────────────────────────────────────────────────
+  const pmmaTabBar = qs("pmmaTabBar");
+  if (pmmaTabBar) {
+    pmmaTabBar.innerHTML = PMMA_TABS.map((t, i) => `
+      <button class="model-tab${i === 0 ? " active" : ""}${t.yellow ? " model-tab-yellow" : ""}"
+        role="tab" aria-selected="${i === 0}"
+        aria-controls="panel-${t.id}" id="tab-${t.id}"
+        data-model="${t.id}" data-yellow="${!!t.yellow}" type="button">
+        <div class="model-tab-name">${t.name}</div>
+        <div class="model-tab-type">${t.type}</div>
+        <div class="model-tab-dot"></div>
+      </button>`).join("");
+  }
+
+  // ── BUILD EACH PANEL ──────────────────────────────────────────────────
+  function buildPmmaPanel(data) {
+    const panelEl = qs(`panel-${data.id}`);
+    if (!panelEl) return;
+
+    const isYellow = !!data.yellow;
+    const isRing   = data.id === "nanoRing";
+    const isIris   = data.id === "nanoIris";
+    const accentC  = isYellow ? "var(--neu-pmma-c)" : "var(--neu-pmma-c)";
+
+    const badges    = data.variants.map(v => `<span class="variant-badge">${v.label}</span>`).join("");
+    const chips     = data.highlights.map(h => `<div class="highlight-chip"><i class="fa-solid ${h.icon}"></i><span class="highlight-chip-text">${h.text}</span></div>`).join("");
+    const modelBtns = data.variants.map((v, i) => `
+      <button class="spec-model-btn${i === 0 ? " active" : ""}"
+        data-rows="${v.id}"
+        data-lens="${v.lensImg || data.lensImg}"
+        type="button">${v.label}</button>`).join("");
+
+    const specTables = data.variants.map((v, i) => {
+      const rows = v.specs.map(s => `
+        <div class="spec-row">
+          <span class="spec-row-label">${s.label}</span>
+          <span class="spec-row-val${s.accent ? " accent" : ""}"
+            style="${s.accent ? `color:${accentC};font-weight:600;` : ""}">${s.value}</span>
+        </div>`).join("");
+      return `<div class="spec-rows" id="${v.id}"${i > 0 ? ' style="display:none;"' : ""}>${rows}</div>`;
+    }).join("");
+
+    const noAConst = isRing || isIris;
+    const aBlock = noAConst
+      ? `<div class="a-const-block" style="border:0.5px solid rgba(138,90,16,0.15);">
+          <div class="a-const-label"><i class="fa-solid fa-circle-info" style="margin-right:5px;"></i>
+            ${isRing ? "Capsular tension rings do not use A-constants for biometry." : "A-Constant: 115.0 — refer to model spec above."}
+          </div>
+        </div>`
+      : "";
+
+    const dlStyle = isYellow ? 'style="background:linear-gradient(135deg,#8a5a10,#b87820);"' : 'style="background:linear-gradient(135deg,#8a5a10,#b87820);"';
+    const lensStyle = isYellow ? "card-lens-bg" : "card-lens-bg";
+
+    panelEl.innerHTML = `
+      <div class="neu-card">
+        <div class="card-top">
+          <span class="card-tag" style="background:rgba(138,90,16,0.1);color:var(--neu-pmma-c);">${data.tag}</span>
+          <div class="card-title">${data.title}</div>
+          <div class="card-subtitle">${data.subtitle}</div>
+        </div>
+        <div class="card-lens-area">
+          <div class="card-lens-bg" style="background:radial-gradient(circle at 40% 40%, rgba(138,90,16,0.08), transparent 70%);"></div>
+          <div class="card-lens-svg" id="${data.id}ModelLens">
+            <img src="${data.lensImg}" alt="${data.title}" style="width:140px;height:140px;object-fit:contain;" onerror="this.style.opacity='0'"/>
+          </div>
+        </div>
+        <div class="variant-badges">${badges}</div>
+        <div class="card-desc">${data.desc}</div>
+        <div class="card-highlights">${chips}</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-card-head">
+          <div class="spec-head-icon" style="background:rgba(138,90,16,0.1);color:var(--neu-pmma-c);">
+            <i class="fa-solid fa-table-list"></i>
+          </div>
+          <div>
+            <div class="spec-head-title">Technical Specifications</div>
+            <div class="spec-head-sub">${data.title} — ${data.tag}</div>
+          </div>
+        </div>
+        <p class="flip-hint-btn">
+          <i class="fa-regular fa-hand-pointer" style="margin-top:0.1rem;"></i>
+          Select the model to reveal full specifications
+        </p>
+        <div class="spec-model-sel">${modelBtns}</div>
+        ${specTables}
+        ${aBlock}
+        <div class="spec-download">
+          <button class="dl-btn dl-btn-primary" ${dlStyle} onclick="alert('IFU download coming soon.')">
+            <i class="fa-solid fa-download"></i> Download IFU
+          </button>
+          <button class="dl-btn dl-btn-ghost" onclick="alert('Enquiry form coming soon.')">
+            <i class="fa-solid fa-envelope"></i> Enquire
+          </button>
+        </div>
+      </div>`;
+  }
+
+  PMMA_TABS.forEach(buildPmmaPanel);
+  updatePmmaHero("nanoPlus");
+  updatePmmaMaterial("nanoPlus");
+
+  // ── TAB SWITCHING ─────────────────────────────────────────────────────
+  document.addEventListener("click", function(e) {
+    const tab = e.target.closest(".model-tab[data-model]");
+    if (!tab) return;
+
+    const targetId = tab.dataset.model;
+
+    document.querySelectorAll(".model-tab[data-model]").forEach(t => {
+      const isThis = t === tab;
+      t.classList.toggle("active", isThis);
+
+      if (t.dataset.yellow === "true") {
+        t.style.background = isThis ? "linear-gradient(135deg,#8a5a10,#b87820)" : "";
+        t.style.color = isThis ? "#fff" : "";
+      }
+
+      t.setAttribute("aria-selected", isThis ? "true" : "false");
+    });
+
+    document.querySelectorAll(".model-panel").forEach(p => p.classList.remove("active"));
+
+    const targetPanel = qs(`panel-${targetId}`);
+    if (targetPanel) targetPanel.classList.add("active");
+
+    updatePmmaHero(targetId);
+    updatePmmaMaterial(targetId);
+  });
+
+  // ── MATERIAL SCIENCE ──────────────────────────────────────────────────
+  const matEyebrow = qs("materialEyebrow");
+  if (matEyebrow) matEyebrow.innerHTML = `<i class="fa-solid fa-flask-vial" style="font-size:10px;color:var(--neu-pmma-c);"></i> Material Science`;
+
+  const matHeading = qs("materialHeading") || document.getElementById("material-heading");
+  if (matHeading) matHeading.innerHTML = "Why <em>PMMA</em> still matters";
+
+  const matSub = qs("materialSub");
+  if (matSub) matSub.textContent = "Polymethyl Methacrylate has been the gold standard of IOL optics for over 60 years. PMMA remains the most reliable choice for ECCE, secondary implantation, iris claw fixation, and resource-limited settings worldwide.";
+
+  const matFeatures = qs("materialFeatures");
+  if (matFeatures) {
+    matFeatures.innerHTML = [
+      { icon: "fa-shield-halved", title: "60+ Years Proven Stability",        desc: "PMMA retains perfect optical clarity for decades in the eye. No glistening, no calcification — the benchmark all other IOL materials are measured against." },
+      { icon: "fa-circle-notch",  title: "Zero Glistening Guaranteed",        desc: "As a rigid non-hydrophilic material, PMMA is completely immune to glistening and microvacuole formation that can degrade acrylic lens performance." },
+      { icon: "fa-earth-asia",    title: "Cost-Effective Global Access",       desc: "PMMA IOLs deliver outstanding optical outcomes at a fraction of foldable lens cost — essential for high-volume cataract programmes across the developing world." },
+      { icon: "fa-sun",           title: "UV + Blue Light Filter Built-in",   desc: "World Vision PMMA IOLs include UV-absorbing and blue-light filtering chromophores to protect the retina throughout the patient's lifetime." },
+    ].map(f => `
+      <div class="material-feature">
+        <div class="mf-icon" style="background:rgba(138,90,16,0.1);color:var(--neu-pmma-c);">
+          <i class="fa-solid ${f.icon}"></i>
+        </div>
+        <div><div class="mf-title">${f.title}</div><div class="mf-desc">${f.desc}</div></div>
+      </div>`).join("");
+  }
+
+  const matCard = qs("materialCard");
+  if (matCard) {
+    matCard.innerHTML = `
+      <div class="material-neu-card-label" style="color:var(--neu-pmma-c);">
+        <i class="fa-solid fa-scale-balanced" style="margin-right:5px;"></i> PMMA vs Acrylic IOL
+      </div>
+      <div class="material-compare">
+        <div class="compare-row"><span class="compare-label">Glistening</span><span class="compare-wv" style="color:var(--neu-pmma-c);">Zero (PMMA)</span></div>
+        <div class="compare-row"><span class="compare-label">Acrylic (hydrophilic)</span><span class="compare-other">Possible</span></div>
+        <div class="compare-row"><span class="compare-label">Long-term clarity</span><span class="compare-wv" style="color:var(--neu-pmma-c);">60+ years proven</span></div>
+      </div>
+      <div style="width:100%;height:1px;background:rgba(0,0,0,0.07);margin:4px 0;"></div>
+      <div class="material-neu-card-label" style="color:var(--neu-pmma-c);margin-top:4px;">
+        <i class="fa-solid fa-certificate" style="margin-right:5px;"></i> Certifications
+      </div>
+      <div class="material-compare">
+        <div class="compare-row"><span class="compare-label">Biocompatibility</span><span class="compare-wv"><i class="fa-solid fa-check" style="font-size:11px;"></i> ISO 10993</span></div>
+        <div class="compare-row"><span class="compare-label">UV Protection</span><span class="compare-wv"><i class="fa-solid fa-check" style="font-size:11px;"></i> Built-in</span></div>
+        <div class="compare-row"><span class="compare-label">Blue Light Filter</span><span class="compare-wv"><i class="fa-solid fa-check" style="font-size:11px;"></i> Built-in</span></div>
+        <div class="compare-row"><span class="compare-label">Raw Material Source</span><span class="compare-wv">🇬🇧 United Kingdom</span></div>
+      </div>`;
+  }
+
+  function updatePmmaMaterial(tabId) {
+    const data = PMMA_TABS.find(t => t.id === tabId);
+    if (!data) return;
+
+    const matHeading = qs("materialHeading");
+    if (matHeading) {
+      matHeading.innerHTML = `Why <em>${data.title}</em> matters`;
+    }
+
+    const matSub = qs("materialSub");
+    if (matSub) {
+      matSub.textContent = data.desc;
+    }
+
+    const matFeatures = qs("materialFeatures");
+    if (matFeatures) {
+      matFeatures.innerHTML = data.highlights.map(h => `
+        <div class="material-feature">
+          <div class="mf-icon" style="background:rgba(138,90,16,0.1);color:var(--neu-pmma-c);">
+            <i class="fa-solid ${h.icon}"></i>
+          </div>
+          <div>
+            <div class="mf-title">${h.text}</div>
+            <div class="mf-desc">${data.subtitle}</div>
+          </div>
+        </div>
+      `).join("");
+    }
+
+    const matCard = qs("materialCard");
+    if (matCard) {
+      matCard.innerHTML = `
+        <div class="material-neu-card-label" style="color:var(--neu-pmma-c);">
+          <i class="fa-solid fa-scale-balanced" style="margin-right:5px;"></i> Product Profile
+        </div>
+        <div class="material-compare">
+          <div class="compare-row">
+            <span class="compare-label">Product Line</span>
+            <span class="compare-wv" style="color:var(--neu-pmma-c);">${data.title}</span>
+          </div>
+          <div class="compare-row">
+            <span class="compare-label">Design</span>
+            <span class="compare-wv" style="color:var(--neu-pmma-c);">${data.type}</span>
+          </div>
+          <div class="compare-row">
+            <span class="compare-label">Material</span>
+            <span class="compare-wv" style="color:var(--neu-pmma-c);">PMMA</span>
+          </div>
+          <div class="compare-row">
+            <span class="compare-label">Available Models</span>
+            <span class="compare-wv" style="color:var(--neu-pmma-c);">${data.variants.length}</span>
+          </div>
+        </div>
+      `;
+    }
+  }
+
+  // ── TRUST ─────────────────────────────────────────────────────────────
+  const pmmaTrust = qs("trustBar");
+  if (pmmaTrust) pmmaTrust.innerHTML = [
+    { path: `<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>`, title: "ISO Certified", desc: "All World Vision PMMA IOLs are manufactured and tested to ISO 10993 biocompatibility standards." },
+    { path: `<circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>`, title: "UK Medical Grade PMMA", desc: "Polymer sourced from certified UK medical-grade suppliers — ensuring the highest standard of PMMA purity and optical quality." },
+    { path: `<path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/>`, title: "Zero Glistening", desc: "The rigid PMMA matrix completely prevents microvacuole formation — guaranteeing long-term optical clarity for the lifetime of the implant." },
+  ].map(t => `
+    <div class="trust-card">
+      <div class="trust-icon" style="background:rgba(138,90,16,0.1);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--neu-pmma-c)" stroke-width="2" stroke-linecap="round">${t.path}</svg>
+      </div>
+      <div><h3>${t.title}</h3><p>${t.desc}</p></div>
+    </div>`).join("");
+
+  // ── IFU ───────────────────────────────────────────────────────────────
+  const pmmaIfuHeader = qs("ifuHeader");
+  if (pmmaIfuHeader) pmmaIfuHeader.innerHTML = `
+    <div class="ifu-icon-wrap" style="background:linear-gradient(135deg,#8a5a10,#b87820);">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+        <polyline points="14 2 14 8 20 8"/>
+        <line x1="16" y1="13" x2="8" y2="13"/>
+        <line x1="16" y1="17" x2="8" y2="17"/>
+      </svg>
+    </div>
+    <div>
+      <div class="ifu-title">Instructions for Use</div>
+      <div class="ifu-sub">Download IFU for all World Vision PMMA IOL product lines</div>
+    </div>`;
+
+  const pmmaIfuGrid = qs("ifuGrid");
+  if (pmmaIfuGrid) pmmaIfuGrid.innerHTML = [
+    { label: "IFU — Nano Plus",     sub: "Aspheric PC/AC · NPC AS series"   },
+    { label: "IFU — Nano Plus Y",   sub: "Yellow Aspheric · NPC ASY series" },
+    { label: "IFU — Nano IOL",      sub: "PC/AC · NPC / NPA / NSF series"   },
+    { label: "IFU — Nano Iris",     sub: "Iris Claw · NIRS series"          },
+    { label: "IFU — Nano Ring",     sub: "Capsular Tension Ring · NCR/NCC"  },
+    { label: "IFU — Nano SQD",      sub: "360° Square Edge · NPC SQ series" },
+  ].map(l => `
+    <a href="#" class="ifu-link">
+      <div class="ifu-link-icon" style="background:rgba(138,90,16,0.1);">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--neu-pmma-c)" stroke-width="2" stroke-linecap="round">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="12" y1="18" x2="12" y2="12"/>
+          <polyline points="9 15 12 18 15 15"/>
+        </svg>
+      </div>
+      <div class="ifu-link-text"><strong>${l.label}</strong><span>${l.sub}</span></div>
+    </a>`).join("");
+
+  const waF = qs("waFloat"); if (waF) waF.href = PAGE.company.whatsapp;
+  const copy = qs("footerCopyright"); if (copy) copy.textContent = PAGE.company.copyright;
 }
