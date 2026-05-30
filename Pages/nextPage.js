@@ -1694,78 +1694,6 @@ window.addEventListener("resize", () => {
 });
 
 /*************************************************
- * Card Flip
- *************************************************/
-function flipCard(id) {
-  const card = document.getElementById(id);
-  if (card) card.classList.toggle("flipped");
-}
-
-/*************************************************
- * Card Flip Logic
- *************************************************/
-document.querySelectorAll(".card-scene").forEach(function (scene) {
-  function doFlip() {
-    scene.classList.toggle("flipped");
-
-    const isFlipped = scene.classList.contains("flipped");
-
-    scene.setAttribute(
-      "aria-label",
-      scene.id
-        .replace("card-", "")
-        .replace("hydro", "Hydrophobic")
-        .replace("phil", "Hydrophilic")
-        .replace("pmma", "PMMA") +
-        " IOL — " +
-        (isFlipped ? "click to go back" : "click to see specifications")
-    );
-  }
-
-  scene.addEventListener("click", function (e) {
-    if (e.target.closest(".card-face.back")) return;
-    doFlip();
-  });
-
-  scene.addEventListener("keydown", function (e) {
-    if ((e.key === "Enter" || e.key === " ") && !e.target.closest("button")) {
-      e.preventDefault();
-      doFlip();
-    }
-  });
-
-  let touchStartX = 0;
-
-  scene.addEventListener(
-    "touchstart",
-    function (e) {
-      touchStartX = e.touches[0].clientX;
-    },
-    { passive: true }
-  );
-
-  scene.addEventListener("touchend", function (e) {
-    const diff = touchStartX - e.changedTouches[0].clientX;
-
-    if (Math.abs(diff) > 50) {
-      doFlip();
-    }
-  });
-});
-
-/*************************************************
- * Back Face Buttons
- *************************************************/
-document.querySelectorAll(".back-btn-flip").forEach(function (btn) {
-  btn.addEventListener("click", function (e) {
-    e.stopPropagation();
-
-    const card = btn.closest(".card-scene");
-    if (card) card.classList.remove("flipped");
-  });
-});
-
-/*************************************************
  * IFU Links
  *************************************************/
 document.querySelectorAll(".ifu-link").forEach(function (link) {
@@ -2553,18 +2481,7 @@ if (ACTIVE_PAGE === "iol-page") {
             "M250 20 r90 rgba(10,94,168,0.15)",
             "M30 200 r70 rgba(10,94,168,0.1)",
           ],
-          lensSvg: `
-            <path d="M18 60 Q4 40 8 20"   fill="none" stroke="#0a5ea8" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
-            <path d="M18 60 Q4 80 8 100"  fill="none" stroke="#0a5ea8" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
-            <path d="M102 60 Q116 40 112 20"  fill="none" stroke="#0a5ea8" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
-            <path d="M102 60 Q116 80 112 100" fill="none" stroke="#0a5ea8" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
-            <ellipse cx="60" cy="60" rx="44" ry="32" fill="rgba(10,94,168,0.12)" stroke="#0a5ea8" stroke-width="2.2"/>
-            <ellipse cx="60" cy="60" rx="32" ry="22" fill="rgba(10,94,168,0.1)"  stroke="#0a5ea8" stroke-width="1.2" stroke-dasharray="3 4"/>
-            <ellipse cx="60" cy="60" rx="18" ry="12" fill="rgba(10,94,168,0.18)" stroke="#0a5ea8" stroke-width="1"/>
-            <line x1="45" y1="52" x2="38" y2="44" stroke="rgba(10,94,168,0.35)" stroke-width="1" stroke-linecap="round"/>
-            <line x1="60" y1="49" x2="60" y2="40" stroke="rgba(10,94,168,0.35)" stroke-width="1" stroke-linecap="round"/>
-            <line x1="75" y1="52" x2="82" y2="44" stroke="rgba(10,94,168,0.35)" stroke-width="1" stroke-linecap="round"/>
-            <circle cx="60" cy="60" r="4" fill="#0a5ea8" opacity="0.5"/>`,
+          lensSvg: `../Multimedia/hydrophobicIOL.png`,
         },
         back: {
           title:   "Hydrophobic IOL",
@@ -2592,18 +2509,7 @@ if (ACTIVE_PAGE === "iol-page") {
           title:   "Hydrophilic IOL",
           sub:     "UK medical-grade material. 26% water content — perfect balance of foldability, clarity, and stability.",
           visualLabel: "Hydrophilic Acrylic",
-          lensSvg: `
-            <path d="M22 60 Q8 30 20 12"   fill="none" stroke="#0a7a50" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
-            <path d="M22 60 Q8 90 20 108"  fill="none" stroke="#0a7a50" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
-            <path d="M98 60 Q112 30 100 12"  fill="none" stroke="#0a7a50" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
-            <path d="M98 60 Q112 90 100 108" fill="none" stroke="#0a7a50" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
-            <ellipse cx="60" cy="60" rx="40" ry="40" fill="rgba(10,122,80,0.1)"  stroke="#0a7a50" stroke-width="2.2"/>
-            <ellipse cx="60" cy="60" rx="27" ry="27" fill="rgba(10,122,80,0.12)" stroke="#0a7a50" stroke-width="1.2" stroke-dasharray="3 4"/>
-            <ellipse cx="60" cy="60" rx="15" ry="15" fill="rgba(10,122,80,0.2)"  stroke="#0a7a50" stroke-width="1"/>
-            <circle cx="60" cy="30" r="3.5" fill="rgba(10,122,80,0.3)" stroke="#0a7a50" stroke-width="1"/>
-            <circle cx="80" cy="40" r="2.5" fill="rgba(10,122,80,0.25)" stroke="#0a7a50" stroke-width="1"/>
-            <circle cx="40" cy="40" r="2.5" fill="rgba(10,122,80,0.25)" stroke="#0a7a50" stroke-width="1"/>
-            <circle cx="60" cy="60" r="4" fill="#0a7a50" opacity="0.5"/>`,
+          lensSvg: `../Multimedia/hydrophilic_fold1.png`,
         },
         back: {
           title:   "Hydrophilic IOL",
@@ -2625,23 +2531,13 @@ if (ACTIVE_PAGE === "iol-page") {
       {
         id:      "card-pmma",
         theme:   "pmma",
-        learnHref: "#",
+        learnHref: "../Pages/pmmaIOL.html",
         front: {
           badge:   "PMMA",
           title:   "PMMA IOL",
           sub:     "UK medical-grade rigid lens. Cost-effective, highly stable. Suitable for posterior &amp; anterior chamber.",
           visualLabel: "PMMA Rigid",
-          lensSvg: `
-            <rect x="8"  y="52" width="16" height="16" rx="4" fill="none" stroke="#8a5a10" stroke-width="2" opacity="0.6"/>
-            <rect x="96" y="52" width="16" height="16" rx="4" fill="none" stroke="#8a5a10" stroke-width="2" opacity="0.6"/>
-            <line x1="24" y1="60" x2="34" y2="60" stroke="#8a5a10" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
-            <line x1="86" y1="60" x2="96" y2="60" stroke="#8a5a10" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
-            <circle cx="60" cy="60" r="30" fill="rgba(138,90,16,0.1)"  stroke="#8a5a10" stroke-width="2.5"/>
-            <circle cx="60" cy="60" r="20" fill="rgba(138,90,16,0.12)" stroke="#8a5a10" stroke-width="1.5" stroke-dasharray="3 5"/>
-            <circle cx="60" cy="60" r="11" fill="rgba(138,90,16,0.2)"  stroke="#8a5a10" stroke-width="1"/>
-            <line x1="55" y1="47" x2="65" y2="47" stroke="rgba(138,90,16,0.4)" stroke-width="1.2" stroke-linecap="round"/>
-            <line x1="55" y1="73" x2="65" y2="73" stroke="rgba(138,90,16,0.4)" stroke-width="1.2" stroke-linecap="round"/>
-            <circle cx="60" cy="60" r="4" fill="#8a5a10" opacity="0.5"/>`,
+          lensSvg: `../Multimedia/nanoPlusPmma.png`,
         },
         back: {
           title:   "PMMA IOL",
@@ -2736,7 +2632,7 @@ if (ACTIVE_PAGE === "iol-page") {
               <div class="card-visual ${t}-bg">
                 <svg class="card-visual-bg" viewBox="0 0 300 220" preserveAspectRatio="xMidYMid slice">${bgCircles}</svg>
                 <div class="lens-illustration lens-float" aria-hidden="true">
-                  <svg width="120" height="120" viewBox="0 0 120 120">${c.front.lensSvg}</svg>
+                  <img src="${c.front.lensSvg}" style="width: 10rem; height: 10rem; object-fit: contain;" alt="Illustration of a hydrophobic IOL" />
                 </div>
                 <span class="card-visual-label ${t}-c">${f.visualLabel}</span>
                 <div class="card-flip-icon neu-raised-sm ${t}-c">↩</div>
@@ -2835,6 +2731,79 @@ if (ACTIVE_PAGE === "iol-page") {
   if (copy) copy.textContent = PAGE.company.copyright;
 
 }
+
+/*************************************************
+ * Card Flip
+ *************************************************/
+function flipCard(id) {
+  const card = document.getElementById(id);
+  if (card) card.classList.toggle("flipped");
+}
+
+/*************************************************
+ * Card Flip Logic
+ *************************************************/
+document.querySelectorAll(".card-scene").forEach(function (scene) {
+  function doFlip() {
+    scene.classList.toggle("flipped");
+
+    const isFlipped = scene.classList.contains("flipped");
+
+    scene.setAttribute(
+      "aria-label",
+      scene.id
+        .replace("card-", "")
+        .replace("hydro", "Hydrophobic")
+        .replace("phil", "Hydrophilic")
+        .replace("pmma", "PMMA") +
+        " IOL — " +
+        (isFlipped ? "click to go back" : "click to see specifications")
+    );
+  }
+
+  scene.addEventListener("click", function (e) {
+    if (e.target.closest(".card-face.back")) return;
+    doFlip();
+  });
+
+  scene.addEventListener("keydown", function (e) {
+    if ((e.key === "Enter" || e.key === " ") && !e.target.closest("button")) {
+      e.preventDefault();
+      doFlip();
+    }
+  });
+
+  let touchStartX = 0;
+
+  scene.addEventListener(
+    "touchstart",
+    function (e) {
+      touchStartX = e.touches[0].clientX;
+    },
+    { passive: true }
+  );
+
+  scene.addEventListener("touchend", function (e) {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+
+    if (Math.abs(diff) > 50) {
+      doFlip();
+    }
+  });
+});
+
+/*************************************************
+ * Back Face Buttons
+ *************************************************/
+document.querySelectorAll(".back-btn-flip").forEach(function (btn) {
+  btn.addEventListener("click", function (e) {
+    e.stopPropagation();
+
+    const card = btn.closest(".card-scene");
+    if (card) card.classList.remove("flipped");
+  });
+});
+
 
 /*************************************************
  * NANO FOLD PAGE — nanoFold.html
