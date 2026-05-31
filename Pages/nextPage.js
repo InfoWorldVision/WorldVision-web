@@ -275,6 +275,14 @@ const PAGE = {
         { label: "Hydrophobic IOL",    href: "../Pages/hydrophobicIol.html"  },
         { label: "Nano Grand Plus",    current: true                         },
       ],
+      toricCalculator: [
+        { label: "Home",               href: "../Pages/index.html" },
+        { label: "Toric Calculator",   current: true               },
+      ],
+      contactUs: [
+        { label: "Home",               href: "../Pages/index.html" },
+        { label: "Contact Us",         current: true               },
+      ],
     };
     return map[ACTIVE_PAGE] || map["iol-page"];
   })(),
@@ -4894,4 +4902,236 @@ if (ACTIVE_PAGE === "mvrBlade") {
   if (mvrBC) mvrBC.innerHTML = `<a href="../Pages/index.html">Home</a><span class="sep">/</span><a href="#">Our Products</a><span class="sep">/</span><span class="current">MVR Blade</span>`;
   const waF4 = qs("waFloat"); if (waF4) waF4.href = PAGE.company.whatsapp;
   const copy4 = qs("footerCopyright"); if (copy4) copy4.textContent = PAGE.company.copyright;
+}
+
+
+/*************************************************
+ * CONTACT US PAGE — contactUs.html
+ *************************************************/
+if (ACTIVE_PAGE === "contactUs") {
+
+  const CONTACT = {
+    eyebrow:  "Chennai, India · Est. 2008",
+    h1:       "Let's start a<br><em>Conversation</em>",
+    desc:     "Whether you're a Surgeon, Distributor or healthcare institution — our team is ready to help with product enquiries, technical support and partnership opportunities.",
+
+    chips: [
+      { label: "9AM–6PM IST",   icon: "fa-clock"       },
+      { label: "Global Reach",  icon: "fa-globe"       },
+      { label: "Quick Reply",   icon: "fa-headset"     },
+      { label: "ISO Certified", icon: "fa-certificate" },
+    ],
+
+    cards: [
+      { href: "tel:+919876543210",                                   icon: "fa-phone",    cls: "phone",    label: "Call Us",    value: "+91 98765 43210",                   sub: "Mon–Sat, 9AM–6PM IST"      },
+      { href: "mailto:info@worldvisionophthalmic.com",               icon: "fa-envelope", cls: "email",    label: "Email Us",   value: "info@worldvisionophthalmic.com",    sub: "We reply within 24 hours"  },
+      { href: "https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv",    icon: "fa-whatsapp", cls: "whatsapp", label: "WhatsApp",   value: "Chat Instantly",                    sub: "Fastest response channel", brands: true },
+      { href: null,                                                  icon: "fa-location-dot", cls: "location", label: "Head Office", value: "Chennai, Tamil Nadu",          sub: "India — PIN 600001"        },
+    ],
+
+    form: {
+      title: "Send us a <em>message</em>",
+      sub:   "Fill in the form below and our team will get back to you within one business day.",
+      subjects: ["Product Enquiry", "Technical Support", "Distributor Partnership", "Toric Calculator", "Other"],
+    },
+
+    office: {
+      name:    "Chennai Head Office",
+      address: "Chennai, Tamil Nadu, India — PIN 600001",
+      phone:   "+91 98765 43210",
+      email:   "info@worldvisionophthalmic.com",
+      hours:   "Mon–Sat 9AM–6PM IST",
+      mapSrc:  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248849.84916296526!2d80.00898016972655!3d13.047686726476858!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5265ea4f7d3361%3A0x6e61a70b6863d433!2sChennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1714000000000!5m2!1sen!2sin",
+    },
+
+    social: {
+      title:   "Find us on social media",
+      links: [
+        { href: "#",                                                icon: "fa-linkedin-in",  cls: "linkedin",  label: "LinkedIn",  brands: true },
+        { href: "#",                                                icon: "fa-instagram",    cls: "instagram", label: "Instagram", brands: true },
+        { href: "https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv",icon: "fa-whatsapp",     cls: "whatsapp",  label: "WhatsApp",  brands: true },
+      ],
+    },
+
+    qr: {
+      title: "Need a faster response?",
+      desc:  "For urgent product enquiries or surgical support, reach us directly on WhatsApp — our team responds within minutes during business hours.",
+      href:  "https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv",
+      label: "<i class=\"fa-brands fa-whatsapp\"></i> Open WhatsApp",
+    },
+
+    faq: {
+      eyebrow: "<i class=\"fa-solid fa-circle-question\" style=\"font-size:10px;\"></i> Common Questions",
+      heading: "Frequently <em>asked</em>",
+      sub:     "Quick answers to the most common questions we receive.",
+      items: [
+        {
+          q: "What IOL models are available for distribution?",
+          a: "We offer a full range including Hydrophobic (Monofocal, Multifocal, Toric, 3-Piece), Hydrophilic, and PMMA IOLs. View the complete catalogue on our Intraocular Lenses page or contact us for a product brochure.",
+        },
+        {
+          q: "How do I use the Toric Calculator?",
+          a: "Our Toric Calculator uses the crossed-cylinder vector method. Enter surgeon details, patient biometry, and pre-op keratometry — it calculates the optimal toric IOL power and axis. Access it from the nav above.",
+        },
+        {
+          q: "How quickly can I get a product sample?",
+          a: "Sample requests are typically processed within 3–5 business days for domestic orders and 7–14 days internationally, subject to availability and regulatory clearance in your country.",
+        },
+        {
+          q: "Do you supply internationally?",
+          a: "Yes — World Vision Ophthalmic supplies to hospitals, clinics, and distributors across South Asia, Southeast Asia, Africa, and the Middle East. Contact us to discuss distribution in your region.",
+        },
+        {
+          q: "What certifications do your lenses hold?",
+          a: "All World Vision IOLs are tested to ISO 10993 biocompatibility standards. Our hydrophobic range uses USA-sourced medical-grade acrylic with less than 0.5% water content. IFU documents are available on each product page.",
+        },
+        {
+          q: "Do you offer surgical training or CME support?",
+          a: "Yes — we collaborate with ophthalmic training institutes and support CME programs. Contact us with your institution's details and we will connect you with our medical affairs team.",
+        },
+      ],
+    },
+
+    trust: [
+      { path: `<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>`,   title: "ISO 10993 Certified",    desc: "Every WVO lens undergoes full biocompatibility testing before leaving our facility in Chennai." },
+      { path: `<circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>`, title: "Global Distribution", desc: "Supplying ophthalmic products to hospitals and distributors across Asia, Africa, and the Middle East." },
+      { path: `<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.87a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>`, title: "Responsive Support", desc: "Dedicated technical and sales support by phone, email, and WhatsApp during business hours." },
+    ],
+  };
+
+  // ── Meta ──────────────────────────────────────────────────────────────
+  document.title = "Contact Us — World Vision Ophthalmic";
+  const m = qs("pageMeta");
+  if (m) m.setAttribute("content", "Contact World Vision Ophthalmic — Chennai, India. Reach our team for product enquiries, technical support, or distributor partnerships.");
+
+  // ── Breadcrumb ────────────────────────────────────────────────────────
+  const bc = qs("breadcrumb");
+  if (bc) bc.innerHTML = `<a href="../Pages/index.html">Home</a><span class="sep">/</span><span class="current">Contact Us</span>`;
+
+  // ── Hero ──────────────────────────────────────────────────────────────
+  const ey = qs("contactEyebrow");
+  if (ey) ey.innerHTML = `<span class="pulse"></span>${CONTACT.eyebrow}`;
+
+  const h1 = qs("contact-h1");
+  if (h1) h1.innerHTML = CONTACT.h1;
+
+  const hd = qs("contactHeroDesc");
+  if (hd) hd.textContent = CONTACT.desc;
+
+  const chips = qs("heroInfoChips");
+  if (chips) chips.innerHTML = CONTACT.chips.map(c =>
+    `<div class="hero-chip"><i class="fa-solid ${c.icon}" style="font-size:11px;"></i> ${c.label}</div>`
+  ).join("");
+
+  // ── Quick cards ───────────────────────────────────────────────────────
+  const cards = qs("contactCards");
+  if (cards) cards.innerHTML = CONTACT.cards.map(c => {
+    const tag  = c.href ? `<a href="${c.href}"${c.href.startsWith("http") ? ' target="_blank"' : ""} class="contact-card">` : `<div class="contact-card" style="cursor:default;">`;
+    const end  = c.href ? `</a>` : `</div>`;
+    const iprefix = c.brands ? "fa-brands" : "fa-solid";
+    return `${tag}
+      <div class="cc-icon ${c.cls}"><i class="${iprefix} ${c.icon}"></i></div>
+      <div>
+        <div class="cc-label">${c.label}</div>
+        <div class="cc-value">${c.value}</div>
+        <div class="cc-sub">${c.sub}</div>
+      </div>
+    ${end}`;
+  }).join("");
+
+  // ── Form card ─────────────────────────────────────────────────────────
+  const ft = qs("formCardTitle");
+  if (ft) ft.innerHTML = CONTACT.form.title;
+
+  const fs = qs("formCardSub");
+  if (fs) fs.textContent = CONTACT.form.sub;
+
+  const sc = qs("subjectChips");
+  if (sc) sc.innerHTML = CONTACT.form.subjects.map((s, i) =>
+    `<button class="subject-chip${i === 0 ? " active" : ""}" type="button" data-subject="${s}">${s}</button>`
+  ).join("");
+
+  // ── Office map + details ──────────────────────────────────────────────
+  const mapEl = qs("officeMap");
+  if (mapEl) mapEl.src = CONTACT.office.mapSrc;
+
+  const od = qs("officeDetails");
+  if (od) od.innerHTML = `
+    <div class="office-name">${CONTACT.office.name}</div>
+    <div class="office-detail-row"><i class="fa-solid fa-location-dot"></i><span>${CONTACT.office.address}</span></div>
+    <div class="office-detail-row"><i class="fa-solid fa-phone"></i><span><a href="tel:${CONTACT.office.phone.replace(/\s/g,"")}" style="color:inherit;text-decoration:none;">${CONTACT.office.phone}</a></span></div>
+    <div class="office-detail-row"><i class="fa-solid fa-envelope"></i><span><a href="mailto:${CONTACT.office.email}" style="color:inherit;text-decoration:none;">${CONTACT.office.email}</a></span></div>
+    <div class="office-hours-badge"><span class="hours-dot"></span> Open · ${CONTACT.office.hours}</div>`;
+
+  // ── Social card ───────────────────────────────────────────────────────
+  const st = qs("socialTitle");
+  if (st) st.textContent = CONTACT.social.title;
+
+  const sr = qs("socialRow");
+  if (sr) sr.innerHTML = CONTACT.social.links.map(l =>
+    `<a href="${l.href}" target="_blank" class="social-btn ${l.cls}"><i class="fa-brands ${l.icon}"></i>${l.label}</a>`
+  ).join("");
+
+  // ── WhatsApp QR card ──────────────────────────────────────────────────
+  const qt = qs("qrTitle"); if (qt) qt.textContent = CONTACT.qr.title;
+  const qd = qs("qrDesc");  if (qd) qd.textContent = CONTACT.qr.desc;
+  const qb = qs("qrBtn");
+  if (qb) { qb.href = CONTACT.qr.href; qb.innerHTML = CONTACT.qr.label; }
+
+  // ── FAQ ───────────────────────────────────────────────────────────────
+  const fe = qs("faqEyebrow"); if (fe) fe.innerHTML = CONTACT.faq.eyebrow;
+  const fh = qs("faqHeading"); if (fh) fh.innerHTML = CONTACT.faq.heading;
+  const fsub = qs("faqSub");   if (fsub) fsub.textContent = CONTACT.faq.sub;
+
+  const fg = qs("faqGrid");
+  if (fg) {
+    const half  = Math.ceil(CONTACT.faq.items.length / 2);
+    const left  = CONTACT.faq.items.slice(0, half);
+    const right = CONTACT.faq.items.slice(half);
+    const makeCol = items => `<div class="faq-col">${items.map(item => `
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-text">${item.q}</span>
+          <div class="faq-icon"><i class="fa-solid fa-plus"></i></div>
+        </div>
+        <div class="faq-a-wrap"><div class="faq-a">${item.a}</div></div>
+      </div>`).join("")}</div>`;
+    fg.innerHTML = makeCol(left) + makeCol(right);
+
+    // Wire FAQ accordion — runs AFTER innerHTML is set
+    fg.querySelectorAll(".faq-item").forEach(function(item) {
+      item.querySelector(".faq-q").addEventListener("click", function() {
+        const wasOpen = item.classList.contains("open");
+        fg.querySelectorAll(".faq-item").forEach(i => i.classList.remove("open"));
+        if (!wasOpen) item.classList.add("open");
+      });
+    });
+  }
+
+  // ── Subject chips — wire AFTER innerHTML is set ───────────────────────
+  const scWrap = qs("subjectChips");
+  if (scWrap) {
+    scWrap.querySelectorAll(".subject-chip").forEach(function(chip) {
+      chip.addEventListener("click", function() {
+        scWrap.querySelectorAll(".subject-chip").forEach(c => c.classList.remove("active"));
+        chip.classList.add("active");
+        const sf = qs("subjectField");
+        if (sf) sf.value = chip.dataset.subject;
+      });
+    });
+  }
+
+  // ── Trust bar ─────────────────────────────────────────────────────────
+  const tb = qs("contactTrustBar");
+  if (tb) tb.innerHTML = CONTACT.trust.map(t => `
+    <div class="trust-card">
+      <div class="trust-icon" style="background:rgba(0,85,165,0.1);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--neu-accent)" stroke-width="2" stroke-linecap="round">${t.path}</svg>
+      </div>
+      <div><h3>${t.title}</h3><p>${t.desc}</p></div>
+    </div>`).join("");
+
+  // ── Float + footer ────────────────────────────────────────────────────
+  const waF = qs("waFloat"); if (waF) waF.href = PAGE.company.whatsapp;
+  const copy = qs("footerCopyright"); if (copy) copy.textContent = PAGE.company.copyright;
 }

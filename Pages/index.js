@@ -242,8 +242,8 @@ const SITE = {
     sub:       "Medical-grade materials sourced from the USA and Europe — engineered for every surgical requirement.",
     cards: [
       { href: "../Pages/iol-page.html", img: "../Multimedia/hydrophilic_fold1.png",  alt: "IOL",      tag: "IOL",         title: "Intraocular Lenses",    desc: "Hydrophobic, Hydrophilic & PMMA. UV absorber, blue-light filter, zero glistening." },
-      { href: "../Pages/PharmaProducts.html", img: "../Multimedia/lense8.png",  alt: "Pharma", tag: "Pharma Product", title: "Pharma Products",  desc: "Same medical-grade technology, engineered specifically for animal eye surgery" },
-      { href: "../Pages/microSurgicalInstruments.html", img: "../Multimedia/lense15.png", alt: "blade",      tag: "Surgical Blade",  title: "Surgical Blade",        desc: "Best in class surgical blades for precise procedures." },
+      { href: "../Pages/PharmaProducts.html", img: "../Multimedia/pharamaHero1.png",  alt: "Pharma", tag: "Pharma Product", title: "Pharma Products",  desc: "Same medical-grade technology, engineered specifically for animal eye surgery" },
+      { href: "../Pages/microSurgicalInstruments.html", img: "../Multimedia/msBlade_blunt.png", alt: "blade",      tag: "Surgical Blade",  title: "Surgical Blade",        desc: "Best in class surgical blades for precise procedures." },
     ],
   },
 
@@ -252,10 +252,10 @@ const SITE = {
     heading:   "Built on",
     headingEm: "trust & precision",
     cards: [
-      { icon: "fa-shield-halved", color: "blue",   title: "Medical Grade Materials", desc: "Raw materials imported from certified suppliers in the USA and UK — no compromise on biocompatibility."                          },
-      { icon: "fa-microscope",    color: "teal",   title: "Precision Engineering",   desc: "High MTF ratings and low refractive index deliver exceptional light transmission — minimising glare post-surgery."              },
-      { icon: "fa-earth-asia",    color: "violet", title: "Global Distribution",     desc: "Trusted by surgeons across 40+ countries. Our export network ensures every lens reaches you fresh and documented."             },
-      { icon: "fa-award",         color: "amber",  title: "ISO Certified",           desc: "Every lens undergoes rigorous biocompatibility testing to international ISO medical device standards."                          },
+      { icon: "fa-shield-halved", color: "blue",   title: "Medical Grade Materials", desc: "Raw materials imported from certified suppliers in the USA and UK — no compromise on biocompatibility."},
+      { icon: "fa-microscope",    color: "teal",   title: "Precision Engineering",   desc: "High MTF ratings and low refractive index deliver exceptional light transmission — minimising glare post-surgery."},
+      { icon: "fa-earth-asia",    color: "violet", title: "Global Distribution",     desc: "Trusted by surgeons across 40+ countries. Our export network ensures every lens reaches you fresh and documented."},
+      { icon: "fa-award",         color: "amber",  title: "ISO Certified",           desc: "Every lens undergoes rigorous biocompatibility testing to international ISO medical device standards."},
     ],
   },
 
