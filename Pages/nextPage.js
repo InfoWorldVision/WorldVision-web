@@ -127,7 +127,7 @@ const PAGE = {
     products: {
       label: "Our Products",
       // Pages that belong under the Products dropdown — used for active-nav detection
-      pages: ["iol-page","hydrophobicIol","hydrophilicIOL","pmmaIol","premiumIol","pharmaProducts","microSurgicalBlades","nanoClaro","nanoGrand","nanoClaroPlus","nanoGrandPlus","nanoFold","nanoFlex"],
+      pages: ["iol-page","hydrophobicIol","hydrophilicIOL","pmmaIol","premiumIol","pharmaProducts","surgicalBlades","nanoClaro","nanoGrand","nanoClaroPlus","nanoGrandPlus","nanoFold","nanoFlex"],
       children: [
         {
           label: "Intraocular Lens",
@@ -158,10 +158,10 @@ const PAGE = {
           icon:  "fa-cut",
           color: "var(--neu-accent2)",
           children: [
-            { label: "Keratome",  href: "#", icon: "fa-pen-fancy",          color: "text-slate-500" },
-            { label: "Crescent",  href: "#", icon: "fa-moon",               color: "text-blue-400"  },
-            { label: "Lance Ip",  href: "#", icon: "fa-staff-snake",        color: "text-amber-400" },
-            { label: "MVR Blade", href: "#", icon: "fa-diamond-turn-right", color: "text-red-400"   },
+            { label: "Keratome",  href: "../Pages/keratome.html",       icon: "fa-pen-fancy",          color: "text-slate-500" },
+            { label: "Crescent",  href: "../Pages/crescent.html",       icon: "fa-moon",               color: "text-blue-400"  },
+            { label: "Lance Ip",  href: "../Pages/lancelp.html",        icon: "fa-staff-snake",        color: "text-amber-400" },
+            { label: "MVR Blade", href: "../Pages/mvrBlade.html",       icon: "fa-diamond-turn-right", color: "text-red-400"   },
           ],
         },
       ],
@@ -205,10 +205,10 @@ const PAGE = {
       blade: {
         back:  { label: "Surgical Blades" },
         children: [
-          { label: "Keratome",  href: "#", icon: "fa-pen-fancy",          color: "text-slate-500" },
-          { label: "Crescent",  href: "#", icon: "fa-moon",               color: "text-blue-500"  },
-          { label: "Lance Ip",  href: "#", icon: "fa-staff-snake",        color: "text-amber-500" },
-          { label: "MVR Blade", href: "#", icon: "fa-diamond-turn-right", color: "text-red-500"   },
+          { label: "Keratome",  href: "../Pages/keratome.html",  icon: "fa-pen-fancy",          color: "text-slate-500" },
+          { label: "Crescent",  href: "../Pages/crescent.html",  icon: "fa-moon",               color: "text-blue-500"  },
+          { label: "Lance Ip",  href: "../Pages/lancelp.html",   icon: "fa-staff-snake",        color: "text-amber-500" },
+          { label: "MVR Blade", href: "../Pages/mvrBlade.html",  icon: "fa-diamond-turn-right", color: "text-red-500"   },
         ],
       },
     },
@@ -4093,4 +4093,805 @@ if (ACTIVE_PAGE === "pmmaIOL") {
 
   const waF = qs("waFloat"); if (waF) waF.href = PAGE.company.whatsapp;
   const copy = qs("footerCopyright"); if (copy) copy.textContent = PAGE.company.copyright;
+}
+
+/*************************************************
+ * KERATOME PAGE — keratome.html
+ *************************************************/
+if (ACTIVE_PAGE === "keratome") {
+
+  const KERAT_TABS = [
+    {
+      id:       "keratSharp",
+      name:     "Sharp Tip",
+      type:     "Phaco Stab",
+      tag:      "Sharp Tip · Phaco Stab Incision · Straight / Angled 45° · Bevel Up/Down",
+      title:    "Keratome Sharp",
+      subtitle: "Keratome Blades (Sharp Astuce) / Queratomo Cuchillas (punta aguda) — For Phaco Stab Incision Straight / Angled 45 Deg. Bevel Up/Down",
+      desc:     "Precision sharp tip keratome blades for phaco stab incisions. Available in straight and 45° angled configurations with bevel up or bevel down orientation.",
+      lensImg:  "../Multimedia/msBlade-Sharp.png",
+      highlights: [
+        { icon: "fa-pen-fancy",         text: "Sharp astuce tip"      },
+        { icon: "fa-arrows-left-right", text: "Straight / 45° angled" },
+        { icon: "fa-rotate",            text: "Bevel up / down"       },
+        { icon: "fa-ruler-horizontal",  text: "1.5 – 3.5 mm sizes"    },
+        { icon: "fa-shield-halved",     text: "Stainless steel"       },
+        { icon: "fa-certificate",       text: "CE certified"          },
+      ],
+      variants: [
+        {
+          id: "NS2620ST", label: "NS 2620ST", lensImg: "../Multimedia/msBlade-Sharp.png",
+          specs: [
+            { label: "Model",       value: "NS 2620ST",                    accent: true },
+            { label: "Size",        value: "2.65 mm",                      accent: true },
+            { label: "Gauge",       value: "20 Gauge"                                   },
+            { label: "Tip",         value: "Sharp"                                      },
+            { label: "Incision",    value: "Phaco Stab"                                 },
+            { label: "Orientation", value: "Straight / Angled 45°"                      },
+            { label: "Bevel",       value: "Up / Down"                                  },
+            { label: "Order",       value: "Standard",                     accent: true },
+          ],
+        },
+        {
+          id: "NS2820ST", label: "NS 2820ST", lensImg: "../Multimedia/msBlade-Sharp.png",
+          specs: [
+            { label: "Model",       value: "NS 2820ST",                    accent: true },
+            { label: "Size",        value: "2.8 mm",                       accent: true },
+            { label: "Gauge",       value: "20 Gauge"                                   },
+            { label: "Tip",         value: "Sharp"                                      },
+            { label: "Incision",    value: "Phaco Stab"                                 },
+            { label: "Orientation", value: "Straight / Angled 45°"                      },
+            { label: "Bevel",       value: "Up / Down"                                  },
+            { label: "Order",       value: "Standard",                     accent: true },
+          ],
+        },
+        {
+          id: "NS3019ST", label: "NS 3019ST", lensImg: "../Multimedia/msBlade-Sharp.png",
+          specs: [
+            { label: "Model",       value: "NS 3019ST",                    accent: true },
+            { label: "Size",        value: "3.0 mm",                       accent: true },
+            { label: "Gauge",       value: "19 Gauge"                                   },
+            { label: "Tip",         value: "Sharp"                                      },
+            { label: "Incision",    value: "Phaco Stab"                                 },
+            { label: "Orientation", value: "Straight / Angled 45°"                      },
+            { label: "Bevel",       value: "Up / Down"                                  },
+            { label: "Order",       value: "Standard",                     accent: true },
+          ],
+        },
+        {
+          id: "NS3219ST", label: "NS 3219ST", lensImg: "../Multimedia/msBlade-Sharp.png",
+          specs: [
+            { label: "Model",       value: "NS 3219ST",                    accent: true },
+            { label: "Size",        value: "3.2 mm",                       accent: true },
+            { label: "Gauge",       value: "19 Gauge"                                   },
+            { label: "Tip",         value: "Sharp"                                      },
+            { label: "Incision",    value: "Phaco Stab"                                 },
+            { label: "Orientation", value: "Straight / Angled 45°"                      },
+            { label: "Bevel",       value: "Up / Down"                                  },
+            { label: "Order",       value: "Standard",                     accent: true },
+          ],
+        },
+        {
+          id: "NS3519ST", label: "NS 3519ST", lensImg: "../Multimedia/msBlade-Sharp.png",
+          specs: [
+            { label: "Model",       value: "NS 3519ST",                    accent: true },
+            { label: "Size",        value: "3.5 mm",                       accent: true },
+            { label: "Gauge",       value: "19 Gauge"                                   },
+            { label: "Tip",         value: "Sharp"                                      },
+            { label: "Incision",    value: "Phaco Stab"                                 },
+            { label: "Orientation", value: "Straight / Angled 45°"                      },
+            { label: "Bevel",       value: "Up / Down"                                  },
+            { label: "Order",       value: "Standard",                     accent: true },
+          ],
+        },
+      ],
+      specialOrder: [
+        { id: "NS1524ST", label: "NS 1524ST", size: "1.5 mm",  gauge: "24 Gauge" },
+        { id: "NS1820ST", label: "NS 1820ST", size: "1.8 mm",  gauge: "20 Gauge" },
+        { id: "NS2020ST", label: "NS 2020ST", size: "2.0 mm",  gauge: "20 Gauge" },
+        { id: "NS2320ST", label: "NS 2320ST", size: "2.3 mm",  gauge: "20 Gauge" },
+        { id: "NS2520ST", label: "NS 2520ST", size: "2.5 mm",  gauge: "20 Gauge" },
+      ],
+    },
+    {
+      id:       "keratBlunt",
+      name:     "Blunt Tip",
+      type:     "IOL Enlarging",
+      tag:      "Blunt Tip · IOL Enlarging",
+      title:    "Keratome Blunt",
+      subtitle: "Keratome Blades (bout Astuce) / Queratomo Cuchillas (Blunt Tip) — For IOL Enlarging",
+      desc:     "Blunt tip keratome blades designed specifically for IOL enlarging incisions. The blunt tip prevents inadvertent puncture during incision widening procedures.",
+      lensImg:  "../Multimedia/msBlade_Blunt.png",
+      highlights: [
+        { icon: "fa-circle",           text: "Blunt astuce tip"    },
+        { icon: "fa-expand",           text: "IOL enlarging"       },
+        { icon: "fa-ruler-horizontal", text: "3.5 – 6.0 mm sizes"  },
+        { icon: "fa-shield-halved",    text: "Stainless steel"     },
+        { icon: "fa-droplet-slash",    text: "Smooth incision"     },
+        { icon: "fa-certificate",      text: "CE certified"        },
+      ],
+      variants: [
+        {
+          id: "NS3518BT", label: "NS 3518BT", lensImg: "../Multimedia/msBlade_Blunt.png",
+          specs: [
+            { label: "Model",      value: "NS 3518BT",  accent: true },
+            { label: "Size",       value: "3.5 mm",     accent: true },
+            { label: "Gauge",      value: "18 Gauge"                 },
+            { label: "Tip",        value: "Blunt"                    },
+            { label: "Indication", value: "IOL Enlarging"            },
+            { label: "Order",      value: "Standard",   accent: true },
+          ],
+        },
+        {
+          id: "NS3818BT", label: "NS 3818BT", lensImg: "../Multimedia/msBlade_Blunt.png",
+          specs: [
+            { label: "Model",      value: "NS 3818BT",  accent: true },
+            { label: "Size",       value: "3.8 mm",     accent: true },
+            { label: "Gauge",      value: "18 Gauge"                 },
+            { label: "Tip",        value: "Blunt"                    },
+            { label: "Indication", value: "IOL Enlarging"            },
+            { label: "Order",      value: "Standard",   accent: true },
+          ],
+        },
+        {
+          id: "NS4018BT", label: "NS 4018BT", lensImg: "../Multimedia/msBlade_Blunt.png",
+          specs: [
+            { label: "Model",      value: "NS 4018BT",  accent: true },
+            { label: "Size",       value: "4.0 mm",     accent: true },
+            { label: "Gauge",      value: "18 Gauge"                 },
+            { label: "Tip",        value: "Blunt"                    },
+            { label: "Indication", value: "IOL Enlarging"            },
+            { label: "Order",      value: "Standard",   accent: true },
+          ],
+        },
+      ],
+      specialOrder: [
+        { id: "NS5116BT", label: "NS 5116BT", size: "5.1 mm", gauge: "16 Gauge" },
+        { id: "NS5516BT", label: "NS 5516BT", size: "5.5 mm", gauge: "16 Gauge" },
+        { id: "NS6015BT", label: "NS 6015BT", size: "6.0 mm", gauge: "15 Gauge" },
+      ],
+    },
+  ];
+
+  // Hero
+  qs("heroEyebrow") && (qs("heroEyebrow").innerHTML = '<span class="pulse"></span>NanoSharp · Ophthalmic Micro Surgical Blades');
+  qs("page-h1")     && (qs("page-h1").innerHTML     = "Keratome<br><em>NanoSharp Blade</em>");
+  qs("heroDesc")    && (qs("heroDesc").textContent   = "Precision-engineered keratome blades in sharp tip and blunt tip configurations. Available across standard and special order sizes for phaco stab and IOL enlarging procedures.");
+  qs("heroBtns")    && (qs("heroBtns").innerHTML     = `
+    <a href="#models" class="hero-btn-iol-primary"><i class="fa-solid fa-grid-2" style="font-size:12px;"></i> View Models</a>
+    <a href="../Pages/index.html" class="hero-btn-iol-ghost"><i class="fa-solid fa-arrow-left" style="font-size:11px;"></i> Home</a>`);
+
+  function updateKeratHero(tabId) {
+    const data = KERAT_TABS.find(t => t.id === tabId);
+    if (!data) return;
+    const wrap = qs("heroBladeWrap");
+    if (wrap) wrap.innerHTML = `<img src="${data.lensImg}" alt="${data.title}" style="width:240px;height:240px;object-fit:contain;" onerror="this.style.opacity='0'"/>`;
+    const ey = qs("heroEyebrow");
+    if (ey) ey.innerHTML = `<span class="pulse"></span>${data.tag}`;
+  }
+
+  // Tab bar
+  const keratTabBar = qs("bladeSubTabBar");
+  if (keratTabBar) {
+    keratTabBar.innerHTML = KERAT_TABS.map((t, i) => `
+      <button class="model-tab${i === 0 ? " active" : ""}"
+        role="tab" aria-selected="${i === 0}"
+        aria-controls="panel-${t.id}" id="tab-${t.id}"
+        data-model="${t.id}" type="button">
+        <div class="model-tab-name">${t.name}</div>
+        <div class="model-tab-type">${t.type}</div>
+        <div class="model-tab-dot"></div>
+      </button>`).join("");
+  }
+
+  // Build panels — identical pattern to PMMA
+  function buildKeratPanel(data) {
+    const panelEl = qs("panel-" + data.id);
+    if (!panelEl) return;
+
+    const badges    = data.variants.map(v => `<span class="variant-badge">${v.label}</span>`).join("");
+    const chips     = data.highlights.map(h => `<div class="highlight-chip"><i class="fa-solid ${h.icon}"></i><span class="highlight-chip-text">${h.text}</span></div>`).join("");
+    const modelBtns = data.variants.map((v, i) => `
+      <button class="spec-model-btn${i === 0 ? " active" : ""}"
+        data-rows="${v.id}" data-lens="${v.lensImg || data.lensImg}"
+        type="button">${v.label}</button>`).join("");
+    const specTables = data.variants.map((v, i) => {
+      const rows = v.specs.map(s => `
+        <div class="spec-row">
+          <span class="spec-row-label">${s.label}</span>
+          <span class="spec-row-val${s.accent ? " accent" : ""}"
+            style="${s.accent ? "color:var(--neu-accent);font-weight:600;" : ""}">${s.value}</span>
+        </div>`).join("");
+      return `<div class="spec-rows" id="${v.id}"${i > 0 ? ' style="display:none;"' : ""}>${rows}</div>`;
+    }).join("");
+    const specialBlock = data.specialOrder ? `
+      <div style="margin-top:0.8rem; margin-bottom:1rem;">
+        <div class="spec-head-title" style="display:flex;align-items:center;gap:6px;margin-bottom:8px; margin-left:2rem; font-size:13px;color:var(--neu-text);">
+          <i class="fa-solid fa-star" style="font-size:15px;color:var(--neu-accent);"></i>
+          Special Order Models
+        </div>
+        <div class="spec-model-sel">
+          ${data.specialOrder.map(s => `
+            <button class="spec-model-btn spec-model-btn--special" data-rows="${s.id}" type="button">${s.label}</button>`).join("")}
+        </div>
+        ${data.specialOrder.map(s => `
+          <div class="spec-rows" id="${s.id}" style="display:none;">
+            <div class="spec-row"><span class="spec-row-label">Model</span><span class="spec-row-val accent" style="color:var(--neu-accent);font-weight:600;">${s.label}</span></div>
+            <div class="spec-row"><span class="spec-row-label">Size</span><span class="spec-row-val accent" style="color:var(--neu-accent);font-weight:600;">${s.size}</span></div>
+            <div class="spec-row"><span class="spec-row-label">Gauge</span><span class="spec-row-val">${s.gauge}</span></div>
+            <div class="spec-row"><span class="spec-row-label">Order</span><span class="spec-row-val" style="color:#e07b00;font-weight:600;">Special Order</span></div>
+          </div>`).join("")}
+      </div>` : "";
+
+    panelEl.innerHTML = `
+      <div class="neu-card">
+        <div class="card-top">
+          <span class="card-tag" style="background:rgba(10,94,168,0.1);color:var(--neu-accent);">${data.tag}</span>
+          <div class="card-title">${data.title}</div>
+          <div class="card-subtitle">${data.subtitle}</div>
+        </div>
+        <div class="card-lens-area">
+          <div class="card-lens-bg"></div>
+          <div class="card-lens-svg" id="${data.id}Lens">
+            <img src="${data.lensImg}" alt="${data.title}" style="width:140px;height:140px;object-fit:contain;" onerror="this.style.opacity='0'"/>
+          </div>
+        </div>
+        <div class="variant-badges">${badges}</div>
+        <div class="card-desc">${data.desc}</div>
+        <div class="card-highlights">${chips}</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-card-head">
+          <div class="spec-head-icon" style="background:rgba(10,94,168,0.1);color:var(--neu-accent);"><i class="fa-solid fa-table-list"></i></div>
+          <div>
+            <div class="spec-head-title">Technical Specifications</div>
+            <div class="spec-head-sub">${data.title} — ${data.tag}</div>
+          </div>
+        </div>
+        <p class="flip-hint-btn"><i class="fa-regular fa-hand-pointer" style="margin-top:0.1rem;"></i> Select the model to reveal full specifications</p>
+        <p class="flip-hint-btn sm:hidden !mb-0"><i class="fa-regular fa-hand-point-right"></i> Scroll to explore more models</p>
+        <div class="spec-model-sel">${modelBtns}</div>
+        ${specTables}
+        ${specialBlock}
+        <div class="spec-download">
+          <button class="dl-btn dl-btn-primary" onclick="alert('IFU download coming soon.')"><i class="fa-solid fa-download"></i> Download IFU</button>
+          <button class="dl-btn dl-btn-ghost"   onclick="alert('Enquiry form coming soon.')"><i class="fa-solid fa-envelope"></i> Enquire</button>
+        </div>
+      </div>`;
+  }
+
+  // Build panels container
+  const keratPanelsWrap = qs("blade-sub-panels");
+  if (keratPanelsWrap) {
+    keratPanelsWrap.innerHTML = KERAT_TABS.map((t, i) =>
+      `<div id="panel-${t.id}" class="model-panel${i === 0 ? " active" : ""}"></div>`
+    ).join("");
+  }
+  KERAT_TABS.forEach(buildKeratPanel);
+  updateKeratHero(KERAT_TABS[0].id);
+
+  // Tab switching
+  document.addEventListener("click", function(e) {
+    const tab = e.target.closest(".model-tab[data-model]");
+    if (!tab) return;
+    const targetId = tab.dataset.model;
+    document.querySelectorAll(".model-tab[data-model]").forEach(t => {
+      t.classList.toggle("active", t === tab);
+      t.setAttribute("aria-selected", t === tab ? "true" : "false");
+    });
+    document.querySelectorAll(".model-panel").forEach(p => p.classList.remove("active"));
+    const panel = qs("panel-" + targetId);
+    if (panel) panel.classList.add("active");
+    updateKeratHero(targetId);
+  });
+
+  // Trust + IFU + footer
+  const keratTrust = qs("trustBar");
+  if (keratTrust) keratTrust.innerHTML = [
+    { path: `<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>`,   title: "ISO Certified",      desc: "All NanoSharp keratome blades manufactured to ISO 11070 and ISO 11979 surgical blade standards." },
+    { path: `<circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>`,    title: "Single-Use Sterile", desc: "Every blade individually packaged, EO-sterilised, and supplied ready for immediate surgical use." },
+    { path: `<path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/>`, title: "Ultra-Sharp Edge", desc: "Precision-ground stainless steel edge for clean, trauma-free incisions." },
+  ].map(t => `<div class="trust-card"><div class="trust-icon" style="background:rgba(10,94,168,0.08);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--neu-accent)" stroke-width="2" stroke-linecap="round">${t.path}</svg></div><div><h3>${t.title}</h3><p>${t.desc}</p></div></div>`).join("");
+
+  const keratIfuH = qs("ifuHeader");
+  if (keratIfuH) keratIfuH.innerHTML = `<div class="ifu-icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div><div><div class="ifu-title">Instructions for Use</div><div class="ifu-sub">Download IFU for Keratome Blade product lines</div></div>`;
+  const keratIfuG = qs("ifuGrid");
+  if (keratIfuG) keratIfuG.innerHTML = [
+    { label: "IFU — Keratome Sharp Tip", sub: "ST series · Phaco Stab Incision" },
+    { label: "IFU — Keratome Blunt Tip", sub: "BT series · IOL Enlarging"       },
+  ].map(l => `<a href="#" class="ifu-link"><div class="ifu-link-icon hydro-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--neu-accent)" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg></div><div class="ifu-link-text"><strong>${l.label}</strong><span>${l.sub}</span></div></a>`).join("");
+
+  const bc = qs("breadcrumb");
+  if (bc) bc.innerHTML = `<a href="../Pages/index.html">Home</a><span class="sep">/</span><a href="#">Our Products</a><span class="sep">/</span><span class="current">Keratome Blade</span>`;
+  const waF = qs("waFloat"); if (waF) waF.href = PAGE.company.whatsapp;
+  const copy = qs("footerCopyright"); if (copy) copy.textContent = PAGE.company.copyright;
+}
+
+/*************************************************
+ * CRESCENT PAGE — crescent.html
+ *************************************************/
+if (ACTIVE_PAGE === "crescent") {
+
+  const CRES_TABS = [
+    {
+      id:       "crescentTI",
+      name:     "Crescent",
+      type:     "Tunnel Incision/ Croissant / Crescent Cuchillas - Blades",
+      tag:      "Crescent · Tunnel Incision · Straight / Angled 45° · Bevel Up/Down",
+      title:    "Crescent Blade",
+      subtitle: "Croissant-Blades / Crescent Cuchillas — for Tunnel Incision Straight / Angled 45 Deg. Bevel Up / Down",
+      desc:     "Crescent blades for tunnel incisions in cataract surgery. The crescent geometry enables smooth stromal dissection with minimal tissue trauma.",
+      lensImg:  "../Multimedia/msBladeCrescent.png",
+      highlights: [
+        { icon: "fa-moon",              text: "Crescent geometry"     },
+        { icon: "fa-arrows-left-right", text: "Straight / 45° angled" },
+        { icon: "fa-rotate",            text: "Bevel up / down"       },
+        { icon: "fa-ruler-horizontal",  text: "2.0 – 2.5 mm sizes"    },
+        { icon: "fa-shield-halved",     text: "Stainless steel"       },
+        { icon: "fa-certificate",       text: "CE certified"          },
+      ],
+      variants: [
+        {
+          id: "NS2020TI", label: "NS 2020TI", lensImg: "../Multimedia/msBladeCrescent.png",
+          specs: [
+            { label: "Model",       value: "NS 2020TI",             accent: true },
+            { label: "Size",        value: "2.0 mm",                accent: true },
+            { label: "Gauge",       value: "20 Gauge"                            },
+            { label: "Type",        value: "Crescent"                            },
+            { label: "Incision",    value: "Tunnel Incision"                     },
+            { label: "Orientation", value: "Straight / Angled 45°"               },
+            { label: "Bevel",       value: "Up / Down"                           },
+            { label: "Order",       value: "Standard",              accent: true },
+          ],
+        },
+        {
+          id: "NS2520TI", label: "NS 2520TI", lensImg: "../Multimedia/msBladeCrescent.png",
+          specs: [
+            { label: "Model",       value: "NS 2520TI",             accent: true },
+            { label: "Size",        value: "2.5 mm",                accent: true },
+            { label: "Gauge",       value: "20 Gauge"                            },
+            { label: "Type",        value: "Crescent"                            },
+            { label: "Incision",    value: "Tunnel Incision"                     },
+            { label: "Orientation", value: "Straight / Angled 45°"               },
+            { label: "Bevel",       value: "Up / Down"                           },
+            { label: "Order",       value: "Standard",              accent: true },
+          ],
+        },
+      ],
+      specialOrder: null,
+    },
+  ];
+
+  qs("heroEyebrow") && (qs("heroEyebrow").innerHTML = '<span class="pulse"></span>NanoSharp · Ophthalmic Micro Surgical Blades');
+  qs("page-h1")     && (qs("page-h1").innerHTML     = "Crescent<br><em>NanoSharp Blade</em>");
+  qs("heroDesc")    && (qs("heroDesc").textContent   = "Crescent blades (Croissant-Blades / Crescent Cuchillas) for tunnel incisions. Straight / Angled 45° · Bevel Up / Down.");
+  qs("heroBtns")    && (qs("heroBtns").innerHTML     = `
+    <a href="#models" class="hero-btn-iol-primary"><i class="fa-solid fa-grid-2" style="font-size:12px;"></i> View Models</a>
+    <a href="../Pages/index.html" class="hero-btn-iol-ghost"><i class="fa-solid fa-arrow-left" style="font-size:11px;"></i> Home</a>`);
+
+  const cresWrap = qs("heroBladeWrap");
+  if (cresWrap) cresWrap.innerHTML = `<img src="${CRES_TABS[0].lensImg}" alt="Crescent" style="width:240px;height:240px;object-fit:contain;" onerror="this.style.opacity='0'"/>`;
+
+  const cresTabBar = qs("bladeSubTabBar");
+  if (cresTabBar) {
+    cresTabBar.innerHTML = CRES_TABS.map((t, i) => `
+      <button class="model-tab${i === 0 ? " active" : ""}" role="tab" aria-selected="${i === 0}"
+        aria-controls="panel-${t.id}" data-model="${t.id}" type="button">
+        <div class="model-tab-name">${t.name}</div>
+        <div class="model-tab-type">${t.type}</div>
+        <div class="model-tab-dot"></div>
+      </button>`).join("");
+  }
+
+  const cresPanelsWrap = qs("blade-sub-panels");
+  if (cresPanelsWrap) {
+    cresPanelsWrap.innerHTML = CRES_TABS.map((t, i) =>
+      `<div id="panel-${t.id}" class="model-panel${i === 0 ? " active" : ""}"></div>`
+    ).join("");
+  }
+
+  CRES_TABS.forEach(function(data) {
+    const panelEl = qs("panel-" + data.id);
+    if (!panelEl) return;
+    const badges    = data.variants.map(v => `<span class="variant-badge">${v.label}</span>`).join("");
+    const chips     = data.highlights.map(h => `<div class="highlight-chip"><i class="fa-solid ${h.icon}"></i><span class="highlight-chip-text">${h.text}</span></div>`).join("");
+    const modelBtns = data.variants.map((v, i) => `<button class="spec-model-btn${i === 0 ? " active" : ""}" data-rows="${v.id}" data-lens="${v.lensImg}" type="button">${v.label}</button>`).join("");
+    const specTables = data.variants.map((v, i) => {
+      const rows = v.specs.map(s => `<div class="spec-row"><span class="spec-row-label">${s.label}</span><span class="spec-row-val${s.accent ? " accent" : ""}" style="${s.accent ? "color:var(--neu-accent);font-weight:600;" : ""}">${s.value}</span></div>`).join("");
+      return `<div class="spec-rows" id="${v.id}"${i > 0 ? ' style="display:none;"' : ""}>${rows}</div>`;
+    }).join("");
+    panelEl.innerHTML = `
+      <div class="neu-card">
+        <div class="card-top">
+          <span class="card-tag" style="background:rgba(10,94,168,0.1);color:var(--neu-accent);">${data.tag}</span>
+          <div class="card-title">${data.title}</div>
+          <div class="card-subtitle">${data.subtitle}</div>
+        </div>
+        <div class="card-lens-area"><div class="card-lens-bg"></div>
+          <div class="card-lens-svg"><img src="${data.lensImg}" alt="${data.title}" style="width:140px;height:140px;object-fit:contain;" onerror="this.style.opacity='0'"/></div>
+        </div>
+        <div class="variant-badges">${badges}</div>
+        <div class="card-desc">${data.desc}</div>
+        <div class="card-highlights">${chips}</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-card-head">
+          <div class="spec-head-icon" style="background:rgba(10,94,168,0.1);color:var(--neu-accent);"><i class="fa-solid fa-table-list"></i></div>
+          <div><div class="spec-head-title">Technical Specifications</div><div class="spec-head-sub">${data.title} — ${data.tag}</div></div>
+        </div>
+        <p class="flip-hint-btn"><i class="fa-regular fa-hand-pointer" style="margin-top:0.1rem;"></i> Select the model to reveal full specifications</p>
+        <p class="flip-hint-btn sm:hidden !mb-0"><i class="fa-regular fa-hand-point-right"></i> Scroll to explore more models</p>
+        <div class="spec-model-sel">${modelBtns}</div>
+        ${specTables}
+        <div class="spec-download">
+          <button class="dl-btn dl-btn-primary" onclick="alert('IFU download coming soon.')"><i class="fa-solid fa-download"></i> Download IFU</button>
+          <button class="dl-btn dl-btn-ghost" onclick="alert('Enquiry form coming soon.')"><i class="fa-solid fa-envelope"></i> Enquire</button>
+        </div>
+      </div>`;
+  });
+
+  const cresTrust = qs("trustBar");
+  if (cresTrust) cresTrust.innerHTML = [
+    { path: `<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>`,   title: "ISO Certified",      desc: "All NanoSharp crescent blades manufactured to ISO surgical blade standards." },
+    { path: `<circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>`,    title: "Single-Use Sterile", desc: "Every blade individually packaged, EO-sterilised, supplied ready for use." },
+    { path: `<path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/>`, title: "Ultra-Sharp Edge", desc: "Precision-ground stainless steel for clean, trauma-free tunnel incisions." },
+  ].map(t => `<div class="trust-card"><div class="trust-icon" style="background:rgba(10,94,168,0.08);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--neu-accent)" stroke-width="2" stroke-linecap="round">${t.path}</svg></div><div><h3>${t.title}</h3><p>${t.desc}</p></div></div>`).join("");
+
+  const cresIfuH = qs("ifuHeader");
+  if (cresIfuH) cresIfuH.innerHTML = `<div class="ifu-icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div><div><div class="ifu-title">Instructions for Use</div><div class="ifu-sub">Download IFU for Crescent Blade product lines</div></div>`;
+  const cresIfuG = qs("ifuGrid");
+  if (cresIfuG) cresIfuG.innerHTML = `<a href="#" class="ifu-link"><div class="ifu-link-icon hydro-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--neu-accent)" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg></div><div class="ifu-link-text"><strong>IFU — Crescent Blade</strong><span>TI series · Tunnel Incision · 20 Gauge</span></div></a>`;
+
+  const cresBC = qs("breadcrumb");
+  if (cresBC) cresBC.innerHTML = `<a href="../Pages/index.html">Home</a><span class="sep">/</span><a href="#">Our Products</a><span class="sep">/</span><span class="current">Crescent Blade</span>`;
+  const waF2 = qs("waFloat"); if (waF2) waF2.href = PAGE.company.whatsapp;
+  const copy2 = qs("footerCopyright"); if (copy2) copy2.textContent = PAGE.company.copyright;
+}
+
+/*************************************************
+ * LANCE IP PAGE — lanceIp.html
+ *************************************************/
+if (ACTIVE_PAGE === "lancelp") {
+
+  const LANCE_TABS = [
+    {
+      id: "lance15", name: "Lance Tip Knives", type: "initial Incision Lance / Astuce Couteaux / Punta de lanza Cuchilos",
+      tag: "Lance Tip · 15° · 35° · 45° ",
+      title: "Lance Ip", subtitle: "Lance Tip Knives (Lance Astuce Couteaux) — Length: 12 mm · Cutting Width: 6.5 mm · Angled 15° · 35° · 45°",
+      desc: "Lance tip knife for initial incision at 15° angulation. Length 12 mm, Cutting Width 6.5 mm, 24 Gauge.",
+      lensImg: "../Multimedia/msBladeLance.png",
+      highlights: [
+        { icon: "fa-staff-snake",      text: "Lance tip geometry"   },
+        { icon: "fa-ruler",            text: "12 mm length"         },
+        { icon: "fa-ruler-horizontal", text: "6.5 mm cutting width" },
+        { icon: "fa-angle-right",      text: "15° angulation"       },
+        { icon: "fa-certificate",      text: "CE certified"         },
+      ],
+      variants: [
+        {
+          id: "NS1524LT", label: "NS 1524LT", lensImg: "../Multimedia/msBladeLance.png",
+          specs: [
+            { label: "Model",         value: "NS 1524LT",              accent: true },
+            { label: "Angulation",    value: "15°",                    accent: true },
+            { label: "Gauge",         value: "24 Gauge"                             },
+            { label: "Length",        value: "12 mm"                                },
+            { label: "Cutting Width", value: "6.5 mm"                               },
+            { label: "Base Angle",    value: "15°"                                  },
+            { label: "Indication",    value: "Initial Incision"                     },
+            { label: "Order",         value: "Standard",               accent: true },
+          ],
+          specialOrder: null,
+        },
+        {
+          id: "NS3024LT", label: "NS 3024LT", lensImg: "../Multimedia/msBladeLance.png",
+          specs: [
+            { label: "Model",         value: "NS 3024LT",              accent: true },
+            { label: "Angulation",    value: "30°",                    accent: true },
+            { label: "Gauge",         value: "24 Gauge"                             },
+            { label: "Length",        value: "12 mm"                                },
+            { label: "Cutting Width", value: "6.5 mm"                               },
+            { label: "Base Angle",    value: "15°"                                  },
+            { label: "Indication",    value: "Initial Incision"                     },
+            { label: "Order",         value: "Standard",               accent: true },
+          ],
+          specialOrder: null,
+        },
+        {
+          id: "NS4524LT", label: "NS 4524LT", lensImg: "../Multimedia/msBladeLance.png",
+          specs: [
+            { label: "Model",         value: "NS 4524LT",              accent: true },
+            { label: "Angulation",    value: "45°",                    accent: true },
+            { label: "Gauge",         value: "24 Gauge"                             },
+            { label: "Length",        value: "12 mm"                                },
+            { label: "Cutting Width", value: "6.5 mm"                               },
+            { label: "Base Angle",    value: "15°"                                  },
+            { label: "Indication",    value: "Initial Incision"                     },
+            { label: "Order",         value: "Standard",               accent: true },
+          ],
+          specialOrder: null,
+        },
+      ],
+    },
+  ];
+
+  qs("heroEyebrow") && (qs("heroEyebrow").innerHTML = '<span class="pulse"></span>NanoSharp · Lance Tip Knives for Initial Incision');
+  qs("page-h1")     && (qs("page-h1").innerHTML     = "Lance Ip<br><em>NanoSharp Blade</em>");
+  qs("heroDesc")    && (qs("heroDesc").textContent   = "Lance Tip Knives (Punta de lanza cuchillos) for initial incision. Length: 12 mm · Grinding Width (Cutting): 6.5 mm · Angled 15°. Available in 15°, 30° and 45° angulations.");
+  qs("heroBtns")    && (qs("heroBtns").innerHTML     = `
+    <a href="#models" class="hero-btn-iol-primary"><i class="fa-solid fa-grid-2" style="font-size:12px;"></i> View Models</a>
+    <a href="../Pages/index.html" class="hero-btn-iol-ghost"><i class="fa-solid fa-arrow-left" style="font-size:11px;"></i> Home</a>`);
+
+  function updateLanceHero(tabId) {
+    const data = LANCE_TABS.find(t => t.id === tabId);
+    if (!data) return;
+    const wrap = qs("heroBladeWrap");
+    if (wrap) wrap.innerHTML = `<img src="${data.lensImg}" alt="${data.title}" style="width:240px;height:240px;object-fit:contain;" onerror="this.style.opacity='0'"/>`;
+    const ey = qs("heroEyebrow");
+    if (ey) ey.innerHTML = `<span class="pulse"></span>${data.tag}`;
+  }
+
+  const lanceTabBar = qs("bladeSubTabBar");
+  if (lanceTabBar) {
+    lanceTabBar.innerHTML = LANCE_TABS.map((t, i) => `
+      <button class="model-tab${i === 0 ? " active" : ""}" role="tab" aria-selected="${i === 0}"
+        aria-controls="panel-${t.id}" data-model="${t.id}" type="button">
+        <div class="model-tab-name">${t.name}</div>
+        <div class="model-tab-type">${t.type}</div>
+        <div class="model-tab-dot"></div>
+      </button>`).join("");
+  }
+
+  const lancePanelsWrap = qs("blade-sub-panels");
+  if (lancePanelsWrap) {
+    lancePanelsWrap.innerHTML = LANCE_TABS.map((t, i) =>
+      `<div id="panel-${t.id}" class="model-panel${i === 0 ? " active" : ""}"></div>`
+    ).join("");
+  }
+
+  LANCE_TABS.forEach(function(data) {
+    const panelEl = qs("panel-" + data.id);
+    if (!panelEl) return;
+    const chips     = data.highlights.map(h => `<div class="highlight-chip"><i class="fa-solid ${h.icon}"></i><span class="highlight-chip-text">${h.text}</span></div>`).join("");
+    const modelBtns = data.variants.map((v, i) => `<button class="spec-model-btn${i === 0 ? " active" : ""}" data-rows="${v.id}" data-lens="${v.lensImg}" type="button">${v.label}</button>`).join("");
+    const specTables = data.variants.map((v, i) => {
+      const rows = v.specs.map(s => `<div class="spec-row"><span class="spec-row-label">${s.label}</span><span class="spec-row-val${s.accent ? " accent" : ""}" style="${s.accent ? "color:var(--neu-accent);font-weight:600;" : ""}">${s.value}</span></div>`).join("");
+      return `<div class="spec-rows" id="${v.id}"${i > 0 ? ' style="display:none;"' : ""}>${rows}</div>`;
+    }).join("");
+    panelEl.innerHTML = `
+      <div class="neu-card">
+        <div class="card-top">
+          <span class="card-tag" style="background:rgba(10,94,168,0.1);color:var(--neu-accent);">${data.tag}</span>
+          <div class="card-title">${data.title}</div>
+          <div class="card-subtitle">${data.subtitle}</div>
+        </div>
+        <div class="card-lens-area"><div class="card-lens-bg"></div>
+          <div class="card-lens-svg"><img src="${data.lensImg}" alt="${data.title}" style="width:140px;height:140px;object-fit:contain;" onerror="this.style.opacity='0'"/></div>
+        </div>
+        <div class="card-desc">${data.desc}</div>
+        <div class="card-highlights">${chips}</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-card-head">
+          <div class="spec-head-icon" style="background:rgba(10,94,168,0.1);color:var(--neu-accent);"><i class="fa-solid fa-table-list"></i></div>
+          <div><div class="spec-head-title">Technical Specifications</div><div class="spec-head-sub">${data.title} — ${data.tag}</div></div>
+        </div>
+        <p class="flip-hint-btn"><i class="fa-regular fa-hand-pointer" style="margin-top:0.1rem;"></i> Select the model to reveal full specifications</p>
+        <div class="spec-model-sel">${modelBtns}</div>
+        ${specTables}
+        <div class="spec-download">
+          <button class="dl-btn dl-btn-primary" onclick="alert('IFU download coming soon.')"><i class="fa-solid fa-download"></i> Download IFU</button>
+          <button class="dl-btn dl-btn-ghost" onclick="alert('Enquiry form coming soon.')"><i class="fa-solid fa-envelope"></i> Enquire</button>
+        </div>
+      </div>`;
+  });
+
+  updateLanceHero(LANCE_TABS[0].id);
+
+  document.addEventListener("click", function(e) {
+    const tab = e.target.closest(".model-tab[data-model]");
+    if (!tab) return;
+    const targetId = tab.dataset.model;
+    document.querySelectorAll(".model-tab[data-model]").forEach(t => {
+      t.classList.toggle("active", t === tab);
+      t.setAttribute("aria-selected", t === tab ? "true" : "false");
+    });
+    document.querySelectorAll(".model-panel").forEach(p => p.classList.remove("active"));
+    const panel = qs("panel-" + targetId);
+    if (panel) panel.classList.add("active");
+    updateLanceHero(targetId);
+  });
+
+  const lanceTrust = qs("trustBar");
+  if (lanceTrust) lanceTrust.innerHTML = [
+    { path: `<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>`,   title: "ISO Certified",      desc: "All NanoSharp lance tip knives manufactured to ISO surgical blade standards." },
+    { path: `<circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>`,    title: "Single-Use Sterile", desc: "Every blade individually packaged, EO-sterilised, supplied ready for use." },
+    { path: `<path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/>`, title: "Ultra-Sharp Edge", desc: "Precision-ground stainless steel for clean, trauma-free initial incisions." },
+  ].map(t => `<div class="trust-card"><div class="trust-icon" style="background:rgba(10,94,168,0.08);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--neu-accent)" stroke-width="2" stroke-linecap="round">${t.path}</svg></div><div><h3>${t.title}</h3><p>${t.desc}</p></div></div>`).join("");
+
+  const lanceIfuH = qs("ifuHeader");
+  if (lanceIfuH) lanceIfuH.innerHTML = `<div class="ifu-icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div><div><div class="ifu-title">Instructions for Use</div><div class="ifu-sub">Download IFU for Lance Ip product lines</div></div>`;
+  const lanceIfuG = qs("ifuGrid");
+  if (lanceIfuG) lanceIfuG.innerHTML = [
+    { label: "IFU — Lance Ip 15°", sub: "NS 1524LT · 24 Gauge" },
+    { label: "IFU — Lance Ip 30°", sub: "NS 3024LT · 24 Gauge" },
+    { label: "IFU — Lance Ip 45°", sub: "NS 4524LT · 24 Gauge" },
+  ].map(l => `<a href="#" class="ifu-link"><div class="ifu-link-icon hydro-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--neu-accent)" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg></div><div class="ifu-link-text"><strong>${l.label}</strong><span>${l.sub}</span></div></a>`).join("");
+
+  const lanceBC = qs("breadcrumb");
+  if (lanceBC) lanceBC.innerHTML = `<a href="../Pages/index.html">Home</a><span class="sep">/</span><a href="#">Our Products</a><span class="sep">/</span><span class="current">Lance Ip Blade</span>`;
+  const waF3 = qs("waFloat"); if (waF3) waF3.href = PAGE.company.whatsapp;
+  const copy3 = qs("footerCopyright"); if (copy3) copy3.textContent = PAGE.company.copyright;
+}
+
+/*************************************************
+ * MVR BLADE PAGE — mvrBlade.html
+ *************************************************/
+if (ACTIVE_PAGE === "mvrBlade") {
+
+  const MVR_TABS = [
+    {
+      id: "mvr19", name: "MVR Blades", type: "Self Sealing / Cuchillas",
+      tag: "MVR Blade · Self Sealing / Cuchillas",
+      title: "MVR Blade", subtitle: "MVR Blades (MVR Cuchillas) — Water Tight Self Sealing Incision · Straight / Angled 45° · Bevel Up/Down",
+      desc: "MVR blade for water tight self sealing incision at 19 Gauge · 20 Gauge · 24 Gauge . Straight / Angled 45° Bevel Up / Down.", 
+      lensImg: "../Multimedia/msMVRBlade.png",
+      highlights: [
+        { icon: "fa-diamond-turn-right", text: "MVR geometry"          },
+        { icon: "fa-droplet-slash",      text: "Water-tight seal"      },
+        { icon: "fa-arrows-left-right",  text: "Straight / 45° angled" },
+        { icon: "fa-rotate",             text: "Bevel up / down"       },
+        { icon: "fa-certificate",        text: "CE certified"          },
+      ],
+      variants: [
+        {
+          id: "NS19MVR", label: "NS 19MVR", lensImg: "../Multimedia/msMVRBlade.png",
+          specs: [
+            { label: "Model",       value: "NS 19MVR",                     accent: true },
+            { label: "Gauge",       value: "19 Gauge",                     accent: true },
+            { label: "Type",        value: "MVR Blade"                                  },
+            { label: "Incision",    value: "Water Tight Self Sealing"                   },
+            { label: "Orientation", value: "Straight / Angled 45°"                      },
+            { label: "Bevel",       value: "Up / Down"                                  },
+            { label: "Order",       value: "Standard",                     accent: true },
+          ],
+          specialOrder: null,
+        },
+        {
+          id: "NS20MVR", label: "NS 20MVR", lensImg: "../Multimedia/msMVRBlade.png",
+          specs: [
+            { label: "Model",       value: "NS 20MVR",                     accent: true },
+            { label: "Gauge",       value: "20 Gauge",                     accent: true },
+            { label: "Type",        value: "MVR Blade"                                  },
+            { label: "Incision",    value: "Water Tight Self Sealing"                   },
+            { label: "Orientation", value: "Straight / Angled 45°"                      },
+            { label: "Bevel",       value: "Up / Down"                                  },
+            { label: "Order",       value: "Standard",                     accent: true },
+          ],
+          specialOrder: null,
+        },
+        {
+          id: "NS24MVR", label: "NS 24MVR", lensImg: "../Multimedia/msMVRBlade.png",
+          specs: [
+            { label: "Model",       value: "NS 24MVR",                     accent: true },
+            { label: "Gauge",       value: "24 Gauge",                     accent: true },
+            { label: "Type",        value: "MVR Blade"                                  },
+            { label: "Incision",    value: "Water Tight Self Sealing"                   },
+            { label: "Orientation", value: "Straight / Angled 45°"                      },
+            { label: "Bevel",       value: "Up / Down"                                  },
+            { label: "Order",       value: "Standard",                     accent: true },
+          ],
+          specialOrder: null,
+        }
+      ],
+      
+    },
+  ];
+
+  qs("heroEyebrow") && (qs("heroEyebrow").innerHTML = '<span class="pulse"></span>NanoSharp · MVR Blades · Water Tight Self Sealing');
+  qs("page-h1")     && (qs("page-h1").innerHTML     = "MVR Blade<br><em>NanoSharp</em>");
+  qs("heroDesc")    && (qs("heroDesc").textContent   = "MVR Blades (MVR Cuchillas) for Water Tight Self Sealing Incision. Straight / Angled 45° · Bevel Up / Down. Available in 19, 20 and 24 Gauge.");
+  qs("heroBtns")    && (qs("heroBtns").innerHTML     = `
+    <a href="#models" class="hero-btn-iol-primary"><i class="fa-solid fa-grid-2" style="font-size:12px;"></i> View Models</a>
+    <a href="../Pages/index.html" class="hero-btn-iol-ghost"><i class="fa-solid fa-arrow-left" style="font-size:11px;"></i> Home</a>`);
+
+  function updateMvrHero(tabId) {
+    const data = MVR_TABS.find(t => t.id === tabId);
+    if (!data) return;
+    const wrap = qs("heroBladeWrap");
+    if (wrap) wrap.innerHTML = `<img src="${data.lensImg}" alt="${data.title}" style="width:240px;height:240px;object-fit:contain;" onerror="this.style.opacity='0'"/>`;
+    const ey = qs("heroEyebrow");
+    if (ey) ey.innerHTML = `<span class="pulse"></span>${data.tag}`;
+  }
+
+  const mvrTabBar = qs("bladeSubTabBar");
+  if (mvrTabBar) {
+    mvrTabBar.innerHTML = MVR_TABS.map((t, i) => `
+      <button class="model-tab${i === 0 ? " active" : ""}" role="tab" aria-selected="${i === 0}"
+        aria-controls="panel-${t.id}" data-model="${t.id}" type="button">
+        <div class="model-tab-name">${t.name}</div>
+        <div class="model-tab-type">${t.type}</div>
+        <div class="model-tab-dot"></div>
+      </button>`).join("");
+  }
+
+  const mvrPanelsWrap = qs("blade-sub-panels");
+  if (mvrPanelsWrap) {
+    mvrPanelsWrap.innerHTML = MVR_TABS.map((t, i) =>
+      `<div id="panel-${t.id}" class="model-panel${i === 0 ? " active" : ""}"></div>`
+    ).join("");
+  }
+
+  MVR_TABS.forEach(function(data) {
+    const panelEl = qs("panel-" + data.id);
+    if (!panelEl) return;
+    const chips     = data.highlights.map(h => `<div class="highlight-chip"><i class="fa-solid ${h.icon}"></i><span class="highlight-chip-text">${h.text}</span></div>`).join("");
+    const modelBtns = data.variants.map((v, i) => `<button class="spec-model-btn${i === 0 ? " active" : ""}" data-rows="${v.id}" data-lens="${v.lensImg}" type="button">${v.label}</button>`).join("");
+    const specTables = data.variants.map((v, i) => {
+      const rows = v.specs.map(s => `<div class="spec-row"><span class="spec-row-label">${s.label}</span><span class="spec-row-val${s.accent ? " accent" : ""}" style="${s.accent ? "color:var(--neu-accent);font-weight:600;" : ""}">${s.value}</span></div>`).join("");
+      return `<div class="spec-rows" id="${v.id}"${i > 0 ? ' style="display:none;"' : ""}>${rows}</div>`;
+    }).join("");
+    panelEl.innerHTML = `
+      <div class="neu-card">
+        <div class="card-top">
+          <span class="card-tag" style="background:rgba(10,94,168,0.1);color:var(--neu-accent);">${data.tag}</span>
+          <div class="card-title">${data.title}</div>
+          <div class="card-subtitle">${data.subtitle}</div>
+        </div>
+        <div class="card-lens-area"><div class="card-lens-bg"></div>
+          <div class="card-lens-svg"><img src="${data.lensImg}" alt="${data.title}" style="width:140px;height:140px;object-fit:contain;" onerror="this.style.opacity='0'"/></div>
+        </div>
+        <div class="card-desc">${data.desc}</div>
+        <div class="card-highlights">${chips}</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-card-head">
+          <div class="spec-head-icon" style="background:rgba(10,94,168,0.1);color:var(--neu-accent);"><i class="fa-solid fa-table-list"></i></div>
+          <div><div class="spec-head-title">Technical Specifications</div><div class="spec-head-sub">${data.title} — ${data.tag}</div></div>
+        </div>
+        <p class="flip-hint-btn"><i class="fa-regular fa-hand-pointer" style="margin-top:0.1rem;"></i> Select the model to reveal full specifications</p>
+        <div class="spec-model-sel">${modelBtns}</div>
+        ${specTables}
+        <div class="spec-download">
+          <button class="dl-btn dl-btn-primary" onclick="alert('IFU download coming soon.')"><i class="fa-solid fa-download"></i> Download IFU</button>
+          <button class="dl-btn dl-btn-ghost" onclick="alert('Enquiry form coming soon.')"><i class="fa-solid fa-envelope"></i> Enquire</button>
+        </div>
+      </div>`;
+  });
+
+  updateMvrHero(MVR_TABS[0].id);
+
+  document.addEventListener("click", function(e) {
+    const tab = e.target.closest(".model-tab[data-model]");
+    if (!tab) return;
+    const targetId = tab.dataset.model;
+    document.querySelectorAll(".model-tab[data-model]").forEach(t => {
+      t.classList.toggle("active", t === tab);
+      t.setAttribute("aria-selected", t === tab ? "true" : "false");
+    });
+    document.querySelectorAll(".model-panel").forEach(p => p.classList.remove("active"));
+    const panel = qs("panel-" + targetId);
+    if (panel) panel.classList.add("active");
+    updateMvrHero(targetId);
+  });
+
+  const mvrTrust = qs("trustBar");
+  if (mvrTrust) mvrTrust.innerHTML = [
+    { path: `<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>`,   title: "ISO Certified",      desc: "All NanoSharp MVR blades manufactured to ISO surgical blade standards." },
+    { path: `<circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>`,    title: "Single-Use Sterile", desc: "Every blade individually packaged, EO-sterilised, supplied ready for use." },
+    { path: `<path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/>`, title: "Water-Tight Seal", desc: "MVR geometry ensures water-tight self-sealing incisions with minimal leakage." },
+  ].map(t => `<div class="trust-card"><div class="trust-icon" style="background:rgba(10,94,168,0.08);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--neu-accent)" stroke-width="2" stroke-linecap="round">${t.path}</svg></div><div><h3>${t.title}</h3><p>${t.desc}</p></div></div>`).join("");
+
+  const mvrIfuH = qs("ifuHeader");
+  if (mvrIfuH) mvrIfuH.innerHTML = `<div class="ifu-icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div><div><div class="ifu-title">Instructions for Use</div><div class="ifu-sub">Download IFU for MVR Blade product lines</div></div>`;
+  const mvrIfuG = qs("ifuGrid");
+  if (mvrIfuG) mvrIfuG.innerHTML = [
+    { label: "IFU — MVR 19 Gauge", sub: "NS 19MVR · Self Sealing" },
+    { label: "IFU — MVR 20 Gauge", sub: "NS 20MVR · Self Sealing" },
+    { label: "IFU — MVR 24 Gauge", sub: "NS 24MVR · Self Sealing" },
+  ].map(l => `<a href="#" class="ifu-link"><div class="ifu-link-icon hydro-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--neu-accent)" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg></div><div class="ifu-link-text"><strong>${l.label}</strong><span>${l.sub}</span></div></a>`).join("");
+
+  const mvrBC = qs("breadcrumb");
+  if (mvrBC) mvrBC.innerHTML = `<a href="../Pages/index.html">Home</a><span class="sep">/</span><a href="#">Our Products</a><span class="sep">/</span><span class="current">MVR Blade</span>`;
+  const waF4 = qs("waFloat"); if (waF4) waF4.href = PAGE.company.whatsapp;
+  const copy4 = qs("footerCopyright"); if (copy4) copy4.textContent = PAGE.company.copyright;
 }
