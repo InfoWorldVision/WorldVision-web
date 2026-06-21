@@ -2350,7 +2350,7 @@ document.addEventListener("click", function(e) {
     }
 
      // Change PMMA hero lens
-    if (ACTIVE_PAGE === "pmmaIol") {
+    if (ACTIVE_PAGE === "pmmaIOL") {
       const heroLensImg = qs("heroLensWrap")?.querySelector("img");
 
       if (heroLensImg) {
@@ -3147,7 +3147,7 @@ if (ACTIVE_PAGE === "toricCalculator") {
     <div style="max-width:500px;">
       <div class="toric-hero-eyebrow" style="margin-bottom:0.8rem;"><span class="pulse"></span>${TORIC.methodology.eyebrow}</div>
       <h2 style="font-family:'DM Serif Display',serif;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:400;color:var(--neu-text);margin-bottom:0.5rem;letter-spacing:-0.02em;">${TORIC.methodology.heading}</h2>
-      <p style="font-size:14px;line-height:1.75;color:var(--neu-muted);">${TORIC.methodology.desc}</p>
+      <p style="font-size:15px;line-height:1.75;color:var(--neu-muted);">${TORIC.methodology.desc}</p>
     </div>
     <div class="info-grid">
       ${TORIC.methodology.steps.map(s =>
@@ -5615,7 +5615,7 @@ if (ACTIVE_PAGE === "keratome") {
     }).join("");
     const specialBlock = data.specialOrder ? `
       <div style="margin-top:0.8rem;">
-        <div style="display:flex;align-items:center;gap:6px;margin-bottom:8px;font-size:12px;color:var(--neu-muted);">
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:8px;font-size:13px;color:var(--neu-muted);">
           <i class="fa-solid fa-rotate" style="font-size:10px;color:var(--neu-accent);"></i>
           Special Order Models
         </div>

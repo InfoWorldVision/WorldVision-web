@@ -857,7 +857,8 @@ const lenses = [
 const imgPath = "../Multimedia/";
 const rowHeight = 120;
 const duplicates = 2;
-const buffer = 3;
+const buffer = 1;
+const estimatedLensSlotWidth = 132;
 
 function shuffle(arr) {
   return arr.slice().sort(function() {
@@ -868,26 +869,35 @@ function shuffle(arr) {
 function renderLensBg() {
   if (!lensBg) return;
 
-  lensBg.innerHTML = "";
+  const fragment = document.createDocumentFragment();
   const rowsNeeded = Math.ceil(window.innerHeight / rowHeight) + buffer;
+  const lensesPerSet = Math.min(
+    lenses.length,
+    Math.max(10, Math.ceil(window.innerWidth / estimatedLensSlotWidth) + 2)
+  );
 
   for (let i = 0; i < rowsNeeded; i++) {
     const row = document.createElement("div");
     row.className = "lens-row";
 
-    const shuffled = shuffle(lenses);
+    const shuffled = shuffle(lenses).slice(0, lensesPerSet);
 
     for (let d = 0; d < duplicates; d++) {
       shuffled.forEach(function(name) {
         const img = document.createElement("img");
         img.src = imgPath + name;
         img.alt = "";
+        img.decoding = "async";
+        img.fetchPriority = "low";
+        img.draggable = false;
         row.appendChild(img);
       });
     }
 
-    lensBg.appendChild(row);
+    fragment.appendChild(row);
   }
+
+  lensBg.replaceChildren(fragment);
 }
 
 renderLensBg();
@@ -953,6 +963,7 @@ function startLenis() {
 
 function initReverseTriggers() {
   if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") return;
+  if (!document.querySelector(".col-scroll__list")) return;
 
   ScrollTrigger.getAll().forEach(function(t) {
     t.kill();
@@ -1192,9 +1203,11 @@ let resizeTimer;
 
 window.addEventListener("resize", () => {
   if (window.innerWidth >= 1024) closeMenu();
-  renderLensBg();
-  clearTimeout(window._resizeTimer);
-  window._resizeTimer = setTimeout(initReverseTriggers, 250);
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(function() {
+    renderLensBg();
+    initReverseTriggers();
+  }, 250);
 });
 window.addEventListener("pageshow", () => {
   document.body.classList.remove("menu-open");

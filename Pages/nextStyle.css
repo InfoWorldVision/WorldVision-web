@@ -87,7 +87,7 @@
   --neu-accent: #0055a5;
   --neu-accent2: #0077cc;
   --neu-text: #2c3340;
-  --neu-muted: #6b7585;
+  --neu-muted: #526070;
   --neu-hydro-bg: #dde8f5;
   --neu-hydro-c: #0a5ea8;
   --neu-phil-bg: #ddf0e8;
@@ -108,7 +108,7 @@ html.dark {
   --neu-accent: #4d9fef;
   --neu-accent2: #69b3f7;
   --neu-text: #dde3ee;
-  --neu-muted: #7a8aaa;
+  --neu-muted: #aebbd0;
   --neu-hydro-bg: #1a2a3e;
   --neu-hydro-c: #5aaaf5;
   --neu-phil-bg: #162a22;
@@ -618,7 +618,7 @@ html.dark .au-footer-bottom {
 }
 
 .subtitle {
-  color: #cd79b2 !important;
+  color: #8f3d73 !important;
 }
 
 .nav-glass {
