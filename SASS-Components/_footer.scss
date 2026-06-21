@@ -207,9 +207,9 @@
 .au-footer-brand-name { font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--neu-text);margin-bottom:2px; }
 .au-footer-brand-sub  { font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--neu-muted); }
 .au-footer-tagline { font-size:.83rem;color:var(--neu-muted);line-height:1.68;margin-top:14px; }
-.au-footer-socials { display:flex;gap:5rem;margin-top:18px; justify-content: center; }
+.au-footer-socials { display:flex;gap:4rem;margin-top:18px; justify-content: center; }
 .au-footer-social {
-  width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;
+  width:50px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;
   background:rgba(0,85,165,.09);color:var(--neu-accent);
   font-size:.85rem;transition:.2s ease;text-decoration:none;
       box-shadow: 4px 4px 10px var(--neu-dark), -4px -4px 10px var(--neu-light);
