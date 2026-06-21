@@ -211,3 +211,23 @@
         }
     }
 }
+
+/* ──About us stats ──────────────────────────────── */
+.au-stats {
+    display: grid; grid-template-columns: repeat(4,1fr);
+    border-radius: 22px; overflow: hidden;
+    background: linear-gradient(145deg, var(--neu-light), var(--neu-bg2));
+    box-shadow: 12px 12px 28px var(--neu-dark), -12px -12px 28px var(--neu-light);
+}
+.au-stat {
+    padding: 36px 28px; text-align: center; position: relative;
+}
+.au-stat + .au-stat::before {
+    content:''; position:absolute; left:0; top:18%; bottom:18%;
+    width:1px; background:var(--neu-dark); opacity:.4;
+}
+.au-stat-num {
+    font-family:'DM Serif Display',serif; font-size: 2.4rem;
+    color: var(--neu-accent); line-height:1; margin-bottom:6px;
+}
+.au-stat-lbl { font-size:.78rem; font-weight:500; color:var(--neu-muted); }

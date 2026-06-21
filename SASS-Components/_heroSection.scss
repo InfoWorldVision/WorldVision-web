@@ -354,3 +354,47 @@
     margin-bottom: 1.8rem;
   }
 }
+
+/* ═══════════════════════════════════════════
+       ABOUT US — custom styles
+═══════════════════════════════════════════ */
+
+/* ── Hero ───────────────────────────────── */
+.about-hero {
+  padding: 108px 24px 52px;
+  display: flex;
+  align-items: center;
+}
+.about-hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+  width: 100%;
+}
+.about-hero-text h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+  line-height: 1.15;
+  color: var(--neu-text);
+  margin: 18px 0 20px;
+}
+.about-hero-text h1 em { font-style: italic; color: var(--neu-accent); }
+.about-hero-text p {
+  font-size: 1rem;
+  color: var(--neu-muted);
+  line-height: 1.75;
+  max-width: 500px;
+  margin-bottom: 28px;
+}
+.about-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.about-chip {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 7px 14px; border-radius: 999px;
+  font-size: 0.76rem; font-weight: 500; color: var(--neu-text);
+  background: linear-gradient(145deg, var(--neu-light), var(--neu-bg2));
+  box-shadow: 3px 3px 7px var(--neu-dark), -3px -3px 7px var(--neu-light);
+}
+.about-chip i { color: var(--neu-accent); font-size: 10px; }

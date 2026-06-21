@@ -16,8 +16,8 @@ const SITE = {
     links: [
       { label: "Home",       href: "../Pages/index.html",     page: "index"     },
       { label: "Gallery",    href: "../Pages/gallery.html",   page: "gallery"   },
-      { label: "Blog",       href: "#blog",                   page: "blog"      },
-      { label: "About Us",   href: "#aboutus",                page: "about"     },
+      // { label: "Blog",       href: "#blog",                   page: "blog"      },
+      { label: "About Us",   href: "../Pages/aboutUs.html",   page: "about"     },
       { label: "Contact Us", href: "../Pages/contactUs.html", page: "contactUs" },
     ],
     events: {
@@ -163,7 +163,7 @@ const SITE = {
         { label: "Home",             href: "../Pages/index.html",           page: "index"           },
         { label: "Toric Calculator", href: "../Pages/toricCalculator.html", page: "toricCalculator" },
         { label: "Gallery",          href: "../Pages/gallery.html",         page: "gallery"         },
-        { label: "About",            href: "#about",                        page: "about"           },
+        { label: "About",            href: "../Pages/aboutUs.html",         page: "about"           },
         { label: "Contact",          href: "../Pages/contactUs.html",       page: "contactUs"       },
       ],
       // VIEW 2 — products sub-menu
@@ -388,8 +388,8 @@ const SITE = {
       { label: "Products",   href: "#products"                   },
       { label: "IOL Lenses", href: "../Pages/iol-page.html"      },
       { label: "Gallery",    href: "../Pages/gallery.html"        },
-      { label: "About Us",   href: "#about"                      },
-      { label: "Contact",    href: "#contact"                    },
+      { label: "About Us",   href: "../Pages/aboutUs.html"      },
+      { label: "Contact",    href: "../Pages/contactUs.html"       },
       { label: "Toric Calc", href: "../Pages/toricCalculator.html"},
     ],
     copyright: "© 2026 World Vision Ophthalmic Pvt. Ltd. · All rights reserved.",
@@ -1223,47 +1223,6 @@ if (typeof Swiper !== "undefined" && document.querySelector(".heroSwiper")) {
     resistanceRatio: 0
   });
 }
-
-
-/*************************************************
- * QUICK LINKS
- *************************************************/
-
-const links = [
-  "Home",
-  "Lens A",
-  "Lens B",
-  "Lens C",
-  "Lens D",
-  "Lens E",
-  "Lens F",
-  "Lens G",
-  "About",
-  "Contact"
-];
-
-const left = document.getElementById("quickLinksLeft");
-const right = document.getElementById("quickLinksRight");
-
-function renderQuickLinks() {
-  if (!left || !right) return;
-
-  left.innerHTML = "";
-  right.innerHTML = "";
-
-  links.forEach(function(item, index) {
-    const li = document.createElement("li");
-    li.innerHTML = `<a href="#" class="hover:text-blue-600 transition">${item}</a>`;
-
-    if (index < 5) {
-      left.appendChild(li);
-    } else {
-      right.appendChild(li);
-    }
-  });
-}
-
-renderQuickLinks();
 
 
 /*************************************************

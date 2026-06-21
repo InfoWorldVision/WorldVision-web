@@ -46,6 +46,11 @@ const PAGE = {
         description: "World Vision Hydrophilic IOL — Nano Fold, Nano Flex, Nano Flex Y. European medical-grade hydrophilic acrylic, 25% water content, available in spheric and aspheric designs."
       },
 
+      pmmaIol: {
+        title: "PMMA IOL — World Vision Ophthalmic",
+        description: "World Vision PMMA IOL — UK medical-grade Polymethyl Methacrylate. Posterior chamber, anterior chamber, and capsular tension ring solutions."
+      },
+
       nanoFold: {
         title: "Nano Fold — World Vision Ophthalmic",
         description: "World Vision Nano Fold — Spheric 360° Square Edge Hydrophilic Acrylic IOL. Models NFR 574 SQ, NFR 600 SQ, NFC 600 SQ, NFM 604 SQ."
@@ -115,6 +120,39 @@ const PAGE = {
     copyright: "© 2026 World Vision Ophthalmic Pvt. Ltd. · All rights reserved.",
   },
 
+  footer: {
+    tagline: "Premium ophthalmic products - IOLs, surgical blades, and pharma - crafted in Chennai for surgeons worldwide.",
+    socials: [
+      { href: "#", icon: "fa-brands fa-linkedin-in", label: "LinkedIn" },
+      { href: "#", icon: "fa-brands fa-instagram", label: "Instagram" },
+      { href: "https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv", icon: "fa-brands fa-whatsapp", label: "WhatsApp" },
+    ],
+    quickLinks: [
+      { label: "Home",             href: "../Pages/index.html" },
+      { label: "Hydrophobic IOL",  href: "../Pages/hydrophobicIol.html" },
+      { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html" },
+      { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html" },
+      { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
+      { label: "Contact Us",       href: "../Pages/contactUs.html" },
+      { label: "Gallery",          href: "../Pages/gallery.html" },
+    ],
+    products: [
+      { label: "Nano Claro",      href: "../Pages/nanoClaro.html" },
+      { label: "Nano Grand",      href: "../Pages/nanoGrand.html" },
+      { label: "Nano Fold",       href: "../Pages/nanoFold.html" },
+      { label: "Nano Flex",       href: "../Pages/nanoFlex.html" },
+      { label: "Keratome Blades", href: "../Pages/keratome.html" },
+      { label: "Crescent Blades", href: "../Pages/crescent.html" },
+      { label: "MVR Blades",      href: "../Pages/mvrBlade.html" },
+    ],
+    contact: {
+      address: "Chennai, Tamil Nadu, India - PIN 600001",
+      phone:   "+91 98765 43210",
+      email:   "info@worldvisionophthalmic.com",
+      hours:   "Mon-Sat, 9AM-6PM IST",
+    },
+  },
+
   nav: {
     links: [
       { label: "Home",           href: "../Pages/index.html",         page: "index"          },
@@ -127,7 +165,7 @@ const PAGE = {
     products: {
       label: "Our Products",
       // Pages that belong under the Products dropdown — used for active-nav detection
-      pages: ["iol-page","hydrophobicIol","hydrophilicIOL","pmmaIol","premiumIol","pharmaProducts","surgicalBlades","nanoClaro","nanoGrand","nanoClaroPlus","nanoGrandPlus","nanoFold","nanoFlex"],
+      pages: ["iol-page","hydrophobicIol","hydrophilicIOL","pmmaIol","premiumIol","pharmaProducts","keratome","crescent","lanceIp","mvrBlade","nanoClaro","nanoGrand","nanoClaroPlus","nanoGrandPlus","nanoFold","nanoFlex"],
       children: [
         {
           label: "Intraocular Lens",
@@ -154,14 +192,14 @@ const PAGE = {
         },
         {
           label: "Micro Surgical Blades",
-          href:  "#",
+          href:  "../Pages/keratome.html",
           icon:  "fa-cut",
           color: "var(--neu-accent2)",
           children: [
-            { label: "Keratome",  href: "../Pages/keratome.html",       icon: "fa-pen-fancy",          color: "text-slate-500" },
-            { label: "Crescent",  href: "../Pages/crescent.html",       icon: "fa-moon",               color: "text-blue-400"  },
-            { label: "Lance Ip",  href: "../Pages/lancelp.html",        icon: "fa-staff-snake",        color: "text-amber-400" },
-            { label: "MVR Blade", href: "../Pages/mvrBlade.html",       icon: "fa-diamond-turn-right", color: "text-red-400"   },
+            { label: "Keratome",  href: "../Pages/keratome.html",  icon: "fa-pen-fancy",          color: "text-slate-500" },
+            { label: "Crescent",  href: "../Pages/crescent.html",  icon: "fa-moon",               color: "text-blue-400"  },
+            { label: "Lance Ip",  href: "../Pages/lancelp.html",   icon: "fa-staff-snake",        color: "text-amber-400" },
+            { label: "MVR Blade", href: "../Pages/mvrBlade.html",  icon: "fa-diamond-turn-right", color: "text-red-400"   },
           ],
         },
       ],
@@ -234,10 +272,10 @@ const PAGE = {
         { label: "Hydrophilic IOL",    current: true                  },
       ],
       pmmaIOL: [
-        { label: "Home",               href: "../Pages/index.html"          },
-        { label: "Our Products",       href: "#"                            },
-        { label: "Intraocular Lenses", href: "../Pages/iol-page.html"       },
-        { label: "PMMA IOL",           current: true                        },
+        { label: "Home",               href: "../Pages/index.html"    },
+        { label: "Our Products",       href: "#"                      },
+        { label: "Intraocular Lenses", href: "../Pages/iol-page.html" },
+        { label: "PMMA IOL",           current: true                  },
       ],
       nanoFold: [
         { label: "Home",               href: "../Pages/index.html"          },
@@ -257,23 +295,43 @@ const PAGE = {
         { label: "Hydrophobic IOL",    href: "../Pages/hydrophobicIol.html"  },
         { label: "Nano Claro",         current: true                         },
       ],
-      nanoClaroPlus: [
-        { label: "Home",               href: "../Pages/index.html"          },
-        { label: "Our Products",       href: "#"                             },
-        { label: "Hydrophobic IOL",    href: "../Pages/hydrophobicIol.html"  },
-        { label: "Nano Claro Plus",    current: true                         },
-      ],
       nanoGrand: [
         { label: "Home",               href: "../Pages/index.html"          },
         { label: "Our Products",       href: "#"                             },
         { label: "Hydrophobic IOL",    href: "../Pages/hydrophobicIol.html"  },
         { label: "Nano Grand",         current: true                         },
       ],
+      nanoClaroPlus: [
+        { label: "Home",               href: "../Pages/index.html"          },
+        { label: "Our Products",       href: "#"                             },
+        { label: "Hydrophobic IOL",    href: "../Pages/hydrophobicIol.html"  },
+        { label: "Nano Claro Plus",    current: true                         },
+      ],
       nanoGrandPlus: [
         { label: "Home",               href: "../Pages/index.html"          },
         { label: "Our Products",       href: "#"                             },
         { label: "Hydrophobic IOL",    href: "../Pages/hydrophobicIol.html"  },
         { label: "Nano Grand Plus",    current: true                         },
+      ],
+      keratome: [
+        { label: "Home",               href: "../Pages/index.html"          },
+        { label: "Our Products",       href: "#"                             },
+        { label: "Keratome Blade",     current: true                         },
+      ],
+      crescent: [
+        { label: "Home",               href: "../Pages/index.html"          },
+        { label: "Our Products",       href: "#"                             },
+        { label: "Crescent Blade",     current: true                         },
+      ],
+      lancelp: [
+        { label: "Home",               href: "../Pages/index.html"          },
+        { label: "Our Products",       href: "#"                             },
+        { label: "Lancelp Blade",      current: true                         },
+      ],
+      mvrBlade: [
+        { label: "Home",               href: "../Pages/index.html"          },
+        { label: "Our Products",       href: "#"                             },
+        { label: "MVR Blade",          current: true                         },
       ],
       toricCalculator: [
         { label: "Home",               href: "../Pages/index.html" },
@@ -517,15 +575,66 @@ function renderDesktopNav() {
         </div>
       </li>`;
 
+      const productPageNames = {
+      "iol-page":         "Intraocular Lens",
+      hydrophobicIol:     "Hydrophobic IOL",
+      hydrophilicIOL:     "Hydrophilic IOL",
+      pmmaIol:            "PMMA IOL",
+      nanoClaro:          "Nano Claro",
+      nanoGrand:          "Nano Grand",
+      nanoClaroPlus:      "Nano Claro Plus",
+      nanoGrandPlus:      "Nano Grand Plus",
+      nanoFold:           "Nano Fold",
+      nanoFlex:           "Nano Flex",
+      keratome:           "Keratome Blade",
+      crescent:           "Crescent Blade",
+      lancelp:            "Lance IP Blade",
+      mvrBlade:           "MVR Blade"
+    };
+
+    const activeProductName = productPageNames[ACTIVE_PAGE];
+
     let html = "";
     PAGE.nav.links.forEach(link => {
       const isActive = link.page === ACTIVE_PAGE;
+
       if (link.label === "Home") {
-        html += `<li><a href="${link.href}"${isActive ? ' class="active"' : ""}>${link.label}</a></li>`;
+        html += `
+          <li>
+            <a href="${link.href}"${isActive ? ' class="active"' : ""}>
+              ${link.label}
+            </a>
+          </li>
+        `;
+
         html += productsLi;
-      } else {
-        html += `<li><a href="${link.href}"${isActive ? ' class="active"' : ""}>${link.label}</a></li>`;
+
+        // Show current product after "Our Products >"
+        if (activeProductName) {
+          html += `
+            <li>
+              <a href="#" class="active">
+                ${activeProductName}
+              </a>
+            </li>
+          `;
+        }
+
+        return;
       }
+
+      // Hide the default Hydrophobic IOL link on product pages
+      if (link.page === "hydrophobicIol" && activeProductName) {
+        return;
+      }
+
+      html += `
+        <li>
+          <a href="${link.href}"${isActive ? ' class="active"' : ""}>
+            ${link.label}
+          </a>
+        </li>
+      `;
     });
     navList.innerHTML = html;
   }
@@ -887,6 +996,52 @@ function renderFloat() {
 }
 
 function renderFooter() {
+  const footer = PAGE.footer;
+  const body = qs("auFooterBody");
+
+  if (body) {
+    body.innerHTML = `
+      <div class="au-footer-brand-col">
+        <div class="au-footer-brand-header">
+          <img src="${PAGE.company.logo}" alt="World Vision Logo"/>
+          <div>
+            <div class="au-footer-brand-name">${PAGE.company.name}</div>
+            <div class="au-footer-brand-sub">${PAGE.company.subtitle}</div>
+          </div>
+        </div>
+        <p class="au-footer-tagline">${footer.tagline}</p>
+        <div class="au-footer-socials">
+          ${footer.socials.map(s =>
+            `<a href="${s.href}" class="au-footer-social" aria-label="${s.label}" ${s.href.startsWith("http") ? 'target="_blank" rel="noopener noreferrer"' : ""}>
+              <i class="${s.icon}"></i>
+            </a>`
+          ).join("")}
+        </div>
+      </div>
+
+      <div class="au-footer-links-col">
+        <h4>Quick Links</h4>
+        <div class="au-footer-links-grid">
+          ${footer.quickLinks.map(l => `<a href="${l.href}" class="au-footer-link">${l.label}</a>`).join("")}
+        </div>
+        <h4 style="margin-top:24px;">Products</h4>
+        <div class="au-footer-links-grid">
+          ${footer.products.map(l => `<a href="${l.href}" class="au-footer-link">${l.label}</a>`).join("")}
+        </div>
+      </div>
+
+      <div class="au-footer-contact-col">
+        <h4>Contact Us</h4>
+        <div class="au-footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>${footer.contact.address}</span></div>
+        <div class="au-footer-contact-item"><i class="fa-solid fa-phone"></i><span><a href="tel:${footer.contact.phone}">${footer.contact.phone}</a></span></div>
+        <div class="au-footer-contact-item"><i class="fa-solid fa-envelope"></i><span><a href="mailto:${footer.contact.email}">${footer.contact.email}</a></span></div>
+        <div class="au-footer-contact-item"><i class="fa-solid fa-clock"></i><span>${footer.contact.hours}</span></div>
+      </div>`;
+  }
+
+  const bottom = qs("auFooterBottom");
+  if (bottom) bottom.textContent = PAGE.company.copyright;
+
   const copy = qs("footerCopyright");
   if (copy) copy.textContent = PAGE.company.copyright;
 }
@@ -1051,6 +1206,86 @@ if (ACTIVE_PAGE === "nanoClaro") {
     <a href="#models" class="hero-btn-iol-primary"><i class="fa-solid fa-grid-2" style="font-size:12px;"></i> View Models</a>
     <a href="../Pages/hydrophobicIol.html" class="hero-btn-iol-ghost"><i class="fa-solid fa-arrow-left" style="font-size:11px;"></i> Hydrophobic IOL</a>`;
 
+  const LENS = {
+    footer: {
+      tagline: "Premium ophthalmic products — IOLs, surgical blades, and pharma — crafted in Chennai for surgeons worldwide.",
+      socials: [
+        { href: "#", icon: "fa-brands fa-linkedin-in", label: "LinkedIn"  },
+        { href: "#", icon: "fa-brands fa-instagram",   label: "Instagram" },
+        { href: "https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv", icon: "fa-brands fa-whatsapp", label: "WhatsApp" },
+      ],
+      quickLinks: [
+        { label: "Home",             href: "../Pages/index.html"           },
+        { label: "Hydrophobic IOL",  href: "../Pages/hydrophobicIol.html"  },
+        { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html"  },
+        { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html"         },
+        { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
+        { label: "Contact Us",       href: "../Pages/contactUs.html"       },
+        { label: "Gallery",          href: "../Pages/gallery.html"         },
+      ],
+      products: [
+        { label: "Nano Claro",      href: "../Pages/nanoClaro.html"  },
+        { label: "Nano Grand",      href: "../Pages/nanoGrand.html"  },
+        { label: "Nano Fold",       href: "../Pages/nanoFold.html"   },
+        { label: "Nano Flex",       href: "../Pages/nanoFlex.html"   },
+        { label: "Keratome Blades", href: "../Pages/keratome.html"   },
+        { label: "Crescent Blades", href: "../Pages/crescent.html"   },
+        { label: "MVR Blades",      href: "../Pages/mvrBlade.html"   },
+      ],
+      contact: {
+        address: "Chennai, Tamil Nadu, India — PIN 600001",
+        phone:   "+91 98765 43210",
+        email:   "info@worldvisionophthalmic.com",
+        hours:   "Mon–Sat, 9AM–6PM IST",
+      },
+    },
+  }
+
+  // ── Footer ────────────────────────────────────────────────────────────
+  const fb = qs("auFooterBody");
+  if (fb) fb.innerHTML = `
+    <div class="au-footer-brand-col">
+      <div class="au-footer-brand-header">
+        <img src="${PAGE.company.logo}" alt="World Vision Logo"/>
+        <div>
+          <div class="au-footer-brand-name">${PAGE.company.name}</div>
+          <div class="au-footer-brand-sub">${PAGE.company.subtitle}</div>
+        </div>
+      </div>
+      <p class="au-footer-tagline">${LENS.footer.tagline}</p>
+      <div class="au-footer-socials">
+        ${LENS.footer.socials.map(s =>
+          `<a href="${s.href}" class="au-footer-social" aria-label="${s.label}" ${s.href.startsWith("http") ? 'target="_blank"' : ""}>
+            <i class="${s.icon}"></i>
+          </a>`
+        ).join("")}
+      </div>
+    </div>
+
+    <div class="au-footer-links-col">
+      <h4>Quick Links</h4>
+      <div class="au-footer-links-grid">
+        ${LENS.footer.quickLinks.map(l => `<a href="${l.href}" class="au-footer-link">${l.label}</a>`).join("")}
+      </div>
+      <h4 style="margin-top:24px;">Products</h4>
+      <div class="au-footer-links-grid">
+        ${LENS.footer.products.map(l => `<a href="${l.href}" class="au-footer-link">${l.label}</a>`).join("")}
+      </div>
+    </div>
+
+    <div class="au-footer-contact-col">
+      <h4>Contact Us</h4>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>${LENS.footer.contact.address}</span></div>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-phone"></i><span><a href="tel:${LENS.footer.contact.phone}">${LENS.footer.contact.phone}</a></span></div>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-envelope"></i><span><a href="mailto:${LENS.footer.contact.email}">${LENS.footer.contact.email}</a></span></div>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-clock"></i><span>${LENS.footer.contact.hours}</span></div>
+    </div>`;
+
+    const fc = qs("auFooterBottom");
+    if (fc) fc.textContent = PAGE.company.copyright;
+
+    const waF = qs("waFloat");
+    if (waF) waF.href = PAGE.company.whatsapp;
 }
 
 if (ACTIVE_PAGE === "nanoGrand") {
@@ -1181,7 +1416,7 @@ if (ACTIVE_PAGE === "nanoGrand") {
 
   // Override hero heading id for monofocal page
   const monoH1 = qs("page-h1");
-  if (monoH1) monoH1.innerHTML = "Nano Claro<br><em>Hydrophobic IOL</em>";
+  if (monoH1) monoH1.innerHTML = "Nano Grand<br><em>Hydrophobic IOL</em>";
 
   const monoEyebrow = qs("heroEyebrow");
   if (monoEyebrow) monoEyebrow.innerHTML = '<span class="pulse"></span>Hydrophobic · Monofocal · USA Acrylic';
@@ -1193,6 +1428,87 @@ if (ACTIVE_PAGE === "nanoGrand") {
   if (monoBtns) monoBtns.innerHTML = `
     <a href="#models" class="hero-btn-iol-primary"><i class="fa-solid fa-grid-2" style="font-size:12px;"></i> View Models</a>
     <a href="../Pages/hydrophobicIol.html" class="hero-btn-iol-ghost"><i class="fa-solid fa-arrow-left" style="font-size:11px;"></i> Hydrophobic IOL</a>`;
+
+  const LENS = {
+    footer: {
+      tagline: "Premium ophthalmic products — IOLs, surgical blades, and pharma — crafted in Chennai for surgeons worldwide.",
+      socials: [
+        { href: "#", icon: "fa-brands fa-linkedin-in", label: "LinkedIn"  },
+        { href: "#", icon: "fa-brands fa-instagram",   label: "Instagram" },
+        { href: "https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv", icon: "fa-brands fa-whatsapp", label: "WhatsApp" },
+      ],
+      quickLinks: [
+        { label: "Home",             href: "../Pages/index.html"           },
+        { label: "Hydrophobic IOL",  href: "../Pages/hydrophobicIol.html"  },
+        { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html"  },
+        { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html"         },
+        { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
+        { label: "Contact Us",       href: "../Pages/contactUs.html"       },
+        { label: "Gallery",          href: "../Pages/gallery.html"         },
+      ],
+      products: [
+        { label: "Nano Claro",      href: "../Pages/nanoClaro.html"  },
+        { label: "Nano Grand",      href: "../Pages/nanoGrand.html"  },
+        { label: "Nano Fold",       href: "../Pages/nanoFold.html"   },
+        { label: "Nano Flex",       href: "../Pages/nanoFlex.html"   },
+        { label: "Keratome Blades", href: "../Pages/keratome.html"   },
+        { label: "Crescent Blades", href: "../Pages/crescent.html"   },
+        { label: "MVR Blades",      href: "../Pages/mvrBlade.html"   },
+      ],
+      contact: {
+        address: "Chennai, Tamil Nadu, India — PIN 600001",
+        phone:   "+91 98765 43210",
+        email:   "info@worldvisionophthalmic.com",
+        hours:   "Mon–Sat, 9AM–6PM IST",
+      },
+    },
+  }
+
+  // ── Footer ────────────────────────────────────────────────────────────
+  const fb = qs("auFooterBody");
+  if (fb) fb.innerHTML = `
+    <div class="au-footer-brand-col">
+      <div class="au-footer-brand-header">
+        <img src="${PAGE.company.logo}" alt="World Vision Logo"/>
+        <div>
+          <div class="au-footer-brand-name">${PAGE.company.name}</div>
+          <div class="au-footer-brand-sub">${PAGE.company.subtitle}</div>
+        </div>
+      </div>
+      <p class="au-footer-tagline">${LENS.footer.tagline}</p>
+      <div class="au-footer-socials">
+        ${LENS.footer.socials.map(s =>
+          `<a href="${s.href}" class="au-footer-social" aria-label="${s.label}" ${s.href.startsWith("http") ? 'target="_blank"' : ""}>
+            <i class="${s.icon}"></i>
+          </a>`
+        ).join("")}
+      </div>
+    </div>
+
+    <div class="au-footer-links-col">
+      <h4>Quick Links</h4>
+      <div class="au-footer-links-grid">
+        ${LENS.footer.quickLinks.map(l => `<a href="${l.href}" class="au-footer-link">${l.label}</a>`).join("")}
+      </div>
+      <h4 style="margin-top:24px;">Products</h4>
+      <div class="au-footer-links-grid">
+        ${LENS.footer.products.map(l => `<a href="${l.href}" class="au-footer-link">${l.label}</a>`).join("")}
+      </div>
+    </div>
+
+    <div class="au-footer-contact-col">
+      <h4>Contact Us</h4>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>${LENS.footer.contact.address}</span></div>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-phone"></i><span><a href="tel:${LENS.footer.contact.phone}">${LENS.footer.contact.phone}</a></span></div>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-envelope"></i><span><a href="mailto:${LENS.footer.contact.email}">${LENS.footer.contact.email}</a></span></div>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-clock"></i><span>${LENS.footer.contact.hours}</span></div>
+    </div>`;
+
+    const fc = qs("auFooterBottom");
+    if (fc) fc.textContent = PAGE.company.copyright;
+
+    const waF = qs("waFloat");
+    if (waF) waF.href = PAGE.company.whatsapp;
 
 }
 
@@ -1324,7 +1640,7 @@ if (ACTIVE_PAGE === "nanoClaroPlus") {
 
   // Override hero heading id for monofocal page
   const monoH1 = qs("page-h1");
-  if (monoH1) monoH1.innerHTML = "Nano Claro<br><em>Hydrophobic IOL</em>";
+  if (monoH1) monoH1.innerHTML = "Nano Claro Plus<br><em>Hydrophobic IOL</em>";
 
   const monoEyebrow = qs("heroEyebrow");
   if (monoEyebrow) monoEyebrow.innerHTML = '<span class="pulse"></span>Hydrophobic · Monofocal · USA Acrylic';
@@ -1336,6 +1652,87 @@ if (ACTIVE_PAGE === "nanoClaroPlus") {
   if (monoBtns) monoBtns.innerHTML = `
     <a href="#models" class="hero-btn-iol-primary"><i class="fa-solid fa-grid-2" style="font-size:12px;"></i> View Models</a>
     <a href="../Pages/hydrophobicIol.html" class="hero-btn-iol-ghost"><i class="fa-solid fa-arrow-left" style="font-size:11px;"></i> Hydrophobic IOL</a>`;
+
+  const LENS = {
+    footer: {
+      tagline: "Premium ophthalmic products — IOLs, surgical blades, and pharma — crafted in Chennai for surgeons worldwide.",
+      socials: [
+        { href: "#", icon: "fa-brands fa-linkedin-in", label: "LinkedIn"  },
+        { href: "#", icon: "fa-brands fa-instagram",   label: "Instagram" },
+        { href: "https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv", icon: "fa-brands fa-whatsapp", label: "WhatsApp" },
+      ],
+      quickLinks: [
+        { label: "Home",             href: "../Pages/index.html"           },
+        { label: "Hydrophobic IOL",  href: "../Pages/hydrophobicIol.html"  },
+        { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html"  },
+        { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html"         },
+        { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
+        { label: "Contact Us",       href: "../Pages/contactUs.html"       },
+        { label: "Gallery",          href: "../Pages/gallery.html"         },
+      ],
+      products: [
+        { label: "Nano Claro",      href: "../Pages/nanoClaro.html"  },
+        { label: "Nano Grand",      href: "../Pages/nanoGrand.html"  },
+        { label: "Nano Fold",       href: "../Pages/nanoFold.html"   },
+        { label: "Nano Flex",       href: "../Pages/nanoFlex.html"   },
+        { label: "Keratome Blades", href: "../Pages/keratome.html"   },
+        { label: "Crescent Blades", href: "../Pages/crescent.html"   },
+        { label: "MVR Blades",      href: "../Pages/mvrBlade.html"   },
+      ],
+      contact: {
+        address: "Chennai, Tamil Nadu, India — PIN 600001",
+        phone:   "+91 98765 43210",
+        email:   "info@worldvisionophthalmic.com",
+        hours:   "Mon–Sat, 9AM–6PM IST",
+      },
+    },
+  }
+
+  // ── Footer ────────────────────────────────────────────────────────────
+  const fb = qs("auFooterBody");
+  if (fb) fb.innerHTML = `
+    <div class="au-footer-brand-col">
+      <div class="au-footer-brand-header">
+        <img src="${PAGE.company.logo}" alt="World Vision Logo"/>
+        <div>
+          <div class="au-footer-brand-name">${PAGE.company.name}</div>
+          <div class="au-footer-brand-sub">${PAGE.company.subtitle}</div>
+        </div>
+      </div>
+      <p class="au-footer-tagline">${LENS.footer.tagline}</p>
+      <div class="au-footer-socials">
+        ${LENS.footer.socials.map(s =>
+          `<a href="${s.href}" class="au-footer-social" aria-label="${s.label}" ${s.href.startsWith("http") ? 'target="_blank"' : ""}>
+            <i class="${s.icon}"></i>
+          </a>`
+        ).join("")}
+      </div>
+    </div>
+
+    <div class="au-footer-links-col">
+      <h4>Quick Links</h4>
+      <div class="au-footer-links-grid">
+        ${LENS.footer.quickLinks.map(l => `<a href="${l.href}" class="au-footer-link">${l.label}</a>`).join("")}
+      </div>
+      <h4 style="margin-top:24px;">Products</h4>
+      <div class="au-footer-links-grid">
+        ${LENS.footer.products.map(l => `<a href="${l.href}" class="au-footer-link">${l.label}</a>`).join("")}
+      </div>
+    </div>
+
+    <div class="au-footer-contact-col">
+      <h4>Contact Us</h4>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>${LENS.footer.contact.address}</span></div>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-phone"></i><span><a href="tel:${LENS.footer.contact.phone}">${LENS.footer.contact.phone}</a></span></div>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-envelope"></i><span><a href="mailto:${LENS.footer.contact.email}">${LENS.footer.contact.email}</a></span></div>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-clock"></i><span>${LENS.footer.contact.hours}</span></div>
+    </div>`;
+
+    const fc = qs("auFooterBottom");
+    if (fc) fc.textContent = PAGE.company.copyright;
+
+    const waF = qs("waFloat");
+    if (waF) waF.href = PAGE.company.whatsapp;
 
 }
 
@@ -1467,7 +1864,7 @@ if (ACTIVE_PAGE === "nanoGrandPlus") {
 
   // Override hero heading id for monofocal page
   const monoH1 = qs("page-h1");
-  if (monoH1) monoH1.innerHTML = "Nano Claro<br><em>Hydrophobic IOL</em>";
+  if (monoH1) monoH1.innerHTML = "Nano Grand Plus<br><em>Hydrophobic IOL</em>";
 
   const monoEyebrow = qs("heroEyebrow");
   if (monoEyebrow) monoEyebrow.innerHTML = '<span class="pulse"></span>Hydrophobic · Monofocal · USA Acrylic';
@@ -1479,6 +1876,87 @@ if (ACTIVE_PAGE === "nanoGrandPlus") {
   if (monoBtns) monoBtns.innerHTML = `
     <a href="#models" class="hero-btn-iol-primary"><i class="fa-solid fa-grid-2" style="font-size:12px;"></i> View Models</a>
     <a href="../Pages/hydrophobicIol.html" class="hero-btn-iol-ghost"><i class="fa-solid fa-arrow-left" style="font-size:11px;"></i> Hydrophobic IOL</a>`;
+
+  const LENS = {
+    footer: {
+      tagline: "Premium ophthalmic products — IOLs, surgical blades, and pharma — crafted in Chennai for surgeons worldwide.",
+      socials: [
+        { href: "#", icon: "fa-brands fa-linkedin-in", label: "LinkedIn"  },
+        { href: "#", icon: "fa-brands fa-instagram",   label: "Instagram" },
+        { href: "https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv", icon: "fa-brands fa-whatsapp", label: "WhatsApp" },
+      ],
+      quickLinks: [
+        { label: "Home",             href: "../Pages/index.html"           },
+        { label: "Hydrophobic IOL",  href: "../Pages/hydrophobicIol.html"  },
+        { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html"  },
+        { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html"         },
+        { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
+        { label: "Contact Us",       href: "../Pages/contactUs.html"       },
+        { label: "Gallery",          href: "../Pages/gallery.html"         },
+      ],
+      products: [
+        { label: "Nano Claro",      href: "../Pages/nanoClaro.html"  },
+        { label: "Nano Grand",      href: "../Pages/nanoGrand.html"  },
+        { label: "Nano Fold",       href: "../Pages/nanoFold.html"   },
+        { label: "Nano Flex",       href: "../Pages/nanoFlex.html"   },
+        { label: "Keratome Blades", href: "../Pages/keratome.html"   },
+        { label: "Crescent Blades", href: "../Pages/crescent.html"   },
+        { label: "MVR Blades",      href: "../Pages/mvrBlade.html"   },
+      ],
+      contact: {
+        address: "Chennai, Tamil Nadu, India — PIN 600001",
+        phone:   "+91 98765 43210",
+        email:   "info@worldvisionophthalmic.com",
+        hours:   "Mon–Sat, 9AM–6PM IST",
+      },
+    },
+  }
+
+  // ── Footer ────────────────────────────────────────────────────────────
+  const fb = qs("auFooterBody");
+  if (fb) fb.innerHTML = `
+    <div class="au-footer-brand-col">
+      <div class="au-footer-brand-header">
+        <img src="${PAGE.company.logo}" alt="World Vision Logo"/>
+        <div>
+          <div class="au-footer-brand-name">${PAGE.company.name}</div>
+          <div class="au-footer-brand-sub">${PAGE.company.subtitle}</div>
+        </div>
+      </div>
+      <p class="au-footer-tagline">${LENS.footer.tagline}</p>
+      <div class="au-footer-socials">
+        ${LENS.footer.socials.map(s =>
+          `<a href="${s.href}" class="au-footer-social" aria-label="${s.label}" ${s.href.startsWith("http") ? 'target="_blank"' : ""}>
+            <i class="${s.icon}"></i>
+          </a>`
+        ).join("")}
+      </div>
+    </div>
+
+    <div class="au-footer-links-col">
+      <h4>Quick Links</h4>
+      <div class="au-footer-links-grid">
+        ${LENS.footer.quickLinks.map(l => `<a href="${l.href}" class="au-footer-link">${l.label}</a>`).join("")}
+      </div>
+      <h4 style="margin-top:24px;">Products</h4>
+      <div class="au-footer-links-grid">
+        ${LENS.footer.products.map(l => `<a href="${l.href}" class="au-footer-link">${l.label}</a>`).join("")}
+      </div>
+    </div>
+
+    <div class="au-footer-contact-col">
+      <h4>Contact Us</h4>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>${LENS.footer.contact.address}</span></div>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-phone"></i><span><a href="tel:${LENS.footer.contact.phone}">${LENS.footer.contact.phone}</a></span></div>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-envelope"></i><span><a href="mailto:${LENS.footer.contact.email}">${LENS.footer.contact.email}</a></span></div>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-clock"></i><span>${LENS.footer.contact.hours}</span></div>
+    </div>`;
+
+    const fc = qs("auFooterBottom");
+    if (fc) fc.textContent = PAGE.company.copyright;
+
+    const waF = qs("waFloat");
+    if (waF) waF.href = PAGE.company.whatsapp;
 
 }
 
@@ -1702,6 +2180,13 @@ window.addEventListener("resize", () => {
 });
 
 /*************************************************
+ * Card Flip
+ *************************************************/
+function flipCard(id) {
+  const card = document.getElementById(id);
+  if (card) card.classList.toggle("flipped");
+}
+/*************************************************
  * IFU Links
  *************************************************/
 document.querySelectorAll(".ifu-link").forEach(function (link) {
@@ -1838,37 +2323,44 @@ document.addEventListener("click", function(e) {
   const btn = e.target.closest(".spec-model-btn");
   if (!btn) return;
 
+  // Find the parent spec-card
   const card = btn.closest(".spec-card");
   if (!card) return;
 
-  card.querySelectorAll(".spec-model-btn").forEach(b => b.classList.remove("active"));
+  // Deactivate all sibling buttons
+  card.querySelectorAll(".spec-model-btn").forEach(function(b) {
+    b.classList.remove("active");
+  });
   btn.classList.add("active");
 
-  card.querySelectorAll(".spec-rows").forEach(r => r.style.display = "none");
+  // Hide all spec-rows in this card, show the target
+  card.querySelectorAll(".spec-rows").forEach(function(r) {
+    r.style.display = "none";
+  });
   const target = document.getElementById(btn.dataset.rows);
   if (target) target.style.display = "block";
 
-  // ADD THIS — swap lens image if data-lens is set
+  // Swap lens image when data-lens is set on the button
   if (btn.dataset.lens) {
-    const panel = btn.closest(".model-panel");
-    const lensImg = panel?.querySelector(".card-lens-svg img");
-    if (lensImg) {
-      lensImg.style.opacity = "1";
-      lensImg.src = btn.dataset.lens;
-    }
-  }
-  // Mobile only: scroll to lens card
-  if (window.innerWidth <= 768) {
     const panel = btn.closest(".model-panel") || btn.closest(".switcher-wrap");
-    const neuCard = panel ? panel.querySelector(".neu-card") : null;
-    if (neuCard) {
-      const offset = 80;
-      const top = neuCard.getBoundingClientRect().top + window.scrollY - offset;
-      window.scrollTo({ top: top, behavior: "smooth" });
+    const lensImg = panel ? panel.querySelector(".card-lens-svg img") : null;
+    if (lensImg) {
+      lensImg.src = btn.dataset.lens;
+      lensImg.style.opacity = "1";
+    }
+
+     // Change PMMA hero lens
+    if (ACTIVE_PAGE === "pmmaIol") {
+      const heroLensImg = qs("heroLensWrap")?.querySelector("img");
+
+      if (heroLensImg) {
+        heroLensImg.src = btn.dataset.lens;
+        heroLensImg.alt = `${btn.textContent.trim()} PMMA lens`;
+        heroLensImg.style.opacity = "1";
+      }
     }
   }
-
-});  // ← this is the existing closing });
+});
 
 /*************************************************
  * Scroll Reveal
@@ -1895,86 +2387,61 @@ document.addEventListener("click", function(e) {
 })();
 
 /*************************************************
- * Contact Page — Subject Chips
+ * Contact Page — Subject Chips (delegation — works with dynamic render)
  *************************************************/
-document.querySelectorAll(".subject-chip").forEach(function (chip) {
-  chip.addEventListener("click", function () {
-    document.querySelectorAll(".subject-chip").forEach(function (c) {
-      c.classList.remove("active");
-    });
-
-    chip.classList.add("active");
-
-    var sf = document.getElementById("subjectField");
-    if (sf) sf.value = chip.dataset.subject;
-  });
+document.addEventListener("click", function(e) {
+  const chip = e.target.closest(".subject-chip");
+  if (!chip) return;
+  document.querySelectorAll(".subject-chip").forEach(c => c.classList.remove("active"));
+  chip.classList.add("active");
+  const sf = document.getElementById("subjectField");
+  if (sf) sf.value = chip.dataset.subject;
 });
 
 /*************************************************
  * Contact Page — Form Submit
  *************************************************/
-(function () {
-  var form = document.getElementById("contactForm");
-  if (!form) return;
+document.addEventListener("submit", function(e) {
+  if (!e.target || e.target.id !== "contactForm") return;
+  e.preventDefault();
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
+  const name  = document.getElementById("cf-name");
+  const email = document.getElementById("cf-email");
+  const msg   = document.getElementById("cf-msg");
 
-    var name = document.getElementById("cf-name");
-    var email = document.getElementById("cf-email");
-    var msg = document.getElementById("cf-msg");
+  if (!name || !email || !msg) return;
 
-    if (!name || !email || !msg) return;
-
-    if (!name.value.trim() || !email.value.trim() || !msg.value.trim()) {
-      alert("Please fill in your name, email, and message.");
-      return;
-    }
-
-    form.style.display = "none";
-
-    var success = document.getElementById("formSuccess");
-    if (success) success.classList.add("show");
-  });
-})();
-
-function resetForm() {
-  var form = document.getElementById("contactForm");
-  var success = document.getElementById("formSuccess");
-
-  if (form) {
-    form.reset();
-    form.style.display = "";
+  if (!name.value.trim() || !email.value.trim() || !msg.value.trim()) {
+    alert("Please fill in your name, email, and message.");
+    return;
   }
 
+  e.target.style.display = "none";
+  const success = document.getElementById("formSuccess");
+  if (success) success.classList.add("show");
+});
+
+function resetForm() {
+  const form    = document.getElementById("contactForm");
+  const success = document.getElementById("formSuccess");
+  if (form)    { form.reset(); form.style.display = ""; }
   if (success) success.classList.remove("show");
-
-  document.querySelectorAll(".subject-chip").forEach(function (c, i) {
-    c.classList.toggle("active", i === 0);
-  });
-
-  var sf = document.getElementById("subjectField");
+  document.querySelectorAll(".subject-chip").forEach((c, i) => c.classList.toggle("active", i === 0));
+  const sf = document.getElementById("subjectField");
   if (sf) sf.value = "Product Enquiry";
 }
 
 /*************************************************
- * Contact Page — FAQ Accordion
+ * Contact Page — FAQ Accordion (delegation — works with dynamic render)
  *************************************************/
-document.querySelectorAll(".faq-item").forEach(function (item) {
-  var q = item.querySelector(".faq-q");
+document.addEventListener("click", function(e) {
+  const q = e.target.closest(".faq-q");
   if (!q) return;
-
-  q.addEventListener("click", function () {
-    var wasOpen = item.classList.contains("open");
-
-    document.querySelectorAll(".faq-item").forEach(function (i) {
-      i.classList.remove("open");
-    });
-
-    if (!wasOpen) {
-      item.classList.add("open");
-    }
-  });
+  const item = q.closest(".faq-item");
+  if (!item) return;
+  const wasOpen = item.classList.contains("open");
+  document.querySelectorAll(".faq-item").forEach(i => i.classList.remove("open"));
+  if (!wasOpen) item.classList.add("open");
 });
 
 /*************************************************
@@ -2207,6 +2674,558 @@ document.querySelectorAll(".faq-item").forEach(function (item) {
   }
 })();
 
+
+/*************************************************
+ * TORIC CALCULATOR PAGE
+ * Only runs on toricCalculator.html
+ *************************************************/
+
+if (ACTIVE_PAGE === "toricCalculator") {
+
+  const TORIC = {
+    meta: {
+      title: "Toric IOL Calculator — World Vision Ophthalmic",
+      desc:  "Calculate the optimal axis and cylinder power for toric intraocular lens placement using the Crossed-Cylinder Method.",
+    },
+
+    hero: {
+      eyebrow: "Clinical Tool · IOL Planning",
+      h1:      "Toric IOL <em>Calculator</em>",
+      desc:    "Calculate the optimal axis of placement and cylinder power for your patient's toric intraocular lens — powered by the Crossed-Cylinder Method.",
+    },
+
+    cylModels: [
+      { name: "TORICT3", iol: 3.75, corneal: 2.57 },
+      { name: "TORICT4", iol: 4.50, corneal: 3.08 },
+      { name: "TORICT5", iol: 5.25, corneal: 3.60 },
+      { name: "TORICT6", iol: 6.00, corneal: 4.11 },
+    ],
+
+    methodology: {
+      eyebrow: "Methodology",
+      heading: "How the <em style=\"color:var(--neu-accent);font-style:italic;\">calculation works</em>",
+      desc:    "The calculator uses the Crossed-Cylinder vector method to determine the optimal toric IOL axis and power, accounting for pre-operative corneal astigmatism and surgically induced astigmatism.",
+      steps: [
+        { num: "1", title: "Enter Pre-Op Keratometry",  desc: "Input the flat and steep K readings from your keratometry measurement, along with their respective axes (0–180°)." },
+        { num: "2", title: "Set SIA & Incision",         desc: "Enter your Surgically Induced Astigmatism value and the incision location in degrees. Typical SIA is 0.3–0.7 D." },
+        { num: "3", title: "Get Axis & Cylinder",        desc: "The calculator applies the Crossed-Cylinder method and returns the optimal axis of placement and the closest available cylinder model." },
+      ],
+    },
+
+    ifu: {
+      title: "Instructions for Use",
+      sub:   "Download the official IFU documentation for each toric product",
+      links: [
+        { href: "#",                             iconStroke: "#0a5ea8", bg: "rgba(10,94,168,0.1)",  label: "IFU — World Vision Toric",  sub: "PDF Document" },
+        { href: "#",                             iconStroke: "#0a7a50", bg: "rgba(10,122,80,0.1)",  label: "IFU — Multifocal Toric",    sub: "PDF Document" },
+        { href: "#",                             iconStroke: "#8a5a10", bg: "rgba(138,90,16,0.1)",  label: "Toric Calculation Guide",   sub: "PDF Document" },
+        { href: "../Pages/iol-page.html",        iconStroke: "#0055a5", bg: "rgba(0,85,165,0.1)",   label: "View IOL Range",            sub: "All lens types", isLens: true },
+      ],
+    },
+
+    footer: {
+      tagline: "Premium ophthalmic products — IOLs, surgical blades, and pharma — crafted in Chennai for surgeons worldwide.",
+      socials: [
+        { href: "#",                                                     icon: "fa-brands fa-linkedin-in", label: "LinkedIn"  },
+        { href: "#",                                                     icon: "fa-brands fa-instagram",   label: "Instagram" },
+        { href: "https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv",     icon: "fa-brands fa-whatsapp",    label: "WhatsApp"  },
+      ],
+      quickLinks: [
+        { label: "Home",             href: "../Pages/index.html"           },
+        { label: "Hydrophobic IOL",  href: "../Pages/hydrophobicIol.html"  },
+        { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html"  },
+        { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html"         },
+        { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
+        { label: "Contact Us",       href: "../Pages/contactUs.html"       },
+        { label: "Gallery",          href: "../Pages/gallery.html"         },
+      ],
+      products: [
+        { label: "Nano Claro",      href: "../Pages/nanoClaro.html"  },
+        { label: "Nano Grand",      href: "../Pages/nanoGrand.html"  },
+        { label: "Nano Fold",       href: "../Pages/nanoFold.html"   },
+        { label: "Nano Flex",       href: "../Pages/nanoFlex.html"   },
+        { label: "Keratome Blades", href: "../Pages/keratome.html"   },
+        { label: "Crescent Blades", href: "../Pages/crescent.html"   },
+        { label: "MVR Blades",      href: "../Pages/mvrBlade.html"   },
+      ],
+      contact: {
+        address: "Chennai, Tamil Nadu, India — PIN 600001",
+        phone:   "+91 98765 43210",
+        email:   "info@worldvisionophthalmic.com",
+        hours:   "Mon–Sat, 9AM–6PM IST",
+      },
+    },
+  };
+
+  // ── Meta ──────────────────────────────────────────────────────────────
+  document.title = TORIC.meta.title;
+  const tcMeta = qs("pageMeta");
+  if (tcMeta) tcMeta.setAttribute("content", TORIC.meta.desc);
+
+  // ── Breadcrumb ────────────────────────────────────────────────────────
+  const tcBc = qs("breadcrumb");
+  if (tcBc) tcBc.innerHTML = `<a href="../Pages/index.html">Home</a><span class="sep">/</span><span class="current">Toric Calculator</span>`;
+
+  // ── Hero ──────────────────────────────────────────────────────────────
+  const tcHero = qs("toricHero");
+  if (tcHero) tcHero.innerHTML = `
+    <div>
+      <div class="toric-hero-eyebrow"><span class="pulse"></span>${TORIC.hero.eyebrow}</div>
+      <h1>${TORIC.hero.h1}</h1>
+      <p class="toric-hero-desc">${TORIC.hero.desc}</p>
+    </div>
+    <div style="opacity:0.18;padding-right:1rem;" aria-hidden="true">
+      <svg width="130" height="130" viewBox="0 0 130 130">
+        <circle cx="65" cy="65" r="58" fill="none" stroke="var(--neu-accent)" stroke-width="1.5" stroke-dasharray="4 6"/>
+        <circle cx="65" cy="65" r="42" fill="none" stroke="var(--neu-accent)" stroke-width="1"/>
+        <circle cx="65" cy="65" r="26" fill="none" stroke="var(--neu-accent)" stroke-width="2.5"/>
+        <circle cx="65" cy="65" r="9"  fill="var(--neu-accent)" opacity="0.3"/>
+        <circle cx="65" cy="65" r="3.5" fill="var(--neu-accent)"/>
+        <line x1="65" y1="7"   x2="65"  y2="25"  stroke="var(--neu-accent)" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="65" y1="105" x2="65"  y2="123" stroke="var(--neu-accent)" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="7"  y1="65"  x2="25"  y2="65"  stroke="var(--neu-accent)" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="105" y1="65" x2="123" y2="65"  stroke="var(--neu-accent)" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </div>`;
+
+  // ── IOL Power options ─────────────────────────────────────────────────
+  function buildIolPowerOptions() {
+    let opts = `<option value="">Select power</option>`;
+    for (let p = 6.0; p <= 30.0; p += 0.5) {
+      opts += `<option value="${p.toFixed(1)}">${p.toFixed(1)} D</option>`;
+    }
+    return opts;
+  }
+
+  // ── Calculator Wrap ───────────────────────────────────────────────────
+  const tcWrap = qs("toricCalcWrap");
+  if (tcWrap) tcWrap.innerHTML = `
+    <!-- Left Card -->
+    <div class="calc-card">
+      <div class="sp-tabs">
+        <button class="sp-tab active" data-tab="surgeon"><i class="fa-solid fa-user-doctor" style="font-size:12px;margin-right:5px;"></i> Surgeon</button>
+        <button class="sp-tab" data-tab="patient"><i class="fa-solid fa-user" style="font-size:12px;margin-right:5px;"></i> Patient</button>
+        <button class="sp-tab" data-tab="preop"><i class="fa-solid fa-eye" style="font-size:12px;margin-right:5px;"></i> Pre-Op Data</button>
+      </div>
+
+      <!-- Surgeon Panel -->
+      <div class="sp-panel active" id="tab-surgeon">
+        <div class="card-section-title"><div class="title-icon"><i class="fa-solid fa-user-doctor"></i></div>Surgeon Details</div>
+        <div class="field-group"><label for="doctorName" class="field-label">Doctor Name</label><input type="text" class="neu-input" id="doctorName" placeholder="Dr. ..." autocomplete="off"/></div>
+        <div class="field-group"><label for="doctorEmail" class="field-label">Email Address</label><input type="email" class="neu-input" id="doctorEmail" placeholder="doctor@hospital.com" autocomplete="off"/></div>
+        <div class="field-row">
+          <div class="field-group"><label for="doctorPhone" class="field-label">Phone Number</label><input type="tel" class="neu-input" id="doctorPhone" placeholder="+91 ...." autocomplete="off"/></div>
+          <div class="field-group"><label for="clinicName" class="field-label">Hospital / Clinic Name</label><input type="text" class="neu-input" id="clinicName" placeholder="Hospital / Clinic" autocomplete="off"/></div>
+        </div>
+        <div class="btn-row"><button class="btn-calc" id="btnNextToPatient" type="button"><i class="fa-solid fa-arrow-right"></i> Next</button></div>
+      </div>
+
+      <!-- Patient Panel -->
+      <div class="sp-panel" id="tab-patient">
+        <div class="card-section-title"><div class="title-icon"><i class="fa-solid fa-user"></i></div>Patient Details</div>
+        <div class="field-row">
+          <div class="field-group"><label for="patientName" class="field-label">Patient Name</label><input type="text" class="neu-input" id="patientName" placeholder="Full Name" autocomplete="off"/></div>
+          <div class="field-group">
+            <label class="field-label">Eye</label>
+            <div class="eye-toggle">
+              <button class="eye-btn active" id="eyeLeft" type="button"><i class="fa-solid fa-eye" style="font-size:11px;"></i> Left OE</button>
+              <button class="eye-btn" id="eyeRight" type="button"><i class="fa-solid fa-eye" style="font-size:11px;"></i> Right OD</button>
+            </div>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field-group">
+            <label for="iolPower" class="field-label">IOL Spherical Power (P-IOL)</label>
+            <select id="iolPower" class="neu-select">${buildIolPowerOptions()}</select>
+            <span class="field-hint">Range: 6.0D - 30.0D in 0.5D steps</span>
+          </div>
+          <div class="field-group">
+            <label for="iolModel" class="field-label">IOL Model</label>
+            <select id="iolModel" class="neu-select">
+              <option value="">Select model</option>
+              <option value="WORLD_VISION_TORIC">World Vision Toric</option>
+              <option value="WORLD_VISION_MF_TORIC">World Vision Multifocal Toric</option>
+            </select>
+          </div>
+        </div>
+        <div class="btn-row"><button class="btn-calc" id="btnNextToPreop" type="button"><i class="fa-solid fa-arrow-right"></i> Next</button></div>
+      </div>
+
+      <!-- Pre-Op Panel -->
+      <div class="sp-panel" id="tab-preop">
+        <div class="card-section-title"><div class="title-icon"><i class="fa-solid fa-chart-line"></i></div>Pre-Operative Keratometry</div>
+        <div class="field-row">
+          <div class="field-group"><label class="field-label" for="flatK">Flat K <small style="opacity:0.6;">(30–60 D)</small></label><input class="neu-input" type="number" id="flatK" placeholder="e.g. 44.50" min="30" max="60" step="0.01" autocomplete="off"/><span class="error-msg" id="flatK-err">Must be between 30–60 D</span></div>
+          <div class="field-group"><label class="field-label" for="flatAxis">Flat Axis <small style="opacity:0.6;">(0–180°)</small></label><input class="neu-input" type="number" id="flatAxis" placeholder="e.g. 0" min="0" max="180" step="1" autocomplete="off"/><span class="error-msg" id="flatAxis-err">Must be 0–180°</span></div>
+        </div>
+        <div class="field-row">
+          <div class="field-group"><label class="field-label" for="steepK">Steep K <small style="opacity:0.6;">(30–60 D)</small></label><input class="neu-input" type="number" id="steepK" placeholder="e.g. 47.50" min="30" max="60" step="0.01" autocomplete="off"/><span class="error-msg" id="steepK-err">Must be between 30–60 D</span></div>
+          <div class="field-group"><label class="field-label" for="steepAxis">Steep Axis <small style="opacity:0.6;">(0–180°)</small></label><input class="neu-input" type="number" id="steepAxis" placeholder="e.g. 90" min="0" max="180" step="1" autocomplete="off"/><span class="error-msg" id="steepAxis-err">Must be 0–180°</span></div>
+        </div>
+        <div class="field-row">
+          <div class="field-group"><label class="field-label" for="sia">SIA <small style="opacity:0.6;">(0–2 D)</small></label><input class="neu-input" type="number" id="sia" placeholder="e.g. 0.50" min="0" max="2" step="0.01" value="0.50" autocomplete="off"/><span class="field-hint">Surgically Induced Astigmatism</span><span class="error-msg" id="sia-err">Must be 0–2 D</span></div>
+          <div class="field-group"><label class="field-label" for="incision">Incision Location (IL) <small style="opacity:0.6;">(0–360°)</small></label><input class="neu-input" type="number" id="incision" placeholder="e.g. 120" min="0" max="360" step="1" autocomplete="off"/><span class="error-msg" id="incision-err">Must be 0–360°</span></div>
+        </div>
+
+        <div class="card-section-title" style="margin-top:1.4rem;"><div class="title-icon"><i class="fa-solid fa-table"></i></div>Available Cylinder Powers</div>
+        <div class="cyl-table-wrap">
+          <table class="cyl-table">
+            <thead><tr><th>Plane</th>${TORIC.cylModels.map(m => `<th>${m.name}</th>`).join("")}</tr></thead>
+            <tbody>
+              <tr><td>IOL Plane</td>${TORIC.cylModels.map(m => `<td>${m.iol.toFixed(2)} D</td>`).join("")}</tr>
+              <tr><td>Corneal Plane</td>${TORIC.cylModels.map(m => `<td>${m.corneal.toFixed(2)} D</td>`).join("")}</tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="btn-row">
+          <button class="btn-calc" id="btnCalculate" type="button"><i class="fa-solid fa-check"></i> Calculate</button>
+          <button class="btn-clear" id="btnClear" type="button"><i class="fa-solid fa-rotate-left"></i> Clear</button>
+        </div>
+      </div>
+    </div><!-- end left card -->
+
+    <!-- Right Card: Results -->
+    <div class="calc-card" id="resultsCard">
+      <div class="results-empty" id="emptyState">
+        <div class="results-empty-icon"><i class="fa-solid fa-eye"></i></div>
+        <p>Fill in the Pre-Op Data and click <strong>Calculate</strong> to see the recommended toric lens placement.</p>
+      </div>
+
+      <div class="results-panel" id="resultsPanel">
+        <div class="card-section-title">
+          <div class="title-icon" style="background:rgba(10,122,80,0.12);color:#0a7a50;"><i class="fa-solid fa-check"></i></div>
+          Recommended Lens Placement
+        </div>
+
+        <div class="result-highlight">
+          <div class="result-highlight-item"><div class="result-highlight-label">Axis of Placement</div><div class="result-highlight-val" id="res-axis">—</div><div class="result-highlight-unit">degrees</div></div>
+          <div class="result-highlight-item"><div class="result-highlight-label">Cylinder IOL Plane</div><div class="result-highlight-val" id="res-cyl-iol">—</div><div class="result-highlight-unit">Diopters</div></div>
+          <div class="result-highlight-item"><div class="result-highlight-label">Cylinder Corneal Plane</div><div class="result-highlight-val" id="res-cyl-cor">—</div><div class="result-highlight-unit">Diopters</div></div>
+          <div class="result-highlight-item"><div class="result-highlight-label">IOL Model Recommended</div><div class="result-highlight-val" id="res-model" style="font-size:16px;">—</div><div class="result-highlight-unit" id="res-model-sub"></div></div>
+        </div>
+
+        <div class="axis-diagram-wrap">
+          <svg id="axisDiagram" width="180" height="180" viewBox="0 0 180 180">
+            <circle cx="90" cy="90" r="76" fill="none" stroke="var(--neu-dark)" stroke-width="1.5"/>
+            <circle cx="90" cy="90" r="50" fill="none" stroke="var(--neu-dark)" stroke-width="0.8" stroke-dasharray="3 4" opacity="0.4"/>
+            <line x1="90" y1="14"  x2="90"  y2="26"  stroke="var(--neu-muted)" stroke-width="1.5"/>
+            <line x1="90" y1="154" x2="90"  y2="166" stroke="var(--neu-muted)" stroke-width="1.5"/>
+            <line x1="14" y1="90"  x2="26"  y2="90"  stroke="var(--neu-muted)" stroke-width="1.5"/>
+            <line x1="154" y1="90" x2="166" y2="90"  stroke="var(--neu-muted)" stroke-width="1.5"/>
+            <text x="90" y="10"  text-anchor="middle" fill="var(--neu-muted)" font-size="9">90°</text>
+            <text x="90" y="175" text-anchor="middle" fill="var(--neu-muted)" font-size="9">270°</text>
+            <text x="172" y="93" text-anchor="middle" fill="var(--neu-muted)" font-size="9">0°</text>
+            <text x="8"  y="93"  text-anchor="middle" fill="var(--neu-muted)" font-size="9">180°</text>
+            <g id="axisLineGroup" transform="rotate(0, 90, 90)">
+              <line x1="90" y1="14" x2="90" y2="166" stroke="var(--neu-accent)" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="90" cy="90" r="5" fill="var(--neu-accent)"/>
+              <polygon points="90,14 86,24 94,24" fill="var(--neu-accent)"/>
+            </g>
+          </svg>
+          <div class="axis-diagram-label" id="axisDiagramLabel">Axis of placement</div>
+        </div>
+
+        <div class="result-section-title" style="margin-top:1.2rem;"><i class="fa-solid fa-chart-line" style="font-size:12px;"></i> Calculation Details</div>
+        <div id="calcDetails">
+          <div class="result-row"><span class="result-row-label">Pre-Op Corneal Astigmatism</span><span class="result-row-val" id="res-preop-ast">—</span></div>
+          <div class="result-row"><span class="result-row-label">Surgically Induced Astigmatism</span><span class="result-row-val" id="res-sia-val">—</span></div>
+          <div class="result-row"><span class="result-row-label">Crossed-Cylinder Result</span><span class="result-row-val" id="res-crossed">—</span></div>
+          <div class="result-row"><span class="result-row-label">Anticipated Residual Astigmatism</span><span class="result-row-val" id="res-residual">—</span></div>
+          <div class="result-row"><span class="result-row-label">Steep Axis</span><span class="result-row-val" id="res-steep-ax">—</span></div>
+          <div class="result-row"><span class="result-row-label">Flat Axis</span><span class="result-row-val" id="res-flat-ax">—</span></div>
+          <div class="result-row"><span class="result-row-label">Incision</span><span class="result-row-val" id="res-incision-val">—</span></div>
+        </div>
+
+        <div class="print-row">
+          <button class="btn-print" id="btnPrint" type="button"><i class="fa-solid fa-print"></i> Print Result</button>
+          <button class="btn-email" id="btnEmail" type="button"><i class="fa-solid fa-envelope"></i> Email to Surgeon</button>
+        </div>
+      </div>
+    </div><!-- end right card -->`;
+
+  // ── Attach tab switcher events (immediately after innerHTML) ──────────
+  tcWrap.querySelectorAll(".sp-tab").forEach(tab => {
+    tab.addEventListener("click", function () {
+      tcWrap.querySelectorAll(".sp-tab").forEach(t => t.classList.remove("active"));
+      tcWrap.querySelectorAll(".sp-panel").forEach(p => p.classList.remove("active"));
+      this.classList.add("active");
+      const panel = document.getElementById("tab-" + this.dataset.tab);
+      if (panel) panel.classList.add("active");
+    });
+  });
+
+  const btnNextPatient = document.getElementById("btnNextToPatient");
+  if (btnNextPatient) btnNextPatient.addEventListener("click", function () {
+    tcWrap.querySelectorAll(".sp-tab").forEach(t => t.classList.remove("active"));
+    tcWrap.querySelectorAll(".sp-panel").forEach(p => p.classList.remove("active"));
+    const patTab = tcWrap.querySelector('[data-tab="patient"]');
+    if (patTab) patTab.classList.add("active");
+    const patPanel = document.getElementById("tab-patient");
+    if (patPanel) patPanel.classList.add("active");
+  });
+
+  const btnNextPreop = document.getElementById("btnNextToPreop");
+  if (btnNextPreop) btnNextPreop.addEventListener("click", function () {
+    tcWrap.querySelectorAll(".sp-tab").forEach(t => t.classList.remove("active"));
+    tcWrap.querySelectorAll(".sp-panel").forEach(p => p.classList.remove("active"));
+    const preopTab = tcWrap.querySelector('[data-tab="preop"]');
+    if (preopTab) preopTab.classList.add("active");
+    const preopPanel = document.getElementById("tab-preop");
+    if (preopPanel) preopPanel.classList.add("active");
+  });
+
+  // Eye toggle
+  const eyeLeft  = document.getElementById("eyeLeft");
+  const eyeRight = document.getElementById("eyeRight");
+  if (eyeLeft && eyeRight) {
+    [eyeLeft, eyeRight].forEach(btn => {
+      btn.addEventListener("click", function () {
+        eyeLeft.classList.toggle("active",  this === eyeLeft);
+        eyeRight.classList.toggle("active", this === eyeRight);
+      });
+    });
+  }
+
+  // ── Calculation logic ─────────────────────────────────────────────────
+  function toRad(deg) { return (deg * Math.PI) / 180; }
+
+  function toDeg(rad) {
+    let d = (rad * 180) / Math.PI;
+    while (d < 0)    d += 180;
+    while (d >= 180) d -= 180;
+    return d;
+  }
+
+  function crossedCylinder(mag1, axis1, mag2, axis2) {
+    const a1 = toRad(axis1), a2 = toRad(axis2);
+    const j0  = (-mag1 / 2) * Math.cos(2 * a1) + (-mag2 / 2) * Math.cos(2 * a2);
+    const j45 = (-mag1 / 2) * Math.sin(2 * a1) + (-mag2 / 2) * Math.sin(2 * a2);
+    return {
+      mag:  2 * Math.sqrt(j0 * j0 + j45 * j45),
+      axis: toDeg(0.5 * Math.atan2(j45, j0) + Math.PI / 2),
+    };
+  }
+
+  function bestCylModel(neededCorneal) {
+    return TORIC.cylModels.reduce((best, m) =>
+      Math.abs(neededCorneal - m.corneal) < Math.abs(neededCorneal - best.corneal) ? m : best
+    , TORIC.cylModels[0]);
+  }
+
+  function validate(id, min, max) {
+    const el  = document.getElementById(id);
+    const err = document.getElementById(id + "-err");
+    if (!el) return null;
+    const val = parseFloat(el.value);
+    if (isNaN(val) || val < min || val > max) {
+      el.classList.add("error");
+      if (err) err.classList.add("visible");
+      return null;
+    }
+    el.classList.remove("error");
+    if (err) err.classList.remove("visible");
+    return val;
+  }
+
+  function setTxt(id, val) {
+    const el = document.getElementById(id);
+    if (el) el.textContent = val;
+  }
+
+  // ── Calculate button ──────────────────────────────────────────────────
+  const btnCalc = document.getElementById("btnCalculate");
+  if (btnCalc) btnCalc.addEventListener("click", function () {
+    // Switch to preop tab
+    tcWrap.querySelectorAll(".sp-tab").forEach(t => t.classList.remove("active"));
+    tcWrap.querySelectorAll(".sp-panel").forEach(p => p.classList.remove("active"));
+    const preopTab = tcWrap.querySelector('[data-tab="preop"]');
+    if (preopTab) preopTab.classList.add("active");
+    const preopPanel = document.getElementById("tab-preop");
+    if (preopPanel) preopPanel.classList.add("active");
+
+    const flatK   = validate("flatK",   30, 60);
+    const flatAx  = validate("flatAxis", 0, 180);
+    const steepK  = validate("steepK",  30, 60);
+    const steepAx = validate("steepAxis", 0, 180);
+    const sia     = validate("sia",      0, 2);
+    const il      = validate("incision", 0, 360);
+
+    if ([flatK, flatAx, steepK, steepAx, sia, il].some(v => v === null)) return;
+
+    const cornAst  = steepK - flatK;
+    const cornAxis = steepAx;
+    const siaAxis  = il % 180;
+
+    const crossed       = crossedCylinder(cornAst, cornAxis, sia, siaAxis);
+    const model         = bestCylModel(crossed.mag);
+    const placementAxis = Math.round(crossed.axis);
+    const residual      = crossedCylinder(crossed.mag, crossed.axis, model.corneal, crossed.axis + 90);
+
+    setTxt("res-axis",        placementAxis + "°");
+    setTxt("res-cyl-iol",     model.iol.toFixed(2));
+    setTxt("res-cyl-cor",     model.corneal.toFixed(2));
+    setTxt("res-model",       model.name);
+
+    const modelSel = document.getElementById("iolModel");
+    setTxt("res-model-sub",   modelSel ? modelSel.value.replace(/_/g, " ") : "WORLD VISION TORIC");
+    setTxt("res-preop-ast",   cornAst.toFixed(2) + " D × " + cornAxis + "°");
+    setTxt("res-sia-val",     sia.toFixed(2) + " D × " + siaAxis + "°");
+    setTxt("res-crossed",     crossed.mag.toFixed(2) + " D × " + Math.round(crossed.axis) + "°");
+    setTxt("res-residual",    residual.mag.toFixed(2) + " D × " + Math.round(residual.axis) + "°");
+    setTxt("res-steep-ax",    steepAx + "°");
+    setTxt("res-flat-ax",     flatAx + "°");
+    setTxt("res-incision-val", il + "°");
+
+    const axisGroup = document.getElementById("axisLineGroup");
+    if (axisGroup) axisGroup.setAttribute("transform", `rotate(${placementAxis - 90}, 90, 90)`);
+
+    const axisLabel = document.getElementById("axisDiagramLabel");
+    if (axisLabel) axisLabel.textContent = "Axis of placement: " + placementAxis + "°";
+
+    const emptyState = document.getElementById("emptyState");
+    const panel      = document.getElementById("resultsPanel");
+    if (emptyState) emptyState.style.display = "none";
+    if (panel) {
+      panel.classList.remove("visible");
+      void panel.offsetWidth;
+      panel.classList.add("visible");
+    }
+  });
+
+  // ── Clear button ──────────────────────────────────────────────────────
+  const btnClear = document.getElementById("btnClear");
+  if (btnClear) btnClear.addEventListener("click", function () {
+    ["flatK", "flatAxis", "steepK", "steepAxis", "incision"].forEach(id => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.value = "";
+      el.classList.remove("error");
+      const err = document.getElementById(id + "-err");
+      if (err) err.classList.remove("visible");
+    });
+    const siaEl    = document.getElementById("sia");
+    const iolPower = document.getElementById("iolPower");
+    const iolModel = document.getElementById("iolModel");
+    const patient  = document.getElementById("patientName");
+    if (siaEl)    siaEl.value    = "0.50";
+    if (iolPower) iolPower.value = "";
+    if (iolModel) iolModel.value = "";
+    if (patient)  patient.value  = "";
+    const panel      = document.getElementById("resultsPanel");
+    const emptyState = document.getElementById("emptyState");
+    if (panel)      panel.classList.remove("visible");
+    if (emptyState) emptyState.style.display = "";
+  });
+
+  // ── Print button ──────────────────────────────────────────────────────
+  const btnPrint = document.getElementById("btnPrint");
+  if (btnPrint) btnPrint.addEventListener("click", () => window.print());
+
+  // ── Email button ──────────────────────────────────────────────────────
+  const btnEmail = document.getElementById("btnEmail");
+  if (btnEmail) btnEmail.addEventListener("click", function () {
+    const email   = (document.getElementById("doctorEmail")  || {}).value || "";
+    const axis    = (document.getElementById("res-axis")     || {}).textContent || "";
+    const cyl     = (document.getElementById("res-cyl-iol")  || {}).textContent || "";
+    const model   = (document.getElementById("res-model")    || {}).textContent || "";
+    const patient = (document.getElementById("patientName")  || {}).value || "Patient";
+    const subject = encodeURIComponent("Toric IOL Calculation — " + patient);
+    const body    = encodeURIComponent(
+      "Toric IOL Calculation Result\n\n" +
+      "Patient: " + patient + "\n" +
+      "Axis of Placement: " + axis + "\n" +
+      "Cylinder Power (IOL): " + cyl + " D\n" +
+      "Recommended Model: " + model + "\n\n" +
+      "Calculated by World Vision Toric Calculator"
+    );
+    window.location.href = "mailto:" + email + "?subject=" + subject + "&body=" + body;
+  });
+
+  // ── Methodology Section ───────────────────────────────────────────────
+  const tcInfo = qs("toricInfoSection");
+  if (tcInfo) tcInfo.innerHTML = `
+    <div style="max-width:500px;">
+      <div class="toric-hero-eyebrow" style="margin-bottom:0.8rem;"><span class="pulse"></span>${TORIC.methodology.eyebrow}</div>
+      <h2 style="font-family:'DM Serif Display',serif;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:400;color:var(--neu-text);margin-bottom:0.5rem;letter-spacing:-0.02em;">${TORIC.methodology.heading}</h2>
+      <p style="font-size:14px;line-height:1.75;color:var(--neu-muted);">${TORIC.methodology.desc}</p>
+    </div>
+    <div class="info-grid">
+      ${TORIC.methodology.steps.map(s =>
+        `<div class="info-card"><div class="info-step">${s.num}</div><h3>${s.title}</h3><p>${s.desc}</p></div>`
+      ).join("")}
+    </div>`;
+
+  // ── IFU Section ───────────────────────────────────────────────────────
+  const tcIfu = qs("toricIfuSection");
+  if (tcIfu) tcIfu.innerHTML = `
+    <div class="ifu-wrap">
+      <div class="ifu-header">
+        <div class="ifu-icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+        <div><div class="ifu-title" id="ifu-title2">${TORIC.ifu.title}</div><div class="ifu-sub">${TORIC.ifu.sub}</div></div>
+      </div>
+      <div class="ifu-grid">
+        ${TORIC.ifu.links.map(l => `
+          <a href="${l.href}" class="ifu-link">
+            <div class="ifu-link-icon" style="background:${l.bg};">
+              ${l.isLens
+                ? `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="${l.iconStroke}" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><ellipse cx="12" cy="12" rx="10" ry="5"/></svg>`
+                : `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="${l.iconStroke}" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg>`
+              }
+            </div>
+            <div class="ifu-link-text"><strong>${l.label}</strong><span>${l.sub}</span></div>
+          </a>`
+        ).join("")}
+      </div>
+    </div>`;
+
+  // ── WhatsApp Float ────────────────────────────────────────────────────
+  const waF = qs("waFloat");
+  if (waF) waF.href = PAGE.company.whatsapp;
+
+  // ── Footer ────────────────────────────────────────────────────────────
+  const fb = qs("auFooterBody");
+  if (fb) fb.innerHTML = `
+    <div class="au-footer-brand-col">
+      <div class="au-footer-brand-header">
+        <img src="${PAGE.company.logo}" alt="World Vision Logo"/>
+        <div>
+          <div class="au-footer-brand-name">${PAGE.company.name}</div>
+          <div class="au-footer-brand-sub">${PAGE.company.subtitle}</div>
+        </div>
+      </div>
+      <p class="au-footer-tagline">${TORIC.footer.tagline}</p>
+      <div class="au-footer-socials">
+        ${TORIC.footer.socials.map(s =>
+          `<a href="${s.href}" class="au-footer-social" aria-label="${s.label}" ${s.href.startsWith("http") ? 'target="_blank"' : ""}>
+            <i class="${s.icon}"></i>
+          </a>`
+        ).join("")}
+      </div>
+    </div>
+
+    <div class="au-footer-links-col">
+      <h4>Quick Links</h4>
+      <div class="au-footer-links-grid">
+        ${TORIC.footer.quickLinks.map(l => `<a href="${l.href}" class="au-footer-link">${l.label}</a>`).join("")}
+      </div>
+      <h4 style="margin-top:24px;">Products</h4>
+      <div class="au-footer-links-grid">
+        ${TORIC.footer.products.map(l => `<a href="${l.href}" class="au-footer-link">${l.label}</a>`).join("")}
+      </div>
+    </div>
+
+    <div class="au-footer-contact-col">
+      <h4>Contact Us</h4>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>${TORIC.footer.contact.address}</span></div>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-phone"></i><span><a href="tel:${TORIC.footer.contact.phone}">${TORIC.footer.contact.phone}</a></span></div>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-envelope"></i><span><a href="mailto:${TORIC.footer.contact.email}">${TORIC.footer.contact.email}</a></span></div>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-clock"></i><span>${TORIC.footer.contact.hours}</span></div>
+    </div>`;
+
+  const fc = qs("auFooterBottom");
+  if (fc) fc.textContent = PAGE.company.copyright;
+}
+
 /*************************************************
  * HYDROPHILIC IOL PAGE
  * Only runs on hydrophilicIOL.html
@@ -2287,7 +3306,7 @@ if (ACTIVE_PAGE === "hydrophilicIOL") {
         img:     "../Multimedia/lens_nanoflex.png",
         iconSvg: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>`,
         desc:    "Aspheric & Yellow Aspheric hydrophilic IOLs — Nano Flex and Nano Flex Y. Aberration-neutral profile with blue-light filtering option. Four haptic configurations.",
-        chips:   ["NFR AS", "NFR ASY", "NFC AS", "NFM AS", "NFC ASY", "NFM ASY" ],
+        chips:   ["NFR AS", "NFR ASY", "NFC AS", "NFM AS"],
         delay:   "delay-2",
       },
     ];
@@ -2449,6 +3468,86 @@ if (ACTIVE_PAGE === "hydrophilicIOL") {
       </a>`).join("");
   })();
 
+  const LENS = {
+    footer: {
+      tagline: "Premium ophthalmic products — IOLs, surgical blades, and pharma — crafted in Chennai for surgeons worldwide.",
+      socials: [
+        { href: "#", icon: "fa-brands fa-linkedin-in", label: "LinkedIn"  },
+        { href: "#", icon: "fa-brands fa-instagram",   label: "Instagram" },
+        { href: "https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv", icon: "fa-brands fa-whatsapp", label: "WhatsApp" },
+      ],
+      quickLinks: [
+        { label: "Home",             href: "../Pages/index.html"           },
+        { label: "Hydrophobic IOL",  href: "../Pages/hydrophobicIol.html"  },
+        { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html"  },
+        { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html"         },
+        { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
+        { label: "Contact Us",       href: "../Pages/contactUs.html"       },
+        { label: "Gallery",          href: "../Pages/gallery.html"         },
+      ],
+      products: [
+        { label: "Nano Claro",      href: "../Pages/nanoClaro.html"  },
+        { label: "Nano Grand",      href: "../Pages/nanoGrand.html"  },
+        { label: "Nano Fold",       href: "../Pages/nanoFold.html"   },
+        { label: "Nano Flex",       href: "../Pages/nanoFlex.html"   },
+        { label: "Keratome Blades", href: "../Pages/keratome.html"   },
+        { label: "Crescent Blades", href: "../Pages/crescent.html"   },
+        { label: "MVR Blades",      href: "../Pages/mvrBlade.html"   },
+      ],
+      contact: {
+        address: "Chennai, Tamil Nadu, India — PIN 600001",
+        phone:   "+91 98765 43210",
+        email:   "info@worldvisionophthalmic.com",
+        hours:   "Mon–Sat, 9AM–6PM IST",
+      },
+    },
+  }
+
+  // ── Footer ────────────────────────────────────────────────────────────
+  const fb = qs("auFooterBody");
+  if (fb) fb.innerHTML = `
+    <div class="au-footer-brand-col">
+      <div class="au-footer-brand-header">
+        <img src="${PAGE.company.logo}" alt="World Vision Logo"/>
+        <div>
+          <div class="au-footer-brand-name">${PAGE.company.name}</div>
+          <div class="au-footer-brand-sub">${PAGE.company.subtitle}</div>
+        </div>
+      </div>
+      <p class="au-footer-tagline">${LENS.footer.tagline}</p>
+      <div class="au-footer-socials">
+        ${LENS.footer.socials.map(s =>
+          `<a href="${s.href}" class="au-footer-social" aria-label="${s.label}" ${s.href.startsWith("http") ? 'target="_blank"' : ""}>
+            <i class="${s.icon}"></i>
+          </a>`
+        ).join("")}
+      </div>
+    </div>
+
+    <div class="au-footer-links-col">
+      <h4>Quick Links</h4>
+      <div class="au-footer-links-grid">
+        ${LENS.footer.quickLinks.map(l => `<a href="${l.href}" class="au-footer-link">${l.label}</a>`).join("")}
+      </div>
+      <h4 style="margin-top:24px;">Products</h4>
+      <div class="au-footer-links-grid">
+        ${LENS.footer.products.map(l => `<a href="${l.href}" class="au-footer-link">${l.label}</a>`).join("")}
+      </div>
+    </div>
+
+    <div class="au-footer-contact-col">
+      <h4>Contact Us</h4>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>${LENS.footer.contact.address}</span></div>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-phone"></i><span><a href="tel:${LENS.footer.contact.phone}">${LENS.footer.contact.phone}</a></span></div>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-envelope"></i><span><a href="mailto:${LENS.footer.contact.email}">${LENS.footer.contact.email}</a></span></div>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-clock"></i><span>${LENS.footer.contact.hours}</span></div>
+    </div>`;
+
+    const fc = qs("auFooterBottom");
+    if (fc) fc.textContent = PAGE.company.copyright;
+
+    const waF = qs("waFloat");
+    if (waF) waF.href = PAGE.company.whatsapp;
 }
 
 /*************************************************
@@ -2489,7 +3588,18 @@ if (ACTIVE_PAGE === "iol-page") {
             "M250 20 r90 rgba(10,94,168,0.15)",
             "M30 200 r70 rgba(10,94,168,0.1)",
           ],
-          lensSvg: `../Multimedia/hydrophobicIOL.png`,
+          lensSvg: `
+            <path d="M18 60 Q4 40 8 20"   fill="none" stroke="#0a5ea8" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+            <path d="M18 60 Q4 80 8 100"  fill="none" stroke="#0a5ea8" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+            <path d="M102 60 Q116 40 112 20"  fill="none" stroke="#0a5ea8" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+            <path d="M102 60 Q116 80 112 100" fill="none" stroke="#0a5ea8" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+            <ellipse cx="60" cy="60" rx="44" ry="32" fill="rgba(10,94,168,0.12)" stroke="#0a5ea8" stroke-width="2.2"/>
+            <ellipse cx="60" cy="60" rx="32" ry="22" fill="rgba(10,94,168,0.1)"  stroke="#0a5ea8" stroke-width="1.2" stroke-dasharray="3 4"/>
+            <ellipse cx="60" cy="60" rx="18" ry="12" fill="rgba(10,94,168,0.18)" stroke="#0a5ea8" stroke-width="1"/>
+            <line x1="45" y1="52" x2="38" y2="44" stroke="rgba(10,94,168,0.35)" stroke-width="1" stroke-linecap="round"/>
+            <line x1="60" y1="49" x2="60" y2="40" stroke="rgba(10,94,168,0.35)" stroke-width="1" stroke-linecap="round"/>
+            <line x1="75" y1="52" x2="82" y2="44" stroke="rgba(10,94,168,0.35)" stroke-width="1" stroke-linecap="round"/>
+            <circle cx="60" cy="60" r="4" fill="#0a5ea8" opacity="0.5"/>`,
         },
         back: {
           title:   "Hydrophobic IOL",
@@ -2517,7 +3627,18 @@ if (ACTIVE_PAGE === "iol-page") {
           title:   "Hydrophilic IOL",
           sub:     "UK medical-grade material. 26% water content — perfect balance of foldability, clarity, and stability.",
           visualLabel: "Hydrophilic Acrylic",
-          lensSvg: `../Multimedia/hydrophilic_fold1.png`,
+          lensSvg: `
+            <path d="M22 60 Q8 30 20 12"   fill="none" stroke="#0a7a50" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+            <path d="M22 60 Q8 90 20 108"  fill="none" stroke="#0a7a50" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+            <path d="M98 60 Q112 30 100 12"  fill="none" stroke="#0a7a50" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+            <path d="M98 60 Q112 90 100 108" fill="none" stroke="#0a7a50" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+            <ellipse cx="60" cy="60" rx="40" ry="40" fill="rgba(10,122,80,0.1)"  stroke="#0a7a50" stroke-width="2.2"/>
+            <ellipse cx="60" cy="60" rx="27" ry="27" fill="rgba(10,122,80,0.12)" stroke="#0a7a50" stroke-width="1.2" stroke-dasharray="3 4"/>
+            <ellipse cx="60" cy="60" rx="15" ry="15" fill="rgba(10,122,80,0.2)"  stroke="#0a7a50" stroke-width="1"/>
+            <circle cx="60" cy="30" r="3.5" fill="rgba(10,122,80,0.3)" stroke="#0a7a50" stroke-width="1"/>
+            <circle cx="80" cy="40" r="2.5" fill="rgba(10,122,80,0.25)" stroke="#0a7a50" stroke-width="1"/>
+            <circle cx="40" cy="40" r="2.5" fill="rgba(10,122,80,0.25)" stroke="#0a7a50" stroke-width="1"/>
+            <circle cx="60" cy="60" r="4" fill="#0a7a50" opacity="0.5"/>`,
         },
         back: {
           title:   "Hydrophilic IOL",
@@ -2545,7 +3666,17 @@ if (ACTIVE_PAGE === "iol-page") {
           title:   "PMMA IOL",
           sub:     "UK medical-grade rigid lens. Cost-effective, highly stable. Suitable for posterior &amp; anterior chamber.",
           visualLabel: "PMMA Rigid",
-          lensSvg: `../Multimedia/nanoPlusPmma.png`,
+          lensSvg: `
+            <rect x="8"  y="52" width="16" height="16" rx="4" fill="none" stroke="#8a5a10" stroke-width="2" opacity="0.6"/>
+            <rect x="96" y="52" width="16" height="16" rx="4" fill="none" stroke="#8a5a10" stroke-width="2" opacity="0.6"/>
+            <line x1="24" y1="60" x2="34" y2="60" stroke="#8a5a10" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+            <line x1="86" y1="60" x2="96" y2="60" stroke="#8a5a10" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+            <circle cx="60" cy="60" r="30" fill="rgba(138,90,16,0.1)"  stroke="#8a5a10" stroke-width="2.5"/>
+            <circle cx="60" cy="60" r="20" fill="rgba(138,90,16,0.12)" stroke="#8a5a10" stroke-width="1.5" stroke-dasharray="3 5"/>
+            <circle cx="60" cy="60" r="11" fill="rgba(138,90,16,0.2)"  stroke="#8a5a10" stroke-width="1"/>
+            <line x1="55" y1="47" x2="65" y2="47" stroke="rgba(138,90,16,0.4)" stroke-width="1.2" stroke-linecap="round"/>
+            <line x1="55" y1="73" x2="65" y2="73" stroke="rgba(138,90,16,0.4)" stroke-width="1.2" stroke-linecap="round"/>
+            <circle cx="60" cy="60" r="4" fill="#8a5a10" opacity="0.5"/>`,
         },
         back: {
           title:   "PMMA IOL",
@@ -2640,7 +3771,7 @@ if (ACTIVE_PAGE === "iol-page") {
               <div class="card-visual ${t}-bg">
                 <svg class="card-visual-bg" viewBox="0 0 300 220" preserveAspectRatio="xMidYMid slice">${bgCircles}</svg>
                 <div class="lens-illustration lens-float" aria-hidden="true">
-                  <img src="${c.front.lensSvg}" style="width: 10rem; height: 10rem; object-fit: contain;" alt="Illustration of a hydrophobic IOL" />
+                  <svg width="120" height="120" viewBox="0 0 120 120">${c.front.lensSvg}</svg>
                 </div>
                 <span class="card-visual-label ${t}-c">${f.visualLabel}</span>
                 <div class="card-flip-icon neu-raised-sm ${t}-c">↩</div>
@@ -2681,6 +3812,31 @@ if (ACTIVE_PAGE === "iol-page") {
           </div>
         </div>`;
     }).join("");
+
+    grid.querySelectorAll(".card-scene").forEach(function (scene) {
+      scene.addEventListener("click", function (e) {
+        // Do not flip when clicking buttons or links.
+        if (e.target.closest("button, a")) return;
+
+        scene.classList.toggle("flipped");
+      });
+
+      scene.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          scene.classList.toggle("flipped");
+        }
+      });
+    });
+
+    grid.querySelectorAll(".back-btn-flip").forEach(function (button) {
+      button.addEventListener("click", function (e) {
+        e.stopPropagation();
+
+        const card = button.closest(".card-scene");
+        if (card) card.classList.remove("flipped");
+      });
+    });
   })();
 
   // Trust bar
@@ -2732,86 +3888,87 @@ if (ACTIVE_PAGE === "iol-page") {
     }
   })();
 
-  // WhatsApp + footer
-  const waF = qs("waFloat");
-  if (waF) waF.href = PAGE.company.whatsapp;
-  const copy = qs("footerCopyright");
-  if (copy) copy.textContent = PAGE.company.copyright;
-
-}
-
-/*************************************************
- * Card Flip
- *************************************************/
-function flipCard(id) {
-  const card = document.getElementById(id);
-  if (card) card.classList.toggle("flipped");
-}
-
-/*************************************************
- * Card Flip Logic
- *************************************************/
-document.querySelectorAll(".card-scene").forEach(function (scene) {
-  function doFlip() {
-    scene.classList.toggle("flipped");
-
-    const isFlipped = scene.classList.contains("flipped");
-
-    scene.setAttribute(
-      "aria-label",
-      scene.id
-        .replace("card-", "")
-        .replace("hydro", "Hydrophobic")
-        .replace("phil", "Hydrophilic")
-        .replace("pmma", "PMMA") +
-        " IOL — " +
-        (isFlipped ? "click to go back" : "click to see specifications")
-    );
+  const LENS = {
+    footer: {
+      tagline: "Premium ophthalmic products — IOLs, surgical blades, and pharma — crafted in Chennai for surgeons worldwide.",
+      socials: [
+        { href: "#", icon: "fa-brands fa-linkedin-in", label: "LinkedIn"  },
+        { href: "#", icon: "fa-brands fa-instagram",   label: "Instagram" },
+        { href: "https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv", icon: "fa-brands fa-whatsapp", label: "WhatsApp" },
+      ],
+      quickLinks: [
+        { label: "Home",             href: "../Pages/index.html"           },
+        { label: "Hydrophobic IOL",  href: "../Pages/hydrophobicIol.html"  },
+        { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html"  },
+        { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html"         },
+        { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
+        { label: "Contact Us",       href: "../Pages/contactUs.html"       },
+        { label: "Gallery",          href: "../Pages/gallery.html"         },
+      ],
+      products: [
+        { label: "Nano Claro",      href: "../Pages/nanoClaro.html"  },
+        { label: "Nano Grand",      href: "../Pages/nanoGrand.html"  },
+        { label: "Nano Fold",       href: "../Pages/nanoFold.html"   },
+        { label: "Nano Flex",       href: "../Pages/nanoFlex.html"   },
+        { label: "Keratome Blades", href: "../Pages/keratome.html"   },
+        { label: "Crescent Blades", href: "../Pages/crescent.html"   },
+        { label: "MVR Blades",      href: "../Pages/mvrBlade.html"   },
+      ],
+      contact: {
+        address: "Chennai, Tamil Nadu, India — PIN 600001",
+        phone:   "+91 98765 43210",
+        email:   "info@worldvisionophthalmic.com",
+        hours:   "Mon–Sat, 9AM–6PM IST",
+      },
+    },
   }
 
-  scene.addEventListener("click", function (e) {
-    if (e.target.closest(".card-face.back")) return;
-    doFlip();
-  });
+  // ── Footer ────────────────────────────────────────────────────────────
+  const fb = qs("auFooterBody");
+  if (fb) fb.innerHTML = `
+    <div class="au-footer-brand-col">
+      <div class="au-footer-brand-header">
+        <img src="${PAGE.company.logo}" alt="World Vision Logo"/>
+        <div>
+          <div class="au-footer-brand-name">${PAGE.company.name}</div>
+          <div class="au-footer-brand-sub">${PAGE.company.subtitle}</div>
+        </div>
+      </div>
+      <p class="au-footer-tagline">${LENS.footer.tagline}</p>
+      <div class="au-footer-socials">
+        ${LENS.footer.socials.map(s =>
+          `<a href="${s.href}" class="au-footer-social" aria-label="${s.label}" ${s.href.startsWith("http") ? 'target="_blank"' : ""}>
+            <i class="${s.icon}"></i>
+          </a>`
+        ).join("")}
+      </div>
+    </div>
 
-  scene.addEventListener("keydown", function (e) {
-    if ((e.key === "Enter" || e.key === " ") && !e.target.closest("button")) {
-      e.preventDefault();
-      doFlip();
-    }
-  });
+    <div class="au-footer-links-col">
+      <h4>Quick Links</h4>
+      <div class="au-footer-links-grid">
+        ${LENS.footer.quickLinks.map(l => `<a href="${l.href}" class="au-footer-link">${l.label}</a>`).join("")}
+      </div>
+      <h4 style="margin-top:24px;">Products</h4>
+      <div class="au-footer-links-grid">
+        ${LENS.footer.products.map(l => `<a href="${l.href}" class="au-footer-link">${l.label}</a>`).join("")}
+      </div>
+    </div>
 
-  let touchStartX = 0;
+    <div class="au-footer-contact-col">
+      <h4>Contact Us</h4>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>${LENS.footer.contact.address}</span></div>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-phone"></i><span><a href="tel:${LENS.footer.contact.phone}">${LENS.footer.contact.phone}</a></span></div>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-envelope"></i><span><a href="mailto:${LENS.footer.contact.email}">${LENS.footer.contact.email}</a></span></div>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-clock"></i><span>${LENS.footer.contact.hours}</span></div>
+    </div>`;
 
-  scene.addEventListener(
-    "touchstart",
-    function (e) {
-      touchStartX = e.touches[0].clientX;
-    },
-    { passive: true }
-  );
+    const fc = qs("auFooterBottom");
+    if (fc) fc.textContent = PAGE.company.copyright;
 
-  scene.addEventListener("touchend", function (e) {
-    const diff = touchStartX - e.changedTouches[0].clientX;
-
-    if (Math.abs(diff) > 50) {
-      doFlip();
-    }
-  });
-});
-
-/*************************************************
- * Back Face Buttons
- *************************************************/
-document.querySelectorAll(".back-btn-flip").forEach(function (btn) {
-  btn.addEventListener("click", function (e) {
-    e.stopPropagation();
-
-    const card = btn.closest(".card-scene");
-    if (card) card.classList.remove("flipped");
-  });
-});
-
+    const waF = qs("waFloat");
+    if (waF) waF.href = PAGE.company.whatsapp;
+}
 
 /*************************************************
  * NANO FOLD PAGE — nanoFold.html
@@ -2917,7 +4074,7 @@ if (ACTIVE_PAGE === "nanoFold") {
   // Hero lens image
   const foldLensWrap = qs("heroLensWrap");
   if (foldLensWrap) {
-    foldLensWrap.innerHTML = `<img src="${FOLD.lensImg}" alt="Nano Fold lens" style="width:240px;height:240px;object-fit:contain;" onerror="this.style.opacity='1'"/>`;
+    foldLensWrap.innerHTML = `<img src="${FOLD.lensImg}" alt="Nano Fold lens" style="width:240px;height:240px;object-fit:contain;" onerror="this.style.opacity='0'"/>`;
   }
 
   // Model panel
@@ -2943,7 +4100,7 @@ if (ACTIVE_PAGE === "nanoFold") {
           <div class="card-lens-bg"></div>
           <div class="card-lens-svg" id="foldModelLens">
             <!-- lens image swaps when model tab changes -->
-            <img src="${FOLD.lensImg}" alt="Nano Fold" style="width:140px;height:140px;object-fit:contain;" onerror="this.style.opacity='1'"/>
+            <img src="${FOLD.lensImg}" alt="Nano Fold" style="width:140px;height:140px;object-fit:contain;" onerror="this.style.opacity='0'"/>
           </div>
         </div>
         <div class="variant-badges">${badges}</div>
@@ -2973,31 +4130,6 @@ if (ACTIVE_PAGE === "nanoFold") {
           <button class="dl-btn dl-btn-ghost"   onclick="alert('Enquiry form coming soon.')"><i class="fa-solid fa-envelope"></i> Enquire</button>
         </div>
       </div>`;
-
-      const foldBtns = foldPanel.querySelectorAll(".spec-model-btn");
-      const foldLensImg = document.querySelector("#foldModelLens img");
-
-      foldBtns.forEach(btn => {
-        btn.addEventListener("click", () => {
-
-          // active button
-          foldBtns.forEach(b => b.classList.remove("active"));
-          btn.classList.add("active");
-
-          // specs switching
-          foldPanel.querySelectorAll(".spec-rows").forEach(r => {
-            r.style.display = "none";
-          });
-
-          const activeRows = document.getElementById(btn.dataset.rows);
-          if (activeRows) activeRows.style.display = "block";
-
-          // lens image switching
-          if (foldLensImg && btn.dataset.lens) {
-            foldLensImg.src = btn.dataset.lens;
-          }
-        });
-      });
   }
 
   // Trust + IFU + float + footer
@@ -3013,8 +4145,86 @@ if (ACTIVE_PAGE === "nanoFold") {
   const foldIfuGrid = qs("ifuGrid");
   if (foldIfuGrid) foldIfuGrid.innerHTML = ["NFR 574 SQ","NFR 600 SQ","NFC 600 SQ","NFM 604 SQ"].map(m => `<a href="#" class="ifu-link"><div class="ifu-link-icon phil-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--neu-phil-c)" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg></div><div class="ifu-link-text"><strong>IFU — ${m}</strong><span>PDF Document</span></div></a>`).join("");
 
-  const waF = qs("waFloat"); if (waF) waF.href = PAGE.company.whatsapp;
-  const copy = qs("footerCopyright"); if (copy) copy.textContent = PAGE.company.copyright;
+  const LENS = {
+    footer: {
+      tagline: "Premium ophthalmic products — IOLs, surgical blades, and pharma — crafted in Chennai for surgeons worldwide.",
+      socials: [
+        { href: "#", icon: "fa-brands fa-linkedin-in", label: "LinkedIn"  },
+        { href: "#", icon: "fa-brands fa-instagram",   label: "Instagram" },
+        { href: "https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv", icon: "fa-brands fa-whatsapp", label: "WhatsApp" },
+      ],
+      quickLinks: [
+        { label: "Home",             href: "../Pages/index.html"           },
+        { label: "Hydrophobic IOL",  href: "../Pages/hydrophobicIol.html"  },
+        { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html"  },
+        { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html"         },
+        { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
+        { label: "Contact Us",       href: "../Pages/contactUs.html"       },
+        { label: "Gallery",          href: "../Pages/gallery.html"         },
+      ],
+      products: [
+        { label: "Nano Claro",      href: "../Pages/nanoClaro.html"  },
+        { label: "Nano Grand",      href: "../Pages/nanoGrand.html"  },
+        { label: "Nano Fold",       href: "../Pages/nanoFold.html"   },
+        { label: "Nano Flex",       href: "../Pages/nanoFlex.html"   },
+        { label: "Keratome Blades", href: "../Pages/keratome.html"   },
+        { label: "Crescent Blades", href: "../Pages/crescent.html"   },
+        { label: "MVR Blades",      href: "../Pages/mvrBlade.html"   },
+      ],
+      contact: {
+        address: "Chennai, Tamil Nadu, India — PIN 600001",
+        phone:   "+91 98765 43210",
+        email:   "info@worldvisionophthalmic.com",
+        hours:   "Mon–Sat, 9AM–6PM IST",
+      },
+    },
+  }
+
+  // ── Footer ────────────────────────────────────────────────────────────
+  const fb = qs("auFooterBody");
+  if (fb) fb.innerHTML = `
+    <div class="au-footer-brand-col">
+      <div class="au-footer-brand-header">
+        <img src="${PAGE.company.logo}" alt="World Vision Logo"/>
+        <div>
+          <div class="au-footer-brand-name">${PAGE.company.name}</div>
+          <div class="au-footer-brand-sub">${PAGE.company.subtitle}</div>
+        </div>
+      </div>
+      <p class="au-footer-tagline">${LENS.footer.tagline}</p>
+      <div class="au-footer-socials">
+        ${LENS.footer.socials.map(s =>
+          `<a href="${s.href}" class="au-footer-social" aria-label="${s.label}" ${s.href.startsWith("http") ? 'target="_blank"' : ""}>
+            <i class="${s.icon}"></i>
+          </a>`
+        ).join("")}
+      </div>
+    </div>
+
+    <div class="au-footer-links-col">
+      <h4>Quick Links</h4>
+      <div class="au-footer-links-grid">
+        ${LENS.footer.quickLinks.map(l => `<a href="${l.href}" class="au-footer-link">${l.label}</a>`).join("")}
+      </div>
+      <h4 style="margin-top:24px;">Products</h4>
+      <div class="au-footer-links-grid">
+        ${LENS.footer.products.map(l => `<a href="${l.href}" class="au-footer-link">${l.label}</a>`).join("")}
+      </div>
+    </div>
+
+    <div class="au-footer-contact-col">
+      <h4>Contact Us</h4>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>${LENS.footer.contact.address}</span></div>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-phone"></i><span><a href="tel:${LENS.footer.contact.phone}">${LENS.footer.contact.phone}</a></span></div>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-envelope"></i><span><a href="mailto:${LENS.footer.contact.email}">${LENS.footer.contact.email}</a></span></div>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-clock"></i><span>${LENS.footer.contact.hours}</span></div>
+    </div>`;
+
+    const fc = qs("auFooterBottom");
+    if (fc) fc.textContent = PAGE.company.copyright;
+
+    const waF = qs("waFloat");
+    if (waF) waF.href = PAGE.company.whatsapp;
 }
 
 
@@ -3181,7 +4391,7 @@ if (ACTIVE_PAGE === "nanoFlex") {
   const flexLensWrap = qs("heroLensWrap");
   function updateHeroLens(tabId) {
     if (!flexLensWrap) return;
-    flexLensWrap.innerHTML = `<img src="${FLEX_DATA[tabId].lensImg}" alt="${FLEX_DATA[tabId].title}" style="width:240px;height:240px;object-fit:contain;" onerror="this.style.opacity='1'"/>`;
+    flexLensWrap.innerHTML = `<img src="${FLEX_DATA[tabId].lensImg}" alt="${FLEX_DATA[tabId].title}" style="width:240px;height:240px;object-fit:contain;" onerror="this.style.opacity='0'"/>`;
   }
   updateHeroLens("nanoFlex");
 
@@ -3320,12 +4530,90 @@ if (ACTIVE_PAGE === "nanoFlex") {
     { label: "IFU — Nano Flex Y", sub: "Yellow Aspheric · ASY series" },
   ].map(l => `<a href="#" class="ifu-link"><div class="ifu-link-icon phil-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--neu-phil-c)" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg></div><div class="ifu-link-text"><strong>${l.label}</strong><span>${l.sub}</span></div></a>`).join("");
 
-  const waF2 = qs("waFloat"); if (waF2) waF2.href = PAGE.company.whatsapp;
-  const copy2 = qs("footerCopyright"); if (copy2) copy2.textContent = PAGE.company.copyright;
+  const LENS = {
+    footer: {
+      tagline: "Premium ophthalmic products — IOLs, surgical blades, and pharma — crafted in Chennai for surgeons worldwide.",
+      socials: [
+        { href: "#", icon: "fa-brands fa-linkedin-in", label: "LinkedIn"  },
+        { href: "#", icon: "fa-brands fa-instagram",   label: "Instagram" },
+        { href: "https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv", icon: "fa-brands fa-whatsapp", label: "WhatsApp" },
+      ],
+      quickLinks: [
+        { label: "Home",             href: "../Pages/index.html"           },
+        { label: "Hydrophobic IOL",  href: "../Pages/hydrophobicIol.html"  },
+        { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html"  },
+        { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html"         },
+        { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
+        { label: "Contact Us",       href: "../Pages/contactUs.html"       },
+        { label: "Gallery",          href: "../Pages/gallery.html"         },
+      ],
+      products: [
+        { label: "Nano Claro",      href: "../Pages/nanoClaro.html"  },
+        { label: "Nano Grand",      href: "../Pages/nanoGrand.html"  },
+        { label: "Nano Fold",       href: "../Pages/nanoFold.html"   },
+        { label: "Nano Flex",       href: "../Pages/nanoFlex.html"   },
+        { label: "Keratome Blades", href: "../Pages/keratome.html"   },
+        { label: "Crescent Blades", href: "../Pages/crescent.html"   },
+        { label: "MVR Blades",      href: "../Pages/mvrBlade.html"   },
+      ],
+      contact: {
+        address: "Chennai, Tamil Nadu, India — PIN 600001",
+        phone:   "+91 98765 43210",
+        email:   "info@worldvisionophthalmic.com",
+        hours:   "Mon–Sat, 9AM–6PM IST",
+      },
+    },
+  }
+
+  // ── Footer ────────────────────────────────────────────────────────────
+  const fb = qs("auFooterBody");
+  if (fb) fb.innerHTML = `
+    <div class="au-footer-brand-col">
+      <div class="au-footer-brand-header">
+        <img src="${PAGE.company.logo}" alt="World Vision Logo"/>
+        <div>
+          <div class="au-footer-brand-name">${PAGE.company.name}</div>
+          <div class="au-footer-brand-sub">${PAGE.company.subtitle}</div>
+        </div>
+      </div>
+      <p class="au-footer-tagline">${LENS.footer.tagline}</p>
+      <div class="au-footer-socials">
+        ${LENS.footer.socials.map(s =>
+          `<a href="${s.href}" class="au-footer-social" aria-label="${s.label}" ${s.href.startsWith("http") ? 'target="_blank"' : ""}>
+            <i class="${s.icon}"></i>
+          </a>`
+        ).join("")}
+      </div>
+    </div>
+
+    <div class="au-footer-links-col">
+      <h4>Quick Links</h4>
+      <div class="au-footer-links-grid">
+        ${LENS.footer.quickLinks.map(l => `<a href="${l.href}" class="au-footer-link">${l.label}</a>`).join("")}
+      </div>
+      <h4 style="margin-top:24px;">Products</h4>
+      <div class="au-footer-links-grid">
+        ${LENS.footer.products.map(l => `<a href="${l.href}" class="au-footer-link">${l.label}</a>`).join("")}
+      </div>
+    </div>
+
+    <div class="au-footer-contact-col">
+      <h4>Contact Us</h4>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>${LENS.footer.contact.address}</span></div>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-phone"></i><span><a href="tel:${LENS.footer.contact.phone}">${LENS.footer.contact.phone}</a></span></div>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-envelope"></i><span><a href="mailto:${LENS.footer.contact.email}">${LENS.footer.contact.email}</a></span></div>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-clock"></i><span>${LENS.footer.contact.hours}</span></div>
+    </div>`;
+
+    const fc = qs("auFooterBottom");
+    if (fc) fc.textContent = PAGE.company.copyright;
+
+    const waF = qs("waFloat");
+    if (waF) waF.href = PAGE.company.whatsapp;
 }
 
 /*************************************************
- * PMMA IOL PAGE — pmmaIol.html
+ * PMMA IOL PAGE — pmmaIOL.html
  * Tabs: Nano Plus | Nano Plus Y | Nano IOL | Nano Iris | Nano Ring | Nano SQD
  *************************************************/
 
@@ -3781,35 +5069,17 @@ if (ACTIVE_PAGE === "pmmaIOL") {
       <i class="fa-solid fa-arrow-left" style="font-size:11px;"></i> All IOLs
     </a>`);
 
-  
-    function updatePmmaHero(tabId) {
-      const data = PMMA_TABS.find(t => t.id === tabId);
-      if (!data) return;
+  const pmmaHeroLens = qs("heroLensWrap");
 
-      const eyebrow = qs("heroEyebrow");
-      if (eyebrow) {
-        eyebrow.innerHTML = `<span class="pulse" style="background:var(--neu-pmma-c);"></span>${data.tag}`;
-      }
-
-      const h1 = qs("page-h1");
-      if (h1) {
-        h1.innerHTML = `${data.title}<br><em>PMMA IOL</em>`;
-      }
-
-      const desc = qs("heroDesc");
-      if (desc) {
-        desc.textContent = data.desc;
-      }
-
-      const lensWrap = qs("heroLensWrap");
-      if (lensWrap) {
-        lensWrap.innerHTML = `
-          <img src="${data.lensImg}" alt="${data.title}"
-            style="width:240px;height:240px;object-fit:contain;"
-            onerror="this.style.opacity='0'"/>
-        `;
-      }
-    }
+if (pmmaHeroLens) {
+  pmmaHeroLens.innerHTML = `
+    <img
+      src="${PMMA_TABS[0].lensImg}"
+      alt="${PMMA_TABS[0].title} PMMA lens"
+      style="width:240px;height:240px;object-fit:contain;"
+    />
+  `;
+}
 
   // ── TAB BAR ───────────────────────────────────────────────────────────
   const pmmaTabBar = qs("pmmaTabBar");
@@ -3911,42 +5181,50 @@ if (ACTIVE_PAGE === "pmmaIOL") {
   }
 
   PMMA_TABS.forEach(buildPmmaPanel);
-  updatePmmaHero("nanoPlus");
-  updatePmmaMaterial("nanoPlus");
 
   // ── TAB SWITCHING ─────────────────────────────────────────────────────
   document.addEventListener("click", function(e) {
     const tab = e.target.closest(".model-tab[data-model]");
     if (!tab) return;
-
     const targetId = tab.dataset.model;
+
+    // Change hero lens when changing tab
+    const selectedProduct = PMMA_TABS.find(
+      item => item.id === targetId
+    );
+
+    const heroLens = qs("heroLensWrap");
+
+    if (selectedProduct && heroLens) {
+      heroLens.innerHTML = `
+        <img
+          src="${selectedProduct.lensImg}"
+          alt="${selectedProduct.title} PMMA lens"
+          style="width:240px;height:240px;object-fit:contain;"
+        />
+      `;
+    }
 
     document.querySelectorAll(".model-tab[data-model]").forEach(t => {
       const isThis = t === tab;
       t.classList.toggle("active", isThis);
-
       if (t.dataset.yellow === "true") {
         t.style.background = isThis ? "linear-gradient(135deg,#8a5a10,#b87820)" : "";
-        t.style.color = isThis ? "#fff" : "";
+        t.style.color      = isThis ? "#fff" : "";
       }
-
       t.setAttribute("aria-selected", isThis ? "true" : "false");
     });
 
     document.querySelectorAll(".model-panel").forEach(p => p.classList.remove("active"));
-
     const targetPanel = qs(`panel-${targetId}`);
     if (targetPanel) targetPanel.classList.add("active");
-
-    updatePmmaHero(targetId);
-    updatePmmaMaterial(targetId);
   });
 
   // ── MATERIAL SCIENCE ──────────────────────────────────────────────────
   const matEyebrow = qs("materialEyebrow");
   if (matEyebrow) matEyebrow.innerHTML = `<i class="fa-solid fa-flask-vial" style="font-size:10px;color:var(--neu-pmma-c);"></i> Material Science`;
 
-  const matHeading = qs("materialHeading") || document.getElementById("material-heading");
+  const matHeading = qs("materialHeading");
   if (matHeading) matHeading.innerHTML = "Why <em>PMMA</em> still matters";
 
   const matSub = qs("materialSub");
@@ -3989,63 +5267,6 @@ if (ACTIVE_PAGE === "pmmaIOL") {
         <div class="compare-row"><span class="compare-label">Blue Light Filter</span><span class="compare-wv"><i class="fa-solid fa-check" style="font-size:11px;"></i> Built-in</span></div>
         <div class="compare-row"><span class="compare-label">Raw Material Source</span><span class="compare-wv">🇬🇧 United Kingdom</span></div>
       </div>`;
-  }
-
-  function updatePmmaMaterial(tabId) {
-    const data = PMMA_TABS.find(t => t.id === tabId);
-    if (!data) return;
-
-    const matHeading = qs("materialHeading");
-    if (matHeading) {
-      matHeading.innerHTML = `Why <em>${data.title}</em> matters`;
-    }
-
-    const matSub = qs("materialSub");
-    if (matSub) {
-      matSub.textContent = data.desc;
-    }
-
-    const matFeatures = qs("materialFeatures");
-    if (matFeatures) {
-      matFeatures.innerHTML = data.highlights.map(h => `
-        <div class="material-feature">
-          <div class="mf-icon" style="background:rgba(138,90,16,0.1);color:var(--neu-pmma-c);">
-            <i class="fa-solid ${h.icon}"></i>
-          </div>
-          <div>
-            <div class="mf-title">${h.text}</div>
-            <div class="mf-desc">${data.subtitle}</div>
-          </div>
-        </div>
-      `).join("");
-    }
-
-    const matCard = qs("materialCard");
-    if (matCard) {
-      matCard.innerHTML = `
-        <div class="material-neu-card-label" style="color:var(--neu-pmma-c);">
-          <i class="fa-solid fa-scale-balanced" style="margin-right:5px;"></i> Product Profile
-        </div>
-        <div class="material-compare">
-          <div class="compare-row">
-            <span class="compare-label">Product Line</span>
-            <span class="compare-wv" style="color:var(--neu-pmma-c);">${data.title}</span>
-          </div>
-          <div class="compare-row">
-            <span class="compare-label">Design</span>
-            <span class="compare-wv" style="color:var(--neu-pmma-c);">${data.type}</span>
-          </div>
-          <div class="compare-row">
-            <span class="compare-label">Material</span>
-            <span class="compare-wv" style="color:var(--neu-pmma-c);">PMMA</span>
-          </div>
-          <div class="compare-row">
-            <span class="compare-label">Available Models</span>
-            <span class="compare-wv" style="color:var(--neu-pmma-c);">${data.variants.length}</span>
-          </div>
-        </div>
-      `;
-    }
   }
 
   // ── TRUST ─────────────────────────────────────────────────────────────
@@ -4099,9 +5320,89 @@ if (ACTIVE_PAGE === "pmmaIOL") {
       <div class="ifu-link-text"><strong>${l.label}</strong><span>${l.sub}</span></div>
     </a>`).join("");
 
-  const waF = qs("waFloat"); if (waF) waF.href = PAGE.company.whatsapp;
-  const copy = qs("footerCopyright"); if (copy) copy.textContent = PAGE.company.copyright;
+  const LENS = {
+    footer: {
+      tagline: "Premium ophthalmic products — IOLs, surgical blades, and pharma — crafted in Chennai for surgeons worldwide.",
+      socials: [
+        { href: "#", icon: "fa-brands fa-linkedin-in", label: "LinkedIn"  },
+        { href: "#", icon: "fa-brands fa-instagram",   label: "Instagram" },
+        { href: "https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv", icon: "fa-brands fa-whatsapp", label: "WhatsApp" },
+      ],
+      quickLinks: [
+        { label: "Home",             href: "../Pages/index.html"           },
+        { label: "Hydrophobic IOL",  href: "../Pages/hydrophobicIol.html"  },
+        { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html"  },
+        { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html"         },
+        { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
+        { label: "Contact Us",       href: "../Pages/contactUs.html"       },
+        { label: "Gallery",          href: "../Pages/gallery.html"         },
+      ],
+      products: [
+        { label: "Nano Claro",      href: "../Pages/nanoClaro.html"  },
+        { label: "Nano Grand",      href: "../Pages/nanoGrand.html"  },
+        { label: "Nano Fold",       href: "../Pages/nanoFold.html"   },
+        { label: "Nano Flex",       href: "../Pages/nanoFlex.html"   },
+        { label: "Keratome Blades", href: "../Pages/keratome.html"   },
+        { label: "Crescent Blades", href: "../Pages/crescent.html"   },
+        { label: "MVR Blades",      href: "../Pages/mvrBlade.html"   },
+      ],
+      contact: {
+        address: "Chennai, Tamil Nadu, India — PIN 600001",
+        phone:   "+91 98765 43210",
+        email:   "info@worldvisionophthalmic.com",
+        hours:   "Mon–Sat, 9AM–6PM IST",
+      },
+    },
+  }
+
+  // ── Footer ────────────────────────────────────────────────────────────
+  const fb = qs("auFooterBody");
+  if (fb) fb.innerHTML = `
+    <div class="au-footer-brand-col">
+      <div class="au-footer-brand-header">
+        <img src="${PAGE.company.logo}" alt="World Vision Logo"/>
+        <div>
+          <div class="au-footer-brand-name">${PAGE.company.name}</div>
+          <div class="au-footer-brand-sub">${PAGE.company.subtitle}</div>
+        </div>
+      </div>
+      <p class="au-footer-tagline">${LENS.footer.tagline}</p>
+      <div class="au-footer-socials">
+        ${LENS.footer.socials.map(s =>
+          `<a href="${s.href}" class="au-footer-social" aria-label="${s.label}" ${s.href.startsWith("http") ? 'target="_blank"' : ""}>
+            <i class="${s.icon}"></i>
+          </a>`
+        ).join("")}
+      </div>
+    </div>
+
+    <div class="au-footer-links-col">
+      <h4>Quick Links</h4>
+      <div class="au-footer-links-grid">
+        ${LENS.footer.quickLinks.map(l => `<a href="${l.href}" class="au-footer-link">${l.label}</a>`).join("")}
+      </div>
+      <h4 style="margin-top:24px;">Products</h4>
+      <div class="au-footer-links-grid">
+        ${LENS.footer.products.map(l => `<a href="${l.href}" class="au-footer-link">${l.label}</a>`).join("")}
+      </div>
+    </div>
+
+    <div class="au-footer-contact-col">
+      <h4>Contact Us</h4>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>${LENS.footer.contact.address}</span></div>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-phone"></i><span><a href="tel:${LENS.footer.contact.phone}">${LENS.footer.contact.phone}</a></span></div>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-envelope"></i><span><a href="mailto:${LENS.footer.contact.email}">${LENS.footer.contact.email}</a></span></div>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-clock"></i><span>${LENS.footer.contact.hours}</span></div>
+    </div>`;
+
+    const fc = qs("auFooterBottom");
+    if (fc) fc.textContent = PAGE.company.copyright;
+
+    const waF = qs("waFloat");
+    if (waF) waF.href = PAGE.company.whatsapp;
 }
+
+
 
 /*************************************************
  * KERATOME PAGE — keratome.html
@@ -4313,9 +5614,9 @@ if (ACTIVE_PAGE === "keratome") {
       return `<div class="spec-rows" id="${v.id}"${i > 0 ? ' style="display:none;"' : ""}>${rows}</div>`;
     }).join("");
     const specialBlock = data.specialOrder ? `
-      <div style="margin-top:0.8rem; margin-bottom:1rem;">
-        <div class="spec-head-title" style="display:flex;align-items:center;gap:6px;margin-bottom:8px; margin-left:2rem; font-size:13px;color:var(--neu-text);">
-          <i class="fa-solid fa-star" style="font-size:15px;color:var(--neu-accent);"></i>
+      <div style="margin-top:0.8rem;">
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:8px;font-size:12px;color:var(--neu-muted);">
+          <i class="fa-solid fa-rotate" style="font-size:10px;color:var(--neu-accent);"></i>
           Special Order Models
         </div>
         <div class="spec-model-sel">
@@ -4408,11 +5709,87 @@ if (ACTIVE_PAGE === "keratome") {
     { label: "IFU — Keratome Sharp Tip", sub: "ST series · Phaco Stab Incision" },
     { label: "IFU — Keratome Blunt Tip", sub: "BT series · IOL Enlarging"       },
   ].map(l => `<a href="#" class="ifu-link"><div class="ifu-link-icon hydro-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--neu-accent)" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg></div><div class="ifu-link-text"><strong>${l.label}</strong><span>${l.sub}</span></div></a>`).join("");
+  
+  const BLADS = {
+    footer: {
+      tagline: "Premium ophthalmic products — IOLs, surgical blades, and pharma — crafted in Chennai for surgeons worldwide.",
+      socials: [
+        { href: "#", icon: "fa-brands fa-linkedin-in", label: "LinkedIn"  },
+        { href: "#", icon: "fa-brands fa-instagram",   label: "Instagram" },
+        { href: "https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv", icon: "fa-brands fa-whatsapp", label: "WhatsApp" },
+      ],
+      quickLinks: [
+        { label: "Home",             href: "../Pages/index.html"           },
+        { label: "Hydrophobic IOL",  href: "../Pages/hydrophobicIol.html"  },
+        { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html"  },
+        { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html"         },
+        { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
+        { label: "Contact Us",       href: "../Pages/contactUs.html"       },
+        { label: "Gallery",          href: "../Pages/gallery.html"         },
+      ],
+      products: [
+        { label: "Nano Claro",      href: "../Pages/nanoClaro.html"  },
+        { label: "Nano Grand",      href: "../Pages/nanoGrand.html"  },
+        { label: "Nano Fold",       href: "../Pages/nanoFold.html"   },
+        { label: "Nano Flex",       href: "../Pages/nanoFlex.html"   },
+        { label: "Keratome Blades", href: "../Pages/keratome.html"   },
+        { label: "Crescent Blades", href: "../Pages/crescent.html"   },
+        { label: "MVR Blades",      href: "../Pages/mvrBlade.html"   },
+      ],
+      contact: {
+        address: "Chennai, Tamil Nadu, India — PIN 600001",
+        phone:   "+91 98765 43210",
+        email:   "info@worldvisionophthalmic.com",
+        hours:   "Mon–Sat, 9AM–6PM IST",
+      },
+    },
+  }
 
-  const bc = qs("breadcrumb");
-  if (bc) bc.innerHTML = `<a href="../Pages/index.html">Home</a><span class="sep">/</span><a href="#">Our Products</a><span class="sep">/</span><span class="current">Keratome Blade</span>`;
-  const waF = qs("waFloat"); if (waF) waF.href = PAGE.company.whatsapp;
-  const copy = qs("footerCopyright"); if (copy) copy.textContent = PAGE.company.copyright;
+  // ── Footer ────────────────────────────────────────────────────────────
+  const fb = qs("auFooterBody");
+  if (fb) fb.innerHTML = `
+    <div class="au-footer-brand-col">
+      <div class="au-footer-brand-header">
+        <img src="${PAGE.company.logo}" alt="World Vision Logo"/>
+        <div>
+          <div class="au-footer-brand-name">${PAGE.company.name}</div>
+          <div class="au-footer-brand-sub">${PAGE.company.subtitle}</div>
+        </div>
+      </div>
+      <p class="au-footer-tagline">${BLADS.footer.tagline}</p>
+      <div class="au-footer-socials">
+        ${BLADS.footer.socials.map(s =>
+          `<a href="${s.href}" class="au-footer-social" aria-label="${s.label}" ${s.href.startsWith("http") ? 'target="_blank"' : ""}>
+            <i class="${s.icon}"></i>
+          </a>`
+        ).join("")}
+      </div>
+    </div>
+
+    <div class="au-footer-links-col">
+      <h4>Quick Links</h4>
+      <div class="au-footer-links-grid">
+        ${BLADS.footer.quickLinks.map(l => `<a href="${l.href}" class="au-footer-link">${l.label}</a>`).join("")}
+      </div>
+      <h4 style="margin-top:24px;">Products</h4>
+      <div class="au-footer-links-grid">
+        ${BLADS.footer.products.map(l => `<a href="${l.href}" class="au-footer-link">${l.label}</a>`).join("")}
+      </div>
+    </div>
+
+    <div class="au-footer-contact-col">
+      <h4>Contact Us</h4>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>${BLADS.footer.contact.address}</span></div>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-phone"></i><span><a href="tel:${BLADS.footer.contact.phone}">${BLADS.footer.contact.phone}</a></span></div>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-envelope"></i><span><a href="mailto:${BLADS.footer.contact.email}">${BLADS.footer.contact.email}</a></span></div>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-clock"></i><span>${BLADS.footer.contact.hours}</span></div>
+    </div>`;
+
+    const fc = qs("auFooterBottom");
+    if (fc) fc.textContent = PAGE.company.copyright;
+
+    const waF = qs("waFloat");
+    if (waF) waF.href = PAGE.company.whatsapp;
 }
 
 /*************************************************
@@ -4423,8 +5800,8 @@ if (ACTIVE_PAGE === "crescent") {
   const CRES_TABS = [
     {
       id:       "crescentTI",
-      name:     "Crescent",
-      type:     "Tunnel Incision/ Croissant / Crescent Cuchillas - Blades",
+      name:     "Tunnel Incision",
+      type:     "Straight / 45°",
       tag:      "Crescent · Tunnel Incision · Straight / Angled 45° · Bevel Up/Down",
       title:    "Crescent Blade",
       subtitle: "Croissant-Blades / Crescent Cuchillas — for Tunnel Incision Straight / Angled 45 Deg. Bevel Up / Down",
@@ -4549,11 +5926,87 @@ if (ACTIVE_PAGE === "crescent") {
   if (cresIfuH) cresIfuH.innerHTML = `<div class="ifu-icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div><div><div class="ifu-title">Instructions for Use</div><div class="ifu-sub">Download IFU for Crescent Blade product lines</div></div>`;
   const cresIfuG = qs("ifuGrid");
   if (cresIfuG) cresIfuG.innerHTML = `<a href="#" class="ifu-link"><div class="ifu-link-icon hydro-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--neu-accent)" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg></div><div class="ifu-link-text"><strong>IFU — Crescent Blade</strong><span>TI series · Tunnel Incision · 20 Gauge</span></div></a>`;
+  
+  const BLADS = {
+    footer: {
+      tagline: "Premium ophthalmic products — IOLs, surgical blades, and pharma — crafted in Chennai for surgeons worldwide.",
+      socials: [
+        { href: "#", icon: "fa-brands fa-linkedin-in", label: "LinkedIn"  },
+        { href: "#", icon: "fa-brands fa-instagram",   label: "Instagram" },
+        { href: "https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv", icon: "fa-brands fa-whatsapp", label: "WhatsApp" },
+      ],
+      quickLinks: [
+        { label: "Home",             href: "../Pages/index.html"           },
+        { label: "Hydrophobic IOL",  href: "../Pages/hydrophobicIol.html"  },
+        { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html"  },
+        { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html"         },
+        { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
+        { label: "Contact Us",       href: "../Pages/contactUs.html"       },
+        { label: "Gallery",          href: "../Pages/gallery.html"         },
+      ],
+      products: [
+        { label: "Nano Claro",      href: "../Pages/nanoClaro.html"  },
+        { label: "Nano Grand",      href: "../Pages/nanoGrand.html"  },
+        { label: "Nano Fold",       href: "../Pages/nanoFold.html"   },
+        { label: "Nano Flex",       href: "../Pages/nanoFlex.html"   },
+        { label: "Keratome Blades", href: "../Pages/keratome.html"   },
+        { label: "Crescent Blades", href: "../Pages/crescent.html"   },
+        { label: "MVR Blades",      href: "../Pages/mvrBlade.html"   },
+      ],
+      contact: {
+        address: "Chennai, Tamil Nadu, India — PIN 600001",
+        phone:   "+91 98765 43210",
+        email:   "info@worldvisionophthalmic.com",
+        hours:   "Mon–Sat, 9AM–6PM IST",
+      },
+    },
+  }
 
-  const cresBC = qs("breadcrumb");
-  if (cresBC) cresBC.innerHTML = `<a href="../Pages/index.html">Home</a><span class="sep">/</span><a href="#">Our Products</a><span class="sep">/</span><span class="current">Crescent Blade</span>`;
-  const waF2 = qs("waFloat"); if (waF2) waF2.href = PAGE.company.whatsapp;
-  const copy2 = qs("footerCopyright"); if (copy2) copy2.textContent = PAGE.company.copyright;
+  // ── Footer ────────────────────────────────────────────────────────────
+  const fb = qs("auFooterBody");
+  if (fb) fb.innerHTML = `
+    <div class="au-footer-brand-col">
+      <div class="au-footer-brand-header">
+        <img src="${PAGE.company.logo}" alt="World Vision Logo"/>
+        <div>
+          <div class="au-footer-brand-name">${PAGE.company.name}</div>
+          <div class="au-footer-brand-sub">${PAGE.company.subtitle}</div>
+        </div>
+      </div>
+      <p class="au-footer-tagline">${BLADS.footer.tagline}</p>
+      <div class="au-footer-socials">
+        ${BLADS.footer.socials.map(s =>
+          `<a href="${s.href}" class="au-footer-social" aria-label="${s.label}" ${s.href.startsWith("http") ? 'target="_blank"' : ""}>
+            <i class="${s.icon}"></i>
+          </a>`
+        ).join("")}
+      </div>
+    </div>
+
+    <div class="au-footer-links-col">
+      <h4>Quick Links</h4>
+      <div class="au-footer-links-grid">
+        ${BLADS.footer.quickLinks.map(l => `<a href="${l.href}" class="au-footer-link">${l.label}</a>`).join("")}
+      </div>
+      <h4 style="margin-top:24px;">Products</h4>
+      <div class="au-footer-links-grid">
+        ${BLADS.footer.products.map(l => `<a href="${l.href}" class="au-footer-link">${l.label}</a>`).join("")}
+      </div>
+    </div>
+
+    <div class="au-footer-contact-col">
+      <h4>Contact Us</h4>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>${BLADS.footer.contact.address}</span></div>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-phone"></i><span><a href="tel:${BLADS.footer.contact.phone}">${BLADS.footer.contact.phone}</a></span></div>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-envelope"></i><span><a href="mailto:${BLADS.footer.contact.email}">${BLADS.footer.contact.email}</a></span></div>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-clock"></i><span>${BLADS.footer.contact.hours}</span></div>
+    </div>`;
+
+    const fc = qs("auFooterBottom");
+    if (fc) fc.textContent = PAGE.company.copyright;
+
+    const waF = qs("waFloat");
+    if (waF) waF.href = PAGE.company.whatsapp;
 }
 
 /*************************************************
@@ -4563,11 +6016,10 @@ if (ACTIVE_PAGE === "lancelp") {
 
   const LANCE_TABS = [
     {
-      id: "lance15", name: "Lance Tip Knives", type: "initial Incision Lance / Astuce Couteaux / Punta de lanza Cuchilos",
-      tag: "Lance Tip · 15° · 35° · 45° ",
-      title: "Lance Ip", subtitle: "Lance Tip Knives (Lance Astuce Couteaux) — Length: 12 mm · Cutting Width: 6.5 mm · Angled 15° · 35° · 45°",
-      desc: "Lance tip knife for initial incision at 15° angulation. Length 12 mm, Cutting Width 6.5 mm, 24 Gauge.",
-      lensImg: "../Multimedia/msBladeLance.png",
+      id: "lance15", name: "15°", type: "24 Gauge",
+      tag: "Lance Tip · 15° · 24 Gauge · Initial Incision",
+      title: "Lance Ip — 15°", subtitle: "Lance Tip Knives (Lance Astuce Couteaux) — Length: 12 mm · Cutting Width: 6.5 mm · Angled 15°",
+      desc: "Lance tip knife for initial incision at 15° angulation. Length 12 mm, Cutting Width 6.5 mm, 24 Gauge.", lensImg: "../Multimedia/msBladeLance.png",
       highlights: [
         { icon: "fa-staff-snake",      text: "Lance tip geometry"   },
         { icon: "fa-ruler",            text: "12 mm length"         },
@@ -4575,50 +6027,74 @@ if (ACTIVE_PAGE === "lancelp") {
         { icon: "fa-angle-right",      text: "15° angulation"       },
         { icon: "fa-certificate",      text: "CE certified"         },
       ],
-      variants: [
-        {
-          id: "NS1524LT", label: "NS 1524LT", lensImg: "../Multimedia/msBladeLance.png",
-          specs: [
-            { label: "Model",         value: "NS 1524LT",              accent: true },
-            { label: "Angulation",    value: "15°",                    accent: true },
-            { label: "Gauge",         value: "24 Gauge"                             },
-            { label: "Length",        value: "12 mm"                                },
-            { label: "Cutting Width", value: "6.5 mm"                               },
-            { label: "Base Angle",    value: "15°"                                  },
-            { label: "Indication",    value: "Initial Incision"                     },
-            { label: "Order",         value: "Standard",               accent: true },
-          ],
-          specialOrder: null,
-        },
-        {
-          id: "NS3024LT", label: "NS 3024LT", lensImg: "../Multimedia/msBladeLance.png",
-          specs: [
-            { label: "Model",         value: "NS 3024LT",              accent: true },
-            { label: "Angulation",    value: "30°",                    accent: true },
-            { label: "Gauge",         value: "24 Gauge"                             },
-            { label: "Length",        value: "12 mm"                                },
-            { label: "Cutting Width", value: "6.5 mm"                               },
-            { label: "Base Angle",    value: "15°"                                  },
-            { label: "Indication",    value: "Initial Incision"                     },
-            { label: "Order",         value: "Standard",               accent: true },
-          ],
-          specialOrder: null,
-        },
-        {
-          id: "NS4524LT", label: "NS 4524LT", lensImg: "../Multimedia/msBladeLance.png",
-          specs: [
-            { label: "Model",         value: "NS 4524LT",              accent: true },
-            { label: "Angulation",    value: "45°",                    accent: true },
-            { label: "Gauge",         value: "24 Gauge"                             },
-            { label: "Length",        value: "12 mm"                                },
-            { label: "Cutting Width", value: "6.5 mm"                               },
-            { label: "Base Angle",    value: "15°"                                  },
-            { label: "Indication",    value: "Initial Incision"                     },
-            { label: "Order",         value: "Standard",               accent: true },
-          ],
-          specialOrder: null,
-        },
+      variants: [{
+        id: "NS1524LT", label: "NS 1524LT", lensImg: "../Multimedia/msBladeLance.png",
+        specs: [
+          { label: "Model",         value: "NS 1524LT",              accent: true },
+          { label: "Angulation",    value: "15°",                    accent: true },
+          { label: "Gauge",         value: "24 Gauge"                             },
+          { label: "Length",        value: "12 mm"                                },
+          { label: "Cutting Width", value: "6.5 mm"                               },
+          { label: "Base Angle",    value: "15°"                                  },
+          { label: "Indication",    value: "Initial Incision"                     },
+          { label: "Order",         value: "Standard",               accent: true },
+        ],
+      }],
+      specialOrder: null,
+    },
+    {
+      id: "lance30", name: "30°", type: "24 Gauge",
+      tag: "Lance Tip · 30° · 24 Gauge · Initial Incision",
+      title: "Lance Ip — 30°", subtitle: "Lance Tip Knives (Lance Astuce Couteaux) — Length: 12 mm · Cutting Width: 6.5 mm · Angled 15°",
+      desc: "Lance tip knife for initial incision at 30° angulation. Length 12 mm, Cutting Width 6.5 mm, 24 Gauge.", lensImg: "../Multimedia/msBladeLance.png",
+      highlights: [
+        { icon: "fa-staff-snake",      text: "Lance tip geometry"   },
+        { icon: "fa-ruler",            text: "12 mm length"         },
+        { icon: "fa-ruler-horizontal", text: "6.5 mm cutting width" },
+        { icon: "fa-angle-right",      text: "30° angulation"       },
+        { icon: "fa-certificate",      text: "CE certified"         },
       ],
+      variants: [{
+        id: "NS3024LT", label: "NS 3024LT", lensImg: "../Multimedia/msBladeLance.png",
+        specs: [
+          { label: "Model",         value: "NS 3024LT",              accent: true },
+          { label: "Angulation",    value: "30°",                    accent: true },
+          { label: "Gauge",         value: "24 Gauge"                             },
+          { label: "Length",        value: "12 mm"                                },
+          { label: "Cutting Width", value: "6.5 mm"                               },
+          { label: "Base Angle",    value: "15°"                                  },
+          { label: "Indication",    value: "Initial Incision"                     },
+          { label: "Order",         value: "Standard",               accent: true },
+        ],
+      }],
+      specialOrder: null,
+    },
+    {
+      id: "lance45", name: "45°", type: "24 Gauge",
+      tag: "Lance Tip · 45° · 24 Gauge · Initial Incision",
+      title: "Lance Ip — 45°", subtitle: "Lance Tip Knives (Lance Astuce Couteaux) — Length: 12 mm · Cutting Width: 6.5 mm · Angled 15°",
+      desc: "Lance tip knife for initial incision at 45° angulation. Length 12 mm, Cutting Width 6.5 mm, 24 Gauge.", lensImg: "../Multimedia/msBladeLance.png",
+      highlights: [
+        { icon: "fa-staff-snake",      text: "Lance tip geometry"   },
+        { icon: "fa-ruler",            text: "12 mm length"         },
+        { icon: "fa-ruler-horizontal", text: "6.5 mm cutting width" },
+        { icon: "fa-angle-right",      text: "45° angulation"       },
+        { icon: "fa-certificate",      text: "CE certified"         },
+      ],
+      variants: [{
+        id: "NS4524LT", label: "NS 4524LT", lensImg: "../Multimedia/msBladeLance.png",
+        specs: [
+          { label: "Model",         value: "NS 4524LT",              accent: true },
+          { label: "Angulation",    value: "45°",                    accent: true },
+          { label: "Gauge",         value: "24 Gauge"                             },
+          { label: "Length",        value: "12 mm"                                },
+          { label: "Cutting Width", value: "6.5 mm"                               },
+          { label: "Base Angle",    value: "15°"                                  },
+          { label: "Indication",    value: "Initial Incision"                     },
+          { label: "Order",         value: "Standard",               accent: true },
+        ],
+      }],
+      specialOrder: null,
     },
   ];
 
@@ -4724,11 +6200,87 @@ if (ACTIVE_PAGE === "lancelp") {
     { label: "IFU — Lance Ip 30°", sub: "NS 3024LT · 24 Gauge" },
     { label: "IFU — Lance Ip 45°", sub: "NS 4524LT · 24 Gauge" },
   ].map(l => `<a href="#" class="ifu-link"><div class="ifu-link-icon hydro-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--neu-accent)" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg></div><div class="ifu-link-text"><strong>${l.label}</strong><span>${l.sub}</span></div></a>`).join("");
+  
+  const BLADS = {
+    footer: {
+      tagline: "Premium ophthalmic products — IOLs, surgical blades, and pharma — crafted in Chennai for surgeons worldwide.",
+      socials: [
+        { href: "#", icon: "fa-brands fa-linkedin-in", label: "LinkedIn"  },
+        { href: "#", icon: "fa-brands fa-instagram",   label: "Instagram" },
+        { href: "https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv", icon: "fa-brands fa-whatsapp", label: "WhatsApp" },
+      ],
+      quickLinks: [
+        { label: "Home",             href: "../Pages/index.html"           },
+        { label: "Hydrophobic IOL",  href: "../Pages/hydrophobicIol.html"  },
+        { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html"  },
+        { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html"         },
+        { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
+        { label: "Contact Us",       href: "../Pages/contactUs.html"       },
+        { label: "Gallery",          href: "../Pages/gallery.html"         },
+      ],
+      products: [
+        { label: "Nano Claro",      href: "../Pages/nanoClaro.html"  },
+        { label: "Nano Grand",      href: "../Pages/nanoGrand.html"  },
+        { label: "Nano Fold",       href: "../Pages/nanoFold.html"   },
+        { label: "Nano Flex",       href: "../Pages/nanoFlex.html"   },
+        { label: "Keratome Blades", href: "../Pages/keratome.html"   },
+        { label: "Crescent Blades", href: "../Pages/crescent.html"   },
+        { label: "MVR Blades",      href: "../Pages/mvrBlade.html"   },
+      ],
+      contact: {
+        address: "Chennai, Tamil Nadu, India — PIN 600001",
+        phone:   "+91 98765 43210",
+        email:   "info@worldvisionophthalmic.com",
+        hours:   "Mon–Sat, 9AM–6PM IST",
+      },
+    },
+  }
 
-  const lanceBC = qs("breadcrumb");
-  if (lanceBC) lanceBC.innerHTML = `<a href="../Pages/index.html">Home</a><span class="sep">/</span><a href="#">Our Products</a><span class="sep">/</span><span class="current">Lance Ip Blade</span>`;
-  const waF3 = qs("waFloat"); if (waF3) waF3.href = PAGE.company.whatsapp;
-  const copy3 = qs("footerCopyright"); if (copy3) copy3.textContent = PAGE.company.copyright;
+  // ── Footer ────────────────────────────────────────────────────────────
+  const fb = qs("auFooterBody");
+  if (fb) fb.innerHTML = `
+    <div class="au-footer-brand-col">
+      <div class="au-footer-brand-header">
+        <img src="${PAGE.company.logo}" alt="World Vision Logo"/>
+        <div>
+          <div class="au-footer-brand-name">${PAGE.company.name}</div>
+          <div class="au-footer-brand-sub">${PAGE.company.subtitle}</div>
+        </div>
+      </div>
+      <p class="au-footer-tagline">${BLADS.footer.tagline}</p>
+      <div class="au-footer-socials">
+        ${BLADS.footer.socials.map(s =>
+          `<a href="${s.href}" class="au-footer-social" aria-label="${s.label}" ${s.href.startsWith("http") ? 'target="_blank"' : ""}>
+            <i class="${s.icon}"></i>
+          </a>`
+        ).join("")}
+      </div>
+    </div>
+
+    <div class="au-footer-links-col">
+      <h4>Quick Links</h4>
+      <div class="au-footer-links-grid">
+        ${BLADS.footer.quickLinks.map(l => `<a href="${l.href}" class="au-footer-link">${l.label}</a>`).join("")}
+      </div>
+      <h4 style="margin-top:24px;">Products</h4>
+      <div class="au-footer-links-grid">
+        ${BLADS.footer.products.map(l => `<a href="${l.href}" class="au-footer-link">${l.label}</a>`).join("")}
+      </div>
+    </div>
+
+    <div class="au-footer-contact-col">
+      <h4>Contact Us</h4>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>${BLADS.footer.contact.address}</span></div>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-phone"></i><span><a href="tel:${BLADS.footer.contact.phone}">${BLADS.footer.contact.phone}</a></span></div>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-envelope"></i><span><a href="mailto:${BLADS.footer.contact.email}">${BLADS.footer.contact.email}</a></span></div>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-clock"></i><span>${BLADS.footer.contact.hours}</span></div>
+    </div>`;
+
+    const fc = qs("auFooterBottom");
+    if (fc) fc.textContent = PAGE.company.copyright;
+
+    const waF = qs("waFloat");
+    if (waF) waF.href = PAGE.company.whatsapp;
 }
 
 /*************************************************
@@ -4738,11 +6290,10 @@ if (ACTIVE_PAGE === "mvrBlade") {
 
   const MVR_TABS = [
     {
-      id: "mvr19", name: "MVR Blades", type: "Self Sealing / Cuchillas",
-      tag: "MVR Blade · Self Sealing / Cuchillas",
-      title: "MVR Blade", subtitle: "MVR Blades (MVR Cuchillas) — Water Tight Self Sealing Incision · Straight / Angled 45° · Bevel Up/Down",
-      desc: "MVR blade for water tight self sealing incision at 19 Gauge · 20 Gauge · 24 Gauge . Straight / Angled 45° Bevel Up / Down.", 
-      lensImg: "../Multimedia/msMVRBlade.png",
+      id: "mvr19", name: "19 Gauge", type: "Self Sealing",
+      tag: "MVR Blade · 19 Gauge · Water Tight Self Sealing",
+      title: "MVR Blade — 19G", subtitle: "MVR Blades (MVR Cuchillas) — Water Tight Self Sealing Incision · Straight / Angled 45° · Bevel Up/Down",
+      desc: "MVR blade for water tight self sealing incision at 19 Gauge. Straight / Angled 45° Bevel Up / Down.", lensImg: "../Multimedia/msMVRBlade.png",
       highlights: [
         { icon: "fa-diamond-turn-right", text: "MVR geometry"          },
         { icon: "fa-droplet-slash",      text: "Water-tight seal"      },
@@ -4750,48 +6301,71 @@ if (ACTIVE_PAGE === "mvrBlade") {
         { icon: "fa-rotate",             text: "Bevel up / down"       },
         { icon: "fa-certificate",        text: "CE certified"          },
       ],
-      variants: [
-        {
-          id: "NS19MVR", label: "NS 19MVR", lensImg: "../Multimedia/msMVRBlade.png",
-          specs: [
-            { label: "Model",       value: "NS 19MVR",                     accent: true },
-            { label: "Gauge",       value: "19 Gauge",                     accent: true },
-            { label: "Type",        value: "MVR Blade"                                  },
-            { label: "Incision",    value: "Water Tight Self Sealing"                   },
-            { label: "Orientation", value: "Straight / Angled 45°"                      },
-            { label: "Bevel",       value: "Up / Down"                                  },
-            { label: "Order",       value: "Standard",                     accent: true },
-          ],
-          specialOrder: null,
-        },
-        {
-          id: "NS20MVR", label: "NS 20MVR", lensImg: "../Multimedia/msMVRBlade.png",
-          specs: [
-            { label: "Model",       value: "NS 20MVR",                     accent: true },
-            { label: "Gauge",       value: "20 Gauge",                     accent: true },
-            { label: "Type",        value: "MVR Blade"                                  },
-            { label: "Incision",    value: "Water Tight Self Sealing"                   },
-            { label: "Orientation", value: "Straight / Angled 45°"                      },
-            { label: "Bevel",       value: "Up / Down"                                  },
-            { label: "Order",       value: "Standard",                     accent: true },
-          ],
-          specialOrder: null,
-        },
-        {
-          id: "NS24MVR", label: "NS 24MVR", lensImg: "../Multimedia/msMVRBlade.png",
-          specs: [
-            { label: "Model",       value: "NS 24MVR",                     accent: true },
-            { label: "Gauge",       value: "24 Gauge",                     accent: true },
-            { label: "Type",        value: "MVR Blade"                                  },
-            { label: "Incision",    value: "Water Tight Self Sealing"                   },
-            { label: "Orientation", value: "Straight / Angled 45°"                      },
-            { label: "Bevel",       value: "Up / Down"                                  },
-            { label: "Order",       value: "Standard",                     accent: true },
-          ],
-          specialOrder: null,
-        }
+      variants: [{
+        id: "NS19MVR", label: "NS 19MVR", lensImg: "../Multimedia/msMVRBlade.png",
+        specs: [
+          { label: "Model",       value: "NS 19MVR",                     accent: true },
+          { label: "Gauge",       value: "19 Gauge",                     accent: true },
+          { label: "Type",        value: "MVR Blade"                                  },
+          { label: "Incision",    value: "Water Tight Self Sealing"                   },
+          { label: "Orientation", value: "Straight / Angled 45°"                      },
+          { label: "Bevel",       value: "Up / Down"                                  },
+          { label: "Order",       value: "Standard",                     accent: true },
+        ],
+      }],
+      specialOrder: null,
+    },
+    {
+      id: "mvr20", name: "20 Gauge", type: "Self Sealing",
+      tag: "MVR Blade · 20 Gauge · Water Tight Self Sealing",
+      title: "MVR Blade — 20G", subtitle: "MVR Blades (MVR Cuchillas) — Water Tight Self Sealing Incision · Straight / Angled 45° · Bevel Up/Down",
+      desc: "MVR blade for water tight self sealing incision at 20 Gauge. Straight / Angled 45° Bevel Up / Down.", lensImg: "../Multimedia/msMVRBlade.png",
+      highlights: [
+        { icon: "fa-diamond-turn-right", text: "MVR geometry"          },
+        { icon: "fa-droplet-slash",      text: "Water-tight seal"      },
+        { icon: "fa-arrows-left-right",  text: "Straight / 45° angled" },
+        { icon: "fa-rotate",             text: "Bevel up / down"       },
+        { icon: "fa-certificate",        text: "CE certified"          },
       ],
-      
+      variants: [{
+        id: "NS20MVR", label: "NS 20MVR", lensImg: "../Multimedia/msMVRBlade.png",
+        specs: [
+          { label: "Model",       value: "NS 20MVR",                     accent: true },
+          { label: "Gauge",       value: "20 Gauge",                     accent: true },
+          { label: "Type",        value: "MVR Blade"                                  },
+          { label: "Incision",    value: "Water Tight Self Sealing"                   },
+          { label: "Orientation", value: "Straight / Angled 45°"                      },
+          { label: "Bevel",       value: "Up / Down"                                  },
+          { label: "Order",       value: "Standard",                     accent: true },
+        ],
+      }],
+      specialOrder: null,
+    },
+    {
+      id: "mvr24", name: "24 Gauge", type: "Self Sealing",
+      tag: "MVR Blade · 24 Gauge · Water Tight Self Sealing",
+      title: "MVR Blade — 24G", subtitle: "MVR Blades (MVR Cuchillas) — Water Tight Self Sealing Incision · Straight / Angled 45° · Bevel Up/Down",
+      desc: "MVR blade for water tight self sealing incision at 24 Gauge. Straight / Angled 45° Bevel Up / Down.", lensImg: "../Multimedia/msMVRBlade.png",
+      highlights: [
+        { icon: "fa-diamond-turn-right", text: "MVR geometry"          },
+        { icon: "fa-droplet-slash",      text: "Water-tight seal"      },
+        { icon: "fa-arrows-left-right",  text: "Straight / 45° angled" },
+        { icon: "fa-rotate",             text: "Bevel up / down"       },
+        { icon: "fa-certificate",        text: "CE certified"          },
+      ],
+      variants: [{
+        id: "NS24MVR", label: "NS 24MVR", lensImg: "../Multimedia/msMVRBlade.png",
+        specs: [
+          { label: "Model",       value: "NS 24MVR",                     accent: true },
+          { label: "Gauge",       value: "24 Gauge",                     accent: true },
+          { label: "Type",        value: "MVR Blade"                                  },
+          { label: "Incision",    value: "Water Tight Self Sealing"                   },
+          { label: "Orientation", value: "Straight / Angled 45°"                      },
+          { label: "Bevel",       value: "Up / Down"                                  },
+          { label: "Order",       value: "Standard",                     accent: true },
+        ],
+      }],
+      specialOrder: null,
     },
   ];
 
@@ -4897,13 +6471,88 @@ if (ACTIVE_PAGE === "mvrBlade") {
     { label: "IFU — MVR 20 Gauge", sub: "NS 20MVR · Self Sealing" },
     { label: "IFU — MVR 24 Gauge", sub: "NS 24MVR · Self Sealing" },
   ].map(l => `<a href="#" class="ifu-link"><div class="ifu-link-icon hydro-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--neu-accent)" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg></div><div class="ifu-link-text"><strong>${l.label}</strong><span>${l.sub}</span></div></a>`).join("");
+  
+  const BLADS = {
+    footer: {
+      tagline: "Premium ophthalmic products — IOLs, surgical blades, and pharma — crafted in Chennai for surgeons worldwide.",
+      socials: [
+        { href: "#", icon: "fa-brands fa-linkedin-in", label: "LinkedIn"  },
+        { href: "#", icon: "fa-brands fa-instagram",   label: "Instagram" },
+        { href: "https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv", icon: "fa-brands fa-whatsapp", label: "WhatsApp" },
+      ],
+      quickLinks: [
+        { label: "Home",             href: "../Pages/index.html"           },
+        { label: "Hydrophobic IOL",  href: "../Pages/hydrophobicIol.html"  },
+        { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html"  },
+        { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html"         },
+        { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
+        { label: "Contact Us",       href: "../Pages/contactUs.html"       },
+        { label: "Gallery",          href: "../Pages/gallery.html"         },
+      ],
+      products: [
+        { label: "Nano Claro",      href: "../Pages/nanoClaro.html"  },
+        { label: "Nano Grand",      href: "../Pages/nanoGrand.html"  },
+        { label: "Nano Fold",       href: "../Pages/nanoFold.html"   },
+        { label: "Nano Flex",       href: "../Pages/nanoFlex.html"   },
+        { label: "Keratome Blades", href: "../Pages/keratome.html"   },
+        { label: "Crescent Blades", href: "../Pages/crescent.html"   },
+        { label: "MVR Blades",      href: "../Pages/mvrBlade.html"   },
+      ],
+      contact: {
+        address: "Chennai, Tamil Nadu, India — PIN 600001",
+        phone:   "+91 98765 43210",
+        email:   "info@worldvisionophthalmic.com",
+        hours:   "Mon–Sat, 9AM–6PM IST",
+      },
+    },
+  }
 
-  const mvrBC = qs("breadcrumb");
-  if (mvrBC) mvrBC.innerHTML = `<a href="../Pages/index.html">Home</a><span class="sep">/</span><a href="#">Our Products</a><span class="sep">/</span><span class="current">MVR Blade</span>`;
-  const waF4 = qs("waFloat"); if (waF4) waF4.href = PAGE.company.whatsapp;
-  const copy4 = qs("footerCopyright"); if (copy4) copy4.textContent = PAGE.company.copyright;
+  // ── Footer ────────────────────────────────────────────────────────────
+  const fb = qs("auFooterBody");
+  if (fb) fb.innerHTML = `
+    <div class="au-footer-brand-col">
+      <div class="au-footer-brand-header">
+        <img src="${PAGE.company.logo}" alt="World Vision Logo"/>
+        <div>
+          <div class="au-footer-brand-name">${PAGE.company.name}</div>
+          <div class="au-footer-brand-sub">${PAGE.company.subtitle}</div>
+        </div>
+      </div>
+      <p class="au-footer-tagline">${BLADS.footer.tagline}</p>
+      <div class="au-footer-socials">
+        ${BLADS.footer.socials.map(s =>
+          `<a href="${s.href}" class="au-footer-social" aria-label="${s.label}" ${s.href.startsWith("http") ? 'target="_blank"' : ""}>
+            <i class="${s.icon}"></i>
+          </a>`
+        ).join("")}
+      </div>
+    </div>
+
+    <div class="au-footer-links-col">
+      <h4>Quick Links</h4>
+      <div class="au-footer-links-grid">
+        ${BLADS.footer.quickLinks.map(l => `<a href="${l.href}" class="au-footer-link">${l.label}</a>`).join("")}
+      </div>
+      <h4 style="margin-top:24px;">Products</h4>
+      <div class="au-footer-links-grid">
+        ${BLADS.footer.products.map(l => `<a href="${l.href}" class="au-footer-link">${l.label}</a>`).join("")}
+      </div>
+    </div>
+
+    <div class="au-footer-contact-col">
+      <h4>Contact Us</h4>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>${BLADS.footer.contact.address}</span></div>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-phone"></i><span><a href="tel:${BLADS.footer.contact.phone}">${BLADS.footer.contact.phone}</a></span></div>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-envelope"></i><span><a href="mailto:${BLADS.footer.contact.email}">${BLADS.footer.contact.email}</a></span></div>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-clock"></i><span>${BLADS.footer.contact.hours}</span></div>
+    </div>`;
+
+    const fc = qs("auFooterBottom");
+    if (fc) fc.textContent = PAGE.company.copyright;
+
+    const waF = qs("waFloat");
+    if (waF) waF.href = PAGE.company.whatsapp;
 }
-
 
 /*************************************************
  * CONTACT US PAGE — contactUs.html
@@ -4997,6 +6646,38 @@ if (ACTIVE_PAGE === "contactUs") {
       { path: `<circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>`, title: "Global Distribution", desc: "Supplying ophthalmic products to hospitals and distributors across Asia, Africa, and the Middle East." },
       { path: `<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.87a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>`, title: "Responsive Support", desc: "Dedicated technical and sales support by phone, email, and WhatsApp during business hours." },
     ],
+    footer: {
+      tagline: "Premium ophthalmic products — IOLs, surgical blades, and pharma — crafted in Chennai for surgeons worldwide.",
+      socials: [
+        { href: "#", icon: "fa-brands fa-linkedin-in", label: "LinkedIn"  },
+        { href: "#", icon: "fa-brands fa-instagram",   label: "Instagram" },
+        { href: "https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv", icon: "fa-brands fa-whatsapp", label: "WhatsApp" },
+      ],
+      quickLinks: [
+        { label: "Home",             href: "../Pages/index.html"           },
+        { label: "Hydrophobic IOL",  href: "../Pages/hydrophobicIol.html"  },
+        { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html"  },
+        { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html"         },
+        { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
+        { label: "Contact Us",       href: "../Pages/contactUs.html"       },
+        { label: "Gallery",          href: "../Pages/gallery.html"         },
+      ],
+      products: [
+        { label: "Nano Claro",      href: "../Pages/nanoClaro.html"  },
+        { label: "Nano Grand",      href: "../Pages/nanoGrand.html"  },
+        { label: "Nano Fold",       href: "../Pages/nanoFold.html"   },
+        { label: "Nano Flex",       href: "../Pages/nanoFlex.html"   },
+        { label: "Keratome Blades", href: "../Pages/keratome.html"   },
+        { label: "Crescent Blades", href: "../Pages/crescent.html"   },
+        { label: "MVR Blades",      href: "../Pages/mvrBlade.html"   },
+      ],
+      contact: {
+        address: "Chennai, Tamil Nadu, India — PIN 600001",
+        phone:   "+91 98765 43210",
+        email:   "info@worldvisionophthalmic.com",
+        hours:   "Mon–Sat, 9AM–6PM IST",
+      },
+    },
   };
 
   // ── Meta ──────────────────────────────────────────────────────────────
@@ -5097,15 +6778,6 @@ if (ACTIVE_PAGE === "contactUs") {
         <div class="faq-a-wrap"><div class="faq-a">${item.a}</div></div>
       </div>`).join("")}</div>`;
     fg.innerHTML = makeCol(left) + makeCol(right);
-
-    // Wire FAQ accordion — runs AFTER innerHTML is set
-    fg.querySelectorAll(".faq-item").forEach(function(item) {
-      item.querySelector(".faq-q").addEventListener("click", function() {
-        const wasOpen = item.classList.contains("open");
-        fg.querySelectorAll(".faq-item").forEach(i => i.classList.remove("open"));
-        if (!wasOpen) item.classList.add("open");
-      });
-    });
   }
 
   // ── Subject chips — wire AFTER innerHTML is set ───────────────────────
@@ -5131,7 +6803,367 @@ if (ACTIVE_PAGE === "contactUs") {
       <div><h3>${t.title}</h3><p>${t.desc}</p></div>
     </div>`).join("");
 
-  // ── Float + footer ────────────────────────────────────────────────────
-  const waF = qs("waFloat"); if (waF) waF.href = PAGE.company.whatsapp;
-  const copy = qs("footerCopyright"); if (copy) copy.textContent = PAGE.company.copyright;
+  // ── Footer ────────────────────────────────────────────────────────────
+  const fb = qs("auFooterBody");
+  if (fb) fb.innerHTML = `
+    <div class="au-footer-brand-col">
+      <div class="au-footer-brand-header">
+        <img src="${PAGE.company.logo}" alt="World Vision Logo"/>
+        <div>
+          <div class="au-footer-brand-name">${PAGE.company.name}</div>
+          <div class="au-footer-brand-sub">${PAGE.company.subtitle}</div>
+        </div>
+      </div>
+      <p class="au-footer-tagline">${CONTACT.footer.tagline}</p>
+      <div class="au-footer-socials">
+        ${CONTACT.footer.socials.map(s =>
+          `<a href="${s.href}" class="au-footer-social" aria-label="${s.label}" ${s.href.startsWith("http") ? 'target="_blank"' : ""}>
+            <i class="${s.icon}"></i>
+          </a>`
+        ).join("")}
+      </div>
+    </div>
+
+    <div class="au-footer-links-col">
+      <h4>Quick Links</h4>
+      <div class="au-footer-links-grid">
+        ${CONTACT.footer.quickLinks.map(l => `<a href="${l.href}" class="au-footer-link">${l.label}</a>`).join("")}
+      </div>
+      <h4 style="margin-top:24px;">Products</h4>
+      <div class="au-footer-links-grid">
+        ${CONTACT.footer.products.map(l => `<a href="${l.href}" class="au-footer-link">${l.label}</a>`).join("")}
+      </div>
+    </div>
+
+    <div class="au-footer-contact-col">
+      <h4>Contact Us</h4>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>${CONTACT.footer.contact.address}</span></div>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-phone"></i><span><a href="tel:${CONTACT.footer.contact.phone}">${CONTACT.footer.contact.phone}</a></span></div>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-envelope"></i><span><a href="mailto:${CONTACT.footer.contact.email}">${CONTACT.footer.contact.email}</a></span></div>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-clock"></i><span>${CONTACT.footer.contact.hours}</span></div>
+    </div>`;
+
+    const fc = qs("auFooterBottom");
+    if (fc) fc.textContent = PAGE.company.copyright;
+
+    const waF = qs("waFloat");
+    if (waF) waF.href = PAGE.company.whatsapp;
+  
+}
+
+/*************************************************
+ * ABOUT US PAGE — aboutUs.html
+ *************************************************/
+if (ACTIVE_PAGE === "aboutUs") {
+
+  const ABOUT = {
+    eyebrow: "Chennai, India · Est. 2008",
+    h1:   "Pioneering Vision<br><em>Care in India</em>",
+    desc: "World Vision Ophthalmic Pvt. Ltd. is a Chennai-based manufacturer and distributor of premium ophthalmic products — delivering surgical precision, global materials, and Indian excellence to eye care professionals worldwide.",
+
+    chips: [
+      { label: "Est. 2008",      icon: "fa-calendar"      },
+      { label: "ISO Certified",  icon: "fa-certificate"   },
+      { label: "Global Reach",   icon: "fa-globe"         },
+      { label: "Chennai, India", icon: "fa-location-dot"  },
+    ],
+
+    badges: [
+      { id: "eyeBadge1", icon: "fa-certificate", text: "ISO Certified" },
+      { id: "eyeBadge2", icon: "fa-globe",        text: "Global Export" },
+      { id: "eyeBadge3", icon: "fa-award",        text: "15+ Years"     },
+    ],
+
+    stats: [
+      { num: "15+", label: "Years of Excellence" },
+      { num: "50+", label: "IOL Product Models"  },
+      { num: "20+", label: "Countries Supplied"  },
+      { num: "1M+", label: "Lenses Delivered"    },
+    ],
+
+    story: {
+      eyebrow: "Our Story",
+      heading: "Built on a <em>Vision</em><br>for Better Sight",
+      paras: [
+        "World Vision Ophthalmic Pvt. Ltd. was founded in 2008 in Chennai, Tamil Nadu, with a singular mission: to make world-class ophthalmic products accessible to surgeons and patients across India and beyond.",
+        "Starting with a focused range of intraocular lenses, we grew steadily — investing in precision manufacturing, sourcing <strong>USA and European medical-grade materials</strong>, and building clinical trust with ophthalmologists from South Asia to the Middle East.",
+        "Today, we supply a comprehensive portfolio of hydrophobic and hydrophilic IOLs, PMMA lenses, micro-surgical blades, and ophthalmic pharma — all backed by strict quality protocols and ISO-compliant manufacturing.",
+      ],
+      timeline: [
+        { year: "2008", desc: "<strong>Founded</strong> in Chennai with a focused range of PMMA IOLs." },
+        { year: "2012", desc: "Expanded into <strong>foldable hydrophilic IOLs</strong> and entered export markets." },
+        { year: "2016", desc: "Launched the <strong>Nano Hydrophobic series</strong> using USA medical-grade acrylic." },
+        { year: "2020", desc: "Introduced <strong>Micro-Surgical Blades</strong> and pharma product range." },
+        { year: "2024", desc: "Supplying to <strong>20+ countries</strong> across Asia, Africa, and the Middle East." },
+      ],
+    },
+
+    values: {
+      eyebrow: "Mission & Values",
+      heading: "Guided by <em>Purpose,</em><br>Driven by Precision",
+      sub: "Every decision at World Vision Ophthalmic is shaped by our commitment to clinical integrity, patient outcomes, and the advancement of ophthalmic care worldwide.",
+      items: [
+        { icon: "fa-eye",           title: "Patient First",        desc: "Every product begins and ends with one question: will this improve the patient's quality of life? Clinical outcomes drive every design decision." },
+        { icon: "fa-microscope",    title: "Scientific Rigour",    desc: "We source only USA and European medical-grade raw materials, tested to ISO 10993 biocompatibility standards. No compromises on quality." },
+        { icon: "fa-handshake",     title: "Surgeon Partnership",  desc: "We collaborate closely with ophthalmic surgeons to refine designs, improve IFUs, and develop solutions that work in real operating rooms." },
+        { icon: "fa-globe",         title: "Global Accessibility", desc: "Affordable, world-class ophthalmic care should not be limited by geography. We export to 20+ countries with full regulatory support." },
+        { icon: "fa-shield-halved", title: "Quality Assurance",    desc: "ISO-certified manufacturing with full traceability — from raw material sourcing to sterilization and final packaging." },
+        { icon: "fa-seedling",      title: "Sustainable Growth",   desc: "We invest in R&D, people, and technology — building a company that will advance ophthalmic care for the next generation." },
+      ],
+    },
+
+    mfg: {
+      eyebrow: "Manufacturing",
+      heading: "Precision Made<br>in Chennai",
+      desc: "Our manufacturing facility in Chennai combines modern cleanroom infrastructure with decades of ophthalmic expertise — producing lenses trusted by surgeons across three continents.",
+      features: [
+        { icon: "fa-industry",         text: "ISO-compliant cleanroom manufacturing" },
+        { icon: "fa-vial",             text: "USA & European medical-grade materials" },
+        { icon: "fa-shield",           text: "ISO 10993 biocompatibility testing"    },
+        { icon: "fa-boxes-stacked",    text: "Full supply chain traceability"        },
+        { icon: "fa-magnifying-glass", text: "Precision optics quality control"      },
+        { icon: "fa-truck-fast",       text: "Global export & logistics support"     },
+      ],
+    },
+
+    team: {
+      eyebrow: "Our Leadership",
+      heading: "The Team Behind<br><em>World Vision</em>",
+      sub: "Our leadership brings decades of combined experience in ophthalmic manufacturing, regulatory affairs, and clinical science.",
+      members: [
+        { name: "Dr. R. Krishnaswamy", role: "Founder & Managing Director", icon: "fa-user-tie", desc: "Visionary entrepreneur with 25+ years in ophthalmic manufacturing. Founded WVO in 2008 to bridge the gap between global quality and local accessibility." },
+        { name: "Mrs. S. Meenakshi",   role: "Director — Operations",       icon: "fa-user-tie", desc: "Oversees manufacturing, quality assurance, and supply chain. An ISO compliance expert with deep expertise in medical device regulations." },
+        { name: "Mr. A. Venkatesh",    role: "Head of Sales & Export",      icon: "fa-user-tie", desc: "Leads global distribution across Asia, Africa, and the Middle East. 18+ years of experience in ophthalmic product marketing." },
+      ],
+    },
+
+    cta: {
+      heading: "Ready to Partner<br><em>with Us?</em>",
+      sub:     "Whether you're a surgeon, distributor, or healthcare institution — we'd love to connect and explore how World Vision Ophthalmic can serve your patients.",
+      btns: [
+        { label: "Contact Us",       href: "../Pages/contactUs.html", cls: "btn-p", icon: "fa-envelope" },
+        { label: "Explore Products", href: "../Pages/iol-page.html",  cls: "btn-g", icon: "fa-grid-2"   },
+      ],
+    },
+
+    footer: {
+      tagline: "Premium ophthalmic products — IOLs, surgical blades, and pharma — crafted in Chennai for surgeons worldwide.",
+      socials: [
+        { href: "#", icon: "fa-brands fa-linkedin-in", label: "LinkedIn"  },
+        { href: "#", icon: "fa-brands fa-instagram",   label: "Instagram" },
+        { href: "https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv", icon: "fa-brands fa-whatsapp", label: "WhatsApp" },
+      ],
+      quickLinks: [
+        { label: "Home",             href: "../Pages/index.html"           },
+        { label: "Hydrophobic IOL",  href: "../Pages/hydrophobicIol.html"  },
+        { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html"  },
+        { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html"         },
+        { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
+        { label: "Contact Us",       href: "../Pages/contactUs.html"       },
+        { label: "Gallery",          href: "../Pages/gallery.html"         },
+      ],
+      products: [
+        { label: "Nano Claro",      href: "../Pages/nanoClaro.html"  },
+        { label: "Nano Grand",      href: "../Pages/nanoGrand.html"  },
+        { label: "Nano Fold",       href: "../Pages/nanoFold.html"   },
+        { label: "Nano Flex",       href: "../Pages/nanoFlex.html"   },
+        { label: "Keratome Blades", href: "../Pages/keratome.html"   },
+        { label: "Crescent Blades", href: "../Pages/crescent.html"   },
+        { label: "MVR Blades",      href: "../Pages/mvrBlade.html"   },
+      ],
+      contact: {
+        address: "Chennai, Tamil Nadu, India — PIN 600001",
+        phone:   "+91 98765 43210",
+        email:   "info@worldvisionophthalmic.com",
+        hours:   "Mon–Sat, 9AM–6PM IST",
+      },
+    },
+  };
+
+  // ── Meta ──────────────────────────────────────────────────────────────
+  document.title = "About Us — World Vision Ophthalmic";
+  const m = qs("pageMeta");
+  if (m) m.setAttribute("content", "World Vision Ophthalmic Pvt. Ltd. — Chennai-based manufacturer of premium ophthalmic IOLs and surgical products since 2008.");
+
+  // ── Breadcrumb ────────────────────────────────────────────────────────
+  const bc = qs("breadcrumb");
+  if (bc) bc.innerHTML = `<a href="../Pages/index.html">Home</a><span class="sep">/</span><span class="current">About Us</span>`;
+
+  // ── Hero ──────────────────────────────────────────────────────────────
+  const ey = qs("aboutEyebrow");
+  if (ey) ey.innerHTML = `<span class="pulse"></span>${ABOUT.eyebrow}`;
+
+  const h1 = qs("aboutH1");
+  if (h1) h1.innerHTML = ABOUT.h1;
+
+  const hd = qs("aboutHeroDesc");
+  if (hd) hd.textContent = ABOUT.desc;
+
+  const chips = qs("aboutChips");
+  if (chips) chips.innerHTML = ABOUT.chips.map(c =>
+    `<div class="about-chip"><i class="fa-solid ${c.icon}"></i>${c.label}</div>`
+  ).join("");
+
+  // ── Floating badges ───────────────────────────────────────────────────
+  ABOUT.badges.forEach(b => {
+    const el = qs(b.id);
+    if (el) el.innerHTML = `<i class="fa-solid ${b.icon}"></i>${b.text}`;
+  });
+
+  // ── Stats ─────────────────────────────────────────────────────────────
+  const ss = qs("auStats");
+  if (ss) ss.innerHTML = ABOUT.stats.map(s =>
+    `<div class="au-stat">
+      <div class="au-stat-num">${s.num}</div>
+      <div class="au-stat-lbl">${s.label}</div>
+    </div>`
+  ).join("");
+
+  // ── Story ─────────────────────────────────────────────────────────────
+  const se = qs("storyEyebrow"); if (se) se.textContent = ABOUT.story.eyebrow;
+  const sh = qs("storyHeading"); if (sh) sh.innerHTML   = ABOUT.story.heading;
+  const sp = qs("storyParas");   if (sp) sp.innerHTML   = ABOUT.story.paras.map(p => `<p>${p}</p>`).join("");
+  const tl = qs("storyTimeline");
+  if (tl) tl.innerHTML = ABOUT.story.timeline.map(t =>
+    `<div class="tl-item"><div class="tl-yr">${t.year}</div><div class="tl-desc">${t.desc}</div></div>`
+  ).join("");
+
+  // ── Values ────────────────────────────────────────────────────────────
+  const ve = qs("valuesEyebrow"); if (ve) ve.textContent = ABOUT.values.eyebrow;
+  const vh = qs("valuesHeading"); if (vh) vh.innerHTML   = ABOUT.values.heading;
+  const vs = qs("valuesSub");     if (vs) vs.textContent = ABOUT.values.sub;
+  const vg = qs("valuesGrid");
+  if (vg) vg.innerHTML = ABOUT.values.items.map(v =>
+    `<div class="val-card">
+      <div class="val-ico"><i class="fa-solid ${v.icon}"></i></div>
+      <h3>${v.title}</h3><p>${v.desc}</p>
+    </div>`
+  ).join("");
+
+  // ── Manufacturing ─────────────────────────────────────────────────────
+  const mb = qs("mfgBand");
+  if (mb) mb.innerHTML = `
+    <div class="mfg-band-text">
+      <span class="eyebrow"><i class="fa-solid fa-industry" style="margin-right:8px;"></i>${ABOUT.mfg.eyebrow}</span>
+      <h2>${ABOUT.mfg.heading}</h2>
+      <p>${ABOUT.mfg.desc}</p>
+    </div>
+    <div class="mfg-feats">
+      ${ABOUT.mfg.features.map(f =>
+        `<div class="mfg-feat"><i class="fa-solid ${f.icon}"></i><span>${f.text}</span></div>`
+      ).join("")}
+    </div>`;
+
+  // ── Team ──────────────────────────────────────────────────────────────
+  const te = qs("teamEyebrow"); if (te) te.textContent = ABOUT.team.eyebrow;
+  const th = qs("teamHeading"); if (th) th.innerHTML   = ABOUT.team.heading;
+  const ts = qs("teamSub");     if (ts) ts.textContent = ABOUT.team.sub;
+  const tg = qs("teamGrid");
+  if (tg) tg.innerHTML = ABOUT.team.members.map(mem =>
+    `<div class="team-card">
+      <div class="team-avatar"><i class="fa-solid ${mem.icon}"></i></div>
+      <div class="team-info"><h3>${mem.name}</h3><div class="team-role">${mem.role}</div><p>${mem.desc}</p></div>
+    </div>`
+  ).join("");
+
+  // ── CTA ───────────────────────────────────────────────────────────────
+  const ch = qs("auCtaH");   if (ch) ch.innerHTML   = ABOUT.cta.heading;
+  const cs = qs("auCtaP");   if (cs) cs.textContent = ABOUT.cta.sub;
+  const cb = qs("auCtaBtns");
+  if (cb) cb.innerHTML = ABOUT.cta.btns.map(b =>
+    `<a href="${b.href}" class="${b.cls}"><i class="fa-solid ${b.icon}"></i>${b.label}</a>`
+  ).join("");
+
+  // ── Footer ────────────────────────────────────────────────────────────
+const fb = qs("auFooterBody");
+if (fb) fb.innerHTML = `
+  <div class="au-footer-brand-col">
+    <div class="au-footer-brand-header">
+      <img src="${PAGE.company.logo}" alt="World Vision Logo"/>
+      <div>
+        <div class="au-footer-brand-name">${PAGE.company.name}</div>
+        <div class="au-footer-brand-sub">${PAGE.company.subtitle}</div>
+      </div>
+    </div>
+    <p class="au-footer-tagline">${ABOUT.footer.tagline}</p>
+    <div class="au-footer-socials">
+      ${ABOUT.footer.socials.map(s =>
+        `<a href="${s.href}" class="au-footer-social" aria-label="${s.label}" ${s.href.startsWith("http") ? 'target="_blank"' : ""}>
+          <i class="${s.icon}"></i>
+        </a>`
+      ).join("")}
+    </div>
+  </div>
+
+  <div class="au-footer-links-col">
+    <h4>Quick Links</h4>
+    <div class="au-footer-links-grid">
+      ${ABOUT.footer.quickLinks.map(l => `<a href="${l.href}" class="au-footer-link">${l.label}</a>`).join("")}
+    </div>
+    <h4 style="margin-top:24px;">Products</h4>
+    <div class="au-footer-links-grid">
+      ${ABOUT.footer.products.map(l => `<a href="${l.href}" class="au-footer-link">${l.label}</a>`).join("")}
+    </div>
+  </div>
+
+  <div class="au-footer-contact-col">
+    <h4>Contact Us</h4>
+    <div class="au-footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>${ABOUT.footer.contact.address}</span></div>
+    <div class="au-footer-contact-item"><i class="fa-solid fa-phone"></i><span><a href="tel:${ABOUT.footer.contact.phone}">${ABOUT.footer.contact.phone}</a></span></div>
+    <div class="au-footer-contact-item"><i class="fa-solid fa-envelope"></i><span><a href="mailto:${ABOUT.footer.contact.email}">${ABOUT.footer.contact.email}</a></span></div>
+    <div class="au-footer-contact-item"><i class="fa-solid fa-clock"></i><span>${ABOUT.footer.contact.hours}</span></div>
+  </div>`;
+
+  const fc = qs("auFooterBottom");
+  if (fc) fc.textContent = PAGE.company.copyright;
+
+  const waF = qs("waFloat");
+  if (waF) waF.href = PAGE.company.whatsapp;
+
+  // ── GSAP Eye Parallax + Scroll Animations ────────────────────────────
+  (function() {
+    if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") return;
+    gsap.registerPlugin(ScrollTrigger);
+
+    const outer  = document.getElementById("eyeParallaxOuter");
+    const inner  = document.getElementById("eyeParallaxInner");
+    const badges = document.querySelectorAll(".eye-badge");
+    if (!outer || !inner) return;
+
+    gsap.from(outer, { y: 50, opacity: 0, scale: 0.96, duration: 1.0, ease: "expo.out", delay: 0.2 });
+    gsap.to(badges, {
+      opacity: 1, stagger: 0.15, duration: 0.6, ease: "back.out(1.5)", delay: 0.8,
+      onComplete() { badges.forEach(b => b.classList.add("live")); }
+    });
+
+    gsap.fromTo(inner,
+      { yPercent: -9 },
+      {
+        yPercent: 9,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".about-hero",
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1.1,
+        }
+      }
+    );
+
+    document.querySelectorAll(".reveal-section").forEach(el => {
+      gsap.from(el, {
+        y: 44, opacity: 0, duration: 0.9, ease: "power3.out",
+        scrollTrigger: { trigger: el, start: "top 88%", toggleActions: "play none none none" }
+      });
+    });
+
+    document.querySelectorAll(".au-stat-num").forEach(el => {
+      ScrollTrigger.create({
+        trigger: el, start: "top 90%",
+        onEnter() {
+          gsap.fromTo(el, { scale: 0.75, opacity: 0.3 }, { scale: 1, opacity: 1, duration: 0.65, ease: "back.out(1.7)" });
+        }
+      });
+    });
+  })();
 }
