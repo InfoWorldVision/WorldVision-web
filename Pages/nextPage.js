@@ -46,7 +46,7 @@ const PAGE = {
         description: "World Vision Hydrophilic IOL — Nano Fold, Nano Flex, Nano Flex Y. European medical-grade hydrophilic acrylic, 25% water content, available in spheric and aspheric designs."
       },
 
-      pmmaIol: {
+      pmmaIOL: {
         title: "PMMA IOL — World Vision Ophthalmic",
         description: "World Vision PMMA IOL — UK medical-grade Polymethyl Methacrylate. Posterior chamber, anterior chamber, and capsular tension ring solutions."
       },
@@ -133,6 +133,7 @@ const PAGE = {
       { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html" },
       { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html" },
       { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
+      { label: "About Us",         href: "../Pages/aboutUs.html" },
       { label: "Contact Us",       href: "../Pages/contactUs.html" },
       { label: "Gallery",          href: "../Pages/gallery.html" },
     ],
@@ -165,7 +166,7 @@ const PAGE = {
     products: {
       label: "Our Products",
       // Pages that belong under the Products dropdown — used for active-nav detection
-      pages: ["iol-page","hydrophobicIol","hydrophilicIOL","pmmaIol","premiumIol","pharmaProducts","keratome","crescent","lanceIp","mvrBlade","nanoClaro","nanoGrand","nanoClaroPlus","nanoGrandPlus","nanoFold","nanoFlex"],
+      pages: ["iol-page","hydrophobicIol","hydrophilicIOL","pmmaIOL","premiumIOL","pharmaProducts","keratome","crescent","lanceIp","mvrBlade","nanoClaro","nanoGrand","nanoClaroPlus","nanoGrandPlus","nanoFold","nanoFlex"],
       children: [
         {
           label: "Intraocular Lens",
@@ -340,6 +341,14 @@ const PAGE = {
       contactUs: [
         { label: "Home",               href: "../Pages/index.html" },
         { label: "Contact Us",         current: true               },
+      ],
+      aboutUs: [
+        { label: "Home",               href: "../Pages/index.html" },
+        { label: "About Us",           current: true               },
+      ],
+      gallery: [
+        { label: "Home",               href: "../Pages/index.html" },
+        { label: "Gallery",            current: true               },
       ],
     };
     return map[ACTIVE_PAGE] || map["iol-page"];
@@ -579,7 +588,7 @@ function renderDesktopNav() {
       "iol-page":         "Intraocular Lens",
       hydrophobicIol:     "Hydrophobic IOL",
       hydrophilicIOL:     "Hydrophilic IOL",
-      pmmaIol:            "PMMA IOL",
+      pmmaIOL:            "PMMA IOL",
       nanoClaro:          "Nano Claro",
       nanoGrand:          "Nano Grand",
       nanoClaroPlus:      "Nano Claro Plus",
@@ -1221,6 +1230,7 @@ if (ACTIVE_PAGE === "nanoClaro") {
         { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html"         },
         { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
         { label: "Contact Us",       href: "../Pages/contactUs.html"       },
+        { label: "About Us",         href: "../Pages/aboutUs.html"         },
         { label: "Gallery",          href: "../Pages/gallery.html"         },
       ],
       products: [
@@ -1443,6 +1453,7 @@ if (ACTIVE_PAGE === "nanoGrand") {
         { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html"  },
         { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html"         },
         { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
+        { label: "About Us",         href: "../Pages/aboutUs.html"         },
         { label: "Contact Us",       href: "../Pages/contactUs.html"       },
         { label: "Gallery",          href: "../Pages/gallery.html"         },
       ],
@@ -1667,6 +1678,7 @@ if (ACTIVE_PAGE === "nanoClaroPlus") {
         { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html"  },
         { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html"         },
         { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
+        { label: "About Us",         href: "../Pages/aboutUs.html"         },
         { label: "Contact Us",       href: "../Pages/contactUs.html"       },
         { label: "Gallery",          href: "../Pages/gallery.html"         },
       ],
@@ -1891,6 +1903,7 @@ if (ACTIVE_PAGE === "nanoGrandPlus") {
         { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html"  },
         { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html"         },
         { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
+        { label: "About Us",         href: "../Pages/aboutUs.html"         },
         { label: "Contact Us",       href: "../Pages/contactUs.html"       },
         { label: "Gallery",          href: "../Pages/gallery.html"         },
       ],
@@ -2736,6 +2749,7 @@ if (ACTIVE_PAGE === "toricCalculator") {
         { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html"  },
         { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html"         },
         { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
+        { label: "About Us",         href: "../Pages/aboutUs.html"        },
         { label: "Contact Us",       href: "../Pages/contactUs.html"       },
         { label: "Gallery",          href: "../Pages/gallery.html"         },
       ],
@@ -3482,6 +3496,7 @@ if (ACTIVE_PAGE === "hydrophilicIOL") {
         { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html"  },
         { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html"         },
         { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
+        { label: "About Us",         href: "../Pages/aboutUs.html"         },
         { label: "Contact Us",       href: "../Pages/contactUs.html"       },
         { label: "Gallery",          href: "../Pages/gallery.html"         },
       ],
@@ -3902,6 +3917,7 @@ if (ACTIVE_PAGE === "iol-page") {
         { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html"  },
         { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html"         },
         { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
+        { label: "About Us",         href: "../Pages/aboutUs.html"         },
         { label: "Contact Us",       href: "../Pages/contactUs.html"       },
         { label: "Gallery",          href: "../Pages/gallery.html"         },
       ],
@@ -4159,6 +4175,7 @@ if (ACTIVE_PAGE === "nanoFold") {
         { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html"  },
         { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html"         },
         { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
+        { label: "About Us",         href: "../Pages/aboutUs.html"         },
         { label: "Contact Us",       href: "../Pages/contactUs.html"       },
         { label: "Gallery",          href: "../Pages/gallery.html"         },
       ],
@@ -4544,6 +4561,7 @@ if (ACTIVE_PAGE === "nanoFlex") {
         { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html"  },
         { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html"         },
         { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
+        { label: "About Us",         href: "../Pages/aboutUs.html"         },
         { label: "Contact Us",       href: "../Pages/contactUs.html"       },
         { label: "Gallery",          href: "../Pages/gallery.html"         },
       ],
@@ -5334,6 +5352,7 @@ if (pmmaHeroLens) {
         { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html"  },
         { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html"         },
         { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
+        { label: "About Us",          href: "../Pages/aboutUs.html"        },
         { label: "Contact Us",       href: "../Pages/contactUs.html"       },
         { label: "Gallery",          href: "../Pages/gallery.html"         },
       ],
@@ -5724,6 +5743,7 @@ if (ACTIVE_PAGE === "keratome") {
         { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html"  },
         { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html"         },
         { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
+        { label: "About Us",          href: "../Pages/aboutUs.html"        },
         { label: "Contact Us",       href: "../Pages/contactUs.html"       },
         { label: "Gallery",          href: "../Pages/gallery.html"         },
       ],
@@ -5941,6 +5961,7 @@ if (ACTIVE_PAGE === "crescent") {
         { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html"  },
         { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html"         },
         { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
+        { label: "About Us",          href: "../Pages/aboutUs.html"        },
         { label: "Contact Us",       href: "../Pages/contactUs.html"       },
         { label: "Gallery",          href: "../Pages/gallery.html"         },
       ],
@@ -6215,6 +6236,7 @@ if (ACTIVE_PAGE === "lancelp") {
         { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html"  },
         { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html"         },
         { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
+        { label: "About Us",          href: "../Pages/aboutUs.html"        },
         { label: "Contact Us",       href: "../Pages/contactUs.html"       },
         { label: "Gallery",          href: "../Pages/gallery.html"         },
       ],
@@ -6486,6 +6508,7 @@ if (ACTIVE_PAGE === "mvrBlade") {
         { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html"  },
         { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html"         },
         { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
+        { label: "About Us",          href: "../Pages/aboutUs.html"        },
         { label: "Contact Us",       href: "../Pages/contactUs.html"       },
         { label: "Gallery",          href: "../Pages/gallery.html"         },
       ],
@@ -6659,6 +6682,7 @@ if (ACTIVE_PAGE === "contactUs") {
         { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html"  },
         { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html"         },
         { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
+        { label: "About Us",          href: "../Pages/aboutUs.html"        },
         { label: "Contact Us",       href: "../Pages/contactUs.html"       },
         { label: "Gallery",          href: "../Pages/gallery.html"         },
       ],
@@ -6959,6 +6983,7 @@ if (ACTIVE_PAGE === "aboutUs") {
         { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html"  },
         { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html"         },
         { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
+        { label: "About Us",          href: "../Pages/aboutUs.html"        },
         { label: "Contact Us",       href: "../Pages/contactUs.html"       },
         { label: "Gallery",          href: "../Pages/gallery.html"         },
       ],
@@ -7163,6 +7188,474 @@ if (fb) fb.innerHTML = `
         onEnter() {
           gsap.fromTo(el, { scale: 0.75, opacity: 0.3 }, { scale: 1, opacity: 1, duration: 0.65, ease: "back.out(1.7)" });
         }
+      });
+    });
+  })();
+}
+
+
+/*************************************************
+ * GALLERY PAGE — only runs on gallery.html
+ *************************************************/
+
+if (ACTIVE_PAGE === "gallery") {
+
+  const GAL = {
+    eyebrow: "Product Showcase · Chennai, India",
+    h1:      "Precision in <em>Every Frame</em>",
+    desc:    "Explore our complete portfolio of intraocular lenses, micro-surgical instruments, and manufacturing excellence — crafted for surgeons across the world.",
+
+    stats: [
+      { num: "50+", lbl: "IOL Models"        },
+      { num: "20+", lbl: "Countries Served"  },
+      { num: "4",   lbl: "Product Categories" },
+    ],
+
+    filters: [
+      { key: "all",           label: "All",                  icon: "fa-grip",             color: "" },
+      { key: "hydrophobic",   label: "Hydrophobic IOL",      icon: "fa-eye",              color: "#0055a5" },
+      { key: "hydrophilic",   label: "Hydrophilic IOL",      icon: "fa-droplet",          color: "#0077cc" },
+      { key: "pmma",          label: "PMMA IOL",             icon: "fa-circle",           color: "#0099bb" },
+      { key: "surgical",      label: "Surgical Blades",      icon: "fa-scissors",         color: "#e06000" },
+      { key: "facility",      label: "Facility",             icon: "fa-industry",         color: "#2a7a3b" },
+    ],
+
+    items: [
+      /* ─── Hydrophobic IOL ────────────────────────── */
+      { src: "../Multimedia/lense1.png",  label: "Nano Claro — Hydrophobic IOL",      cat: "hydrophobic", variant: ""       },
+      { src: "../Multimedia/lense2.png",  label: "Nano Grand — Hydrophobic IOL",      cat: "hydrophobic", variant: ""       },
+      { src: "../Multimedia/lense3.png",  label: "Nano Claro Plus",                   cat: "hydrophobic", variant: ""       },
+      { src: "../Multimedia/lense4.png",  label: "Nano Grand Plus",                   cat: "hydrophobic", variant: ""       },
+      { src: "../Multimedia/lense5.png",  label: "Aspheric Hydrophobic IOL",          cat: "hydrophobic", variant: ""       },
+      { src: "../Multimedia/lense6.png",  label: "Toric Hydrophobic IOL",             cat: "hydrophobic", variant: ""       },
+      { src: "../Multimedia/nanoIOL1.png",label: "Nano Series — A-Constant 118.0",    cat: "hydrophobic", variant: "square" },
+      { src: "../Multimedia/nanoIOL2.png",label: "Nano Series — UV-Blue Filter",      cat: "hydrophobic", variant: "square" },
+      /* ─── Hydrophilic IOL ────────────────────────── */
+      { src: "../Multimedia/lense7.png",  label: "Nano Fold — Hydrophilic IOL",       cat: "hydrophilic", variant: ""       },
+      { src: "../Multimedia/lense8.png",  label: "Nano Flex — Hydrophilic IOL",       cat: "hydrophilic", variant: ""       },
+      { src: "../Multimedia/lense9.png",  label: "Foldable Hydrophilic — 6.0mm",     cat: "hydrophilic", variant: ""       },
+      { src: "../Multimedia/lense10.png", label: "One-Piece Hydrophilic IOL",         cat: "hydrophilic", variant: ""       },
+      { src: "../Multimedia/hydrophilic_flexY1.png", label: "Nano Flex — Plate Haptic",  cat: "hydrophilic", variant: ""   },
+      { src: "../Multimedia/hydrophilic_fold1.png",  label: "Nano Fold — Three-Piece",   cat: "hydrophilic", variant: ""   },
+      /* ─── PMMA IOL ───────────────────────────────── */
+      { src: "../Multimedia/lense11.png", label: "PMMA Biconvex IOL — 5.5mm",        cat: "pmma", variant: ""       },
+      { src: "../Multimedia/lense12.png", label: "PMMA Modified C-Loop",             cat: "pmma", variant: ""       },
+      { src: "../Multimedia/lense13.png", label: "PMMA — High Power Range",          cat: "pmma", variant: ""       },
+      { src: "../Multimedia/lense14.png", label: "PMMA Iris-Claw IOL",               cat: "pmma", variant: ""       },
+      { src: "../Multimedia/nanoIRISPmma.png", label: "Nano Iris PMMA",              cat: "pmma", variant: "square" },
+      { src: "../Multimedia/nanoPlusPmma.png",  label: "Nano Plus PMMA",             cat: "pmma", variant: "square" },
+      /* ─── Surgical Blades ────────────────────────── */
+      { src: "../Multimedia/msBlade-Sharp.png",   label: "Microsurgical Blade — Sharp",    cat: "surgical", variant: "square" },
+      { src: "../Multimedia/msBladeCrescent.png", label: "Crescent Blade",                 cat: "surgical", variant: "square" },
+      { src: "../Multimedia/msBladeLance.png",    label: "Lance Blade",                    cat: "surgical", variant: "square" },
+      { src: "../Multimedia/msBlade_blunt.png",   label: "Blunt Tunnel Blade",             cat: "surgical", variant: "square" },
+      { src: "../Multimedia/msMVRBlade.png",      label: "MVR Blade — 20G",                cat: "surgical", variant: "square" },
+      /* ─── Facility ────────────────────────────────── */
+      { src: "../Multimedia/lensemanu1.jpg", label: "Chennai Manufacturing Facility",    cat: "facility", variant: "wide" },
+      { src: "../Multimedia/lensemanu2.jpg", label: "CNC Precision Lathe",               cat: "facility", variant: "wide" },
+      { src: "../Multimedia/lensemanu3.jpg", label: "Quality Inspection Lab",            cat: "facility", variant: "wide" },
+      { src: "../Multimedia/lensemanu4.jpg", label: "Sterile Packaging Line",            cat: "facility", variant: "wide" },
+    ],
+
+    catMeta: {
+      all:          { label: "All",               color: "#0055a5", bg: "rgba(0,85,165,0.75)"   },
+      hydrophobic:  { label: "Hydrophobic IOL",   color: "#0055a5", bg: "rgba(0,85,165,0.75)"   },
+      hydrophilic:  { label: "Hydrophilic IOL",   color: "#0077cc", bg: "rgba(0,119,204,0.75)"  },
+      pmma:         { label: "PMMA IOL",          color: "#0099bb", bg: "rgba(0,153,187,0.75)"  },
+      surgical:     { label: "Surgical Blades",   color: "#c05000", bg: "rgba(192,80,0,0.75)"   },
+      facility:     { label: "Facility",          color: "#2a7a3b", bg: "rgba(42,122,59,0.75)"  },
+    },
+
+    cta: {
+      h:    "Interested in Our <em>Products?</em>",
+      p:    "Our team of experts are ready to answer your questions about IOL specifications, pricing, and surgical compatibility.",
+      btns: [
+        { href: "../Pages/contactUs.html",      label: "Contact Us",       cls: "btn-p", icon: "fa-envelope"   },
+        { href: "../Pages/iol-page.html",       label: "Browse Products",  cls: "btn-g", icon: "fa-eye"        },
+        { href: "../Pages/toricCalculator.html",label: "Toric Calculator", cls: "btn-o", icon: "fa-calculator" },
+      ],
+    },
+
+    footer: {
+      tagline: "Premium ophthalmic products — IOLs, surgical blades, and pharma — crafted in Chennai for surgeons worldwide.",
+      socials: [
+        { href: "#", icon: "fa-brands fa-linkedin-in", label: "LinkedIn"  },
+        { href: "#", icon: "fa-brands fa-instagram",   label: "Instagram" },
+        { href: "https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv", icon: "fa-brands fa-whatsapp", label: "WhatsApp" },
+      ],
+      quickLinks: [
+        { label: "Home",             href: "../Pages/index.html"           },
+        { label: "Hydrophobic IOL",  href: "../Pages/hydrophobicIol.html"  },
+        { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html"  },
+        { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html"         },
+        { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
+        { label: "About Us",          href: "../Pages/aboutUs.html"        },
+        { label: "Contact Us",       href: "../Pages/contactUs.html"       },
+      ],
+      products: [
+        { label: "Nano Claro",      href: "../Pages/nanoClaro.html"  },
+        { label: "Nano Grand",      href: "../Pages/nanoGrand.html"  },
+        { label: "Nano Fold",       href: "../Pages/nanoFold.html"   },
+        { label: "Nano Flex",       href: "../Pages/nanoFlex.html"   },
+        { label: "Keratome Blades", href: "../Pages/keratome.html"   },
+        { label: "Crescent Blades", href: "../Pages/crescent.html"   },
+        { label: "MVR Blades",      href: "../Pages/mvrBlade.html"   },
+      ],
+      contact: {
+        address: "Chennai, Tamil Nadu, India — PIN 600001",
+        phone:   "+91 98765 43210",
+        email:   "info@worldvisionophthalmic.com",
+        hours:   "Mon–Sat, 9AM–6PM IST",
+      },
+    },
+  };
+
+  /* ── Meta ──────────────────────────────────────────── */
+  document.title = "Gallery — World Vision Ophthalmic";
+  const galMeta = qs("pageMeta");
+  if (galMeta) galMeta.setAttribute("content", "Explore World Vision Ophthalmic's full IOL and surgical product gallery — hydrophobic, hydrophilic, PMMA, and micro-surgical instruments.");
+
+  /* ── Breadcrumb ────────────────────────────────────── */
+  const galBc = qs("breadcrumb");
+  if (galBc) galBc.innerHTML = `<a href="../Pages/index.html">Home</a><span class="sep">/</span><span class="current">Gallery</span>`;
+
+  /* ── Hero ──────────────────────────────────────────── */
+  const galEy = qs("galHeroEyebrow");
+  if (galEy) galEy.innerHTML = `<i class="fa-solid fa-images"></i>${GAL.eyebrow}`;
+
+  const galH1 = qs("galHeroH1");
+  if (galH1) galH1.innerHTML = GAL.h1;
+
+  const galDes = qs("galHeroDesc");
+  if (galDes) galDes.textContent = GAL.desc;
+
+  const galSt = qs("galStats");
+  if (galSt) galSt.innerHTML = GAL.stats.map(s =>
+    `<div class="gal-stat">
+      <div class="gal-stat-num">${s.num}</div>
+      <div class="gal-stat-lbl">${s.lbl}</div>
+    </div>`
+  ).join("");
+
+  /* ── Filter Bar ────────────────────────────────────── */
+  let activeFilter = "all";
+
+  const filterBar = qs("galFilterBar");
+  if (filterBar) {
+    filterBar.innerHTML = GAL.filters.map(f =>
+      `<button type="button"
+               class="gal-filter-btn${f.key === "all" ? " active" : ""}"
+               data-filter="${f.key}"
+               role="tab"
+               aria-selected="${f.key === "all" ? "true" : "false"}">
+        <i class="fa-solid ${f.icon}"></i>${f.label}
+      </button>`
+    ).join("");
+
+    filterBar.querySelectorAll(".gal-filter-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        activeFilter = btn.dataset.filter;
+        filterBar.querySelectorAll(".gal-filter-btn").forEach(b => {
+          b.classList.toggle("active", b.dataset.filter === activeFilter);
+          b.setAttribute("aria-selected", b.dataset.filter === activeFilter ? "true" : "false");
+        });
+        filterItems();
+      });
+    });
+  }
+
+  /* ── Masonry Grid ──────────────────────────────────── */
+  const masonry = qs("galMasonry");
+  const countEl = qs("galFilterCount");
+
+  function renderMasonry() {
+    if (!masonry) return;
+    masonry.innerHTML = GAL.items.map((item, idx) => {
+      const meta = GAL.catMeta[item.cat];
+      return `
+        <div class="gal-item${item.variant ? " " + item.variant : ""}" data-cat="${item.cat}" data-idx="${idx}" style="animation-delay:${(idx % 12) * 0.045}s">
+          <img src="${item.src}" alt="${item.label}" loading="lazy" decoding="async"/>
+          <div class="gal-item-overlay">
+            <span class="gal-item-cat-tag" style="background:${meta.bg}">${meta.label}</span>
+            <span class="gal-item-label">${item.label}</span>
+          </div>
+          <div class="gal-item-zoom-ico"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>`;
+    }).join("");
+
+    masonry.querySelectorAll(".gal-item").forEach(el => {
+      el.addEventListener("click", () => {
+        const idx = parseInt(el.dataset.idx, 10);
+        openLightbox(idx);
+      });
+    });
+
+    updateCount();
+  }
+
+  function filterItems() {
+    if (!masonry) return;
+    masonry.querySelectorAll(".gal-item").forEach(el => {
+      const matches = activeFilter === "all" || el.dataset.cat === activeFilter;
+      if (matches) {
+        el.classList.remove("gal-hidden");
+        el.classList.add("gal-fade-in");
+        setTimeout(() => el.classList.remove("gal-fade-in"), 400);
+      } else {
+        el.classList.add("gal-hidden");
+        el.classList.remove("gal-fade-in");
+      }
+    });
+    updateCount();
+  }
+
+  function updateCount() {
+    if (!countEl) return;
+    const total   = GAL.items.length;
+    const visible = activeFilter === "all"
+      ? total
+      : GAL.items.filter(i => i.cat === activeFilter).length;
+    countEl.textContent = `${visible} of ${total} items`;
+  }
+
+  renderMasonry();
+
+  /* ── Lightbox ──────────────────────────────────────── */
+  const lb     = qs("galLightbox");
+  const lbImg  = qs("galLbImg");
+  const lbTitle= qs("galLbTitle");
+  const lbCat  = qs("galLbCat");
+  const lbCnt  = qs("galLbCount");
+  const lbThumbs = qs("galLbThumbs");
+  const lbClose  = qs("galLbClose");
+  const lbPrev   = qs("galLbPrev");
+  const lbNext   = qs("galLbNext");
+  const lbBack   = qs("galLbBackdrop");
+
+  let lbIndex = 0;
+  let lbList  = GAL.items; // current filtered list
+
+  function getFilteredItems() {
+    return activeFilter === "all"
+      ? GAL.items.map((it, i) => ({ ...it, origIdx: i }))
+      : GAL.items.map((it, i) => ({ ...it, origIdx: i })).filter(it => it.cat === activeFilter);
+  }
+
+  function openLightbox(origIdx) {
+    lbList = getFilteredItems();
+    const pos = lbList.findIndex(i => i.origIdx === origIdx);
+    lbIndex = pos >= 0 ? pos : 0;
+    renderLbThumbs();
+    showLbItem(lbIndex);
+    if (!lb) return;
+    lb.classList.add("open");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeLightbox() {
+    if (!lb) return;
+    lb.classList.remove("open");
+    document.body.style.overflow = "";
+  }
+
+  function renderLbThumbs() {
+    if (!lbThumbs) return;
+    lbThumbs.innerHTML = lbList.map((item, i) =>
+      `<div class="gal-lb-thumb${i === lbIndex ? " active" : ""}" data-pos="${i}">
+        <img src="${item.src}" alt="${item.label}" loading="lazy" decoding="async"/>
+      </div>`
+    ).join("");
+
+    lbThumbs.querySelectorAll(".gal-lb-thumb").forEach(t => {
+      t.addEventListener("click", () => {
+        lbIndex = parseInt(t.dataset.pos, 10);
+        showLbItem(lbIndex);
+        syncThumbs();
+      });
+    });
+  }
+
+  function showLbItem(pos) {
+    const item = lbList[pos];
+    if (!item || !lbImg) return;
+    lbImg.classList.add("gal-lb-loading");
+    lbImg.src = item.src;
+    lbImg.alt = item.label;
+    lbImg.onload = () => lbImg.classList.remove("gal-lb-loading");
+    if (lbTitle) lbTitle.textContent = item.label;
+    const meta = GAL.catMeta[item.cat];
+    if (lbCat)  { lbCat.textContent = meta.label; lbCat.style.background = meta.bg; lbCat.style.color = "#fff"; }
+    if (lbCnt)  lbCnt.textContent = `${pos + 1} / ${lbList.length}`;
+    syncThumbs();
+  }
+
+  function syncThumbs() {
+    if (!lbThumbs) return;
+    lbThumbs.querySelectorAll(".gal-lb-thumb").forEach((t, i) => {
+      t.classList.toggle("active", i === lbIndex);
+    });
+    const active = lbThumbs.querySelector(".gal-lb-thumb.active");
+    if (active) active.scrollIntoView({ inline: "center", behavior: "smooth" });
+  }
+
+  function lbStep(dir) {
+    lbIndex = (lbIndex + dir + lbList.length) % lbList.length;
+    showLbItem(lbIndex);
+  }
+
+  if (lbClose)  lbClose.addEventListener("click", e => { e.preventDefault(); e.stopPropagation(); closeLightbox(); });
+  if (lbBack)   lbBack.addEventListener("click", e => { e.preventDefault(); closeLightbox(); });
+  if (lbPrev)   lbPrev.addEventListener("click", e => { e.preventDefault(); e.stopPropagation(); lbStep(-1); });
+  if (lbNext)   lbNext.addEventListener("click", e => { e.preventDefault(); e.stopPropagation(); lbStep(1); });
+
+  document.addEventListener("keydown", e => {
+    if (!lb || !lb.classList.contains("open")) return;
+    if (e.key === "Escape")      closeLightbox();
+    if (e.key === "ArrowLeft")   lbStep(-1);
+    if (e.key === "ArrowRight")  lbStep(1);
+  });
+
+  /* ── CTA ────────────────────────────────────────────── */
+  const ctaH = qs("galCtaH");   if (ctaH) ctaH.innerHTML   = GAL.cta.h;
+  const ctaP = qs("galCtaP");   if (ctaP) ctaP.textContent = GAL.cta.p;
+  const ctaB = qs("galCtaBtns");
+  if (ctaB) ctaB.innerHTML = GAL.cta.btns.map(b =>
+    `<a href="${b.href}" class="${b.cls}"><i class="fa-solid ${b.icon}"></i>${b.label}</a>`
+  ).join("");
+
+  /* ── Footer ─────────────────────────────────────────── */
+  const fb = qs("auFooterBody");
+  if (fb) fb.innerHTML = `
+    <div class="au-footer-brand-col">
+      <div class="au-footer-brand-header">
+        <img src="${PAGE.company.logo}" alt="World Vision Logo"/>
+        <div>
+          <div class="au-footer-brand-name">${PAGE.company.name}</div>
+          <div class="au-footer-brand-sub">${PAGE.company.subtitle}</div>
+        </div>
+      </div>
+      <p class="au-footer-tagline">${GAL.footer.tagline}</p>
+      <div class="au-footer-socials">
+        ${GAL.footer.socials.map(s =>
+          `<a href="${s.href}" class="au-footer-social" aria-label="${s.label}" ${s.href.startsWith("http") ? 'target="_blank"' : ""}>
+            <i class="${s.icon}"></i>
+          </a>`
+        ).join("")}
+      </div>
+    </div>
+    <div class="au-footer-links-col">
+      <h4>Quick Links</h4>
+      <div class="au-footer-links-grid">
+        ${GAL.footer.quickLinks.map(l => `<a href="${l.href}" class="au-footer-link">${l.label}</a>`).join("")}
+      </div>
+      <h4 style="margin-top:24px;">Products</h4>
+      <div class="au-footer-links-grid">
+        ${GAL.footer.products.map(l => `<a href="${l.href}" class="au-footer-link">${l.label}</a>`).join("")}
+      </div>
+    </div>
+    <div class="au-footer-contact-col">
+      <h4>Contact Us</h4>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>${GAL.footer.contact.address}</span></div>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-phone"></i><span><a href="tel:${GAL.footer.contact.phone}">${GAL.footer.contact.phone}</a></span></div>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-envelope"></i><span><a href="mailto:${GAL.footer.contact.email}">${GAL.footer.contact.email}</a></span></div>
+      <div class="au-footer-contact-item"><i class="fa-solid fa-clock"></i><span>${GAL.footer.contact.hours}</span></div>
+    </div>`;
+
+  const fc = qs("auFooterBottom");
+  if (fc) fc.textContent = PAGE.company.copyright;
+
+  const waF = qs("waFloat");
+  if (waF) waF.href = PAGE.company.whatsapp;
+
+  /* ── GSAP Scroll Animations ──────────────────────── */
+  (function () {
+    if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") return;
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Initial page-load entrance
+    gsap.from(".gal-hero-inner", {
+      y: 40, opacity: 0, duration: 1.0, ease: "expo.out", delay: 0.15
+    });
+    gsap.from(".gal-filter-wrap", {
+      y: 20, opacity: 0, duration: 0.7, ease: "power3.out", delay: 0.4
+    });
+
+    // Scroll-driven zoom: pin hero, scale the title up while the rest fades,
+    // then release into the filter bar + gallery grid.
+    const galHeroZoom = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".gal-hero",
+        start: "top top",
+        end: "+=80%",          // ← matches hero height → gallery lands at top:0
+        pin: true,
+        pinSpacing: false,      // ← gallery slides up BEHIND opaque hero, hidden
+        scrub: 1,
+        anticipatePin: 1,
+        invalidateOnRefresh: true,
+      }
+    });
+
+    galHeroZoom
+      // Supporting elements clear out early
+      .to(".gal-eyebrow",       { y: -20, opacity: 0, ease: "power2.in", duration: 0.20 }, 0)
+      .to(".gal-desc",          { y:  20, opacity: 0, ease: "power2.in", duration: 0.20 }, 0)
+      .to(".gal-stats-row",     { y:  30, opacity: 0, ease: "power2.in", duration: 0.20 }, 0)
+      .to(".gal-hero-bg-rings", { opacity: 0,        ease: "power2.in", duration: 0.20 }, 0)
+
+      // Title zooms across most of the timeline
+      .to(".gal-h1", {
+        scale: 2.6,
+        transformOrigin: "50% 50%",
+        ease: "power1.inOut",
+        duration: 0.80
+      }, 0)
+
+      // Hero curtains away at the very end
+      .to(".gal-h1",   { opacity: 0, ease: "power2.in", duration: 0.18 }, 0.82)
+      .to(".gal-hero", { 
+        opacity: 0, 
+        pointerEvents: "none",
+        ease: "power2.in", 
+        duration: 0.18 
+      }, 0.82);
+
+    // Filter bar fades in as hero clears (separate trigger — independent of scrub)
+    ScrollTrigger.create({
+      trigger: ".gal-hero",
+      start: "bottom 80%",
+      onEnter() {
+        gsap.to(".gal-filter-wrap", {
+          opacity: 1, duration: 0.5, ease: "power2.out"
+        });
+      }
+    });
+
+    // Cards rise from below with stagger — the main event
+    ScrollTrigger.create({
+      trigger: ".gal-masonry",
+      start: "top 85%",
+      onEnter() {
+        gsap.to(".gal-item", {
+          opacity: 1,
+          y: 0,
+          duration: 0.7,
+          ease: "power3.out",
+          stagger: {
+            each: 0.06,
+            from: "start",
+            grid: "auto"
+          }
+        });
+      }
+    });
+
+    // Set initial y position for cards so they rise from below
+    gsap.set(".gal-item", { y: 50 });
+
+    document.querySelectorAll(".reveal-section").forEach(el => {
+      gsap.from(el, {
+        y: 44, opacity: 0, duration: 0.9, ease: "power3.out",
+        scrollTrigger: { trigger: el, start: "top 88%", toggleActions: "play none none none" }
       });
     });
   })();

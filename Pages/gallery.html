@@ -3,359 +3,132 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="World Vision Ophthalmic — IOL Gallery"/>
+  <meta id="pageMeta" name="description" content=""/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <link rel="icon" href="../Multimedia/favicon.ico" type="image/x-icon"/>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="../Pages/style.css"/>
+  <link rel="stylesheet" href="../Pages/nextStyle.css"/>
   <link rel="stylesheet" href="../Pages/accessibility.css"/>
+  <link rel="stylesheet" href="../Pages/gallery.css"/>
   <title>Gallery — World Vision Ophthalmic</title>
 </head>
-<body>
-    <!-- Lens background — exact from index.html -->
-    <div class="lens-bg animate__animated animate__fadeIn animate__slow" id="lensBg"></div>
-    <!-- Dark overlay for gallery readability -->
-    <!-- <div class="gallery-dark-overlay"></div> -->
-
-    <header class="site-header">
-
-      <!-- Navbar -->
-      <nav id="navbar" class="fixed lg:top-4 w-full lg:left-1/2 lg:-translate-x-1/2 lg:w-[92%] h-24 lg:px-4 bg-transparent overflow-visible transition-all duration-300 ease-in-out z-50">
-        <div class="nav-glass relative h-full px-10 lg:flex lg:items-center lg:justify-between lg:rounded-2xl flex items-center">
-
-          <div class="flex items-center justify-between w-full lg:w-auto">
-            <button id="menuToggle" class="lg:hidden w-11 h-11 flex items-center justify-center rounded-xl bg-white/20 backdrop-blur-md border border-white/30 text-xl">
-              <i class="fa-solid fa-bars"></i>
-            </button>
-            <div class="logo-container flex items-center gap-3 mx-auto lg:mx-0">
-              <img src="../Multimedia/WVO_Logo1.png" class="h-14 w-auto" />
-              <div class="flex flex-col leading-tight">
-                <span class="font-semibold text-2xl tracking-wide">World Vision</span>
-                <span class="subtitle text-xs tracking-widest uppercase">Ophthalmic Pvt. Ltd.</span>
-              </div>
-            </div>
-          </div>
-
-          <ul class="hidden lg:flex items-center gap-8 text-base font-medium whitespace-nowrap">
-            <li><a href="../Pages/index.html" class="nav-item">Home</a></li>
-            <li class="relative group">
-              <div class="nav-item flex items-center gap-2 cursor-pointer">
-                Our Products <i class="fa-solid fa-chevron-down text-sm transition-transform duration-200 group-hover:rotate-180"></i>
-              </div>
-              <div class="absolute left-0 top-full mt-3 w-56 rounded-2xl bg-white/90 backdrop-blur-lg border border-white/30 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-[999] overflow-hidden">
-                <a href="../Pages/iol-page.html" class="flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition text-sm font-medium text-gray-700">
-                  <i class="fa-solid fa-eye text-blue-500 w-4"></i> Intraocular Lenses
-                </a>
-                <a href="#" class="flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition text-sm font-medium text-gray-700">
-                  <i class="fa-solid fa-syringe text-blue-500 w-4"></i> Surgical Instruments
-                </a>
-                <a href="#" class="flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition text-sm font-medium text-gray-700">
-                  <i class="fa-solid fa-paw text-blue-500 w-4"></i> Veterinary IOL
-                </a>
-              </div>
-            </li>
-            <li><a href="../Pages/gallery.html" class="nav-item active-nav">Gallery</a></li>
-            <li><a href="#blog" class="nav-item">Blog</a></li>
-            <li><a href="#aboutus" class="nav-item">About Us</a></li>
-            <li><a href="../Pages/contactUs.html" class="nav-item">Contact Us</a></li>
-          </ul>
-
-          <a href="../Pages/toricCalculator.html" class="hidden lg:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700 transition shadow-lg shadow-blue-500/25">
-            Toric Calculator <i class="fa-solid fa-calculator"></i>
+<body class="gallery-page">
+  <header>
+    <nav class="topnav" role="navigation" aria-label="Main navigation">
+      <div class="nav-inner">
+        <div class="relative flex items-center justify-center w-full lg:w-auto">
+          <button id="menuToggle" class="lg:hidden absolute left-0 top-1/2 -translate-y-1/2 w-11 h-11 flex items-center justify-center rounded-xl bg-white/70 backdrop-blur-md border border-white/60 text-[18px] text-[#0055a5] shadow-[4px_4px_10px_rgba(184,190,200,0.8),-4px_-4px_10px_rgba(255,255,255,0.9)]" aria-label="Open menu" type="button">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <a href="../Pages/index.html" class="nav-logo mx-auto" aria-label="World Vision Home">
+            <div id="navBrand" class="nav-logo-mark flex gap-3 items-center"></div>
           </a>
-
+          <button class="theme-toggle mobile-theme-toggle absolute right-0 top-1/2 -translate-y-1/2 lg:hidden" id="theme-toggle-mobile" aria-label="Toggle dark mode" aria-pressed="false" type="button">
+            <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
         </div>
-      </nav>
-
-      <!-- Mobile Overlay -->
-      <div id="menuOverlay" class="fixed inset-y-0 left-72 right-0 bg-black/40 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 z-[9998] lg:hidden"></div>
-
-      <div id="mobileMenu" class="fixed inset-y-0 left-0 h-full w-72 -translate-x-full transition-transform duration-300 ease-in-out z-[9999] lg:hidden">
-        <div class="h-full w-72 px-5 pt-7 bg-white/15 backdrop-blur-xl border-r border-white/30">
-          <div class="relative mb-8 px-2 pt-8">
-            <div class="flex items-center gap-3">
-              <img src="../Multimedia/WVO_Logo1.png" class="h-10 w-auto" />
-              <div class="flex flex-col leading-tight">
-                <span class="font-semibold text-lg">World Vision</span>
-                <span class="subtitle text-xs tracking-widest uppercase">Ophthalmic Pvt. Ltd.</span>
-              </div>
-            </div>
-            <button id="closeMenu" class="absolute top-0 right-2 w-7 h-7 flex items-center justify-center rounded-xl bg-white/20 backdrop-blur border border-white/30 text-xl">
-              <i class="fa-solid fa-xmark"></i>
-            </button>
-          </div>
-          <ul class="flex flex-col gap-4 text-base font-medium mt-6">
-            <li><a href="../Pages/index.html" class="mobile-drawer-link">Home</a></li>
-            <li>
-              <button id="mobileProductsBtn" class="w-full flex items-center justify-between mobile-drawer-link">
-                <span>Our Products</span>
-                <i id="mobileProductsIcon" class="fa-solid fa-chevron-down text-sm transition-transform duration-200"></i>
-              </button>
-              <div id="mobileProductsMenu" class="hidden ml-4 mt-2 flex flex-col gap-1">
-                <a href="../Pages/iol-page.html" class="mobile-sub-link">Intraocular Lenses</a>
-                <a href="#" class="mobile-sub-link">Surgical Instruments</a>
-                <a href="#" class="mobile-sub-link">Veterinary IOL</a>
-              </div>
-            </li>
-            <li><a href="../Pages/toricCalculator.html" class="mobile-drawer-link">Toric Calculator</a></li>
-            <li><a href="#about" class="mobile-drawer-link">About</a></li>
-            <li><a href="../Pages/gallery.html" class="mobile-drawer-link active-nav">Gallery</a></li>
-            <li><a href="../Pages/contactUs.html" class="mobile-drawer-link">Contact</a></li>
-          </ul>
+        <ul id="desktopNavLinks" class="nav-links hidden lg:flex"></ul>
+        <div class="desktop-actions hidden lg:flex items-center gap-[25px]">
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+            <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+          <a id="navCta" class="nav-cta hidden lg:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700 transition shadow-lg shadow-blue-500/25"></a>
         </div>
       </div>
-    </header>
+    </nav>
 
-    <!-- Page loader
-    <div id="pageLoader">
-        <div class="loader-inner">
-        <img src="../Multimedia/WVO_Logo1.png" alt="World Vision" class="loader-logo">
-        <div class="loader-bar"><div class="loader-fill"></div></div>
+    <div id="menuOverlay" class="fixed inset-0 bg-black/30 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 z-[1200] lg:hidden"></div>
+    <div id="mobileMenu" class="fixed inset-y-0 left-0 w-72 max-w-[85vw] -translate-x-full transition-transform duration-300 ease-in-out z-[1300] lg:hidden">
+      <div class="h-full px-5 pt-6 pb-8 bg-[rgba(232,236,240,0.96)] backdrop-blur-xl border-r border-white/60 shadow-[12px_0_30px_rgba(0,0,0,0.12)]">
+        <div class="flex items-center justify-between gap-3 mb-8">
+          <div id="mobileBrand" class="flex gap-3 items-center"></div>
+          <button id="closeMenu" class="w-10 h-10 flex items-center justify-center rounded-xl bg-white/70 border border-white/60 text-[#0055a5] shadow-[4px_4px_10px_rgba(184,190,200,0.8),-4px_-4px_10px_rgba(255,255,255,0.9)]" aria-label="Close menu" type="button"><i class="fa-solid fa-xmark"></i></button>
         </div>
-    </div> -->
-    
-    <main>
-        <div class="col-scroll">
-            <!-- BOX 1 (odd → reverses on scroll) -->
-            <div class="col-scroll__box">
-                <div class="col-scroll__list" id="list1">
-                    <figure class="col-scroll__item" data-cat="lenses" data-label="WVO Monofocal IOL">
-                        <img class="col-scroll__img" src="../Multimedia/lense1.png" alt="WVO Monofocal IOL" loading="lazy"/>
-                        <span class="col-scroll__tag" style="background:rgba(0,85,165,0.75);">IOL</span>
-                        <figcaption class="col-scroll__title">WVO Monofocal IOL</figcaption>
-                    </figure>
-                    <figure class="col-scroll__item" data-cat="lenses" data-label="WVO Aspheric IOL">
-                        <img class="col-scroll__img" src="../Multimedia/lense4.png" alt="WVO Aspheric IOL" loading="lazy"/>
-                        <span class="col-scroll__tag" style="background:rgba(0,85,165,0.75);">IOL</span>
-                        <figcaption class="col-scroll__title">WVO Aspheric IOL</figcaption>
-                    </figure>
-                    <figure class="col-scroll__item" data-cat="manufacturing" data-label="Manufacturing Facility">
-                        <img class="col-scroll__img" src="../Multimedia/lensemanu1.jpg" alt="Manufacturing Facility" loading="lazy"/>
-                        <span class="col-scroll__tag" style="background:rgba(10,122,80,0.75);">Facility</span>
-                        <figcaption class="col-scroll__title">Manufacturing Facility</figcaption>
-                    </figure>
-                    <figure class="col-scroll__item" data-cat="lenses" data-label="WVO Toric IOL">
-                        <img class="col-scroll__img" src="../Multimedia/lense7.png" alt="WVO Toric IOL" loading="lazy"/>
-                        <span class="col-scroll__tag" style="background:rgba(0,85,165,0.75);">IOL</span>
-                        <figcaption class="col-scroll__title">WVO Toric IOL</figcaption>
-                    </figure>
-                    <figure class="col-scroll__item" data-cat="lenses" data-label="WVO PMMA IOL">
-                        <img class="col-scroll__img" src="../Multimedia/lense10.png" alt="WVO PMMA IOL" loading="lazy"/>
-                        <span class="col-scroll__tag" style="background:rgba(0,85,165,0.75);">IOL</span>
-                        <figcaption class="col-scroll__title">WVO PMMA IOL</figcaption>
-                    </figure>
-                    <figure class="col-scroll__item" data-cat="lenses" data-label="WVO Trifocal IOL">
-                        <img class="col-scroll__img" src="../Multimedia/lense13.png" alt="WVO Trifocal IOL" loading="lazy"/>
-                        <span class="col-scroll__tag" style="background:rgba(0,85,165,0.75);">IOL</span>
-                        <figcaption class="col-scroll__title">WVO Trifocal IOL</figcaption>
-                    </figure>
-                    <figure class="col-scroll__item" data-cat="lenses" data-label="WVO Bifocal IOL">
-                        <img class="col-scroll__img" src="../Multimedia/lense16.png" alt="WVO Bifocal IOL" loading="lazy"/>
-                        <span class="col-scroll__tag" style="background:rgba(0,85,165,0.75);">IOL</span>
-                        <figcaption class="col-scroll__title">WVO Bifocal IOL</figcaption>
-                    </figure>
-                    <figure class="col-scroll__item" data-cat="lenses" data-label="WVO Zen IOL">
-                        <img class="col-scroll__img" src="../Multimedia/lense19.png" alt="WVO Zen IOL" loading="lazy"/>
-                        <span class="col-scroll__tag" style="background:rgba(0,85,165,0.75);">IOL</span>
-                        <figcaption class="col-scroll__title">WVO Zen IOL</figcaption>
-                    </figure>
-                    <figure class="col-scroll__item" data-cat="lenses" data-label="WVO ACE IOL">
-                        <img class="col-scroll__img" src="../Multimedia/lense22.png" alt="WVO ACE IOL" loading="lazy"/>
-                        <span class="col-scroll__tag" style="background:rgba(0,85,165,0.75);">IOL</span>
-                        <figcaption class="col-scroll__title">WVO ACE IOL</figcaption>
-                    </figure>
-                </div>
-            </div>
-            
-            <!-- BOX 2 (even → scrolls normally) -->
-            <div class="col-scroll__box">
-                <div class="col-scroll__list" id="list2">
-                    <figure class="col-scroll__item" data-cat="lenses" data-label="WVO Multifocal IOL">
-                        <img class="col-scroll__img" src="../Multimedia/lense2.png" alt="WVO Multifocal IOL" loading="lazy"/>
-                        <span class="col-scroll__tag" style="background:rgba(0,85,165,0.75);">IOL</span>
-                        <figcaption class="col-scroll__title">WVO Multifocal IOL</figcaption>
-                    </figure>
-                    <figure class="col-scroll__item" data-cat="lenses" data-label="WVO Hydrophilic IOL">
-                        <img class="col-scroll__img" src="../Multimedia/lense5.png" alt="WVO Hydrophilic IOL" loading="lazy"/>
-                        <span class="col-scroll__tag" style="background:rgba(0,85,165,0.75);">IOL</span>
-                        <figcaption class="col-scroll__title">WVO Hydrophilic IOL</figcaption>
-                    </figure>
-                    <figure class="col-scroll__item" data-cat="manufacturing" data-label="CNC Lathe Precision">
-                        <img class="col-scroll__img" src="../Multimedia/lensemanu2.jpg" alt="CNC Lathe" loading="lazy"/>
-                        <span class="col-scroll__tag" style="background:rgba(10,122,80,0.75);">Facility</span>
-                        <figcaption class="col-scroll__title">CNC Lathe Precision</figcaption>
-                    </figure>
-                    <figure class="col-scroll__item" data-cat="lenses" data-label="WVO Foldable IOL">
-                        <img class="col-scroll__img" src="../Multimedia/lense8.png" alt="WVO Foldable IOL" loading="lazy"/>
-                        <span class="col-scroll__tag" style="background:rgba(0,85,165,0.75);">IOL</span>
-                        <figcaption class="col-scroll__title">WVO Foldable IOL</figcaption>
-                    </figure>
-                    <figure class="col-scroll__item" data-cat="lenses" data-label="WVO EDOF IOL">
-                        <img class="col-scroll__img" src="../Multimedia/lense11.png" alt="WVO EDOF IOL" loading="lazy"/>
-                        <span class="col-scroll__tag" style="background:rgba(0,85,165,0.75);">IOL</span>
-                        <figcaption class="col-scroll__title">WVO EDOF IOL</figcaption>
-                    </figure>
-                    <figure class="col-scroll__item" data-cat="lenses" data-label="WVO Preloaded IOL">
-                        <img class="col-scroll__img" src="../Multimedia/lense14.png" alt="WVO Preloaded IOL" loading="lazy"/>
-                        <span class="col-scroll__tag" style="background:rgba(0,85,165,0.75);">IOL</span>
-                        <figcaption class="col-scroll__title">WVO Preloaded IOL</figcaption>
-                    </figure>
-                    <figure class="col-scroll__item" data-cat="lenses" data-label="WVO Veterinary IOL">
-                        <img class="col-scroll__img" src="../Multimedia/lense17.png" alt="WVO Veterinary IOL" loading="lazy"/>
-                        <span class="col-scroll__tag" style="background:rgba(0,85,165,0.75);">IOL</span>
-                        <figcaption class="col-scroll__title">WVO Veterinary IOL</figcaption>
-                    </figure>
-                    <figure class="col-scroll__item" data-cat="lenses" data-label="WVO Triflex IOL">
-                        <img class="col-scroll__img" src="../Multimedia/lense20.png" alt="WVO Triflex IOL" loading="lazy"/>
-                        <span class="col-scroll__tag" style="background:rgba(0,85,165,0.75);">IOL</span>
-                        <figcaption class="col-scroll__title">WVO Triflex IOL</figcaption>
-                    </figure>
-                </div>
-            </div>
-            
-            <!-- BOX 3 (odd → reverses on scroll) -->
-            <div class="col-scroll__box">
-                <div class="col-scroll__list" id="list3">
-                    <figure class="col-scroll__item" data-cat="lenses" data-label="WVO Square Edge IOL">
-                        <img class="col-scroll__img" src="../Multimedia/lense3.png" alt="WVO Square Edge IOL" loading="lazy"/>
-                        <span class="col-scroll__tag" style="background:rgba(0,85,165,0.75);">IOL</span>
-                        <figcaption class="col-scroll__title">WVO Square Edge IOL</figcaption>
-                    </figure>
-                    <figure class="col-scroll__item" data-cat="lenses" data-label="WVO 3-Piece IOL">
-                        <img class="col-scroll__img" src="../Multimedia/lense6.png" alt="WVO 3-Piece IOL" loading="lazy"/>
-                        <span class="col-scroll__tag" style="background:rgba(0,85,165,0.75);">IOL</span>
-                        <figcaption class="col-scroll__title">WVO 3-Piece IOL</figcaption>
-                    </figure>
-                    <figure class="col-scroll__item" data-cat="manufacturing" data-label="Quality Inspection">
-                        <img class="col-scroll__img" src="../Multimedia/lensemanu3.jpg" alt="Quality Inspection" loading="lazy"/>
-                        <span class="col-scroll__tag" style="background:rgba(10,122,80,0.75);">Facility</span>
-                        <figcaption class="col-scroll__title">Quality Inspection</figcaption>
-                    </figure>
-                    <figure class="col-scroll__item" data-cat="lenses" data-label="WVO Hydrophobic IOL">
-                        <img class="col-scroll__img" src="../Multimedia/lense9.png" alt="WVO Hydrophobic IOL" loading="lazy"/>
-                        <span class="col-scroll__tag" style="background:rgba(0,85,165,0.75);">IOL</span>
-                        <figcaption class="col-scroll__title">WVO Hydrophobic IOL</figcaption>
-                    </figure>
-                    <figure class="col-scroll__item" data-cat="lenses" data-label="WVO Yellow IOL">
-                        <img class="col-scroll__img" src="../Multimedia/lense12.png" alt="WVO Yellow IOL" loading="lazy"/>
-                        <span class="col-scroll__tag" style="background:rgba(0,85,165,0.75);">IOL</span>
-                        <figcaption class="col-scroll__title">WVO Yellow IOL</figcaption>
-                    </figure>
-                    <figure class="col-scroll__item" data-cat="manufacturing" data-label="Sterile Packaging">
-                        <img class="col-scroll__img" src="../Multimedia/lensemanu4.jpg" alt="Sterile Packaging" loading="lazy"/>
-                        <span class="col-scroll__tag" style="background:rgba(10,122,80,0.75);">Facility</span>
-                        <figcaption class="col-scroll__title">Sterile Packaging</figcaption>
-                    </figure>
-                    <figure class="col-scroll__item" data-cat="lenses" data-label="WVO Sulcus IOL">
-                        <img class="col-scroll__img" src="../Multimedia/lense15.png" alt="WVO Sulcus IOL" loading="lazy"/>
-                        <span class="col-scroll__tag" style="background:rgba(0,85,165,0.75);">IOL</span>
-                        <figcaption class="col-scroll__title">WVO Sulcus IOL</figcaption>
-                    </figure>
-                    <figure class="col-scroll__item" data-cat="lenses" data-label="WVO Aspherical IOL">
-                        <img class="col-scroll__img" src="../Multimedia/lense18.png" alt="WVO Aspherical IOL" loading="lazy"/>
-                        <span class="col-scroll__tag" style="background:rgba(0,85,165,0.75);">IOL</span>
-                        <figcaption class="col-scroll__title">WVO Aspherical IOL</figcaption>
-                    </figure>
-                    <figure class="col-scroll__item" data-cat="lenses" data-label="WVO Lens Plus">
-                        <img class="col-scroll__img" src="../Multimedia/lense21.png" alt="WVO Lens Plus" loading="lazy"/>
-                        <span class="col-scroll__tag" style="background:rgba(0,85,165,0.75);">IOL</span>
-                        <figcaption class="col-scroll__title">WVO Lens Plus</figcaption>
-                    </figure>
-                </div>
-            </div>
-            
-            <!-- BOX 4 (even → scrolls normally) -->
-            <div class="col-scroll__box">
-                <div class="col-scroll__list" id="list4">
-                    <figure class="col-scroll__item" data-cat="lenses" data-label="WVO High Power IOL">
-                        <img class="col-scroll__img" src="../Multimedia/lense21.png" alt="WVO High Power IOL" loading="lazy"/>
-                        <span class="col-scroll__tag" style="background:rgba(0,85,165,0.75);">IOL</span>
-                        <figcaption class="col-scroll__title">WVO High Power IOL</figcaption>
-                    </figure>
-                    <figure class="col-scroll__item" data-cat="lenses" data-label="WVO Sulco IOL">
-                        <img class="col-scroll__img" src="../Multimedia/lense18.png" alt="WVO Sulco IOL" loading="lazy"/>
-                        <span class="col-scroll__tag" style="background:rgba(0,85,165,0.75);">IOL</span>
-                        <figcaption class="col-scroll__title">WVO Sulco IOL</figcaption>
-                    </figure>
-                    <figure class="col-scroll__item" data-cat="lenses" data-label="WVO Lens Pro">
-                        <img class="col-scroll__img" src="../Multimedia/lense15.png" alt="WVO Lens Pro" loading="lazy"/>
-                        <span class="col-scroll__tag" style="background:rgba(0,85,165,0.75);">IOL</span>
-                        <figcaption class="col-scroll__title">WVO Lens Pro</figcaption>
-                    </figure>
-                    <figure class="col-scroll__item" data-cat="lenses" data-label="WVO ARC IOL">
-                        <img class="col-scroll__img" src="../Multimedia/lense12.png" alt="WVO ARC IOL" loading="lazy"/>
-                        <span class="col-scroll__tag" style="background:rgba(0,85,165,0.75);">IOL</span>
-                        <figcaption class="col-scroll__title">WVO ARC IOL</figcaption>
-                    </figure>
-                    <figure class="col-scroll__item" data-cat="manufacturing" data-label="Lens Inspection Lab">
-                        <img class="col-scroll__img" src="../Multimedia/lensemanu4.jpg" alt="Lens Inspection Lab" loading="lazy"/>
-                        <span class="col-scroll__tag" style="background:rgba(10,122,80,0.75);">Facility</span>
-                        <figcaption class="col-scroll__title">Lens Inspection Lab</figcaption>
-                    </figure>
-                    <figure class="col-scroll__item" data-cat="lenses" data-label="WVO Toryc IOL">
-                        <img class="col-scroll__img" src="../Multimedia/lense9.png" alt="WVO Toryc IOL" loading="lazy"/>
-                        <span class="col-scroll__tag" style="background:rgba(0,85,165,0.75);">IOL</span>
-                        <figcaption class="col-scroll__title">WVO Toryc IOL</figcaption>
-                    </figure>
-                    <figure class="col-scroll__item" data-cat="lenses" data-label="WVO Tryflex IOL">
-                        <img class="col-scroll__img" src="../Multimedia/lense6.png" alt="WVO Tryflex IOL" loading="lazy"/>
-                        <span class="col-scroll__tag" style="background:rgba(0,85,165,0.75);">IOL</span>
-                        <figcaption class="col-scroll__title">WVO Tryflex IOL</figcaption>
-                    </figure>
-                    <figure class="col-scroll__item" data-cat="lenses" data-label="WVO Mini IOL">
-                        <img class="col-scroll__img" src="../Multimedia/lense3.png" alt="WVO Mini IOL" loading="lazy"/>
-                        <span class="col-scroll__tag" style="background:rgba(0,85,165,0.75);">IOL</span>
-                        <figcaption class="col-scroll__title">WVO Mini IOL</figcaption>
-                    </figure>
-                </div>
-            </div>
-        </div>
-
-        <!-- Lightbox -->
-        <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
-            <button class="lb-close-btn" id="lbClose"><i class="fa-solid fa-xmark"></i></button>
-            <button class="lb-arrow lb-arrow--prev" id="lbPrev"><i class="fa-solid fa-chevron-left"></i></button>
-            <button class="lb-arrow lb-arrow--next" id="lbNext"><i class="fa-solid fa-chevron-right"></i></button>
-            <div class="lb-wrap">
-                <div class="lb-img-box"><img id="lbImg" src="" alt=""/></div>
-                <div class="lb-meta">
-                    <div class="lb-meta-title" id="lbTitle"></div>
-                    <div class="lb-meta-counter" id="lbCounter"></div>
-                </div>
-                <div class="lb-thumbs" id="lbThumbs"></div>
-            </div>
-        </div>
-    </main>
-    <!-- WhatsApp Floating Button -->
-    <a href="https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv" target="_blank" class="fixed bottom-20 right-6 z-[9999] group">
-      <div class="flex items-center gap-3">
-
-        <!-- Tooltip -->
-        <span class="hidden md:block bg-black text-white text-xs px-3 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition">
-          Chat with us
-        </span>
-
-        <!-- Button -->
-        <div class="w-14 h-14 flex items-center justify-center rounded-full bg-green-500 hover:bg-green-600 shadow-lg transition transform hover:scale-110">
-          <i class="fa-brands fa-whatsapp text-white text-2xl"></i>
-        </div>
+        <ul id="mobileMainView"     class="mobile-view flex flex-col gap-3 text-[15px] font-medium"></ul>
+        <ul id="mobileProductsView" class="mobile-view hidden flex-col gap-3 text-[15px] font-medium list-none p-0 m-0"></ul>
+        <ul id="mobileIolView"      class="mobile-view hidden flex-col gap-3 text-[15px] font-medium list-none p-0 m-0"></ul>
+        <ul id="mobilePharmaView"   class="mobile-view hidden flex-col gap-4 text-[15px] font-medium list-none p-0 m-0"></ul>
+        <ul id="mobileBladeView"    class="mobile-view hidden flex-col gap-4 text-[15px] font-medium list-none p-0 m-0"></ul>
       </div>
-    </a>
+    </div>
 
-    <!-- BOOTSTRAP JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <div id="breadcrumb" class="breadcrumb" aria-label="Breadcrumb"></div>
+  </header>
 
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <main>
+    <!-- Gallery Hero -->
+    <section class="gal-hero">
+      <div class="gal-hero-inner">
+        <div id="galHeroEyebrow" class="gal-eyebrow"></div>
+        <h1 id="galHeroH1" class="gal-h1"></h1>
+        <p  id="galHeroDesc" class="gal-desc"></p>
+        <div id="galStats" class="gal-stats-row"></div>
+      </div>
+      <div class="gal-hero-bg-rings"></div>
+    </section>
 
-    <!-- GSAP + ScrollTrigger + Lenis -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <!-- Filter Bar -->
+    <div class="gal-filter-wrap">
+      <div class="gal-filter-bar" id="galFilterBar" role="tablist" aria-label="Filter gallery"></div>
+      <div class="gal-filter-count" id="galFilterCount"></div>
+    </div>
 
-    <!-- js Links -->
-    <script src="../Pages/index.js"></script>
+    <!-- Masonry Grid -->
+    <section class="gal-grid-section">
+      <div class="gal-masonry" id="galMasonry"></div>
+    </section>
+
+    <!-- CTA Band -->
+    <section class="gal-cta-band reveal-section">
+      <div class="gal-cta-inner">
+        <h2 id="galCtaH"></h2>
+        <p  id="galCtaP"></p>
+        <div class="gal-cta-btns" id="galCtaBtns"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="gal-lightbox" id="galLightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <div class="gal-lb-backdrop" id="galLbBackdrop"></div>
+    <button class="gal-lb-close" id="galLbClose" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+    <button class="gal-lb-arrow gal-lb-prev" id="galLbPrev" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+    <button class="gal-lb-arrow gal-lb-next" id="galLbNext" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+    <div class="gal-lb-stage">
+      <div class="gal-lb-img-wrap">
+        <img id="galLbImg" src="" alt="" loading="eager"/>
+      </div>
+      <div class="gal-lb-info">
+        <div class="gal-lb-title"  id="galLbTitle"></div>
+        <div class="gal-lb-cat"    id="galLbCat"></div>
+        <div class="gal-lb-count"  id="galLbCount"></div>
+      </div>
+      <div class="gal-lb-thumbs" id="galLbThumbs"></div>
+    </div>
+  </div>
+
+  <a id="waFloat" href="#" target="_blank" class="fixed bottom-10 right-6 z-[9999] group">
+    <div class="flex items-center gap-3">
+      <span class="hidden md:block bg-black text-white text-xs px-3 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition">Chat with us</span>
+      <div class="w-14 h-14 flex items-center justify-center rounded-full bg-green-500 hover:bg-green-600 shadow-lg transition transform hover:scale-110">
+        <i class="fa-brands fa-whatsapp text-white text-2xl"></i>
+      </div>
+    </div>
+  </a>
+
+  <footer class="au-footer">
+    <div class="au-footer-body" id="auFooterBody"></div>
+    <div class="au-footer-bottom" id="auFooterBottom"></div>
+  </footer>
+
+  <script src="../Pages/nextPage.js"></script>
 </body>
 </html>

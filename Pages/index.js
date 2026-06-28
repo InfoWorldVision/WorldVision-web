@@ -243,7 +243,7 @@ const SITE = {
     cards: [
       { href: "../Pages/iol-page.html", img: "../Multimedia/hydrophilic_fold1.png",  alt: "IOL",      tag: "IOL",         title: "Intraocular Lenses",    desc: "Hydrophobic, Hydrophilic & PMMA. UV absorber, blue-light filter, zero glistening." },
       { href: "../Pages/PharmaProducts.html", img: "../Multimedia/pharamaHero1.png",  alt: "Pharma", tag: "Pharma Product", title: "Pharma Products",  desc: "Same medical-grade technology, engineered specifically for animal eye surgery" },
-      { href: "../Pages/microSurgicalInstruments.html", img: "../Multimedia/msBlade_blunt.png", alt: "blade",      tag: "Surgical Blade",  title: "Surgical Blade",        desc: "Best in class surgical blades for precise procedures." },
+      { href: "../Pages/keratome.html", img: "../Multimedia/msBlade_blunt.png", alt: "blade",      tag: "Surgical Blade",  title: "Surgical Blade",        desc: "Best in class surgical blades for precise procedures." },
     ],
   },
 
@@ -384,15 +384,78 @@ const SITE = {
       { icon: "fa-brands fa-whatsapp",    href: "https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv" },
     ],
     quickLinks: [
-      { label: "Home",       href: "../Pages/index.html"         },
-      { label: "Products",   href: "#products"                   },
-      { label: "IOL Lenses", href: "../Pages/iol-page.html"      },
-      { label: "Gallery",    href: "../Pages/gallery.html"        },
-      { label: "About Us",   href: "../Pages/aboutUs.html"      },
+      { label: "Home",       href: "../Pages/index.html"           },
+      { label: "Products",   href: "#products"                     },
+      { label: "IOL Lenses", href: "../Pages/iol-page.html"        },
+      { label: "Gallery",    href: "../Pages/gallery.html"         },
+      { label: "About Us",   href: "../Pages/aboutUs.html"         },
       { label: "Contact",    href: "../Pages/contactUs.html"       },
-      { label: "Toric Calc", href: "../Pages/toricCalculator.html"},
+      { label: "Toric Calc", href: "../Pages/toricCalculator.html" },
     ],
     copyright: "© 2026 World Vision Ophthalmic Pvt. Ltd. · All rights reserved.",
+  },
+
+  gallery: {
+    heading: "Product Gallery",
+    sub: "Explore our comprehensive range of intraocular lenses and surgical instruments.",
+    categories: [
+      { id: "all", label: "All" },
+      { id: "hydrophobic", label: "Hydrophobic IOL" },
+      { id: "nano", label: "Nano IOL" },
+      { id: "blades", label: "Surgical Blades" },
+      { id: "facility", label: "Facility" },
+    ],
+    items: [
+      // Hydrophobic IOLs
+      { id: 1, src: "../Multimedia/lense1.png", category: "hydrophobic", title: "Hydrophobic IOL Series 1", alt: "Hydrophobic IOL" },
+      { id: 2, src: "../Multimedia/lense2.png", category: "hydrophobic", title: "Hydrophobic IOL Series 2", alt: "Hydrophobic IOL" },
+      { id: 3, src: "../Multimedia/lense3.png", category: "hydrophobic", title: "Hydrophobic IOL Series 3", alt: "Hydrophobic IOL" },
+      { id: 4, src: "../Multimedia/lense4.png", category: "hydrophobic", title: "Hydrophobic IOL Series 4", alt: "Hydrophobic IOL" },
+      { id: 5, src: "../Multimedia/lense5.png", category: "hydrophobic", title: "Hydrophobic IOL Series 5", alt: "Hydrophobic IOL" },
+      { id: 6, src: "../Multimedia/lense6.png", category: "hydrophobic", title: "Hydrophobic IOL Series 6", alt: "Hydrophobic IOL" },
+      { id: 7, src: "../Multimedia/lense7.png", category: "hydrophobic", title: "Hydrophobic IOL Series 7", alt: "Hydrophobic IOL" },
+      { id: 8, src: "../Multimedia/lense8.png", category: "hydrophobic", title: "Hydrophobic IOL Series 8", alt: "Hydrophobic IOL" },
+      { id: 9, src: "../Multimedia/lense9.png", category: "hydrophobic", title: "Hydrophobic IOL Series 9", alt: "Hydrophobic IOL" },
+      { id: 10, src: "../Multimedia/lense10.png", category: "hydrophobic", title: "Hydrophobic IOL Series 10", alt: "Hydrophobic IOL" },
+      { id: 11, src: "../Multimedia/lense11.png", category: "hydrophobic", title: "Hydrophobic IOL Series 11", alt: "Hydrophobic IOL" },
+      { id: 12, src: "../Multimedia/lense12.png", category: "hydrophobic", title: "Hydrophobic IOL Series 12", alt: "Hydrophobic IOL" },
+      { id: 13, src: "../Multimedia/lense13.png", category: "hydrophobic", title: "Hydrophobic IOL Series 13", alt: "Hydrophobic IOL" },
+      { id: 14, src: "../Multimedia/lense14.png", category: "hydrophobic", title: "Hydrophobic IOL Series 14", alt: "Hydrophobic IOL" },
+      { id: 15, src: "../Multimedia/lense15.png", category: "hydrophobic", title: "Hydrophobic IOL Series 15", alt: "Hydrophobic IOL" },
+      { id: 16, src: "../Multimedia/lense16.png", category: "hydrophobic", title: "Hydrophobic IOL Series 16", alt: "Hydrophobic IOL" },
+      { id: 17, src: "../Multimedia/lense17.png", category: "hydrophobic", title: "Hydrophobic IOL Series 17", alt: "Hydrophobic IOL" },
+      { id: 18, src: "../Multimedia/lense18.png", category: "hydrophobic", title: "Hydrophobic IOL Series 18", alt: "Hydrophobic IOL" },
+      { id: 19, src: "../Multimedia/lense19.png", category: "hydrophobic", title: "Hydrophobic IOL Series 19", alt: "Hydrophobic IOL" },
+      { id: 20, src: "../Multimedia/lense20.png", category: "hydrophobic", title: "Hydrophobic IOL Series 20", alt: "Hydrophobic IOL" },
+      { id: 21, src: "../Multimedia/lense21.png", category: "hydrophobic", title: "Hydrophobic IOL Series 21", alt: "Hydrophobic IOL" },
+      { id: 22, src: "../Multimedia/lense22.png", category: "hydrophobic", title: "Hydrophobic IOL Series 22", alt: "Hydrophobic IOL" },
+      
+      // Nano IOLs
+      { id: 23, src: "../Multimedia/nanoIOL1.png", category: "nano", title: "Nano IOL 1", alt: "Nano IOL" },
+      { id: 24, src: "../Multimedia/nanoIOL2.png", category: "nano", title: "Nano IOL 2", alt: "Nano IOL" },
+      { id: 25, src: "../Multimedia/nanoIOL3.png", category: "nano", title: "Nano IOL 3", alt: "Nano IOL" },
+      { id: 26, src: "../Multimedia/nanoIOL4.png", category: "nano", title: "Nano IOL 4", alt: "Nano IOL" },
+      { id: 27, src: "../Multimedia/nanoIOLPmma.png", category: "nano", title: "Nano IOL PMMA", alt: "Nano IOL PMMA" },
+      { id: 28, src: "../Multimedia/nanoRing.png", category: "nano", title: "Nano Ring 1", alt: "Nano Ring" },
+      { id: 29, src: "../Multimedia/nanoRing2.png", category: "nano", title: "Nano Ring 2", alt: "Nano Ring" },
+      { id: 30, src: "../Multimedia/nanoRing3.png", category: "nano", title: "Nano Ring 3", alt: "Nano Ring" },
+      { id: 31, src: "../Multimedia/nanoRing4.png", category: "nano", title: "Nano Ring 4", alt: "Nano Ring" },
+      { id: 32, src: "../Multimedia/nanoRing5.png", category: "nano", title: "Nano Ring 5", alt: "Nano Ring" },
+      { id: 33, src: "../Multimedia/nanoRing6.png", category: "nano", title: "Nano Ring 6", alt: "Nano Ring" },
+      
+      // Surgical Blades
+      { id: 34, src: "../Multimedia/msBlade-Sharp.png", category: "blades", title: "Micro Surgical Sharp Blade", alt: "Sharp Blade" },
+      { id: 35, src: "../Multimedia/msBladeCrescent.png", category: "blades", title: "Micro Surgical Crescent Blade", alt: "Crescent Blade" },
+      { id: 36, src: "../Multimedia/msBladeLance.png", category: "blades", title: "Micro Surgical Lance Blade", alt: "Lance Blade" },
+      { id: 37, src: "../Multimedia/msBlade_blunt.png", category: "blades", title: "Micro Surgical Blunt Blade", alt: "Blunt Blade" },
+      { id: 38, src: "../Multimedia/msMVRBlade.png", category: "blades", title: "Micro Surgical MVR Blade", alt: "MVR Blade" },
+      
+      // Facility
+      { id: 39, src: "../Multimedia/lensemanu1.jpg", category: "facility", title: "Manufacturing Facility 1", alt: "Manufacturing" },
+      { id: 40, src: "../Multimedia/lensemanu2.jpg", category: "facility", title: "Manufacturing Facility 2", alt: "Manufacturing" },
+      { id: 41, src: "../Multimedia/lensemanu3.jpg", category: "facility", title: "Manufacturing Facility 3", alt: "Manufacturing" },
+      { id: 42, src: "../Multimedia/lensemanu4.jpg", category: "facility", title: "Manufacturing Facility 4", alt: "Manufacturing" },
+    ],
   },
 };
 
@@ -1629,3 +1692,286 @@ if (lightbox && lbClose && lbPrev && lbNext) {
     startAuto();
   });
 }());
+
+// ==================== GALLERY PAGE ====================
+if (ACTIVE_PAGE === 'gallery') {
+  (function() {
+    var galleryData = SITE.gallery;
+    var activeFilter = 'all';
+    var currentLightboxIndex = 0;
+    var filteredItems = [];
+    var galleryGrid = qs('galleryGrid');
+
+    // ==================== Featured images for the collage hero ====================
+    // Order maps onto the data-pos slots in the SCSS (center + 8 satellites).
+    // Swap src values here to change which images appear in the hero.
+    var FEATURED_COLLAGE = [
+      { pos: 'center', src: '../Multimedia/lensemanu3.jpg',    alt: 'Manufacturing Facility' },
+      { pos: 'tl',     src: '../Multimedia/lense1.png',         alt: 'Hydrophobic IOL'        },
+      { pos: 'tr',     src: '../Multimedia/nanoIOL1.png',       alt: 'Nano IOL'               },
+      { pos: 'ml',     src: '../Multimedia/lensemanu1.jpg',     alt: 'Manufacturing'          },
+      { pos: 'mr1',    src: '../Multimedia/msBlade-Sharp.png',  alt: 'Surgical Blade'         },
+      { pos: 'mr2',    src: '../Multimedia/nanoRing.png',       alt: 'Nano Ring'              },
+      { pos: 'bl',     src: '../Multimedia/lensemanu4.jpg',     alt: 'Manufacturing'          },
+      { pos: 'bm',     src: '../Multimedia/lensemanu2.jpg',     alt: 'Manufacturing'          },
+      { pos: 'br',     src: '../Multimedia/nanoIOLPmma.png',    alt: 'Nano IOL PMMA'          }
+    ];
+
+    // ==================== Render Collage Hero ====================
+    function renderCollageHero() {
+      var stage = qs('collageStage');
+      if (!stage) return;
+
+      stage.innerHTML = FEATURED_COLLAGE.map(function(item) {
+        var cls = item.pos === 'center' ? 'collage-item collage-center' : 'collage-item';
+        return '<div class="' + cls + '" data-pos="' + item.pos + '">' +
+                  '<img src="' + item.src + '" alt="' + item.alt + '" loading="eager">' +
+                '</div>';
+      }).join('');
+    }
+
+    // ==================== Init Collage Scroll Animation ====================
+    function initCollageAnimation() {
+      if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+      gsap.registerPlugin(ScrollTrigger);
+
+      var isMobile = window.matchMedia('(max-width: 768px)').matches;
+
+      // Vector that each satellite flies along (composed with its initial CSS position)
+      var satellitePaths = {
+        tl:  { x: '-55vw', y: '-30vh' },
+        tr:  { x: '55vw',  y: '-30vh' },
+        ml:  { x: '-65vw', y: '5vh'   },
+        mr1: { x: '65vw',  y: '-10vh' },
+        mr2: { x: '65vw',  y: '25vh'  },
+        bl:  { x: '-45vw', y: '45vh'  },
+        bm:  { x: '0vw',   y: '55vh'  },
+        br:  { x: '50vw',  y: '40vh'  }
+      };
+
+      var tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: '#galleryCollageHero',
+          start: 'top top',
+          end: isMobile ? '+=120%' : '+=160%',
+          scrub: 1,
+          pin: true,
+          anticipatePin: 1,
+          invalidateOnRefresh: true
+        }
+      });
+
+      // Center image scales up to fill the viewport
+      tl.to('.collage-center', {
+        scale: isMobile ? 2.6 : 3.4,
+        ease: 'none'
+      }, 0);
+
+      // Each satellite flies outward and fades
+      Object.keys(satellitePaths).forEach(function(pos) {
+        var p = satellitePaths[pos];
+        tl.to('.collage-item[data-pos="' + pos + '"]', {
+          x: p.x,
+          y: p.y,
+          scale: 0.55,
+          opacity: 0,
+          ease: 'none'
+        }, 0);
+      });
+
+      // Heading section fades in as the collage finishes zooming
+      gsap.set('#galleryIntro', { opacity: 0, y: 50 });
+      gsap.to('#galleryIntro', {
+        opacity: 1,
+        y: 0,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '#galleryIntro',
+          start: 'top 85%',
+          end: 'top 55%',
+          scrub: 1
+        }
+      });
+    }
+
+    // ==================== Render Gallery Heading ====================
+    function renderGalleryHeading() {
+      var heading = qs('galleryHeading');
+      var sub = qs('gallerySub');
+      if (heading) heading.textContent = galleryData.heading;
+      if (sub) sub.textContent = galleryData.sub;
+    }
+
+    // ==================== Render Filter Buttons ====================
+    function renderFilters() {
+      var filtersContainer = qs('galleryFilters');
+      if (!filtersContainer) return;
+
+      filtersContainer.innerHTML = galleryData.categories.map(function(cat) {
+        return '<button class="gallery-filter-btn ' + (cat.id === 'all' ? 'active' : '') + '" data-filter="' + cat.id + '">' + cat.label + '</button>';
+      }).join('');
+
+      qsa('.gallery-filter-btn').forEach(function(btn) {
+       btn.addEventListener('click', function() {
+          qsa('.gallery-filter-btn').forEach(function(b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+          activeFilter = btn.dataset.filter;
+          renderGalleryGrid();
+        });
+      });
+    }
+
+    // ==================== Render Gallery Grid ====================
+    function renderGalleryGrid() {
+      if (!galleryGrid) return;
+
+      filteredItems = activeFilter === 'all'
+        ? galleryData.items
+        : galleryData.items.filter(function(item) { return item.category === activeFilter; });
+
+      galleryGrid.innerHTML = filteredItems.map(function(item, index) {
+        return '<div class="gallery-item" data-index="' + index + '" data-id="' + item.id + '">' +
+                  '<div class="gallery-item-inner">' +
+                    '<img src="' + item.src + '" alt="' + item.alt + '" loading="lazy">' +
+                    '<div class="gallery-item-overlay">' +
+                      '<button class="gallery-item-btn" title="View ' + item.title + '">' +
+                        '<i class="fa-solid fa-expand"></i>' +
+                      '</button>' +
+                    '</div>' +
+                  '</div>' +
+                '</div>';
+      }).join('');
+
+      qsa('.gallery-item').forEach(function(item, index) {
+        item.addEventListener('click', function() { openLightbox(index); });
+      });
+
+      // Grid heights changed → refresh ScrollTrigger so pin distances stay correct
+      if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
+    }
+
+    // ==================== Render CTA Section ====================
+    function renderCta() {
+      var ctaHeading = qs('ctaHeading');
+      var ctaSub = qs('ctaSub');
+      var ctaEmailBtn = qs('ctaEmailBtn');
+      var ctaWhatsappBtn = qs('ctaWhatsappBtn');
+
+      if (ctaHeading) ctaHeading.textContent = "Ready to Learn More?";
+      if (ctaSub) ctaSub.textContent = "Contact us for detailed product information and pricing.";
+      if (ctaEmailBtn) {
+        ctaEmailBtn.href = "mailto:info@worldvisionoph.com";
+        ctaEmailBtn.textContent = "Email Us";
+      }
+      if (ctaWhatsappBtn) {
+        ctaWhatsappBtn.href = "https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv";
+        ctaWhatsappBtn.innerHTML = '<i class="fa-brands fa-whatsapp"></i> WhatsApp';
+      }
+    }
+
+    // ==================== Render Footer ====================
+    function renderFooter() {
+      var footerBrand = qs('footerBrand');
+      if (footerBrand) {
+        footerBrand.innerHTML = '<img src="../Multimedia/logo.png" alt="Logo" style="height: 40px; width: auto;"> <span style="font-size: 1.125rem; font-weight: 600;">World Vision Ophthalmic</span>';
+      }
+
+      var footerTagline = qs('footerTagline');
+      if (footerTagline) footerTagline.textContent = "Leading manufacturer of intraocular lenses and surgical instruments.";
+
+      var footerQuickLinks = qs('footerQuickLinks');
+      if (footerQuickLinks) {
+        footerQuickLinks.innerHTML = '<a href="index.html">Home</a><a href="aboutUs.html">About</a><a href="gallery.html">Gallery</a><a href="contactUs.html">Contact</a>';
+      }
+
+      var footerContact = qs('footerContact');
+      if (footerContact) {
+        footerContact.innerHTML = '<p><strong>Email:</strong> info@worldvisionoph.com</p><p><strong>Address:</strong> Chennai, India</p>';
+      }
+
+      var footerCopyright = qs('footerCopyright');
+      if (footerCopyright) {
+        footerCopyright.innerHTML = '<p style="text-align: center; color: #666; font-size: 0.875rem; padding: 1rem;">&copy; 2024 World Vision Ophthalmic. All rights reserved.</p>';
+      }
+    }
+
+    // ==================== Lightbox Functions ====================
+    function openLightbox(index) {
+      currentLightboxIndex = index;
+      updateLightbox();
+      var lightbox = qs('galleryLightbox');
+      if (lightbox) {
+        lightbox.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeLightbox() {
+      var lightbox = qs('galleryLightbox');
+      if (lightbox) {
+        lightbox.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+      }
+    }
+
+    function updateLightbox() {
+      var item = filteredItems[currentLightboxIndex];
+      var img = qs('lightboxImage');
+      var title = qs('lightboxTitle');
+      var indicator = qs('lightboxIndicator');
+
+      if (img) {
+        img.src = item.src;
+        img.alt = item.alt;
+      }
+      if (title) title.textContent = item.title;
+      if (indicator) indicator.textContent = (currentLightboxIndex + 1) + ' / ' + filteredItems.length;
+    }
+
+    function nextImage() {
+      currentLightboxIndex = (currentLightboxIndex + 1) % filteredItems.length;
+      updateLightbox();
+    }
+
+    function prevImage() {
+      currentLightboxIndex = (currentLightboxIndex - 1 + filteredItems.length) % filteredItems.length;
+      updateLightbox();
+    }
+
+    // ==================== Lightbox Event Listeners ====================
+    var lightboxClose = qs('lightboxClose');
+    var lightboxNext = qs('lightboxNext');
+    var lightboxPrev = qs('lightboxPrev');
+    var lightbox = qs('galleryLightbox');
+
+    if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+    if (lightboxNext) lightboxNext.addEventListener('click', nextImage);
+    if (lightboxPrev) lightboxPrev.addEventListener('click', prevImage);
+
+    if (lightbox) {
+      lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) closeLightbox();
+      });
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (lightbox && lightbox.classList.contains('hidden')) return;
+      if (e.key === 'ArrowRight') nextImage();
+      if (e.key === 'ArrowLeft') prevImage();
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    // ==================== Initialize Gallery ====================
+    renderCollageHero();
+    renderGalleryHeading();
+    renderFilters();
+    renderGalleryGrid();
+    renderCta();
+    renderFooter();
+
+    // Defer animation init so the collage <img> elements are in the DOM and laid out
+    requestAnimationFrame(function() {
+      requestAnimationFrame(initCollageAnimation);
+    });
+  })();
+}

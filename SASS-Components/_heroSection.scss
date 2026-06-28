@@ -361,7 +361,7 @@
 
 /* ── Hero ───────────────────────────────── */
 .about-hero {
-  padding: 108px 24px 52px;
+  padding: 25px 24px 52px;
   display: flex;
   align-items: center;
 }
@@ -370,6 +370,7 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  padding: 1rem 2rem 0;
   gap: 56px;
   align-items: center;
   width: 100%;

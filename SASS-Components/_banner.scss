@@ -87,6 +87,21 @@
 }
 .btn-g:hover { box-shadow:7px 7px 15px var(--neu-dark),-7px -7px 15px var(--neu-light);transform:translateY(-2px); }
 
+
+.btn-o {
+  background: transparent;
+  color: #fff;
+  border: 2px solid var(--neu-accent);
+  box-shadow: 0 4px 12px rgba(0, 85, 165, 0.12);
+}
+.btn-o:hover {
+  background: rgba(0, 85, 165, 0.06) !important;
+  box-shadow: 0 6px 18px rgba(0, 85, 165, 0.22);
+  transform: translateY(-2px);
+  border-color: #fff;
+}
+
+
 /* ── Eye Circle Parallax ────────────────── */
 .eye-visual-wrap {
     display: flex; align-items: center; justify-content: center;
@@ -164,9 +179,9 @@
     z-index: 20; opacity: 0;
 }
 .eye-badge i { color: var(--neu-accent); font-size: 12px; }
-.eye-badge-1 { top: 24px;   right: -12px; }
-.eye-badge-2 { bottom: 30px; left: -18px; }
-.eye-badge-3 { top: 46%;    left: -50px;  }
+.eye-badge-1 { top: 24px;   right: 2rem; }
+.eye-badge-2 { bottom: 30px; left: 2rem; }
+.eye-badge-3 { top: 46%;    left: -1rem;  }
 @keyframes floatY { 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(-8px); } }
 @keyframes floatX { 0%,100%{ transform: translateX(0); } 50%{ transform: translateX(-7px); } }
 .eye-badge-1.live { animation: floatY 4s ease-in-out infinite; }
