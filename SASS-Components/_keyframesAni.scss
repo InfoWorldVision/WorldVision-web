@@ -266,3 +266,28 @@
     color: black;
   }
 }
+
+// Gallery keyframes
+
+@keyframes galSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* Gallery reveal — filter bar + items start hidden, animate in via GSAP */
+.gallery-page .gal-filter-wrap {
+  opacity: 0;
+}
+.gallery-page .gal-item {
+  opacity: 0;
+}
+
+@keyframes galCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

@@ -357,3 +357,22 @@ html.dark .gallery-page .gal-filter-wrap{
 html.dark .gallery-page .gal-hero {
   background: none;
 }
+
+html.dark body.gallery-page {
+  background:
+    radial-gradient(circle at 18% 12%, rgba(77, 159, 239, 0.14), transparent 32%),
+    radial-gradient(circle at 82% 28%, rgba(77, 159, 239, 0.1), transparent 34%),
+    var(--neu-bg);
+}
+
+html.dark .gallery-page .gal-hero::before,
+html.dark .gallery-page .gal-filter-wrap,
+html.dark .gallery-page .gal-item {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+html.dark .gallery-page .gal-item img {
+  background:
+    radial-gradient(circle at 50% 44%, rgba(77, 159, 239, 0.12), transparent 46%),
+    linear-gradient(145deg, #252b3b, #191e2c);
+}

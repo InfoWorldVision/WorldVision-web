@@ -157,7 +157,6 @@ const PAGE = {
   nav: {
     links: [
       { label: "Home",           href: "../Pages/index.html",         page: "index"          },
-      { label: "Hydrophobic IOL",href: "../Pages/hydrophobicIol.html",page: "hydrophobicIol" },
       { label: "About Us",       href: "../Pages/aboutUs.html",       page: "aboutUs"        },
       { label: "Gallery",        href: "../Pages/gallery.html",       page: "gallery"        },
       { label: "Contact Us",     href: "../Pages/contactUs.html",     page: "contactUs"      },
@@ -633,8 +632,13 @@ function renderDesktopNav() {
       }
 
       // Hide the default Hydrophobic IOL link on product pages
-      if (link.page === "hydrophobicIol" && activeProductName) {
-        return;
+      // Show "Hydrophobic IOL" only on hydrophobic-related product pages.
+      // Hide it everywhere else (home, about, gallery, contact, etc).
+      if (link.page === "hydrophobicIol") {
+        const hydrophobicPages = ["hydrophobicIol", "nanoClaro", "nanoGrand", "nanoClaroPlus", "nanoGrandPlus"];
+        if (!hydrophobicPages.includes(ACTIVE_PAGE)) return;
+        // On product pages, the breadcrumb already shows the lineage, so hide here too
+        if (activeProductName && ACTIVE_PAGE !== "hydrophobicIol") return;
       }
 
       html += `
@@ -7360,6 +7364,23 @@ if (ACTIVE_PAGE === "gallery") {
           b.setAttribute("aria-selected", b.dataset.filter === activeFilter ? "true" : "false");
         });
         filterItems();
+
+        // Scroll so the gallery starts immediately below the sticky filter
+        const gallery = document.querySelector(".gal-grid-section");
+        const filterWrap = document.querySelector(".gal-filter-wrap");
+        const navbar = document.querySelector("header");
+
+        const navH = navbar ? navbar.offsetHeight : 0;
+        const filterH = filterWrap ? filterWrap.offsetHeight : 0;
+
+        if (gallery) {
+          const galleryTop = gallery.getBoundingClientRect().top + window.pageYOffset;
+
+          window.scrollTo({
+            top: galleryTop - navH - filterH,
+            behavior: "smooth"
+          });
+        }
       });
     });
   }
