@@ -786,7 +786,7 @@ function renderProducts() {
   if (grid) {
     grid.innerHTML = d.cards.map(c => `
       <a href="${c.href}" class="product-card">
-        <div class="product-card-img"><img src="${c.img}" alt="${c.alt}"/></div>
+        <div class="product-card-img"><img src="${c.img}" alt="${c.alt}" loading="lazy" decoding="async"/></div>
         <div class="product-card-body">
           <span class="product-tag">${c.tag}</span>
           <h3>${c.title}</h3>
@@ -831,7 +831,7 @@ function renderManufacturing() {
   if (checklist) checklist.innerHTML = d.checklist.map(item =>
     `<li><i class="fa-solid fa-check"></i> ${item}</li>`).join("");
   if (photos)    photos.innerHTML    = d.photos.map(p =>
-    `<img src="${p.src}" alt="${p.alt}" class="mfg-img${p.large ? " mfg-large" : ""}"/>`).join("");
+    `<img src="${p.src}" alt="${p.alt}" class="mfg-img${p.large ? " mfg-large" : ""}" loading="lazy" decoding="async"/>`).join("");
 }
 
 // CTA Banner
@@ -910,18 +910,16 @@ renderFooter();
 const lensBg = document.getElementById("lensBg");
 
 const lenses = [
-  "lense1.png", "lense2.png", "lense3.png", "lense4.png", "lense5.png",
-  "lense6.png", "lense7.png", "lense8.png", "lense9.png", "lense10.png",
-  "lense11.png", "lense12.png", "lense13.png", "lense14.png", "lense15.png",
-  "lense16.png", "lense17.png", "lense18.png", "lense19.png", "lense20.png",
-  "lense21.png", "lense22.png"
+  "lense21.png", "lense12.png", "lense2.png", "lense7.png",
+  "lense13.png", "lense17.png", "lense5.png", "lense20.png"
 ];
 
 const imgPath = "../Multimedia/";
-const rowHeight = 120;
+const rowHeight = 220;
 const duplicates = 2;
-const buffer = 1;
-const estimatedLensSlotWidth = 132;
+const buffer = 0;
+const estimatedLensSlotWidth = 240;
+let lastLensBgKey = "";
 
 function shuffle(arr) {
   return arr.slice().sort(function() {
@@ -932,12 +930,17 @@ function shuffle(arr) {
 function renderLensBg() {
   if (!lensBg) return;
 
-  const fragment = document.createDocumentFragment();
   const rowsNeeded = Math.ceil(window.innerHeight / rowHeight) + buffer;
   const lensesPerSet = Math.min(
     lenses.length,
-    Math.max(10, Math.ceil(window.innerWidth / estimatedLensSlotWidth) + 2)
+    Math.max(5, Math.ceil(window.innerWidth / estimatedLensSlotWidth) + 1)
   );
+  const lensBgKey = `${rowsNeeded}:${lensesPerSet}:${window.devicePixelRatio || 1}`;
+
+  if (lensBgKey === lastLensBgKey && lensBg.childElementCount) return;
+  lastLensBgKey = lensBgKey;
+
+  const fragment = document.createDocumentFragment();
 
   for (let i = 0; i < rowsNeeded; i++) {
     const row = document.createElement("div");
@@ -952,6 +955,7 @@ function renderLensBg() {
         img.alt = "";
         img.decoding = "async";
         img.fetchPriority = "low";
+        img.loading = "lazy";
         img.draggable = false;
         row.appendChild(img);
       });

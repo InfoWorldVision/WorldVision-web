@@ -12,21 +12,20 @@
 @import "../SASS-Components/mediaQuery";
 
 body {
-    /* fallback medical blue */
-  background-color: #cee5f0;
+  background-color: #f4f9fc;
   width: 100%;
   overflow-x: hidden;
   overflow-y: auto;
   font-family: 'DM Sans', system-ui, sans-serif;
   font-optical-sizing: auto;
 
-  /* soft medical gradient */
-  background-image: linear-gradient(
-    to bottom,
-    #eaf4fa 0%,
-    #d6ebf6 40%,
-    #c7e1f0 70%,
-    #bddbea 100%
+  background-image:
+    linear-gradient(
+      to bottom,
+      #eaf4fa 0%,
+      #d6ebf6 40%,
+      #c7e1f0 70%,
+      #bddbea 100%
   );
 
   background-attachment: fixed;
@@ -45,12 +44,12 @@ body::after {
   z-index: 5;
   pointer-events: none;
 
-  /* vertical soft fade */
+  /* calm premium wash over the decorative lens layer */
   background: linear-gradient(
     to bottom,
     rgba(255, 255, 255, 0.35) 0%,
     rgba(255, 255, 255, 0.15) 35%,
-    rgba(255, 255, 255, 0) 65%,
+    rgba(255, 255, 255, 0) 75%,
     rgba(255, 255, 255, 0.25) 100%
   );
 }
@@ -59,15 +58,14 @@ body::after {
 
 .lens-bg {
   position: fixed;
-  top: -10vh;
-  height: 120vh;
   inset: 0;
+  height: 100vh;
   z-index: 1;
   pointer-events: none;
 
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   animation-delay: 0.4s;
   animation: bgFadeIn 2.2s ease-out forwards;
   opacity: 0;
@@ -76,27 +74,27 @@ body::after {
   mask-image: linear-gradient(
     to right,
     transparent 0%,
-    black 5%,
-    black 90%,
+    black 12%,
+    black 88%,
     transparent 100%
   );
 
   .lens-row {
     display: flex;
     align-items: center;
-    gap: 100px;
+    gap: clamp(140px, 15vw, 240px);
     white-space: nowrap;
-    opacity: 0.5;
+    opacity: 0.34;
     will-change: transform;
-    min-height: 120px;
+    min-height: 190px;
 
     img {
-      height: 32px;      
+      height: clamp(22px, 2.3vw, 36px);
       width: auto;      
       display: block;    
       object-fit: contain;
-      opacity: 0.80;
-      filter: grayscale(100%) brightness(0.75);
+      opacity: 0.68;
+      filter: grayscale(88%) saturate(0.42) brightness(1) contrast(1.04);
     }
 
     &:nth-child(odd) {
@@ -105,6 +103,54 @@ body::after {
 
     &:nth-child(even) {
       animation: slideLeft 320s linear infinite;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .lens-bg {
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 14%,
+      black 86%,
+      transparent 100%
+    );
+  }
+
+  .lens-bg .lens-row {
+    gap: 112px;
+
+    img {
+      height: 24px;
+      opacity: 0.58;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .lens-bg .lens-row {
+    gap: 88px;
+
+    img {
+      height: 20px;
+      opacity: 0.52;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .lens-bg {
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+  }
+
+  .lens-bg .lens-row {
+    gap: 76px;
+
+    img {
+      height: 18px;
+      opacity: 0.46;
     }
   }
 }

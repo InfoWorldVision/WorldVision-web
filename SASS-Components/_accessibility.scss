@@ -302,12 +302,18 @@ small {
   color: var(--neu-muted) !important;
 }
 
+.footer-link:hover{
+  color: var(--neu-accent) !important;
+  font-weight: 550 !important;
+}
+
 .footer-bottom,
 .footer-bottom-f,
 .au-footer-bottom {
   font-size: var(--wv-text-sm) !important;
   color: var(--neu-muted) !important;
 }
+
 
 .fixed.group span.text-xs {
   font-size: var(--wv-text-xs) !important;

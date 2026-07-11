@@ -30,18 +30,18 @@
     mask-image: linear-gradient(
       to right,
       transparent 0%,
-      black 10%,
-      black 90%,
+      black 14%,
+      black 86%,
       transparent 100%
     );
   }
 
   .lens-row {
-    gap: 72px;
+    gap: 112px;
 
     img {
-      height: 26px;
-      opacity: 0.65;
+      height: 24px;
+      opacity: 0.58;
     }
   }
 
@@ -197,13 +197,13 @@
   }
 
   .lens-row {
-    gap: 36px;
+    gap: 88px;
     animation-duration: 180s !important;
     transform: translateZ(0);
 
     img {
       height: 20px;
-      opacity: 0.55;
+      opacity: 0.52;
     }
   }
 
@@ -506,16 +506,16 @@
 /* Small mobile */
 @media (max-width: 480px) {
   .lens-bg {
-    -webkit-mask-image: none;
-    mask-image: none;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 22%, black 108%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 22%, black 108%, transparent 100%);
   }
 
   .lens-row {
-    gap: 42px;
+    gap: 76px !important;
 
     img {
-      height: 18px;
-      opacity: 0.45;
+      height: 38px !important;
+      opacity: 0.46 !important;
     }
   }
   .content-section .products-grid {
