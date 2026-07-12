@@ -107,53 +107,6 @@ body::after {
   }
 }
 
-@media (max-width: 1024px) {
-  .lens-bg {
-    mask-image: linear-gradient(
-      to right,
-      transparent 0%,
-      black 14%,
-      black 86%,
-      transparent 100%
-    );
-  }
-
-  .lens-bg .lens-row {
-    gap: 112px;
-
-    img {
-      height: 24px;
-      opacity: 0.58;
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .lens-bg .lens-row {
-    gap: 88px;
-
-    img {
-      height: 20px;
-      opacity: 0.52;
-    }
-  }
-}
-
-@media (max-width: 480px) {
-  .lens-bg {
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
-    mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
-  }
-
-  .lens-bg .lens-row {
-    gap: 76px;
-
-    img {
-      height: 18px;
-      opacity: 0.46;
-    }
-  }
-}
 
 .site-header {
   position: fixed;

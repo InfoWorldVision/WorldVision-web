@@ -48,15 +48,6 @@
   z-index: 5;
   border-radius: 4px;
   box-shadow: 0 30px 90px rgba(0, 0, 0, 0.85);
-
-  @media (max-width: 768px) {
-    width: 78vw;
-    height: 52vw;
-    margin-left: -39vw;
-    margin-top: -26vw;
-    max-width: 460px;
-    max-height: 300px;
-  }
 }
 
 // Title text variant of the center slot (replaces center image)
@@ -156,45 +147,6 @@
   max-height: 150px;
 }
 
-// Mobile: hide a few satellites so the layout breathes
-@media (max-width: 768px) {
-  .collage-item[data-pos="tl"],
-  .collage-item[data-pos="ml"],
-  .collage-item[data-pos="mr2"],
-  .collage-item[data-pos="bl"],
-  .collage-item[data-pos="br"] {
-    display: none;
-  }
-
-  .collage-item[data-pos="tr"] {
-    left: 70%;
-    top: 14%;
-    width: 24vw;
-    height: 22vw;
-    max-width: 160px;
-    max-height: 160px;
-  }
-
-  .collage-item[data-pos="mr1"] {
-    left: 6%;
-    top: 78%;
-    width: 26vw;
-    height: 20vw;
-    max-width: 170px;
-    max-height: 140px;
-  }
-
-  .collage-item[data-pos="bm"] {
-    left: 50%;
-    top: 84%;
-    width: 28vw;
-    height: 20vw;
-    margin-left: -14vw;
-    max-width: 180px;
-    max-height: 140px;
-  }
-}
-
 // ==================== INTRO BAND (heading lives here now) ====================
 
 .gallery-intro {
@@ -210,14 +162,6 @@
   letter-spacing: -0.02em;
   margin-bottom: 1rem;
   line-height: 1.1;
-
-  @media (max-width: 768px) {
-    font-size: 2.5rem;
-  }
-
-  @media (max-width: 640px) {
-    font-size: 1.875rem;
-  }
 }
 
 .gallery-hero-sub {
@@ -225,10 +169,6 @@
   color: #526070;
   max-width: 600px;
   margin: 0 auto;
-
-  @media (max-width: 640px) {
-    font-size: 1rem;
-  }
 }
 
 // ==================== FILTERS ====================
@@ -239,10 +179,6 @@
   flex-wrap: wrap;
   justify-content: center;
   padding: 1rem;
-
-  @media (max-width: 640px) {
-    gap: 0.5rem;
-  }
 }
 
 .gallery-filter-btn {
@@ -268,11 +204,6 @@
     color: #ffffff;
     box-shadow: 0 4px 12px rgba(0, 85, 165, 0.35);
   }
-
-  @media (max-width: 640px) {
-    padding: 0.5rem 1rem;
-    font-size: 0.8125rem;
-  }
 }
 
 // ==================== MASONRY GRID LAYOUT ====================
@@ -291,24 +222,6 @@
   max-width: 1400px;
   margin: 0 auto;
   padding: 2rem 0;
-
-  @media (max-width: 1024px) {
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 180px;
-    gap: 1.25rem;
-  }
-
-  @media (max-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 150px;
-    gap: 1rem;
-  }
-
-  @media (max-width: 480px) {
-    grid-template-columns: 1fr;
-    grid-auto-rows: 180px;
-    gap: 0.75rem;
-  }
 }
 
 // ==================== GALLERY ITEMS ====================
@@ -333,11 +246,6 @@
   &:nth-child(3n + 2):nth-child(-2n + 8) {
     grid-column: span 2;
     grid-row: span 2;
-
-    @media (max-width: 768px) {
-      grid-column: span 1;
-      grid-row: span 1;
-    }
   }
 
   &:hover {
@@ -354,16 +262,6 @@
   }
 }
 
-@keyframes galleryFadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
 
 .gallery-item-inner {
   position: relative;
@@ -436,17 +334,6 @@
   display: flex;
   flex-direction: column;
   animation: lightboxFadeIn 0.3s ease;
-}
-
-@keyframes lightboxFadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
 }
 
 .lightbox-main {

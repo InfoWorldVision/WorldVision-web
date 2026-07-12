@@ -182,8 +182,6 @@
 .eye-badge-1 { top: 24px;   right: 2rem; }
 .eye-badge-2 { bottom: 30px; left: 2rem; }
 .eye-badge-3 { top: 46%;    left: -1rem;  }
-@keyframes floatY { 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(-8px); } }
-@keyframes floatX { 0%,100%{ transform: translateX(0); } 50%{ transform: translateX(-7px); } }
 .eye-badge-1.live { animation: floatY 4s ease-in-out infinite; }
 .eye-badge-2.live { animation: floatY 4s ease-in-out 1.4s infinite; }
 .eye-badge-3.live { animation: floatX 4s ease-in-out 0.7s infinite; }
