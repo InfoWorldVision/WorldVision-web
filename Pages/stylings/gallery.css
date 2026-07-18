@@ -1,5 +1,5 @@
 /*
-  Gallery-only stylesheet for Pages/gallery.html.
+  Gallery-only stylesheet for Pages/HomePages/gallery.html.
   This file intentionally targets body.gallery-page and .gal-* selectors only,
   so it will not disturb Home, Product, About, Contact, or calculator pages.
 */

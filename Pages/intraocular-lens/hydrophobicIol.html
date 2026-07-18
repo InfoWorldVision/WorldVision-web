@@ -8,11 +8,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link rel="icon" href="../Multimedia/favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="../../Multimedia/favicon.ico" type="image/x-icon"/>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
-    <link rel="stylesheet" href="../Pages/nextStyle.css"/>
-    <link rel="stylesheet" href="../Pages/accessibility.css"/>
+    <link rel="stylesheet" href="../stylings/nextStyle.css"/>
+    <link rel="stylesheet" href="../stylings/accessibility.css"/>
     <meta id="pageMeta" name="description" content=""/>
     <title>World Vision</title>
 </head>
@@ -25,7 +25,7 @@
             <button id="menuToggle" class="lg:hidden absolute left-0 top-1/2 -translate-y-1/2 w-11 h-11 flex items-center justify-center rounded-xl bg-white/70 backdrop-blur-md border border-white/60 text-[18px] text-[#0055a5] shadow-[4px_4px_10px_rgba(184,190,200,0.8),-4px_-4px_10px_rgba(255,255,255,0.9)]" aria-label="Open menu" type="button" >
               <i class="fa-solid fa-bars"></i>
             </button>
-            <a href="../Pages/index.html" class="nav-logo mx-auto" aria-label="world vision Home" >
+            <a href="../HomePages/index.html" class="nav-logo mx-auto" aria-label="world vision Home" >
               <div id="navBrand" class="nav-logo-mark flex gap-3 items-center"></div>
             </a>
             <!-- Theme toggle visible on mobile too -->
@@ -84,69 +84,110 @@
       <div id="breadcrumb" class="breadcrumb" aria-label="Breadcrumb"></div>
     </header>
     <main>
-      <!-- Hero -->
-      <section class="hero reveal" aria-labelledby="hero-heading">
+      <!-- Hero Section -->
+      <section class="hydro-hero reveal" aria-labelledby="hydro-h1">
+        <!-- Left: text -->
         <div>
-          <div id="iolHeroEyebrow" class="hero-eyebrow"></div>
-          <h1 id="hero-heading"></h1>
-          <p id="iolHeroDesc" class="hero-desc"></p>
+          <div id="heroEyebrow" class="hydro-eyebrow"></div>
+          <h1 id="hydro-h1"></h1>
+          <p id="heroDesc" class="hydro-hero-desc"></p>
+          <div id="heroBtns" class="hero-btn-row"></div>
         </div>
-        <!-- decorative optical ring -->
-        <div style="opacity:0.18;padding-right:1rem;" aria-hidden="true">
-          <svg width="140" height="140" viewBox="0 0 140 140">
-            <circle cx="70" cy="70" r="62" fill="none" stroke="var(--neu-accent)" stroke-width="1.5" stroke-dasharray="4 6"/>
-            <circle cx="70" cy="70" r="46" fill="none" stroke="var(--neu-accent)" stroke-width="1"/>
-            <circle cx="70" cy="70" r="28" fill="none" stroke="var(--neu-accent)" stroke-width="2.5"/>
-            <circle cx="70" cy="70" r="10" fill="var(--neu-accent)" opacity="0.3"/>
-            <circle cx="70" cy="70" r="4"  fill="var(--neu-accent)"/>
-          </svg>
+        
+        <!-- Right: large lens illustration -->
+        <div class="hydro-hero-visual" aria-hidden="true">
+          <div class="hydro-hero-lens">
+            <svg width="320" height="320" viewBox="0 0 320 320">
+              <!-- Outer glow rings -->
+              <circle cx="160" cy="160" r="148" fill="none" stroke="rgba(10,94,168,0.07)" stroke-width="1.5" stroke-dasharray="5 8"/>
+              <circle cx="160" cy="160" r="120" fill="none" stroke="rgba(10,94,168,0.1)"  stroke-width="1"/>
+              <!-- Haptics -->
+              <path d="M50 160 Q20 110 30 55"  fill="none" stroke="#0a5ea8" stroke-width="3.5" stroke-linecap="round" opacity="0.55"/>
+              <path d="M50 160 Q20 210 30 265" fill="none" stroke="#0a5ea8" stroke-width="3.5" stroke-linecap="round" opacity="0.55"/>
+              <path d="M270 160 Q300 110 290 55"  fill="none" stroke="#0a5ea8" stroke-width="3.5" stroke-linecap="round" opacity="0.55"/>
+              <path d="M270 160 Q300 210 290 265" fill="none" stroke="#0a5ea8" stroke-width="3.5" stroke-linecap="round" opacity="0.55"/>
+              <!-- Main optic body -->
+              <ellipse cx="160" cy="160" rx="112" ry="80" fill="rgba(10,94,168,0.07)" stroke="#0a5ea8" stroke-width="2.8"/>
+              <!-- Zone rings -->
+              <ellipse cx="160" cy="160" rx="82" ry="58"  fill="rgba(10,94,168,0.06)" stroke="#0a5ea8" stroke-width="1.6" stroke-dasharray="4 5"/>
+              <ellipse cx="160" cy="160" rx="52" ry="37"  fill="rgba(10,94,168,0.09)" stroke="#0a5ea8" stroke-width="1.3"/>
+              <ellipse cx="160" cy="160" rx="24" ry="17"  fill="rgba(10,94,168,0.18)" stroke="#0a5ea8" stroke-width="1"/>
+              <!-- Refraction lines -->
+              <line x1="120" y1="138" x2="100" y2="118" stroke="rgba(10,94,168,0.3)" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="160" y1="130" x2="160" y2="108" stroke="rgba(10,94,168,0.3)" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="200" y1="138" x2="220" y2="118" stroke="rgba(10,94,168,0.3)" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="120" y1="182" x2="100" y2="202" stroke="rgba(10,94,168,0.2)" stroke-width="1" stroke-linecap="round"/>
+              <line x1="200" y1="182" x2="220" y2="202" stroke="rgba(10,94,168,0.2)" stroke-width="1" stroke-linecap="round"/>
+              <!-- Centre dot -->
+              <circle cx="160" cy="160" r="7" fill="#0a5ea8" opacity="0.5"/>
+              <circle cx="160" cy="160" r="3" fill="#0a5ea8" opacity="0.8"/>
+            </svg>
+          </div>
         </div>
       </section>
 
-      <!-- Stats bar (JS fills) -->
-      <section id="iolStatsBar" class="stats-bar" role="list" aria-label="Key facts"></section>
+      <!-- Stats Bar -->
+      <div class="specs-strip">
+        <div id="statusBar" class="specs-grid"></div>
+      </div>
 
-      <!-- IOL Cards -->
-      <section class="section-wrap" aria-labelledby="iol-section-title">
-        <div class="section-header">
-          <div class="section-line"></div>
-          <span class="section-title" id="iol-section-title"></span>
-          <div class="section-line" style="background:linear-gradient(90deg,transparent,var(--neu-dark) 100%);transform:scaleX(-1);"></div>
-        </div>
-        <p id="iolFlipHint" class="flip-hint"></p>
-        <!-- Cards grid (JS fills) -->
-        <div id="iolCardsGrid" class="cards-grid"></div>
+      <div class="sec-divider"><div class="sec-divider-line"></div></div>
+
+      <!-- Model Cards -->
+      <section class="page-section reveal" id="models">
+        <div id="modelsEyebrow" class="section-eyebrow"></div>
+        <h2 id="modelsHeading" class="page-heading"></h2>
+        <p id="modelsSub" class="page-sub"></p>
+
+        <div id="modelsGrid" class="models-grid"></div>
       </section>
 
-      <!-- Trust bar (JS fills) -->
+      <!-- Material Science -->
+      <section class="page-section reveal">
+        <div id="materialEyebrow" class="section-eyebrow"></div>
+        <h2 id="materialHeading" class="page-heading"></h2>
+        <p id="materialSub" class="page-sub"></p>
+
+        <div class="material-layout">
+          <div id="materialFeatures" class="material-features"></div>
+          
+          <!-- Comparison card -->
+          <div class="material-visual">
+            <div id="materialCard" class="material-neu-card"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Trust cards -->
       <div class="divider"><div class="divider-line"></div></div>
-      <section id="iolTrustBar" class="trust-bar" aria-label="Quality assurances"></section>
+      <section id="trustBar" class="trust-bar" aria-label="Quality assurances"></section>
 
-      <!-- IFU section (JS fills) -->
+      <!-- IFU section -->
       <section class="ifu-section" aria-labelledby="ifu-title">
         <div class="ifu-wrap">
-          <div id="iolIfuHeader" class="ifu-header"></div>
-          <div id="iolIfuGrid"   class="ifu-grid"></div>
+          <div id="ifuHeader" class="ifu-header"></div>
+          <div id="ifuGrid" class="ifu-grid"></div>
         </div>
       </section>
 
-      <!-- WhatsApp Float -->
+      <!-- WhatsApp Floating Button -->
       <a id="waFloat" href="#" target="_blank" class="fixed bottom-10 right-6 z-[9999] group">
         <div class="flex items-center gap-3">
-          <span class="hidden md:block bg-black text-white text-xs px-3 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition">Chat with us</span>
+
+          <!-- Tooltip -->
+          <span class="hidden md:block bg-black text-white text-xs px-3 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition"> Chat with us </span>
+          <!-- Button -->
           <div class="w-14 h-14 flex items-center justify-center rounded-full bg-green-500 hover:bg-green-600 shadow-lg transition transform hover:scale-110">
             <i class="fa-brands fa-whatsapp text-white text-2xl"></i>
           </div>
         </div>
       </a>
     </main>
-
     <footer class="au-footer">
-      <div class="au-footer-body " id="auFooterBody"></div>
+      <div class="au-footer-body" id="auFooterBody"></div>
       <div class="au-footer-bottom" id="auFooterBottom"></div>
     </footer>
-
-    <script src="../Pages/nextPage.js"></script>
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-  </body>
+    <script src="../Js%20page/sitePaths.js"></script>
+    <script src="../Js%20page/nextPage.js"></script>
+</body>
 </html>

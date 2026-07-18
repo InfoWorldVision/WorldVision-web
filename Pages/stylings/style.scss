@@ -1,15 +1,15 @@
-@import "../SASS-Components/mixins";
-@import "../SASS-Components/colors";
-@import "../SASS-Components/keyframesAni";
-@import "../SASS-Components/header";
-@import "../SASS-Components/slider";
-@import "../SASS-Components/heroSection";
-@import "../SASS-Components/statsBar";
-@import "../SASS-Components/products";
-@import "../SASS-Components/sections";
-@import "../SASS-Components/banner";
-@import "../SASS-Components/footer";
-@import "../SASS-Components/mediaQuery";
+@import "../../SASS-Components/mixins";
+@import "../../SASS-Components/colors";
+@import "../../SASS-Components/keyframesAni";
+@import "../../SASS-Components/header";
+@import "../../SASS-Components/slider";
+@import "../../SASS-Components/heroSection";
+@import "../../SASS-Components/statsBar";
+@import "../../SASS-Components/products";
+@import "../../SASS-Components/sections";
+@import "../../SASS-Components/banner";
+@import "../../SASS-Components/footer";
+@import "../../SASS-Components/mediaQuery";
 
 body {
   background-color: #f4f9fc;
@@ -175,4 +175,4 @@ body.menu-open {
   transform: translateY(0);
 }
 
-@import "../SASS-Components/accessibility";
+@import "../../SASS-Components/accessibility";

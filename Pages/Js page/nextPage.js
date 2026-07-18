@@ -115,7 +115,7 @@ const PAGE = {
   company: {
     name:      "World Vision",
     subtitle:  "Ophthalmic Pvt. Ltd.",
-    logo:      "../Multimedia/WVO_Logo1.png",
+    logo:      "../../Multimedia/WVO_Logo1.png",
     whatsapp:  "https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv",
     copyright: "© 2026 World Vision Ophthalmic Pvt. Ltd. · All rights reserved.",
   },
@@ -128,23 +128,23 @@ const PAGE = {
       { href: "https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv", icon: "fa-brands fa-whatsapp", label: "WhatsApp" },
     ],
     quickLinks: [
-      { label: "Home",             href: "../Pages/index.html" },
-      { label: "Hydrophobic IOL",  href: "../Pages/hydrophobicIol.html" },
-      { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html" },
-      { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html" },
-      { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
-      { label: "About Us",         href: "../Pages/aboutUs.html" },
-      { label: "Contact Us",       href: "../Pages/contactUs.html" },
-      { label: "Gallery",          href: "../Pages/gallery.html" },
+      { label: "Home",             href: "../HomePages/index.html" },
+      { label: "Hydrophobic IOL",  href: "../intraocular-lens/hydrophobicIol.html" },
+      { label: "Hydrophilic IOL",  href: "../intraocular-lens/hydrophilicIOL.html" },
+      { label: "PMMA IOL",         href: "../intraocular-lens/pmmaIOL.html" },
+      { label: "Toric Calculator", href: "../HomePages/toricCalculator.html" },
+      { label: "About Us",         href: "../HomePages/aboutUs.html" },
+      { label: "Contact Us",       href: "../HomePages/contactUs.html" },
+      { label: "Gallery",          href: "../HomePages/gallery.html" },
     ],
     products: [
-      { label: "Nano Claro",      href: "../Pages/nanoClaro.html" },
-      { label: "Nano Grand",      href: "../Pages/nanoGrand.html" },
-      { label: "Nano Fold",       href: "../Pages/nanoFold.html" },
-      { label: "Nano Flex",       href: "../Pages/nanoFlex.html" },
-      { label: "Keratome Blades", href: "../Pages/keratome.html" },
-      { label: "Crescent Blades", href: "../Pages/crescent.html" },
-      { label: "MVR Blades",      href: "../Pages/mvrBlade.html" },
+      { label: "Nano Claro",      href: "../intraocular-lens/nanoClaro.html" },
+      { label: "Nano Grand",      href: "../intraocular-lens/nanoGrand.html" },
+      { label: "Nano Fold",       href: "../intraocular-lens/nanoFold.html" },
+      { label: "Nano Flex",       href: "../intraocular-lens/nanoFlex.html" },
+      { label: "Keratome Blades", href: "../blades/keratome.html" },
+      { label: "Crescent Blades", href: "../blades/crescent.html" },
+      { label: "MVR Blades",      href: "../blades/mvrBlade.html" },
     ],
     contact: {
       address: "Chennai, Tamil Nadu, India - PIN 600001",
@@ -156,12 +156,12 @@ const PAGE = {
 
   nav: {
     links: [
-      { label: "Home",           href: "../Pages/index.html",         page: "index"          },
-      { label: "About Us",       href: "../Pages/aboutUs.html",       page: "aboutUs"        },
-      { label: "Gallery",        href: "../Pages/gallery.html",       page: "gallery"        },
-      { label: "Contact Us",     href: "../Pages/contactUs.html",     page: "contactUs"      },
+      { label: "Home",           href: "../HomePages/index.html",         page: "index"          },
+      { label: "About Us",       href: "../HomePages/aboutUs.html",       page: "aboutUs"        },
+      { label: "Gallery",        href: "../HomePages/gallery.html",       page: "gallery"        },
+      { label: "Contact Us",     href: "../HomePages/contactUs.html",     page: "contactUs"      },
     ],
-    cta: { label: "Toric Calculator", href: "../Pages/toricCalculator.html", icon:  "fa-calculator", color: "var(--neu-text)" },
+    cta: { label: "Toric Calculator", href: "../HomePages/toricCalculator.html", icon:  "fa-calculator", color: "var(--neu-text)" },
     products: {
       label: "Our Products",
       // Pages that belong under the Products dropdown — used for active-nav detection
@@ -169,13 +169,13 @@ const PAGE = {
       children: [
         {
           label: "Intraocular Lens",
-          href:  "../Pages/iol-page.html",
+          href:  "../intraocular-lens/iol-page.html",
           icon:  "fa-eye",
           color: "var(--neu-accent2)",
           children: [
-            { label: "Hydrophobic IOL",  href: "../Pages/hydrophobicIol.html", icon: "fa-shield-halved",      color: "text-blue-400"  },
-            { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html", icon: "fa-shield-halved",      color: "text-teal-400"  },
-            { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html",        icon: "fa-circle-half-stroke", color: "text-amber-400" },
+            { label: "Hydrophobic IOL",  href: "../intraocular-lens/hydrophobicIol.html", icon: "fa-shield-halved",      color: "text-blue-400"  },
+            { label: "Hydrophilic IOL",  href: "../intraocular-lens/hydrophilicIOL.html", icon: "fa-shield-halved",      color: "text-teal-400"  },
+            { label: "PMMA IOL",         href: "../intraocular-lens/pmmaIOL.html",        icon: "fa-circle-half-stroke", color: "text-amber-400" },
           ],
         },
         { label: "Premium IOL", href: "#", icon: "fa-star-of-life", color: "var(--neu-accent2)" },
@@ -192,25 +192,25 @@ const PAGE = {
         },
         {
           label: "Micro Surgical Blades",
-          href:  "../Pages/keratome.html",
+          href:  "../blades/keratome.html",
           icon:  "fa-cut",
           color: "var(--neu-accent2)",
           children: [
-            { label: "Keratome",  href: "../Pages/keratome.html",  icon: "fa-pen-fancy",          color: "text-slate-500" },
-            { label: "Crescent",  href: "../Pages/crescent.html",  icon: "fa-moon",               color: "text-blue-400"  },
-            { label: "Lance Ip",  href: "../Pages/lancelp.html",   icon: "fa-staff-snake",        color: "text-amber-400" },
-            { label: "MVR Blade", href: "../Pages/mvrBlade.html",  icon: "fa-diamond-turn-right", color: "text-red-400"   },
+            { label: "Keratome",  href: "../blades/keratome.html",  icon: "fa-pen-fancy",          color: "text-slate-500" },
+            { label: "Crescent",  href: "../blades/crescent.html",  icon: "fa-moon",               color: "text-blue-400"  },
+            { label: "Lance Ip",  href: "../blades/lancelp.html",   icon: "fa-staff-snake",        color: "text-amber-400" },
+            { label: "MVR Blade", href: "../blades/mvrBlade.html",  icon: "fa-diamond-turn-right", color: "text-red-400"   },
           ],
         },
       ],
     },
     mobile: {
       main: [
-        { label: "Home",             href: "../Pages/index.html",           page: "index"           },
-        { label: "Toric Calculator", href: "../Pages/toricCalculator.html", page: "toricCalculator" },
-        { label: "Gallery",          href: "../Pages/gallery.html",         page: "gallery"         },
-        { label: "About Us",         href: "../Pages/aboutUs.html",         page: "aboutUs"         },
-        { label: "Contact Us",       href: "../Pages/contactUs.html",       page: "contactUs"       },
+        { label: "Home",             href: "../HomePages/index.html",           page: "index"           },
+        { label: "Toric Calculator", href: "../HomePages/toricCalculator.html", page: "toricCalculator" },
+        { label: "Gallery",          href: "../HomePages/gallery.html",         page: "gallery"         },
+        { label: "About Us",         href: "../HomePages/aboutUs.html",         page: "aboutUs"         },
+        { label: "Contact Us",       href: "../HomePages/contactUs.html",       page: "contactUs"       },
       ],
       products: {
         back:     { label: "Our Products" },
@@ -225,9 +225,9 @@ const PAGE = {
       iol: {
         back:  { label: "Intraocular Lens" },
         children: [
-          { label: "Hydrophobic IOL", href: "../Pages/hydrophobicIol.html", icon: "fa-shield-halved",      color: "text-[#0055a5]" },
-          { label: "Hydrophilic IOL", href: "../Pages/hydrophilicIOL.html", icon: "fa-shield-halved",      color: "text-teal-500"  },
-          { label: "PMMA IOL",        href: "../Pages/pmmaIOL.html",        icon: "fa-circle-half-stroke", color: "text-amber-500" },
+          { label: "Hydrophobic IOL", href: "../intraocular-lens/hydrophobicIol.html", icon: "fa-shield-halved",      color: "text-[#0055a5]" },
+          { label: "Hydrophilic IOL", href: "../intraocular-lens/hydrophilicIOL.html", icon: "fa-shield-halved",      color: "text-teal-500"  },
+          { label: "PMMA IOL",        href: "../intraocular-lens/pmmaIOL.html",        icon: "fa-circle-half-stroke", color: "text-amber-500" },
         ],
       },
       // VIEW 4 — Pharma sub-menu
@@ -243,10 +243,10 @@ const PAGE = {
       blade: {
         back:  { label: "Surgical Blades" },
         children: [
-          { label: "Keratome",  href: "../Pages/keratome.html",  icon: "fa-pen-fancy",          color: "text-slate-500" },
-          { label: "Crescent",  href: "../Pages/crescent.html",  icon: "fa-moon",               color: "text-blue-500"  },
-          { label: "Lance Ip",  href: "../Pages/lancelp.html",   icon: "fa-staff-snake",        color: "text-amber-500" },
-          { label: "MVR Blade", href: "../Pages/mvrBlade.html",  icon: "fa-diamond-turn-right", color: "text-red-500"   },
+          { label: "Keratome",  href: "../blades/keratome.html",  icon: "fa-pen-fancy",          color: "text-slate-500" },
+          { label: "Crescent",  href: "../blades/crescent.html",  icon: "fa-moon",               color: "text-blue-500"  },
+          { label: "Lance Ip",  href: "../blades/lancelp.html",   icon: "fa-staff-snake",        color: "text-amber-500" },
+          { label: "MVR Blade", href: "../blades/mvrBlade.html",  icon: "fa-diamond-turn-right", color: "text-red-500"   },
         ],
       },
     },
@@ -255,98 +255,98 @@ const PAGE = {
   breadcrumb: (() => {
     const map = {
       "iol-page": [
-        { label: "Home",               href: "../Pages/index.html" },
+        { label: "Home",               href: "../HomePages/index.html" },
         { label: "Our Products",       href: "#"                   },
         { label: "Intraocular Lenses", current: true               },
       ],
       hydrophobicIol: [
-        { label: "Home",               href: "../Pages/index.html"    },
+        { label: "Home",               href: "../HomePages/index.html"    },
         { label: "Our Products",       href: "#"                      },
-        { label: "Intraocular Lenses", href: "../Pages/iol-page.html" },
+        { label: "Intraocular Lenses", href: "../intraocular-lens/iol-page.html" },
         { label: "Hydrophobic IOL",    current: true                  },
       ],
       hydrophilicIOL: [
-        { label: "Home",               href: "../Pages/index.html"    },
+        { label: "Home",               href: "../HomePages/index.html"    },
         { label: "Our Products",       href: "#"                      },
-        { label: "Intraocular Lenses", href: "../Pages/iol-page.html" },
+        { label: "Intraocular Lenses", href: "../intraocular-lens/iol-page.html" },
         { label: "Hydrophilic IOL",    current: true                  },
       ],
       pmmaIOL: [
-        { label: "Home",               href: "../Pages/index.html"    },
+        { label: "Home",               href: "../HomePages/index.html"    },
         { label: "Our Products",       href: "#"                      },
-        { label: "Intraocular Lenses", href: "../Pages/iol-page.html" },
+        { label: "Intraocular Lenses", href: "../intraocular-lens/iol-page.html" },
         { label: "PMMA IOL",           current: true                  },
       ],
       nanoFold: [
-        { label: "Home",               href: "../Pages/index.html"          },
+        { label: "Home",               href: "../HomePages/index.html"          },
         { label: "Our Products",       href: "#"                             },
-        { label: "Hydrophilic IOL",    href: "../Pages/hydrophilicIOL.html"  },
+        { label: "Hydrophilic IOL",    href: "../intraocular-lens/hydrophilicIOL.html"  },
         { label: "Nano Fold",          current: true                         },
       ],
       nanoFlex: [
-        { label: "Home",               href: "../Pages/index.html"          },
+        { label: "Home",               href: "../HomePages/index.html"          },
         { label: "Our Products",       href: "#"                             },
-        { label: "Hydrophilic IOL",    href: "../Pages/hydrophilicIOL.html"  },
+        { label: "Hydrophilic IOL",    href: "../intraocular-lens/hydrophilicIOL.html"  },
         { label: "Nano Flex",          current: true                         },
       ],
       nanoClaro: [
-        { label: "Home",               href: "../Pages/index.html"          },
+        { label: "Home",               href: "../HomePages/index.html"          },
         { label: "Our Products",       href: "#"                             },
-        { label: "Hydrophobic IOL",    href: "../Pages/hydrophobicIol.html"  },
+        { label: "Hydrophobic IOL",    href: "../intraocular-lens/hydrophobicIol.html"  },
         { label: "Nano Claro",         current: true                         },
       ],
       nanoGrand: [
-        { label: "Home",               href: "../Pages/index.html"          },
+        { label: "Home",               href: "../HomePages/index.html"          },
         { label: "Our Products",       href: "#"                             },
-        { label: "Hydrophobic IOL",    href: "../Pages/hydrophobicIol.html"  },
+        { label: "Hydrophobic IOL",    href: "../intraocular-lens/hydrophobicIol.html"  },
         { label: "Nano Grand",         current: true                         },
       ],
       nanoClaroPlus: [
-        { label: "Home",               href: "../Pages/index.html"          },
+        { label: "Home",               href: "../HomePages/index.html"          },
         { label: "Our Products",       href: "#"                             },
-        { label: "Hydrophobic IOL",    href: "../Pages/hydrophobicIol.html"  },
+        { label: "Hydrophobic IOL",    href: "../intraocular-lens/hydrophobicIol.html"  },
         { label: "Nano Claro Plus",    current: true                         },
       ],
       nanoGrandPlus: [
-        { label: "Home",               href: "../Pages/index.html"          },
+        { label: "Home",               href: "../HomePages/index.html"          },
         { label: "Our Products",       href: "#"                             },
-        { label: "Hydrophobic IOL",    href: "../Pages/hydrophobicIol.html"  },
+        { label: "Hydrophobic IOL",    href: "../intraocular-lens/hydrophobicIol.html"  },
         { label: "Nano Grand Plus",    current: true                         },
       ],
       keratome: [
-        { label: "Home",               href: "../Pages/index.html"          },
+        { label: "Home",               href: "../HomePages/index.html"          },
         { label: "Our Products",       href: "#"                             },
         { label: "Keratome Blade",     current: true                         },
       ],
       crescent: [
-        { label: "Home",               href: "../Pages/index.html"          },
+        { label: "Home",               href: "../HomePages/index.html"          },
         { label: "Our Products",       href: "#"                             },
         { label: "Crescent Blade",     current: true                         },
       ],
       lancelp: [
-        { label: "Home",               href: "../Pages/index.html"          },
+        { label: "Home",               href: "../HomePages/index.html"          },
         { label: "Our Products",       href: "#"                             },
         { label: "Lancelp Blade",      current: true                         },
       ],
       mvrBlade: [
-        { label: "Home",               href: "../Pages/index.html"          },
+        { label: "Home",               href: "../HomePages/index.html"          },
         { label: "Our Products",       href: "#"                             },
         { label: "MVR Blade",          current: true                         },
       ],
       toricCalculator: [
-        { label: "Home",               href: "../Pages/index.html" },
+        { label: "Home",               href: "../HomePages/index.html" },
         { label: "Toric Calculator",   current: true               },
       ],
       contactUs: [
-        { label: "Home",               href: "../Pages/index.html" },
+        { label: "Home",               href: "../HomePages/index.html" },
         { label: "Contact Us",         current: true               },
       ],
       aboutUs: [
-        { label: "Home",               href: "../Pages/index.html" },
+        { label: "Home",               href: "../HomePages/index.html" },
         { label: "About Us",           current: true               },
       ],
       gallery: [
-        { label: "Home",               href: "../Pages/index.html" },
+        { label: "Home",               href: "../HomePages/index.html" },
         { label: "Gallery",            current: true               },
       ],
     };
@@ -359,7 +359,7 @@ const PAGE = {
     desc:    "Engineered from USA-sourced medical-grade acrylic with less than 0.5% water content — the only true hydrophobic material. Superior surface hardness, zero glistening, and outstanding optical clarity for every surgical need.",
     btns: [
       { label: "Explore Models", href: "#models",             icon: "fa-grid-2",    style: "primary" },
-      { label: "All IOLs",       href: "../Pages/iol-page.html", icon: "fa-arrow-left", style: "ghost", iconStyle: "font-size:11px;" },
+      { label: "All IOLs",       href: "../intraocular-lens/iol-page.html", icon: "fa-arrow-left", style: "ghost", iconStyle: "font-size:11px;" },
     ],
   },
 
@@ -376,7 +376,7 @@ const PAGE = {
     sub:     "Every model uses the same USA medical-grade hydrophobic acrylic base — available across monofocal, multifocal, toric and separate optical designs.",
     cards: [
       {
-        href:    "../Pages/nanoClaro.html",
+        href:    "../intraocular-lens/nanoClaro.html",
         variant: "nanoClaro",
         iconSvg: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><ellipse cx="12" cy="12" rx="10" ry="5"/></svg>`,
         tag:     "Semiloaded",
@@ -386,7 +386,7 @@ const PAGE = {
         delay:   "delay-1",
       },
       {
-        href:    "../Pages/nanoGrand.html",
+        href:    "../intraocular-lens/nanoGrand.html",
         variant: "nanoGrand",
         iconSvg: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>`,
         tag:     "Semiloaded",
@@ -396,7 +396,7 @@ const PAGE = {
         delay:   "delay-2",
       },
       {
-        href:    "../Pages/nanoClaroPlus.html",
+        href:    "../intraocular-lens/nanoClaroPlus.html",
         variant: "nanoClaroPlus",
         iconSvg: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><ellipse cx="12" cy="12" rx="10" ry="5"/><line x1="12" y1="7" x2="12" y2="17"/><line x1="2" y1="12" x2="22" y2="12"/></svg>`,
         tag:     "Preloaded",
@@ -406,7 +406,7 @@ const PAGE = {
         delay:   "delay-3",
       },
       {
-        href:    "../Pages/nanoGrandPlus.html",
+        href:    "../intraocular-lens/nanoGrandPlus.html",
         variant: "nanoGrandPlus",
         iconSvg: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/></svg>`,
         tag:     "Preloaded",
@@ -494,6 +494,10 @@ const PAGE = {
   },
 
 };
+
+if (window.WorldVisionPaths) {
+  window.WorldVisionPaths.normalizeData(PAGE);
+}
 
 // Helpers
 
@@ -1217,7 +1221,7 @@ if (ACTIVE_PAGE === "nanoClaro") {
   const monoBtns = qs("heroBtns");
   if (monoBtns) monoBtns.innerHTML = `
     <a href="#models" class="hero-btn-iol-primary"><i class="fa-solid fa-grid-2" style="font-size:12px;"></i> View Models</a>
-    <a href="../Pages/hydrophobicIol.html" class="hero-btn-iol-ghost"><i class="fa-solid fa-arrow-left" style="font-size:11px;"></i> Hydrophobic IOL</a>`;
+    <a href="../intraocular-lens/hydrophobicIol.html" class="hero-btn-iol-ghost"><i class="fa-solid fa-arrow-left" style="font-size:11px;"></i> Hydrophobic IOL</a>`;
 
   const LENS = {
     footer: {
@@ -1228,23 +1232,23 @@ if (ACTIVE_PAGE === "nanoClaro") {
         { href: "https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv", icon: "fa-brands fa-whatsapp", label: "WhatsApp" },
       ],
       quickLinks: [
-        { label: "Home",             href: "../Pages/index.html"           },
-        { label: "Hydrophobic IOL",  href: "../Pages/hydrophobicIol.html"  },
-        { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html"  },
-        { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html"         },
-        { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
-        { label: "Contact Us",       href: "../Pages/contactUs.html"       },
-        { label: "About Us",         href: "../Pages/aboutUs.html"         },
-        { label: "Gallery",          href: "../Pages/gallery.html"         },
+        { label: "Home",             href: "../HomePages/index.html"           },
+        { label: "Hydrophobic IOL",  href: "../intraocular-lens/hydrophobicIol.html"  },
+        { label: "Hydrophilic IOL",  href: "../intraocular-lens/hydrophilicIOL.html"  },
+        { label: "PMMA IOL",         href: "../intraocular-lens/pmmaIOL.html"         },
+        { label: "Toric Calculator", href: "../HomePages/toricCalculator.html" },
+        { label: "Contact Us",       href: "../HomePages/contactUs.html"       },
+        { label: "About Us",         href: "../HomePages/aboutUs.html"         },
+        { label: "Gallery",          href: "../HomePages/gallery.html"         },
       ],
       products: [
-        { label: "Nano Claro",      href: "../Pages/nanoClaro.html"  },
-        { label: "Nano Grand",      href: "../Pages/nanoGrand.html"  },
-        { label: "Nano Fold",       href: "../Pages/nanoFold.html"   },
-        { label: "Nano Flex",       href: "../Pages/nanoFlex.html"   },
-        { label: "Keratome Blades", href: "../Pages/keratome.html"   },
-        { label: "Crescent Blades", href: "../Pages/crescent.html"   },
-        { label: "MVR Blades",      href: "../Pages/mvrBlade.html"   },
+        { label: "Nano Claro",      href: "../intraocular-lens/nanoClaro.html"  },
+        { label: "Nano Grand",      href: "../intraocular-lens/nanoGrand.html"  },
+        { label: "Nano Fold",       href: "../intraocular-lens/nanoFold.html"   },
+        { label: "Nano Flex",       href: "../intraocular-lens/nanoFlex.html"   },
+        { label: "Keratome Blades", href: "../blades/keratome.html"   },
+        { label: "Crescent Blades", href: "../blades/crescent.html"   },
+        { label: "MVR Blades",      href: "../blades/mvrBlade.html"   },
       ],
       contact: {
         address: "Chennai, Tamil Nadu, India — PIN 600001",
@@ -1441,7 +1445,7 @@ if (ACTIVE_PAGE === "nanoGrand") {
   const monoBtns = qs("heroBtns");
   if (monoBtns) monoBtns.innerHTML = `
     <a href="#models" class="hero-btn-iol-primary"><i class="fa-solid fa-grid-2" style="font-size:12px;"></i> View Models</a>
-    <a href="../Pages/hydrophobicIol.html" class="hero-btn-iol-ghost"><i class="fa-solid fa-arrow-left" style="font-size:11px;"></i> Hydrophobic IOL</a>`;
+    <a href="../intraocular-lens/hydrophobicIol.html" class="hero-btn-iol-ghost"><i class="fa-solid fa-arrow-left" style="font-size:11px;"></i> Hydrophobic IOL</a>`;
 
   const LENS = {
     footer: {
@@ -1452,23 +1456,23 @@ if (ACTIVE_PAGE === "nanoGrand") {
         { href: "https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv", icon: "fa-brands fa-whatsapp", label: "WhatsApp" },
       ],
       quickLinks: [
-        { label: "Home",             href: "../Pages/index.html"           },
-        { label: "Hydrophobic IOL",  href: "../Pages/hydrophobicIol.html"  },
-        { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html"  },
-        { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html"         },
-        { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
-        { label: "About Us",         href: "../Pages/aboutUs.html"         },
-        { label: "Contact Us",       href: "../Pages/contactUs.html"       },
-        { label: "Gallery",          href: "../Pages/gallery.html"         },
+        { label: "Home",             href: "../HomePages/index.html"           },
+        { label: "Hydrophobic IOL",  href: "../intraocular-lens/hydrophobicIol.html"  },
+        { label: "Hydrophilic IOL",  href: "../intraocular-lens/hydrophilicIOL.html"  },
+        { label: "PMMA IOL",         href: "../intraocular-lens/pmmaIOL.html"         },
+        { label: "Toric Calculator", href: "../HomePages/toricCalculator.html" },
+        { label: "About Us",         href: "../HomePages/aboutUs.html"         },
+        { label: "Contact Us",       href: "../HomePages/contactUs.html"       },
+        { label: "Gallery",          href: "../HomePages/gallery.html"         },
       ],
       products: [
-        { label: "Nano Claro",      href: "../Pages/nanoClaro.html"  },
-        { label: "Nano Grand",      href: "../Pages/nanoGrand.html"  },
-        { label: "Nano Fold",       href: "../Pages/nanoFold.html"   },
-        { label: "Nano Flex",       href: "../Pages/nanoFlex.html"   },
-        { label: "Keratome Blades", href: "../Pages/keratome.html"   },
-        { label: "Crescent Blades", href: "../Pages/crescent.html"   },
-        { label: "MVR Blades",      href: "../Pages/mvrBlade.html"   },
+        { label: "Nano Claro",      href: "../intraocular-lens/nanoClaro.html"  },
+        { label: "Nano Grand",      href: "../intraocular-lens/nanoGrand.html"  },
+        { label: "Nano Fold",       href: "../intraocular-lens/nanoFold.html"   },
+        { label: "Nano Flex",       href: "../intraocular-lens/nanoFlex.html"   },
+        { label: "Keratome Blades", href: "../blades/keratome.html"   },
+        { label: "Crescent Blades", href: "../blades/crescent.html"   },
+        { label: "MVR Blades",      href: "../blades/mvrBlade.html"   },
       ],
       contact: {
         address: "Chennai, Tamil Nadu, India — PIN 600001",
@@ -1666,7 +1670,7 @@ if (ACTIVE_PAGE === "nanoClaroPlus") {
   const monoBtns = qs("heroBtns");
   if (monoBtns) monoBtns.innerHTML = `
     <a href="#models" class="hero-btn-iol-primary"><i class="fa-solid fa-grid-2" style="font-size:12px;"></i> View Models</a>
-    <a href="../Pages/hydrophobicIol.html" class="hero-btn-iol-ghost"><i class="fa-solid fa-arrow-left" style="font-size:11px;"></i> Hydrophobic IOL</a>`;
+    <a href="../intraocular-lens/hydrophobicIol.html" class="hero-btn-iol-ghost"><i class="fa-solid fa-arrow-left" style="font-size:11px;"></i> Hydrophobic IOL</a>`;
 
   const LENS = {
     footer: {
@@ -1677,23 +1681,23 @@ if (ACTIVE_PAGE === "nanoClaroPlus") {
         { href: "https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv", icon: "fa-brands fa-whatsapp", label: "WhatsApp" },
       ],
       quickLinks: [
-        { label: "Home",             href: "../Pages/index.html"           },
-        { label: "Hydrophobic IOL",  href: "../Pages/hydrophobicIol.html"  },
-        { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html"  },
-        { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html"         },
-        { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
-        { label: "About Us",         href: "../Pages/aboutUs.html"         },
-        { label: "Contact Us",       href: "../Pages/contactUs.html"       },
-        { label: "Gallery",          href: "../Pages/gallery.html"         },
+        { label: "Home",             href: "../HomePages/index.html"           },
+        { label: "Hydrophobic IOL",  href: "../intraocular-lens/hydrophobicIol.html"  },
+        { label: "Hydrophilic IOL",  href: "../intraocular-lens/hydrophilicIOL.html"  },
+        { label: "PMMA IOL",         href: "../intraocular-lens/pmmaIOL.html"         },
+        { label: "Toric Calculator", href: "../HomePages/toricCalculator.html" },
+        { label: "About Us",         href: "../HomePages/aboutUs.html"         },
+        { label: "Contact Us",       href: "../HomePages/contactUs.html"       },
+        { label: "Gallery",          href: "../HomePages/gallery.html"         },
       ],
       products: [
-        { label: "Nano Claro",      href: "../Pages/nanoClaro.html"  },
-        { label: "Nano Grand",      href: "../Pages/nanoGrand.html"  },
-        { label: "Nano Fold",       href: "../Pages/nanoFold.html"   },
-        { label: "Nano Flex",       href: "../Pages/nanoFlex.html"   },
-        { label: "Keratome Blades", href: "../Pages/keratome.html"   },
-        { label: "Crescent Blades", href: "../Pages/crescent.html"   },
-        { label: "MVR Blades",      href: "../Pages/mvrBlade.html"   },
+        { label: "Nano Claro",      href: "../intraocular-lens/nanoClaro.html"  },
+        { label: "Nano Grand",      href: "../intraocular-lens/nanoGrand.html"  },
+        { label: "Nano Fold",       href: "../intraocular-lens/nanoFold.html"   },
+        { label: "Nano Flex",       href: "../intraocular-lens/nanoFlex.html"   },
+        { label: "Keratome Blades", href: "../blades/keratome.html"   },
+        { label: "Crescent Blades", href: "../blades/crescent.html"   },
+        { label: "MVR Blades",      href: "../blades/mvrBlade.html"   },
       ],
       contact: {
         address: "Chennai, Tamil Nadu, India — PIN 600001",
@@ -1891,7 +1895,7 @@ if (ACTIVE_PAGE === "nanoGrandPlus") {
   const monoBtns = qs("heroBtns");
   if (monoBtns) monoBtns.innerHTML = `
     <a href="#models" class="hero-btn-iol-primary"><i class="fa-solid fa-grid-2" style="font-size:12px;"></i> View Models</a>
-    <a href="../Pages/hydrophobicIol.html" class="hero-btn-iol-ghost"><i class="fa-solid fa-arrow-left" style="font-size:11px;"></i> Hydrophobic IOL</a>`;
+    <a href="../intraocular-lens/hydrophobicIol.html" class="hero-btn-iol-ghost"><i class="fa-solid fa-arrow-left" style="font-size:11px;"></i> Hydrophobic IOL</a>`;
 
   const LENS = {
     footer: {
@@ -1902,23 +1906,23 @@ if (ACTIVE_PAGE === "nanoGrandPlus") {
         { href: "https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv", icon: "fa-brands fa-whatsapp", label: "WhatsApp" },
       ],
       quickLinks: [
-        { label: "Home",             href: "../Pages/index.html"           },
-        { label: "Hydrophobic IOL",  href: "../Pages/hydrophobicIol.html"  },
-        { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html"  },
-        { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html"         },
-        { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
-        { label: "About Us",         href: "../Pages/aboutUs.html"         },
-        { label: "Contact Us",       href: "../Pages/contactUs.html"       },
-        { label: "Gallery",          href: "../Pages/gallery.html"         },
+        { label: "Home",             href: "../HomePages/index.html"           },
+        { label: "Hydrophobic IOL",  href: "../intraocular-lens/hydrophobicIol.html"  },
+        { label: "Hydrophilic IOL",  href: "../intraocular-lens/hydrophilicIOL.html"  },
+        { label: "PMMA IOL",         href: "../intraocular-lens/pmmaIOL.html"         },
+        { label: "Toric Calculator", href: "../HomePages/toricCalculator.html" },
+        { label: "About Us",         href: "../HomePages/aboutUs.html"         },
+        { label: "Contact Us",       href: "../HomePages/contactUs.html"       },
+        { label: "Gallery",          href: "../HomePages/gallery.html"         },
       ],
       products: [
-        { label: "Nano Claro",      href: "../Pages/nanoClaro.html"  },
-        { label: "Nano Grand",      href: "../Pages/nanoGrand.html"  },
-        { label: "Nano Fold",       href: "../Pages/nanoFold.html"   },
-        { label: "Nano Flex",       href: "../Pages/nanoFlex.html"   },
-        { label: "Keratome Blades", href: "../Pages/keratome.html"   },
-        { label: "Crescent Blades", href: "../Pages/crescent.html"   },
-        { label: "MVR Blades",      href: "../Pages/mvrBlade.html"   },
+        { label: "Nano Claro",      href: "../intraocular-lens/nanoClaro.html"  },
+        { label: "Nano Grand",      href: "../intraocular-lens/nanoGrand.html"  },
+        { label: "Nano Fold",       href: "../intraocular-lens/nanoFold.html"   },
+        { label: "Nano Flex",       href: "../intraocular-lens/nanoFlex.html"   },
+        { label: "Keratome Blades", href: "../blades/keratome.html"   },
+        { label: "Crescent Blades", href: "../blades/crescent.html"   },
+        { label: "MVR Blades",      href: "../blades/mvrBlade.html"   },
       ],
       contact: {
         address: "Chennai, Tamil Nadu, India — PIN 600001",
@@ -2736,7 +2740,7 @@ if (ACTIVE_PAGE === "toricCalculator") {
         { href: "#",                             iconStroke: "#0a5ea8", bg: "rgba(10,94,168,0.1)",  label: "IFU — World Vision Toric",  sub: "PDF Document" },
         { href: "#",                             iconStroke: "#0a7a50", bg: "rgba(10,122,80,0.1)",  label: "IFU — Multifocal Toric",    sub: "PDF Document" },
         { href: "#",                             iconStroke: "#8a5a10", bg: "rgba(138,90,16,0.1)",  label: "Toric Calculation Guide",   sub: "PDF Document" },
-        { href: "../Pages/iol-page.html",        iconStroke: "#0055a5", bg: "rgba(0,85,165,0.1)",   label: "View IOL Range",            sub: "All lens types", isLens: true },
+        { href: "../intraocular-lens/iol-page.html",        iconStroke: "#0055a5", bg: "rgba(0,85,165,0.1)",   label: "View IOL Range",            sub: "All lens types", isLens: true },
       ],
     },
 
@@ -2748,23 +2752,23 @@ if (ACTIVE_PAGE === "toricCalculator") {
         { href: "https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv",     icon: "fa-brands fa-whatsapp",    label: "WhatsApp"  },
       ],
       quickLinks: [
-        { label: "Home",             href: "../Pages/index.html"           },
-        { label: "Hydrophobic IOL",  href: "../Pages/hydrophobicIol.html"  },
-        { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html"  },
-        { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html"         },
-        { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
-        { label: "About Us",         href: "../Pages/aboutUs.html"        },
-        { label: "Contact Us",       href: "../Pages/contactUs.html"       },
-        { label: "Gallery",          href: "../Pages/gallery.html"         },
+        { label: "Home",             href: "../HomePages/index.html"           },
+        { label: "Hydrophobic IOL",  href: "../intraocular-lens/hydrophobicIol.html"  },
+        { label: "Hydrophilic IOL",  href: "../intraocular-lens/hydrophilicIOL.html"  },
+        { label: "PMMA IOL",         href: "../intraocular-lens/pmmaIOL.html"         },
+        { label: "Toric Calculator", href: "../HomePages/toricCalculator.html" },
+        { label: "About Us",         href: "../HomePages/aboutUs.html"        },
+        { label: "Contact Us",       href: "../HomePages/contactUs.html"       },
+        { label: "Gallery",          href: "../HomePages/gallery.html"         },
       ],
       products: [
-        { label: "Nano Claro",      href: "../Pages/nanoClaro.html"  },
-        { label: "Nano Grand",      href: "../Pages/nanoGrand.html"  },
-        { label: "Nano Fold",       href: "../Pages/nanoFold.html"   },
-        { label: "Nano Flex",       href: "../Pages/nanoFlex.html"   },
-        { label: "Keratome Blades", href: "../Pages/keratome.html"   },
-        { label: "Crescent Blades", href: "../Pages/crescent.html"   },
-        { label: "MVR Blades",      href: "../Pages/mvrBlade.html"   },
+        { label: "Nano Claro",      href: "../intraocular-lens/nanoClaro.html"  },
+        { label: "Nano Grand",      href: "../intraocular-lens/nanoGrand.html"  },
+        { label: "Nano Fold",       href: "../intraocular-lens/nanoFold.html"   },
+        { label: "Nano Flex",       href: "../intraocular-lens/nanoFlex.html"   },
+        { label: "Keratome Blades", href: "../blades/keratome.html"   },
+        { label: "Crescent Blades", href: "../blades/crescent.html"   },
+        { label: "MVR Blades",      href: "../blades/mvrBlade.html"   },
       ],
       contact: {
         address: "Chennai, Tamil Nadu, India — PIN 600001",
@@ -2782,7 +2786,7 @@ if (ACTIVE_PAGE === "toricCalculator") {
 
   // ── Breadcrumb ────────────────────────────────────────────────────────
   const tcBc = qs("breadcrumb");
-  if (tcBc) tcBc.innerHTML = `<a href="../Pages/index.html">Home</a><span class="sep">/</span><span class="current">Toric Calculator</span>`;
+  if (tcBc) tcBc.innerHTML = `<a href="../HomePages/index.html">Home</a><span class="sep">/</span><span class="current">Toric Calculator</span>`;
 
   // ── Hero ──────────────────────────────────────────────────────────────
   const tcHero = qs("toricHero");
@@ -3267,7 +3271,7 @@ if (ACTIVE_PAGE === "hydrophilicIOL") {
       <a href="#models" class="hero-btn-iol-primary phil-btn">
         <i class="fa-solid fa-grid-2" style="font-size:12px;"></i> Explore Models
       </a>
-      <a href="../Pages/iol-page.html" class="hero-btn-iol-ghost">
+      <a href="../intraocular-lens/iol-page.html" class="hero-btn-iol-ghost">
         <i class="fa-solid fa-arrow-left" style="font-size:11px;"></i> All IOLs
       </a>`;
   })();
@@ -3306,22 +3310,22 @@ if (ACTIVE_PAGE === "hydrophilicIOL") {
 
     const cards = [
       {
-        href:    "../Pages/nanoFold.html",
+        href:    "../intraocular-lens/nanoFold.html",
         variant: "phil",
         tag:     "Spheric · 360° Square Edge",
         name:    "Nano Fold",
-        img:     "../Multimedia/lens_nanofold.png",
+        img:     "../../Multimedia/hydrophilic_fold1.png",
         iconSvg: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><ellipse cx="12" cy="12" rx="10" ry="5"/></svg>`,
         desc:    "Hydrophilic Acrylic Single Piece 360° Square Edge Foldable IOL. Smooth unfolding behaviour, excellent centration, and outstanding biocompatibility for routine cataract surgery.",
         chips:   ["NFR 574 SQ", "NFR 600 SQ", "NFC 600 SQ", "NFM 604 SQ"],
         delay:   "delay-1",
       },
       {
-        href:    "../Pages/nanoFlex.html",
+        href:    "../intraocular-lens/nanoFlex.html",
         variant: "phil",
         tag:     "Aspheric · 360° Square Edge",
         name:    "Nano Flex",
-        img:     "../Multimedia/lens_nanoflex.png",
+        img:     "../../Multimedia/hydrophilic_flexY1.png",
         iconSvg: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>`,
         desc:    "Aspheric & Yellow Aspheric hydrophilic IOLs — Nano Flex and Nano Flex Y. Aberration-neutral profile with blue-light filtering option. Four haptic configurations.",
         chips:   ["NFR AS", "NFR ASY", "NFC AS", "NFM AS"],
@@ -3495,23 +3499,23 @@ if (ACTIVE_PAGE === "hydrophilicIOL") {
         { href: "https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv", icon: "fa-brands fa-whatsapp", label: "WhatsApp" },
       ],
       quickLinks: [
-        { label: "Home",             href: "../Pages/index.html"           },
-        { label: "Hydrophobic IOL",  href: "../Pages/hydrophobicIol.html"  },
-        { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html"  },
-        { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html"         },
-        { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
-        { label: "About Us",         href: "../Pages/aboutUs.html"         },
-        { label: "Contact Us",       href: "../Pages/contactUs.html"       },
-        { label: "Gallery",          href: "../Pages/gallery.html"         },
+        { label: "Home",             href: "../HomePages/index.html"           },
+        { label: "Hydrophobic IOL",  href: "../intraocular-lens/hydrophobicIol.html"  },
+        { label: "Hydrophilic IOL",  href: "../intraocular-lens/hydrophilicIOL.html"  },
+        { label: "PMMA IOL",         href: "../intraocular-lens/pmmaIOL.html"         },
+        { label: "Toric Calculator", href: "../HomePages/toricCalculator.html" },
+        { label: "About Us",         href: "../HomePages/aboutUs.html"         },
+        { label: "Contact Us",       href: "../HomePages/contactUs.html"       },
+        { label: "Gallery",          href: "../HomePages/gallery.html"         },
       ],
       products: [
-        { label: "Nano Claro",      href: "../Pages/nanoClaro.html"  },
-        { label: "Nano Grand",      href: "../Pages/nanoGrand.html"  },
-        { label: "Nano Fold",       href: "../Pages/nanoFold.html"   },
-        { label: "Nano Flex",       href: "../Pages/nanoFlex.html"   },
-        { label: "Keratome Blades", href: "../Pages/keratome.html"   },
-        { label: "Crescent Blades", href: "../Pages/crescent.html"   },
-        { label: "MVR Blades",      href: "../Pages/mvrBlade.html"   },
+        { label: "Nano Claro",      href: "../intraocular-lens/nanoClaro.html"  },
+        { label: "Nano Grand",      href: "../intraocular-lens/nanoGrand.html"  },
+        { label: "Nano Fold",       href: "../intraocular-lens/nanoFold.html"   },
+        { label: "Nano Flex",       href: "../intraocular-lens/nanoFlex.html"   },
+        { label: "Keratome Blades", href: "../blades/keratome.html"   },
+        { label: "Crescent Blades", href: "../blades/crescent.html"   },
+        { label: "MVR Blades",      href: "../blades/mvrBlade.html"   },
       ],
       contact: {
         address: "Chennai, Tamil Nadu, India — PIN 600001",
@@ -3597,7 +3601,7 @@ if (ACTIVE_PAGE === "iol-page") {
       {
         id:      "card-hydro",
         theme:   "hydro",
-        learnHref: "../Pages/hydrophobicIol.html",
+        learnHref: "../intraocular-lens/hydrophobicIol.html",
         front: {
           badge:   "Hydrophobic",
           title:   "Hydrophobic IOL",
@@ -3640,7 +3644,7 @@ if (ACTIVE_PAGE === "iol-page") {
       {
         id:      "card-phil",
         theme:   "phil",
-        learnHref: "../Pages/hydrophilicIOL.html",
+        learnHref: "../intraocular-lens/hydrophilicIOL.html",
         front: {
           badge:   "Hydrophilic",
           title:   "Hydrophilic IOL",
@@ -3679,7 +3683,7 @@ if (ACTIVE_PAGE === "iol-page") {
       {
         id:      "card-pmma",
         theme:   "pmma",
-        learnHref: "../Pages/pmmaIOL.html",
+        learnHref: "../intraocular-lens/pmmaIOL.html",
         front: {
           badge:   "PMMA",
           title:   "PMMA IOL",
@@ -3916,23 +3920,23 @@ if (ACTIVE_PAGE === "iol-page") {
         { href: "https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv", icon: "fa-brands fa-whatsapp", label: "WhatsApp" },
       ],
       quickLinks: [
-        { label: "Home",             href: "../Pages/index.html"           },
-        { label: "Hydrophobic IOL",  href: "../Pages/hydrophobicIol.html"  },
-        { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html"  },
-        { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html"         },
-        { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
-        { label: "About Us",         href: "../Pages/aboutUs.html"         },
-        { label: "Contact Us",       href: "../Pages/contactUs.html"       },
-        { label: "Gallery",          href: "../Pages/gallery.html"         },
+        { label: "Home",             href: "../HomePages/index.html"           },
+        { label: "Hydrophobic IOL",  href: "../intraocular-lens/hydrophobicIol.html"  },
+        { label: "Hydrophilic IOL",  href: "../intraocular-lens/hydrophilicIOL.html"  },
+        { label: "PMMA IOL",         href: "../intraocular-lens/pmmaIOL.html"         },
+        { label: "Toric Calculator", href: "../HomePages/toricCalculator.html" },
+        { label: "About Us",         href: "../HomePages/aboutUs.html"         },
+        { label: "Contact Us",       href: "../HomePages/contactUs.html"       },
+        { label: "Gallery",          href: "../HomePages/gallery.html"         },
       ],
       products: [
-        { label: "Nano Claro",      href: "../Pages/nanoClaro.html"  },
-        { label: "Nano Grand",      href: "../Pages/nanoGrand.html"  },
-        { label: "Nano Fold",       href: "../Pages/nanoFold.html"   },
-        { label: "Nano Flex",       href: "../Pages/nanoFlex.html"   },
-        { label: "Keratome Blades", href: "../Pages/keratome.html"   },
-        { label: "Crescent Blades", href: "../Pages/crescent.html"   },
-        { label: "MVR Blades",      href: "../Pages/mvrBlade.html"   },
+        { label: "Nano Claro",      href: "../intraocular-lens/nanoClaro.html"  },
+        { label: "Nano Grand",      href: "../intraocular-lens/nanoGrand.html"  },
+        { label: "Nano Fold",       href: "../intraocular-lens/nanoFold.html"   },
+        { label: "Nano Flex",       href: "../intraocular-lens/nanoFlex.html"   },
+        { label: "Keratome Blades", href: "../blades/keratome.html"   },
+        { label: "Crescent Blades", href: "../blades/crescent.html"   },
+        { label: "MVR Blades",      href: "../blades/mvrBlade.html"   },
       ],
       contact: {
         address: "Chennai, Tamil Nadu, India — PIN 600001",
@@ -4002,7 +4006,7 @@ if (ACTIVE_PAGE === "nanoFold") {
     title:    "Nano Fold",
     subtitle: "Hydrophilic Acrylic Single Piece 360° Square Edge Foldable Intraocular Lens",
     desc:     "The Nano Fold is a spheric hydrophilic IOL available in four haptic configurations — open loop round (NFR), open loop C-loop (NFC), and modified C-loop plate (NFM). All models share the same optical platform.",
-    lensImg:  "../Multimedia/hydrophilic_fold1.png",  // ← place your lens image here
+    lensImg:  "../../Multimedia/hydrophilic_fold1.png",  // ← place your lens image here
     highlights: [
       { icon: "fa-circle-dot",       text: "Spherical optic"     },
       { icon: "fa-border-all",       text: "360° Square edge"    },
@@ -4014,7 +4018,7 @@ if (ACTIVE_PAGE === "nanoFold") {
     variants: [
       {
         id: "NFR574SQ", label: "NFR 574 SQ",
-        lensImg: "../Multimedia/hydrophilic_fold1.png",  // ← place your lens image here
+        lensImg: "../../Multimedia/hydrophilic_fold1.png",  // ← place your lens image here
         specs: [
           { label: "Model",           value: "NFR 574 SQ",   accent: true },
           { label: "Optic Design",    value: "Equiconvex · 360° Square Edge" },
@@ -4029,7 +4033,7 @@ if (ACTIVE_PAGE === "nanoFold") {
       },
       {
         id: "NFR600SQ", label: "NFR 600 SQ",
-        lensImg: "../Multimedia/hydrophilic_fold2.png",  // ← place your lens image here
+        lensImg: "../../Multimedia/hydrophilic_fold2.png",  // ← place your lens image here
         specs: [
           { label: "Model",           value: "NFR 600 SQ",   accent: true },
           { label: "Optic Design",    value: "Equiconvex · 360° Square Edge" },
@@ -4044,7 +4048,7 @@ if (ACTIVE_PAGE === "nanoFold") {
       },
       {
         id: "NFC600SQ", label: "NFC 600 SQ",
-        lensImg: "../Multimedia/hydrophilic_fold3.png",  // ← place your lens image here
+        lensImg: "../../Multimedia/hydrophilic_fold3.png",  // ← place your lens image here
         specs: [
           { label: "Model",           value: "NFC 600 SQ",   accent: true },
           { label: "Optic Design",    value: "Equiconvex · 360° Square Edge" },
@@ -4059,7 +4063,7 @@ if (ACTIVE_PAGE === "nanoFold") {
       },
       {
         id: "NFM604SQ", label: "NFM 604 SQ",
-        lensImg: "../Multimedia/hydrophilic_fold4.png",  // ← place your lens image here
+        lensImg: "../../Multimedia/hydrophilic_fold4.png",  // ← place your lens image here
         specs: [
           { label: "Model",           value: "NFM 604 SQ",   accent: true },
           { label: "Optic Design",    value: "Equiconvex · 360° Square Edge" },
@@ -4089,7 +4093,7 @@ if (ACTIVE_PAGE === "nanoFold") {
   qs("heroDesc")    && (qs("heroDesc").textContent   = "Spheric 360° Square Edge hydrophilic acrylic IOL — smooth unfolding, excellent centration, outstanding biocompatibility. Four haptic configurations for every surgical scenario.");
   qs("heroBtns")    && (qs("heroBtns").innerHTML     = `
     <a href="#models" class="hero-btn-iol-primary phil-btn"><i class="fa-solid fa-grid-2" style="font-size:12px;"></i> View Models</a>
-    <a href="../Pages/hydrophilicIOL.html" class="hero-btn-iol-ghost"><i class="fa-solid fa-arrow-left" style="font-size:11px;"></i> Hydrophilic IOL</a>`);
+    <a href="../intraocular-lens/hydrophilicIOL.html" class="hero-btn-iol-ghost"><i class="fa-solid fa-arrow-left" style="font-size:11px;"></i> Hydrophilic IOL</a>`);
 
   // Hero lens image
   const foldLensWrap = qs("heroLensWrap");
@@ -4174,23 +4178,23 @@ if (ACTIVE_PAGE === "nanoFold") {
         { href: "https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv", icon: "fa-brands fa-whatsapp", label: "WhatsApp" },
       ],
       quickLinks: [
-        { label: "Home",             href: "../Pages/index.html"           },
-        { label: "Hydrophobic IOL",  href: "../Pages/hydrophobicIol.html"  },
-        { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html"  },
-        { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html"         },
-        { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
-        { label: "About Us",         href: "../Pages/aboutUs.html"         },
-        { label: "Contact Us",       href: "../Pages/contactUs.html"       },
-        { label: "Gallery",          href: "../Pages/gallery.html"         },
+        { label: "Home",             href: "../HomePages/index.html"           },
+        { label: "Hydrophobic IOL",  href: "../intraocular-lens/hydrophobicIol.html"  },
+        { label: "Hydrophilic IOL",  href: "../intraocular-lens/hydrophilicIOL.html"  },
+        { label: "PMMA IOL",         href: "../intraocular-lens/pmmaIOL.html"         },
+        { label: "Toric Calculator", href: "../HomePages/toricCalculator.html" },
+        { label: "About Us",         href: "../HomePages/aboutUs.html"         },
+        { label: "Contact Us",       href: "../HomePages/contactUs.html"       },
+        { label: "Gallery",          href: "../HomePages/gallery.html"         },
       ],
       products: [
-        { label: "Nano Claro",      href: "../Pages/nanoClaro.html"  },
-        { label: "Nano Grand",      href: "../Pages/nanoGrand.html"  },
-        { label: "Nano Fold",       href: "../Pages/nanoFold.html"   },
-        { label: "Nano Flex",       href: "../Pages/nanoFlex.html"   },
-        { label: "Keratome Blades", href: "../Pages/keratome.html"   },
-        { label: "Crescent Blades", href: "../Pages/crescent.html"   },
-        { label: "MVR Blades",      href: "../Pages/mvrBlade.html"   },
+        { label: "Nano Claro",      href: "../intraocular-lens/nanoClaro.html"  },
+        { label: "Nano Grand",      href: "../intraocular-lens/nanoGrand.html"  },
+        { label: "Nano Fold",       href: "../intraocular-lens/nanoFold.html"   },
+        { label: "Nano Flex",       href: "../intraocular-lens/nanoFlex.html"   },
+        { label: "Keratome Blades", href: "../blades/keratome.html"   },
+        { label: "Crescent Blades", href: "../blades/crescent.html"   },
+        { label: "MVR Blades",      href: "../blades/mvrBlade.html"   },
       ],
       contact: {
         address: "Chennai, Tamil Nadu, India — PIN 600001",
@@ -4264,7 +4268,7 @@ if (ACTIVE_PAGE === "nanoFlex") {
       title:    "Nano Flex",
       subtitle: "Hydrophilic Acrylic Single Piece 360° Square Edge Aspheric Foldable Intraocular Lens",
       desc:     "The Nano Flex aspheric hydrophilic IOL delivers aberration-neutral optical performance. Available in four haptic configurations — the same proven platform as Nano Fold with an aspheric optic upgrade.",
-      lensImg:  "../Multimedia/hydrophilic_fold1.png",   // ← place your lens image here
+      lensImg:  "../../Multimedia/hydrophilic_fold1.png",   // ← place your lens image here
       highlights: [
         { icon: "fa-circle-dot",       text: "Aspheric optic"     },
         { icon: "fa-border-all",       text: "360° Square edge"   },
@@ -4276,7 +4280,7 @@ if (ACTIVE_PAGE === "nanoFlex") {
       variants: [
         { id: "NFR574AS", 
           label: "NFR 574 AS",
-          lensImg: "../Multimedia/hydrophilic_fold1.png",  // ← place your lens image here
+          lensImg: "../../Multimedia/hydrophilic_fold1.png",  // ← place your lens image here
           specs: [
             { label: "Model",          value: "NFR 574 AS",   accent: true },
             { label: "Optic Design",   value: "Equiconvex Aspheric · 360° SqE" },
@@ -4289,7 +4293,7 @@ if (ACTIVE_PAGE === "nanoFlex") {
             { label: "Order",          value: "Special", accent: true },
           ]
         },
-        { id: "NFR600AS", label: "NFR 600 AS", lensImg: "../Multimedia/hydrophilic_fold2.png", specs: [
+        { id: "NFR600AS", label: "NFR 600 AS", lensImg: "../../Multimedia/hydrophilic_fold2.png", specs: [
           { label: "Model",          value: "NFR 600 AS",   accent: true },
           { label: "Optic Design",   value: "Equiconvex Aspheric · 360° SqE" },
           { label: "Optic Size",     value: "6.00 mm",      accent: true },
@@ -4300,7 +4304,7 @@ if (ACTIVE_PAGE === "nanoFlex") {
           { label: "Lens Material",  value: "Hydrophilic Acrylic" },
           { label: "Order",          value: "Normal", accent: true },
         ]},
-        { id: "NFC600AS", label: "NFC 600 AS", lensImg: "../Multimedia/hydrophilic_fold3.png", specs: [
+        { id: "NFC600AS", label: "NFC 600 AS", lensImg: "../../Multimedia/hydrophilic_fold3.png", specs: [
           { label: "Model",          value: "NFC 600 AS",   accent: true },
           { label: "Optic Design",   value: "Equiconvex Aspheric · 360° SqE" },
           { label: "Optic Size",     value: "6.00 mm",      accent: true },
@@ -4311,7 +4315,7 @@ if (ACTIVE_PAGE === "nanoFlex") {
           { label: "Lens Material",  value: "Hydrophilic Acrylic" },
           { label: "Order",          value: "Normal", accent: true },
         ]},
-        { id: "NFM604AS", label: "NFM 604 AS", lensImg: "../Multimedia/hydrophilic_fold4.png", specs: [
+        { id: "NFM604AS", label: "NFM 604 AS", lensImg: "../../Multimedia/hydrophilic_fold4.png", specs: [
           { label: "Model",          value: "NFM 604 AS",   accent: true },
           { label: "Optic Design",   value: "Equiconvex Aspheric · 360° SqE" },
           { label: "Optic Size",     value: "6.00 mm",      accent: true },
@@ -4332,7 +4336,7 @@ if (ACTIVE_PAGE === "nanoFlex") {
       title:    "Nano Flex Y",
       subtitle: "Yellow Hydrophilic Acrylic Single Piece 360° Square Edge Aspheric Foldable Intraocular Lens",
       desc:     "The Nano Flex Y adds a blue-light filtering yellow chromophore to the proven Nano Flex aspheric platform — providing additional retinal protection while maintaining excellent colour perception.",
-      lensImg:  "../Multimedia/hydrophilic_flexY1.png",  // ← place your lens image here
+      lensImg:  "../../Multimedia/hydrophilic_flexY1.png",  // ← place your lens image here
       highlights: [
         { icon: "fa-circle-dot",       text: "Aspheric optic"     },
         { icon: "fa-border-all",       text: "360° Square edge"   },
@@ -4342,7 +4346,7 @@ if (ACTIVE_PAGE === "nanoFlex") {
         { icon: "fa-flag",             text: "EU medical grade"   },
       ],
       variants: [
-        { id: "NFR574ASY", label: "NFR 574 ASY", lensImg: "../Multimedia/hydrophilic_flexY1.png", specs: [
+        { id: "NFR574ASY", label: "NFR 574 ASY", lensImg: "../../Multimedia/hydrophilic_flexY1.png", specs: [
           { label: "Model",          value: "NFR 574 ASY",  accent: true },
           { label: "Optic Design",   value: "Equiconvex Aspheric Yellow · 360°" },
           { label: "Optic Size",     value: "5.75 mm",      accent: true },
@@ -4353,7 +4357,7 @@ if (ACTIVE_PAGE === "nanoFlex") {
           { label: "Lens Material",  value: "Yellow Hydrophilic Acrylic" },
           { label: "Order",          value: "Special", accent: true },
         ]},
-        { id: "NFR600ASY", label: "NFR 600 ASY", lensImg: "../Multimedia/hydrophilic_flexY2.png", specs: [
+        { id: "NFR600ASY", label: "NFR 600 ASY", lensImg: "../../Multimedia/hydrophilic_flexY2.png", specs: [
           { label: "Model",          value: "NFR 600 ASY",  accent: true },
           { label: "Optic Design",   value: "Equiconvex Aspheric Yellow · 360°" },
           { label: "Optic Size",     value: "6.00 mm",      accent: true },
@@ -4364,7 +4368,7 @@ if (ACTIVE_PAGE === "nanoFlex") {
           { label: "Lens Material",  value: "Yellow Hydrophilic Acrylic" },
           { label: "Order",          value: "Normal", accent: true },
         ]},
-        { id: "NFC600ASY", label: "NFC 600 ASY", lensImg: "../Multimedia/hydrophilic_flexY3.png", specs: [
+        { id: "NFC600ASY", label: "NFC 600 ASY", lensImg: "../../Multimedia/hydrophilic_flexY3.png", specs: [
           { label: "Model",          value: "NFC 600 ASY",  accent: true },
           { label: "Optic Design",   value: "Equiconvex Aspheric Yellow · 360°" },
           { label: "Optic Size",     value: "6.00 mm",      accent: true },
@@ -4375,7 +4379,7 @@ if (ACTIVE_PAGE === "nanoFlex") {
           { label: "Lens Material",  value: "Yellow Hydrophilic Acrylic" },
           { label: "Order",          value: "Normal", accent: true },
         ]},
-        { id: "NFM604ASY", label: "NFM 604 ASY", lensImg: "../Multimedia/hydrophilic_flexY4.png", specs: [
+        { id: "NFM604ASY", label: "NFM 604 ASY", lensImg: "../../Multimedia/hydrophilic_flexY4.png", specs: [
           { label: "Model",          value: "NFM 604 ASY",  accent: true },
           { label: "Optic Design",   value: "Equiconvex Aspheric Yellow · 360°" },
           { label: "Optic Size",     value: "6.00 mm",      accent: true },
@@ -4405,7 +4409,7 @@ if (ACTIVE_PAGE === "nanoFlex") {
   qs("heroDesc")    && (qs("heroDesc").textContent   = "Two aspheric hydrophilic IOL designs — Nano Flex (clear) and Nano Flex Y (yellow, blue-light filtering) — built on the same 360° Square Edge platform across four haptic configurations.");
   qs("heroBtns")    && (qs("heroBtns").innerHTML     = `
     <a href="#models" class="hero-btn-iol-primary phil-btn"><i class="fa-solid fa-grid-2" style="font-size:12px;"></i> View Models</a>
-    <a href="../Pages/hydrophilicIOL.html" class="hero-btn-iol-ghost"><i class="fa-solid fa-arrow-left" style="font-size:11px;"></i> Hydrophilic IOL</a>`);
+    <a href="../intraocular-lens/hydrophilicIOL.html" class="hero-btn-iol-ghost"><i class="fa-solid fa-arrow-left" style="font-size:11px;"></i> Hydrophilic IOL</a>`);
 
   // Hero lens image — starts with Nano Flex
   let currentFlexTab = "nanoFlex";
@@ -4560,23 +4564,23 @@ if (ACTIVE_PAGE === "nanoFlex") {
         { href: "https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv", icon: "fa-brands fa-whatsapp", label: "WhatsApp" },
       ],
       quickLinks: [
-        { label: "Home",             href: "../Pages/index.html"           },
-        { label: "Hydrophobic IOL",  href: "../Pages/hydrophobicIol.html"  },
-        { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html"  },
-        { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html"         },
-        { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
-        { label: "About Us",         href: "../Pages/aboutUs.html"         },
-        { label: "Contact Us",       href: "../Pages/contactUs.html"       },
-        { label: "Gallery",          href: "../Pages/gallery.html"         },
+        { label: "Home",             href: "../HomePages/index.html"           },
+        { label: "Hydrophobic IOL",  href: "../intraocular-lens/hydrophobicIol.html"  },
+        { label: "Hydrophilic IOL",  href: "../intraocular-lens/hydrophilicIOL.html"  },
+        { label: "PMMA IOL",         href: "../intraocular-lens/pmmaIOL.html"         },
+        { label: "Toric Calculator", href: "../HomePages/toricCalculator.html" },
+        { label: "About Us",         href: "../HomePages/aboutUs.html"         },
+        { label: "Contact Us",       href: "../HomePages/contactUs.html"       },
+        { label: "Gallery",          href: "../HomePages/gallery.html"         },
       ],
       products: [
-        { label: "Nano Claro",      href: "../Pages/nanoClaro.html"  },
-        { label: "Nano Grand",      href: "../Pages/nanoGrand.html"  },
-        { label: "Nano Fold",       href: "../Pages/nanoFold.html"   },
-        { label: "Nano Flex",       href: "../Pages/nanoFlex.html"   },
-        { label: "Keratome Blades", href: "../Pages/keratome.html"   },
-        { label: "Crescent Blades", href: "../Pages/crescent.html"   },
-        { label: "MVR Blades",      href: "../Pages/mvrBlade.html"   },
+        { label: "Nano Claro",      href: "../intraocular-lens/nanoClaro.html"  },
+        { label: "Nano Grand",      href: "../intraocular-lens/nanoGrand.html"  },
+        { label: "Nano Fold",       href: "../intraocular-lens/nanoFold.html"   },
+        { label: "Nano Flex",       href: "../intraocular-lens/nanoFlex.html"   },
+        { label: "Keratome Blades", href: "../blades/keratome.html"   },
+        { label: "Crescent Blades", href: "../blades/crescent.html"   },
+        { label: "MVR Blades",      href: "../blades/mvrBlade.html"   },
       ],
       contact: {
         address: "Chennai, Tamil Nadu, India — PIN 600001",
@@ -4667,7 +4671,7 @@ if (ACTIVE_PAGE === "pmmaIOL") {
       title: "Nano Plus",
       subtitle: "360° Square Edge Aspheric PMMA Single Piece Posterior Chamber Intraocular Lens",
       desc:  "The Nano Plus is a single-piece PMMA aspheric IOL with 360° square-edge design. Available in two optic sizes — 5.50 mm and 6.00 mm — with C-type step vault haptics for PC and S-type for AC placement.",
-      lensImg: "../Multimedia/nanoPlusPmma.png",
+      lensImg: "../../Multimedia/nanoPlusPmma.png",
       highlights: [
         { icon: "fa-circle-dot",       text: "Aspheric optic"          },
         { icon: "fa-border-all",       text: "360° Square edge"        },
@@ -4679,7 +4683,7 @@ if (ACTIVE_PAGE === "pmmaIOL") {
       variants: [
         {
           id: "NPC600AS", label: "NPC 600 AS",
-          lensImg: "../Multimedia/nanoPlusPmma.png",
+          lensImg: "../../Multimedia/nanoPlusPmma.png",
           specs: [
             { label: "Model",             value: "NPC 600 AS",                               accent: true },
             { label: "Lens Type",         value: "Single Piece PMMA ASPHERIC · Square Edge PC/AC"         },
@@ -4696,7 +4700,7 @@ if (ACTIVE_PAGE === "pmmaIOL") {
         },
         {
           id: "NPC550AS", label: "NPC 550 AS",
-          lensImg: "../Multimedia/nanoPlusPmma.png",
+          lensImg: "../../Multimedia/nanoPlusPmma.png",
           specs: [
             { label: "Model",             value: "NPC 550 AS",                               accent: true },
             { label: "Lens Type",         value: "Single Piece PMMA ASPHERIC · Square Edge PC/AC"         },
@@ -4724,7 +4728,7 @@ if (ACTIVE_PAGE === "pmmaIOL") {
       title: "Nano Plus Y",
       subtitle: "360° Square Edge Yellow PMMA Single Piece Posterior Chamber Intraocular Lens",
       desc:  "The Nano Plus Y features the same proven Nano Plus aspheric 360° square-edge platform with a yellow chromophore for blue-light filtering — providing additional retinal protection alongside UV filtering.",
-      lensImg: "../Multimedia/nanoPlusYellowPmma.png",
+      lensImg: "../../Multimedia/nanoPlusYellowPmma.png",
       highlights: [
         { icon: "fa-circle-dot",       text: "Aspheric optic"          },
         { icon: "fa-border-all",       text: "360° Square edge"        },
@@ -4736,7 +4740,7 @@ if (ACTIVE_PAGE === "pmmaIOL") {
       variants: [
         {
           id: "NPC500ASY", label: "NPC 500 ASY",
-          lensImg: "../Multimedia/nanoPlusYellowPmma.png",
+          lensImg: "../../Multimedia/nanoPlusYellowPmma.png",
           specs: [
             { label: "Model",             value: "NPC 500 ASY",                              accent: true },
             { label: "Lens Type",         value: "Single Piece Yellow PMMA ASPHERIC · Square Edge PC/AC" },
@@ -4753,7 +4757,7 @@ if (ACTIVE_PAGE === "pmmaIOL") {
         },
         {
           id: "NPC600ASY", label: "NPC 600 ASY",
-          lensImg: "../Multimedia/nanoPlusYellowPmma.png",
+          lensImg: "../../Multimedia/nanoPlusYellowPmma.png",
           specs: [
             { label: "Model",             value: "NPC 600 ASY",                              accent: true },
             { label: "Lens Type",         value: "Single Piece Yellow PMMA ASPHERIC · Square Edge PC/AC" },
@@ -4780,7 +4784,7 @@ if (ACTIVE_PAGE === "pmmaIOL") {
       title: "Nano IOL",
       subtitle: "PMMA Posterior / Anterior Chamber Single Piece Intraocular Lens",
       desc:  "The Nano IOL is a versatile single-piece PMMA IOL available in four models covering posterior chamber C-loop, anterior chamber S-loop, and special fixation configurations.",
-      lensImg: "../Multimedia/nanoIOL1.png",
+      lensImg: "../../Multimedia/nanoIOL1.png",
       highlights: [
         { icon: "fa-circle-dot",       text: "Spheric optic"           },
         { icon: "fa-eye",              text: "PC & AC variants"        },
@@ -4792,7 +4796,7 @@ if (ACTIVE_PAGE === "pmmaIOL") {
       variants: [
         {
           id: "NPC600", label: "NPC 600",
-          lensImg: "../Multimedia/nanoIOL1.png",
+          lensImg: "../../Multimedia/nanoIOL1.png",
           specs: [
             { label: "Model",             value: "NPC 600",                                  accent: true },
             { label: "Lens Type",         value: "Single Piece PMMA ASPHERIC Posterior Chamber"            },
@@ -4807,7 +4811,7 @@ if (ACTIVE_PAGE === "pmmaIOL") {
         },
         {
           id: "NPC550", label: "NPC 550",
-          lensImg: "../Multimedia/nanoIOL2.png",
+          lensImg: "../../Multimedia/nanoIOL2.png",
           specs: [
             { label: "Model",             value: "NPC 550",                                  accent: true },
             { label: "Lens Type",         value: "Single Piece PMMA ASPHERIC Posterior Chamber"            },
@@ -4822,7 +4826,7 @@ if (ACTIVE_PAGE === "pmmaIOL") {
         },
         {
           id: "NPA603", label: "NPA 603",
-          lensImg: "../Multimedia/nanoIOL3.png",
+          lensImg: "../../Multimedia/nanoIOL3.png",
           specs: [
             { label: "Model",             value: "NPA 603",                                  accent: true },
             { label: "Lens Type",         value: "Single Piece PMMA Anterior Chamber"                     },
@@ -4837,7 +4841,7 @@ if (ACTIVE_PAGE === "pmmaIOL") {
         },
         {
           id: "NSF651", label: "NSF 651",
-          lensImg: "../Multimedia/nanoIOL4.png",
+          lensImg: "../../Multimedia/nanoIOL4.png",
           specs: [
             { label: "Model",             value: "NSF 651",                                  accent: true },
             { label: "Lens Type",         value: "Single Piece PMMA Special Fixation"                     },
@@ -4862,7 +4866,7 @@ if (ACTIVE_PAGE === "pmmaIOL") {
       title: "Nano Iris",
       subtitle: "Single Piece PMMA Iris Claw Intraocular Lens",
       desc:  "The Nano Iris is a single-piece PMMA iris claw IOL for aphakic correction. Enclavated to the mid-peripheral iris stroma, it provides stable fixation without capsular support — ideal for secondary implantation in aphakic eyes.",
-      lensImg: "../Multimedia/nanoIRISPmma.png",
+      lensImg: "../../Multimedia/nanoIRISPmma.png",
       highlights: [
         { icon: "fa-eye",              text: "Iris claw fixation"      },
         { icon: "fa-circle",           text: "Anterior chamber"        },
@@ -4874,7 +4878,7 @@ if (ACTIVE_PAGE === "pmmaIOL") {
       variants: [
         {
           id: "NIRS4272H", label: "NIRS 4272H",
-          lensImg: "../Multimedia/nanoIRISPmma.png",
+          lensImg: "../../Multimedia/nanoIRISPmma.png",
           specs: [
             { label: "Model",             value: "NIRS 4272H",                               accent: true },
             { label: "Lens Type",         value: "Single Piece PMMA Posterior Chamber · Iris Claw"         },
@@ -4888,7 +4892,7 @@ if (ACTIVE_PAGE === "pmmaIOL") {
         },
         {
           id: "NIRS5585H", label: "NIRS 5585H",
-          lensImg: "../Multimedia/nanoIRIS2Pmma.png",
+          lensImg: "../../Multimedia/nanoIRIS2Pmma.png",
           specs: [
             { label: "Model",             value: "NIRS 5585H",                               accent: true },
             { label: "Lens Type",         value: "Single Piece PMMA Posterior Chamber · Iris Claw"         },
@@ -4902,7 +4906,7 @@ if (ACTIVE_PAGE === "pmmaIOL") {
         },
         {
           id: "NIRS5085H", label: "NIRS 5085H",
-          lensImg: "../Multimedia/nanoIRIS3Pmma.png",
+          lensImg: "../../Multimedia/nanoIRIS3Pmma.png",
           specs: [
             { label: "Model",             value: "NIRS 5085H",                               accent: true },
             { label: "Lens Type",         value: "Single Piece PMMA Posterior Chamber · Iris Claw"         },
@@ -4926,7 +4930,7 @@ if (ACTIVE_PAGE === "pmmaIOL") {
       title: "Nano Ring",
       subtitle: "PMMA Capsular Tension Ring for Zonular Support",
       desc:  "The Nano Ring is a PMMA open-loop capsular tension ring used to stabilise the capsular bag during cataract surgery when zonular weakness is present. Available in simple (NCR) and complex step-vault (NCC) designs for left, right, or bilateral step vault. TYPE-10 is a modified ring with fixation loops.",
-      lensImg: "../Multimedia/nanoRing.png",
+      lensImg: "../../Multimedia/nanoRing.png",
       highlights: [
         { icon: "fa-ring",             text: "Open-loop CTR"           },
         { icon: "fa-circle-notch",     text: "Capsular support"        },
@@ -4938,7 +4942,7 @@ if (ACTIVE_PAGE === "pmmaIOL") {
       variants: [
         {
           id: "NCR1109", label: "NCR 1109 / 1210",
-          lensImg: "../Multimedia/nanoRing.png",
+          lensImg: "../../Multimedia/nanoRing.png",
           specs: [
             { label: "Models",            value: "NCR 1109 · NCR 1210",                      accent: true },
             { label: "Type",              value: "Simple open-loop CTR"                                    },
@@ -4950,7 +4954,7 @@ if (ACTIVE_PAGE === "pmmaIOL") {
         },
         {
           id: "NCR1311", label: "NCR 1311 / 1412",
-          lensImg: "../Multimedia/nanoRing2.png",
+          lensImg: "../../Multimedia/nanoRing2.png",
           specs: [
             { label: "Models",            value: "NCR 1311 · NCR 1412",                      accent: true },
             { label: "Type",              value: "Simple open-loop CTR"                                    },
@@ -4962,7 +4966,7 @@ if (ACTIVE_PAGE === "pmmaIOL") {
         },
         {
           id: "NCC1210L", label: "NCC Left SV",
-          lensImg: "../Multimedia/nanoRing3.png",
+          lensImg: "../../Multimedia/nanoRing3.png",
           specs: [
             { label: "Models",            value: "NCC 1210L · NCC 1311L",                    accent: true },
             { label: "Type",              value: "Complex CTR · Left side step vault"                      },
@@ -4974,7 +4978,7 @@ if (ACTIVE_PAGE === "pmmaIOL") {
         },
         {
           id: "NCC1210R", label: "NCC Right SV",
-          lensImg: "../Multimedia/nanoRing4.png",
+          lensImg: "../../Multimedia/nanoRing4.png",
           specs: [
             { label: "Models",            value: "NCC 1210R · NCC 1311R",                    accent: true },
             { label: "Type",              value: "Complex CTR · Right side step vault"                     },
@@ -4986,7 +4990,7 @@ if (ACTIVE_PAGE === "pmmaIOL") {
         },
         {
           id: "NCC1210LR", label: "NCC Both SV",
-          lensImg: "../Multimedia/nanoRing5.png",
+          lensImg: "../../Multimedia/nanoRing5.png",
           specs: [
             { label: "Models",            value: "NCC 1210LR · NCC 1311LR",                  accent: true },
             { label: "Type",              value: "Complex CTR · Both sides step vault"                     },
@@ -4998,7 +5002,7 @@ if (ACTIVE_PAGE === "pmmaIOL") {
         },
         {
           id: "TYPE10", label: "TYPE-10",
-          lensImg: "../Multimedia/nanoRing6.png",
+          lensImg: "../../Multimedia/nanoRing6.png",
           specs: [
             { label: "Model",             value: "TYPE-10",                                  accent: true },
             { label: "Type",              value: "Modified CTR with fixation loops"                        },
@@ -5019,7 +5023,7 @@ if (ACTIVE_PAGE === "pmmaIOL") {
       title: "Nano SQD",
       subtitle: "360° Square Edge PMMA Single Piece Posterior Chamber Intraocular Lens",
       desc:  "The Nano SQD is a 360° square-edge PMMA single-piece IOL with modified C step-vault haptics. Available in three optic sizes with equiconvex design — the NPC 600 SQ includes 2 dialing holes for surgical convenience.",
-      lensImg: "../Multimedia/nanoSQDPmma.png",
+      lensImg: "../../Multimedia/nanoSQDPmma.png",
       highlights: [
         { icon: "fa-border-all",       text: "360° Square edge"        },
         { icon: "fa-circle-dot",       text: "Equiconvex optic"        },
@@ -5031,7 +5035,7 @@ if (ACTIVE_PAGE === "pmmaIOL") {
       variants: [
         {
           id: "NPC525SQ", label: "NPC 525 SQ",
-          lensImg: "../Multimedia/nanoSQDPmma.png",
+          lensImg: "../../Multimedia/nanoSQDPmma.png",
           specs: [
             { label: "Model",             value: "NPC 525 SQ",                               accent: true },
             { label: "Optic Design",      value: "Equiconvex · 360° Square Edge"                          },
@@ -5046,7 +5050,7 @@ if (ACTIVE_PAGE === "pmmaIOL") {
         },
         {
           id: "NPC550SQ", label: "NPC 550 SQ",
-          lensImg: "../Multimedia/nanoSQDPmma.png",
+          lensImg: "../../Multimedia/nanoSQDPmma.png",
           specs: [
             { label: "Model",             value: "NPC 550 SQ",                               accent: true },
             { label: "Optic Design",      value: "Equiconvex · 360° Square Edge"                          },
@@ -5061,7 +5065,7 @@ if (ACTIVE_PAGE === "pmmaIOL") {
         },
         {
           id: "NPC600SQ", label: "NPC 600 SQ",
-          lensImg: "../Multimedia/nanoSQDPmma2.png",
+          lensImg: "../../Multimedia/nanoSQDPmma2.png",
           specs: [
             { label: "Model",             value: "NPC 600 SQ",                               accent: true },
             { label: "Optic Design",      value: "Equiconvex · 360° Square Edge"                          },
@@ -5087,7 +5091,7 @@ if (ACTIVE_PAGE === "pmmaIOL") {
     <a href="#models" class="hero-btn-iol-primary" style="background:linear-gradient(135deg,#8a5a10,#b87820);">
       <i class="fa-solid fa-grid-2" style="font-size:12px;"></i> View Models
     </a>
-    <a href="../Pages/iol-page.html" class="hero-btn-iol-ghost">
+    <a href="../intraocular-lens/iol-page.html" class="hero-btn-iol-ghost">
       <i class="fa-solid fa-arrow-left" style="font-size:11px;"></i> All IOLs
     </a>`);
 
@@ -5351,23 +5355,23 @@ if (pmmaHeroLens) {
         { href: "https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv", icon: "fa-brands fa-whatsapp", label: "WhatsApp" },
       ],
       quickLinks: [
-        { label: "Home",             href: "../Pages/index.html"           },
-        { label: "Hydrophobic IOL",  href: "../Pages/hydrophobicIol.html"  },
-        { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html"  },
-        { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html"         },
-        { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
-        { label: "About Us",          href: "../Pages/aboutUs.html"        },
-        { label: "Contact Us",       href: "../Pages/contactUs.html"       },
-        { label: "Gallery",          href: "../Pages/gallery.html"         },
+        { label: "Home",             href: "../HomePages/index.html"           },
+        { label: "Hydrophobic IOL",  href: "../intraocular-lens/hydrophobicIol.html"  },
+        { label: "Hydrophilic IOL",  href: "../intraocular-lens/hydrophilicIOL.html"  },
+        { label: "PMMA IOL",         href: "../intraocular-lens/pmmaIOL.html"         },
+        { label: "Toric Calculator", href: "../HomePages/toricCalculator.html" },
+        { label: "About Us",          href: "../HomePages/aboutUs.html"        },
+        { label: "Contact Us",       href: "../HomePages/contactUs.html"       },
+        { label: "Gallery",          href: "../HomePages/gallery.html"         },
       ],
       products: [
-        { label: "Nano Claro",      href: "../Pages/nanoClaro.html"  },
-        { label: "Nano Grand",      href: "../Pages/nanoGrand.html"  },
-        { label: "Nano Fold",       href: "../Pages/nanoFold.html"   },
-        { label: "Nano Flex",       href: "../Pages/nanoFlex.html"   },
-        { label: "Keratome Blades", href: "../Pages/keratome.html"   },
-        { label: "Crescent Blades", href: "../Pages/crescent.html"   },
-        { label: "MVR Blades",      href: "../Pages/mvrBlade.html"   },
+        { label: "Nano Claro",      href: "../intraocular-lens/nanoClaro.html"  },
+        { label: "Nano Grand",      href: "../intraocular-lens/nanoGrand.html"  },
+        { label: "Nano Fold",       href: "../intraocular-lens/nanoFold.html"   },
+        { label: "Nano Flex",       href: "../intraocular-lens/nanoFlex.html"   },
+        { label: "Keratome Blades", href: "../blades/keratome.html"   },
+        { label: "Crescent Blades", href: "../blades/crescent.html"   },
+        { label: "MVR Blades",      href: "../blades/mvrBlade.html"   },
       ],
       contact: {
         address: "Chennai, Tamil Nadu, India — PIN 600001",
@@ -5441,7 +5445,7 @@ if (ACTIVE_PAGE === "keratome") {
       title:    "Keratome Sharp",
       subtitle: "Keratome Blades (Sharp Astuce) / Queratomo Cuchillas (punta aguda) — For Phaco Stab Incision Straight / Angled 45 Deg. Bevel Up/Down",
       desc:     "Precision sharp tip keratome blades for phaco stab incisions. Available in straight and 45° angled configurations with bevel up or bevel down orientation.",
-      lensImg:  "../Multimedia/msBlade-Sharp.png",
+      lensImg:  "../../Multimedia/msBlade-Sharp.png",
       highlights: [
         { icon: "fa-pen-fancy",         text: "Sharp astuce tip"      },
         { icon: "fa-arrows-left-right", text: "Straight / 45° angled" },
@@ -5452,7 +5456,7 @@ if (ACTIVE_PAGE === "keratome") {
       ],
       variants: [
         {
-          id: "NS2620ST", label: "NS 2620ST", lensImg: "../Multimedia/msBlade-Sharp.png",
+          id: "NS2620ST", label: "NS 2620ST", lensImg: "../../Multimedia/msBlade-Sharp.png",
           specs: [
             { label: "Model",       value: "NS 2620ST",                    accent: true },
             { label: "Size",        value: "2.65 mm",                      accent: true },
@@ -5465,7 +5469,7 @@ if (ACTIVE_PAGE === "keratome") {
           ],
         },
         {
-          id: "NS2820ST", label: "NS 2820ST", lensImg: "../Multimedia/msBlade-Sharp.png",
+          id: "NS2820ST", label: "NS 2820ST", lensImg: "../../Multimedia/msBlade-Sharp.png",
           specs: [
             { label: "Model",       value: "NS 2820ST",                    accent: true },
             { label: "Size",        value: "2.8 mm",                       accent: true },
@@ -5478,7 +5482,7 @@ if (ACTIVE_PAGE === "keratome") {
           ],
         },
         {
-          id: "NS3019ST", label: "NS 3019ST", lensImg: "../Multimedia/msBlade-Sharp.png",
+          id: "NS3019ST", label: "NS 3019ST", lensImg: "../../Multimedia/msBlade-Sharp.png",
           specs: [
             { label: "Model",       value: "NS 3019ST",                    accent: true },
             { label: "Size",        value: "3.0 mm",                       accent: true },
@@ -5491,7 +5495,7 @@ if (ACTIVE_PAGE === "keratome") {
           ],
         },
         {
-          id: "NS3219ST", label: "NS 3219ST", lensImg: "../Multimedia/msBlade-Sharp.png",
+          id: "NS3219ST", label: "NS 3219ST", lensImg: "../../Multimedia/msBlade-Sharp.png",
           specs: [
             { label: "Model",       value: "NS 3219ST",                    accent: true },
             { label: "Size",        value: "3.2 mm",                       accent: true },
@@ -5504,7 +5508,7 @@ if (ACTIVE_PAGE === "keratome") {
           ],
         },
         {
-          id: "NS3519ST", label: "NS 3519ST", lensImg: "../Multimedia/msBlade-Sharp.png",
+          id: "NS3519ST", label: "NS 3519ST", lensImg: "../../Multimedia/msBlade-Sharp.png",
           specs: [
             { label: "Model",       value: "NS 3519ST",                    accent: true },
             { label: "Size",        value: "3.5 mm",                       accent: true },
@@ -5533,7 +5537,7 @@ if (ACTIVE_PAGE === "keratome") {
       title:    "Keratome Blunt",
       subtitle: "Keratome Blades (bout Astuce) / Queratomo Cuchillas (Blunt Tip) — For IOL Enlarging",
       desc:     "Blunt tip keratome blades designed specifically for IOL enlarging incisions. The blunt tip prevents inadvertent puncture during incision widening procedures.",
-      lensImg:  "../Multimedia/msBlade_Blunt.png",
+      lensImg:  "../../Multimedia/msBlade_blunt.png",
       highlights: [
         { icon: "fa-circle",           text: "Blunt astuce tip"    },
         { icon: "fa-expand",           text: "IOL enlarging"       },
@@ -5544,7 +5548,7 @@ if (ACTIVE_PAGE === "keratome") {
       ],
       variants: [
         {
-          id: "NS3518BT", label: "NS 3518BT", lensImg: "../Multimedia/msBlade_Blunt.png",
+          id: "NS3518BT", label: "NS 3518BT", lensImg: "../../Multimedia/msBlade_blunt.png",
           specs: [
             { label: "Model",      value: "NS 3518BT",  accent: true },
             { label: "Size",       value: "3.5 mm",     accent: true },
@@ -5555,7 +5559,7 @@ if (ACTIVE_PAGE === "keratome") {
           ],
         },
         {
-          id: "NS3818BT", label: "NS 3818BT", lensImg: "../Multimedia/msBlade_Blunt.png",
+          id: "NS3818BT", label: "NS 3818BT", lensImg: "../../Multimedia/msBlade_blunt.png",
           specs: [
             { label: "Model",      value: "NS 3818BT",  accent: true },
             { label: "Size",       value: "3.8 mm",     accent: true },
@@ -5566,7 +5570,7 @@ if (ACTIVE_PAGE === "keratome") {
           ],
         },
         {
-          id: "NS4018BT", label: "NS 4018BT", lensImg: "../Multimedia/msBlade_Blunt.png",
+          id: "NS4018BT", label: "NS 4018BT", lensImg: "../../Multimedia/msBlade_blunt.png",
           specs: [
             { label: "Model",      value: "NS 4018BT",  accent: true },
             { label: "Size",       value: "4.0 mm",     accent: true },
@@ -5591,7 +5595,7 @@ if (ACTIVE_PAGE === "keratome") {
   qs("heroDesc")    && (qs("heroDesc").textContent   = "Precision-engineered keratome blades in sharp tip and blunt tip configurations. Available across standard and special order sizes for phaco stab and IOL enlarging procedures.");
   qs("heroBtns")    && (qs("heroBtns").innerHTML     = `
     <a href="#models" class="hero-btn-iol-primary"><i class="fa-solid fa-grid-2" style="font-size:12px;"></i> View Models</a>
-    <a href="../Pages/index.html" class="hero-btn-iol-ghost"><i class="fa-solid fa-arrow-left" style="font-size:11px;"></i> Home</a>`);
+    <a href="../HomePages/index.html" class="hero-btn-iol-ghost"><i class="fa-solid fa-arrow-left" style="font-size:11px;"></i> Home</a>`);
 
   function updateKeratHero(tabId) {
     const data = KERAT_TABS.find(t => t.id === tabId);
@@ -5742,23 +5746,23 @@ if (ACTIVE_PAGE === "keratome") {
         { href: "https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv", icon: "fa-brands fa-whatsapp", label: "WhatsApp" },
       ],
       quickLinks: [
-        { label: "Home",             href: "../Pages/index.html"           },
-        { label: "Hydrophobic IOL",  href: "../Pages/hydrophobicIol.html"  },
-        { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html"  },
-        { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html"         },
-        { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
-        { label: "About Us",          href: "../Pages/aboutUs.html"        },
-        { label: "Contact Us",       href: "../Pages/contactUs.html"       },
-        { label: "Gallery",          href: "../Pages/gallery.html"         },
+        { label: "Home",             href: "../HomePages/index.html"           },
+        { label: "Hydrophobic IOL",  href: "../intraocular-lens/hydrophobicIol.html"  },
+        { label: "Hydrophilic IOL",  href: "../intraocular-lens/hydrophilicIOL.html"  },
+        { label: "PMMA IOL",         href: "../intraocular-lens/pmmaIOL.html"         },
+        { label: "Toric Calculator", href: "../HomePages/toricCalculator.html" },
+        { label: "About Us",          href: "../HomePages/aboutUs.html"        },
+        { label: "Contact Us",       href: "../HomePages/contactUs.html"       },
+        { label: "Gallery",          href: "../HomePages/gallery.html"         },
       ],
       products: [
-        { label: "Nano Claro",      href: "../Pages/nanoClaro.html"  },
-        { label: "Nano Grand",      href: "../Pages/nanoGrand.html"  },
-        { label: "Nano Fold",       href: "../Pages/nanoFold.html"   },
-        { label: "Nano Flex",       href: "../Pages/nanoFlex.html"   },
-        { label: "Keratome Blades", href: "../Pages/keratome.html"   },
-        { label: "Crescent Blades", href: "../Pages/crescent.html"   },
-        { label: "MVR Blades",      href: "../Pages/mvrBlade.html"   },
+        { label: "Nano Claro",      href: "../intraocular-lens/nanoClaro.html"  },
+        { label: "Nano Grand",      href: "../intraocular-lens/nanoGrand.html"  },
+        { label: "Nano Fold",       href: "../intraocular-lens/nanoFold.html"   },
+        { label: "Nano Flex",       href: "../intraocular-lens/nanoFlex.html"   },
+        { label: "Keratome Blades", href: "../blades/keratome.html"   },
+        { label: "Crescent Blades", href: "../blades/crescent.html"   },
+        { label: "MVR Blades",      href: "../blades/mvrBlade.html"   },
       ],
       contact: {
         address: "Chennai, Tamil Nadu, India — PIN 600001",
@@ -5830,7 +5834,7 @@ if (ACTIVE_PAGE === "crescent") {
       title:    "Crescent Blade",
       subtitle: "Croissant-Blades / Crescent Cuchillas — for Tunnel Incision Straight / Angled 45 Deg. Bevel Up / Down",
       desc:     "Crescent blades for tunnel incisions in cataract surgery. The crescent geometry enables smooth stromal dissection with minimal tissue trauma.",
-      lensImg:  "../Multimedia/msBladeCrescent.png",
+      lensImg:  "../../Multimedia/msBladeCrescent.png",
       highlights: [
         { icon: "fa-moon",              text: "Crescent geometry"     },
         { icon: "fa-arrows-left-right", text: "Straight / 45° angled" },
@@ -5841,7 +5845,7 @@ if (ACTIVE_PAGE === "crescent") {
       ],
       variants: [
         {
-          id: "NS2020TI", label: "NS 2020TI", lensImg: "../Multimedia/msBladeCrescent.png",
+          id: "NS2020TI", label: "NS 2020TI", lensImg: "../../Multimedia/msBladeCrescent.png",
           specs: [
             { label: "Model",       value: "NS 2020TI",             accent: true },
             { label: "Size",        value: "2.0 mm",                accent: true },
@@ -5854,7 +5858,7 @@ if (ACTIVE_PAGE === "crescent") {
           ],
         },
         {
-          id: "NS2520TI", label: "NS 2520TI", lensImg: "../Multimedia/msBladeCrescent.png",
+          id: "NS2520TI", label: "NS 2520TI", lensImg: "../../Multimedia/msBladeCrescent.png",
           specs: [
             { label: "Model",       value: "NS 2520TI",             accent: true },
             { label: "Size",        value: "2.5 mm",                accent: true },
@@ -5876,7 +5880,7 @@ if (ACTIVE_PAGE === "crescent") {
   qs("heroDesc")    && (qs("heroDesc").textContent   = "Crescent blades (Croissant-Blades / Crescent Cuchillas) for tunnel incisions. Straight / Angled 45° · Bevel Up / Down.");
   qs("heroBtns")    && (qs("heroBtns").innerHTML     = `
     <a href="#models" class="hero-btn-iol-primary"><i class="fa-solid fa-grid-2" style="font-size:12px;"></i> View Models</a>
-    <a href="../Pages/index.html" class="hero-btn-iol-ghost"><i class="fa-solid fa-arrow-left" style="font-size:11px;"></i> Home</a>`);
+    <a href="../HomePages/index.html" class="hero-btn-iol-ghost"><i class="fa-solid fa-arrow-left" style="font-size:11px;"></i> Home</a>`);
 
   const cresWrap = qs("heroBladeWrap");
   if (cresWrap) cresWrap.innerHTML = `<img src="${CRES_TABS[0].lensImg}" alt="Crescent" style="width:240px;height:240px;object-fit:contain;" onerror="this.style.opacity='0'"/>`;
@@ -5960,23 +5964,23 @@ if (ACTIVE_PAGE === "crescent") {
         { href: "https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv", icon: "fa-brands fa-whatsapp", label: "WhatsApp" },
       ],
       quickLinks: [
-        { label: "Home",             href: "../Pages/index.html"           },
-        { label: "Hydrophobic IOL",  href: "../Pages/hydrophobicIol.html"  },
-        { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html"  },
-        { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html"         },
-        { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
-        { label: "About Us",          href: "../Pages/aboutUs.html"        },
-        { label: "Contact Us",       href: "../Pages/contactUs.html"       },
-        { label: "Gallery",          href: "../Pages/gallery.html"         },
+        { label: "Home",             href: "../HomePages/index.html"           },
+        { label: "Hydrophobic IOL",  href: "../intraocular-lens/hydrophobicIol.html"  },
+        { label: "Hydrophilic IOL",  href: "../intraocular-lens/hydrophilicIOL.html"  },
+        { label: "PMMA IOL",         href: "../intraocular-lens/pmmaIOL.html"         },
+        { label: "Toric Calculator", href: "../HomePages/toricCalculator.html" },
+        { label: "About Us",          href: "../HomePages/aboutUs.html"        },
+        { label: "Contact Us",       href: "../HomePages/contactUs.html"       },
+        { label: "Gallery",          href: "../HomePages/gallery.html"         },
       ],
       products: [
-        { label: "Nano Claro",      href: "../Pages/nanoClaro.html"  },
-        { label: "Nano Grand",      href: "../Pages/nanoGrand.html"  },
-        { label: "Nano Fold",       href: "../Pages/nanoFold.html"   },
-        { label: "Nano Flex",       href: "../Pages/nanoFlex.html"   },
-        { label: "Keratome Blades", href: "../Pages/keratome.html"   },
-        { label: "Crescent Blades", href: "../Pages/crescent.html"   },
-        { label: "MVR Blades",      href: "../Pages/mvrBlade.html"   },
+        { label: "Nano Claro",      href: "../intraocular-lens/nanoClaro.html"  },
+        { label: "Nano Grand",      href: "../intraocular-lens/nanoGrand.html"  },
+        { label: "Nano Fold",       href: "../intraocular-lens/nanoFold.html"   },
+        { label: "Nano Flex",       href: "../intraocular-lens/nanoFlex.html"   },
+        { label: "Keratome Blades", href: "../blades/keratome.html"   },
+        { label: "Crescent Blades", href: "../blades/crescent.html"   },
+        { label: "MVR Blades",      href: "../blades/mvrBlade.html"   },
       ],
       contact: {
         address: "Chennai, Tamil Nadu, India — PIN 600001",
@@ -6044,7 +6048,7 @@ if (ACTIVE_PAGE === "lancelp") {
       id: "lance15", name: "15°", type: "24 Gauge",
       tag: "Lance Tip · 15° · 24 Gauge · Initial Incision",
       title: "Lance Ip — 15°", subtitle: "Lance Tip Knives (Lance Astuce Couteaux) — Length: 12 mm · Cutting Width: 6.5 mm · Angled 15°",
-      desc: "Lance tip knife for initial incision at 15° angulation. Length 12 mm, Cutting Width 6.5 mm, 24 Gauge.", lensImg: "../Multimedia/msBladeLance.png",
+      desc: "Lance tip knife for initial incision at 15° angulation. Length 12 mm, Cutting Width 6.5 mm, 24 Gauge.", lensImg: "../../Multimedia/msBladeLance.png",
       highlights: [
         { icon: "fa-staff-snake",      text: "Lance tip geometry"   },
         { icon: "fa-ruler",            text: "12 mm length"         },
@@ -6053,7 +6057,7 @@ if (ACTIVE_PAGE === "lancelp") {
         { icon: "fa-certificate",      text: "CE certified"         },
       ],
       variants: [{
-        id: "NS1524LT", label: "NS 1524LT", lensImg: "../Multimedia/msBladeLance.png",
+        id: "NS1524LT", label: "NS 1524LT", lensImg: "../../Multimedia/msBladeLance.png",
         specs: [
           { label: "Model",         value: "NS 1524LT",              accent: true },
           { label: "Angulation",    value: "15°",                    accent: true },
@@ -6071,7 +6075,7 @@ if (ACTIVE_PAGE === "lancelp") {
       id: "lance30", name: "30°", type: "24 Gauge",
       tag: "Lance Tip · 30° · 24 Gauge · Initial Incision",
       title: "Lance Ip — 30°", subtitle: "Lance Tip Knives (Lance Astuce Couteaux) — Length: 12 mm · Cutting Width: 6.5 mm · Angled 15°",
-      desc: "Lance tip knife for initial incision at 30° angulation. Length 12 mm, Cutting Width 6.5 mm, 24 Gauge.", lensImg: "../Multimedia/msBladeLance.png",
+      desc: "Lance tip knife for initial incision at 30° angulation. Length 12 mm, Cutting Width 6.5 mm, 24 Gauge.", lensImg: "../../Multimedia/msBladeLance.png",
       highlights: [
         { icon: "fa-staff-snake",      text: "Lance tip geometry"   },
         { icon: "fa-ruler",            text: "12 mm length"         },
@@ -6080,7 +6084,7 @@ if (ACTIVE_PAGE === "lancelp") {
         { icon: "fa-certificate",      text: "CE certified"         },
       ],
       variants: [{
-        id: "NS3024LT", label: "NS 3024LT", lensImg: "../Multimedia/msBladeLance.png",
+        id: "NS3024LT", label: "NS 3024LT", lensImg: "../../Multimedia/msBladeLance.png",
         specs: [
           { label: "Model",         value: "NS 3024LT",              accent: true },
           { label: "Angulation",    value: "30°",                    accent: true },
@@ -6098,7 +6102,7 @@ if (ACTIVE_PAGE === "lancelp") {
       id: "lance45", name: "45°", type: "24 Gauge",
       tag: "Lance Tip · 45° · 24 Gauge · Initial Incision",
       title: "Lance Ip — 45°", subtitle: "Lance Tip Knives (Lance Astuce Couteaux) — Length: 12 mm · Cutting Width: 6.5 mm · Angled 15°",
-      desc: "Lance tip knife for initial incision at 45° angulation. Length 12 mm, Cutting Width 6.5 mm, 24 Gauge.", lensImg: "../Multimedia/msBladeLance.png",
+      desc: "Lance tip knife for initial incision at 45° angulation. Length 12 mm, Cutting Width 6.5 mm, 24 Gauge.", lensImg: "../../Multimedia/msBladeLance.png",
       highlights: [
         { icon: "fa-staff-snake",      text: "Lance tip geometry"   },
         { icon: "fa-ruler",            text: "12 mm length"         },
@@ -6107,7 +6111,7 @@ if (ACTIVE_PAGE === "lancelp") {
         { icon: "fa-certificate",      text: "CE certified"         },
       ],
       variants: [{
-        id: "NS4524LT", label: "NS 4524LT", lensImg: "../Multimedia/msBladeLance.png",
+        id: "NS4524LT", label: "NS 4524LT", lensImg: "../../Multimedia/msBladeLance.png",
         specs: [
           { label: "Model",         value: "NS 4524LT",              accent: true },
           { label: "Angulation",    value: "45°",                    accent: true },
@@ -6128,7 +6132,7 @@ if (ACTIVE_PAGE === "lancelp") {
   qs("heroDesc")    && (qs("heroDesc").textContent   = "Lance Tip Knives (Punta de lanza cuchillos) for initial incision. Length: 12 mm · Grinding Width (Cutting): 6.5 mm · Angled 15°. Available in 15°, 30° and 45° angulations.");
   qs("heroBtns")    && (qs("heroBtns").innerHTML     = `
     <a href="#models" class="hero-btn-iol-primary"><i class="fa-solid fa-grid-2" style="font-size:12px;"></i> View Models</a>
-    <a href="../Pages/index.html" class="hero-btn-iol-ghost"><i class="fa-solid fa-arrow-left" style="font-size:11px;"></i> Home</a>`);
+    <a href="../HomePages/index.html" class="hero-btn-iol-ghost"><i class="fa-solid fa-arrow-left" style="font-size:11px;"></i> Home</a>`);
 
   function updateLanceHero(tabId) {
     const data = LANCE_TABS.find(t => t.id === tabId);
@@ -6235,23 +6239,23 @@ if (ACTIVE_PAGE === "lancelp") {
         { href: "https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv", icon: "fa-brands fa-whatsapp", label: "WhatsApp" },
       ],
       quickLinks: [
-        { label: "Home",             href: "../Pages/index.html"           },
-        { label: "Hydrophobic IOL",  href: "../Pages/hydrophobicIol.html"  },
-        { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html"  },
-        { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html"         },
-        { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
-        { label: "About Us",          href: "../Pages/aboutUs.html"        },
-        { label: "Contact Us",       href: "../Pages/contactUs.html"       },
-        { label: "Gallery",          href: "../Pages/gallery.html"         },
+        { label: "Home",             href: "../HomePages/index.html"           },
+        { label: "Hydrophobic IOL",  href: "../intraocular-lens/hydrophobicIol.html"  },
+        { label: "Hydrophilic IOL",  href: "../intraocular-lens/hydrophilicIOL.html"  },
+        { label: "PMMA IOL",         href: "../intraocular-lens/pmmaIOL.html"         },
+        { label: "Toric Calculator", href: "../HomePages/toricCalculator.html" },
+        { label: "About Us",          href: "../HomePages/aboutUs.html"        },
+        { label: "Contact Us",       href: "../HomePages/contactUs.html"       },
+        { label: "Gallery",          href: "../HomePages/gallery.html"         },
       ],
       products: [
-        { label: "Nano Claro",      href: "../Pages/nanoClaro.html"  },
-        { label: "Nano Grand",      href: "../Pages/nanoGrand.html"  },
-        { label: "Nano Fold",       href: "../Pages/nanoFold.html"   },
-        { label: "Nano Flex",       href: "../Pages/nanoFlex.html"   },
-        { label: "Keratome Blades", href: "../Pages/keratome.html"   },
-        { label: "Crescent Blades", href: "../Pages/crescent.html"   },
-        { label: "MVR Blades",      href: "../Pages/mvrBlade.html"   },
+        { label: "Nano Claro",      href: "../intraocular-lens/nanoClaro.html"  },
+        { label: "Nano Grand",      href: "../intraocular-lens/nanoGrand.html"  },
+        { label: "Nano Fold",       href: "../intraocular-lens/nanoFold.html"   },
+        { label: "Nano Flex",       href: "../intraocular-lens/nanoFlex.html"   },
+        { label: "Keratome Blades", href: "../blades/keratome.html"   },
+        { label: "Crescent Blades", href: "../blades/crescent.html"   },
+        { label: "MVR Blades",      href: "../blades/mvrBlade.html"   },
       ],
       contact: {
         address: "Chennai, Tamil Nadu, India — PIN 600001",
@@ -6319,7 +6323,7 @@ if (ACTIVE_PAGE === "mvrBlade") {
       id: "mvr19", name: "19 Gauge", type: "Self Sealing",
       tag: "MVR Blade · 19 Gauge · Water Tight Self Sealing",
       title: "MVR Blade — 19G", subtitle: "MVR Blades (MVR Cuchillas) — Water Tight Self Sealing Incision · Straight / Angled 45° · Bevel Up/Down",
-      desc: "MVR blade for water tight self sealing incision at 19 Gauge. Straight / Angled 45° Bevel Up / Down.", lensImg: "../Multimedia/msMVRBlade.png",
+      desc: "MVR blade for water tight self sealing incision at 19 Gauge. Straight / Angled 45° Bevel Up / Down.", lensImg: "../../Multimedia/msMVRBlade.png",
       highlights: [
         { icon: "fa-diamond-turn-right", text: "MVR geometry"          },
         { icon: "fa-droplet-slash",      text: "Water-tight seal"      },
@@ -6328,7 +6332,7 @@ if (ACTIVE_PAGE === "mvrBlade") {
         { icon: "fa-certificate",        text: "CE certified"          },
       ],
       variants: [{
-        id: "NS19MVR", label: "NS 19MVR", lensImg: "../Multimedia/msMVRBlade.png",
+        id: "NS19MVR", label: "NS 19MVR", lensImg: "../../Multimedia/msMVRBlade.png",
         specs: [
           { label: "Model",       value: "NS 19MVR",                     accent: true },
           { label: "Gauge",       value: "19 Gauge",                     accent: true },
@@ -6345,7 +6349,7 @@ if (ACTIVE_PAGE === "mvrBlade") {
       id: "mvr20", name: "20 Gauge", type: "Self Sealing",
       tag: "MVR Blade · 20 Gauge · Water Tight Self Sealing",
       title: "MVR Blade — 20G", subtitle: "MVR Blades (MVR Cuchillas) — Water Tight Self Sealing Incision · Straight / Angled 45° · Bevel Up/Down",
-      desc: "MVR blade for water tight self sealing incision at 20 Gauge. Straight / Angled 45° Bevel Up / Down.", lensImg: "../Multimedia/msMVRBlade.png",
+      desc: "MVR blade for water tight self sealing incision at 20 Gauge. Straight / Angled 45° Bevel Up / Down.", lensImg: "../../Multimedia/msMVRBlade.png",
       highlights: [
         { icon: "fa-diamond-turn-right", text: "MVR geometry"          },
         { icon: "fa-droplet-slash",      text: "Water-tight seal"      },
@@ -6354,7 +6358,7 @@ if (ACTIVE_PAGE === "mvrBlade") {
         { icon: "fa-certificate",        text: "CE certified"          },
       ],
       variants: [{
-        id: "NS20MVR", label: "NS 20MVR", lensImg: "../Multimedia/msMVRBlade.png",
+        id: "NS20MVR", label: "NS 20MVR", lensImg: "../../Multimedia/msMVRBlade.png",
         specs: [
           { label: "Model",       value: "NS 20MVR",                     accent: true },
           { label: "Gauge",       value: "20 Gauge",                     accent: true },
@@ -6371,7 +6375,7 @@ if (ACTIVE_PAGE === "mvrBlade") {
       id: "mvr24", name: "24 Gauge", type: "Self Sealing",
       tag: "MVR Blade · 24 Gauge · Water Tight Self Sealing",
       title: "MVR Blade — 24G", subtitle: "MVR Blades (MVR Cuchillas) — Water Tight Self Sealing Incision · Straight / Angled 45° · Bevel Up/Down",
-      desc: "MVR blade for water tight self sealing incision at 24 Gauge. Straight / Angled 45° Bevel Up / Down.", lensImg: "../Multimedia/msMVRBlade.png",
+      desc: "MVR blade for water tight self sealing incision at 24 Gauge. Straight / Angled 45° Bevel Up / Down.", lensImg: "../../Multimedia/msMVRBlade.png",
       highlights: [
         { icon: "fa-diamond-turn-right", text: "MVR geometry"          },
         { icon: "fa-droplet-slash",      text: "Water-tight seal"      },
@@ -6380,7 +6384,7 @@ if (ACTIVE_PAGE === "mvrBlade") {
         { icon: "fa-certificate",        text: "CE certified"          },
       ],
       variants: [{
-        id: "NS24MVR", label: "NS 24MVR", lensImg: "../Multimedia/msMVRBlade.png",
+        id: "NS24MVR", label: "NS 24MVR", lensImg: "../../Multimedia/msMVRBlade.png",
         specs: [
           { label: "Model",       value: "NS 24MVR",                     accent: true },
           { label: "Gauge",       value: "24 Gauge",                     accent: true },
@@ -6400,7 +6404,7 @@ if (ACTIVE_PAGE === "mvrBlade") {
   qs("heroDesc")    && (qs("heroDesc").textContent   = "MVR Blades (MVR Cuchillas) for Water Tight Self Sealing Incision. Straight / Angled 45° · Bevel Up / Down. Available in 19, 20 and 24 Gauge.");
   qs("heroBtns")    && (qs("heroBtns").innerHTML     = `
     <a href="#models" class="hero-btn-iol-primary"><i class="fa-solid fa-grid-2" style="font-size:12px;"></i> View Models</a>
-    <a href="../Pages/index.html" class="hero-btn-iol-ghost"><i class="fa-solid fa-arrow-left" style="font-size:11px;"></i> Home</a>`);
+    <a href="../HomePages/index.html" class="hero-btn-iol-ghost"><i class="fa-solid fa-arrow-left" style="font-size:11px;"></i> Home</a>`);
 
   function updateMvrHero(tabId) {
     const data = MVR_TABS.find(t => t.id === tabId);
@@ -6507,23 +6511,23 @@ if (ACTIVE_PAGE === "mvrBlade") {
         { href: "https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv", icon: "fa-brands fa-whatsapp", label: "WhatsApp" },
       ],
       quickLinks: [
-        { label: "Home",             href: "../Pages/index.html"           },
-        { label: "Hydrophobic IOL",  href: "../Pages/hydrophobicIol.html"  },
-        { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html"  },
-        { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html"         },
-        { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
-        { label: "About Us",          href: "../Pages/aboutUs.html"        },
-        { label: "Contact Us",       href: "../Pages/contactUs.html"       },
-        { label: "Gallery",          href: "../Pages/gallery.html"         },
+        { label: "Home",             href: "../HomePages/index.html"           },
+        { label: "Hydrophobic IOL",  href: "../intraocular-lens/hydrophobicIol.html"  },
+        { label: "Hydrophilic IOL",  href: "../intraocular-lens/hydrophilicIOL.html"  },
+        { label: "PMMA IOL",         href: "../intraocular-lens/pmmaIOL.html"         },
+        { label: "Toric Calculator", href: "../HomePages/toricCalculator.html" },
+        { label: "About Us",          href: "../HomePages/aboutUs.html"        },
+        { label: "Contact Us",       href: "../HomePages/contactUs.html"       },
+        { label: "Gallery",          href: "../HomePages/gallery.html"         },
       ],
       products: [
-        { label: "Nano Claro",      href: "../Pages/nanoClaro.html"  },
-        { label: "Nano Grand",      href: "../Pages/nanoGrand.html"  },
-        { label: "Nano Fold",       href: "../Pages/nanoFold.html"   },
-        { label: "Nano Flex",       href: "../Pages/nanoFlex.html"   },
-        { label: "Keratome Blades", href: "../Pages/keratome.html"   },
-        { label: "Crescent Blades", href: "../Pages/crescent.html"   },
-        { label: "MVR Blades",      href: "../Pages/mvrBlade.html"   },
+        { label: "Nano Claro",      href: "../intraocular-lens/nanoClaro.html"  },
+        { label: "Nano Grand",      href: "../intraocular-lens/nanoGrand.html"  },
+        { label: "Nano Fold",       href: "../intraocular-lens/nanoFold.html"   },
+        { label: "Nano Flex",       href: "../intraocular-lens/nanoFlex.html"   },
+        { label: "Keratome Blades", href: "../blades/keratome.html"   },
+        { label: "Crescent Blades", href: "../blades/crescent.html"   },
+        { label: "MVR Blades",      href: "../blades/mvrBlade.html"   },
       ],
       contact: {
         address: "Chennai, Tamil Nadu, India — PIN 600001",
@@ -6681,23 +6685,23 @@ if (ACTIVE_PAGE === "contactUs") {
         { href: "https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv", icon: "fa-brands fa-whatsapp", label: "WhatsApp" },
       ],
       quickLinks: [
-        { label: "Home",             href: "../Pages/index.html"           },
-        { label: "Hydrophobic IOL",  href: "../Pages/hydrophobicIol.html"  },
-        { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html"  },
-        { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html"         },
-        { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
-        { label: "About Us",          href: "../Pages/aboutUs.html"        },
-        { label: "Contact Us",       href: "../Pages/contactUs.html"       },
-        { label: "Gallery",          href: "../Pages/gallery.html"         },
+        { label: "Home",             href: "../HomePages/index.html"           },
+        { label: "Hydrophobic IOL",  href: "../intraocular-lens/hydrophobicIol.html"  },
+        { label: "Hydrophilic IOL",  href: "../intraocular-lens/hydrophilicIOL.html"  },
+        { label: "PMMA IOL",         href: "../intraocular-lens/pmmaIOL.html"         },
+        { label: "Toric Calculator", href: "../HomePages/toricCalculator.html" },
+        { label: "About Us",          href: "../HomePages/aboutUs.html"        },
+        { label: "Contact Us",       href: "../HomePages/contactUs.html"       },
+        { label: "Gallery",          href: "../HomePages/gallery.html"         },
       ],
       products: [
-        { label: "Nano Claro",      href: "../Pages/nanoClaro.html"  },
-        { label: "Nano Grand",      href: "../Pages/nanoGrand.html"  },
-        { label: "Nano Fold",       href: "../Pages/nanoFold.html"   },
-        { label: "Nano Flex",       href: "../Pages/nanoFlex.html"   },
-        { label: "Keratome Blades", href: "../Pages/keratome.html"   },
-        { label: "Crescent Blades", href: "../Pages/crescent.html"   },
-        { label: "MVR Blades",      href: "../Pages/mvrBlade.html"   },
+        { label: "Nano Claro",      href: "../intraocular-lens/nanoClaro.html"  },
+        { label: "Nano Grand",      href: "../intraocular-lens/nanoGrand.html"  },
+        { label: "Nano Fold",       href: "../intraocular-lens/nanoFold.html"   },
+        { label: "Nano Flex",       href: "../intraocular-lens/nanoFlex.html"   },
+        { label: "Keratome Blades", href: "../blades/keratome.html"   },
+        { label: "Crescent Blades", href: "../blades/crescent.html"   },
+        { label: "MVR Blades",      href: "../blades/mvrBlade.html"   },
       ],
       contact: {
         address: "Chennai, Tamil Nadu, India — PIN 600001",
@@ -6715,7 +6719,7 @@ if (ACTIVE_PAGE === "contactUs") {
 
   // ── Breadcrumb ────────────────────────────────────────────────────────
   const bc = qs("breadcrumb");
-  if (bc) bc.innerHTML = `<a href="../Pages/index.html">Home</a><span class="sep">/</span><span class="current">Contact Us</span>`;
+  if (bc) bc.innerHTML = `<a href="../HomePages/index.html">Home</a><span class="sep">/</span><span class="current">Contact Us</span>`;
 
   // ── Hero ──────────────────────────────────────────────────────────────
   const ey = qs("contactEyebrow");
@@ -6969,8 +6973,8 @@ if (ACTIVE_PAGE === "aboutUs") {
       heading: "Ready to Partner<br><em>with Us?</em>",
       sub:     "Whether you're a surgeon, distributor, or healthcare institution — we'd love to connect and explore how World Vision Ophthalmic can serve your patients.",
       btns: [
-        { label: "Contact Us",       href: "../Pages/contactUs.html", cls: "btn-p", icon: "fa-envelope" },
-        { label: "Explore Products", href: "../Pages/iol-page.html",  cls: "btn-g", icon: "fa-grid-2"   },
+        { label: "Contact Us",       href: "../HomePages/contactUs.html", cls: "btn-p", icon: "fa-envelope" },
+        { label: "Explore Products", href: "../intraocular-lens/iol-page.html",  cls: "btn-g", icon: "fa-grid-2"   },
       ],
     },
 
@@ -6982,23 +6986,23 @@ if (ACTIVE_PAGE === "aboutUs") {
         { href: "https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv", icon: "fa-brands fa-whatsapp", label: "WhatsApp" },
       ],
       quickLinks: [
-        { label: "Home",             href: "../Pages/index.html"           },
-        { label: "Hydrophobic IOL",  href: "../Pages/hydrophobicIol.html"  },
-        { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html"  },
-        { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html"         },
-        { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
-        { label: "About Us",          href: "../Pages/aboutUs.html"        },
-        { label: "Contact Us",       href: "../Pages/contactUs.html"       },
-        { label: "Gallery",          href: "../Pages/gallery.html"         },
+        { label: "Home",             href: "../HomePages/index.html"           },
+        { label: "Hydrophobic IOL",  href: "../intraocular-lens/hydrophobicIol.html"  },
+        { label: "Hydrophilic IOL",  href: "../intraocular-lens/hydrophilicIOL.html"  },
+        { label: "PMMA IOL",         href: "../intraocular-lens/pmmaIOL.html"         },
+        { label: "Toric Calculator", href: "../HomePages/toricCalculator.html" },
+        { label: "About Us",          href: "../HomePages/aboutUs.html"        },
+        { label: "Contact Us",       href: "../HomePages/contactUs.html"       },
+        { label: "Gallery",          href: "../HomePages/gallery.html"         },
       ],
       products: [
-        { label: "Nano Claro",      href: "../Pages/nanoClaro.html"  },
-        { label: "Nano Grand",      href: "../Pages/nanoGrand.html"  },
-        { label: "Nano Fold",       href: "../Pages/nanoFold.html"   },
-        { label: "Nano Flex",       href: "../Pages/nanoFlex.html"   },
-        { label: "Keratome Blades", href: "../Pages/keratome.html"   },
-        { label: "Crescent Blades", href: "../Pages/crescent.html"   },
-        { label: "MVR Blades",      href: "../Pages/mvrBlade.html"   },
+        { label: "Nano Claro",      href: "../intraocular-lens/nanoClaro.html"  },
+        { label: "Nano Grand",      href: "../intraocular-lens/nanoGrand.html"  },
+        { label: "Nano Fold",       href: "../intraocular-lens/nanoFold.html"   },
+        { label: "Nano Flex",       href: "../intraocular-lens/nanoFlex.html"   },
+        { label: "Keratome Blades", href: "../blades/keratome.html"   },
+        { label: "Crescent Blades", href: "../blades/crescent.html"   },
+        { label: "MVR Blades",      href: "../blades/mvrBlade.html"   },
       ],
       contact: {
         address: "Chennai, Tamil Nadu, India — PIN 600001",
@@ -7016,7 +7020,7 @@ if (ACTIVE_PAGE === "aboutUs") {
 
   // ── Breadcrumb ────────────────────────────────────────────────────────
   const bc = qs("breadcrumb");
-  if (bc) bc.innerHTML = `<a href="../Pages/index.html">Home</a><span class="sep">/</span><span class="current">About Us</span>`;
+  if (bc) bc.innerHTML = `<a href="../HomePages/index.html">Home</a><span class="sep">/</span><span class="current">About Us</span>`;
 
   // ── Hero ──────────────────────────────────────────────────────────────
   const ey = qs("aboutEyebrow");
@@ -7226,39 +7230,39 @@ if (ACTIVE_PAGE === "gallery") {
 
     items: [
       /* ─── Hydrophobic IOL ────────────────────────── */
-      { src: "../Multimedia/lense1.png",  label: "Nano Claro — Hydrophobic IOL",      cat: "hydrophobic", variant: ""       },
-      { src: "../Multimedia/lense2.png",  label: "Nano Grand — Hydrophobic IOL",      cat: "hydrophobic", variant: ""       },
-      { src: "../Multimedia/lense3.png",  label: "Nano Claro Plus",                   cat: "hydrophobic", variant: ""       },
-      { src: "../Multimedia/lense4.png",  label: "Nano Grand Plus",                   cat: "hydrophobic", variant: ""       },
-      { src: "../Multimedia/lense5.png",  label: "Aspheric Hydrophobic IOL",          cat: "hydrophobic", variant: ""       },
-      { src: "../Multimedia/lense6.png",  label: "Toric Hydrophobic IOL",             cat: "hydrophobic", variant: ""       },
-      { src: "../Multimedia/nanoIOL1.png",label: "Nano Series — A-Constant 118.0",    cat: "hydrophobic", variant: "square" },
-      { src: "../Multimedia/nanoIOL2.png",label: "Nano Series — UV-Blue Filter",      cat: "hydrophobic", variant: "square" },
+      { src: "../../Multimedia/lense1.png",  label: "Nano Claro — Hydrophobic IOL",      cat: "hydrophobic", variant: ""       },
+      { src: "../../Multimedia/lense2.png",  label: "Nano Grand — Hydrophobic IOL",      cat: "hydrophobic", variant: ""       },
+      { src: "../../Multimedia/lense3.png",  label: "Nano Claro Plus",                   cat: "hydrophobic", variant: ""       },
+      { src: "../../Multimedia/lense4.png",  label: "Nano Grand Plus",                   cat: "hydrophobic", variant: ""       },
+      { src: "../../Multimedia/lense5.png",  label: "Aspheric Hydrophobic IOL",          cat: "hydrophobic", variant: ""       },
+      { src: "../../Multimedia/lense6.png",  label: "Toric Hydrophobic IOL",             cat: "hydrophobic", variant: ""       },
+      { src: "../../Multimedia/nanoIOL1.png",label: "Nano Series — A-Constant 118.0",    cat: "hydrophobic", variant: "square" },
+      { src: "../../Multimedia/nanoIOL2.png",label: "Nano Series — UV-Blue Filter",      cat: "hydrophobic", variant: "square" },
       /* ─── Hydrophilic IOL ────────────────────────── */
-      { src: "../Multimedia/lense7.png",  label: "Nano Fold — Hydrophilic IOL",       cat: "hydrophilic", variant: ""       },
-      { src: "../Multimedia/lense8.png",  label: "Nano Flex — Hydrophilic IOL",       cat: "hydrophilic", variant: ""       },
-      { src: "../Multimedia/lense9.png",  label: "Foldable Hydrophilic — 6.0mm",     cat: "hydrophilic", variant: ""       },
-      { src: "../Multimedia/lense10.png", label: "One-Piece Hydrophilic IOL",         cat: "hydrophilic", variant: ""       },
-      { src: "../Multimedia/hydrophilic_flexY1.png", label: "Nano Flex — Plate Haptic",  cat: "hydrophilic", variant: ""   },
-      { src: "../Multimedia/hydrophilic_fold1.png",  label: "Nano Fold — Three-Piece",   cat: "hydrophilic", variant: ""   },
+      { src: "../../Multimedia/lense7.png",  label: "Nano Fold — Hydrophilic IOL",       cat: "hydrophilic", variant: ""       },
+      { src: "../../Multimedia/lense8.png",  label: "Nano Flex — Hydrophilic IOL",       cat: "hydrophilic", variant: ""       },
+      { src: "../../Multimedia/lense9.png",  label: "Foldable Hydrophilic — 6.0mm",     cat: "hydrophilic", variant: ""       },
+      { src: "../../Multimedia/lense10.png", label: "One-Piece Hydrophilic IOL",         cat: "hydrophilic", variant: ""       },
+      { src: "../../Multimedia/hydrophilic_flexY1.png", label: "Nano Flex — Plate Haptic",  cat: "hydrophilic", variant: ""   },
+      { src: "../../Multimedia/hydrophilic_fold1.png",  label: "Nano Fold — Three-Piece",   cat: "hydrophilic", variant: ""   },
       /* ─── PMMA IOL ───────────────────────────────── */
-      { src: "../Multimedia/lense11.png", label: "PMMA Biconvex IOL — 5.5mm",        cat: "pmma", variant: ""       },
-      { src: "../Multimedia/lense12.png", label: "PMMA Modified C-Loop",             cat: "pmma", variant: ""       },
-      { src: "../Multimedia/lense13.png", label: "PMMA — High Power Range",          cat: "pmma", variant: ""       },
-      { src: "../Multimedia/lense14.png", label: "PMMA Iris-Claw IOL",               cat: "pmma", variant: ""       },
-      { src: "../Multimedia/nanoIRISPmma.png", label: "Nano Iris PMMA",              cat: "pmma", variant: "square" },
-      { src: "../Multimedia/nanoPlusPmma.png",  label: "Nano Plus PMMA",             cat: "pmma", variant: "square" },
+      { src: "../../Multimedia/lense11.png", label: "PMMA Biconvex IOL — 5.5mm",        cat: "pmma", variant: ""       },
+      { src: "../../Multimedia/lense12.png", label: "PMMA Modified C-Loop",             cat: "pmma", variant: ""       },
+      { src: "../../Multimedia/lense13.png", label: "PMMA — High Power Range",          cat: "pmma", variant: ""       },
+      { src: "../../Multimedia/lense14.png", label: "PMMA Iris-Claw IOL",               cat: "pmma", variant: ""       },
+      { src: "../../Multimedia/nanoIRISPmma.png", label: "Nano Iris PMMA",              cat: "pmma", variant: "square" },
+      { src: "../../Multimedia/nanoPlusPmma.png",  label: "Nano Plus PMMA",             cat: "pmma", variant: "square" },
       /* ─── Surgical Blades ────────────────────────── */
-      { src: "../Multimedia/msBlade-Sharp.png",   label: "Microsurgical Blade — Sharp",    cat: "surgical", variant: "square" },
-      { src: "../Multimedia/msBladeCrescent.png", label: "Crescent Blade",                 cat: "surgical", variant: "square" },
-      { src: "../Multimedia/msBladeLance.png",    label: "Lance Blade",                    cat: "surgical", variant: "square" },
-      { src: "../Multimedia/msBlade_blunt.png",   label: "Blunt Tunnel Blade",             cat: "surgical", variant: "square" },
-      { src: "../Multimedia/msMVRBlade.png",      label: "MVR Blade — 20G",                cat: "surgical", variant: "square" },
+      { src: "../../Multimedia/msBlade-Sharp.png",   label: "Microsurgical Blade — Sharp",    cat: "surgical", variant: "square" },
+      { src: "../../Multimedia/msBladeCrescent.png", label: "Crescent Blade",                 cat: "surgical", variant: "square" },
+      { src: "../../Multimedia/msBladeLance.png",    label: "Lance Blade",                    cat: "surgical", variant: "square" },
+      { src: "../../Multimedia/msBlade_blunt.png",   label: "Blunt Tunnel Blade",             cat: "surgical", variant: "square" },
+      { src: "../../Multimedia/msMVRBlade.png",      label: "MVR Blade — 20G",                cat: "surgical", variant: "square" },
       /* ─── Facility ────────────────────────────────── */
-      { src: "../Multimedia/lensemanu1.jpg", label: "Chennai Manufacturing Facility",    cat: "facility", variant: "wide" },
-      { src: "../Multimedia/lensemanu2.jpg", label: "CNC Precision Lathe",               cat: "facility", variant: "wide" },
-      { src: "../Multimedia/lensemanu3.jpg", label: "Quality Inspection Lab",            cat: "facility", variant: "wide" },
-      { src: "../Multimedia/lensemanu4.jpg", label: "Sterile Packaging Line",            cat: "facility", variant: "wide" },
+      { src: "../../Multimedia/lensemanu1.jpg", label: "Chennai Manufacturing Facility",    cat: "facility", variant: "wide" },
+      { src: "../../Multimedia/lensemanu2.jpg", label: "CNC Precision Lathe",               cat: "facility", variant: "wide" },
+      { src: "../../Multimedia/lensemanu3.jpg", label: "Quality Inspection Lab",            cat: "facility", variant: "wide" },
+      { src: "../../Multimedia/lensemanu4.jpg", label: "Sterile Packaging Line",            cat: "facility", variant: "wide" },
     ],
 
     catMeta: {
@@ -7274,9 +7278,9 @@ if (ACTIVE_PAGE === "gallery") {
       h:    "Interested in Our <em>Products?</em>",
       p:    "Our team of experts are ready to answer your questions about IOL specifications, pricing, and surgical compatibility.",
       btns: [
-        { href: "../Pages/contactUs.html",      label: "Contact Us",       cls: "btn-p", icon: "fa-envelope"   },
-        { href: "../Pages/iol-page.html",       label: "Browse Products",  cls: "btn-g", icon: "fa-eye"        },
-        { href: "../Pages/toricCalculator.html",label: "Toric Calculator", cls: "btn-o", icon: "fa-calculator" },
+        { href: "../HomePages/contactUs.html",      label: "Contact Us",       cls: "btn-p", icon: "fa-envelope"   },
+        { href: "../intraocular-lens/iol-page.html",       label: "Browse Products",  cls: "btn-g", icon: "fa-eye"        },
+        { href: "../HomePages/toricCalculator.html",label: "Toric Calculator", cls: "btn-o", icon: "fa-calculator" },
       ],
     },
 
@@ -7288,22 +7292,22 @@ if (ACTIVE_PAGE === "gallery") {
         { href: "https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv", icon: "fa-brands fa-whatsapp", label: "WhatsApp" },
       ],
       quickLinks: [
-        { label: "Home",             href: "../Pages/index.html"           },
-        { label: "Hydrophobic IOL",  href: "../Pages/hydrophobicIol.html"  },
-        { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html"  },
-        { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html"         },
-        { label: "Toric Calculator", href: "../Pages/toricCalculator.html" },
-        { label: "About Us",          href: "../Pages/aboutUs.html"        },
-        { label: "Contact Us",       href: "../Pages/contactUs.html"       },
+        { label: "Home",             href: "../HomePages/index.html"           },
+        { label: "Hydrophobic IOL",  href: "../intraocular-lens/hydrophobicIol.html"  },
+        { label: "Hydrophilic IOL",  href: "../intraocular-lens/hydrophilicIOL.html"  },
+        { label: "PMMA IOL",         href: "../intraocular-lens/pmmaIOL.html"         },
+        { label: "Toric Calculator", href: "../HomePages/toricCalculator.html" },
+        { label: "About Us",          href: "../HomePages/aboutUs.html"        },
+        { label: "Contact Us",       href: "../HomePages/contactUs.html"       },
       ],
       products: [
-        { label: "Nano Claro",      href: "../Pages/nanoClaro.html"  },
-        { label: "Nano Grand",      href: "../Pages/nanoGrand.html"  },
-        { label: "Nano Fold",       href: "../Pages/nanoFold.html"   },
-        { label: "Nano Flex",       href: "../Pages/nanoFlex.html"   },
-        { label: "Keratome Blades", href: "../Pages/keratome.html"   },
-        { label: "Crescent Blades", href: "../Pages/crescent.html"   },
-        { label: "MVR Blades",      href: "../Pages/mvrBlade.html"   },
+        { label: "Nano Claro",      href: "../intraocular-lens/nanoClaro.html"  },
+        { label: "Nano Grand",      href: "../intraocular-lens/nanoGrand.html"  },
+        { label: "Nano Fold",       href: "../intraocular-lens/nanoFold.html"   },
+        { label: "Nano Flex",       href: "../intraocular-lens/nanoFlex.html"   },
+        { label: "Keratome Blades", href: "../blades/keratome.html"   },
+        { label: "Crescent Blades", href: "../blades/crescent.html"   },
+        { label: "MVR Blades",      href: "../blades/mvrBlade.html"   },
       ],
       contact: {
         address: "Chennai, Tamil Nadu, India — PIN 600001",
@@ -7321,7 +7325,7 @@ if (ACTIVE_PAGE === "gallery") {
 
   /* ── Breadcrumb ────────────────────────────────────── */
   const galBc = qs("breadcrumb");
-  if (galBc) galBc.innerHTML = `<a href="../Pages/index.html">Home</a><span class="sep">/</span><span class="current">Gallery</span>`;
+  if (galBc) galBc.innerHTML = `<a href="../HomePages/index.html">Home</a><span class="sep">/</span><span class="current">Gallery</span>`;
 
   /* ── Hero ──────────────────────────────────────────── */
   const galEy = qs("galHeroEyebrow");

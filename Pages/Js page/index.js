@@ -4,7 +4,7 @@ const SITE = {
   company: {
     name:     "World Vision",
     subtitle: "Ophthalmic Pvt. Ltd.",
-    logo:     "../Multimedia/WVO_Logo1.png",
+    logo:     "../../Multimedia/WVO_Logo1.png",
     email:    "info@worldvisionophthalmic.com",
     phone:    "+91 98765 43210",
     address:  "Chennai, Tamil Nadu, India",
@@ -14,11 +14,11 @@ const SITE = {
 
   nav: {
     links: [
-      { label: "Home",       href: "../Pages/index.html",     page: "index"     },
-      { label: "Gallery",    href: "../Pages/gallery.html",   page: "gallery"   },
+      { label: "Home",       href: "../HomePages/index.html",     page: "index"     },
+      { label: "Gallery",    href: "../HomePages/gallery.html",   page: "gallery"   },
       // { label: "Blog",       href: "#blog",                   page: "blog"      },
-      { label: "About Us",   href: "../Pages/aboutUs.html",   page: "about"     },
-      { label: "Contact Us", href: "../Pages/contactUs.html", page: "contactUs" },
+      { label: "About Us",   href: "../HomePages/aboutUs.html",   page: "about"     },
+      { label: "Contact Us", href: "../HomePages/contactUs.html", page: "contactUs" },
     ],
     events: {
     eyebrow:   "What's On",
@@ -112,7 +112,7 @@ const SITE = {
 
   cta: {
       label: "Toric Calculator",
-      href:  "../Pages/toricCalculator.html",
+      href:  "../HomePages/toricCalculator.html",
       icon:  "fa-calculator",
     },
     products: {
@@ -122,25 +122,25 @@ const SITE = {
       children: [
         {
           label: "Intraocular Lens",
-          href:  "../Pages/iol-page.html",
+          href:  "../intraocular-lens/iol-page.html",
           icon:  "fa-eye",
           color: "var(--neu-accent2)",
           children: [
-            { label: "Hydrophobic IOL",  href: "../Pages/hydrophobicIol.html", icon: "fa-shield-halved",      color: "text-blue-400"  },
-            { label: "Hydrophilic IOL",  href: "../Pages/hydrophilicIOL.html", icon: "fa-shield-halved",      color: "text-teal-400"  },
-            { label: "PMMA IOL",         href: "../Pages/pmmaIOL.html",       icon: "fa-circle-half-stroke", color: "text-amber-400" },
+            { label: "Hydrophobic IOL",  href: "../intraocular-lens/hydrophobicIol.html", icon: "fa-shield-halved",      color: "text-blue-400"  },
+            { label: "Hydrophilic IOL",  href: "../intraocular-lens/hydrophilicIOL.html", icon: "fa-shield-halved",      color: "text-teal-400"  },
+            { label: "PMMA IOL",         href: "../intraocular-lens/pmmaIOL.html",       icon: "fa-circle-half-stroke", color: "text-amber-400" },
           ],
         },
-        { label: "Premium IOL", href: "../Pages/premiumIol.html", icon: "fa-star-of-life", color: "var(--neu-accent2)" },
+        { label: "Premium IOL", href: "../intraocular-lens/iol-page.html", icon: "fa-star-of-life", color: "var(--neu-accent2)" },
         {
           label: "Pharma Products",
-          href:  "../Pages/pharmaProducts.html",
+          href:  "../pharma-products/pharmaProducts.html",
           icon:  "fa-capsules",
           color: "var(--neu-accent2)",
           children: [
-            { label: "World Vision Chol",  href: "../Pages/pharmaChol.html", icon: "fa-flask",   color: "text-purple-400" },
-            { label: "World Vision TBlue", href: "../Pages/pharmaTBlue.html", icon: "fa-flask",   color: "text-blue-400"   },
-            { label: "World Vision Visc",  href: "../Pages/pharmaVisc.html", icon: "fa-droplet", color: "text-teal-400"   },
+            { label: "World Vision Chol",  href: "../pharma-products/pharmaProducts.html", icon: "fa-flask",   color: "text-purple-400" },
+            { label: "World Vision TBlue", href: "../pharma-products/pharmaProducts.html", icon: "fa-flask",   color: "text-blue-400"   },
+            { label: "World Vision Visc",  href: "../pharma-products/pharmaProducts.html", icon: "fa-droplet", color: "text-teal-400"   },
           ],
         },
         {
@@ -149,10 +149,10 @@ const SITE = {
           icon:  "fa-cut",
           color: "var(--neu-accent2)",
           children: [
-            { label: "Keratome",  href: "../Pages/keratome.html", icon: "fa-pen-fancy",          color: "text-slate-500" },
-            { label: "Crescent",  href: "../Pages/crescent.html", icon: "fa-moon",               color: "text-blue-400"  },
-            { label: "Lance Ip",  href: "../Pages/lancelp.html", icon: "fa-staff-snake",        color: "text-amber-400" },
-            { label: "MVR Blade", href: "../Pages/mvrBlade.html", icon: "fa-diamond-turn-right", color: "text-red-400"   },
+            { label: "Keratome",  href: "../blades/keratome.html", icon: "fa-pen-fancy",          color: "text-slate-500" },
+            { label: "Crescent",  href: "../blades/crescent.html", icon: "fa-moon",               color: "text-blue-400"  },
+            { label: "Lance Ip",  href: "../blades/lancelp.html", icon: "fa-staff-snake",        color: "text-amber-400" },
+            { label: "MVR Blade", href: "../blades/mvrBlade.html", icon: "fa-diamond-turn-right", color: "text-red-400"   },
           ],
         },
       ],
@@ -160,11 +160,11 @@ const SITE = {
     mobile: {
       // VIEW 1 — main links
       main: [
-        { label: "Home",             href: "../Pages/index.html",           page: "index"           },
-        { label: "Toric Calculator", href: "../Pages/toricCalculator.html", page: "toricCalculator" },
-        { label: "Gallery",          href: "../Pages/gallery.html",         page: "gallery"         },
-        { label: "About",            href: "../Pages/aboutUs.html",         page: "about"           },
-        { label: "Contact",          href: "../Pages/contactUs.html",       page: "contactUs"       },
+        { label: "Home",             href: "../HomePages/index.html",           page: "index"           },
+        { label: "Toric Calculator", href: "../HomePages/toricCalculator.html", page: "toricCalculator" },
+        { label: "Gallery",          href: "../HomePages/gallery.html",         page: "gallery"         },
+        { label: "About",            href: "../HomePages/aboutUs.html",         page: "about"           },
+        { label: "Contact",          href: "../HomePages/contactUs.html",       page: "contactUs"       },
       ],
       // VIEW 2 — products sub-menu
       products: {
@@ -173,35 +173,35 @@ const SITE = {
         pharma:   { label: "Pharma Products",       icon: "fa-capsules",   color: "text-[#0055a5]" },
         blade:    { label: "Micro Surgical Blades", icon: "fa-cut",      color: "text-[#0055a5]" },
         children: [
-          { label: "Premium IOL", href: "../Pages/premiumIol.html", icon: "fa-star-of-life", color: "text-[#0055a5]" },
+          { label: "Premium IOL", href: "../intraocular-lens/iol-page.html", icon: "fa-star-of-life", color: "text-[#0055a5]" },
         ],
       },
       // VIEW 3 — IOL sub-menu
       iol: {
         back:  { label: "Intraocular Lens" },
         children: [
-          { label: "Hydrophobic IOL", href: "../Pages/hydrophobicIol.html", icon: "fa-shield-halved",      color: "text-[#0055a5]" },
-          { label: "Hydrophilic IOL", href: "../Pages/hydrophilicIOL.html",                            icon: "fa-shield-halved",      color: "text-teal-500"  },
-          { label: "PMMA IOL",        href: "../Pages/pmmaIOL.html",                            icon: "fa-circle-half-stroke", color: "text-amber-500" },
+          { label: "Hydrophobic IOL", href: "../intraocular-lens/hydrophobicIol.html", icon: "fa-shield-halved",      color: "text-[#0055a5]" },
+          { label: "Hydrophilic IOL", href: "../intraocular-lens/hydrophilicIOL.html",                            icon: "fa-shield-halved",      color: "text-teal-500"  },
+          { label: "PMMA IOL",        href: "../intraocular-lens/pmmaIOL.html",                            icon: "fa-circle-half-stroke", color: "text-amber-500" },
         ],
       },
       // VIEW 4 — Pharma sub-menu
       pharma: {
         back:  { label: "Pharma Products" },
         children: [
-          { label: "World Vision Chol",  href: "../Pages/pharmaChol.html", icon: "fa-flask",   color: "text-purple-500" },
-          { label: "World Vision TBlue", href: "../Pages/pharmaTBlue.html", icon: "fa-flask",   color: "text-blue-500"   },
-          { label: "World Vision Visc",  href: "../Pages/pharmaVisc.html", icon: "fa-droplet", color: "text-teal-500"   },
+          { label: "World Vision Chol",  href: "../pharma-products/pharmaProducts.html", icon: "fa-flask",   color: "text-purple-500" },
+          { label: "World Vision TBlue", href: "../pharma-products/pharmaProducts.html", icon: "fa-flask",   color: "text-blue-500"   },
+          { label: "World Vision Visc",  href: "../pharma-products/pharmaProducts.html", icon: "fa-droplet", color: "text-teal-500"   },
         ],
       },
       // VIEW 5 — Blades sub-menu
       blade: {
         back:  { label: "Surgical Blades" },
         children: [
-          { label: "Keratome",  href: "../Pages/keratome.html", icon: "fa-pen-fancy",          color: "text-slate-500" },
-          { label: "Crescent",  href: "../Pages/crescent.html", icon: "fa-moon",               color: "text-blue-500"  },
-          { label: "Lance Ip",  href: "../Pages/lancelp.html", icon: "fa-staff-snake",        color: "text-amber-500" },
-          { label: "MVR Blade", href: "../Pages/mvrBlade.html", icon: "fa-diamond-turn-right", color: "text-red-500"   },
+          { label: "Keratome",  href: "../blades/keratome.html", icon: "fa-pen-fancy",          color: "text-slate-500" },
+          { label: "Crescent",  href: "../blades/crescent.html", icon: "fa-moon",               color: "text-blue-500"  },
+          { label: "Lance Ip",  href: "../blades/lancelp.html", icon: "fa-staff-snake",        color: "text-amber-500" },
+          { label: "MVR Blade", href: "../blades/mvrBlade.html", icon: "fa-diamond-turn-right", color: "text-red-500"   },
         ],
       },
     },
@@ -213,7 +213,7 @@ const SITE = {
       title: "World Vision",
       em:    "Lens Pro",
       sub:   "Advanced clarity with reduced glare. Medical-grade acrylic engineered for everyday surgical precision.",
-      img:   "../Multimedia/wv_hero_1.png",
+      img:   "../../Multimedia/wv_hero_1.png",
       alt:   "World Vision Lens Pro",
       cta:   { label: "View Product", href: "#" },
     },
@@ -222,7 +222,7 @@ const SITE = {
       title: "World Vision",
       em:    "Lens Plus",
       sub:   "Precision-engineered optics for superior visual accuracy. UV absorber and blue-light filtering built in.",
-      img:   "../Multimedia/wv_hero_2.png",
+      img:   "../../Multimedia/wv_hero_2.png",
       alt:   "World Vision Lens Plus",
       cta:   { label: "View Product", href: "#" },
     },
@@ -241,9 +241,9 @@ const SITE = {
     headingEm: "every need",
     sub:       "Medical-grade materials sourced from the USA and Europe — engineered for every surgical requirement.",
     cards: [
-      { href: "../Pages/iol-page.html", img: "../Multimedia/hydrophilic_fold1.png",  alt: "IOL",      tag: "IOL",         title: "Intraocular Lenses",    desc: "Hydrophobic, Hydrophilic & PMMA. UV absorber, blue-light filter, zero glistening." },
-      { href: "../Pages/PharmaProducts.html", img: "../Multimedia/pharamaHero1.png",  alt: "Pharma", tag: "Pharma Product", title: "Pharma Products",  desc: "Same medical-grade technology, engineered specifically for animal eye surgery" },
-      { href: "../Pages/keratome.html", img: "../Multimedia/msBlade_blunt.png", alt: "blade",      tag: "Surgical Blade",  title: "Surgical Blade",        desc: "Best in class surgical blades for precise procedures." },
+      { href: "../intraocular-lens/iol-page.html", img: "../../Multimedia/hydrophilic_fold1.png",  alt: "IOL",      tag: "IOL",         title: "Intraocular Lenses",    desc: "Hydrophobic, Hydrophilic & PMMA. UV absorber, blue-light filter, zero glistening." },
+      { href: "../pharma-products/pharmaProducts.html", img: "../../Multimedia/pharamaHero1.png",  alt: "Pharma", tag: "Pharma Product", title: "Pharma Products",  desc: "Same medical-grade technology, engineered specifically for animal eye surgery" },
+      { href: "../blades/keratome.html", img: "../../Multimedia/msBlade_blunt.png", alt: "blade",      tag: "Surgical Blade",  title: "Surgical Blade",        desc: "Best in class surgical blades for precise procedures." },
     ],
   },
 
@@ -271,10 +271,10 @@ const SITE = {
       "Full CE & ISO documentation",
     ],
     photos: [
-      { src: "../Multimedia/lensemanu1.jpg", alt: "Facility 1", large: true },
-      { src: "../Multimedia/lensemanu2.jpg", alt: "Facility 2" },
-      { src: "../Multimedia/lensemanu3.jpg", alt: "Facility 3" },
-      { src: "../Multimedia/lensemanu4.jpg", alt: "Facility 4" },
+      { src: "../../Multimedia/lensemanu1.jpg", alt: "Facility 1", large: true },
+      { src: "../../Multimedia/lensemanu2.jpg", alt: "Facility 2" },
+      { src: "../../Multimedia/lensemanu3.jpg", alt: "Facility 3" },
+      { src: "../../Multimedia/lensemanu4.jpg", alt: "Facility 4" },
     ],
   },
 
@@ -384,13 +384,13 @@ const SITE = {
       { icon: "fa-brands fa-whatsapp",    href: "https://chat.whatsapp.com/Dbeem4cDrbHKFzvaBbOIhv" },
     ],
     quickLinks: [
-      { label: "Home",       href: "../Pages/index.html"           },
+      { label: "Home",       href: "../HomePages/index.html"           },
       { label: "Products",   href: "#products"                     },
-      { label: "IOL Lenses", href: "../Pages/iol-page.html"        },
-      { label: "Gallery",    href: "../Pages/gallery.html"         },
-      { label: "About Us",   href: "../Pages/aboutUs.html"         },
-      { label: "Contact",    href: "../Pages/contactUs.html"       },
-      { label: "Toric Calc", href: "../Pages/toricCalculator.html" },
+      { label: "IOL Lenses", href: "../intraocular-lens/iol-page.html"        },
+      { label: "Gallery",    href: "../HomePages/gallery.html"         },
+      { label: "About Us",   href: "../HomePages/aboutUs.html"         },
+      { label: "Contact",    href: "../HomePages/contactUs.html"       },
+      { label: "Toric Calc", href: "../HomePages/toricCalculator.html" },
     ],
     copyright: "© 2026 World Vision Ophthalmic Pvt. Ltd. · All rights reserved.",
   },
@@ -407,57 +407,61 @@ const SITE = {
     ],
     items: [
       // Hydrophobic IOLs
-      { id: 1, src: "../Multimedia/lense1.png", category: "hydrophobic", title: "Hydrophobic IOL Series 1", alt: "Hydrophobic IOL" },
-      { id: 2, src: "../Multimedia/lense2.png", category: "hydrophobic", title: "Hydrophobic IOL Series 2", alt: "Hydrophobic IOL" },
-      { id: 3, src: "../Multimedia/lense3.png", category: "hydrophobic", title: "Hydrophobic IOL Series 3", alt: "Hydrophobic IOL" },
-      { id: 4, src: "../Multimedia/lense4.png", category: "hydrophobic", title: "Hydrophobic IOL Series 4", alt: "Hydrophobic IOL" },
-      { id: 5, src: "../Multimedia/lense5.png", category: "hydrophobic", title: "Hydrophobic IOL Series 5", alt: "Hydrophobic IOL" },
-      { id: 6, src: "../Multimedia/lense6.png", category: "hydrophobic", title: "Hydrophobic IOL Series 6", alt: "Hydrophobic IOL" },
-      { id: 7, src: "../Multimedia/lense7.png", category: "hydrophobic", title: "Hydrophobic IOL Series 7", alt: "Hydrophobic IOL" },
-      { id: 8, src: "../Multimedia/lense8.png", category: "hydrophobic", title: "Hydrophobic IOL Series 8", alt: "Hydrophobic IOL" },
-      { id: 9, src: "../Multimedia/lense9.png", category: "hydrophobic", title: "Hydrophobic IOL Series 9", alt: "Hydrophobic IOL" },
-      { id: 10, src: "../Multimedia/lense10.png", category: "hydrophobic", title: "Hydrophobic IOL Series 10", alt: "Hydrophobic IOL" },
-      { id: 11, src: "../Multimedia/lense11.png", category: "hydrophobic", title: "Hydrophobic IOL Series 11", alt: "Hydrophobic IOL" },
-      { id: 12, src: "../Multimedia/lense12.png", category: "hydrophobic", title: "Hydrophobic IOL Series 12", alt: "Hydrophobic IOL" },
-      { id: 13, src: "../Multimedia/lense13.png", category: "hydrophobic", title: "Hydrophobic IOL Series 13", alt: "Hydrophobic IOL" },
-      { id: 14, src: "../Multimedia/lense14.png", category: "hydrophobic", title: "Hydrophobic IOL Series 14", alt: "Hydrophobic IOL" },
-      { id: 15, src: "../Multimedia/lense15.png", category: "hydrophobic", title: "Hydrophobic IOL Series 15", alt: "Hydrophobic IOL" },
-      { id: 16, src: "../Multimedia/lense16.png", category: "hydrophobic", title: "Hydrophobic IOL Series 16", alt: "Hydrophobic IOL" },
-      { id: 17, src: "../Multimedia/lense17.png", category: "hydrophobic", title: "Hydrophobic IOL Series 17", alt: "Hydrophobic IOL" },
-      { id: 18, src: "../Multimedia/lense18.png", category: "hydrophobic", title: "Hydrophobic IOL Series 18", alt: "Hydrophobic IOL" },
-      { id: 19, src: "../Multimedia/lense19.png", category: "hydrophobic", title: "Hydrophobic IOL Series 19", alt: "Hydrophobic IOL" },
-      { id: 20, src: "../Multimedia/lense20.png", category: "hydrophobic", title: "Hydrophobic IOL Series 20", alt: "Hydrophobic IOL" },
-      { id: 21, src: "../Multimedia/lense21.png", category: "hydrophobic", title: "Hydrophobic IOL Series 21", alt: "Hydrophobic IOL" },
-      { id: 22, src: "../Multimedia/lense22.png", category: "hydrophobic", title: "Hydrophobic IOL Series 22", alt: "Hydrophobic IOL" },
+      { id: 1, src: "../../Multimedia/lense1.png", category: "hydrophobic", title: "Hydrophobic IOL Series 1", alt: "Hydrophobic IOL" },
+      { id: 2, src: "../../Multimedia/lense2.png", category: "hydrophobic", title: "Hydrophobic IOL Series 2", alt: "Hydrophobic IOL" },
+      { id: 3, src: "../../Multimedia/lense3.png", category: "hydrophobic", title: "Hydrophobic IOL Series 3", alt: "Hydrophobic IOL" },
+      { id: 4, src: "../../Multimedia/lense4.png", category: "hydrophobic", title: "Hydrophobic IOL Series 4", alt: "Hydrophobic IOL" },
+      { id: 5, src: "../../Multimedia/lense5.png", category: "hydrophobic", title: "Hydrophobic IOL Series 5", alt: "Hydrophobic IOL" },
+      { id: 6, src: "../../Multimedia/lense6.png", category: "hydrophobic", title: "Hydrophobic IOL Series 6", alt: "Hydrophobic IOL" },
+      { id: 7, src: "../../Multimedia/lense7.png", category: "hydrophobic", title: "Hydrophobic IOL Series 7", alt: "Hydrophobic IOL" },
+      { id: 8, src: "../../Multimedia/lense8.png", category: "hydrophobic", title: "Hydrophobic IOL Series 8", alt: "Hydrophobic IOL" },
+      { id: 9, src: "../../Multimedia/lense9.png", category: "hydrophobic", title: "Hydrophobic IOL Series 9", alt: "Hydrophobic IOL" },
+      { id: 10, src: "../../Multimedia/lense10.png", category: "hydrophobic", title: "Hydrophobic IOL Series 10", alt: "Hydrophobic IOL" },
+      { id: 11, src: "../../Multimedia/lense11.png", category: "hydrophobic", title: "Hydrophobic IOL Series 11", alt: "Hydrophobic IOL" },
+      { id: 12, src: "../../Multimedia/lense12.png", category: "hydrophobic", title: "Hydrophobic IOL Series 12", alt: "Hydrophobic IOL" },
+      { id: 13, src: "../../Multimedia/lense13.png", category: "hydrophobic", title: "Hydrophobic IOL Series 13", alt: "Hydrophobic IOL" },
+      { id: 14, src: "../../Multimedia/lense14.png", category: "hydrophobic", title: "Hydrophobic IOL Series 14", alt: "Hydrophobic IOL" },
+      { id: 15, src: "../../Multimedia/lense15.png", category: "hydrophobic", title: "Hydrophobic IOL Series 15", alt: "Hydrophobic IOL" },
+      { id: 16, src: "../../Multimedia/lense16.png", category: "hydrophobic", title: "Hydrophobic IOL Series 16", alt: "Hydrophobic IOL" },
+      { id: 17, src: "../../Multimedia/lense17.png", category: "hydrophobic", title: "Hydrophobic IOL Series 17", alt: "Hydrophobic IOL" },
+      { id: 18, src: "../../Multimedia/lense18.png", category: "hydrophobic", title: "Hydrophobic IOL Series 18", alt: "Hydrophobic IOL" },
+      { id: 19, src: "../../Multimedia/lense19.png", category: "hydrophobic", title: "Hydrophobic IOL Series 19", alt: "Hydrophobic IOL" },
+      { id: 20, src: "../../Multimedia/lense20.png", category: "hydrophobic", title: "Hydrophobic IOL Series 20", alt: "Hydrophobic IOL" },
+      { id: 21, src: "../../Multimedia/lense21.png", category: "hydrophobic", title: "Hydrophobic IOL Series 21", alt: "Hydrophobic IOL" },
+      { id: 22, src: "../../Multimedia/lense22.png", category: "hydrophobic", title: "Hydrophobic IOL Series 22", alt: "Hydrophobic IOL" },
       
       // Nano IOLs
-      { id: 23, src: "../Multimedia/nanoIOL1.png", category: "nano", title: "Nano IOL 1", alt: "Nano IOL" },
-      { id: 24, src: "../Multimedia/nanoIOL2.png", category: "nano", title: "Nano IOL 2", alt: "Nano IOL" },
-      { id: 25, src: "../Multimedia/nanoIOL3.png", category: "nano", title: "Nano IOL 3", alt: "Nano IOL" },
-      { id: 26, src: "../Multimedia/nanoIOL4.png", category: "nano", title: "Nano IOL 4", alt: "Nano IOL" },
-      { id: 27, src: "../Multimedia/nanoIOLPmma.png", category: "nano", title: "Nano IOL PMMA", alt: "Nano IOL PMMA" },
-      { id: 28, src: "../Multimedia/nanoRing.png", category: "nano", title: "Nano Ring 1", alt: "Nano Ring" },
-      { id: 29, src: "../Multimedia/nanoRing2.png", category: "nano", title: "Nano Ring 2", alt: "Nano Ring" },
-      { id: 30, src: "../Multimedia/nanoRing3.png", category: "nano", title: "Nano Ring 3", alt: "Nano Ring" },
-      { id: 31, src: "../Multimedia/nanoRing4.png", category: "nano", title: "Nano Ring 4", alt: "Nano Ring" },
-      { id: 32, src: "../Multimedia/nanoRing5.png", category: "nano", title: "Nano Ring 5", alt: "Nano Ring" },
-      { id: 33, src: "../Multimedia/nanoRing6.png", category: "nano", title: "Nano Ring 6", alt: "Nano Ring" },
+      { id: 23, src: "../../Multimedia/nanoIOL1.png", category: "nano", title: "Nano IOL 1", alt: "Nano IOL" },
+      { id: 24, src: "../../Multimedia/nanoIOL2.png", category: "nano", title: "Nano IOL 2", alt: "Nano IOL" },
+      { id: 25, src: "../../Multimedia/nanoIOL3.png", category: "nano", title: "Nano IOL 3", alt: "Nano IOL" },
+      { id: 26, src: "../../Multimedia/nanoIOL4.png", category: "nano", title: "Nano IOL 4", alt: "Nano IOL" },
+      { id: 27, src: "../../Multimedia/nanoIOLPmma.png", category: "nano", title: "Nano IOL PMMA", alt: "Nano IOL PMMA" },
+      { id: 28, src: "../../Multimedia/nanoRing.png", category: "nano", title: "Nano Ring 1", alt: "Nano Ring" },
+      { id: 29, src: "../../Multimedia/nanoRing2.png", category: "nano", title: "Nano Ring 2", alt: "Nano Ring" },
+      { id: 30, src: "../../Multimedia/nanoRing3.png", category: "nano", title: "Nano Ring 3", alt: "Nano Ring" },
+      { id: 31, src: "../../Multimedia/nanoRing4.png", category: "nano", title: "Nano Ring 4", alt: "Nano Ring" },
+      { id: 32, src: "../../Multimedia/nanoRing5.png", category: "nano", title: "Nano Ring 5", alt: "Nano Ring" },
+      { id: 33, src: "../../Multimedia/nanoRing6.png", category: "nano", title: "Nano Ring 6", alt: "Nano Ring" },
       
       // Surgical Blades
-      { id: 34, src: "../Multimedia/msBlade-Sharp.png", category: "blades", title: "Micro Surgical Sharp Blade", alt: "Sharp Blade" },
-      { id: 35, src: "../Multimedia/msBladeCrescent.png", category: "blades", title: "Micro Surgical Crescent Blade", alt: "Crescent Blade" },
-      { id: 36, src: "../Multimedia/msBladeLance.png", category: "blades", title: "Micro Surgical Lance Blade", alt: "Lance Blade" },
-      { id: 37, src: "../Multimedia/msBlade_blunt.png", category: "blades", title: "Micro Surgical Blunt Blade", alt: "Blunt Blade" },
-      { id: 38, src: "../Multimedia/msMVRBlade.png", category: "blades", title: "Micro Surgical MVR Blade", alt: "MVR Blade" },
+      { id: 34, src: "../../Multimedia/msBlade-Sharp.png", category: "blades", title: "Micro Surgical Sharp Blade", alt: "Sharp Blade" },
+      { id: 35, src: "../../Multimedia/msBladeCrescent.png", category: "blades", title: "Micro Surgical Crescent Blade", alt: "Crescent Blade" },
+      { id: 36, src: "../../Multimedia/msBladeLance.png", category: "blades", title: "Micro Surgical Lance Blade", alt: "Lance Blade" },
+      { id: 37, src: "../../Multimedia/msBlade_blunt.png", category: "blades", title: "Micro Surgical Blunt Blade", alt: "Blunt Blade" },
+      { id: 38, src: "../../Multimedia/msMVRBlade.png", category: "blades", title: "Micro Surgical MVR Blade", alt: "MVR Blade" },
       
       // Facility
-      { id: 39, src: "../Multimedia/lensemanu1.jpg", category: "facility", title: "Manufacturing Facility 1", alt: "Manufacturing" },
-      { id: 40, src: "../Multimedia/lensemanu2.jpg", category: "facility", title: "Manufacturing Facility 2", alt: "Manufacturing" },
-      { id: 41, src: "../Multimedia/lensemanu3.jpg", category: "facility", title: "Manufacturing Facility 3", alt: "Manufacturing" },
-      { id: 42, src: "../Multimedia/lensemanu4.jpg", category: "facility", title: "Manufacturing Facility 4", alt: "Manufacturing" },
+      { id: 39, src: "../../Multimedia/lensemanu1.jpg", category: "facility", title: "Manufacturing Facility 1", alt: "Manufacturing" },
+      { id: 40, src: "../../Multimedia/lensemanu2.jpg", category: "facility", title: "Manufacturing Facility 2", alt: "Manufacturing" },
+      { id: 41, src: "../../Multimedia/lensemanu3.jpg", category: "facility", title: "Manufacturing Facility 3", alt: "Manufacturing" },
+      { id: 42, src: "../../Multimedia/lensemanu4.jpg", category: "facility", title: "Manufacturing Facility 4", alt: "Manufacturing" },
     ],
   },
 };
+
+if (window.WorldVisionPaths) {
+  window.WorldVisionPaths.normalizeData(SITE);
+}
 
 function qs(id) {return document.getElementById(id);}
 function qsa(sel) {return document.querySelectorAll(sel);}
@@ -914,7 +918,7 @@ const lenses = [
   "lense13.png", "lense17.png", "lense5.png", "lense20.png"
 ];
 
-const imgPath = "../Multimedia/";
+const imgPath = "../../Multimedia/";
 const rowHeight = 220;
 const duplicates = 2;
 const buffer = 0;
@@ -1710,15 +1714,15 @@ if (ACTIVE_PAGE === 'gallery') {
     // Order maps onto the data-pos slots in the SCSS (center + 8 satellites).
     // Swap src values here to change which images appear in the hero.
     var FEATURED_COLLAGE = [
-      { pos: 'center', src: '../Multimedia/lensemanu3.jpg',    alt: 'Manufacturing Facility' },
-      { pos: 'tl',     src: '../Multimedia/lense1.png',         alt: 'Hydrophobic IOL'        },
-      { pos: 'tr',     src: '../Multimedia/nanoIOL1.png',       alt: 'Nano IOL'               },
-      { pos: 'ml',     src: '../Multimedia/lensemanu1.jpg',     alt: 'Manufacturing'          },
-      { pos: 'mr1',    src: '../Multimedia/msBlade-Sharp.png',  alt: 'Surgical Blade'         },
-      { pos: 'mr2',    src: '../Multimedia/nanoRing.png',       alt: 'Nano Ring'              },
-      { pos: 'bl',     src: '../Multimedia/lensemanu4.jpg',     alt: 'Manufacturing'          },
-      { pos: 'bm',     src: '../Multimedia/lensemanu2.jpg',     alt: 'Manufacturing'          },
-      { pos: 'br',     src: '../Multimedia/nanoIOLPmma.png',    alt: 'Nano IOL PMMA'          }
+      { pos: 'center', src: '../../Multimedia/lensemanu3.jpg',    alt: 'Manufacturing Facility' },
+      { pos: 'tl',     src: '../../Multimedia/lense1.png',         alt: 'Hydrophobic IOL'        },
+      { pos: 'tr',     src: '../../Multimedia/nanoIOL1.png',       alt: 'Nano IOL'               },
+      { pos: 'ml',     src: '../../Multimedia/lensemanu1.jpg',     alt: 'Manufacturing'          },
+      { pos: 'mr1',    src: '../../Multimedia/msBlade-Sharp.png',  alt: 'Surgical Blade'         },
+      { pos: 'mr2',    src: '../../Multimedia/nanoRing.png',       alt: 'Nano Ring'              },
+      { pos: 'bl',     src: '../../Multimedia/lensemanu4.jpg',     alt: 'Manufacturing'          },
+      { pos: 'bm',     src: '../../Multimedia/lensemanu2.jpg',     alt: 'Manufacturing'          },
+      { pos: 'br',     src: '../../Multimedia/nanoIOLPmma.png',    alt: 'Nano IOL PMMA'          }
     ];
 
     // ==================== Render Collage Hero ====================
@@ -1877,7 +1881,7 @@ if (ACTIVE_PAGE === 'gallery') {
     function renderFooter() {
       var footerBrand = qs('footerBrand');
       if (footerBrand) {
-        footerBrand.innerHTML = '<img src="../Multimedia/logo.png" alt="Logo" style="height: 40px; width: auto;"> <span style="font-size: 1.125rem; font-weight: 600;">World Vision Ophthalmic</span>';
+        footerBrand.innerHTML = '<img src="../../Multimedia/WVO_Logo1.png" alt="Logo" style="height: 40px; width: auto;"> <span style="font-size: 1.125rem; font-weight: 600;">World Vision Ophthalmic</span>';
       }
 
       var footerTagline = qs('footerTagline');
